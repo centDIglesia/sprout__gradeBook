@@ -13,7 +13,7 @@ namespace sprout__gradeBook
 {
     public partial class introductionPage : KryptonForm
     {
-        public Color mainColor = Color.FromArgb(0x0A, 0x67, 0x38);
+       
 
         public introductionPage()
         {
@@ -22,7 +22,7 @@ namespace sprout__gradeBook
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.BackColor = mainColor;
+            this.BackColor = CustomColor.mainColor;
             timer1.Start();
 
         }
@@ -35,8 +35,10 @@ namespace sprout__gradeBook
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Stop(); 
+
+            this.Hide();
             role__form roleForm = new role__form();
-           
+            
             roleForm.Show();
            
         }

@@ -50,6 +50,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomColor.cs" />
+    <Compile Include="custom__messageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="custom__messageBox.Designer.cs">
+      <DependentUpon>custom__messageBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +71,15 @@
     <Compile Include="role__form.Designer.cs">
       <DependentUpon>role__form.cs</DependentUpon>
     </Compile>
+    <Compile Include="teacher__signUp-form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="teacher__signUp-form.Designer.cs">
+      <DependentUpon>teacher__signUp-form.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="custom__messageBox.resx">
+      <DependentUpon>custom__messageBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -75,9 +91,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="role__form.resx">
       <DependentUpon>role__form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="teacher__signUp-form.resx">
+      <DependentUpon>teacher__signUp-form.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -91,6 +111,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\student__role-clicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teacher__role-clicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\student__role.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teacher__role.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closed__eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open__eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forgot Your Password_HOVER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forgot Your Password_.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

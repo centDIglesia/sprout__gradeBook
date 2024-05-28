@@ -120,11 +120,14 @@
   <metadata name="kryptonPalette2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>82, 16</value>
   </metadata>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>219, 16</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAS4AAADOCAYAAACAc+91AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAHfxJREFUeF7tnQm4LEV5hpH9Ivty2RdlFSICigKJcAUkLIoEFBNAuBIBV+AR3ECF
+        DgAACw4BQL7hQQAAHfxJREFUeF7tnQm4LEV5hpH9Ivty2RdlFSICigKJcAUkLIoEFBNAuBIBV+AR3ECF
         aFQUEYgGRBGERBOUCBrcWEQlCEYUExRUUNAkGgMGgxhj1Nx8b0/Noaeml+qZnjkzZ773eb7n3O6urp6Z
         O/VP1V9//bWcMcYYY4wxxhhjjDHGGGOMMcYYY4wxxhhjjDHGGGOMMcYYY4wxxhhjjDHGGGOMMcYYY4wx
         xhhjjDHGGGOMMcYYY4wZJ8uWLVtFWlvaWNpc2jKIf3NuPenx0orhFmOMGR8yPouk7aVjpUulr0r/Ij0s
@@ -255,7 +258,4 @@
         McYYY0wyyy33/9q5Dii0QS94AAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>219, 16</value>
-  </metadata>
 </root>
