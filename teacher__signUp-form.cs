@@ -11,9 +11,9 @@ using ComponentFactory.Krypton.Toolkit;
 
 namespace sprout__gradeBook
 {
-    public partial class SSSSSSS : KryptonForm
+    public partial class logInForm : KryptonForm
     {
-        public SSSSSSS()
+        public logInForm()
         {
             InitializeComponent();
         }
@@ -31,28 +31,220 @@ namespace sprout__gradeBook
             signIn__EmailTooltip.Hide();
             signIn__PassTooltip.Hide();
 
-
-
         }
+        //sign up form
+        //first name
 
+     
 
-        private void teacherFNAME__txtbox_Enter_1(object sender, EventArgs e)
+        private void signupFNAME__txtbox_Enter(object sender, EventArgs e)
         {
-            ResetInputField(teacherFNAME__txtbox, "First Name");
+            ResetInputField(signupFNAME__txtbox, "First Name");
             fname__tooltip.Show();
         }
 
-        private void teacherFNAME__txtbox_Leave(object sender, EventArgs e)
+        private void signupFNAME__txtbox_Leave(object sender, EventArgs e)
         {
-            RestoreDefaultText(teacherFNAME__txtbox, "First Name");
-            ToggleTooltip(teacherFNAME__txtbox,fname__tooltip, "First Name");
+            RestoreDefaultText(signupFNAME__txtbox, "First Name");
+            ToggleTooltip(signupFNAME__txtbox, fname__tooltip, "First Name");
+        }
+
+        //last name
+    
+        private void signupLNAME__txtbox_Enter(object sender, EventArgs e)
+        {
+            ResetInputField(signupLNAME__txtbox, "Last Name");
+            lname__tooltip.Show();
+        }
+
+        private void signupLNAME__txtbox_Leave(object sender, EventArgs e)
+        {
+            RestoreDefaultText(signupLNAME__txtbox, "Last Name");
+            ToggleTooltip(signupLNAME__txtbox, lname__tooltip, "Last Name");
+        }
+
+
+        //email
+        private void signupEMAIL__txtbox_Leave(object sender, EventArgs e)
+        {
+            ResetInputField(signupEMAIL__txtbox, "Email");
+            email__tooltip.Show();
+        }
+
+        private void signupEMAIL__txtbox_Enter(object sender, EventArgs e)
+        {
+            RestoreDefaultText(signupEMAIL__txtbox, "Email");
+            ToggleTooltip(signupEMAIL__txtbox, email__tooltip, "Email");
+        }
+
+        //user name
+        private void signupUNAME__txtbox_Enter(object sender, EventArgs e)
+        {
+            ResetInputField(signupUNAME__txtbox, "Username");
+            uname__tooltip.Show();
+        }
+        private void signupUNAME__txtbox_Leave(object sender, EventArgs e)
+        {
+            string folderPath = role__form.selectedRole == "student" ? "studentCredentials" : "teacherCredentials";
+
+            RestoreDefaultText(signupUNAME__txtbox, "Username");
+            ToggleTooltip(signupUNAME__txtbox, uname__tooltip, "Username");
+
+            if (!string.IsNullOrWhiteSpace(signupUNAME__txtbox.Text) && signupUNAME__txtbox.Text != "Username")
+            {
+                bool usernameExists = AccountManager.UsernameExists(signupUNAME__txtbox.Text, folderPath);
+                if (usernameExists)
+                {
+                    MessageBox.Show("Username already exists. Please choose a different username.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    signupUNAME__txtbox.Focus();
+                }
+            }
+        }
+
+
+        //school
+        private void signupSCHOOL__txtbox_Enter(object sender, EventArgs e)
+        {
+            ResetInputField(signupSCHOOL__txtbox, "School");
+            school__tooltip.Show();
+        }
+
+        private void signupSCHOOL__txtbox_Leave(object sender, EventArgs e)
+        {
+            RestoreDefaultText(signupSCHOOL__txtbox, "School");
+            ToggleTooltip(signupSCHOOL__txtbox, school__tooltip, "School");
+        }
+
+        //password
+        private void signupPASS__txtbox_Enter(object sender, EventArgs e)
+        {
+            ResetInputField(signupPASS__txtbox, "Password");
+            pass__tooltip.Show();
+        }
+
+        private void signupPASS__txtbox_Leave(object sender, EventArgs e)
+        {
+            RestoreDefaultText(signupPASS__txtbox, "Password");
+            ToggleTooltip(signupPASS__txtbox, pass__tooltip, "Password");
+        }
+
+        //confirm password
+        private void signupCPASS__txtbox_Enter(object sender, EventArgs e)
+        {
+            ResetInputField(signupCPASS__txtbox, "Confirm Password");
+            cpass__tooltip.Show();
+        }
+
+        private void signupCPASS__txtbox_Leave(object sender, EventArgs e)
+        {
+            RestoreDefaultText(signupCPASS__txtbox, "Confirm Password");
+            ToggleTooltip(signupCPASS__txtbox, cpass__tooltip, "Confirm Password");
         }
 
 
 
+        //hovering eefcts in forget password
+        private void forgetPass__btn_MouseHover(object sender, EventArgs e)
+        {
+            forgetPass__btn.Image = Properties.Resources.Forgot_Your_Password_HOVER;
+        }
+
+        private void forgetPass__btn_MouseLeave(object sender, EventArgs e)
+        {
+            forgetPass__btn.Image = Properties.Resources.Forgot_Your_Password_;
 
 
-        //placeholder
+        }
+
+
+        //buttons for switching from sign in to sin up and vice versa
+        private void signup__switchBTN_Click(object sender, EventArgs e)
+        {
+            teacherSIGNINform.Hide();
+            teacherSIGNUP__form.Show();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            teacherSIGNINform.Show();
+            teacherSIGNUP__form.Hide();
+        }
+
+        //sign in form
+        //email
+        private void signInEmail__txtbox_Enter(object sender, EventArgs e)
+        {
+            ResetInputField(signinEMAIL__txtbox, "Email");
+           signIn__EmailTooltip.Show();
+        }
+
+        private void signInEmail__txtbox_Leave(object sender, EventArgs e)
+        {
+            RestoreDefaultText(signinEMAIL__txtbox, "Email");
+            ToggleTooltip(signinEMAIL__txtbox, signIn__EmailTooltip, "Email");
+        }
+
+        //password
+        private void signInPass__txtbox_Enter(object sender, EventArgs e)
+        {
+            ResetInputField(signinPASS__txtbox, "Password");
+            signIn__PassTooltip.Show();
+            signinPASS__txtbox.UseSystemPasswordChar = true;
+        }
+
+        private void signInPass__txtbox_Leave(object sender, EventArgs e)
+        {
+            RestoreDefaultText(signinPASS__txtbox, "Password");
+            ToggleTooltip(signinPASS__txtbox, signIn__EmailTooltip, "Password");
+
+            if(signinPASS__txtbox.Text  == "Password")
+            {
+                signinPASS__txtbox.UseSystemPasswordChar = false;
+            }
+           
+        }
+
+        //sign up show password icon fuction
+        bool isPassVisible = false;
+
+        private void showPass__icon_Click(object sender, EventArgs e)
+        {
+
+
+            if (!isPassVisible)
+            {
+                isPassVisible = true;
+                showPass__icon.Image = Properties.Resources.closed__eye; 
+                signupPASS__txtbox.UseSystemPasswordChar = false; // Show the password
+            }
+            else
+            {
+                isPassVisible = false;
+                showPass__icon.Image = Properties.Resources.open__eye; // Assuming open__eye means the password is hidden
+                signupPASS__txtbox.UseSystemPasswordChar = true; // Hide the password
+            }
+        }
+
+        //sign in show password icon fuction
+        bool isPassVisible2 = false;
+        private void signIn__showPassicon_Click(object sender, EventArgs e)
+        {
+            if (!isPassVisible2)
+            {
+                isPassVisible2 = true;
+                signIn__showPassicon.Image = Properties.Resources.closed__eye; 
+                signinPASS__txtbox.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                isPassVisible2 = false;
+                signIn__showPassicon.Image = Properties.Resources.open__eye; 
+                signinPASS__txtbox.UseSystemPasswordChar = true; 
+            }
+        }
+
+
+        //placeholder 
         private void ResetInputField(KryptonTextBox textBox, string defaultText)
         {
             if (textBox.Text == defaultText)
@@ -84,183 +276,54 @@ namespace sprout__gradeBook
             }
         }
 
-        private void teacherLNAME__txtbox_Enter(object sender, EventArgs e)
+
+
+
+        private void signIn__btn_Click(object sender, EventArgs e)
         {
-            ResetInputField(teacherLNAME__txtbox, "Last Name");
-            lname__tooltip.Show();
+
         }
 
-        private void teacherLNAME__txtbox_Leave(object sender, EventArgs e)
+        private void signUp__btn_Click(object sender, EventArgs e)
         {
-            RestoreDefaultText(teacherLNAME__txtbox, "Last Name");
-            ToggleTooltip(teacherLNAME__txtbox,lname__tooltip, "Last Name");
-        }
+            string firstName = signupFNAME__txtbox.Text;
+            string lastName = signupLNAME__txtbox.Text;
+            string email = signupEMAIL__txtbox.Text;
+            string username = signupUNAME__txtbox.Text;
+            string password = signupPASS__txtbox.Text;
+            string confirmPassword = signupCPASS__txtbox.Text;
 
-        private void teacherEMAIL__txtbox_Enter(object sender, EventArgs e)
-        {
-            ResetInputField(teacherEMAIL__txtbox, "Email");
-            email__tooltip.Show();
-        }
-        private void teacherEMAIL__txtbox_Leave(object sender, EventArgs e)
-        {
-            RestoreDefaultText(teacherEMAIL__txtbox, "Email");
-            ToggleTooltip(teacherEMAIL__txtbox, email__tooltip, "Email");
-        }
-
-        private void teacherUNAME__txtbox_Enter(object sender, EventArgs e)
-        {
-            ResetInputField(teacherUNAME__txtbox, "Username");
-            uname__tooltip.Show();
-        }
-
-        private void teacherUNAME__txtbox_Leave(object sender, EventArgs e)
-        {
-            RestoreDefaultText(teacherUNAME__txtbox, "Username");
-            ToggleTooltip(teacherUNAME__txtbox, uname__tooltip, "Username");
-        }
-
-        private void teacherSCHOOL__txtbox_Enter(object sender, EventArgs e)
-        {
-            ResetInputField(teacherSCHOOL__txtbox, "School");
-            school__tooltip.Show();
-        }
-
-        private void teacherSCHOOL__txtbox_Leave(object sender, EventArgs e)
-        {
-            RestoreDefaultText(teacherSCHOOL__txtbox, "School");
-            ToggleTooltip(teacherSCHOOL__txtbox,school__tooltip, "School");
-        }
-
-        private void teacherPASS__txtbox_Enter(object sender, EventArgs e)
-        {
-            ResetInputField(teacherPASS__txtbox, "Password");
-            pass__tooltip.Show();
-
-            teacherPASS__txtbox.UseSystemPasswordChar = true;
-        }
-
-        private void teacherPASS__txtbox_Leave(object sender, EventArgs e)
-        {
-            RestoreDefaultText(teacherPASS__txtbox, "Password");
-            ToggleTooltip(teacherPASS__txtbox, pass__tooltip, "Password");
-
-            if(teacherPASS__txtbox.Text == "Password")
+            if (password != confirmPassword)
             {
-                teacherPASS__txtbox.UseSystemPasswordChar = false;
+                MessageBox.Show("Passwords do not match.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-        }
 
-        private void teacherCPASS__txtbox_Enter(object sender, EventArgs e)
-        {
-            ResetInputField(teacherCPASS__txtbox, "Confirm Password");
-            cpass__tooltip.Show();
-            teacherCPASS__txtbox.UseSystemPasswordChar = true;
-        }
+            Users user;
 
-        private void teacherCPASS__txtbox_Leave(object sender, EventArgs e)
-        {
-            RestoreDefaultText(teacherCPASS__txtbox, "Confirm Password");
-            ToggleTooltip(teacherCPASS__txtbox, cpass__tooltip, "Confirm Password");
-
-            if (teacherCPASS__txtbox.Text == "Confirm Password")
+            if (role__form.selectedRole == "student")
             {
-                teacherCPASS__txtbox.UseSystemPasswordChar = false;
+                user = new Student(firstName, lastName, email, username, password);
             }
-        }
-
-        private void kryptonGroup1_Panel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        bool isPassVisible = false;
-
-        private void showPass__icon_Click(object sender, EventArgs e)
-        {
-   
-
-            if (!isPassVisible)
+            else if (role__form.selectedRole == "teacher")
             {
-                isPassVisible = true;
-                showPass__icon.Image = Properties.Resources.closed__eye; // Assuming closed__eye means the password is visible
-                teacherPASS__txtbox.UseSystemPasswordChar = false; // Show the password
+                user = new Teacher(firstName, lastName, email, username, password);
             }
             else
             {
-                isPassVisible = false;
-                showPass__icon.Image = Properties.Resources.open__eye; // Assuming open__eye means the password is hidden
-                teacherPASS__txtbox.UseSystemPasswordChar = true; // Hide the password
+                MessageBox.Show("Please select a role before signing up.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-        }
 
-        private void forgetPass__btn_MouseHover(object sender, EventArgs e)
-        {
-            forgetPass__btn.Image = Properties.Resources.Forgot_Your_Password_HOVER;
-        }
-
-        private void forgetPass__btn_MouseLeave(object sender, EventArgs e)
-        {
-            forgetPass__btn.Image = Properties.Resources.Forgot_Your_Password_;
-
-
-        }
-
-        private void signup__switchBTN_Click(object sender, EventArgs e)
-        {
-            teacherSIGNINform.Hide();
-            teacherSIGNUP__form.Show();
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            teacherSIGNINform.Show();
-            teacherSIGNUP__form.Hide();
-        }
-
-        private void signInEmail__txtbox_Enter(object sender, EventArgs e)
-        {
-            ResetInputField(signInEmail__txtbox, "Email");
-           signIn__EmailTooltip.Show();
-        }
-
-        private void signInEmail__txtbox_Leave(object sender, EventArgs e)
-        {
-            RestoreDefaultText(signInEmail__txtbox, "Email");
-            ToggleTooltip(signInEmail__txtbox, signIn__EmailTooltip, "Email");
-        }
-
-        private void signInPass__txtbox_Enter(object sender, EventArgs e)
-        {
-            ResetInputField(signInPass__txtbox, "Password");
-            signIn__PassTooltip.Show();
-            signInPass__txtbox.UseSystemPasswordChar = true;
-        }
-
-        private void signInPass__txtbox_Leave(object sender, EventArgs e)
-        {
-            RestoreDefaultText(signInPass__txtbox, "Password");
-            ToggleTooltip(signInPass__txtbox, signIn__EmailTooltip, "Password");
-
-            if(signInPass__txtbox.Text  == "Password")
+            try
             {
-                signInPass__txtbox.UseSystemPasswordChar = false;
+                AccountManager.SaveUser(user);
+                MessageBox.Show("Sign up successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Optionally, clear the textboxes or redirect to another form
             }
-           
-        }
-        bool isPassVisible2 = false;
-        private void signIn__showPassicon_Click(object sender, EventArgs e)
-        {
-            if (!isPassVisible2)
+            catch (Exception ex)
             {
-                isPassVisible2 = true;
-                signIn__showPassicon.Image = Properties.Resources.closed__eye; // Assuming closed__eye means the password is visible
-                signInPass__txtbox.UseSystemPasswordChar = false; // Show the password
-            }
-            else
-            {
-                isPassVisible2 = false;
-                signIn__showPassicon.Image = Properties.Resources.open__eye; // Assuming open__eye means the password is hidden
-                signInPass__txtbox.UseSystemPasswordChar = true; // Hide the password
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

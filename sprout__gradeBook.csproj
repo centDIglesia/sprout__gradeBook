@@ -77,6 +77,8 @@
     <Compile Include="teacher__signUp-form.Designer.cs">
       <DependentUpon>teacher__signUp-form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Users.cs" />
+    <Compile Include="AccountManager.cs" />
     <EmbeddedResource Include="custom__messageBox.resx">
       <DependentUpon>custom__messageBox.cs</DependentUpon>
     </EmbeddedResource>

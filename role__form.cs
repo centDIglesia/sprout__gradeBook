@@ -18,14 +18,9 @@ namespace sprout__gradeBook
             InitializeComponent();
         }
 
-        private void role__form_Load(object sender, EventArgs e)
-        {
-
-        }
-
         bool teacherClicked = false;
         bool studentClicked = false;
-        string selectedRole = "";
+        public static string selectedRole = "";
 
         private void teacher__role_Click(object sender, EventArgs e)
         {
@@ -33,7 +28,7 @@ namespace sprout__gradeBook
             {
                 teacher__role.Image = Properties.Resources.teacher__role_clicked;
                 teacherClicked = true;
-                 selectedRole = "teacher";
+                selectedRole = "teacher";
 
                 // Reset student button if it was clicked
                 if (studentClicked)
@@ -63,19 +58,16 @@ namespace sprout__gradeBook
 
         private void role__btn_Click(object sender, EventArgs e)
         {
-            if(selectedRole != "")
+
+            if (selectedRole != "")
             {
-               if(selectedRole == "teacher")
+                if (selectedRole == "teacher")
                 {
                     this.Hide();
-                    SSSSSSS teacher__SignUp_Form = new SSSSSSS();
+                    logInForm teacher__SignUp_Form = new logInForm();
                     teacher__SignUp_Form.Show();
 
                 }
-
-
-
-
 
             }
             else MessageBox.Show("Please choose a role before proceeding.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
