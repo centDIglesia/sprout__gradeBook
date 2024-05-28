@@ -67,14 +67,16 @@ namespace sprout__gradeBook
         //email
         private void signupEMAIL__txtbox_Leave(object sender, EventArgs e)
         {
-            ResetInputField(signupEMAIL__txtbox, "Email");
-            email__tooltip.Show();
+            RestoreDefaultText(signupEMAIL__txtbox, "Email");
+            ToggleTooltip(signupEMAIL__txtbox, email__tooltip, "Email");
         }
 
         private void signupEMAIL__txtbox_Enter(object sender, EventArgs e)
         {
-            RestoreDefaultText(signupEMAIL__txtbox, "Email");
-            ToggleTooltip(signupEMAIL__txtbox, email__tooltip, "Email");
+           
+
+            ResetInputField(signupEMAIL__txtbox, "Email");
+            email__tooltip.Show();
         }
 
         //user name
@@ -281,8 +283,31 @@ namespace sprout__gradeBook
 
         private void signIn__btn_Click(object sender, EventArgs e)
         {
+            string username = signinEMAIL__txtbox.Text; 
+            string password = signinPASS__txtbox.Text;
 
+            
+            try
+            {
+                string folderPath = role__form.selectedRole == "student" ? "studentCredentials" : "teacherCredentials";
+                bool isValid = AccountManager.AuthenticateUser(username, password, folderPath);
+                if (isValid)
+                {
+                    MessageBox.Show("Sign in successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   
+                }
+                else
+                {
+                    MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
 
         private void signUp__btn_Click(object sender, EventArgs e)
         {
@@ -319,7 +344,7 @@ namespace sprout__gradeBook
             {
                 AccountManager.SaveUser(user);
                 MessageBox.Show("Sign up successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                // Optionally, clear the textboxes or redirect to another form
+               
             }
             catch (Exception ex)
             {

@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace sprout__gradeBook
 {
     public static class AccountManager
     {
-
         public static void SaveUser(Users user)
         {
             string folderPath = user.GetFolder();
@@ -34,7 +31,7 @@ namespace sprout__gradeBook
                 writer.WriteLine($"Last Name: {user.LastName}");
                 writer.WriteLine($"Email: {user.Email}");
                 writer.WriteLine($"Username: {user.Username}");
-                writer.WriteLine($"Password: {user.Password}");
+                writer.WriteLine($"Password: {HashPassword(user.Password)}"); // Hash the password before saving
             }
         }
 
@@ -44,7 +41,51 @@ namespace sprout__gradeBook
             return File.Exists(filePath);
         }
 
+        public static bool AuthenticateUser(string username, string password, string folderPath)
+        {
+            string filePath = Path.Combine(folderPath, $"{username}.txt");
+
+            // Check if the file exists
+            if (!File.Exists(filePath))
+            {
+                // User not found
+                return false;
+            }
+
+            // Read user credentials from the file
+            string storedPassword = "";
+            using (StreamReader reader = new StreamReader(filePath))
+            {
+                while (!reader.EndOfStream)
+                {
+                    string line = reader.ReadLine();
+                    if (line.StartsWith("Password:"))
+                    {
+                        storedPassword = line.Substring("Password:".Length).Trim();
+                        break;
+                    }
+                }
+            }
+
+            // Hash the input password and compare with the stored hashed password
+            string hashedInputPassword = HashPassword(password);
+            return storedPassword == hashedInputPassword;
+        }
 
 
+        private static string HashPassword(string password)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
+                StringBuilder builder = new StringBuilder();
+
+                foreach (byte b in bytes)
+                {
+                    builder.Append(b.ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
     }
 }
