@@ -63,7 +63,9 @@
             this.signinEMAIL__txtbox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.signup__switchBTN = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.back__btn = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.close_btn = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.teacherSIGNUP__form)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teacherSIGNUP__form.Panel)).BeginInit();
             this.teacherSIGNUP__form.Panel.SuspendLayout();
@@ -81,7 +83,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.signIn__showPassicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.signup__switchBTN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.back__btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.close_btn)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette2
@@ -542,9 +546,9 @@
             this.signIn__EmailTooltip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.signIn__EmailTooltip.Location = new System.Drawing.Point(51, 136);
             this.signIn__EmailTooltip.Name = "signIn__EmailTooltip";
-            this.signIn__EmailTooltip.Size = new System.Drawing.Size(47, 22);
+            this.signIn__EmailTooltip.Size = new System.Drawing.Size(79, 22);
             this.signIn__EmailTooltip.TabIndex = 13;
-            this.signIn__EmailTooltip.Text = "Email";
+            this.signIn__EmailTooltip.Text = "Username";
             // 
             // signIn__btn
             // 
@@ -596,7 +600,7 @@
             this.signinEMAIL__txtbox.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signinEMAIL__txtbox.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10);
             this.signinEMAIL__txtbox.TabIndex = 4;
-            this.signinEMAIL__txtbox.Text = "Email";
+            this.signinEMAIL__txtbox.Text = "Username";
             this.signinEMAIL__txtbox.Enter += new System.EventHandler(this.signInEmail__txtbox_Enter);
             this.signinEMAIL__txtbox.Leave += new System.EventHandler(this.signInEmail__txtbox_Leave);
             // 
@@ -623,14 +627,38 @@
             this.pictureBox11.TabIndex = 0;
             this.pictureBox11.TabStop = false;
             // 
+            // back__btn
+            // 
+            this.back__btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.back__btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("back__btn.BackgroundImage")));
+            this.back__btn.Image = ((System.Drawing.Image)(resources.GetObject("back__btn.Image")));
+            this.back__btn.Location = new System.Drawing.Point(17, 14);
+            this.back__btn.Name = "back__btn";
+            this.back__btn.Size = new System.Drawing.Size(24, 24);
+            this.back__btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.back__btn.TabIndex = 25;
+            this.back__btn.TabStop = false;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-1, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(643, 711);
             this.pictureBox2.TabIndex = 22;
             this.pictureBox2.TabStop = false;
+            // 
+            // close_btn
+            // 
+            this.close_btn.BackColor = System.Drawing.Color.Transparent;
+            this.close_btn.Image = ((System.Drawing.Image)(resources.GetObject("close_btn.Image")));
+            this.close_btn.Location = new System.Drawing.Point(1111, 14);
+            this.close_btn.Name = "close_btn";
+            this.close_btn.Size = new System.Drawing.Size(24, 24);
+            this.close_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.close_btn.TabIndex = 26;
+            this.close_btn.TabStop = false;
+            this.close_btn.Click += new System.EventHandler(this.close_btn_Click);
             // 
             // logInForm
             // 
@@ -638,6 +666,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1147, 711);
+            this.Controls.Add(this.close_btn);
+            this.Controls.Add(this.back__btn);
             this.Controls.Add(this.teacherSIGNINform);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.teacherSIGNUP__form);
@@ -667,7 +697,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.signIn__showPassicon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.signup__switchBTN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.back__btn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.close_btn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -708,5 +740,7 @@
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.PictureBox forgetPass__btn;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox back__btn;
+        private System.Windows.Forms.PictureBox close_btn;
     }
 }

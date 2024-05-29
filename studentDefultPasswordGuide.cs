@@ -11,16 +11,21 @@ using ComponentFactory.Krypton.Toolkit;
 
 namespace sprout__gradeBook
 {
-    public partial class custom__messageBox : KryptonForm
+    public partial class studentDefultPasswordGuide : KryptonForm
     {
-        public custom__messageBox()
+        public studentDefultPasswordGuide()
         {
             InitializeComponent();
         }
 
-        private void custom__messageBox_Load(object sender, EventArgs e)
+        private void studentDefultPasswordGuide_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void role__btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

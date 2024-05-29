@@ -28,7 +28,8 @@ namespace sprout__gradeBook
 
     public class Student : Users
     {
-        public Student(string firstName, string lastName, string email, string username, string password)
+        public int studentNumber { get; set; }
+        public Student(string firstName, string lastName, string email, string username, string password,int studentNumber)
             : base(firstName, lastName, email, username, password) { }
 
         public override string GetFolder()

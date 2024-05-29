@@ -13,6 +13,7 @@ namespace sprout__gradeBook
 {
     public partial class logInForm : KryptonForm
     {
+        bool areInputsValid = false;
         public logInForm()
         {
             InitializeComponent();
@@ -34,113 +35,274 @@ namespace sprout__gradeBook
         }
         //sign up form
         //first name
-
-     
-
         private void signupFNAME__txtbox_Enter(object sender, EventArgs e)
         {
-            ResetInputField(signupFNAME__txtbox, "First Name");
+            UserInput_Manager.ResetInputField(signupFNAME__txtbox, "First Name");
             fname__tooltip.Show();
         }
 
         private void signupFNAME__txtbox_Leave(object sender, EventArgs e)
         {
-            RestoreDefaultText(signupFNAME__txtbox, "First Name");
-            ToggleTooltip(signupFNAME__txtbox, fname__tooltip, "First Name");
+            UserInput_Manager.RestoreDefaultText(signupFNAME__txtbox, "First Name");
+            UserInput_Manager.ToggleTooltip(signupFNAME__txtbox, fname__tooltip, "First Name");
+            string firstName = signupFNAME__txtbox.Text;
+
+            if (signupFNAME__txtbox.Text != "First Name")
+            {
+                if (!UserInput__Validator.ValidateAlphabetic(firstName))
+                {
+                    MessageBox.Show("Numbers are not allowed in this field. Please enter only letters.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    setInputState(signupFNAME__txtbox, fname__tooltip, Color.Red);
+                    signupFNAME__txtbox.Focus();
+                    signupFNAME__txtbox.Clear();
+
+                }
+
+                else if (!UserInput__Validator.ValidateLenght(firstName, 1, 20))
+                {
+                    MessageBox.Show("The input length must be between 1 and 20 characters.", "Invalid Length", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    setInputState(signupFNAME__txtbox, fname__tooltip, Color.Red);
+                    signupFNAME__txtbox.Focus();
+                    signupFNAME__txtbox.Clear();
+                }
+                else
+                    setInputState(signupFNAME__txtbox, fname__tooltip, CustomColor.mainColor);
+
+
+            }
+
+            areInputsValid = true;
+
+
         }
 
         //last name
-    
+
         private void signupLNAME__txtbox_Enter(object sender, EventArgs e)
         {
-            ResetInputField(signupLNAME__txtbox, "Last Name");
+            UserInput_Manager.ResetInputField(signupLNAME__txtbox, "Last Name");
             lname__tooltip.Show();
         }
 
         private void signupLNAME__txtbox_Leave(object sender, EventArgs e)
         {
-            RestoreDefaultText(signupLNAME__txtbox, "Last Name");
-            ToggleTooltip(signupLNAME__txtbox, lname__tooltip, "Last Name");
+            UserInput_Manager.RestoreDefaultText(signupLNAME__txtbox, "Last Name");
+            UserInput_Manager.ToggleTooltip(signupLNAME__txtbox, lname__tooltip, "Last Name");
+            string lastName = signupLNAME__txtbox.Text;
+            if (signupLNAME__txtbox.Text != "Last Name")
+            {
+                if (!UserInput__Validator.ValidateAlphabetic(lastName))
+                {
+                    MessageBox.Show("Numbers are not allowed in this field. Please enter only letters.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    setInputState(signupLNAME__txtbox, fname__tooltip, Color.Red);
+                    signupLNAME__txtbox.Focus();
+                    signupLNAME__txtbox.Clear();
+                }
+
+                else if (!UserInput__Validator.ValidateLenght(lastName, 1, 20))
+                {
+                    MessageBox.Show("The input length must be between 1 and 20 characters.", "Invalid Length", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    setInputState(signupLNAME__txtbox, lname__tooltip, Color.Red);
+                    signupLNAME__txtbox.Focus();
+                    signupLNAME__txtbox.Clear();
+                }
+                else
+                    setInputState(signupLNAME__txtbox, lname__tooltip, CustomColor.mainColor);
+
+            }
+
+            areInputsValid = true;
+
         }
 
 
         //email
         private void signupEMAIL__txtbox_Leave(object sender, EventArgs e)
         {
-            RestoreDefaultText(signupEMAIL__txtbox, "Email");
-            ToggleTooltip(signupEMAIL__txtbox, email__tooltip, "Email");
+            UserInput_Manager.RestoreDefaultText(signupEMAIL__txtbox, "Email");
+            UserInput_Manager.ToggleTooltip(signupEMAIL__txtbox, email__tooltip, "Email");
+
+            if (signupEMAIL__txtbox.Text != "Email")
+            {
+
+                if (!UserInput__Validator.ValidateEmail(signupEMAIL__txtbox.Text))
+                {
+                    signupEMAIL__txtbox.StateCommon.Border.Color1 = Color.Red;
+                    signupEMAIL__txtbox.StateCommon.Content.Color1 = Color.Red;
+                    email__tooltip.ForeColor = Color.Red;
+
+                    MessageBox.Show("Please enter a valid email address in the format: example@gmail.com.", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    signupEMAIL__txtbox.Focus();
+
+
+                }
+
+                else if (!UserInput__Validator.ValidateLenght(signupEMAIL__txtbox.Text, 12, 25))
+                {
+                    MessageBox.Show("The input length must be between 12 and 25 characters.", "Invalid Length", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    setInputState(signupEMAIL__txtbox, email__tooltip, Color.Red);
+                    signupEMAIL__txtbox.Focus();
+                }
+
+                else
+                    setInputState(signupEMAIL__txtbox, email__tooltip, CustomColor.mainColor);
+
+
+            }
+            areInputsValid = true;
         }
 
         private void signupEMAIL__txtbox_Enter(object sender, EventArgs e)
         {
-           
 
-            ResetInputField(signupEMAIL__txtbox, "Email");
+
+            UserInput_Manager.ResetInputField(signupEMAIL__txtbox, "Email");
             email__tooltip.Show();
+
+
         }
 
         //user name
         private void signupUNAME__txtbox_Enter(object sender, EventArgs e)
         {
-            ResetInputField(signupUNAME__txtbox, "Username");
+            UserInput_Manager.ResetInputField(signupUNAME__txtbox, "Username");
             uname__tooltip.Show();
         }
         private void signupUNAME__txtbox_Leave(object sender, EventArgs e)
         {
             string folderPath = role__form.selectedRole == "student" ? "studentCredentials" : "teacherCredentials";
 
-            RestoreDefaultText(signupUNAME__txtbox, "Username");
-            ToggleTooltip(signupUNAME__txtbox, uname__tooltip, "Username");
+            UserInput_Manager.RestoreDefaultText(signupUNAME__txtbox, "Username");
+            UserInput_Manager.ToggleTooltip(signupUNAME__txtbox, uname__tooltip, "Username");
 
-            if (!string.IsNullOrWhiteSpace(signupUNAME__txtbox.Text) && signupUNAME__txtbox.Text != "Username")
+            if (signupUNAME__txtbox.Text != "Username")
             {
-                bool usernameExists = AccountManager.UsernameExists(signupUNAME__txtbox.Text, folderPath);
+                bool usernameExists = Account__Manager.UsernameExists(signupUNAME__txtbox.Text, folderPath);
                 if (usernameExists)
                 {
+
+
+                    setInputState(signupUNAME__txtbox, uname__tooltip, Color.Red);
                     MessageBox.Show("Username already exists. Please choose a different username.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    signupUNAME__txtbox.Clear();
                     signupUNAME__txtbox.Focus();
                 }
+                else
+                {
+                    setInputState(signupUNAME__txtbox, uname__tooltip, CustomColor.mainColor);
+
+                }
             }
+            areInputsValid = true;
         }
 
 
         //school
         private void signupSCHOOL__txtbox_Enter(object sender, EventArgs e)
         {
-            ResetInputField(signupSCHOOL__txtbox, "School");
+            UserInput_Manager.ResetInputField(signupSCHOOL__txtbox, "School");
             school__tooltip.Show();
         }
 
         private void signupSCHOOL__txtbox_Leave(object sender, EventArgs e)
         {
-            RestoreDefaultText(signupSCHOOL__txtbox, "School");
-            ToggleTooltip(signupSCHOOL__txtbox, school__tooltip, "School");
+            UserInput_Manager.RestoreDefaultText(signupSCHOOL__txtbox, "School");
+            UserInput_Manager.ToggleTooltip(signupSCHOOL__txtbox, school__tooltip, "School");
+
+            if (signupSCHOOL__txtbox.Text != "School")
+            {
+                if (!UserInput__Validator.ValidateLenght(signupSCHOOL__txtbox.Text, 0, 10))
+                {
+                    setInputState(signupSCHOOL__txtbox, school__tooltip, Color.Red);
+
+                    signupSCHOOL__txtbox.Focus();
+                    MessageBox.Show("The school name must be between 1 and 10 characters long only. Please enter a valid school name.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    setInputState(signupSCHOOL__txtbox, school__tooltip, CustomColor.mainColor);
+
+                }
+            }
+            areInputsValid = true;
+
         }
 
         //password
         private void signupPASS__txtbox_Enter(object sender, EventArgs e)
         {
-            ResetInputField(signupPASS__txtbox, "Password");
+            UserInput_Manager.ResetInputField(signupPASS__txtbox, "Password");
             pass__tooltip.Show();
         }
 
         private void signupPASS__txtbox_Leave(object sender, EventArgs e)
         {
-            RestoreDefaultText(signupPASS__txtbox, "Password");
-            ToggleTooltip(signupPASS__txtbox, pass__tooltip, "Password");
+            UserInput_Manager.RestoreDefaultText(signupPASS__txtbox, "Password");
+            UserInput_Manager.ToggleTooltip(signupPASS__txtbox, pass__tooltip, "Password");
+
+
+            string password = signupPASS__txtbox.Text;
+
+            if (signupPASS__txtbox.Text != "Password")
+            {
+                if (!UserInput__Validator.ValidatePassword(password))
+                {
+                    setInputState(signupPASS__txtbox, pass__tooltip, Color.Red);
+                    MessageBox.Show(@"Password must be between 8 and 20 characters long.
+contain at least one lowercase letter.
+one uppercase letter, and one digit.", "Invalid Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    signupPASS__txtbox.Focus();
+                }
+                else
+                {
+
+                    setInputState(signupPASS__txtbox, pass__tooltip, CustomColor.mainColor);
+                }
+            }
+            areInputsValid = true;
+
+
         }
 
         //confirm password
         private void signupCPASS__txtbox_Enter(object sender, EventArgs e)
         {
-            ResetInputField(signupCPASS__txtbox, "Confirm Password");
+            UserInput_Manager.ResetInputField(signupCPASS__txtbox, "Confirm Password");
             cpass__tooltip.Show();
+
+            signupCPASS__txtbox.UseSystemPasswordChar = true;
         }
 
         private void signupCPASS__txtbox_Leave(object sender, EventArgs e)
         {
-            RestoreDefaultText(signupCPASS__txtbox, "Confirm Password");
-            ToggleTooltip(signupCPASS__txtbox, cpass__tooltip, "Confirm Password");
+            UserInput_Manager.RestoreDefaultText(signupCPASS__txtbox, "Confirm Password");
+            UserInput_Manager.ToggleTooltip(signupCPASS__txtbox, cpass__tooltip, "Confirm Password");
+
+            if (signupCPASS__txtbox.Text != "Confirm Password")
+            {
+                signupCPASS__txtbox.UseSystemPasswordChar = true;
+
+                if (signupPASS__txtbox.Text != signupCPASS__txtbox.Text)
+                {
+                    signupCPASS__txtbox.StateCommon.Border.Color1 = Color.Red;
+                    cpass__tooltip.ForeColor = Color.Red;
+                    MessageBox.Show("Passwords do not match.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    signupCPASS__txtbox.StateCommon.Border.Color1 = CustomColor.mainColor;
+                    cpass__tooltip.ForeColor = CustomColor.mainColor;
+                }
+            }
+            else
+            {
+                signupCPASS__txtbox.UseSystemPasswordChar = false;
+
+            }
+
+            areInputsValid = true;
         }
 
 
@@ -176,34 +338,34 @@ namespace sprout__gradeBook
         //email
         private void signInEmail__txtbox_Enter(object sender, EventArgs e)
         {
-            ResetInputField(signinEMAIL__txtbox, "Email");
-           signIn__EmailTooltip.Show();
+            UserInput_Manager.ResetInputField(signinEMAIL__txtbox, "Username");
+            signIn__EmailTooltip.Show();
         }
 
         private void signInEmail__txtbox_Leave(object sender, EventArgs e)
         {
-            RestoreDefaultText(signinEMAIL__txtbox, "Email");
-            ToggleTooltip(signinEMAIL__txtbox, signIn__EmailTooltip, "Email");
+            UserInput_Manager.RestoreDefaultText(signinEMAIL__txtbox, "Username");
+            UserInput_Manager.ToggleTooltip(signinEMAIL__txtbox, signIn__EmailTooltip, "Username");
         }
 
         //password
         private void signInPass__txtbox_Enter(object sender, EventArgs e)
         {
-            ResetInputField(signinPASS__txtbox, "Password");
+            UserInput_Manager.ResetInputField(signinPASS__txtbox, "Password");
             signIn__PassTooltip.Show();
             signinPASS__txtbox.UseSystemPasswordChar = true;
         }
 
         private void signInPass__txtbox_Leave(object sender, EventArgs e)
         {
-            RestoreDefaultText(signinPASS__txtbox, "Password");
-            ToggleTooltip(signinPASS__txtbox, signIn__EmailTooltip, "Password");
+            UserInput_Manager.RestoreDefaultText(signinPASS__txtbox, "Password");
+            UserInput_Manager.ToggleTooltip(signinPASS__txtbox, signIn__EmailTooltip, "Password");
 
-            if(signinPASS__txtbox.Text  == "Password")
+            if (signinPASS__txtbox.Text == "Password")
             {
                 signinPASS__txtbox.UseSystemPasswordChar = false;
             }
-           
+
         }
 
         //sign up show password icon fuction
@@ -216,14 +378,14 @@ namespace sprout__gradeBook
             if (!isPassVisible)
             {
                 isPassVisible = true;
-                showPass__icon.Image = Properties.Resources.closed__eye; 
-                signupPASS__txtbox.UseSystemPasswordChar = false; // Show the password
+                showPass__icon.Image = Properties.Resources.closed__eye;
+                signupPASS__txtbox.UseSystemPasswordChar = false;
             }
             else
             {
                 isPassVisible = false;
-                showPass__icon.Image = Properties.Resources.open__eye; // Assuming open__eye means the password is hidden
-                signupPASS__txtbox.UseSystemPasswordChar = true; // Hide the password
+                showPass__icon.Image = Properties.Resources.open__eye;
+                signupPASS__txtbox.UseSystemPasswordChar = true;
             }
         }
 
@@ -234,47 +396,14 @@ namespace sprout__gradeBook
             if (!isPassVisible2)
             {
                 isPassVisible2 = true;
-                signIn__showPassicon.Image = Properties.Resources.closed__eye; 
+                signIn__showPassicon.Image = Properties.Resources.closed__eye;
                 signinPASS__txtbox.UseSystemPasswordChar = false;
             }
             else
             {
                 isPassVisible2 = false;
-                signIn__showPassicon.Image = Properties.Resources.open__eye; 
-                signinPASS__txtbox.UseSystemPasswordChar = true; 
-            }
-        }
-
-
-        //placeholder 
-        private void ResetInputField(KryptonTextBox textBox, string defaultText)
-        {
-            if (textBox.Text == defaultText)
-            {
-                textBox.Text = "";
-                textBox.StateCommon.Content.Color1 = CustomColor.mainColor;
-            }
-        }
-
-        private void RestoreDefaultText(KryptonTextBox textBox, string defaultText)
-        {
-            if (textBox.Text == "")
-            {
-                textBox.Text = defaultText;
-                textBox.StateCommon.Content.Color1 = CustomColor.lightColor;
-            }
-        }
-
-        //Tooltip
-        private void ToggleTooltip(KryptonTextBox textBox, Label tooltip, string defaultText)
-        {
-            if (textBox.Text != defaultText)
-            {
-                tooltip.Show();
-            }
-            else
-            {
-                tooltip.Hide();
+                signIn__showPassicon.Image = Properties.Resources.open__eye;
+                signinPASS__txtbox.UseSystemPasswordChar = true;
             }
         }
 
@@ -283,18 +412,18 @@ namespace sprout__gradeBook
 
         private void signIn__btn_Click(object sender, EventArgs e)
         {
-            string username = signinEMAIL__txtbox.Text; 
+            string username = signinEMAIL__txtbox.Text;
             string password = signinPASS__txtbox.Text;
 
-            
+
             try
             {
-                string folderPath = role__form.selectedRole == "student" ? "studentCredentials" : "teacherCredentials";
-                bool isValid = AccountManager.AuthenticateUser(username, password, folderPath);
+                string folderPath = "teacherCredentials";
+                bool isValid = Account__Manager.AuthenticateTeacherLogIn(username, password, folderPath);
                 if (isValid)
                 {
                     MessageBox.Show("Sign in successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                   
+
                 }
                 else
                 {
@@ -303,7 +432,7 @@ namespace sprout__gradeBook
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "No account yet, please ask your teacher.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -311,45 +440,50 @@ namespace sprout__gradeBook
 
         private void signUp__btn_Click(object sender, EventArgs e)
         {
-            string firstName = signupFNAME__txtbox.Text;
-            string lastName = signupLNAME__txtbox.Text;
-            string email = signupEMAIL__txtbox.Text;
-            string username = signupUNAME__txtbox.Text;
-            string password = signupPASS__txtbox.Text;
-            string confirmPassword = signupCPASS__txtbox.Text;
-
-            if (password != confirmPassword)
+            if (areInputsValid)
             {
-                MessageBox.Show("Passwords do not match.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+                string firstName = UserInput__Validator.trimInput(signupFNAME__txtbox.Text);
+                string lastName = UserInput__Validator.trimInput(signupLNAME__txtbox.Text);
+                string email = UserInput__Validator.trimInput(signupEMAIL__txtbox.Text);
+                string username = UserInput__Validator.trimInput(signupUNAME__txtbox.Text);
+                string password = UserInput__Validator.trimInput(signupPASS__txtbox.Text);
+                string confirmPassword = UserInput__Validator.trimInput(signupCPASS__txtbox.Text);
 
-            Users user;
 
-            if (role__form.selectedRole == "student")
-            {
-                user = new Student(firstName, lastName, email, username, password);
-            }
-            else if (role__form.selectedRole == "teacher")
-            {
-                user = new Teacher(firstName, lastName, email, username, password);
+                Users newTeacher = new Teacher(firstName, lastName, email, username, password);
+
+
+                Account__Manager.SaveUser(newTeacher);
+                MessageBox.Show("Sign up successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                teacherSIGNINform.Show();
+                teacherSIGNUP__form.Hide();
             }
             else
+                MessageBox.Show("Please make sure to fill out all required fields before proceeding.", "Incomplete Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+
+
+        }
+
+        private void close_btn_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+
+            if (result == DialogResult.No)
             {
-                MessageBox.Show("Please select a role before signing up.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            try
-            {
-                AccountManager.SaveUser(user);
-                MessageBox.Show("Sign up successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-               
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            else Application.Exit();
         }
+
+        private void setInputState(KryptonTextBox textBox, Label tooltipLabel, Color color)
+        {
+            textBox.StateCommon.Border.Color1 = color;
+            textBox.StateCommon.Content.Color1 = color;
+            tooltipLabel.ForeColor = color;
+        }
+
+
     }
 }

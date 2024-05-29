@@ -18,7 +18,7 @@ namespace sprout__gradeBook
             InitializeComponent();
         }
 
-        bool teacherClicked = false;
+        bool teacherClicked = false;//true
         bool studentClicked = false;
         public static string selectedRole = "";
 
@@ -61,11 +61,20 @@ namespace sprout__gradeBook
 
             if (selectedRole != "")
             {
-               
+                if (selectedRole == "student")
+                {
+                    this.Hide();
+                   studentLoginForm stdForm = new studentLoginForm();
+                    stdForm.Show();
+                }
+
+                if(selectedRole == "teacher")
+                {
                     this.Hide();
                     logInForm SignUp_Form = new logInForm();
                     SignUp_Form.Show();
-
+                }
+                    
 
             }
             else MessageBox.Show("Please choose a role before proceeding.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -74,7 +83,14 @@ namespace sprout__gradeBook
 
         private void close_btn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+            else Application.Exit();
         }
     }
 }

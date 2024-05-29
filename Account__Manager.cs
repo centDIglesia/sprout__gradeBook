@@ -2,22 +2,24 @@
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using System.Windows.Forms;
 
 namespace sprout__gradeBook
 {
-    public static class AccountManager
+    public static class Account__Manager
     {
+
+        //for saving teacherss information from sign up
         public static void SaveUser(Users user)
         {
             string folderPath = user.GetFolder();
 
-            // Ensure the directory exists
+          
             if (!Directory.Exists(folderPath))
             {
                 Directory.CreateDirectory(folderPath);
             }
 
-            // Check if the username already exists
             if (UsernameExists(user.Username, folderPath))
             {
                 throw new Exception("Username already exists. Please choose a different username.");
@@ -35,24 +37,26 @@ namespace sprout__gradeBook
             }
         }
 
+        //check if username exist
         public static bool UsernameExists(string username, string folderPath)
         {
             string filePath = Path.Combine(folderPath, $"{username}.txt");
             return File.Exists(filePath);
         }
 
-        public static bool AuthenticateUser(string username, string password, string folderPath)
+
+        //use to authenticate teachers log in credentials | username and Password |
+        public static bool AuthenticateTeacherLogIn(string username, string password, string folderPath)
         {
             string filePath = Path.Combine(folderPath, $"{username}.txt");
 
-            // Check if the file exists
+          
             if (!File.Exists(filePath))
             {
-                // User not found
                 return false;
             }
 
-            // Read user credentials from the file
+           
             string storedPassword = "";
             using (StreamReader reader = new StreamReader(filePath))
             {
@@ -67,12 +71,58 @@ namespace sprout__gradeBook
                 }
             }
 
-            // Hash the input password and compare with the stored hashed password
+           
             string hashedInputPassword = HashPassword(password);
             return storedPassword == hashedInputPassword;
         }
 
 
+        //use to authenticate student log in credentials | student ID and Password |
+        public static bool AuthenticateStudentLogIn(string studentId, string password, string folderPath)
+        {
+             if (!File.Exists(folderPath))
+            {
+                return false;
+            }
+          
+            foreach (var filePath in Directory.GetFiles(folderPath, "*.txt"))
+            {
+                string storedPassword = "";
+                bool studentIdFound = false;
+
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    while (!reader.EndOfStream)
+                    {
+                        string line = reader.ReadLine();
+                        if (line.StartsWith("Student ID:"))
+                        {
+                            string fileStudentId = line.Substring("Student ID:".Length).Trim();
+                            if (fileStudentId == studentId)
+                            {
+                                studentIdFound = true;
+                            }
+                        }
+
+                        if (line.StartsWith("Password:"))
+                        {
+                            storedPassword = line.Substring("Password:".Length).Trim();
+                        }
+                    }
+                }
+
+                if (studentIdFound)
+                {
+                    string hashedInputPassword = HashPassword(password);
+                    return storedPassword == hashedInputPassword;
+                }
+            }
+
+          
+            return false;
+        }
+
+        //function for hashing pssword
         private static string HashPassword(string password)
         {
             using (SHA256 sha256Hash = SHA256.Create())
