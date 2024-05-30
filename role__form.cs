@@ -24,6 +24,7 @@ namespace sprout__gradeBook
 
         private void teacher__role_Click(object sender, EventArgs e)
         {
+            role__btn.Show();
             if (!teacherClicked)
             {
                 teacher__role.Image = Properties.Resources.teacher__role_clicked;
@@ -41,6 +42,7 @@ namespace sprout__gradeBook
 
         private void student__role_Click(object sender, EventArgs e)
         {
+            role__btn.Show();
             if (!studentClicked)
             {
                 student__role.Image = Properties.Resources.student__role_clicked;
@@ -59,25 +61,23 @@ namespace sprout__gradeBook
         private void role__btn_Click(object sender, EventArgs e)
         {
 
-            if (selectedRole != "")
+
+            if (selectedRole == "student")
             {
-                if (selectedRole == "student")
-                {
-                    this.Hide();
-                    studentLoginForm stdForm = new studentLoginForm();
-                    stdForm.Show();
-                }
-
-                if (selectedRole == "teacher")
-                {
-                    this.Hide();
-                    logInForm SignUp_Form = new logInForm();
-                    SignUp_Form.Show();
-                }
-
-
+                this.Hide();
+                studentLoginForm stdForm = new studentLoginForm();
+                stdForm.Show();
             }
-            else MessageBox.Show("Please choose a role before proceeding.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            if (selectedRole == "teacher")
+            {
+                this.Hide();
+                logInForm SignUp_Form = new logInForm();
+                SignUp_Form.Show();
+            }
+
+
+
 
         }
 
@@ -96,6 +96,11 @@ namespace sprout__gradeBook
         private void back__btn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void role__form_Load(object sender, EventArgs e)
+        {
+            role__btn.Hide();
         }
     }
 }
