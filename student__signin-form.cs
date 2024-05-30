@@ -39,6 +39,7 @@ namespace sprout__gradeBook
 
         private void signinPASS__txtbox_Enter(object sender, EventArgs e)
         {
+            signinPASS__txtbox.UseSystemPasswordChar = true;
             UserInput_Manager.ResetInputField(signinPASS__txtbox, "Password");
             signIn__PassTooltip.Show();
         }
@@ -86,36 +87,61 @@ namespace sprout__gradeBook
         {
             string usernameOrId = signinSTID__txtbox.Text;
             string password = signinPASS__txtbox.Text;
-            string folderPath = "studentCredentials";
 
 
-            bool isValid = false;
-
-           
-            isValid = Account__Manager.AuthenticateStudentLogIn(usernameOrId, password, folderPath);
-            
-        
-
-            if (isValid)
+            if (usernameOrId == "Student Number" || password == "Password")
             {
-                MessageBox.Show("Sign in successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please fill out all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                if (usernameOrId == "Student Number")
+                {
+                    signinSTID__txtbox.Focus();
+                }
+                else if (password == "Password")
+                {
+                    signinPASS__txtbox.Focus();
+                }
+
+                return;
+
+            }
+
+            string folderPath = "studentCredentials";
+            string fullPath = Path.Combine(folderPath, usernameOrId + ".txt");
+            bool isExist = File.Exists(fullPath);
+
+            if (isExist)
+            {
+                bool isValid = Account__Manager.AuthenticateStudentLogIn(usernameOrId, password, folderPath);
+
+                if (isValid)
+                {
+                    MessageBox.Show("Sign in successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Password is incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("Password is incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("The student account you entered does not exist.\n" +
+                                "Please check your username or ID and try again. \n\n" +
+                                "If you do not have an account, please contact your teacher for assistance.",
+                                "Account Not Found",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
             }
-
-
-
-
-
         }
+
+
+
 
         private void close_btn_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-          
+
             if (result == DialogResult.No)
             {
                 return;

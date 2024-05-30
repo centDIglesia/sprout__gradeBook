@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,11 +15,7 @@ namespace sprout__gradeBook
 {
     public partial class logInForm : KryptonForm
     {
-        //signUp inputs
-        bool areInputsValid = false;
 
-        //signIn inputs
-        bool areInputsValidinSignIn = false;
         public logInForm()
         {
             InitializeComponent();
@@ -76,7 +73,7 @@ namespace sprout__gradeBook
 
             }
 
-            areInputsValid = true;
+
 
 
         }
@@ -116,7 +113,6 @@ namespace sprout__gradeBook
 
             }
 
-            areInputsValid = true;
 
         }
 
@@ -155,7 +151,7 @@ namespace sprout__gradeBook
 
 
             }
-            areInputsValid = true;
+
         }
 
         private void signupEMAIL__txtbox_Enter(object sender, EventArgs e)
@@ -199,7 +195,7 @@ namespace sprout__gradeBook
 
                 }
             }
-            areInputsValid = true;
+
         }
 
 
@@ -230,7 +226,6 @@ namespace sprout__gradeBook
 
                 }
             }
-            areInputsValid = true;
 
         }
 
@@ -286,7 +281,7 @@ namespace sprout__gradeBook
                 setInputState(signupPASS__txtbox, pass__tooltip, CustomColor.mainColor);
 
             }
-            areInputsValid = true;
+
 
 
         }
@@ -328,7 +323,7 @@ namespace sprout__gradeBook
 
             }
 
-            areInputsValid = true;
+
         }
 
 
@@ -382,7 +377,9 @@ namespace sprout__gradeBook
                     MessageBox.Show("Username must be between 1 and 20 characters long only.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-             areInputsValidinSignIn = true;
+
+
+
         }
 
         //password
@@ -395,6 +392,7 @@ namespace sprout__gradeBook
 
         private void signInPass__txtbox_Leave(object sender, EventArgs e)
         {
+
             UserInput_Manager.RestoreDefaultText(signinPASS__txtbox, "Password");
             UserInput_Manager.ToggleTooltip(signinPASS__txtbox, signIn__PassTooltip, "Password");
             string password = signinPASS__txtbox.Text;
@@ -411,12 +409,157 @@ namespace sprout__gradeBook
                     MessageBox.Show("Password must be between 1 and 20 characters long only.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-           
-            areInputsValidinSignIn = true;
+
+
 
         }
 
+
+
+
+
+        private void signIn__btn_Click(object sender, EventArgs e)
+        {
+
+            string username = signinEMAIL__txtbox.Text;
+            string password = signinPASS__txtbox.Text;
+
+
+            if (username == "Username" || password == "Password")
+            {
+                MessageBox.Show("Please make sure to fill out all required fields before proceeding.", "Incomplete Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+
+                if (username == "Username")
+                {
+                    signinEMAIL__txtbox.Focus();
+                }
+                else if (password == "Password")
+                {
+                    signinPASS__txtbox.Focus();
+                }
+
+                return;
+            }
+
+
+            string folderPath = "teacherCredentials";
+            string fullPath = Path.Combine(folderPath, username + ".txt");
+            bool isExist = File.Exists(fullPath);
+
+            if (isExist)
+            {
+                bool isValid = Account__Manager.AuthenticateTeacherLogIn(username, password, folderPath);
+                if (isValid)
+                {
+                    MessageBox.Show("Sign in successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                {
+                    MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else MessageBox.Show("The teacher account you entered does not exist.\n\n" +
+                    "Please check your username and password or sign up if you don't have an account yet.",
+                    "Account Not Found",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+
+
+
+
+        }
+
+
+
+        private void signUp__btn_Click(object sender, EventArgs e)
+        {
+            string firstName = UserInput__Validator.trimInput(signupFNAME__txtbox.Text);
+            string lastName = UserInput__Validator.trimInput(signupLNAME__txtbox.Text);
+            string email = UserInput__Validator.trimInput(signupEMAIL__txtbox.Text);
+            string username = UserInput__Validator.trimInput(signupUNAME__txtbox.Text);
+            string password = UserInput__Validator.trimInput(signupPASS__txtbox.Text);
+            string confirmPassword = UserInput__Validator.trimInput(signupCPASS__txtbox.Text);
+            string school = UserInput__Validator.trimInput(signupSCHOOL__txtbox.Text);
+
+
+
+            if (firstName == "First Name" || lastName == "Last Name" || email == "Email" || username == "Username" || password == "Password" || confirmPassword == "Confirm Password" || school == "School")
+            {
+                MessageBox.Show("Please make sure to fill out all required fields before proceeding.", "Incomplete Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                // Set focus to the first unfilled field
+                if (firstName == "First Name")
+                {
+                    signupFNAME__txtbox.Focus();
+                }
+                else if (lastName == "Last Name")
+                {
+                    signupLNAME__txtbox.Focus();
+                }
+                else if (email == "Email")
+                {
+                    signupEMAIL__txtbox.Focus();
+                }
+                else if (username == "Username")
+                {
+                    signupUNAME__txtbox.Focus();
+                }
+                else if (password == "Password")
+                {
+                    signupPASS__txtbox.Focus();
+                }
+                else if (confirmPassword == "Confirm Password")
+                {
+                    signupCPASS__txtbox.Focus();
+                }
+                else if (confirmPassword == "Confirm Password")
+                {
+                    signupSCHOOL__txtbox.Focus();
+                }
+
+                return;
+            }
+
+            if (password != confirmPassword)
+            {
+                MessageBox.Show("Passwords do not match. Please enter matching passwords.", "Password Mismatch", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                signupCPASS__txtbox.Focus();
+                return;
+            }
+
+            Users newTeacher = new Teacher(firstName, lastName, email, username, password, school);
+
+
+
+
+
+            Account__Manager.SaveUser(newTeacher);
+            MessageBox.Show("Sign up successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            teacherSIGNINform.Show();
+            teacherSIGNUP__form.Hide();
+
+            //MessageBox.Show("Please make sure to fill out all required fields before proceeding.", "Incomplete Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+
+
+        }
+
+        private void close_btn_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+            else Application.Exit();
+        }
         //sign up show password icon fuction
+
         bool isPassVisible = false;
 
         private void showPass__icon_Click(object sender, EventArgs e)
@@ -459,83 +602,6 @@ namespace sprout__gradeBook
                     signinPASS__txtbox.UseSystemPasswordChar = true;
                 }
             }
-        }
-
-
-
-
-        private void signIn__btn_Click(object sender, EventArgs e)
-        {
-            if (areInputsValidinSignIn)
-            {
-                string username = signinEMAIL__txtbox.Text;
-                string password = signinPASS__txtbox.Text;
-
-
-                try
-                {
-                    string folderPath = "teacherCredentials";
-                    bool isValid = Account__Manager.AuthenticateTeacherLogIn(username, password, folderPath);
-                    if (isValid)
-                    {
-                        MessageBox.Show("Sign in successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "No account yet, please ask your teacher.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-                MessageBox.Show("Please make sure to fill out all required fields before proceeding.", "Incomplete Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-
-        }
-
-
-
-        private void signUp__btn_Click(object sender, EventArgs e)
-        {
-            if (areInputsValid)
-            {
-                string firstName = UserInput__Validator.trimInput(signupFNAME__txtbox.Text);
-                string lastName = UserInput__Validator.trimInput(signupLNAME__txtbox.Text);
-                string email = UserInput__Validator.trimInput(signupEMAIL__txtbox.Text);
-                string username = UserInput__Validator.trimInput(signupUNAME__txtbox.Text);
-                string password = UserInput__Validator.trimInput(signupPASS__txtbox.Text);
-                string confirmPassword = UserInput__Validator.trimInput(signupCPASS__txtbox.Text);
-
-
-                Users newTeacher = new Teacher(firstName, lastName, email, username, password);
-
-
-                Account__Manager.SaveUser(newTeacher);
-                MessageBox.Show("Sign up successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                teacherSIGNINform.Show();
-                teacherSIGNUP__form.Hide();
-            }
-            else
-                MessageBox.Show("Please make sure to fill out all required fields before proceeding.", "Incomplete Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-
-
-        }
-
-        private void close_btn_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-
-            if (result == DialogResult.No)
-            {
-                return;
-            }
-            else Application.Exit();
         }
 
         private void setInputState(KryptonTextBox textBox, Label tooltipLabel, Color color)

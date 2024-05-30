@@ -9,9 +9,9 @@ namespace sprout__gradeBook
     public static class UserInput__Validator
     {
 
-        public static bool ValidateNotEmpty(string input)
+        public static bool ValidateNotEmpty(string input, string fieldLabel)
         {
-            return !string.IsNullOrEmpty(input);
+            return string.IsNullOrEmpty(input) || input != fieldLabel;
         }
 
 

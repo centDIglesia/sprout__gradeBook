@@ -14,13 +14,16 @@ namespace sprout__gradeBook
         public string Username { get; set; }
         public string Password { get; set; }
 
-        public Users(string firstName, string lastName, string email, string username, string password)
+        public string schoolName { get; set; }
+
+        public Users(string firstName, string lastName, string email, string username, string password, string school)
         {
             FirstName = firstName;
             LastName = lastName;
             Email = email;
             Username = username;
             Password = password;
+            schoolName = school;
         }
 
         public abstract string GetFolder();
@@ -29,8 +32,8 @@ namespace sprout__gradeBook
     public class Student : Users
     {
         public int studentNumber { get; set; }
-        public Student(string firstName, string lastName, string email, string username, string password,int studentNumber)
-            : base(firstName, lastName, email, username, password) { }
+        public Student(string firstName, string lastName, string email, string username, string password, int studentNumber, string school)
+            : base(firstName, lastName, email, username, password, school) { }
 
         public override string GetFolder()
         {
@@ -40,8 +43,8 @@ namespace sprout__gradeBook
 
     public class Teacher : Users
     {
-        public Teacher(string firstName, string lastName, string email, string username, string password)
-            : base(firstName, lastName, email, username, password) { }
+        public Teacher(string firstName, string lastName, string email, string username, string password, string school)
+            : base(firstName, lastName, email, username, password, school) { }
 
         public override string GetFolder()
         {
