@@ -63,6 +63,16 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap back_arrow {
+            get {
+                object obj = ResourceManager.GetObject("back-arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap closed__eye {
             get {
                 object obj = ResourceManager.GetObject("closed__eye", resourceCulture);
@@ -86,6 +96,36 @@ namespace sprout__gradeBook.Properties {
         internal static System.Drawing.Bitmap Forgot_Your_Password_HOVER {
             get {
                 object obj = ResourceManager.GetObject("Forgot_Your_Password_HOVER", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_white {
+            get {
+                object obj = ResourceManager.GetObject("logo white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap next_arrow_icn {
+            get {
+                object obj = ResourceManager.GetObject("next-arrow-icn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap notification_icon {
+            get {
+                object obj = ResourceManager.GetObject("notification-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
