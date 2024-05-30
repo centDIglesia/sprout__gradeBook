@@ -14,56 +14,36 @@ namespace sprout__gradeBook
             return !string.IsNullOrEmpty(input);
         }
 
-      
+
         public static bool ValidateEmail(string email)
         {
             return email.Contains("@gmail.com");
 
         }
 
-        public static bool ValidatePassword(string password)
+        public static bool ContainsLowercase(string password)
         {
-         
-            int minLength = 8;
-            int maxLength = 20;
-
-            if (password.Length < minLength || password.Length > maxLength)
-            {
-                return false;
-            }
-
-            
-            if (!password.Any(char.IsLower))
-            {
-                return false;
-            }
-
-          
-            if (!password.Any(char.IsUpper))
-            {
-                return false;
-            }
-
-            
-            if (!password.Any(char.IsDigit))
-            {
-                return false;
-            }
-
-          
-            return true;
+            return password.Any(char.IsLower);
         }
 
 
-        public static bool ValidateLenght(string input,int minLength,int maxLength)
+        public static bool ContainsUppercase(string password)
         {
-           
-            if(input.Length < minLength || input.Length > maxLength)
-            { return false; }
-
-            return true;
-
+            return password.Any(char.IsUpper);
         }
+
+
+        public static bool ContainsDigit(string password)
+        {
+            return password.Any(char.IsDigit);
+        }
+
+
+        public static bool ValidateLength(string input, int minLength, int maxLength)
+        {
+            return input.Length >= minLength && input.Length <= maxLength;
+        }
+
 
         public static string trimInput(string input)
         {

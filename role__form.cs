@@ -64,17 +64,17 @@ namespace sprout__gradeBook
                 if (selectedRole == "student")
                 {
                     this.Hide();
-                   studentLoginForm stdForm = new studentLoginForm();
+                    studentLoginForm stdForm = new studentLoginForm();
                     stdForm.Show();
                 }
 
-                if(selectedRole == "teacher")
+                if (selectedRole == "teacher")
                 {
                     this.Hide();
                     logInForm SignUp_Form = new logInForm();
                     SignUp_Form.Show();
                 }
-                    
+
 
             }
             else MessageBox.Show("Please choose a role before proceeding.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -91,6 +91,11 @@ namespace sprout__gradeBook
                 return;
             }
             else Application.Exit();
+        }
+
+        private void back__btn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

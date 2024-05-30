@@ -9,9 +9,10 @@ namespace sprout__gradeBook
 {
     internal class CustomColor
     {
+
         public static Color mainColor = Color.FromArgb(10, 103, 56);//green
         public static Color lightColor = Color.FromArgb(132, 179, 155);//lightGreen
-
+        public static Color errorColor = Color.FromArgb(255, 0, 0);//red
 
 
     }

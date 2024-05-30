@@ -56,6 +56,7 @@
             this.role__btn.OverrideDefault.Border.Rounding = 4;
             this.role__btn.OverrideDefault.Border.Width = 0;
             this.role__btn.OverrideDefault.Content.Padding = new System.Windows.Forms.Padding(10, -1, -1, -1);
+            this.role__btn.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.role__btn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.role__btn.Size = new System.Drawing.Size(141, 43);
             this.role__btn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
@@ -100,6 +101,7 @@
             this.back__btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.back__btn.TabIndex = 4;
             this.back__btn.TabStop = false;
+            this.back__btn.Click += new System.EventHandler(this.back__btn_Click);
             // 
             // student__role
             // 

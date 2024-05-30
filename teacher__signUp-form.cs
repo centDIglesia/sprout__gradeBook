@@ -8,12 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace sprout__gradeBook
 {
     public partial class logInForm : KryptonForm
     {
+        //signUp inputs
         bool areInputsValid = false;
+
+        //signIn inputs
+        bool areInputsValidinSignIn = false;
         public logInForm()
         {
             InitializeComponent();
@@ -58,7 +63,7 @@ namespace sprout__gradeBook
 
                 }
 
-                else if (!UserInput__Validator.ValidateLenght(firstName, 1, 20))
+                else if (!UserInput__Validator.ValidateLength(firstName, 1, 20))
                 {
                     MessageBox.Show("The input length must be between 1 and 20 characters.", "Invalid Length", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     setInputState(signupFNAME__txtbox, fname__tooltip, Color.Red);
@@ -99,7 +104,7 @@ namespace sprout__gradeBook
                     signupLNAME__txtbox.Clear();
                 }
 
-                else if (!UserInput__Validator.ValidateLenght(lastName, 1, 20))
+                else if (!UserInput__Validator.ValidateLength(lastName, 1, 20))
                 {
                     MessageBox.Show("The input length must be between 1 and 20 characters.", "Invalid Length", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     setInputState(signupLNAME__txtbox, lname__tooltip, Color.Red);
@@ -138,7 +143,7 @@ namespace sprout__gradeBook
 
                 }
 
-                else if (!UserInput__Validator.ValidateLenght(signupEMAIL__txtbox.Text, 12, 25))
+                else if (!UserInput__Validator.ValidateLength(signupEMAIL__txtbox.Text, 12, 25))
                 {
                     MessageBox.Show("The input length must be between 12 and 25 characters.", "Invalid Length", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     setInputState(signupEMAIL__txtbox, email__tooltip, Color.Red);
@@ -212,7 +217,7 @@ namespace sprout__gradeBook
 
             if (signupSCHOOL__txtbox.Text != "School")
             {
-                if (!UserInput__Validator.ValidateLenght(signupSCHOOL__txtbox.Text, 0, 10))
+                if (!UserInput__Validator.ValidateLength(signupSCHOOL__txtbox.Text, 0, 10))
                 {
                     setInputState(signupSCHOOL__txtbox, school__tooltip, Color.Red);
 
@@ -246,19 +251,40 @@ namespace sprout__gradeBook
 
             if (signupPASS__txtbox.Text != "Password")
             {
-                if (!UserInput__Validator.ValidatePassword(password))
+                if (!UserInput__Validator.ValidateLength(password, 8, 20))
                 {
-                    setInputState(signupPASS__txtbox, pass__tooltip, Color.Red);
-                    MessageBox.Show(@"Password must be between 8 and 20 characters long.
-contain at least one lowercase letter.
-one uppercase letter, and one digit.", "Invalid Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Password must be between 8 and 20 characters long.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    setInputState(signupPASS__txtbox, pass__tooltip, CustomColor.errorColor);
                     signupPASS__txtbox.Focus();
+                    return;
                 }
-                else
-                {
 
-                    setInputState(signupPASS__txtbox, pass__tooltip, CustomColor.mainColor);
+                if (!UserInput__Validator.ContainsUppercase(password))
+                {
+                    MessageBox.Show("Password must contain at least one uppercase letter.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    setInputState(signupPASS__txtbox, pass__tooltip, CustomColor.errorColor);
+                    signupPASS__txtbox.Focus();
+                    return;
                 }
+
+                if (!UserInput__Validator.ContainsDigit(password))
+                {
+                    MessageBox.Show("Password must contain at least one digit.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    setInputState(signupPASS__txtbox, pass__tooltip, CustomColor.errorColor);
+                    signupPASS__txtbox.Focus();
+                    return;
+                }
+
+                if (!UserInput__Validator.ContainsLowercase(password))
+                {
+                    MessageBox.Show("Password must contain at least one lowercase letter.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    setInputState(signupPASS__txtbox, pass__tooltip, CustomColor.errorColor);
+                    signupPASS__txtbox.Focus();
+                    return;
+                }
+
+                setInputState(signupPASS__txtbox, pass__tooltip, CustomColor.mainColor);
+
             }
             areInputsValid = true;
 
@@ -346,6 +372,17 @@ one uppercase letter, and one digit.", "Invalid Password", MessageBoxButtons.OK,
         {
             UserInput_Manager.RestoreDefaultText(signinEMAIL__txtbox, "Username");
             UserInput_Manager.ToggleTooltip(signinEMAIL__txtbox, signIn__EmailTooltip, "Username");
+
+            string username = signinEMAIL__txtbox.Text;
+
+            if (username != "Username")
+            {
+                if (!UserInput__Validator.ValidateLength(username, 1, 20))
+                {
+                    MessageBox.Show("Username must be between 1 and 20 characters long only.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+             areInputsValidinSignIn = true;
         }
 
         //password
@@ -359,12 +396,23 @@ one uppercase letter, and one digit.", "Invalid Password", MessageBoxButtons.OK,
         private void signInPass__txtbox_Leave(object sender, EventArgs e)
         {
             UserInput_Manager.RestoreDefaultText(signinPASS__txtbox, "Password");
-            UserInput_Manager.ToggleTooltip(signinPASS__txtbox, signIn__EmailTooltip, "Password");
+            UserInput_Manager.ToggleTooltip(signinPASS__txtbox, signIn__PassTooltip, "Password");
+            string password = signinPASS__txtbox.Text;
 
             if (signinPASS__txtbox.Text == "Password")
             {
                 signinPASS__txtbox.UseSystemPasswordChar = false;
             }
+
+            if (password != "Password")
+            {
+                if (!UserInput__Validator.ValidateLength(password, 1, 20))
+                {
+                    MessageBox.Show("Password must be between 1 and 20 characters long only.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+           
+            areInputsValidinSignIn = true;
 
         }
 
@@ -385,7 +433,10 @@ one uppercase letter, and one digit.", "Invalid Password", MessageBoxButtons.OK,
             {
                 isPassVisible = false;
                 showPass__icon.Image = Properties.Resources.open__eye;
-                signupPASS__txtbox.UseSystemPasswordChar = true;
+                if (signupPASS__txtbox.Text != "Password")
+                {
+                    signupPASS__txtbox.UseSystemPasswordChar = true;
+                }
             }
         }
 
@@ -403,7 +454,10 @@ one uppercase letter, and one digit.", "Invalid Password", MessageBoxButtons.OK,
             {
                 isPassVisible2 = false;
                 signIn__showPassicon.Image = Properties.Resources.open__eye;
-                signinPASS__txtbox.UseSystemPasswordChar = true;
+                if (signinPASS__txtbox.Text != "Password")
+                {
+                    signinPASS__txtbox.UseSystemPasswordChar = true;
+                }
             }
         }
 
@@ -412,28 +466,35 @@ one uppercase letter, and one digit.", "Invalid Password", MessageBoxButtons.OK,
 
         private void signIn__btn_Click(object sender, EventArgs e)
         {
-            string username = signinEMAIL__txtbox.Text;
-            string password = signinPASS__txtbox.Text;
-
-
-            try
+            if (areInputsValidinSignIn)
             {
-                string folderPath = "teacherCredentials";
-                bool isValid = Account__Manager.AuthenticateTeacherLogIn(username, password, folderPath);
-                if (isValid)
-                {
-                    MessageBox.Show("Sign in successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string username = signinEMAIL__txtbox.Text;
+                string password = signinPASS__txtbox.Text;
 
-                }
-                else
+
+                try
                 {
-                    MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string folderPath = "teacherCredentials";
+                    bool isValid = Account__Manager.AuthenticateTeacherLogIn(username, password, folderPath);
+                    if (isValid)
+                    {
+                        MessageBox.Show("Sign in successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "No account yet, please ask your teacher.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "No account yet, please ask your teacher.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            else
+                MessageBox.Show("Please make sure to fill out all required fields before proceeding.", "Incomplete Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+
         }
 
 
