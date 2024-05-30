@@ -102,5 +102,39 @@ namespace sprout__gradeBook
         {
             role__btn.Hide();
         }
+
+        private void teacher__role_MouseHover(object sender, EventArgs e)
+        {
+            teacher__role.Image = Properties.Resources.Roles_Card_hover;
+        }
+
+        private void student__role_MouseHover(object sender, EventArgs e)
+        {
+            student__role.Image = Properties.Resources.Roles_Card_student_hover;
+        }
+
+        private void teacher__role_MouseLeave(object sender, EventArgs e)
+        {
+            if (teacherClicked)
+            {
+                teacher__role.Image = Properties.Resources.teacher__role_clicked;
+            }
+            else
+            {
+                teacher__role.Image = Properties.Resources.teacher__role;
+            }
+        }
+
+        private void student__role_MouseLeave(object sender, EventArgs e)
+        {
+            if (studentClicked)
+            {
+                student__role.Image = Properties.Resources.student__role_clicked;
+            }
+            else
+            {
+                student__role.Image = Properties.Resources.student__role;
+            }
+        }
     }
 }

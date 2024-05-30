@@ -176,5 +176,11 @@
   <ItemGroup>
     <None Include="Resources\next-arrow-icn.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Roles-Card-hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Roles-Card-student-hover.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

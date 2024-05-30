@@ -143,6 +143,26 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Roles_Card_hover {
+            get {
+                object obj = ResourceManager.GetObject("Roles_Card_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Roles_Card_student_hover {
+            get {
+                object obj = ResourceManager.GetObject("Roles_Card_student_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap student__role {
             get {
                 object obj = ResourceManager.GetObject("student__role", resourceCulture);

@@ -241,11 +241,11 @@
             this.student__quantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
             this.student__quantity.Font = new System.Drawing.Font("Gadugi", 69.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.student__quantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.student__quantity.Location = new System.Drawing.Point(446, 143);
+            this.student__quantity.Location = new System.Drawing.Point(385, 143);
             this.student__quantity.Name = "student__quantity";
-            this.student__quantity.Size = new System.Drawing.Size(156, 104);
+            this.student__quantity.Size = new System.Drawing.Size(217, 104);
             this.student__quantity.TabIndex = 34;
-            this.student__quantity.Text = "04";
+            this.student__quantity.Text = "104";
             this.student__quantity.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // role__btn

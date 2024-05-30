@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(role__form));
             this.role__btn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.close_btn = new System.Windows.Forms.PictureBox();
             this.back__btn = new System.Windows.Forms.PictureBox();
             this.student__role = new System.Windows.Forms.PictureBox();
             this.teacher__role = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.close_btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.back__btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.student__role)).BeginInit();
@@ -46,7 +46,7 @@
             // 
             // role__btn
             // 
-            this.role__btn.Location = new System.Drawing.Point(495, 540);
+            this.role__btn.Location = new System.Drawing.Point(719, 531);
             this.role__btn.Name = "role__btn";
             this.role__btn.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.role__btn.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
@@ -81,6 +81,20 @@
             this.role__btn.Values.Text = "Next    ";
             this.role__btn.Click += new System.EventHandler(this.role__btn_Click);
             // 
+            // kryptonPalette2
+            // 
+            this.kryptonPalette2.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
+            this.kryptonPalette2.FormStyles.FormMain.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.kryptonPalette2.FormStyles.FormMain.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Border.Color1 = System.Drawing.Color.White;
+            this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Border.Color2 = System.Drawing.Color.White;
+            this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonPalette2.InputControlStyles.InputControlCommon.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
             // close_btn
             // 
             this.close_btn.Image = ((System.Drawing.Image)(resources.GetObject("close_btn.Image")));
@@ -113,6 +127,8 @@
             this.student__role.TabIndex = 2;
             this.student__role.TabStop = false;
             this.student__role.Click += new System.EventHandler(this.student__role_Click);
+            this.student__role.MouseLeave += new System.EventHandler(this.student__role_MouseLeave);
+            this.student__role.MouseHover += new System.EventHandler(this.student__role_MouseHover);
             // 
             // teacher__role
             // 
@@ -124,6 +140,8 @@
             this.teacher__role.TabIndex = 1;
             this.teacher__role.TabStop = false;
             this.teacher__role.Click += new System.EventHandler(this.teacher__role_Click);
+            this.teacher__role.MouseLeave += new System.EventHandler(this.teacher__role_MouseLeave);
+            this.teacher__role.MouseHover += new System.EventHandler(this.teacher__role_MouseHover);
             // 
             // pictureBox1
             // 
@@ -134,20 +152,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // kryptonPalette2
-            // 
-            this.kryptonPalette2.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
-            this.kryptonPalette2.FormStyles.FormMain.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.kryptonPalette2.FormStyles.FormMain.StateCommon.Back.Color2 = System.Drawing.Color.White;
-            this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Back.Color2 = System.Drawing.Color.White;
-            this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Border.Color1 = System.Drawing.Color.White;
-            this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Border.Color2 = System.Drawing.Color.White;
-            this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonPalette2.InputControlStyles.InputControlCommon.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // role__form
             // 
