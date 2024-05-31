@@ -415,7 +415,7 @@ namespace sprout__gradeBook
         }
 
 
-
+        // TEACHER SIGN IN BUTTON 
 
 
         private void signIn__btn_Click(object sender, EventArgs e)
@@ -450,9 +450,10 @@ namespace sprout__gradeBook
                 {
                     this.Hide();
 
-                    teacher__dashboard teacher__Dashboard = new teacher__dashboard(username);
 
-                    teacher__Dashboard.Show();
+
+                    teacher__globalNav teacher__GlobalNav = new teacher__globalNav(username);
+                    teacher__GlobalNav.Show();
                 }
                 else
                 {
@@ -470,6 +471,7 @@ namespace sprout__gradeBook
         }
 
 
+        // TEACHER SIGN UP BUTTON 
 
         private void signUp__btn_Click(object sender, EventArgs e)
         {

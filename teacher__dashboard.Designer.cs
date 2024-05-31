@@ -256,11 +256,11 @@
             this.teachers__firstName.BackColor = System.Drawing.Color.White;
             this.teachers__firstName.Font = new System.Drawing.Font("Poppins SemiBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.teachers__firstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.teachers__firstName.Location = new System.Drawing.Point(611, 38);
+            this.teachers__firstName.Location = new System.Drawing.Point(607, 39);
             this.teachers__firstName.Name = "teachers__firstName";
-            this.teachers__firstName.Size = new System.Drawing.Size(76, 30);
+            this.teachers__firstName.Size = new System.Drawing.Size(106, 30);
             this.teachers__firstName.TabIndex = 60;
-            this.teachers__firstName.Text = "Jayson";
+            this.teachers__firstName.Text = "user name";
             this.teachers__firstName.Click += new System.EventHandler(this.teachers__firstName_Click);
             // 
             // img__user__icon

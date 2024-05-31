@@ -34,17 +34,17 @@ namespace sprout__gradeBook
 
         private void teacher__globalNav_Load(object sender, EventArgs e)
         {
-            loadForm(new teacher__dashboard(currentUser));
+            loadForm(new teacher__globalNav(currentUser));
         }
 
         private void btn_dashboard_Click(object sender, EventArgs e)
         {
-            loadForm(new teacher__dashboard(currentUser));
+            loadForm(new teacher__globalNav(currentUser));
         }
 
         private void btn_courses_Click(object sender, EventArgs e)
         {
-            loadForm(new teacher__courses_lvl1());
+            loadForm(new teacher__globalNav(currentUser));
         }
     }
 }
