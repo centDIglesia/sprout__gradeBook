@@ -11,11 +11,14 @@ using ComponentFactory.Krypton.Toolkit;
 
 namespace sprout__gradeBook
 {
-    public partial class teacher__dashboard : KryptonForm
+    public partial class teacher__courses_lvl1 : KryptonForm
     {
-        public teacher__dashboard()
+        public static teacher__courses_lvl1 lvl1Instance;
+
+        public teacher__courses_lvl1()
         {
             InitializeComponent();
+            lvl1Instance = this;
         }
 
         private void close_btn_Click(object sender, EventArgs e)
@@ -28,5 +31,13 @@ namespace sprout__gradeBook
             }
             else Application.Exit();
         }
+
+        private void add_course_btn_Click(object sender, EventArgs e)
+        {
+            Course_Information__Manager Form2 = new Course_Information__Manager();
+            Form2.Show();
+        }
     }
+
+
 }
