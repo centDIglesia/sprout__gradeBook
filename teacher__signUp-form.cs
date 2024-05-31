@@ -611,6 +611,9 @@ namespace sprout__gradeBook
             tooltipLabel.ForeColor = color;
         }
 
+        private void teacherSIGNINform_Panel_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }

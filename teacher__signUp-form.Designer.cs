@@ -463,6 +463,7 @@
             this.teacherSIGNINform.Panel.Controls.Add(this.signinEMAIL__txtbox);
             this.teacherSIGNINform.Panel.Controls.Add(this.signup__switchBTN);
             this.teacherSIGNINform.Panel.Controls.Add(this.pictureBox11);
+            this.teacherSIGNINform.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.teacherSIGNINform_Panel_Paint);
             this.teacherSIGNINform.Size = new System.Drawing.Size(441, 672);
             this.teacherSIGNINform.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("teacherSIGNINform.StateCommon.Back.Image")));
             this.teacherSIGNINform.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Stretch;

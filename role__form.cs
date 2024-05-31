@@ -27,7 +27,7 @@ namespace sprout__gradeBook
             role__btn.Show();
             if (!teacherClicked)
             {
-                teacher__role.Image = Properties.Resources.teacher__role_clicked;
+                teacher__role.Image = Properties.Resources.Roles_Card_hover;
                 teacherClicked = true;
                 selectedRole = "teacher";
 
@@ -45,7 +45,8 @@ namespace sprout__gradeBook
             role__btn.Show();
             if (!studentClicked)
             {
-                student__role.Image = Properties.Resources.student__role_clicked;
+                student__role.Image = Properties.Resources.Roles_Card_student_hover;
+
                 studentClicked = true;
                 selectedRole = "student";
 
@@ -105,19 +106,21 @@ namespace sprout__gradeBook
 
         private void teacher__role_MouseHover(object sender, EventArgs e)
         {
-            teacher__role.Image = Properties.Resources.Roles_Card_hover;
+            teacher__role.Image = Properties.Resources.teacher__role_clicked;
+
         }
 
         private void student__role_MouseHover(object sender, EventArgs e)
         {
-            student__role.Image = Properties.Resources.Roles_Card_student_hover;
+
+            student__role.Image = Properties.Resources.student__role_clicked;
         }
 
         private void teacher__role_MouseLeave(object sender, EventArgs e)
         {
             if (teacherClicked)
             {
-                teacher__role.Image = Properties.Resources.teacher__role_clicked;
+                teacher__role.Image = Properties.Resources.Roles_Card_hover;
             }
             else
             {
@@ -129,7 +132,7 @@ namespace sprout__gradeBook
         {
             if (studentClicked)
             {
-                student__role.Image = Properties.Resources.student__role_clicked;
+                student__role.Image = Properties.Resources.Roles_Card_student_hover;
             }
             else
             {

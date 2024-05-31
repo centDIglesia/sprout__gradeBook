@@ -31,15 +31,31 @@ namespace sprout__gradeBook
 
     public class Student : Users
     {
-        public int studentNumber { get; set; }
-        public Student(string firstName, string lastName, string email, string username, string password, int studentNumber, string school)
-            : base(firstName, lastName, email, username, password, school) { }
+        public int StudentNumber { get; set; }
+        public DateTime Birthday { get; set; }
+
+        public string Password { get; private set; }
+
+        public Student(string firstName, string lastName, string email, string username, int studentNumber, DateTime birthday, string school)
+            : base(firstName, lastName, email, username, "", school)
+        {
+            StudentNumber = studentNumber;
+            Birthday = birthday;
+            Password = GeneratePassword(birthday, school);
+        }
 
         public override string GetFolder()
         {
             return "studentCredentials";
         }
+
+
+        private string GeneratePassword(DateTime birthday, string school)
+        {
+            return birthday.ToString("dd-MM-yy") + school;
+        }
     }
+
 
     public class Teacher : Users
     {

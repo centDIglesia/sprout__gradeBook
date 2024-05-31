@@ -148,6 +148,11 @@ namespace sprout__gradeBook
             }
             else Application.Exit();
         }
+
+        private void studentSIGNINform_Panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 

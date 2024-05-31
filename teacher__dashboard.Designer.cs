@@ -127,7 +127,7 @@
             // close_btn
             // 
             this.close_btn.Image = ((System.Drawing.Image)(resources.GetObject("close_btn.Image")));
-            this.close_btn.Location = new System.Drawing.Point(779, 8);
+            this.close_btn.Location = new System.Drawing.Point(790, 8);
             this.close_btn.Name = "close_btn";
             this.close_btn.Size = new System.Drawing.Size(24, 24);
             this.close_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -175,7 +175,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.label4.Location = new System.Drawing.Point(53, 306);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(151, 28);
+            this.label4.Size = new System.Drawing.Size(152, 28);
             this.label4.TabIndex = 55;
             this.label4.Text = "Today\'s Schedule";
             // 
