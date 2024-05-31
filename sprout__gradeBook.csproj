@@ -80,6 +80,12 @@
     <Compile Include="studentDefultPasswordGuide.Designer.cs">
       <DependentUpon>studentDefultPasswordGuide.cs</DependentUpon>
     </Compile>
+    <Compile Include="student__sections.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="student__sections.Designer.cs">
+      <DependentUpon>student__sections.cs</DependentUpon>
+    </Compile>
     <Compile Include="student__signin-form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="studentDefultPasswordGuide.resx">
       <DependentUpon>studentDefultPasswordGuide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="student__sections.resx">
+      <DependentUpon>student__sections.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="student__signin-form.resx">
       <DependentUpon>student__signin-form.cs</DependentUpon>

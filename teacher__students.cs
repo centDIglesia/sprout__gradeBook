@@ -23,5 +23,15 @@ namespace sprout__gradeBook
         {
 
         }
+
+        private void student__sections1_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void student__sections1_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
     }
 }
