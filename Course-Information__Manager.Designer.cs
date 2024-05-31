@@ -34,18 +34,18 @@
             this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.kryptonTextBox2 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.add_course_btn = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.to_sched_arrow = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.add_course_btn = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.add_course_btn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.to_sched_arrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.add_course_btn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -132,6 +132,45 @@
             this.kryptonTextBox2.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10);
             this.kryptonTextBox2.TabIndex = 17;
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.pictureBox4.Location = new System.Drawing.Point(-20, 340);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(476, 10);
+            this.pictureBox4.TabIndex = 88;
+            this.pictureBox4.TabStop = false;
+            // 
+            // add_course_btn
+            // 
+            this.add_course_btn.BackColor = System.Drawing.Color.Transparent;
+            this.add_course_btn.Image = global::sprout__gradeBook.Properties.Resources.add_course_btn;
+            this.add_course_btn.Location = new System.Drawing.Point(248, 291);
+            this.add_course_btn.Name = "add_course_btn";
+            this.add_course_btn.Size = new System.Drawing.Size(141, 37);
+            this.add_course_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.add_course_btn.TabIndex = 87;
+            this.add_course_btn.TabStop = false;
+            this.add_course_btn.Click += new System.EventHandler(this.add_course_btn_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.pictureBox3.Location = new System.Drawing.Point(-2, 46);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(10, 310);
+            this.pictureBox3.TabIndex = 20;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.pictureBox2.Location = new System.Drawing.Point(418, 46);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(10, 310);
+            this.pictureBox2.TabIndex = 19;
+            this.pictureBox2.TabStop = false;
+            // 
             // to_sched_arrow
             // 
             this.to_sched_arrow.Image = global::sprout__gradeBook.Properties.Resources.next_arrow_green;
@@ -150,44 +189,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(476, 50);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.pictureBox2.Location = new System.Drawing.Point(418, 46);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(10, 310);
-            this.pictureBox2.TabIndex = 19;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.pictureBox3.Location = new System.Drawing.Point(-2, 46);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(10, 310);
-            this.pictureBox3.TabIndex = 20;
-            this.pictureBox3.TabStop = false;
-            // 
-            // add_course_btn
-            // 
-            this.add_course_btn.BackColor = System.Drawing.Color.Transparent;
-            this.add_course_btn.Image = global::sprout__gradeBook.Properties.Resources.add_course_btn;
-            this.add_course_btn.Location = new System.Drawing.Point(248, 291);
-            this.add_course_btn.Name = "add_course_btn";
-            this.add_course_btn.Size = new System.Drawing.Size(141, 37);
-            this.add_course_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.add_course_btn.TabIndex = 87;
-            this.add_course_btn.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.pictureBox4.Location = new System.Drawing.Point(-20, 340);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(476, 10);
-            this.pictureBox4.TabIndex = 88;
-            this.pictureBox4.TabStop = false;
             // 
             // Course_Information__Manager
             // 
@@ -211,12 +212,12 @@
             this.Name = "Course_Information__Manager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Course_Information__Manager";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.add_course_btn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.to_sched_arrow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.add_course_btn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

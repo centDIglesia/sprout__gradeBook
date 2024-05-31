@@ -31,20 +31,25 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(teacher__courses_lvl1));
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.courseViewPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.add_course_btn = new System.Windows.Forms.PictureBox();
             this.close_btn = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.img__user__icon = new sprout__gradeBook.RoundPictureBox();
             this.notification__icon = new System.Windows.Forms.PictureBox();
             this.divider_1 = new System.Windows.Forms.PictureBox();
-            this.img__user__icon = new sprout__gradeBook.RoundPictureBox();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.courseViewPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.add_course_btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.close_btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img__user__icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.notification__icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img__user__icon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -70,6 +75,27 @@
             this.label5.Size = new System.Drawing.Size(34, 30);
             this.label5.TabIndex = 82;
             this.label5.Text = "Hi,";
+            // 
+            // courseViewPanel
+            // 
+            this.courseViewPanel.AutoScroll = true;
+            this.courseViewPanel.Controls.Add(this.pictureBox14);
+            this.courseViewPanel.Location = new System.Drawing.Point(53, 135);
+            this.courseViewPanel.Name = "courseViewPanel";
+            this.courseViewPanel.Size = new System.Drawing.Size(740, 499);
+            this.courseViewPanel.TabIndex = 88;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
+            this.label1.Font = new System.Drawing.Font("Poppins SemiBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.label1.Location = new System.Drawing.Point(58, 143);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 30);
+            this.label1.TabIndex = 83;
+            this.label1.Text = "Subject 1";
             // 
             // pictureBox3
             // 
@@ -115,6 +141,15 @@
             this.pictureBox1.TabIndex = 78;
             this.pictureBox1.TabStop = false;
             // 
+            // img__user__icon
+            // 
+            this.img__user__icon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.img__user__icon.Location = new System.Drawing.Point(733, 28);
+            this.img__user__icon.Name = "img__user__icon";
+            this.img__user__icon.Size = new System.Drawing.Size(36, 36);
+            this.img__user__icon.TabIndex = 69;
+            this.img__user__icon.TabStop = false;
+            // 
             // notification__icon
             // 
             this.notification__icon.Image = ((System.Drawing.Image)(resources.GetObject("notification__icon.Image")));
@@ -133,14 +168,14 @@
             this.divider_1.TabIndex = 66;
             this.divider_1.TabStop = false;
             // 
-            // img__user__icon
+            // pictureBox14
             // 
-            this.img__user__icon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.img__user__icon.Location = new System.Drawing.Point(733, 28);
-            this.img__user__icon.Name = "img__user__icon";
-            this.img__user__icon.Size = new System.Drawing.Size(36, 36);
-            this.img__user__icon.TabIndex = 69;
-            this.img__user__icon.TabStop = false;
+            this.pictureBox14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
+            this.pictureBox14.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(231, 150);
+            this.pictureBox14.TabIndex = 122;
+            this.pictureBox14.TabStop = false;
             // 
             // teacher__courses_lvl1
             // 
@@ -150,6 +185,7 @@
             this.ClientSize = new System.Drawing.Size(823, 711);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.add_course_btn);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.close_btn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.img__user__icon);
@@ -157,16 +193,19 @@
             this.Controls.Add(this.divider_1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.courseViewPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "teacher__courses_lvl1";
             this.Text = "teacher__courses_lvl1";
+            this.courseViewPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.add_course_btn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.close_btn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img__user__icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.notification__icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img__user__icon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,5 +221,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox add_course_btn;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.FlowLayoutPanel courseViewPanel;
+        private System.Windows.Forms.PictureBox pictureBox14;
+        private System.Windows.Forms.Label label1;
     }
 }

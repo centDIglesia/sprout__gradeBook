@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Course-Card.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Course-Card.Designer.cs">
+      <DependentUpon>Course-Card.cs</DependentUpon>
+    </Compile>
     <Compile Include="Course-Information__Manager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     <Compile Include="UserInput__Validator.cs" />
     <Compile Include="Users.cs" />
     <Compile Include="Account__Manager.cs" />
+    <EmbeddedResource Include="Course-Card.resx">
+      <DependentUpon>Course-Card.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Course-Information__Manager.resx">
       <DependentUpon>Course-Information__Manager.cs</DependentUpon>
     </EmbeddedResource>

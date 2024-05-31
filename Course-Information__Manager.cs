@@ -14,10 +14,22 @@ namespace sprout__gradeBook
 {
     public partial class Course_Information__Manager : KryptonForm
     {
-        public Course_Information__Manager()
+        private FlowLayoutPanel _courseViewPanel;
+
+        public Course_Information__Manager(FlowLayoutPanel courseViewPanel)
         {
             InitializeComponent();
+            _courseViewPanel = courseViewPanel; // Store the reference to the FlowLayoutPanel
         }
 
+        private void add_course_btn_Click(object sender, EventArgs e)
+        {
+            Course_Card form3 = new Course_Card();
+            form3.TopLevel = false; // Set it as a non-top-level control
+            form3.FormBorderStyle = FormBorderStyle.None; // Remove border
+            form3.Dock = DockStyle.Top; // Optional: Adjust as needed
+            _courseViewPanel.Controls.Add(form3); // Add Form3 to the FlowLayoutPanel
+            form3.Show(); // Display the Form3
+        }
     }
 }

@@ -34,7 +34,7 @@ namespace sprout__gradeBook
 
         private void add_course_btn_Click(object sender, EventArgs e)
         {
-            Course_Information__Manager Form2 = new Course_Information__Manager();
+            Course_Information__Manager Form2 = new Course_Information__Manager(courseViewPanel);
             Form2.Show();
         }
     }
