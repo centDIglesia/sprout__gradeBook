@@ -14,7 +14,7 @@ namespace sprout__gradeBook
         {
             string folderPath = user.GetFolder();
 
-          
+
             if (!Directory.Exists(folderPath))
             {
                 Directory.CreateDirectory(folderPath);
@@ -50,13 +50,13 @@ namespace sprout__gradeBook
         {
             string filePath = Path.Combine(folderPath, $"{username}.txt");
 
-          
+
             if (!File.Exists(filePath))
             {
                 return false;
             }
 
-           
+
             string storedPassword = "";
             using (StreamReader reader = new StreamReader(filePath))
             {
@@ -71,7 +71,7 @@ namespace sprout__gradeBook
                 }
             }
 
-           
+
             string hashedInputPassword = HashPassword(password);
             return storedPassword == hashedInputPassword;
         }
@@ -80,11 +80,11 @@ namespace sprout__gradeBook
         //use to authenticate student log in credentials | student ID and Password |
         public static bool AuthenticateStudentLogIn(string studentId, string password, string folderPath)
         {
-             if (!File.Exists(folderPath))
+            if (!File.Exists(folderPath))
             {
                 return false;
             }
-          
+
             foreach (var filePath in Directory.GetFiles(folderPath, "*.txt"))
             {
                 string storedPassword = "";
@@ -118,7 +118,7 @@ namespace sprout__gradeBook
                 }
             }
 
-          
+
             return false;
         }
 
@@ -137,5 +137,32 @@ namespace sprout__gradeBook
                 return builder.ToString();
             }
         }
+
+
+        //funtion para ma get natin yung data na need natin sa loob ng file
+        // ipapasa muna yung folder name, yung current username at yung kukuhanin natin halombawa yung first name 
+        // loadUserData("teachersCredential",urrentUser", "First Name");
+
+        public static string loadUserData(string folderName, string currentUser, string dataToAccess)
+        {
+            string folderPath = folderName;
+            string fullPath = Path.Combine(folderPath, currentUser + ".txt");
+
+            if (File.Exists(fullPath))
+            {
+                string[] lines = File.ReadAllLines(fullPath);
+
+                foreach (var line in lines)
+                {
+                    if (line.StartsWith(dataToAccess + ":"))
+                    {
+                        return line.Substring(dataToAccess.Length + 1).Trim();
+                    }
+                }
+            }
+
+            return null;
+        }
+
     }
 }

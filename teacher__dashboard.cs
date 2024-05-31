@@ -14,44 +14,14 @@ namespace sprout__gradeBook
 {
     public partial class teacher__dashboard : KryptonForm
     {
-        private string currentUser;
+     
 
-        public teacher__dashboard(string username)
+        public teacher__dashboard(string currentUserName)
         {
             InitializeComponent();
-            currentUser = username;
+         
 
-
-            LoadUserDetails();
-        }
-
-
-        //ito yung way para maload yung current user,kukuhain natin yung username tas iacsess na natin yung laman ng file 
-        //lagay ko to mamaya sa account__manager para call nalang
-        private void LoadUserDetails()
-        {
-            string folderPath = "teacherCredentials";
-            string fullPath = Path.Combine(folderPath, currentUser + ".txt");
-
-            if (File.Exists(fullPath))
-            {
-                string[] lines = File.ReadAllLines(fullPath);
-
-                foreach (var line in lines)
-                {
-                    
-                    if (line.StartsWith("First Name:"))
-                    {
-                        string firstName = line.Substring("First Name:".Length).Trim();
-                        teachers__firstName.Text = $"Hi, {firstName}";
-                        break;
-                    }
-                }
-            }
-            else
-            {
-                teachers__firstName.Text = "First Name: Not Available";
-            }
+            teachers__firstName.Text = $"Hi, {Account__Manager.loadUserData("teacherCredentials", currentUserName, "First Name")}";
         }
 
 
@@ -64,11 +34,6 @@ namespace sprout__gradeBook
                 return;
             }
             else Application.Exit();
-        }
-
-        private void teachers__firstName_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void teacher__dashboard_Load(object sender, EventArgs e)

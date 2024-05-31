@@ -126,7 +126,7 @@
             // close_btn
             // 
             this.close_btn.Image = ((System.Drawing.Image)(resources.GetObject("close_btn.Image")));
-            this.close_btn.Location = new System.Drawing.Point(790, 8);
+            this.close_btn.Location = new System.Drawing.Point(786, 9);
             this.close_btn.Name = "close_btn";
             this.close_btn.Size = new System.Drawing.Size(24, 24);
             this.close_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -244,7 +244,7 @@
             // divider_1
             // 
             this.divider_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
-            this.divider_1.Location = new System.Drawing.Point(51, 115);
+            this.divider_1.Location = new System.Drawing.Point(53, 115);
             this.divider_1.Name = "divider_1";
             this.divider_1.Size = new System.Drawing.Size(717, 1);
             this.divider_1.TabIndex = 45;
@@ -256,17 +256,16 @@
             this.teachers__firstName.BackColor = System.Drawing.Color.White;
             this.teachers__firstName.Font = new System.Drawing.Font("Poppins SemiBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.teachers__firstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.teachers__firstName.Location = new System.Drawing.Point(607, 39);
+            this.teachers__firstName.Location = new System.Drawing.Point(607, 40);
             this.teachers__firstName.Name = "teachers__firstName";
             this.teachers__firstName.Size = new System.Drawing.Size(106, 30);
             this.teachers__firstName.TabIndex = 60;
             this.teachers__firstName.Text = "user name";
-            this.teachers__firstName.Click += new System.EventHandler(this.teachers__firstName_Click);
             // 
             // img__user__icon
             // 
             this.img__user__icon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.img__user__icon.Location = new System.Drawing.Point(731, 28);
+            this.img__user__icon.Location = new System.Drawing.Point(731, 34);
             this.img__user__icon.Name = "img__user__icon";
             this.img__user__icon.Size = new System.Drawing.Size(36, 36);
             this.img__user__icon.TabIndex = 48;

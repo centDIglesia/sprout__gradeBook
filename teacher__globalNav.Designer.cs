@@ -277,6 +277,7 @@
             this.viewPanel.StateCommon.Color1 = System.Drawing.Color.White;
             this.viewPanel.StateCommon.Color2 = System.Drawing.Color.White;
             this.viewPanel.TabIndex = 52;
+            this.viewPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.viewPanel_Paint);
             // 
             // back__btn
             // 

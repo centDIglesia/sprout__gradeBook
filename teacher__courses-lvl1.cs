@@ -15,10 +15,14 @@ namespace sprout__gradeBook
     {
         public static teacher__courses_lvl1 lvl1Instance;
 
-        public teacher__courses_lvl1()
+        public teacher__courses_lvl1(string currentUsername)
         {
+
             InitializeComponent();
             lvl1Instance = this;
+
+            teachers__firstName.Text = $"Hi, {Account__Manager.loadUserData("teacherCredentials", currentUsername, "First Name")}";
+
         }
 
         private void close_btn_Click(object sender, EventArgs e)
@@ -36,6 +40,11 @@ namespace sprout__gradeBook
         {
             Course_Information__Manager Form2 = new Course_Information__Manager();
             Form2.Show();
+        }
+
+        private void teacher__courses_lvl1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 
