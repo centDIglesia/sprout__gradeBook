@@ -139,9 +139,9 @@ namespace sprout__gradeBook
 
                 }
 
-                else if (!UserInput__Validator.ValidateLength(signupEMAIL__txtbox.Text, 12, 25))
+                else if (!UserInput__Validator.ValidateLength(signupEMAIL__txtbox.Text, 12, 35))
                 {
-                    MessageBox.Show("The input length must be between 12 and 25 characters.", "Invalid Length", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("The input length must be between 11 and 35 characters.", "Invalid Length", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     setInputState(signupEMAIL__txtbox, email__tooltip, Color.Red);
                     signupEMAIL__txtbox.Focus();
                 }
@@ -420,15 +420,12 @@ namespace sprout__gradeBook
 
         private void signIn__btn_Click(object sender, EventArgs e)
         {
-
             string username = signinEMAIL__txtbox.Text;
             string password = signinPASS__txtbox.Text;
-
 
             if (username == "Username" || password == "Password")
             {
                 MessageBox.Show("Please make sure to fill out all required fields before proceeding.", "Incomplete Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
 
                 if (username == "Username")
                 {
@@ -442,7 +439,6 @@ namespace sprout__gradeBook
                 return;
             }
 
-
             string folderPath = "teacherCredentials";
             string fullPath = Path.Combine(folderPath, username + ".txt");
             bool isExist = File.Exists(fullPath);
@@ -452,24 +448,25 @@ namespace sprout__gradeBook
                 bool isValid = Account__Manager.AuthenticateTeacherLogIn(username, password, folderPath);
                 if (isValid)
                 {
-                    MessageBox.Show("Sign in successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
 
+                    teacher__dashboard teacher__Dashboard = new teacher__dashboard(username);
+
+                    teacher__Dashboard.Show();
                 }
                 else
                 {
                     MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else MessageBox.Show("The teacher account you entered does not exist.\n\n" +
+            else
+            {
+                MessageBox.Show("The teacher account you entered does not exist.\n\n" +
                     "Please check your username and password or sign up if you don't have an account yet.",
                     "Account Not Found",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
-
-
-
-
-
+            }
         }
 
 

@@ -13,29 +13,33 @@ namespace sprout__gradeBook
 {
     public partial class teacher__globalNav : KryptonForm
     {
-        public teacher__globalNav()
+        private string currentUser;
+
+        public teacher__globalNav(string username)
         {
             InitializeComponent();
+            currentUser = username;
         }
-        public void loadForm (object Form)
+
+        public void loadForm(Form form)
         {
             if (this.viewPanel.Controls.Count > 0) this.viewPanel.Controls.RemoveAt(0);
 
-            Form f = Form as Form;
-            f.TopLevel = false; 
-            f.Dock = DockStyle.Fill;
-            this.viewPanel.Controls.Add(f);
-            this.viewPanel.Tag = f;
-            f.Show();
+            form.TopLevel = false;
+            form.Dock = DockStyle.Fill;
+            this.viewPanel.Controls.Add(form);
+            this.viewPanel.Tag = form;
+            form.Show();
         }
+
         private void teacher__globalNav_Load(object sender, EventArgs e)
         {
-            loadForm(new teacher__dashboard());
+            loadForm(new teacher__dashboard(currentUser));
         }
 
         private void btn_dashboard_Click(object sender, EventArgs e)
         {
-            loadForm(new teacher__dashboard());
+            loadForm(new teacher__dashboard(currentUser));
         }
 
         private void btn_courses_Click(object sender, EventArgs e)

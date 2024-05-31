@@ -80,11 +80,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Poppins Medium", 12.25F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
-            this.label2.Location = new System.Drawing.Point(40, 72);
+            this.label2.Location = new System.Drawing.Point(26, 70);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 21);
+            this.label2.Size = new System.Drawing.Size(150, 30);
             this.label2.TabIndex = 2;
             this.label2.Text = "Subject Name:";
             // 
@@ -108,11 +108,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Poppins Medium", 12.25F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
-            this.label3.Location = new System.Drawing.Point(40, 150);
+            this.label3.Location = new System.Drawing.Point(26, 148);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 21);
+            this.label3.Size = new System.Drawing.Size(104, 30);
             this.label3.TabIndex = 15;
             this.label3.Text = "Schedule:";
             // 
@@ -137,7 +137,7 @@
             this.to_sched_arrow.Image = global::sprout__gradeBook.Properties.Resources.next_arrow_green;
             this.to_sched_arrow.Location = new System.Drawing.Point(188, 171);
             this.to_sched_arrow.Name = "to_sched_arrow";
-            this.to_sched_arrow.Size = new System.Drawing.Size(45, 50);
+            this.to_sched_arrow.Size = new System.Drawing.Size(45, 45);
             this.to_sched_arrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.to_sched_arrow.TabIndex = 18;
             this.to_sched_arrow.TabStop = false;
