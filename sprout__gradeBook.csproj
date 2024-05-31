@@ -57,11 +57,11 @@
       <DependentUpon>Course-Information__Manager.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomColor.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="IntroPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="IntroPage.Designer.cs">
+      <DependentUpon>IntroPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -117,8 +117,8 @@
     <EmbeddedResource Include="Course-Information__Manager.resx">
       <DependentUpon>Course-Information__Manager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="IntroPage.resx">
+      <DependentUpon>IntroPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
