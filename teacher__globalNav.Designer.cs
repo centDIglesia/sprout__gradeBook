@@ -1,6 +1,6 @@
 ﻿namespace sprout__gradeBook
 {
-    partial class teacher__globalNav
+    partial class teacher__MainDashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(teacher__globalNav));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(teacher__MainDashboard));
             this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.btn_courses = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btn_dashboard = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -41,11 +41,18 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.sprout__logo__white = new System.Windows.Forms.PictureBox();
             this.global__nav__bg = new System.Windows.Forms.PictureBox();
+            this.notification__icon = new System.Windows.Forms.PictureBox();
+            this.teachers__firstName = new System.Windows.Forms.Label();
+            this.close_btn = new System.Windows.Forms.PictureBox();
+            this.img__user__icon = new sprout__gradeBook.RoundPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.viewPanel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.back__btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sprout__logo__white)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.global__nav__bg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notification__icon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.close_btn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img__user__icon)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette2
@@ -130,10 +137,14 @@
             this.btn_dashboard.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0, -1, 0, -1);
             this.btn_dashboard.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btn_dashboard.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins", 12.75F);
+            this.btn_dashboard.StateDisabled.Back.Color1 = System.Drawing.Color.DarkGray;
+            this.btn_dashboard.StateDisabled.Back.Color2 = System.Drawing.Color.Silver;
             this.btn_dashboard.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(73)))), ((int)(((byte)(28)))));
             this.btn_dashboard.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(73)))), ((int)(((byte)(28)))));
             this.btn_dashboard.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
             this.btn_dashboard.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
+            this.btn_dashboard.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
+            this.btn_dashboard.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
             this.btn_dashboard.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -141,7 +152,6 @@
             this.btn_dashboard.TabIndex = 47;
             this.btn_dashboard.Values.Text = "Dashboard";
             this.btn_dashboard.Click += new System.EventHandler(this.btn_dashboard_Click);
-            this.btn_dashboard.Leave += new System.EventHandler(this.btn_dashboard_Leave);
             // 
             // btn_gradeBook
             // 
@@ -224,6 +234,7 @@
             this.btn_students.StateTracking.Border.Rounding = 0;
             this.btn_students.TabIndex = 49;
             this.btn_students.Values.Text = "Students";
+            this.btn_students.Click += new System.EventHandler(this.btn_students_Click);
             // 
             // btn_message
             // 
@@ -268,9 +279,9 @@
             // 
             // viewPanel
             // 
-            this.viewPanel.Location = new System.Drawing.Point(322, -1);
+            this.viewPanel.Location = new System.Drawing.Point(325, 72);
             this.viewPanel.Name = "viewPanel";
-            this.viewPanel.Size = new System.Drawing.Size(827, 712);
+            this.viewPanel.Size = new System.Drawing.Size(822, 639);
             this.viewPanel.StateCommon.Color1 = System.Drawing.Color.White;
             this.viewPanel.StateCommon.Color2 = System.Drawing.Color.White;
             this.viewPanel.TabIndex = 52;
@@ -316,12 +327,57 @@
             this.global__nav__bg.TabIndex = 0;
             this.global__nav__bg.TabStop = false;
             // 
-            // teacher__globalNav
+            // notification__icon
+            // 
+            this.notification__icon.Image = ((System.Drawing.Image)(resources.GetObject("notification__icon.Image")));
+            this.notification__icon.Location = new System.Drawing.Point(904, 36);
+            this.notification__icon.Name = "notification__icon";
+            this.notification__icon.Size = new System.Drawing.Size(38, 24);
+            this.notification__icon.TabIndex = 61;
+            this.notification__icon.TabStop = false;
+            // 
+            // teachers__firstName
+            // 
+            this.teachers__firstName.AutoSize = true;
+            this.teachers__firstName.BackColor = System.Drawing.Color.White;
+            this.teachers__firstName.Font = new System.Drawing.Font("Poppins SemiBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.teachers__firstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.teachers__firstName.Location = new System.Drawing.Point(944, 36);
+            this.teachers__firstName.Name = "teachers__firstName";
+            this.teachers__firstName.Size = new System.Drawing.Size(106, 30);
+            this.teachers__firstName.TabIndex = 63;
+            this.teachers__firstName.Text = "user name";
+            // 
+            // close_btn
+            // 
+            this.close_btn.BackColor = System.Drawing.Color.Transparent;
+            this.close_btn.Image = ((System.Drawing.Image)(resources.GetObject("close_btn.Image")));
+            this.close_btn.Location = new System.Drawing.Point(1111, 14);
+            this.close_btn.Name = "close_btn";
+            this.close_btn.Size = new System.Drawing.Size(24, 24);
+            this.close_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.close_btn.TabIndex = 64;
+            this.close_btn.TabStop = false;
+            // 
+            // img__user__icon
+            // 
+            this.img__user__icon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.img__user__icon.Location = new System.Drawing.Point(1053, 30);
+            this.img__user__icon.Name = "img__user__icon";
+            this.img__user__icon.Size = new System.Drawing.Size(36, 36);
+            this.img__user__icon.TabIndex = 62;
+            this.img__user__icon.TabStop = false;
+            // 
+            // teacher__MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1147, 711);
+            this.Controls.Add(this.close_btn);
+            this.Controls.Add(this.img__user__icon);
+            this.Controls.Add(this.notification__icon);
+            this.Controls.Add(this.teachers__firstName);
             this.Controls.Add(this.viewPanel);
             this.Controls.Add(this.btn_message);
             this.Controls.Add(this.btn_gradeBook);
@@ -333,18 +389,22 @@
             this.Controls.Add(this.sprout__logo__white);
             this.Controls.Add(this.global__nav__bg);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "teacher__globalNav";
+            this.Name = "teacher__MainDashboard";
             this.Palette = this.kryptonPalette2;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "*";
-            this.Load += new System.EventHandler(this.teacher__globalNav_Load);
+            this.Load += new System.EventHandler(this.v_Load);
             ((System.ComponentModel.ISupportInitialize)(this.viewPanel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.back__btn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sprout__logo__white)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.global__nav__bg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notification__icon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.close_btn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img__user__icon)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -361,5 +421,9 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton btn_students;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btn_message;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel viewPanel;
+        private RoundPictureBox img__user__icon;
+        private System.Windows.Forms.PictureBox notification__icon;
+        private System.Windows.Forms.Label teachers__firstName;
+        private System.Windows.Forms.PictureBox close_btn;
     }
 }

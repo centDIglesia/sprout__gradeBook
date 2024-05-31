@@ -14,14 +14,14 @@ namespace sprout__gradeBook
 {
     public partial class teacher__dashboard : KryptonForm
     {
-     
+
 
         public teacher__dashboard(string currentUserName)
         {
             InitializeComponent();
-         
 
-            teachers__firstName.Text = $"Hi, {Account__Manager.loadUserData("teacherCredentials", currentUserName, "First Name")}";
+
+
         }
 
 

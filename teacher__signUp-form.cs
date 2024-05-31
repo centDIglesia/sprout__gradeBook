@@ -452,7 +452,7 @@ namespace sprout__gradeBook
 
 
 
-                    teacher__globalNav teacher__GlobalNav = new teacher__globalNav(username);
+                    teacher__MainDashboard teacher__GlobalNav = new teacher__MainDashboard(username);
                     teacher__GlobalNav.Show();
                 }
                 else

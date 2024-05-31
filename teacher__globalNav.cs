@@ -11,14 +11,17 @@ using ComponentFactory.Krypton.Toolkit;
 
 namespace sprout__gradeBook
 {
-    public partial class teacher__globalNav : KryptonForm
+    public partial class teacher__MainDashboard : KryptonForm
     {
         private string currentUser;
 
-        public teacher__globalNav(string username)
+        public teacher__MainDashboard(string currentUserName)
         {
             InitializeComponent();
-            currentUser = username;
+
+
+
+            teachers__firstName.Text = $"Hi, {Account__Manager.loadUserData("teacherCredentials", currentUserName, "First Name")}";
         }
 
         public void loadForm(Form form)
@@ -32,10 +35,7 @@ namespace sprout__gradeBook
             form.Show();
         }
 
-        private void teacher__globalNav_Load(object sender, EventArgs e)
-        {
 
-        }
 
         private void btn_dashboard_Click(object sender, EventArgs e)
         {
@@ -48,13 +48,20 @@ namespace sprout__gradeBook
             loadForm(new teacher__courses_lvl1(currentUser));
         }
 
-        private void viewPanel_Paint(object sender, PaintEventArgs e)
+        private void btn_students_Click(object sender, EventArgs e)
+        {
+
+            loadForm(new teacher__students(currentUser));
+        }
+
+        private void v_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void btn_dashboard_Leave(object sender, EventArgs e)
+        private void viewPanel_Paint(object sender, PaintEventArgs e)
         {
+
         }
     }
 }

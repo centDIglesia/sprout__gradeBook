@@ -20,9 +20,6 @@ namespace sprout__gradeBook
 
             InitializeComponent();
             lvl1Instance = this;
-
-            teachers__firstName.Text = $"Hi, {Account__Manager.loadUserData("teacherCredentials", currentUsername, "First Name")}";
-
         }
 
         private void close_btn_Click(object sender, EventArgs e)

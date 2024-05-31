@@ -34,7 +34,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.close_btn = new System.Windows.Forms.PictureBox();
             this.student__quantity = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
@@ -45,11 +44,7 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.notification__icon = new System.Windows.Forms.PictureBox();
             this.divider_1 = new System.Windows.Forms.PictureBox();
-            this.teachers__firstName = new System.Windows.Forms.Label();
-            this.img__user__icon = new sprout__gradeBook.RoundPictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.close_btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -58,9 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.notification__icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img__user__icon)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -69,7 +62,7 @@
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
             this.label7.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.label7.Location = new System.Drawing.Point(407, 234);
+            this.label7.Location = new System.Drawing.Point(411, 172);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(91, 37);
             this.label7.TabIndex = 64;
@@ -80,7 +73,7 @@
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
             this.label8.Font = new System.Drawing.Font("Gadugi", 69.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.label8.Location = new System.Drawing.Point(367, 139);
+            this.label8.Location = new System.Drawing.Point(371, 77);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(156, 104);
             this.label8.TabIndex = 65;
@@ -93,7 +86,7 @@
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
             this.label6.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.label6.Location = new System.Drawing.Point(646, 234);
+            this.label6.Location = new System.Drawing.Point(650, 183);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(94, 37);
             this.label6.TabIndex = 62;
@@ -105,7 +98,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
             this.label1.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.label1.Location = new System.Drawing.Point(141, 234);
+            this.label1.Location = new System.Drawing.Point(145, 172);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 37);
             this.label1.TabIndex = 53;
@@ -116,30 +109,19 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
             this.label2.Font = new System.Drawing.Font("Gadugi", 69.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.label2.Location = new System.Drawing.Point(611, 139);
+            this.label2.Location = new System.Drawing.Point(615, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(156, 104);
             this.label2.TabIndex = 63;
             this.label2.Text = "04";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // close_btn
-            // 
-            this.close_btn.Image = ((System.Drawing.Image)(resources.GetObject("close_btn.Image")));
-            this.close_btn.Location = new System.Drawing.Point(786, 9);
-            this.close_btn.Name = "close_btn";
-            this.close_btn.Size = new System.Drawing.Size(24, 24);
-            this.close_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.close_btn.TabIndex = 59;
-            this.close_btn.TabStop = false;
-            this.close_btn.Click += new System.EventHandler(this.close_btn_Click);
-            // 
             // student__quantity
             // 
             this.student__quantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
             this.student__quantity.Font = new System.Drawing.Font("Gadugi", 69.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.student__quantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.student__quantity.Location = new System.Drawing.Point(58, 139);
+            this.student__quantity.Location = new System.Drawing.Point(62, 77);
             this.student__quantity.Name = "student__quantity";
             this.student__quantity.Size = new System.Drawing.Size(217, 104);
             this.student__quantity.TabIndex = 58;
@@ -151,7 +133,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(51, 70);
+            this.pictureBox1.Location = new System.Drawing.Point(55, 8);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(171, 27);
             this.pictureBox1.TabIndex = 57;
@@ -160,7 +142,7 @@
             // pictureBox11
             // 
             this.pictureBox11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
-            this.pictureBox11.Location = new System.Drawing.Point(215, 347);
+            this.pictureBox11.Location = new System.Drawing.Point(219, 285);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(1, 124);
             this.pictureBox11.TabIndex = 56;
@@ -172,7 +154,7 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
             this.label4.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.label4.Location = new System.Drawing.Point(53, 306);
+            this.label4.Location = new System.Drawing.Point(57, 244);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(152, 28);
             this.label4.TabIndex = 55;
@@ -181,7 +163,7 @@
             // pictureBox10
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
-            this.pictureBox10.Location = new System.Drawing.Point(59, 334);
+            this.pictureBox10.Location = new System.Drawing.Point(63, 272);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(700, 1);
             this.pictureBox10.TabIndex = 54;
@@ -190,7 +172,7 @@
             // pictureBox9
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
-            this.pictureBox9.Location = new System.Drawing.Point(51, 506);
+            this.pictureBox9.Location = new System.Drawing.Point(55, 444);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(717, 163);
             this.pictureBox9.TabIndex = 52;
@@ -199,7 +181,7 @@
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
-            this.pictureBox8.Location = new System.Drawing.Point(51, 302);
+            this.pictureBox8.Location = new System.Drawing.Point(55, 240);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(717, 185);
             this.pictureBox8.TabIndex = 51;
@@ -208,7 +190,7 @@
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
-            this.pictureBox7.Location = new System.Drawing.Point(543, 135);
+            this.pictureBox7.Location = new System.Drawing.Point(547, 73);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(225, 150);
             this.pictureBox7.TabIndex = 50;
@@ -217,7 +199,7 @@
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
-            this.pictureBox6.Location = new System.Drawing.Point(299, 135);
+            this.pictureBox6.Location = new System.Drawing.Point(303, 73);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(225, 150);
             this.pictureBox6.TabIndex = 49;
@@ -226,63 +208,32 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
-            this.pictureBox4.Location = new System.Drawing.Point(51, 135);
+            this.pictureBox4.Location = new System.Drawing.Point(55, 73);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(225, 150);
             this.pictureBox4.TabIndex = 47;
             this.pictureBox4.TabStop = false;
             // 
-            // notification__icon
-            // 
-            this.notification__icon.Image = ((System.Drawing.Image)(resources.GetObject("notification__icon.Image")));
-            this.notification__icon.Location = new System.Drawing.Point(567, 40);
-            this.notification__icon.Name = "notification__icon";
-            this.notification__icon.Size = new System.Drawing.Size(38, 24);
-            this.notification__icon.TabIndex = 46;
-            this.notification__icon.TabStop = false;
-            // 
             // divider_1
             // 
             this.divider_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
-            this.divider_1.Location = new System.Drawing.Point(53, 115);
+            this.divider_1.Location = new System.Drawing.Point(57, 46);
             this.divider_1.Name = "divider_1";
             this.divider_1.Size = new System.Drawing.Size(717, 1);
             this.divider_1.TabIndex = 45;
             this.divider_1.TabStop = false;
-            // 
-            // teachers__firstName
-            // 
-            this.teachers__firstName.AutoSize = true;
-            this.teachers__firstName.BackColor = System.Drawing.Color.White;
-            this.teachers__firstName.Font = new System.Drawing.Font("Poppins SemiBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.teachers__firstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.teachers__firstName.Location = new System.Drawing.Point(607, 40);
-            this.teachers__firstName.Name = "teachers__firstName";
-            this.teachers__firstName.Size = new System.Drawing.Size(106, 30);
-            this.teachers__firstName.TabIndex = 60;
-            this.teachers__firstName.Text = "user name";
-            // 
-            // img__user__icon
-            // 
-            this.img__user__icon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.img__user__icon.Location = new System.Drawing.Point(731, 34);
-            this.img__user__icon.Name = "img__user__icon";
-            this.img__user__icon.Size = new System.Drawing.Size(36, 36);
-            this.img__user__icon.TabIndex = 48;
-            this.img__user__icon.TabStop = false;
             // 
             // teacher__dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(823, 711);
+            this.ClientSize = new System.Drawing.Size(827, 639);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.close_btn);
             this.Controls.Add(this.student__quantity);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox11);
@@ -292,16 +243,12 @@
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.img__user__icon);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.notification__icon);
             this.Controls.Add(this.divider_1);
-            this.Controls.Add(this.teachers__firstName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "teacher__dashboard";
             this.Text = "teacher__dashboard";
             this.Load += new System.EventHandler(this.teacher__dashboard_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.close_btn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
@@ -310,9 +257,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.notification__icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img__user__icon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -325,7 +270,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox close_btn;
         private System.Windows.Forms.Label student__quantity;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox11;
@@ -335,10 +279,7 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private RoundPictureBox img__user__icon;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox notification__icon;
         private System.Windows.Forms.PictureBox divider_1;
-        private System.Windows.Forms.Label teachers__firstName;
     }
 }

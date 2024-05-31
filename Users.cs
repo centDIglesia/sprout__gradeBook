@@ -35,13 +35,14 @@ namespace sprout__gradeBook
         public DateTime Birthday { get; set; }
 
         public string Password { get; private set; }
-
-        public Student(string firstName, string lastName, string email, string username, int studentNumber, DateTime birthday, string school)
+        public string Gender { get; set; }
+        public Student(string firstName, string lastName, string email, string username, int studentNumber, DateTime birthday, string school, string gender)
             : base(firstName, lastName, email, username, "", school)
         {
             StudentNumber = studentNumber;
             Birthday = birthday;
             Password = GeneratePassword(birthday, school);
+            Gender = gender;
         }
 
         public override string GetFolder()
