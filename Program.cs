@@ -12,11 +12,14 @@ namespace sprout__gradeBook
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
+
+
         static void Main()
         {
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new introductionPage());
+            Application.Run(new teacher__globalNav("test data"));
         }
     }
 }

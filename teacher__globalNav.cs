@@ -39,6 +39,7 @@ namespace sprout__gradeBook
 
         private void btn_dashboard_Click(object sender, EventArgs e)
         {
+
             loadForm(new teacher__dashboard(currentUser));
         }
 
@@ -50,6 +51,10 @@ namespace sprout__gradeBook
         private void viewPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btn_dashboard_Leave(object sender, EventArgs e)
+        {
         }
     }
 }
