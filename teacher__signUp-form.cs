@@ -450,7 +450,7 @@ namespace sprout__gradeBook
                 {
                     this.Hide();
 
-                    
+
                 }
                 else
                 {
@@ -548,7 +548,6 @@ namespace sprout__gradeBook
             {
 
             }
-
 
 
         }
