@@ -535,18 +535,24 @@ namespace sprout__gradeBook
             teacherSIGNUP__form.Hide();
 
 
-            //automatically creat textfile for sections handled by this teacher
-            string filePath = Path.Combine("sectionsInformations", $"{username}.txt");
-            using (StreamWriter writer = new StreamWriter(filePath))
+            // Automatically create a text file for sections handled by this teacher
+            string sectionFilePath = Path.Combine("sectionsInformations", $"{username}.txt");
+            if (!File.Exists(sectionFilePath))
             {
+                using (StreamWriter sectionWriter = File.CreateText(sectionFilePath))
+                {
 
+                }
             }
 
-            //automatically creat textfile for studentsInfo handled by this teacher
-            string filePath2 = Path.Combine("TeachersStudentRecords", $"{username}.txt");
-            using (StreamWriter writer = new StreamWriter(filePath2))
+            // Automatically create a text file for student information handled by this teacher
+            string studentFilePath = Path.Combine("TeachersStudentRecords", $"{username}.txt");
+            if (!File.Exists(studentFilePath))
             {
+                using (StreamWriter studentWriter = File.CreateText(studentFilePath))
+                {
 
+                }
             }
 
 

@@ -65,7 +65,7 @@
             this.flowLayoutPanel1.Controls.Add(this.courses1);
             this.flowLayoutPanel1.Controls.Add(this.courses2);
             this.flowLayoutPanel1.Controls.Add(this.courses3);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(55, 63);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(46, 53);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(739, 543);
             this.flowLayoutPanel1.TabIndex = 92;

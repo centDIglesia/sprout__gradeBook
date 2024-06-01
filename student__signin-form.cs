@@ -106,9 +106,14 @@ namespace sprout__gradeBook
 
             }
 
+
+
+
             string folderPath = "studentCredentials";
             string fullPath = Path.Combine(folderPath, usernameOrId + ".txt");
             bool isExist = File.Exists(fullPath);
+
+
 
             if (isExist)
             {
