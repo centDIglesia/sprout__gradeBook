@@ -43,6 +43,11 @@ namespace sprout__gradeBook
         {
 
         }
+
+        private void kryptonMaskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
 
 
