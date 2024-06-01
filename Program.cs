@@ -19,7 +19,7 @@ namespace sprout__gradeBook
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new teacher__MainDashboard("test"));
+            Application.Run(new introductionPage());
         }
     }
 }

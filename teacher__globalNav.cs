@@ -40,7 +40,7 @@ namespace sprout__gradeBook
         private void btn_dashboard_Click(object sender, EventArgs e)
         {
 
-            loadForm(new teacher__dashboard(currentUser));
+            loadForm(new teacher__mainDashboard(currentUser));
         }
 
         private void btn_courses_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace sprout__gradeBook
         private void btn_students_Click(object sender, EventArgs e)
         {
 
-            loadForm(new teacher__students(currentUser));
+            loadForm(new teacher__studentsDashboard(currentUser));
         }
 
         private void v_Load(object sender, EventArgs e)

@@ -532,15 +532,25 @@ namespace sprout__gradeBook
             Users newTeacher = new Teacher(firstName, lastName, email, username, password, school);
 
 
-
-
-
             Account__Manager.SaveUser(newTeacher);
             MessageBox.Show("Sign up successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             teacherSIGNINform.Show();
             teacherSIGNUP__form.Hide();
 
-            //MessageBox.Show("Please make sure to fill out all required fields before proceeding.", "Incomplete Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            //automatically creat textfile for sections handled by this teacher
+            string filePath = Path.Combine("sectionsInformations", $"{username}.txt");
+            using (StreamWriter writer = new StreamWriter(filePath))
+            {
+
+            }
+
+            //automatically creat textfile for studentsInfo handled by this teacher
+            string filePath2 = Path.Combine("TeachersStudentRecords", $"{username}.txt");
+            using (StreamWriter writer = new StreamWriter(filePath2))
+            {
+
+            }
 
 
 

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace sprout__gradeBook
 {
@@ -12,9 +8,8 @@ namespace sprout__gradeBook
         public string LastName { get; set; }
         public string Email { get; set; }
         public string Username { get; set; }
-        public string Password { get; set; }
-
-        public string schoolName { get; set; }
+        public string Password { get; protected set; }
+        public string SchoolName { get; set; }
 
         public Users(string firstName, string lastName, string email, string username, string password, string school)
         {
@@ -23,7 +18,7 @@ namespace sprout__gradeBook
             Email = email;
             Username = username;
             Password = password;
-            schoolName = school;
+            SchoolName = school;
         }
 
         public abstract string GetFolder();
@@ -33,9 +28,8 @@ namespace sprout__gradeBook
     {
         public int StudentNumber { get; set; }
         public DateTime Birthday { get; set; }
-
-        public string Password { get; private set; }
         public string Gender { get; set; }
+
         public Student(string firstName, string lastName, string email, string username, int studentNumber, DateTime birthday, string school, string gender)
             : base(firstName, lastName, email, username, "", school)
         {
@@ -50,13 +44,11 @@ namespace sprout__gradeBook
             return "studentCredentials";
         }
 
-
         private string GeneratePassword(DateTime birthday, string school)
         {
             return birthday.ToString("dd-MM-yy") + school;
         }
     }
-
 
     public class Teacher : Users
     {
@@ -68,6 +60,4 @@ namespace sprout__gradeBook
             return "teacherCredentials";
         }
     }
-
 }
-

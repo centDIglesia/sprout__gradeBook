@@ -12,11 +12,11 @@ using ComponentFactory.Krypton.Toolkit;
 
 namespace sprout__gradeBook
 {
-    public partial class teacher__dashboard : KryptonForm
+    public partial class teacher__mainDashboard : KryptonForm
     {
 
 
-        public teacher__dashboard(string currentUserName)
+        public teacher__mainDashboard(string currentUserName)
         {
             InitializeComponent();
 

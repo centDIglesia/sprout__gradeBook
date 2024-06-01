@@ -1,6 +1,6 @@
 ﻿namespace sprout__gradeBook
 {
-    partial class teacher__students
+    partial class teacher__studentsDashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(teacher__students));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(teacher__studentsDashboard));
             this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.student__sections1 = new sprout__gradeBook.student__sections();
             this.divider_1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.student__sections1 = new sprout__gradeBook.student__sections();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -59,11 +59,23 @@
             this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Controls.Add(this.student__sections1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(55, 63);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(739, 543);
             this.flowLayoutPanel1.TabIndex = 92;
+            // 
+            // student__sections1
+            // 
+            this.student__sections1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.student__sections1.Location = new System.Drawing.Point(3, 3);
+            this.student__sections1.Name = "student__sections1";
+            this.student__sections1.Size = new System.Drawing.Size(235, 97);
+            this.student__sections1.studentCount = "label2";
+            this.student__sections1.subjectCode = "label1";
+            this.student__sections1.subjectName = "label1";
+            this.student__sections1.TabIndex = 0;
             // 
             // divider_1
             // 
@@ -84,17 +96,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(121, 27);
             this.pictureBox1.TabIndex = 58;
             this.pictureBox1.TabStop = false;
-            // 
-            // student__sections1
-            // 
-            this.student__sections1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.student__sections1.Location = new System.Drawing.Point(3, 3);
-            this.student__sections1.Name = "student__sections1";
-            this.student__sections1.Size = new System.Drawing.Size(235, 97);
-            this.student__sections1.studentCount = "label2";
-            this.student__sections1.subjectCode = "label1";
-            this.student__sections1.subjectName = "label1";
-            this.student__sections1.TabIndex = 0;
             // 
             // teacher__students
             // 

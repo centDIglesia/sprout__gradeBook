@@ -92,17 +92,17 @@
     <Compile Include="student__signin-form.Designer.cs">
       <DependentUpon>student__signin-form.cs</DependentUpon>
     </Compile>
-    <Compile Include="teacher__courses-lvl1.cs">
+    <Compile Include="teacher__coursesDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="teacher__courses-lvl1.Designer.cs">
-      <DependentUpon>teacher__courses-lvl1.cs</DependentUpon>
+    <Compile Include="teacher__coursesDashboard.Designer.cs">
+      <DependentUpon>teacher__coursesDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="teacher__dashboard.cs">
+    <Compile Include="teacher__mainDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="teacher__dashboard.Designer.cs">
-      <DependentUpon>teacher__dashboard.cs</DependentUpon>
+    <Compile Include="teacher__mainDashboard.Designer.cs">
+      <DependentUpon>teacher__mainDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="teacher__globalNav.cs">
       <SubType>Form</SubType>
@@ -116,11 +116,11 @@
     <Compile Include="teacher__signUp-form.Designer.cs">
       <DependentUpon>teacher__signUp-form.cs</DependentUpon>
     </Compile>
-    <Compile Include="teacher__students.cs">
+    <Compile Include="teacher__studentsDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="teacher__students.Designer.cs">
-      <DependentUpon>teacher__students.cs</DependentUpon>
+    <Compile Include="teacher__studentsDashboard.Designer.cs">
+      <DependentUpon>teacher__studentsDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="UserInput_Manager.cs" />
     <Compile Include="UserInput__Validator.cs" />
@@ -154,11 +154,11 @@
     <EmbeddedResource Include="student__signin-form.resx">
       <DependentUpon>student__signin-form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="teacher__courses-lvl1.resx">
-      <DependentUpon>teacher__courses-lvl1.cs</DependentUpon>
+    <EmbeddedResource Include="teacher__coursesDashboard.resx">
+      <DependentUpon>teacher__coursesDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="teacher__dashboard.resx">
-      <DependentUpon>teacher__dashboard.cs</DependentUpon>
+    <EmbeddedResource Include="teacher__mainDashboard.resx">
+      <DependentUpon>teacher__mainDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="teacher__globalNav.resx">
       <DependentUpon>teacher__globalNav.cs</DependentUpon>
@@ -166,8 +166,8 @@
     <EmbeddedResource Include="teacher__signUp-form.resx">
       <DependentUpon>teacher__signUp-form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="teacher__students.resx">
-      <DependentUpon>teacher__students.cs</DependentUpon>
+    <EmbeddedResource Include="teacher__studentsDashboard.resx">
+      <DependentUpon>teacher__studentsDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
