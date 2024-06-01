@@ -1,6 +1,6 @@
 ﻿namespace sprout__gradeBook
 {
-    partial class teacher__MainDashboard
+    partial class Teacher_MainDashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(teacher__MainDashboard));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Teacher_MainDashboard));
             this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.btn_courses = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btn_dashboard = new ComponentFactory.Krypton.Toolkit.KryptonButton();

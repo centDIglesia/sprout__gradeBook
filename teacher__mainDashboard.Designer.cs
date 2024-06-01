@@ -223,7 +223,7 @@
             this.divider_1.TabIndex = 45;
             this.divider_1.TabStop = false;
             // 
-            // teacher__dashboard
+            // teacher__mainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -246,7 +246,7 @@
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.divider_1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "teacher__dashboard";
+            this.Name = "teacher__mainDashboard";
             this.Text = "teacher__dashboard";
             this.Load += new System.EventHandler(this.teacher__dashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

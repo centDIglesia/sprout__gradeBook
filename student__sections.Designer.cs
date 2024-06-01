@@ -33,6 +33,7 @@
             this.studentCountTXT = new System.Windows.Forms.Label();
             this.subjectNameTXT = new System.Windows.Forms.Label();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.subjectScheduleTXT = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +54,7 @@
             this.studentCountTXT.AutoSize = true;
             this.studentCountTXT.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentCountTXT.ForeColor = System.Drawing.Color.Silver;
-            this.studentCountTXT.Location = new System.Drawing.Point(181, 70);
+            this.studentCountTXT.Location = new System.Drawing.Point(181, 74);
             this.studentCountTXT.Name = "studentCountTXT";
             this.studentCountTXT.Size = new System.Drawing.Size(42, 19);
             this.studentCountTXT.TabIndex = 1;
@@ -72,11 +73,23 @@
             this.subjectNameTXT.Text = "label1";
             this.subjectNameTXT.MouseHover += new System.EventHandler(this.subjectCodeTXT_MouseHover);
             // 
+            // subjectScheduleTXT
+            // 
+            this.subjectScheduleTXT.AutoSize = true;
+            this.subjectScheduleTXT.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subjectScheduleTXT.ForeColor = System.Drawing.Color.Silver;
+            this.subjectScheduleTXT.Location = new System.Drawing.Point(19, 74);
+            this.subjectScheduleTXT.Name = "subjectScheduleTXT";
+            this.subjectScheduleTXT.Size = new System.Drawing.Size(42, 19);
+            this.subjectScheduleTXT.TabIndex = 3;
+            this.subjectScheduleTXT.Text = "label2";
+            // 
             // student__sections
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.Controls.Add(this.subjectScheduleTXT);
             this.Controls.Add(this.subjectNameTXT);
             this.Controls.Add(this.studentCountTXT);
             this.Controls.Add(this.subjectCodeTXT);
@@ -96,5 +109,6 @@
         private System.Windows.Forms.Label studentCountTXT;
         private System.Windows.Forms.Label subjectNameTXT;
         private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.Label subjectScheduleTXT;
     }
 }

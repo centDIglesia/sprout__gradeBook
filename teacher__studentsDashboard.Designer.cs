@@ -76,6 +76,7 @@
             this.student__sections1.subjectCode = "label1";
             this.student__sections1.subjectName = "label1";
             this.student__sections1.TabIndex = 0;
+            this.student__sections1.Load += new System.EventHandler(this.student__sections1_Load);
             // 
             // divider_1
             // 
@@ -97,7 +98,7 @@
             this.pictureBox1.TabIndex = 58;
             this.pictureBox1.TabStop = false;
             // 
-            // teacher__students
+            // teacher__studentsDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -107,7 +108,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "teacher__students";
+            this.Name = "teacher__studentsDashboard";
             this.Load += new System.EventHandler(this.teacher__students_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).EndInit();

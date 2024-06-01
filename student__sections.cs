@@ -12,12 +12,12 @@ using ComponentFactory.Krypton.Toolkit;
 
 namespace sprout__gradeBook
 {
-    public partial class student__sections : UserControl 
+    public partial class student__sections : UserControl
     {
         public student__sections()
         {
             InitializeComponent();
-           
+
         }
 
         private void student__sections_Load(object sender, EventArgs e)
@@ -34,6 +34,18 @@ namespace sprout__gradeBook
             set
             {
                 subjectCodeTXT.Text = value;
+            }
+        }
+
+        public string subjectSchedule
+        {
+            get
+            {
+                return subjectScheduleTXT.Text;
+            }
+            set
+            {
+                subjectScheduleTXT.Text = value;
             }
         }
         public string subjectName

@@ -33,5 +33,10 @@ namespace sprout__gradeBook
         {
 
         }
+
+        private void student__sections1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
