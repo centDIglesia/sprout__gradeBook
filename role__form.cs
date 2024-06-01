@@ -11,9 +11,9 @@ using ComponentFactory.Krypton.Toolkit;
 
 namespace sprout__gradeBook
 {
-    public partial class role__form : KryptonForm
+    public partial class Role__form : KryptonForm
     {
-        public role__form()
+        public Role__form()
         {
             InitializeComponent();
         }

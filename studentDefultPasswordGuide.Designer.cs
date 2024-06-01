@@ -1,6 +1,6 @@
 ﻿namespace sprout__gradeBook
 {
-    partial class studentDefultPasswordGuide
+    partial class StudentDefultPasswordGuide
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(studentDefultPasswordGuide));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentDefultPasswordGuide));
             this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.role__btn = new ComponentFactory.Krypton.Toolkit.KryptonButton();

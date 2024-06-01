@@ -172,7 +172,7 @@ namespace sprout__gradeBook
         }
         private void signupUNAME__txtbox_Leave(object sender, EventArgs e)
         {
-            string folderPath = role__form.selectedRole == "student" ? "studentCredentials" : "teacherCredentials";
+            string folderPath = Role__form.selectedRole == "student" ? "studentCredentials" : "teacherCredentials";
 
             UserInput_Manager.RestoreDefaultText(signupUNAME__txtbox, "Username");
             UserInput_Manager.ToggleTooltip(signupUNAME__txtbox, uname__tooltip, "Username");

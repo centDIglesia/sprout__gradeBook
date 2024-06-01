@@ -38,5 +38,10 @@ namespace sprout__gradeBook
         {
 
         }
+
+        private void courses1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

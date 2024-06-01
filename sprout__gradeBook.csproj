@@ -71,38 +71,38 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="role__form.cs">
+    <Compile Include="Role__form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="role__form.Designer.cs">
-      <DependentUpon>role__form.cs</DependentUpon>
+    <Compile Include="Role__form.Designer.cs">
+      <DependentUpon>Role__form.cs</DependentUpon>
     </Compile>
     <Compile Include="Round__PictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="studentDefultPasswordGuide.cs">
+    <Compile Include="StudentDefultPasswordGuide.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="studentDefultPasswordGuide.Designer.cs">
-      <DependentUpon>studentDefultPasswordGuide.cs</DependentUpon>
+    <Compile Include="StudentDefultPasswordGuide.Designer.cs">
+      <DependentUpon>StudentDefultPasswordGuide.cs</DependentUpon>
     </Compile>
-    <Compile Include="student__sections.cs">
+    <Compile Include="Student__sections.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="student__sections.Designer.cs">
-      <DependentUpon>student__sections.cs</DependentUpon>
+    <Compile Include="Student__sections.Designer.cs">
+      <DependentUpon>Student__sections.cs</DependentUpon>
     </Compile>
-    <Compile Include="student__signin-form.cs">
+    <Compile Include="Student__Signin-form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="student__signin-form.Designer.cs">
-      <DependentUpon>student__signin-form.cs</DependentUpon>
+    <Compile Include="Student__Signin-form.Designer.cs">
+      <DependentUpon>Student__Signin-form.cs</DependentUpon>
     </Compile>
-    <Compile Include="teacher__coursesDashboard.cs">
+    <Compile Include="Teacher__coursesDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="teacher__coursesDashboard.Designer.cs">
-      <DependentUpon>teacher__coursesDashboard.cs</DependentUpon>
+    <Compile Include="Teacher__coursesDashboard.Designer.cs">
+      <DependentUpon>Teacher__coursesDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="teacher__mainDashboard.cs">
       <SubType>Form</SubType>
@@ -110,11 +110,11 @@
     <Compile Include="teacher__mainDashboard.Designer.cs">
       <DependentUpon>teacher__mainDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="teacher__globalNav.cs">
+    <Compile Include="Teacher__Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="teacher__globalNav.Designer.cs">
-      <DependentUpon>teacher__globalNav.cs</DependentUpon>
+    <Compile Include="Teacher__Dashboard.Designer.cs">
+      <DependentUpon>Teacher__Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="teacher__signUp-form.cs">
       <SubType>Form</SubType>
@@ -151,26 +151,26 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="role__form.resx">
-      <DependentUpon>role__form.cs</DependentUpon>
+    <EmbeddedResource Include="Role__form.resx">
+      <DependentUpon>Role__form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="studentDefultPasswordGuide.resx">
-      <DependentUpon>studentDefultPasswordGuide.cs</DependentUpon>
+    <EmbeddedResource Include="StudentDefultPasswordGuide.resx">
+      <DependentUpon>StudentDefultPasswordGuide.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="student__sections.resx">
-      <DependentUpon>student__sections.cs</DependentUpon>
+    <EmbeddedResource Include="Student__sections.resx">
+      <DependentUpon>Student__sections.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="student__signin-form.resx">
-      <DependentUpon>student__signin-form.cs</DependentUpon>
+    <EmbeddedResource Include="Student__Signin-form.resx">
+      <DependentUpon>Student__Signin-form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="teacher__coursesDashboard.resx">
-      <DependentUpon>teacher__coursesDashboard.cs</DependentUpon>
+    <EmbeddedResource Include="Teacher__coursesDashboard.resx">
+      <DependentUpon>Teacher__coursesDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="teacher__mainDashboard.resx">
       <DependentUpon>teacher__mainDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="teacher__globalNav.resx">
-      <DependentUpon>teacher__globalNav.cs</DependentUpon>
+    <EmbeddedResource Include="Teacher__Dashboard.resx">
+      <DependentUpon>Teacher__Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="teacher__signUp-form.resx">
       <DependentUpon>teacher__signUp-form.cs</DependentUpon>
@@ -241,6 +241,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\next-arrow-green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\subhover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sub.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

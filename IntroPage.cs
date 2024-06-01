@@ -37,7 +37,7 @@ namespace sprout__gradeBook
             timer1.Stop(); 
 
             this.Hide();
-            role__form roleForm = new role__form();
+            Role__form roleForm = new Role__form();
             
             roleForm.Show();
            

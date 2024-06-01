@@ -1,6 +1,6 @@
 ﻿namespace sprout__gradeBook
 {
-    partial class student__sections
+    partial class Student__sections
     {
         /// <summary> 
         /// Required designer variable.

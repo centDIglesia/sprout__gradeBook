@@ -77,7 +77,7 @@ namespace sprout__gradeBook
 
         private void showGuide_Click(object sender, EventArgs e)
         {
-            studentDefultPasswordGuide studentDefultPasswordGuide = new studentDefultPasswordGuide();
+            StudentDefultPasswordGuide studentDefultPasswordGuide = new StudentDefultPasswordGuide();
             studentDefultPasswordGuide.ShowDialog();
 
 

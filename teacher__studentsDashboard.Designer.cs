@@ -34,10 +34,6 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.divider_1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.courses1 = new sprout__gradeBook.Courses();
-            this.courses2 = new sprout__gradeBook.Courses();
-            this.courses3 = new sprout__gradeBook.Courses();
-            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -62,9 +58,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Controls.Add(this.courses1);
-            this.flowLayoutPanel1.Controls.Add(this.courses2);
-            this.flowLayoutPanel1.Controls.Add(this.courses3);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(46, 53);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(739, 543);
@@ -90,48 +83,6 @@
             this.pictureBox1.TabIndex = 58;
             this.pictureBox1.TabStop = false;
             // 
-            // courses1
-            // 
-            this.courses1.BackColor = System.Drawing.Color.White;
-            this.courses1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("courses1.BackgroundImage")));
-            this.courses1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.courses1.Location = new System.Drawing.Point(3, 3);
-            this.courses1.Name = "courses1";
-            this.courses1.Size = new System.Drawing.Size(235, 133);
-            this.courses1.subjectCode = null;
-            this.courses1.subjectCount = null;
-            this.courses1.subjectName = null;
-            this.courses1.subjectSchedule = new System.DateTime(((long)(0)));
-            this.courses1.TabIndex = 1;
-            // 
-            // courses2
-            // 
-            this.courses2.BackColor = System.Drawing.Color.White;
-            this.courses2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("courses2.BackgroundImage")));
-            this.courses2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.courses2.Location = new System.Drawing.Point(244, 3);
-            this.courses2.Name = "courses2";
-            this.courses2.Size = new System.Drawing.Size(235, 133);
-            this.courses2.subjectCode = null;
-            this.courses2.subjectCount = null;
-            this.courses2.subjectName = null;
-            this.courses2.subjectSchedule = new System.DateTime(((long)(0)));
-            this.courses2.TabIndex = 2;
-            // 
-            // courses3
-            // 
-            this.courses3.BackColor = System.Drawing.Color.White;
-            this.courses3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("courses3.BackgroundImage")));
-            this.courses3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.courses3.Location = new System.Drawing.Point(485, 3);
-            this.courses3.Name = "courses3";
-            this.courses3.Size = new System.Drawing.Size(235, 133);
-            this.courses3.subjectCode = null;
-            this.courses3.subjectCount = null;
-            this.courses3.subjectName = null;
-            this.courses3.subjectSchedule = new System.DateTime(((long)(0)));
-            this.courses3.TabIndex = 3;
-            // 
             // teacher__studentsDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -144,7 +95,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "teacher__studentsDashboard";
             this.Load += new System.EventHandler(this.teacher__students_Load);
-            this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -157,8 +107,5 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox divider_1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private Courses courses1;
-        private Courses courses2;
-        private Courses courses3;
     }
 }

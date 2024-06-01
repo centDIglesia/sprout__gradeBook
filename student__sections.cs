@@ -12,9 +12,9 @@ using ComponentFactory.Krypton.Toolkit;
 
 namespace sprout__gradeBook
 {
-    public partial class student__sections : UserControl
+    public partial class Student__sections : UserControl
     {
-        public student__sections()
+        public Student__sections()
         {
             InitializeComponent();
 

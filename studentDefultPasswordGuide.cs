@@ -11,9 +11,9 @@ using ComponentFactory.Krypton.Toolkit;
 
 namespace sprout__gradeBook
 {
-    public partial class studentDefultPasswordGuide : KryptonForm
+    public partial class StudentDefultPasswordGuide : KryptonForm
     {
-        public studentDefultPasswordGuide()
+        public StudentDefultPasswordGuide()
         {
             InitializeComponent();
         }

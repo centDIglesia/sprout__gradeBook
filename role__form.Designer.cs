@@ -1,6 +1,6 @@
 ﻿namespace sprout__gradeBook
 {
-    partial class role__form
+    partial class Role__form
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(role__form));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Role__form));
             this.role__btn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.close_btn = new System.Windows.Forms.PictureBox();
