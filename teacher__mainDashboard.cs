@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 
@@ -14,13 +6,11 @@ namespace sprout__gradeBook
 {
     public partial class teacher__mainDashboard : KryptonForm
     {
-
         public teacher__mainDashboard(string currentUser)
         {
             InitializeComponent();
+            UpdateCourseCount(currentUser);
         }
-
-
 
         private void close_btn_Click(object sender, EventArgs e)
         {
@@ -36,6 +26,12 @@ namespace sprout__gradeBook
         private void teacher__dashboard_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void UpdateCourseCount(string currentUser)
+        {
+            int count = Course.GetCourseCount(currentUser);
+            courseCount.Text = count.ToString();
         }
     }
 }

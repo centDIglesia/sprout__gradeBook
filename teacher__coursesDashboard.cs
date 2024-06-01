@@ -14,10 +14,10 @@ namespace sprout__gradeBook
     public partial class teacher__courses_lvl1 : KryptonForm
     {
         public static teacher__courses_lvl1 lvl1Instance;
-
+        private string currrentUser;
         public teacher__courses_lvl1(string currentUsername)
         {
-
+            currrentUser = currentUsername;
             InitializeComponent();
             lvl1Instance = this;
         }
@@ -47,6 +47,22 @@ namespace sprout__gradeBook
         private void kryptonMaskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
+        }
+
+        private void courses1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addcourseBTN_Click(object sender, EventArgs e)
+        {
+            AddCourseForm adf = new AddCourseForm(currrentUser);
+            adf.Show();
+        }
+
+        private void deleteBTN_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 

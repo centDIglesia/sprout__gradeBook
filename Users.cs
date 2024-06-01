@@ -22,6 +22,9 @@ namespace sprout__gradeBook
         }
 
         public abstract string GetFolder();
+
+        // Static property to store the current user
+        public static Users CurrentUser { get; set; }
     }
 
     public class Student : Users

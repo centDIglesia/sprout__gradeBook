@@ -536,8 +536,8 @@ namespace sprout__gradeBook
 
 
 
-            
-            string sectionsFolderPath = "sectionsInformations";
+
+            string sectionsFolderPath = "CourseInformations";
             if (!Directory.Exists(sectionsFolderPath))
             {
                 Directory.CreateDirectory(sectionsFolderPath);
@@ -549,11 +549,11 @@ namespace sprout__gradeBook
             {
                 using (StreamWriter sectionWriter = File.CreateText(sectionFilePath))
                 {
-                    
+
                 }
             }
 
-           
+
             string studentRecordsFolderPath = "TeachersStudentRecords";
             if (!Directory.Exists(studentRecordsFolderPath))
             {
@@ -566,7 +566,7 @@ namespace sprout__gradeBook
             {
                 using (StreamWriter studentWriter = File.CreateText(studentFilePath))
                 {
-                   
+
                 }
             }
 

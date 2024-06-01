@@ -49,7 +49,6 @@
             this.subjectNameLBL.Size = new System.Drawing.Size(174, 19);
             this.subjectNameLBL.TabIndex = 1;
             this.subjectNameLBL.Text = "Object Oriented Programming";
-            this.subjectNameLBL.Click += new System.EventHandler(this.subjectNameLBL_Click);
             this.subjectNameLBL.MouseLeave += new System.EventHandler(this.subjectScheduleLBL_MouseLeave);
             this.subjectNameLBL.MouseHover += new System.EventHandler(this.subjectScheduleLBL_MouseHover);
             // 
@@ -64,7 +63,6 @@
             this.subjectCourseSectionLBL.Size = new System.Drawing.Size(50, 19);
             this.subjectCourseSectionLBL.TabIndex = 3;
             this.subjectCourseSectionLBL.Text = "BSIT 2-1";
-            this.subjectCourseSectionLBL.Click += new System.EventHandler(this.subjectCourseSectionLBL_Click);
             this.subjectCourseSectionLBL.MouseLeave += new System.EventHandler(this.subjectScheduleLBL_MouseLeave);
             this.subjectCourseSectionLBL.MouseHover += new System.EventHandler(this.subjectScheduleLBL_MouseHover);
             // 
@@ -93,7 +91,6 @@
             this.subjectScheduleLBL.Size = new System.Drawing.Size(76, 19);
             this.subjectScheduleLBL.TabIndex = 5;
             this.subjectScheduleLBL.Text = "12:00 - 03:00";
-            this.subjectScheduleLBL.Click += new System.EventHandler(this.subjectScheduleLBL_Click);
             this.subjectScheduleLBL.MouseLeave += new System.EventHandler(this.subjectScheduleLBL_MouseLeave);
             this.subjectScheduleLBL.MouseHover += new System.EventHandler(this.subjectScheduleLBL_MouseHover);
             // 
