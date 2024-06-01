@@ -450,10 +450,7 @@ namespace sprout__gradeBook
                 {
                     this.Hide();
 
-
-
-                    teacher__mainDashboard teacher__GlobalNav = new teacher__MainDashboard(username);
-                    teacher__GlobalNav.Show();
+                    
                 }
                 else
                 {

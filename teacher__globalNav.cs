@@ -40,7 +40,7 @@ namespace sprout__gradeBook
         private void btn_dashboard_Click(object sender, EventArgs e)
         {
 
-            loadForm(new teacher__MainDashboard(currentUser));
+            loadForm(new teacher__mainDashboard(currentUser));
         }
 
         private void btn_courses_Click(object sender, EventArgs e)

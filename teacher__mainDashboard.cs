@@ -15,14 +15,11 @@ namespace sprout__gradeBook
     public partial class teacher__mainDashboard : KryptonForm
     {
 
-
-        public teacher__mainDashboard(string currentUserName)
+        public teacher__mainDashboard(string currentUser)
         {
             InitializeComponent();
-
-
-
         }
+
 
 
         private void close_btn_Click(object sender, EventArgs e)
