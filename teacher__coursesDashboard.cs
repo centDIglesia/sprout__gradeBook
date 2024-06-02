@@ -45,7 +45,11 @@ namespace sprout__gradeBook
             string folderPath = "CourseInformations";
             string filePath = Path.Combine(folderPath, $"{currentUser}.txt");
 
-
+            if (!Directory.Exists(folderPath))
+            {
+                MessageBox.Show("Course information directory not found.");
+                return;
+            }
 
             string[] fileContents = File.ReadAllText(filePath)
                 .Split(new string[] { "----------------------------------------" }, StringSplitOptions.RemoveEmptyEntries);

@@ -450,7 +450,8 @@ namespace sprout__gradeBook
                 {
                     this.Hide();
 
-
+                    Teacher_Dashboard tdas = new Teacher_Dashboard(username);
+                    tdas.Show();
                 }
                 else
                 {

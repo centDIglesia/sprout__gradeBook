@@ -57,7 +57,7 @@ namespace sprout__gradeBook
 
         private void courseStartTXT_Enter(object sender, EventArgs e)
         {
-            UserInput_Manager.ResetInputField(courseStartTXT, "00:00");
+            UserInput_Manager.ResetInputField(courseStartTXT, "00:00 PM");
         }
 
         private void courseStartTXT_Leave(object sender, EventArgs e)
@@ -73,12 +73,9 @@ namespace sprout__gradeBook
             }
         }
 
-
-
-
         private void courseEndTXT_Enter(object sender, EventArgs e)
         {
-            UserInput_Manager.ResetInputField(courseEndTXT, "00:00");
+            UserInput_Manager.ResetInputField(courseEndTXT, "00:00 PM");
         }
 
 
@@ -102,6 +99,11 @@ namespace sprout__gradeBook
             // Regular expression for 12-hour time format with optional AM/PM
             string pattern = @"^((0[1-9])|(1[0-2])):([0-5][0-9])\s?(AM|PM)$";
             return System.Text.RegularExpressions.Regex.IsMatch(input, pattern, System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+        }
+
+        private void courseStartTXT_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

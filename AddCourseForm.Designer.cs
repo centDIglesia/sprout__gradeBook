@@ -293,6 +293,7 @@
             this.courseStartTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
             this.courseStartTXT.TabIndex = 37;
             this.courseStartTXT.Text = "00:00 PM";
+            this.courseStartTXT.TextChanged += new System.EventHandler(this.courseStartTXT_TextChanged);
             this.courseStartTXT.Enter += new System.EventHandler(this.courseStartTXT_Enter);
             this.courseStartTXT.Leave += new System.EventHandler(this.courseStartTXT_Leave);
             // 

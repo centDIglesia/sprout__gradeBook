@@ -18,7 +18,7 @@ namespace sprout__gradeBook
         public Teacher_Dashboard(string currentUserName)
         {
             InitializeComponent();
-
+            currentUser = currentUserName;
 
 
             teachers__firstName.Text = $"Hi, {Account__Manager.loadUserData("teacherCredentials", currentUserName, "First Name")}";
