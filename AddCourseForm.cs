@@ -69,7 +69,7 @@ namespace sprout__gradeBook
             else
             {
                 MessageBox.Show("Please enter a valid time in 12-hour format (e.g., 01:00 PM).");
-                courseStartTXT.Focus(); // Bring focus back to the TextBox for correction
+                courseStartTXT.Focus(); 
             }
         }
 
@@ -77,8 +77,6 @@ namespace sprout__gradeBook
         {
             UserInput_Manager.ResetInputField(courseEndTXT, "00:00 PM");
         }
-
-
 
 
         private void courseEndTXT_Leave(object sender, EventArgs e)
@@ -90,13 +88,13 @@ namespace sprout__gradeBook
             else
             {
                 MessageBox.Show("Please enter a valid time in 12-hour format (e.g., 01:00 PM).");
-                courseEndTXT.Focus(); // Bring focus back to the TextBox for correction
+                courseEndTXT.Focus(); 
             }
         }
 
         public static bool IsValid12HourTimeFormat(string input)
         {
-            // Regular expression for 12-hour time format with optional AM/PM
+         
             string pattern = @"^((0[1-9])|(1[0-2])):([0-5][0-9])\s?(AM|PM)$";
             return System.Text.RegularExpressions.Regex.IsMatch(input, pattern, System.Text.RegularExpressions.RegexOptions.IgnoreCase);
         }
