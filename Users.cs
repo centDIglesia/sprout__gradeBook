@@ -44,7 +44,7 @@ namespace sprout__gradeBook
 
         public override string GetFolder()
         {
-            return "studentCredentials";
+            return "StudentCredentials";
         }
 
         private string GeneratePassword(DateTime birthday, string school)

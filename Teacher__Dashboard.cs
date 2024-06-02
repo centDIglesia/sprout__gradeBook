@@ -50,7 +50,6 @@ namespace sprout__gradeBook
 
         private void btn_students_Click(object sender, EventArgs e)
         {
-
             loadForm(new teacher__studentsDashboard(currentUser));
         }
 

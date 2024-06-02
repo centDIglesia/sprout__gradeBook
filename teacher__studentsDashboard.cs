@@ -19,29 +19,6 @@ namespace sprout__gradeBook
 
         }
 
-        private void teacher__students_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void student__sections1_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-
-        private void student__sections1_MouseLeave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void student__sections1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void courses1_Load(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

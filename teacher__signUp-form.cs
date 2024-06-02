@@ -555,7 +555,7 @@ namespace sprout__gradeBook
             }
 
 
-            string studentRecordsFolderPath = "TeachersStudentRecords";
+            string studentRecordsFolderPath = "StudentInformations";
             if (!Directory.Exists(studentRecordsFolderPath))
             {
                 Directory.CreateDirectory(studentRecordsFolderPath);

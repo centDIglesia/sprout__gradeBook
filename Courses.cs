@@ -11,6 +11,8 @@ namespace sprout__gradeBook
             InitializeComponent();
         }
 
+        public teacher__courses_lvl1 ParentForm { get; set; } // Reference to the parent form
+
         private void Courses_Load(object sender, EventArgs e)
         {
             studentCountTooltip.Hide();
@@ -83,6 +85,28 @@ namespace sprout__gradeBook
         }
 
         private void subjectCodeLBL_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Courses_Click_1(object sender, EventArgs e)
+        {
+            EditCourse editCourse = new EditCourse(SubjectName, SubjectCode, SubjectCount, SubjectSchedule, SubjectCourseSection);
+
+
+            if (ParentForm != null)
+            {
+                ParentForm.LoadFormIntoPanel(editCourse);
+                ParentForm.hidePanel();
+                ParentForm.hidebuttons();
+            }
+            else
+            {
+                MessageBox.Show("ParentForm is not set.");
+            }
+        }
+
+        private void subjectStudentCountLBL_Paint(object sender, PaintEventArgs e)
         {
 
         }
