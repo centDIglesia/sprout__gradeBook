@@ -64,7 +64,7 @@ namespace sprout__gradeBook
         {
             if (IsValid12HourTimeFormat(courseStartTXT.Text))
             {
-                UserInput_Manager.RestoreDefaultText(courseStartTXT, "00:00");
+                UserInput_Manager.RestoreDefaultText(courseStartTXT, "00:00 PM");
             }
             else
             {
@@ -88,7 +88,7 @@ namespace sprout__gradeBook
         {
             if (IsValid12HourTimeFormat(courseEndTXT.Text))
             {
-                UserInput_Manager.RestoreDefaultText(courseEndTXT, "00:00");
+                UserInput_Manager.RestoreDefaultText(courseEndTXT, "00:00 PM");
             }
             else
             {
