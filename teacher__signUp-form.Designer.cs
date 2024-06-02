@@ -602,6 +602,7 @@
             this.signinEMAIL__txtbox.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10);
             this.signinEMAIL__txtbox.TabIndex = 4;
             this.signinEMAIL__txtbox.Text = "Username";
+            this.signinEMAIL__txtbox.TextChanged += new System.EventHandler(this.signinEMAIL__txtbox_TextChanged);
             this.signinEMAIL__txtbox.Enter += new System.EventHandler(this.signInEmail__txtbox_Enter);
             this.signinEMAIL__txtbox.Leave += new System.EventHandler(this.signInEmail__txtbox_Leave);
             // 

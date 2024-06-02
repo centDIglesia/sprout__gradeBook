@@ -641,5 +641,10 @@ namespace sprout__gradeBook
         {
 
         }
+
+        private void signinEMAIL__txtbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

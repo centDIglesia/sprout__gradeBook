@@ -7,41 +7,26 @@ public class Course
     public string CourseCode { get; set; }
     public string StudentCourse { get; set; }
     public string StudentSection { get; set; }
-    public TimeSpan StartTime { get; set; }
-    public TimeSpan EndTime { get; set; }
+    public string StartTime { get; set; }
+    public string EndTime { get; set; }
     public int StudentCount { get; set; }
+    public string courseAndSection { get; set; }
 
-
-    public Course(string courseName, string courseCode, string studentCourse, string studentSection, TimeSpan startTime, TimeSpan endTime, int studentCount)
+    public Course(string courseName, string courseCode, string studentCourse, string studentSection, string startTime, string endTime, int studentCount)
     {
 
         CourseName = courseName;
         CourseCode = courseCode;
-        StudentCourse = studentCourse;
-        StudentSection = studentSection;
-
-        if (ValidateSchedule(startTime, endTime))
-        {
-            StartTime = startTime;
-            EndTime = endTime;
-        }
-        else
-        {
-            throw new ArgumentException("EndTime must be greater than StartTime.");
-        }
-
+        courseAndSection = studentCourse + studentSection;
         StudentCount = studentCount;
     }
 
     public string GetCourseSchedule()
     {
-        return $"{StartTime:hh\\:mm}-{EndTime:hh\\:mm}";
+        return $"{StartTime}-{EndTime}";
     }
 
-    public static bool ValidateSchedule(TimeSpan startTime, TimeSpan endTime)
-    {
-        return startTime < endTime;
-    }
+
 
     public void SaveCourse(string currentUser)
     {
@@ -60,8 +45,7 @@ public class Course
 
             courseWriter.WriteLine($"Course Name: {CourseName}");
             courseWriter.WriteLine($"Course Code: {CourseCode}");
-            courseWriter.WriteLine($"Student Course: {StudentCourse}");
-            courseWriter.WriteLine($"Student Section: {StudentSection}");
+            courseWriter.WriteLine($"Student Course and Section: {courseAndSection}");
             courseWriter.WriteLine($"Course Schedule: {GetCourseSchedule()}");
             courseWriter.WriteLine($"Student Count: {StudentCount}");
             courseWriter.WriteLine(new string('-', 40));

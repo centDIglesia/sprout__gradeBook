@@ -58,7 +58,7 @@
             this.subjectCourseSectionLBL.BackColor = System.Drawing.Color.White;
             this.subjectCourseSectionLBL.Font = new System.Drawing.Font("Poppins", 8F);
             this.subjectCourseSectionLBL.ForeColor = System.Drawing.Color.Silver;
-            this.subjectCourseSectionLBL.Location = new System.Drawing.Point(173, 98);
+            this.subjectCourseSectionLBL.Location = new System.Drawing.Point(168, 98);
             this.subjectCourseSectionLBL.Name = "subjectCourseSectionLBL";
             this.subjectCourseSectionLBL.Size = new System.Drawing.Size(50, 19);
             this.subjectCourseSectionLBL.TabIndex = 3;
@@ -68,12 +68,12 @@
             // 
             // subjectCodeLBL
             // 
-            this.subjectCodeLBL.Location = new System.Drawing.Point(10, 11);
+            this.subjectCodeLBL.Location = new System.Drawing.Point(11, 12);
             this.subjectCodeLBL.Name = "subjectCodeLBL";
-            this.subjectCodeLBL.Size = new System.Drawing.Size(55, 25);
+            this.subjectCodeLBL.Size = new System.Drawing.Size(48, 22);
             this.subjectCodeLBL.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
             this.subjectCodeLBL.StateCommon.ShortText.Color2 = System.Drawing.Color.White;
-            this.subjectCodeLBL.StateCommon.ShortText.Font = new System.Drawing.Font("Poppins Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subjectCodeLBL.StateCommon.ShortText.Font = new System.Drawing.Font("Poppins Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subjectCodeLBL.TabIndex = 4;
             this.subjectCodeLBL.Values.Text = "CODE";
             this.subjectCodeLBL.Paint += new System.Windows.Forms.PaintEventHandler(this.subjectCodeLBL_Paint);
@@ -86,11 +86,11 @@
             this.subjectScheduleLBL.BackColor = System.Drawing.Color.White;
             this.subjectScheduleLBL.Font = new System.Drawing.Font("Poppins", 8F);
             this.subjectScheduleLBL.ForeColor = System.Drawing.Color.Gray;
-            this.subjectScheduleLBL.Location = new System.Drawing.Point(86, 98);
+            this.subjectScheduleLBL.Location = new System.Drawing.Point(58, 98);
             this.subjectScheduleLBL.Name = "subjectScheduleLBL";
-            this.subjectScheduleLBL.Size = new System.Drawing.Size(76, 19);
+            this.subjectScheduleLBL.Size = new System.Drawing.Size(106, 19);
             this.subjectScheduleLBL.TabIndex = 5;
-            this.subjectScheduleLBL.Text = "12:00 - 03:00";
+            this.subjectScheduleLBL.Text = "12:00 PM-03:00 PM";
             this.subjectScheduleLBL.MouseLeave += new System.EventHandler(this.subjectScheduleLBL_MouseLeave);
             this.subjectScheduleLBL.MouseHover += new System.EventHandler(this.subjectScheduleLBL_MouseHover);
             // 

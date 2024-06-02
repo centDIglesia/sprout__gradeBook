@@ -56,12 +56,6 @@
     <Compile Include="AddCourseForm.Designer.cs">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Course-Information__Manager.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Course-Information__Manager.Designer.cs">
-      <DependentUpon>Course-Information__Manager.cs</DependentUpon>
-    </Compile>
     <Compile Include="CourseClass.cs" />
     <Compile Include="Courses.cs">
       <SubType>UserControl</SubType>
@@ -141,9 +135,6 @@
     <Compile Include="Account__Manager.cs" />
     <EmbeddedResource Include="AddCourseForm.resx">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Course-Information__Manager.resx">
-      <DependentUpon>Course-Information__Manager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Courses.resx">
       <DependentUpon>Courses.cs</DependentUpon>

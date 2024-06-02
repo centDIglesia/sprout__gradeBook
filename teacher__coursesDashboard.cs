@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 
@@ -14,10 +9,11 @@ namespace sprout__gradeBook
     public partial class teacher__courses_lvl1 : KryptonForm
     {
         public static teacher__courses_lvl1 lvl1Instance;
-        private string currrentUser;
+        private string currentUser;
+
         public teacher__courses_lvl1(string currentUsername)
         {
-            currrentUser = currentUsername;
+            currentUser = currentUsername;
             InitializeComponent();
             lvl1Instance = this;
         }
@@ -33,21 +29,67 @@ namespace sprout__gradeBook
             else Application.Exit();
         }
 
-        private void add_course_btn_Click(object sender, EventArgs e)
-        {
-            Course_Information__Manager Form2 = new Course_Information__Manager();
-            Form2.Show();
-        }
 
         private void teacher__courses_lvl1_Load(object sender, EventArgs e)
         {
-
+            populateCourses();
         }
 
         private void kryptonMaskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }
+
+        private void populateCourses()
+        {
+            string folderPath = "CourseInformations";
+            string filePath = Path.Combine(folderPath, $"{currentUser}.txt");
+
+            if (!File.Exists(filePath))
+            {
+                MessageBox.Show("Course information file not found.");
+                return;
+            }
+
+            string[] fileContents = File.ReadAllText(filePath)
+                .Split(new string[] { "----------------------------------------" }, StringSplitOptions.RemoveEmptyEntries);
+
+            Course__flowLayoutPanel.Controls.Clear();
+
+            foreach (string courseData in fileContents)
+            {
+                string[] lines = courseData.Trim().Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None);
+
+                Dictionary<string, string> courseDetails = new Dictionary<string, string>();
+
+                foreach (string line in lines)
+                {
+                    string[] parts = line.Split(new char[] { ':' }, 2);
+                    if (parts.Length == 2)
+                    {
+                        courseDetails[parts[0].Trim()] = parts[1].Trim();
+                    }
+                }
+
+                // Check if all necessary course details are present
+                if (courseDetails.ContainsKey("Course Name") &&
+                    courseDetails.ContainsKey("Course Code") &&
+                    courseDetails.ContainsKey("Student Course and Section") &&
+                    courseDetails.ContainsKey("Course Schedule") &&
+                    courseDetails.ContainsKey("Student Count"))
+                {
+                    Courses courseControl = new Courses();
+                    courseControl.SubjectName = courseDetails["Course Name"];
+                    courseControl.SubjectCode = courseDetails["Course Code"];
+                    courseControl.SubjectCourseSection = courseDetails["Student Course and Section"];
+                    courseControl.SubjectSchedule = courseDetails["Course Schedule"];
+                    courseControl.SubjectCount = courseDetails["Student Count"];
+
+                    Course__flowLayoutPanel.Controls.Add(courseControl);
+                }
+            }
+        }
+
 
         private void courses1_Load(object sender, EventArgs e)
         {
@@ -56,7 +98,7 @@ namespace sprout__gradeBook
 
         private void addcourseBTN_Click(object sender, EventArgs e)
         {
-            AddCourseForm adf = new AddCourseForm(currrentUser);
+            AddCourseForm adf = new AddCourseForm(currentUser);
             adf.Show();
         }
 
@@ -65,6 +107,4 @@ namespace sprout__gradeBook
             this.Close();
         }
     }
-
-
 }

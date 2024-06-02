@@ -42,8 +42,8 @@
             // 
             // Course__flowLayoutPanel
             // 
-            this.Course__flowLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.Course__flowLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Course__flowLayoutPanel.AutoScroll = true;
             this.Course__flowLayoutPanel.Location = new System.Drawing.Point(44, 47);
@@ -54,9 +54,9 @@
             // deleteBTN
             // 
             this.deleteBTN.Image = global::sprout__gradeBook.Properties.Resources.recycle_bin;
-            this.deleteBTN.Location = new System.Drawing.Point(728, 563);
+            this.deleteBTN.Location = new System.Drawing.Point(744, 563);
             this.deleteBTN.Name = "deleteBTN";
-            this.deleteBTN.Size = new System.Drawing.Size(65, 58);
+            this.deleteBTN.Size = new System.Drawing.Size(49, 58);
             this.deleteBTN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.deleteBTN.TabIndex = 87;
             this.deleteBTN.TabStop = false;
@@ -65,9 +65,9 @@
             // addcourseBTN
             // 
             this.addcourseBTN.Image = ((System.Drawing.Image)(resources.GetObject("addcourseBTN.Image")));
-            this.addcourseBTN.Location = new System.Drawing.Point(569, 563);
+            this.addcourseBTN.Location = new System.Drawing.Point(594, 563);
             this.addcourseBTN.Name = "addcourseBTN";
-            this.addcourseBTN.Size = new System.Drawing.Size(168, 58);
+            this.addcourseBTN.Size = new System.Drawing.Size(153, 58);
             this.addcourseBTN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.addcourseBTN.TabIndex = 89;
             this.addcourseBTN.TabStop = false;
