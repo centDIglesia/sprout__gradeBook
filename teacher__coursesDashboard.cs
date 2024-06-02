@@ -29,17 +29,17 @@ namespace sprout__gradeBook
             else Application.Exit();
         }
 
-
         private void teacher__courses_lvl1_Load(object sender, EventArgs e)
         {
             populateCourses();
-            RefreshTooltip.Hide();
         }
 
-        private void kryptonMaskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        public void hidebuttons()
         {
-
+            addcourseBTN.Hide();
+            deleteBTN.Hide();
         }
+
 
         public void populateCourses()
         {
@@ -72,40 +72,52 @@ namespace sprout__gradeBook
                     }
                 }
 
-
                 if (courseDetails.ContainsKey("Course Name") &&
                     courseDetails.ContainsKey("Course Code") &&
                     courseDetails.ContainsKey("Student Course and Section") &&
                     courseDetails.ContainsKey("Course Schedule") &&
                     courseDetails.ContainsKey("Student Count"))
                 {
-                    Courses courseControl = new Courses();
-                    courseControl.SubjectName = courseDetails["Course Name"];
-                    courseControl.SubjectCode = courseDetails["Course Code"];
-                    courseControl.SubjectCourseSection = courseDetails["Student Course and Section"];
-                    courseControl.SubjectSchedule = courseDetails["Course Schedule"];
-                    courseControl.SubjectCount = courseDetails["Student Count"];
+                    Courses courseControl = new Courses
+                    {
+                        SubjectName = courseDetails["Course Name"],
+                        SubjectCode = courseDetails["Course Code"],
+                        SubjectCourseSection = courseDetails["Student Course and Section"],
+                        SubjectSchedule = courseDetails["Course Schedule"],
+                        SubjectCount = courseDetails["Student Count"],
+                        ParentForm = this // Set the reference to the parent form
+                    };
 
                     Course__flowLayoutPanel.Controls.Add(courseControl);
                 }
             }
         }
 
-
-        private void courses1_Load(object sender, EventArgs e)
+        public void LoadFormIntoPanel(Form form)
         {
+            if (this.kryptonPanel1.Controls.Count > 0)
+            {
+                this.kryptonPanel1.Controls.RemoveAt(0);
+            }
 
+            form.TopLevel = false;
+            form.Dock = DockStyle.Fill;
+            this.kryptonPanel1.Controls.Add(form);
+            this.kryptonPanel1.Tag = form;
+            form.Show();
         }
+
+        public void hidePanel()
+        {
+            Course__flowLayoutPanel.Hide();
+        }
+
 
         private void addcourseBTN_Click(object sender, EventArgs e)
         {
-
             AddCourseForm adf = new AddCourseForm(currentUser, this);
             adf.Show();
-
             this.Enabled = false;
-
-
         }
 
         private void deleteBTN_Click(object sender, EventArgs e)
@@ -118,29 +130,9 @@ namespace sprout__gradeBook
             populateCourses();
         }
 
-        private void RefreshTooltip_Paint(object sender, PaintEventArgs e)
+        private void editCoursePanel_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private void RefreshTooltip_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RefreshTooltip_MouseLeave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void refreshBTN_MouseHover(object sender, EventArgs e)
-        {
-            RefreshTooltip.Show();
-        }
-
-        private void refreshBTN_MouseLeave(object sender, EventArgs e)
-        {
-            RefreshTooltip.Hide();
         }
     }
 }
