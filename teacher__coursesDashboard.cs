@@ -45,11 +45,7 @@ namespace sprout__gradeBook
             string folderPath = "CourseInformations";
             string filePath = Path.Combine(folderPath, $"{currentUser}.txt");
 
-            if (!File.Exists(filePath))
-            {
-                MessageBox.Show("Course information file not found.");
-                return;
-            }
+
 
             string[] fileContents = File.ReadAllText(filePath)
                 .Split(new string[] { "----------------------------------------" }, StringSplitOptions.RemoveEmptyEntries);
@@ -71,7 +67,7 @@ namespace sprout__gradeBook
                     }
                 }
 
-                // Check if all necessary course details are present
+
                 if (courseDetails.ContainsKey("Course Name") &&
                     courseDetails.ContainsKey("Course Code") &&
                     courseDetails.ContainsKey("Student Course and Section") &&
