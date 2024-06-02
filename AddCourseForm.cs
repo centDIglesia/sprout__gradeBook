@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace sprout__gradeBook
 {
     public partial class AddCourseForm : KryptonForm
     {
         private string currentUserName;
-
-        public AddCourseForm(string currentUser)
+        private teacher__courses_lvl1 parentForm;
+        public AddCourseForm(string currentUser, teacher__courses_lvl1 parent)
         {
             currentUserName = currentUser;
+            parentForm = parent; // Store a reference to the parent form
             InitializeComponent();
-
-
         }
 
         private void AddCourseForm_Load(object sender, EventArgs e)
@@ -41,6 +41,11 @@ namespace sprout__gradeBook
                 MessageBox.Show("Course added and saved successfully!");
                 this.Close();
 
+
+                parentForm.Enabled = true;
+                parentForm.populateCourses();
+
+
             }
             catch (FormatException)
             {
@@ -50,6 +55,9 @@ namespace sprout__gradeBook
             {
                 MessageBox.Show(ex.Message);
             }
+
+
+
 
 
         }
@@ -69,7 +77,7 @@ namespace sprout__gradeBook
             else
             {
                 MessageBox.Show("Please enter a valid time in 12-hour format (e.g., 01:00 PM).");
-                courseStartTXT.Focus(); 
+                courseStartTXT.Focus();
             }
         }
 
@@ -88,13 +96,13 @@ namespace sprout__gradeBook
             else
             {
                 MessageBox.Show("Please enter a valid time in 12-hour format (e.g., 01:00 PM).");
-                courseEndTXT.Focus(); 
+                courseEndTXT.Focus();
             }
         }
 
         public static bool IsValid12HourTimeFormat(string input)
         {
-         
+
             string pattern = @"^((0[1-9])|(1[0-2])):([0-5][0-9])\s?(AM|PM)$";
             return System.Text.RegularExpressions.Regex.IsMatch(input, pattern, System.Text.RegularExpressions.RegexOptions.IgnoreCase);
         }

@@ -33,6 +33,7 @@ namespace sprout__gradeBook
         private void teacher__courses_lvl1_Load(object sender, EventArgs e)
         {
             populateCourses();
+            RefreshTooltip.Hide();
         }
 
         private void kryptonMaskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -40,7 +41,7 @@ namespace sprout__gradeBook
 
         }
 
-        private void populateCourses()
+        public void populateCourses()
         {
             string folderPath = "CourseInformations";
             string filePath = Path.Combine(folderPath, $"{currentUser}.txt");
@@ -98,13 +99,48 @@ namespace sprout__gradeBook
 
         private void addcourseBTN_Click(object sender, EventArgs e)
         {
-            AddCourseForm adf = new AddCourseForm(currentUser);
+
+            AddCourseForm adf = new AddCourseForm(currentUser, this);
             adf.Show();
+
+            this.Enabled = false;
+
+
         }
 
         private void deleteBTN_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void refreshBTN_Click(object sender, EventArgs e)
+        {
+            populateCourses();
+        }
+
+        private void RefreshTooltip_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void RefreshTooltip_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RefreshTooltip_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void refreshBTN_MouseHover(object sender, EventArgs e)
+        {
+            RefreshTooltip.Show();
+        }
+
+        private void refreshBTN_MouseLeave(object sender, EventArgs e)
+        {
+            RefreshTooltip.Hide();
         }
     }
 }

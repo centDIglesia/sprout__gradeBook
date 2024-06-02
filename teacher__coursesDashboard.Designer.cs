@@ -100,10 +100,10 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(827, 639);
             this.Controls.Add(this.Course__flowLayoutPanel);
-            this.Controls.Add(this.addcourseBTN);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.divider_1);
             this.Controls.Add(this.deleteBTN);
+            this.Controls.Add(this.addcourseBTN);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "teacher__courses_lvl1";
             this.Text = "teacher__courses_lvl1";
