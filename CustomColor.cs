@@ -13,7 +13,7 @@ namespace sprout__gradeBook
         public static Color mainColor = Color.FromArgb(10, 103, 56);//green
         public static Color lightColor = Color.FromArgb(132, 179, 155);//lightGreen
         public static Color errorColor = Color.FromArgb(255, 0, 0);//red
-        public static Color activeColor = Color.FromArgb(110, 73, 28);
+        public static Color activeColor = Color.FromArgb(133, 89, 34);//BROWN
 
 
     }

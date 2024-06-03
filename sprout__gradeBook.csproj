@@ -56,6 +56,12 @@
     <Compile Include="AddCourseForm.Designer.cs">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CourseAndSectionCARD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CourseAndSectionCARD.Designer.cs">
+      <DependentUpon>CourseAndSectionCARD.cs</DependentUpon>
+    </Compile>
     <Compile Include="CourseClass.cs" />
     <Compile Include="Courses.cs">
       <SubType>UserControl</SubType>
@@ -178,6 +184,9 @@
     <Compile Include="Account__Manager.cs" />
     <EmbeddedResource Include="AddCourseForm.resx">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CourseAndSectionCARD.resx">
+      <DependentUpon>CourseAndSectionCARD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Courses.resx">
       <DependentUpon>Courses.cs</DependentUpon>
@@ -318,6 +327,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\task-checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\subsubhover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rectangle 48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

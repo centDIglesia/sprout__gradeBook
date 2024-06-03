@@ -84,7 +84,7 @@ namespace sprout__gradeBook
                         SubjectCourseSection = courseDetails["Student Course and Section"],
                         SubjectSchedule = courseDetails["Course Schedule"],
                         SubjectCount = courseDetails["Student Count"],
-                        ParentForm = this // Set the reference to the parent form
+                        ParentForm = this
                     };
 
                     Course__flowLayoutPanel.Controls.Add(courseControl);
