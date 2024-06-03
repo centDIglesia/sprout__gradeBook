@@ -22,16 +22,7 @@ namespace sprout__gradeBook
             InitializeComponent();
         }
 
-        private void CourseOfStudent_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+      
         private void CoursecSectionOfStudent_MouseHover(object sender, EventArgs e)
         {
             pictureBox1.Image = Properties.Resources.subsubhover;
@@ -39,11 +30,7 @@ namespace sprout__gradeBook
             CoursecSectionOfStudent.ForeColor = CustomColor.activeColor;
         }
 
-        private void CoursecSectionOfStudent_Click(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
             pictureBox1.Image = Properties.Resources.susushoverleave;

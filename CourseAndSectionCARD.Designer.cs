@@ -46,7 +46,7 @@
             this.CourseOfStudent.Size = new System.Drawing.Size(41, 23);
             this.CourseOfStudent.TabIndex = 1;
             this.CourseOfStudent.Text = "OOP";
-            this.CourseOfStudent.Click += new System.EventHandler(this.CourseOfStudent_Click);
+
             this.CourseOfStudent.MouseHover += new System.EventHandler(this.CoursecSectionOfStudent_MouseHover);
             // 
             // CoursecSectionOfStudent
@@ -60,7 +60,7 @@
             this.CoursecSectionOfStudent.Size = new System.Drawing.Size(61, 48);
             this.CoursecSectionOfStudent.TabIndex = 2;
             this.CoursecSectionOfStudent.Text = "2-1";
-            this.CoursecSectionOfStudent.Click += new System.EventHandler(this.CoursecSectionOfStudent_Click);
+
             this.CoursecSectionOfStudent.MouseHover += new System.EventHandler(this.CoursecSectionOfStudent_MouseHover);
             // 
             // pictureBox1
@@ -72,7 +72,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+
             this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
             this.pictureBox1.MouseHover += new System.EventHandler(this.CoursecSectionOfStudent_MouseHover);
             // 
