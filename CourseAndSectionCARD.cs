@@ -5,6 +5,11 @@ namespace sprout__gradeBook
 {
     public partial class CourseAndSectionCARD : UserControl
     {
+        public new teacher__studentsDashboard ParentForm { get; set; } // Reference to the parent form
+
+
+
+
         public string CourseName
         {
             get => CourseOfStudent.Text;
@@ -17,12 +22,14 @@ namespace sprout__gradeBook
             set => CoursecSectionOfStudent.Text = value;
         }
 
-        public CourseAndSectionCARD()
+        public CourseAndSectionCARD(teacher__studentsDashboard parentForm)
         {
             InitializeComponent();
+            ParentForm = parentForm;
         }
 
-      
+
+
         private void CoursecSectionOfStudent_MouseHover(object sender, EventArgs e)
         {
             pictureBox1.Image = Properties.Resources.subsubhover;
@@ -30,12 +37,25 @@ namespace sprout__gradeBook
             CoursecSectionOfStudent.ForeColor = CustomColor.activeColor;
         }
 
-       
+
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
             pictureBox1.Image = Properties.Resources.susushoverleave;
             CourseOfStudent.BackColor = CustomColor.mainColor;
             CoursecSectionOfStudent.ForeColor = CustomColor.mainColor;
         }
+
+        private void CoursecSectionOfStudent_Click(object sender, EventArgs e)
+        {
+
+            addStudentDashboard addStudentForm = new addStudentDashboard(ParentForm.currentUSer, CourseName, SectionName);
+
+
+            ParentForm.LoadFormIntoPanel(addStudentForm);
+            ParentForm.hidePanel();
+        }
+
     }
+
+
 }

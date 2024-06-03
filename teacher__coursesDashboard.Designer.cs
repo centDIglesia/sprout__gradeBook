@@ -30,16 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(teacher__courses_lvl1));
             this.Course__flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.deleteBTN = new System.Windows.Forms.PictureBox();
             this.addcourseBTN = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.divider_1 = new System.Windows.Forms.PictureBox();
-            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
+            this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deleteBTN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addcourseBTN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.SuspendLayout();
             // 
             // Course__flowLayoutPanel
@@ -48,15 +49,26 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Course__flowLayoutPanel.AutoScroll = true;
-            this.Course__flowLayoutPanel.Location = new System.Drawing.Point(44, 47);
+            this.Course__flowLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.Course__flowLayoutPanel.Name = "Course__flowLayoutPanel";
             this.Course__flowLayoutPanel.Size = new System.Drawing.Size(739, 510);
             this.Course__flowLayoutPanel.TabIndex = 93;
             // 
+            // kryptonPanel1
+            // 
+            this.kryptonPanel1.Controls.Add(this.Course__flowLayoutPanel);
+            this.kryptonPanel1.Location = new System.Drawing.Point(44, 47);
+            this.kryptonPanel1.Name = "kryptonPanel1";
+            this.kryptonPanel1.Size = new System.Drawing.Size(739, 510);
+            this.kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.White;
+            this.kryptonPanel1.StateCommon.Image = ((System.Drawing.Image)(resources.GetObject("kryptonPanel1.StateCommon.Image")));
+            this.kryptonPanel1.StateCommon.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Stretch;
+            this.kryptonPanel1.TabIndex = 0;
+            // 
             // deleteBTN
             // 
             this.deleteBTN.Image = global::sprout__gradeBook.Properties.Resources.recycle_bin;
-            this.deleteBTN.Location = new System.Drawing.Point(744, 563);
+            this.deleteBTN.Location = new System.Drawing.Point(738, 563);
             this.deleteBTN.Name = "deleteBTN";
             this.deleteBTN.Size = new System.Drawing.Size(49, 58);
             this.deleteBTN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -67,7 +79,7 @@
             // addcourseBTN
             // 
             this.addcourseBTN.Image = ((System.Drawing.Image)(resources.GetObject("addcourseBTN.Image")));
-            this.addcourseBTN.Location = new System.Drawing.Point(594, 563);
+            this.addcourseBTN.Location = new System.Drawing.Point(588, 563);
             this.addcourseBTN.Name = "addcourseBTN";
             this.addcourseBTN.Size = new System.Drawing.Size(153, 58);
             this.addcourseBTN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -95,16 +107,6 @@
             this.divider_1.TabIndex = 66;
             this.divider_1.TabStop = false;
             // 
-            // kryptonPanel1
-            // 
-            this.kryptonPanel1.Location = new System.Drawing.Point(44, 47);
-            this.kryptonPanel1.Name = "kryptonPanel1";
-            this.kryptonPanel1.Size = new System.Drawing.Size(739, 510);
-            this.kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.White;
-            this.kryptonPanel1.StateCommon.Image = ((System.Drawing.Image)(resources.GetObject("kryptonPanel1.StateCommon.Image")));
-            this.kryptonPanel1.StateCommon.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Stretch;
-            this.kryptonPanel1.TabIndex = 0;
-            // 
             // teacher__courses_lvl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -115,17 +117,17 @@
             this.Controls.Add(this.addcourseBTN);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.divider_1);
-            this.Controls.Add(this.Course__flowLayoutPanel);
             this.Controls.Add(this.kryptonPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "teacher__courses_lvl1";
             this.Text = "teacher__courses_lvl1";
             this.Load += new System.EventHandler(this.teacher__courses_lvl1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
+            this.kryptonPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.deleteBTN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addcourseBTN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.ResumeLayout(false);
 
         }

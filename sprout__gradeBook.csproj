@@ -56,6 +56,18 @@
     <Compile Include="AddCourseForm.Designer.cs">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="addStudentDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addStudentDashboard.Designer.cs">
+      <DependentUpon>addStudentDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddStudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddStudentForm.Designer.cs">
+      <DependentUpon>AddStudentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CourseAndSectionCARD.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -63,18 +75,18 @@
       <DependentUpon>CourseAndSectionCARD.cs</DependentUpon>
     </Compile>
     <Compile Include="CourseClass.cs" />
-    <Compile Include="Courses.cs">
+    <Compile Include="CoursesCARD.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Courses.Designer.cs">
-      <DependentUpon>Courses.cs</DependentUpon>
+    <Compile Include="CoursesCARD.Designer.cs">
+      <DependentUpon>CoursesCARD.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomColor.cs" />
-    <Compile Include="EditCourse.cs">
+    <Compile Include="EditCourseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditCourse.Designer.cs">
-      <DependentUpon>EditCourse.cs</DependentUpon>
+    <Compile Include="EditCourseForm.Designer.cs">
+      <DependentUpon>EditCourseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="IntroPage.cs">
       <SubType>Form</SubType>
@@ -185,14 +197,20 @@
     <EmbeddedResource Include="AddCourseForm.resx">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="addStudentDashboard.resx">
+      <DependentUpon>addStudentDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddStudentForm.resx">
+      <DependentUpon>AddStudentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CourseAndSectionCARD.resx">
       <DependentUpon>CourseAndSectionCARD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Courses.resx">
-      <DependentUpon>Courses.cs</DependentUpon>
+    <EmbeddedResource Include="CoursesCARD.resx">
+      <DependentUpon>CoursesCARD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditCourse.resx">
-      <DependentUpon>EditCourse.cs</DependentUpon>
+    <EmbeddedResource Include="EditCourseForm.resx">
+      <DependentUpon>EditCourseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IntroPage.resx">
       <DependentUpon>IntroPage.cs</DependentUpon>

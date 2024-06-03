@@ -1,6 +1,6 @@
 ﻿namespace sprout__gradeBook
 {
-    partial class Courses
+    partial class CoursesCARD
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Courses));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CoursesCARD));
             this.subjectNameLBL = new System.Windows.Forms.Label();
             this.subjectCourseSectionLBL = new System.Windows.Forms.Label();
             this.subjectCodeLBL = new ComponentFactory.Krypton.Toolkit.KryptonLabel();

@@ -77,7 +77,7 @@ namespace sprout__gradeBook
                     courseDetails.ContainsKey("Course Schedule") &&
                     courseDetails.ContainsKey("Student Count"))
                 {
-                    Courses courseControl = new Courses
+                    CoursesCARD courseControl = new CoursesCARD
                     {
                         SubjectName = courseDetails["Course Name"],
                         SubjectCode = courseDetails["Course Code"],

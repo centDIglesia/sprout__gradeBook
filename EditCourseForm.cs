@@ -6,7 +6,7 @@ using ComponentFactory.Krypton.Toolkit;
 
 namespace sprout__gradeBook
 {
-    public partial class EditCourse : KryptonForm
+    public partial class EditCourseForm : KryptonForm
     {
         private string currentUser;
         private string originalSubjectName;
@@ -17,7 +17,7 @@ namespace sprout__gradeBook
         private string subjectSchedule;
         private string subjectCourseSection;
 
-        public EditCourse(string currentUsername, string name, string code, string count, string schedule, string section)
+        public EditCourseForm(string currentUsername, string name, string code, string count, string schedule, string section)
         {
             InitializeComponent();
             currentUser = currentUsername;

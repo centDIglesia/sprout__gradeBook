@@ -11,12 +11,12 @@ namespace sprout__gradeBook
 {
     public partial class teacher__studentsDashboard : KryptonForm
     {
-        private string currentUser;
+        public string currentUSer { get; set; }
 
         public teacher__studentsDashboard(string currentuser)
         {
             InitializeComponent();
-            currentUser = currentuser;
+            currentUSer = currentuser;
         }
 
         private void teacher__studentsDashboard_Load(object sender, EventArgs e)
@@ -27,7 +27,7 @@ namespace sprout__gradeBook
         private void PopulateCourseSectionPanel()
         {
             string folderPath = "CourseInformations";
-            string filePath = Path.Combine(folderPath, $"{currentUser}.txt");
+            string filePath = Path.Combine(folderPath, $"{currentUSer}.txt");
 
             if (!File.Exists(filePath))
             {
@@ -57,7 +57,7 @@ namespace sprout__gradeBook
 
                 if (courseDetails.ContainsKey("Course Name") && courseDetails.ContainsKey("Student Course and Section"))
                 {
-                    CourseAndSectionCARD courseCard = new CourseAndSectionCARD
+                    CourseAndSectionCARD courseCard = new CourseAndSectionCARD(this)
                     {
                         CourseName = courseDetails["Course Name"],
                         SectionName = courseDetails["Student Course and Section"]
@@ -66,6 +66,37 @@ namespace sprout__gradeBook
                     courseSectionPanel.Controls.Add(courseCard);
                 }
             }
+        }
+
+        public void LoadFormIntoPanel(Form form)
+        {
+            if (this.StudentPanel.Controls.Count > 0)
+            {
+                this.StudentPanel.Controls.RemoveAt(0);
+            }
+
+            form.TopLevel = false;
+            form.Dock = DockStyle.Fill;
+            this.StudentPanel.Controls.Add(form);
+            this.StudentPanel.Tag = form;
+            form.Show();
+        }
+
+
+        public void hidePanel()
+        {
+            courseSectionPanel.Hide();
+        }
+
+        public void ShowPanel()
+        {
+            courseSectionPanel.Show();
+        }
+
+
+        private void StudentPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
