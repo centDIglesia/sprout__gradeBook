@@ -117,68 +117,38 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Roles_Card_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Roles-Card-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="student__role" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\student__role.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="teacher__role_clicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\teacher__role-clicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="notification-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\notification-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="back-arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\back-arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="next-arrow-green" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\next-arrow-green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="student__role_clicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\student__role-clicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Forgot_Your_Password_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Forgot Your Password_.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sub" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sub.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="next-arrow-icn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\next-arrow-icn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="recycle-bin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\recycle-bin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="add-course-btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add-course-btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Roles_Card_student_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Roles-Card-student-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="teacher__role" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\teacher__role.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="subhover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\subhover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="closed__eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\closed__eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="open__eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\open__eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Forgot_Your_Password_HOVER" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Forgot Your Password_HOVER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="task-normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\task-normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="task-checked" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\task-checked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
   </data>
 </root>
