@@ -9,11 +9,11 @@ namespace sprout__gradeBook
     public partial class teacher__courses_lvl1 : KryptonForm
     {
         public static teacher__courses_lvl1 lvl1Instance;
-        private string currentUser;
+        public string CurrentUser { get; private set; }
 
         public teacher__courses_lvl1(string currentUsername)
         {
-            currentUser = currentUsername;
+            CurrentUser = currentUsername;
             InitializeComponent();
             lvl1Instance = this;
         }
@@ -40,11 +40,10 @@ namespace sprout__gradeBook
             deleteBTN.Hide();
         }
 
-
         public void populateCourses()
         {
             string folderPath = "CourseInformations";
-            string filePath = Path.Combine(folderPath, $"{currentUser}.txt");
+            string filePath = Path.Combine(folderPath, $"{CurrentUser}.txt");
 
             if (!Directory.Exists(folderPath))
             {
@@ -112,10 +111,14 @@ namespace sprout__gradeBook
             Course__flowLayoutPanel.Hide();
         }
 
+        public void ShowPanel()
+        {
+            Course__flowLayoutPanel.Show();
+        }
 
         private void addcourseBTN_Click(object sender, EventArgs e)
         {
-            AddCourseForm adf = new AddCourseForm(currentUser, this);
+            AddCourseForm adf = new AddCourseForm(CurrentUser, this);
             adf.Show();
             this.Enabled = false;
         }

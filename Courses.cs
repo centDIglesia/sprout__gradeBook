@@ -91,7 +91,7 @@ namespace sprout__gradeBook
 
         private void Courses_Click_1(object sender, EventArgs e)
         {
-            EditCourse editCourse = new EditCourse(SubjectName, SubjectCode, SubjectCount, SubjectSchedule, SubjectCourseSection);
+            EditCourse editCourse = new EditCourse(ParentForm.CurrentUser, SubjectName, SubjectCode, SubjectCount, SubjectSchedule, SubjectCourseSection);
 
 
             if (ParentForm != null)
