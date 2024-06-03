@@ -117,68 +117,54 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Roles_Card_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Roles-Card-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="addTask_btn.StateCommon.Back.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAD5JREFUSEvt0SEOACAMBMH7/6fBrEE0pAQD2XFN2jvRSIsBxvvIt6BG/gMF5LRx
+        vsd+G+fnyPHJNfIt0F+SCU6KzzHagFavAAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="student__role" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\student__role.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="undoTask_btn.StateCommon.Back.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAKtJREFUOE+Nkg0RglAQhF8EIhCBCESwATawAhFsgA2MQAQiEMEIj291EfkZvJ35
+        ZrhjF95xpFk55xJ6qNz6L4dGeIWDm9AV6gMK2xfR1PEikq90bPfGi+tfKtBJ5JEaR7/hAU5n5N4DpMVD
+        UcBz1dzIHj28cysuQneFXcZFqIXsMi4ymnN0GRMBfUQpPiNmhbQS8dknF/OujrhBB/qaCq1W8R74RArI
+        418vpQluOEPxLbF7GgAAAABJRU5ErkJggg==
+</value>
   </data>
-  <data name="teacher__role_clicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\teacher__role-clicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="notification-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\notification-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="back-arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\back-arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="next-arrow-green" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\next-arrow-green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="student__role_clicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\student__role-clicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Forgot_Your_Password_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Forgot Your Password_.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sub" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sub.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="next-arrow-icn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\next-arrow-icn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="recycle-bin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\recycle-bin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="add-course-btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add-course-btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Roles_Card_student_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Roles-Card-student-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="teacher__role" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\teacher__role.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="subhover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\subhover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="closed__eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\closed__eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="open__eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\open__eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Forgot_Your_Password_HOVER" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Forgot Your Password_HOVER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="task-normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\task-normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="task-checked" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\task-checked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
   </data>
 </root>
