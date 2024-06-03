@@ -129,12 +129,6 @@
     <Compile Include="Student__professorsDashboard.Designer.cs">
       <DependentUpon>Student__professorsDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Student__sections.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Student__sections.Designer.cs">
-      <DependentUpon>Student__sections.cs</DependentUpon>
-    </Compile>
     <Compile Include="Student__Signin-form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,9 +221,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Student__professorsDashboard.resx">
       <DependentUpon>Student__professorsDashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Student__sections.resx">
-      <DependentUpon>Student__sections.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student__Signin-form.resx">
       <DependentUpon>Student__Signin-form.cs</DependentUpon>
