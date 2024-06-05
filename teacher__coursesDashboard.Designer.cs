@@ -35,14 +35,12 @@
             this.addcourseBTN = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.divider_1 = new System.Windows.Forms.PictureBox();
-            this.refreshBTN = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deleteBTN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addcourseBTN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.refreshBTN)).BeginInit();
             this.SuspendLayout();
             // 
             // Course__flowLayoutPanel
@@ -109,17 +107,6 @@
             this.divider_1.TabIndex = 66;
             this.divider_1.TabStop = false;
             // 
-            // refreshBTN
-            // 
-            this.refreshBTN.Image = ((System.Drawing.Image)(resources.GetObject("refreshBTN.Image")));
-            this.refreshBTN.Location = new System.Drawing.Point(757, 6);
-            this.refreshBTN.Name = "refreshBTN";
-            this.refreshBTN.Size = new System.Drawing.Size(26, 33);
-            this.refreshBTN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.refreshBTN.TabIndex = 90;
-            this.refreshBTN.TabStop = false;
-            this.refreshBTN.Click += new System.EventHandler(this.refreshBTN_Click_1);
-            // 
             // teacher__courses_lvl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,7 +115,6 @@
             this.ClientSize = new System.Drawing.Size(827, 639);
             this.Controls.Add(this.deleteBTN);
             this.Controls.Add(this.addcourseBTN);
-            this.Controls.Add(this.refreshBTN);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.divider_1);
             this.Controls.Add(this.kryptonPanel1);
@@ -142,7 +128,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.addcourseBTN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.refreshBTN)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -154,6 +139,5 @@
         private System.Windows.Forms.PictureBox addcourseBTN;
         private System.Windows.Forms.FlowLayoutPanel Course__flowLayoutPanel;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
-        private System.Windows.Forms.PictureBox refreshBTN;
     }
 }

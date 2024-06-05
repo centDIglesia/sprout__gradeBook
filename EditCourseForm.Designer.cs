@@ -79,7 +79,7 @@
             this.editInfoBTN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.editInfoBTN.TabIndex = 6;
             this.editInfoBTN.TabStop = false;
-            this.editInfoBTN.Click += new System.EventHandler(this.editInfoBTN_Click);
+
             // 
             // EditCOurseSaveBTN
             // 
@@ -90,7 +90,7 @@
             this.EditCOurseSaveBTN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.EditCOurseSaveBTN.TabIndex = 8;
             this.EditCOurseSaveBTN.TabStop = false;
-            this.EditCOurseSaveBTN.Click += new System.EventHandler(this.EditCourseSaveBTN_Click);
+
             // 
             // SubjectNameLbl
             // 
@@ -199,7 +199,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditCourseForm";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.EditCourseForm_Load);
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.editInfoBTN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EditCOurseSaveBTN)).EndInit();

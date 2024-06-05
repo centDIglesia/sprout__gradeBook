@@ -27,7 +27,18 @@ namespace sprout__gradeBook
         public string SubjectName
         {
             get { return subjectName; }
-            set { subjectName = value; subjectNameLBL.Text = value; }
+            set
+            {
+                if (value.Length > 7)
+                {
+                    subjectName = value.Substring(0, 29) + "....";
+                }
+                else
+                {
+                    subjectName = value;
+                }
+                subjectNameLBL.Text = subjectName;
+            }
         }
 
         public string SubjectCode
@@ -51,7 +62,18 @@ namespace sprout__gradeBook
         public string SubjectCourseSection
         {
             get { return subjectCourseSection; }
-            set { subjectCourseSection = value; subjectCourseSectionLBL.Text = value; }
+            set
+            {
+                if (value.Length > 7)
+                {
+                    subjectCourseSection = value.Substring(0, 6) + "..";
+                }
+                else
+                {
+                    subjectCourseSection = value.ToUpper();
+                }
+                subjectCourseSectionLBL.Text = subjectCourseSection;
+            }
         }
 
         private void subjectStudentCountLBL_MouseHover(object sender, EventArgs e)
@@ -91,19 +113,7 @@ namespace sprout__gradeBook
 
         private void Courses_Click_1(object sender, EventArgs e)
         {
-            EditCourseForm editCourse = new EditCourseForm(ParentForm.CurrentUser, SubjectName, SubjectCode, SubjectCount, SubjectSchedule, SubjectCourseSection);
 
-
-            if (ParentForm != null)
-            {
-                ParentForm.LoadFormIntoPanel(editCourse);
-                ParentForm.hidePanel();
-                ParentForm.hidebuttons();
-            }
-            else
-            {
-                MessageBox.Show("ParentForm is not set.");
-            }
         }
 
         private void subjectStudentCountLBL_Paint(object sender, PaintEventArgs e)

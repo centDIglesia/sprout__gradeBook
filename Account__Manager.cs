@@ -20,7 +20,7 @@ namespace sprout__gradeBook
                 Directory.CreateDirectory(folderPath);
             }
 
-            if (UsernameExists(user.Username, folderPath))
+            if (UserExists(user.Username, folderPath))
             {
                 throw new Exception("Username already exists. Please choose a different username.");
             }
@@ -36,10 +36,45 @@ namespace sprout__gradeBook
                 writer.WriteLine($"School: {user.SchoolName}");
                 writer.WriteLine($"Password: {HashPassword(user.Password)}");
             }
+
+
+
+
         }
 
+        public static void SaveStudentUser(Users user)
+        {
+            string folderPath = user.GetFolder();
+
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+
+            if (UserExists(((Student)user).StudentNumber, folderPath))
+            {
+                throw new Exception("Student ID already exists. Please choose a different ID.");
+            }
+
+            // Save the credentials to a file in the selected folder
+            string filePath = Path.Combine(folderPath, $"{((Student)user).StudentNumber}.txt");
+            using (StreamWriter writer = new StreamWriter(filePath))
+            {
+                writer.WriteLine($"Student ID: {((Student)user).StudentNumber}");
+                writer.WriteLine($"Student Name: {((Student)user).FullName}");
+                writer.WriteLine($"Email: {user.Email}");
+                writer.WriteLine($"Username: {user.Username}");
+                writer.WriteLine($"Birthday: {((Student)user).Birthday.ToShortDateString()}");
+                writer.WriteLine($"School: {((Student)user).SchoolName}");
+                writer.WriteLine($"Gender: {((Student)user).Gender}");
+                writer.WriteLine($"Year and Section: {((Student)user).GetYearAndSection()}");
+                writer.WriteLine($"Password: {HashPassword(user.Password)}");
+            }
+        }
+
+
         //check if username exist
-        public static bool UsernameExists(string username, string folderPath)
+        public static bool UserExists(string username, string folderPath)
         {
             string filePath = Path.Combine(folderPath, $"{username}.txt");
             return File.Exists(filePath);
@@ -57,7 +92,6 @@ namespace sprout__gradeBook
                 return false;
             }
 
-
             string storedPassword = "";
             using (StreamReader reader = new StreamReader(filePath))
             {
@@ -71,7 +105,6 @@ namespace sprout__gradeBook
                     }
                 }
             }
-
 
             string hashedInputPassword = HashPassword(password);
             return storedPassword == hashedInputPassword;

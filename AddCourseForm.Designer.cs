@@ -48,11 +48,9 @@
             this.courseEndTXT = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.courseStartTXT = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.saveNewCourseBTN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette2
@@ -72,7 +70,7 @@
             // saveNewCourseBTN
             // 
             this.saveNewCourseBTN.Image = ((System.Drawing.Image)(resources.GetObject("saveNewCourseBTN.Image")));
-            this.saveNewCourseBTN.Location = new System.Drawing.Point(21, 385);
+            this.saveNewCourseBTN.Location = new System.Drawing.Point(107, 416);
             this.saveNewCourseBTN.Name = "saveNewCourseBTN";
             this.saveNewCourseBTN.Size = new System.Drawing.Size(185, 45);
             this.saveNewCourseBTN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -83,7 +81,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(215, 385);
+            this.pictureBox2.Location = new System.Drawing.Point(293, 416);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(100, 45);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -105,7 +103,7 @@
             // 
             this.courseNameTXT.Location = new System.Drawing.Point(25, 55);
             this.courseNameTXT.Name = "courseNameTXT";
-            this.courseNameTXT.Size = new System.Drawing.Size(287, 35);
+            this.courseNameTXT.Size = new System.Drawing.Size(364, 35);
             this.courseNameTXT.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.courseNameTXT.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.courseNameTXT.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -132,7 +130,7 @@
             // 
             this.courseCourseTXT.Location = new System.Drawing.Point(25, 183);
             this.courseCourseTXT.Name = "courseCourseTXT";
-            this.courseCourseTXT.Size = new System.Drawing.Size(139, 35);
+            this.courseCourseTXT.Size = new System.Drawing.Size(175, 35);
             this.courseCourseTXT.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.courseCourseTXT.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.courseCourseTXT.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -159,7 +157,7 @@
             // 
             this.courseCodeTXT.Location = new System.Drawing.Point(25, 117);
             this.courseCodeTXT.Name = "courseCodeTXT";
-            this.courseCodeTXT.Size = new System.Drawing.Size(287, 35);
+            this.courseCodeTXT.Size = new System.Drawing.Size(364, 35);
             this.courseCodeTXT.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.courseCodeTXT.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.courseCodeTXT.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -187,7 +185,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Poppins Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.label2.Location = new System.Drawing.Point(177, 173);
+            this.label2.Location = new System.Drawing.Point(219, 173);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 19);
             this.label2.TabIndex = 34;
@@ -195,9 +193,9 @@
             // 
             // courseSectionTXT
             // 
-            this.courseSectionTXT.Location = new System.Drawing.Point(171, 183);
+            this.courseSectionTXT.Location = new System.Drawing.Point(213, 183);
             this.courseSectionTXT.Name = "courseSectionTXT";
-            this.courseSectionTXT.Size = new System.Drawing.Size(140, 35);
+            this.courseSectionTXT.Size = new System.Drawing.Size(175, 35);
             this.courseSectionTXT.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.courseSectionTXT.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.courseSectionTXT.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -208,6 +206,7 @@
             this.courseSectionTXT.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.courseSectionTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
             this.courseSectionTXT.TabIndex = 33;
+            this.courseSectionTXT.TextChanged += new System.EventHandler(this.courseSectionTXT_TextChanged);
             // 
             // label5
             // 
@@ -224,7 +223,7 @@
             // 
             this.courseStudentCountTXT.Location = new System.Drawing.Point(25, 240);
             this.courseStudentCountTXT.Name = "courseStudentCountTXT";
-            this.courseStudentCountTXT.Size = new System.Drawing.Size(285, 35);
+            this.courseStudentCountTXT.Size = new System.Drawing.Size(364, 35);
             this.courseStudentCountTXT.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.courseStudentCountTXT.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.courseStudentCountTXT.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -241,7 +240,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Poppins Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.label4.Location = new System.Drawing.Point(177, 319);
+            this.label4.Location = new System.Drawing.Point(219, 319);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 19);
             this.label4.TabIndex = 40;
@@ -249,9 +248,9 @@
             // 
             // courseEndTXT
             // 
-            this.courseEndTXT.Location = new System.Drawing.Point(171, 328);
+            this.courseEndTXT.Location = new System.Drawing.Point(214, 328);
             this.courseEndTXT.Name = "courseEndTXT";
-            this.courseEndTXT.Size = new System.Drawing.Size(140, 37);
+            this.courseEndTXT.Size = new System.Drawing.Size(175, 37);
             this.courseEndTXT.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.courseEndTXT.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.courseEndTXT.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -263,6 +262,7 @@
             this.courseEndTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
             this.courseEndTXT.TabIndex = 39;
             this.courseEndTXT.Text = "00:00 PM";
+            this.courseEndTXT.TextChanged += new System.EventHandler(this.courseEndTXT_TextChanged);
             this.courseEndTXT.Enter += new System.EventHandler(this.courseEndTXT_Enter);
             this.courseEndTXT.Leave += new System.EventHandler(this.courseEndTXT_Leave);
             // 
@@ -281,7 +281,7 @@
             // 
             this.courseStartTXT.Location = new System.Drawing.Point(25, 328);
             this.courseStartTXT.Name = "courseStartTXT";
-            this.courseStartTXT.Size = new System.Drawing.Size(139, 37);
+            this.courseStartTXT.Size = new System.Drawing.Size(175, 37);
             this.courseStartTXT.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.courseStartTXT.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.courseStartTXT.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -297,24 +297,16 @@
             this.courseStartTXT.Enter += new System.EventHandler(this.courseStartTXT_Enter);
             this.courseStartTXT.Leave += new System.EventHandler(this.courseStartTXT_Leave);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.pictureBox1.Location = new System.Drawing.Point(-1, -8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(347, 39);
-            this.pictureBox1.TabIndex = 41;
-            this.pictureBox1.TabStop = false;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.label7.Font = new System.Drawing.Font("Poppins", 10.25F);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(8, 5);
+            this.label7.Location = new System.Drawing.Point(-3, -1);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(271, 25);
+            this.label7.Padding = new System.Windows.Forms.Padding(10, 5, 200, 5);
+            this.label7.Size = new System.Drawing.Size(481, 35);
             this.label7.TabIndex = 42;
             this.label7.Text = "Please provide all course information.";
             // 
@@ -323,7 +315,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(342, 450);
+            this.ClientSize = new System.Drawing.Size(415, 473);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.courseEndTXT);
@@ -342,7 +334,6 @@
             this.Controls.Add(this.courseNameTXT);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.saveNewCourseBTN);
-            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddCourseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -358,7 +349,6 @@
             this.Load += new System.EventHandler(this.AddCourseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.saveNewCourseBTN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,7 +374,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox courseEndTXT;
         private System.Windows.Forms.Label label6;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox courseStartTXT;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label7;
     }
 }

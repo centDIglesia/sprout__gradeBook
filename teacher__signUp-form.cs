@@ -179,7 +179,7 @@ namespace sprout__gradeBook
 
             if (signupUNAME__txtbox.Text != "Username")
             {
-                bool usernameExists = Account__Manager.UsernameExists(signupUNAME__txtbox.Text, folderPath);
+                bool usernameExists = Account__Manager.UserExists(signupUNAME__txtbox.Text, folderPath);
                 if (usernameExists)
                 {
 
@@ -555,7 +555,7 @@ namespace sprout__gradeBook
             }
 
 
-            string studentRecordsFolderPath = "StudentInformations";
+            string studentRecordsFolderPath = "StudentCredentials";
             if (!Directory.Exists(studentRecordsFolderPath))
             {
                 Directory.CreateDirectory(studentRecordsFolderPath);

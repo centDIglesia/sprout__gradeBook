@@ -16,7 +16,6 @@ namespace sprout__gradeBook
 
         static void Main()
         {
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Teacher_Dashboard("Cent123456"));

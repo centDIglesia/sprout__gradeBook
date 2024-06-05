@@ -35,9 +35,11 @@
             this.divider_1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.StudentPanel = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.addStudentsBTN = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StudentPanel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addStudentsBTN)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette2
@@ -60,9 +62,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.courseSectionPanel.AutoScroll = true;
-            this.courseSectionPanel.Location = new System.Drawing.Point(44, 47);
+            this.courseSectionPanel.Location = new System.Drawing.Point(44, 44);
             this.courseSectionPanel.Name = "courseSectionPanel";
-            this.courseSectionPanel.Size = new System.Drawing.Size(739, 561);
+            this.courseSectionPanel.Size = new System.Drawing.Size(739, 514);
             this.courseSectionPanel.TabIndex = 92;
             // 
             // divider_1
@@ -89,12 +91,23 @@
             // 
             this.StudentPanel.Location = new System.Drawing.Point(44, 47);
             this.StudentPanel.Name = "StudentPanel";
-            this.StudentPanel.Size = new System.Drawing.Size(739, 561);
+            this.StudentPanel.Size = new System.Drawing.Size(739, 514);
             this.StudentPanel.StateCommon.Color1 = System.Drawing.Color.White;
             this.StudentPanel.StateCommon.Image = ((System.Drawing.Image)(resources.GetObject("StudentPanel.StateCommon.Image")));
             this.StudentPanel.StateCommon.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Stretch;
             this.StudentPanel.TabIndex = 1;
             this.StudentPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.StudentPanel_Paint);
+            // 
+            // addStudentsBTN
+            // 
+            this.addStudentsBTN.Image = ((System.Drawing.Image)(resources.GetObject("addStudentsBTN.Image")));
+            this.addStudentsBTN.Location = new System.Drawing.Point(637, 564);
+            this.addStudentsBTN.Name = "addStudentsBTN";
+            this.addStudentsBTN.Size = new System.Drawing.Size(149, 50);
+            this.addStudentsBTN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.addStudentsBTN.TabIndex = 0;
+            this.addStudentsBTN.TabStop = false;
+            this.addStudentsBTN.Click += new System.EventHandler(this.addStudentsBTN_Click);
             // 
             // teacher__studentsDashboard
             // 
@@ -102,6 +115,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(827, 639);
+            this.Controls.Add(this.addStudentsBTN);
             this.Controls.Add(this.divider_1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.courseSectionPanel);
@@ -112,6 +126,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StudentPanel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addStudentsBTN)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -123,5 +138,6 @@
         private System.Windows.Forms.PictureBox divider_1;
         private System.Windows.Forms.FlowLayoutPanel courseSectionPanel;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel StudentPanel;
+        private System.Windows.Forms.PictureBox addStudentsBTN;
     }
 }

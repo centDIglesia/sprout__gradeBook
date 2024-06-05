@@ -123,5 +123,15 @@ namespace sprout__gradeBook
         {
 
         }
+
+        private void courseSectionTXT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void courseEndTXT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -10,7 +10,7 @@ namespace sprout__gradeBook
 
 
 
-        public string CourseCode
+        public string Course
         {
             get => CourseOfStudent.Text;
             set => CourseOfStudent.Text = value;
@@ -19,7 +19,7 @@ namespace sprout__gradeBook
         public string SectionName
         {
             get => CoursecSectionOfStudent.Text;
-            set => CoursecSectionOfStudent.Text = value;
+            set => CoursecSectionOfStudent.Text = value.ToUpper();
         }
 
         public CourseAndSectionCARD(teacher__studentsDashboard parentForm)
@@ -48,11 +48,9 @@ namespace sprout__gradeBook
         private void CoursecSectionOfStudent_Click(object sender, EventArgs e)
         {
 
-            addStudentDashboard addStudentForm = new addStudentDashboard(ParentForm.currentUSer, CourseCode, SectionName);
 
 
-            ParentForm.LoadFormIntoPanel(addStudentForm);
-            ParentForm.hidePanel();
+
         }
 
     }

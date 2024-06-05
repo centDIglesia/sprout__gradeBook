@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 
@@ -21,82 +17,74 @@ namespace sprout__gradeBook
 
         private void teacher__studentsDashboard_Load(object sender, EventArgs e)
         {
-            PopulateCourseSectionPanel();
+            LoadStudentCourses();
         }
 
-        private void PopulateCourseSectionPanel()
+        private void LoadStudentCourses()
         {
-            string folderPath = "CourseInformations";
-            string filePath = Path.Combine(folderPath, $"{currentUSer}.txt");
-
-            if (!File.Exists(filePath))
+            string folderPath = "StudentCredentials";
+            if (!Directory.Exists(folderPath))
             {
-                MessageBox.Show("Course information file not found.");
+                MessageBox.Show("Student credentials directory not found.");
                 return;
             }
 
-            string[] fileContents = File.ReadAllText(filePath)
-                .Split(new string[] { "----------------------------------------" }, StringSplitOptions.RemoveEmptyEntries);
-
-            courseSectionPanel.Controls.Clear();
-
-            foreach (string courseData in fileContents)
+            var studentFiles = Directory.GetFiles(folderPath, "*.txt");
+            if (studentFiles.Length == 0)
             {
-                string[] lines = courseData.Trim().Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None);
-
-                Dictionary<string, string> courseDetails = new Dictionary<string, string>();
-
-                foreach (string line in lines)
+                DialogResult result = MessageBox.Show("No student files found. Do you want to add a student now?", "No Student Found", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
-                    string[] parts = line.Split(new char[] { ':' }, 2);
-                    if (parts.Length == 2)
+
+                    AddStudentForm addStudentForm = new AddStudentForm(this);
+                    addStudentForm.ShowDialog();
+                }
+                else
+                {
+
+                }
+            }
+
+            foreach (var file in studentFiles)
+            {
+                // Read the student file and extract necessary information
+                string[] lines = File.ReadAllLines(file);
+                string courseCode = "";
+                string sectionName = "";
+
+                foreach (var line in lines)
+                {
+                    if (line.StartsWith("Course Code:"))
                     {
-                        courseDetails[parts[0].Trim()] = parts[1].Trim();
+                        courseCode = line.Split(':')[1].Trim();
+                    }
+                    else if (line.StartsWith("Section Name:"))
+                    {
+                        sectionName = line.Split(':')[1].Trim();
                     }
                 }
 
-                if (courseDetails.ContainsKey("Course Name") && courseDetails.ContainsKey("Student Course and Section"))
+                if (!string.IsNullOrEmpty(courseCode) && !string.IsNullOrEmpty(sectionName))
                 {
-                    CourseAndSectionCARD courseCard = new CourseAndSectionCARD(this)
+                    CourseAndSectionCARD card = new CourseAndSectionCARD(this)
                     {
-                        CourseCode = courseDetails["Course Code"],
-                        SectionName = courseDetails["Student Course and Section"]
+                        Course = courseCode,
+                        SectionName = sectionName
                     };
-
-                    courseSectionPanel.Controls.Add(courseCard);
+                    courseSectionPanel.Controls.Add(card);
                 }
             }
         }
 
-        public void LoadFormIntoPanel(Form form)
-        {
-            if (this.StudentPanel.Controls.Count > 0)
-            {
-                this.StudentPanel.Controls.RemoveAt(0);
-            }
-
-            form.TopLevel = false;
-            form.Dock = DockStyle.Fill;
-            this.StudentPanel.Controls.Add(form);
-            this.StudentPanel.Tag = form;
-            form.Show();
-        }
-
-
-        public void hidePanel()
-        {
-            courseSectionPanel.Hide();
-        }
-
-        public void ShowPanel()
-        {
-            courseSectionPanel.Show();
-        }
-
-
         private void StudentPanel_Paint(object sender, PaintEventArgs e)
         {
+            // Optional: Custom painting logic
+        }
 
+        private void addStudentsBTN_Click(object sender, EventArgs e)
+        {
+            AddStudentForm addStudentForm = new AddStudentForm(this);
+            addStudentForm.ShowDialog();// Logic to add students
         }
     }
 }
