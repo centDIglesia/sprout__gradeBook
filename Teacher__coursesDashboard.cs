@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 
@@ -22,11 +23,10 @@ namespace sprout__gradeBook
         {
             DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (result == DialogResult.No)
+            if (result == DialogResult.Yes)
             {
-                return;
+                Application.Exit();
             }
-            else Application.Exit();
         }
 
         private void teacher__courses_lvl1_Load(object sender, EventArgs e)
@@ -51,8 +51,23 @@ namespace sprout__gradeBook
                 return;
             }
 
-            string[] fileContents = File.ReadAllText(filePath)
-                .Split(new string[] { "----------------------------------------" }, StringSplitOptions.RemoveEmptyEntries);
+            if (!File.Exists(filePath))
+            {
+                MessageBox.Show($"Course information file for {CurrentUser} not found.");
+                return;
+            }
+
+            string[] fileContents;
+            try
+            {
+                fileContents = File.ReadAllText(filePath)
+                    .Split(new string[] { "----------------------------------------" }, StringSplitOptions.RemoveEmptyEntries);
+            }
+            catch (IOException ex)
+            {
+                MessageBox.Show($"Error reading course information: {ex.Message}");
+                return;
+            }
 
             Course__flowLayoutPanel.Controls.Clear();
 
@@ -77,14 +92,13 @@ namespace sprout__gradeBook
                     courseDetails.ContainsKey("Course Schedule") &&
                     courseDetails.ContainsKey("Student Count"))
                 {
-                    CoursesCARD courseControl = new CoursesCARD
+                    CoursesCARD courseControl = new CoursesCARD(this)
                     {
                         SubjectName = courseDetails["Course Name"],
                         SubjectCode = courseDetails["Course Code"],
                         SubjectCourseSection = courseDetails["Student Course and Section"],
                         SubjectSchedule = courseDetails["Course Schedule"],
-                        SubjectCount = courseDetails["Student Count"],
-                        ParentForm = this
+                        SubjectCount = courseDetails["Student Count"]
                     };
 
                     Course__flowLayoutPanel.Controls.Add(courseControl);
@@ -94,15 +108,11 @@ namespace sprout__gradeBook
 
         public void LoadFormIntoPanel(Form form)
         {
-            if (this.kryptonPanel1.Controls.Count > 0)
-            {
-                this.kryptonPanel1.Controls.RemoveAt(0);
-            }
+            kryptonPanel1.Controls.Clear();
 
             form.TopLevel = false;
             form.Dock = DockStyle.Fill;
-            this.kryptonPanel1.Controls.Add(form);
-            this.kryptonPanel1.Tag = form;
+            kryptonPanel1.Controls.Add(form);
             form.Show();
         }
 
@@ -120,25 +130,17 @@ namespace sprout__gradeBook
         {
             AddCourseForm adf = new AddCourseForm(CurrentUser, this);
             adf.Show();
-            this.Enabled = false;
+            Enabled = false;
         }
 
         private void deleteBTN_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-
-        private void editCoursePanel_Paint(object sender, PaintEventArgs e)
-        {
-
+            Close();
         }
 
         private void refreshBTN_Click_1(object sender, EventArgs e)
         {
-            teacher__courses_lvl1_Load(sender, e);
+            populateCourses();
         }
-
-
     }
 }

@@ -12,6 +12,8 @@ public class Course
     public int StudentCount { get; set; }
     public string courseAndSection { get; set; }
 
+
+
     public Course(string courseName, string courseCode, string studentCourse, string studentSection, string startTime, string endTime, int studentCount)
     {
         CourseName = courseName;
@@ -28,7 +30,6 @@ public class Course
     {
         return $"{StartTime}-{EndTime}";
     }
-
 
 
     public void SaveCourse(string currentUser)

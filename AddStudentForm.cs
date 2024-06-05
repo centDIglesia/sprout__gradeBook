@@ -8,15 +8,13 @@ namespace sprout__gradeBook
     public partial class AddStudentForm : KryptonForm
     {
         teacher__studentsDashboard parent;
-        private string teacherSchool; // Add a field to store the teacher's school
-
-
-        // Modify the constructor to accept the teacher's school information
+        private string teacherSchool; 
+        
         public AddStudentForm(teacher__studentsDashboard parentDashboard, string school)
         {
             InitializeComponent();
             parent = parentDashboard;
-            teacherSchool = school; // Initialize the teacher's school
+            teacherSchool = school;
         }
 
         private void saveNewStudentBTN_Click(object sender, EventArgs e)
@@ -47,7 +45,7 @@ namespace sprout__gradeBook
             string studentDepartment = studentDepartmentTXT.Text;
             string studentYearLevel = studentYearLevelTXT.Text;
             string studentSection = studentSectionTXT.Text;
-            string studentSchool = teacherSchool; // Use the teacher's school information
+            string studentSchool = teacherSchool;
 
             Users newStudent = new Student(studentID, studentFname, studentMname, studentLname, studentEmail, studentUsername, studentBirthday, studentGender, studentYearLevel, studentSection, studentDepartment, studentSchool);
 

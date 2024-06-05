@@ -6,75 +6,59 @@ namespace sprout__gradeBook
 {
     public partial class CoursesCARD : UserControl
     {
-        public CoursesCARD()
+
+        public new teacher__courses_lvl1 ParentForm { get; set; }
+        public CoursesCARD(teacher__courses_lvl1 parentForm)
         {
+            ParentForm = parentForm;
             InitializeComponent();
         }
 
-        public teacher__courses_lvl1 ParentForm { get; set; } // Reference to the parent form
 
         private void Courses_Load(object sender, EventArgs e)
         {
             studentCountTooltip.Hide();
+
         }
 
-        private string subjectName;
-        private string subjectCode;
-        private string subjectCount;
-        private string subjectSchedule;
-        private string subjectCourseSection;
 
         public string SubjectName
         {
-            get { return subjectName; }
+            get => subjectNameLBL.Text;
             set
             {
-                if (value.Length > 7)
+                if (!string.IsNullOrEmpty(value))
                 {
-                    subjectName = value.Substring(0, 29) + "....";
+                    subjectNameLBL.Text = value.Length > 29 ? value.Substring(0, 29) + "...." : value;
                 }
-                else
-                {
-                    subjectName = value;
-                }
-                subjectNameLBL.Text = subjectName;
             }
         }
 
+
         public string SubjectCode
         {
-            get { return subjectCode; }
-            set { subjectCode = value; subjectCodeLBL.Text = value; }
+            get => subjectCodeLBL.Text;
+            set => subjectCodeLBL.Text = value;
         }
 
         public string SubjectCount
         {
-            get { return subjectCount; }
-            set { subjectCount = value; subjectStudentCountLBL.Text = value; }
+            get => subjectStudentCountLBL.Text;
+            set => subjectStudentCountLBL.Text = value;
         }
 
         public string SubjectSchedule
         {
-            get { return subjectSchedule; }
-            set { subjectSchedule = value; subjectScheduleLBL.Text = value; }
+            get => subjectScheduleLBL.Text;
+            set => subjectScheduleLBL.Text = value;
         }
 
         public string SubjectCourseSection
         {
-            get { return subjectCourseSection; }
-            set
-            {
-                if (value.Length > 7)
-                {
-                    subjectCourseSection = value.Substring(0, 6) + "..";
-                }
-                else
-                {
-                    subjectCourseSection = value.ToUpper();
-                }
-                subjectCourseSectionLBL.Text = subjectCourseSection;
-            }
+            get => subjectCourseSectionLBL.Text;
+            set => subjectCourseSectionLBL.Text = value.Length > 7 ? value.Substring(0, 6) + ".." : value.ToUpper();
         }
+
 
         private void subjectStudentCountLBL_MouseHover(object sender, EventArgs e)
         {

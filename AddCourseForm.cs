@@ -2,7 +2,6 @@
 using System.IO;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace sprout__gradeBook
 {
@@ -20,61 +19,43 @@ namespace sprout__gradeBook
 
         private void AddCourseForm_Load(object sender, EventArgs e)
         {
-
         }
 
         private void saveNewCourseBTN_Click(object sender, EventArgs e)
         {
 
-            try
+            string courseName = courseNameTXT.Text;
+            string courseCode = courseCodeTXT.Text;
+            string studentCourse = courseCourseTXT.Text;
+            string studentSection = courseSectionTXT.Text;
+            int studentCount = int.Parse(courseStudentCountTXT.Text);
+            string startTime = courseStartTXT.Text;
+            string endTime = courseEndTXT.Text;
+
+            Course newCourse = new Course(courseName, courseCode, studentCourse, studentSection, startTime, endTime, studentCount);
+            newCourse.SaveCourse(currentUserName);
+
+            MessageBox.Show("Course added and saved successfully!");
+            this.Close();
+
+            parentForm.Enabled = true;
+            parentForm.populateCourses();
+
+
+            string folderPath = "StudentInMyCourse";
+            if (!Directory.Exists(folderPath))
             {
-                string courseName = courseNameTXT.Text;
-                string courseCode = courseCodeTXT.Text;
-                string studentCourse = courseCourseTXT.Text;
-                string studentSection = courseSectionTXT.Text;
-                string courseAndSection = studentCourse + studentSection;
-                int studentCount = int.Parse(courseStudentCountTXT.Text);
-                string startTime = courseStartTXT.Text;
-                string endTime = courseEndTXT.Text;
-
-                Course newCourse = new Course(courseName, courseCode, studentCourse, studentSection, startTime, endTime, studentCount);
-                newCourse.StartTime = startTime;
-                newCourse.EndTime = endTime;
-                newCourse.SaveCourse(currentUserName);
-                MessageBox.Show("Course added and saved successfully!");
-                this.Close();
-
-                parentForm.Enabled = true;
-                parentForm.populateCourses();
-
-
-
-                //CREATE TEXFILE OF STUDENTS IN COURSE WHEN ADDED NEW COURSE
-
-                string folderPath = "StudentInMyCourse";
-
-                if (!Directory.Exists(folderPath))
-                {
-                    Directory.CreateDirectory(folderPath);
-                }
-
-                string fileName = $"{currentUserName}_{studentCourse}_{studentSection}.txt";
-                string filePath = Path.Combine(folderPath, fileName);
-
-                using (StreamWriter writer = new StreamWriter(filePath))
-                {
-
-                }
-
+                Directory.CreateDirectory(folderPath);
             }
-            catch (FormatException)
+
+            string fileName = $"{currentUserName}_{studentCourse}_{studentSection}.txt";
+            string filePath = Path.Combine(folderPath, fileName);
+
+            using (StreamWriter writer = new StreamWriter(filePath))
             {
-                MessageBox.Show("Please enter valid input values.");
             }
-            catch (ArgumentException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+
+
         }
 
         private void courseStartTXT_Enter(object sender, EventArgs e)
@@ -84,14 +65,14 @@ namespace sprout__gradeBook
 
         private void courseStartTXT_Leave(object sender, EventArgs e)
         {
-            if (IsValid12HourTimeFormat(courseStartTXT.Text))
-            {
-                UserInput_Manager.RestoreDefaultText(courseStartTXT, "00:00 PM");
-            }
-            else
+            if (!IsValid12HourTimeFormat(courseStartTXT.Text))
             {
                 MessageBox.Show("Please enter a valid time in 12-hour format (e.g., 01:00 PM).");
                 courseStartTXT.Focus();
+            }
+            else
+            {
+                UserInput_Manager.RestoreDefaultText(courseStartTXT, "00:00 PM");
             }
         }
 
@@ -102,36 +83,36 @@ namespace sprout__gradeBook
 
         private void courseEndTXT_Leave(object sender, EventArgs e)
         {
-            if (IsValid12HourTimeFormat(courseEndTXT.Text))
-            {
-                UserInput_Manager.RestoreDefaultText(courseEndTXT, "00:00 PM");
-            }
-            else
+            if (!IsValid12HourTimeFormat(courseEndTXT.Text))
             {
                 MessageBox.Show("Please enter a valid time in 12-hour format (e.g., 01:00 PM).");
                 courseEndTXT.Focus();
+            }
+            else
+            {
+                UserInput_Manager.RestoreDefaultText(courseEndTXT, "00:00 PM");
             }
         }
 
         public static bool IsValid12HourTimeFormat(string input)
         {
-            string pattern = @"^((0[1-9])|(1[0-2])):([0-5][0-9])\s?(AM|PM)$";
+            string pattern = @"^(0[1-9]|1[0-2]):([0-5][0-9])\s?(AM|PM)$";
             return System.Text.RegularExpressions.Regex.IsMatch(input, pattern, System.Text.RegularExpressions.RegexOptions.IgnoreCase);
         }
 
         private void courseStartTXT_TextChanged(object sender, EventArgs e)
         {
-
+            // Add any logic needed on text change
         }
 
         private void courseSectionTXT_TextChanged(object sender, EventArgs e)
         {
-
+            // Add any logic needed on text change
         }
 
         private void courseEndTXT_TextChanged(object sender, EventArgs e)
         {
-
+            // Add any logic needed on text change
         }
     }
 }
