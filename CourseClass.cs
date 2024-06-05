@@ -21,6 +21,7 @@ public class Course
         StudentCount = studentCount;
     }
 
+
     public string GetCourseSchedule()
     {
         return $"{StartTime}-{EndTime}";

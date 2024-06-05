@@ -55,14 +55,14 @@
             // 
             // CourseCode
             // 
-            this.CourseCode.Location = new System.Drawing.Point(34, 126);
+            this.CourseCode.Location = new System.Drawing.Point(34, 98);
             this.CourseCode.Name = "CourseCode";
             this.CourseCode.ReadOnly = true;
             this.CourseCode.Size = new System.Drawing.Size(486, 106);
             this.CourseCode.StateCommon.Border.Color1 = System.Drawing.Color.White;
             this.CourseCode.StateCommon.Border.Color2 = System.Drawing.Color.White;
-            this.CourseCode.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            this.CourseCode.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.CourseCode.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.CourseCode.StateCommon.Content.Font = new System.Drawing.Font("Poppins Medium", 44F, System.Drawing.FontStyle.Bold);
@@ -94,7 +94,7 @@
             // 
             // SubjectNameLbl
             // 
-            this.SubjectNameLbl.Location = new System.Drawing.Point(32, 212);
+            this.SubjectNameLbl.Location = new System.Drawing.Point(32, 200);
             this.SubjectNameLbl.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.SubjectNameLbl.Multiline = true;
             this.SubjectNameLbl.Name = "SubjectNameLbl";
@@ -102,8 +102,8 @@
             this.SubjectNameLbl.Size = new System.Drawing.Size(483, 93);
             this.SubjectNameLbl.StateCommon.Border.Color1 = System.Drawing.Color.White;
             this.SubjectNameLbl.StateCommon.Border.Color2 = System.Drawing.Color.White;
-            this.SubjectNameLbl.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            this.SubjectNameLbl.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.SubjectNameLbl.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.SubjectNameLbl.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 20.25F);
@@ -118,8 +118,8 @@
             this.subjectCourseandSectionlbl.Size = new System.Drawing.Size(172, 36);
             this.subjectCourseandSectionlbl.StateCommon.Border.Color1 = System.Drawing.Color.White;
             this.subjectCourseandSectionlbl.StateCommon.Border.Color2 = System.Drawing.Color.White;
-            this.subjectCourseandSectionlbl.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            this.subjectCourseandSectionlbl.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.subjectCourseandSectionlbl.StateCommon.Content.Color1 = System.Drawing.Color.Gray;
             this.subjectCourseandSectionlbl.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 14.25F);
@@ -135,8 +135,8 @@
             this.subjectScheduleLBL.Size = new System.Drawing.Size(193, 36);
             this.subjectScheduleLBL.StateCommon.Border.Color1 = System.Drawing.Color.White;
             this.subjectScheduleLBL.StateCommon.Border.Color2 = System.Drawing.Color.White;
-            this.subjectScheduleLBL.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            this.subjectScheduleLBL.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.subjectScheduleLBL.StateCommon.Content.Color1 = System.Drawing.Color.Gray;
             this.subjectScheduleLBL.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 14.25F);
@@ -152,8 +152,8 @@
             this.studentCountLBL.Size = new System.Drawing.Size(68, 83);
             this.studentCountLBL.StateCommon.Border.Color1 = System.Drawing.Color.White;
             this.studentCountLBL.StateCommon.Border.Color2 = System.Drawing.Color.White;
-            this.studentCountLBL.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            this.studentCountLBL.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.studentCountLBL.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentCountLBL.StateCommon.Content.Font = new System.Drawing.Font("Poppins Medium", 34F, System.Drawing.FontStyle.Bold);
@@ -169,8 +169,8 @@
             this.kryptonTextBox1.Size = new System.Drawing.Size(10, 58);
             this.kryptonTextBox1.StateCommon.Border.Color1 = System.Drawing.Color.White;
             this.kryptonTextBox1.StateCommon.Border.Color2 = System.Drawing.Color.White;
-            this.kryptonTextBox1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            this.kryptonTextBox1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonTextBox1.StateCommon.Content.Color1 = System.Drawing.Color.Gray;
             this.kryptonTextBox1.StateCommon.Content.Font = new System.Drawing.Font("Poppins ExtraLight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -199,7 +199,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditCourseForm";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.EditCourse_Load);
+            this.Load += new System.EventHandler(this.EditCourseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.editInfoBTN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EditCOurseSaveBTN)).EndInit();

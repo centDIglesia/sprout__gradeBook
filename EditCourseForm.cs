@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 
@@ -8,6 +7,8 @@ namespace sprout__gradeBook
 {
     public partial class EditCourseForm : KryptonForm
     {
+        teacher__courses_lvl1 parent;
+
         private string currentUser;
         private string originalSubjectName;
         private string originalSubjectCode;
@@ -42,7 +43,6 @@ namespace sprout__gradeBook
             SubjectNameLbl.ReadOnly = false;
             subjectScheduleLBL.ReadOnly = false;
             studentCountLBL.ReadOnly = false;
-            subjectCourseandSectionlbl.ReadOnly = false;
             CourseCode.Focus();
         }
 
@@ -55,24 +55,24 @@ namespace sprout__gradeBook
             subjectCount = studentCountLBL.Text;
             subjectCourseSection = subjectCourseandSectionlbl.Text;
 
-            // Save the updated information to the text file
-            string folderPath = "CourseInformations";
-            string filePath = Path.Combine(folderPath, $"{currentUser}.txt");
+            // Save the updated information to the text file in the "CourseInformations" folder
+            string courseInfoFolderPath = "CourseInformations";
+            string courseInfoFilePath = Path.Combine(courseInfoFolderPath, $"{currentUser}.txt");
 
-            if (File.Exists(filePath))
+            if (File.Exists(courseInfoFilePath))
             {
-                string[] fileContents = File.ReadAllLines(filePath).ToArray();
+                string[] courseInfoFileContents = File.ReadAllLines(courseInfoFilePath);
                 bool isUpdated = false;
 
-                for (int i = 0; i < fileContents.Length; i++)
+                for (int i = 0; i < courseInfoFileContents.Length; i++)
                 {
-                    if (fileContents[i].Contains($"Course Name: {originalSubjectName}") && fileContents[i + 1].Contains($"Course Code: {originalSubjectCode}"))
+                    if (courseInfoFileContents[i].Contains($"Course Name: {originalSubjectName}") && courseInfoFileContents[i + 1].Contains($"Course Code: {originalSubjectCode}"))
                     {
-                        fileContents[i] = $"Course Name: {subjectName}";
-                        fileContents[i + 1] = $"Course Code: {subjectCode}";
-                        fileContents[i + 2] = $"Student Course and Section: {subjectCourseSection}";
-                        fileContents[i + 3] = $"Course Schedule: {subjectSchedule}";
-                        fileContents[i + 4] = $"Student Count: {subjectCount}";
+                        courseInfoFileContents[i] = $"Course Name: {subjectName}";
+                        courseInfoFileContents[i + 1] = $"Course Code: {subjectCode}";
+                        courseInfoFileContents[i + 2] = $"Student Course and Section: {subjectCourseSection}";
+                        courseInfoFileContents[i + 3] = $"Course Schedule: {subjectSchedule}";
+                        courseInfoFileContents[i + 4] = $"Student Count: {subjectCount}";
                         isUpdated = true;
                         break;
                     }
@@ -80,25 +80,40 @@ namespace sprout__gradeBook
 
                 if (isUpdated)
                 {
-                    File.WriteAllLines(filePath, fileContents);
+                    File.WriteAllLines(courseInfoFilePath, courseInfoFileContents);
                 }
                 else
                 {
-                    MessageBox.Show("Course information not found for updating.");
+                    MessageBox.Show("Course information not found for updating in the CourseInformations folder.");
                 }
             }
-
-            // Notify the parent form to refresh the displayed courses
-            if (teacher__courses_lvl1.lvl1Instance != null)
+            else
             {
-                teacher__courses_lvl1.lvl1Instance.populateCourses();
-                teacher__courses_lvl1.lvl1Instance.ShowPanel();
+                MessageBox.Show("Course file not found for updating in the CourseInformations folder.");
             }
 
+
+
+
+
             this.Close();
+
+
+            // Notify the parent form to refresh the displayed courses
+            if (parent != null)
+            {
+                parent.populateCourses();
+                parent.ShowPanel();
+
+
+
+            }
+
+
+
         }
 
-        private void EditCourse_Load(object sender, EventArgs e)
+        private void EditCourseForm_Load(object sender, EventArgs e)
         {
 
         }

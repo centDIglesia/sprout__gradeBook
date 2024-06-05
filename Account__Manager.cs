@@ -33,8 +33,8 @@ namespace sprout__gradeBook
                 writer.WriteLine($"Last Name: {user.LastName}");
                 writer.WriteLine($"Email: {user.Email}");
                 writer.WriteLine($"Username: {user.Username}");
-                writer.WriteLine($"Username: {user.SchoolName}");
-                writer.WriteLine($"Password: {HashPassword(user.Password)}"); 
+                writer.WriteLine($"School: {user.SchoolName}");
+                writer.WriteLine($"Password: {HashPassword(user.Password)}");
             }
         }
 

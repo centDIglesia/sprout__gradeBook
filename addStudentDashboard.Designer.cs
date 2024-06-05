@@ -20,6 +20,7 @@
             base.Dispose(disposing);
         }
 
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -62,7 +63,7 @@
             // deleteBTN
             // 
             this.deleteBTN.Image = global::sprout__gradeBook.Properties.Resources.recycle_bin;
-            this.deleteBTN.Location = new System.Drawing.Point(512, 494);
+            this.deleteBTN.Location = new System.Drawing.Point(674, 494);
             this.deleteBTN.Name = "deleteBTN";
             this.deleteBTN.Size = new System.Drawing.Size(49, 50);
             this.deleteBTN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -72,9 +73,9 @@
             // addstudentBTN
             // 
             this.addstudentBTN.Image = ((System.Drawing.Image)(resources.GetObject("addstudentBTN.Image")));
-            this.addstudentBTN.Location = new System.Drawing.Point(567, 494);
+            this.addstudentBTN.Location = new System.Drawing.Point(526, 494);
             this.addstudentBTN.Name = "addstudentBTN";
-            this.addstudentBTN.Size = new System.Drawing.Size(153, 50);
+            this.addstudentBTN.Size = new System.Drawing.Size(149, 50);
             this.addstudentBTN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.addstudentBTN.TabIndex = 91;
             this.addstudentBTN.TabStop = false;

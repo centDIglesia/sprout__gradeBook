@@ -59,7 +59,7 @@ namespace sprout__gradeBook
                 {
                     CourseAndSectionCARD courseCard = new CourseAndSectionCARD(this)
                     {
-                        CourseName = courseDetails["Course Name"],
+                        CourseCode = courseDetails["Course Code"],
                         SectionName = courseDetails["Student Course and Section"]
                     };
 

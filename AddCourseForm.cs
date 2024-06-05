@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
@@ -9,10 +10,11 @@ namespace sprout__gradeBook
     {
         private string currentUserName;
         private teacher__courses_lvl1 parentForm;
+
         public AddCourseForm(string currentUser, teacher__courses_lvl1 parent)
         {
             currentUserName = currentUser;
-            parentForm = parent; // Store a reference to the parent form
+            parentForm = parent;
             InitializeComponent();
         }
 
@@ -23,6 +25,7 @@ namespace sprout__gradeBook
 
         private void saveNewCourseBTN_Click(object sender, EventArgs e)
         {
+
             try
             {
                 string courseName = courseNameTXT.Text;
@@ -41,10 +44,27 @@ namespace sprout__gradeBook
                 MessageBox.Show("Course added and saved successfully!");
                 this.Close();
 
-
                 parentForm.Enabled = true;
                 parentForm.populateCourses();
 
+
+
+                //CREATE TEXFILE OF STUDENTS IN COURSE WHEN ADDED NEW COURSE
+
+                string folderPath = "StudentInMyCourse";
+
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+
+                string fileName = $"{currentUserName}_{studentCourse}_{studentSection}.txt";
+                string filePath = Path.Combine(folderPath, fileName);
+
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+
+                }
 
             }
             catch (FormatException)
@@ -55,13 +75,7 @@ namespace sprout__gradeBook
             {
                 MessageBox.Show(ex.Message);
             }
-
-
-
-
-
         }
-
 
         private void courseStartTXT_Enter(object sender, EventArgs e)
         {
@@ -86,7 +100,6 @@ namespace sprout__gradeBook
             UserInput_Manager.ResetInputField(courseEndTXT, "00:00 PM");
         }
 
-
         private void courseEndTXT_Leave(object sender, EventArgs e)
         {
             if (IsValid12HourTimeFormat(courseEndTXT.Text))
@@ -102,7 +115,6 @@ namespace sprout__gradeBook
 
         public static bool IsValid12HourTimeFormat(string input)
         {
-
             string pattern = @"^((0[1-9])|(1[0-2])):([0-5][0-9])\s?(AM|PM)$";
             return System.Text.RegularExpressions.Regex.IsMatch(input, pattern, System.Text.RegularExpressions.RegexOptions.IgnoreCase);
         }

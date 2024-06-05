@@ -10,7 +10,7 @@ namespace sprout__gradeBook
 
 
 
-        public string CourseName
+        public string CourseCode
         {
             get => CourseOfStudent.Text;
             set => CourseOfStudent.Text = value;
@@ -48,7 +48,7 @@ namespace sprout__gradeBook
         private void CoursecSectionOfStudent_Click(object sender, EventArgs e)
         {
 
-            addStudentDashboard addStudentForm = new addStudentDashboard(ParentForm.currentUSer, CourseName, SectionName);
+            addStudentDashboard addStudentForm = new addStudentDashboard(ParentForm.currentUSer, CourseCode, SectionName);
 
 
             ParentForm.LoadFormIntoPanel(addStudentForm);

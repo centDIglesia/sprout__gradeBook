@@ -571,6 +571,17 @@ namespace sprout__gradeBook
                 }
             }
 
+            string studentinCoursesPath = "StudentInMyCourse";
+
+            if (!Directory.Exists(studentinCoursesPath))
+            {
+                Directory.CreateDirectory(studentinCoursesPath);
+            }
+
+
+
+
+
 
         }
 
