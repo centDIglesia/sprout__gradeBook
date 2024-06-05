@@ -128,14 +128,17 @@ namespace sprout__gradeBook
             this.Close();
         }
 
-        private void refreshBTN_Click(object sender, EventArgs e)
-        {
-            populateCourses();
-        }
 
         private void editCoursePanel_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
+        private void refreshBTN_Click_1(object sender, EventArgs e)
+        {
+            teacher__courses_lvl1_Load(sender, e);
+        }
+
+
     }
 }
