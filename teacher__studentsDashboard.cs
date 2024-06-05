@@ -1,80 +1,95 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using static System.Collections.Specialized.BitVector32;
 
 namespace sprout__gradeBook
 {
     public partial class teacher__studentsDashboard : KryptonForm
     {
         public string currentUSer { get; set; }
+        private string teacherSchool;
 
         public teacher__studentsDashboard(string currentuser)
         {
             InitializeComponent();
             currentUSer = currentuser;
+            teacherSchool = LoadTeacherSchool(currentuser);
         }
 
         private void teacher__studentsDashboard_Load(object sender, EventArgs e)
         {
             LoadStudentCourses();
         }
+        private string LoadTeacherSchool(string currentUser)
+        {
+            // This is a simplified example. In a real application, this might query a database or configuration file.
+            string teacherDetailsFile = $"teacherCredentials/{currentUser}.txt";
+            if (!File.Exists(teacherDetailsFile))
+            {
+                throw new FileNotFoundException("Teacher details file not found.");
+            }
+
+            string[] lines = File.ReadAllLines(teacherDetailsFile);
+            foreach (var line in lines)
+            {
+                if (line.StartsWith("School:"))
+                {
+                    return line.Split(':')[1].Trim();
+                }
+            }
+
+            throw new Exception("School information not found in teacher details file.");
+        }
 
         private void LoadStudentCourses()
         {
-            string folderPath = "StudentCredentials";
-            if (!Directory.Exists(folderPath))
+            string folderPath = $"StudentCredentials/{currentUSer}";
+            if (Directory.Exists(folderPath))
             {
-                MessageBox.Show("Student credentials directory not found.");
-                return;
-            }
-
-            var studentFiles = Directory.GetFiles(folderPath, "*.txt");
-            if (studentFiles.Length == 0)
-            {
-                DialogResult result = MessageBox.Show("No student files found. Do you want to add a student now?", "No Student Found", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
+                string[] filePaths = Directory.GetFiles(folderPath, "*.txt");
+                foreach (string filePath in filePaths)
                 {
-
-                    AddStudentForm addStudentForm = new AddStudentForm(this);
-                    addStudentForm.ShowDialog();
-                }
-                else
-                {
-
-                }
-            }
-
-            foreach (var file in studentFiles)
-            {
-                // Read the student file and extract necessary information
-                string[] lines = File.ReadAllLines(file);
-                string courseCode = "";
-                string sectionName = "";
-
-                foreach (var line in lines)
-                {
-                    if (line.StartsWith("Course Code:"))
+                    string[] lines = File.ReadAllLines(filePath);
+                    string department = "";
+                    string section = "";
+                    foreach (var line in lines)
                     {
-                        courseCode = line.Split(':')[1].Trim();
+                        if (line.StartsWith("Year and Section:"))
+                        {
+                            section = line.Substring("Year and Section:".Length).Trim();
+                        }
+                        else if (line.StartsWith("Department:"))
+                        {
+                            department = line.Substring("Department:".Length).Trim();
+
+                        }
+
+                        if (!string.IsNullOrEmpty(department) && !string.IsNullOrEmpty(section))
+                        {
+                            break;
+                        }
                     }
-                    else if (line.StartsWith("Section Name:"))
-                    {
-                        sectionName = line.Split(':')[1].Trim();
-                    }
-                }
 
-                if (!string.IsNullOrEmpty(courseCode) && !string.IsNullOrEmpty(sectionName))
-                {
-                    CourseAndSectionCARD card = new CourseAndSectionCARD(this)
+                    if (!string.IsNullOrEmpty(department) && !string.IsNullOrEmpty(section))
                     {
-                        Course = courseCode,
-                        SectionName = sectionName
-                    };
-                    courseSectionPanel.Controls.Add(card);
+                        string[] courseCode = department.Split(',');
+                        string lastPart = courseCode.Last().Trim();
+                        CourseAndSectionCARD card = new CourseAndSectionCARD(this)
+                        {
+                            Course = lastPart,
+                            SectionName = section
+                        };
+                        courseSectionPanel.Controls.Add(card);
+                    }
                 }
             }
         }
+
+
+
 
         private void StudentPanel_Paint(object sender, PaintEventArgs e)
         {
@@ -83,8 +98,9 @@ namespace sprout__gradeBook
 
         private void addStudentsBTN_Click(object sender, EventArgs e)
         {
-            AddStudentForm addStudentForm = new AddStudentForm(this);
-            addStudentForm.ShowDialog();// Logic to add students
+            // Replace this with the actual school information
+            AddStudentForm addStudentForm = new AddStudentForm(this, teacherSchool);
+            addStudentForm.Show();
         }
     }
 }

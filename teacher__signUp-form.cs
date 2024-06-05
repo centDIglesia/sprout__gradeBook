@@ -562,7 +562,7 @@ namespace sprout__gradeBook
             }
 
             // Automatically create a text file for student information handled by this teacher
-            string studentFilePath = Path.Combine(studentRecordsFolderPath, $"{username}.txt");
+            string studentFilePath = Path.Combine(studentRecordsFolderPath, username);
             if (!File.Exists(studentFilePath))
             {
                 using (StreamWriter studentWriter = File.CreateText(studentFilePath))

@@ -8,17 +8,19 @@ namespace sprout__gradeBook
     public partial class AddStudentForm : KryptonForm
     {
         teacher__studentsDashboard parent;
-        public AddStudentForm(teacher__studentsDashboard parentDashboard)
+        private string teacherSchool; // Add a field to store the teacher's school
+
+
+        // Modify the constructor to accept the teacher's school information
+        public AddStudentForm(teacher__studentsDashboard parentDashboard, string school)
         {
             InitializeComponent();
             parent = parentDashboard;
+            teacherSchool = school; // Initialize the teacher's school
         }
-
 
         private void saveNewStudentBTN_Click(object sender, EventArgs e)
         {
-
-
             string studentFname = studentFnameTXT.Text;
             string studentMname = studentMnameTXT.Text;
             string studentLname = studentLnameTXT.Text;
@@ -26,8 +28,8 @@ namespace sprout__gradeBook
             string studentEmail = studentEmailTXT.Text;
             DateTime studentBirthday = studentBirthdayPicker.Value;
             string studentGender = "";
-            string studentSchool = "";
             string studentUsername = studentFname + " " + studentLname;
+
             if (studentMaleRADIOBUTTON.Checked)
             {
                 studentGender = "Male";
@@ -45,12 +47,12 @@ namespace sprout__gradeBook
             string studentDepartment = studentDepartmentTXT.Text;
             string studentYearLevel = studentYearLevelTXT.Text;
             string studentSection = studentSectionTXT.Text;
+            string studentSchool = teacherSchool; // Use the teacher's school information
 
             Users newStudent = new Student(studentID, studentFname, studentMname, studentLname, studentEmail, studentUsername, studentBirthday, studentGender, studentYearLevel, studentSection, studentDepartment, studentSchool);
 
-
-            Account__Manager.SaveStudentUser(newStudent);
-            MessageBox.Show("save sucessfuly");
+            Account__Manager.SaveStudentUser(newStudent, parent.currentUSer);
+            MessageBox.Show("Save successfully");
             this.Close();
         }
 
@@ -60,7 +62,3 @@ namespace sprout__gradeBook
         }
     }
 }
-
-
-
-

@@ -87,7 +87,7 @@ namespace sprout__gradeBook
 
         public string GetYearAndSection()
         {
-            return $"{YearLevel} - {Section}";
+            return $"{YearLevel}-{Section}";
         }
 
         public static string GetSchoolFromCurrentTeacher()

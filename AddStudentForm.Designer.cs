@@ -334,13 +334,13 @@
             // 
             this.studentDepartmentTXT.DropDownWidth = 481;
             this.studentDepartmentTXT.Items.AddRange(new object[] {
-            "Bachelor of Science in Accountancy (BSA)",
-            "Bachelor of Science in Computer Engineering (BSCpE)",
-            "Bachelor in Secondary Education Major in English (BSEd-English)",
-            "Bachelor in Secondary Education Major in Mathematics (BSEd-Math)",
-            "Bachelor of Science in Information Technology (BSIT)",
-            "Bachelor of Science in Hotel and Restaurant Management (BSHRM)",
-            "Bachelor of Science in Entrepreneurial Management (BSEM)"});
+            "Bachelor of Science in Accountancy , BSA",
+            "Bachelor of Science in Computer Engineering , BSCpE",
+            "Bachelor in Secondary Education Major in English , BSEd-English",
+            "Bachelor in Secondary Education Major in Mathematics , BSEd-Math",
+            "Bachelor of Science in Information Technology , BSIT",
+            "Bachelor of Science in Hotel and Restaurant Management , BSHRM",
+            "Bachelor of Science in Entrepreneurial Management , BSEM"});
             this.studentDepartmentTXT.Location = new System.Drawing.Point(81, 384);
             this.studentDepartmentTXT.Name = "studentDepartmentTXT";
             this.studentDepartmentTXT.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalOffice2003;

@@ -10,16 +10,16 @@ namespace sprout__gradeBook
 
 
 
-        public string Course
-        {
-            get => CourseOfStudent.Text;
-            set => CourseOfStudent.Text = value;
-        }
-
         public string SectionName
         {
             get => CoursecSectionOfStudent.Text;
-            set => CoursecSectionOfStudent.Text = value.ToUpper();
+            set => CoursecSectionOfStudent.Text = value;
+        }
+
+        public string Course
+        {
+            get => CoursecOfStudent.Text;
+            set => CoursecOfStudent.Text = value;
         }
 
         public CourseAndSectionCARD(teacher__studentsDashboard parentForm)
@@ -33,16 +33,16 @@ namespace sprout__gradeBook
         private void CoursecSectionOfStudent_MouseHover(object sender, EventArgs e)
         {
             pictureBox1.Image = Properties.Resources.subsubhover;
-            CourseOfStudent.BackColor = CustomColor.activeColor;
-            CoursecSectionOfStudent.ForeColor = CustomColor.activeColor;
+            CoursecSectionOfStudent.BackColor = CustomColor.activeColor;
+            CoursecOfStudent.ForeColor = CustomColor.activeColor;
         }
 
 
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
             pictureBox1.Image = Properties.Resources.susushoverleave;
-            CourseOfStudent.BackColor = CustomColor.mainColor;
-            CoursecSectionOfStudent.ForeColor = CustomColor.mainColor;
+            CoursecSectionOfStudent.BackColor = CustomColor.mainColor;
+            CoursecOfStudent.ForeColor = CustomColor.mainColor;
         }
 
         private void CoursecSectionOfStudent_Click(object sender, EventArgs e)

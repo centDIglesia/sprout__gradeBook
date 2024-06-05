@@ -42,9 +42,9 @@ namespace sprout__gradeBook
 
         }
 
-        public static void SaveStudentUser(Users user)
+        public static void SaveStudentUser(Users user, string currentUser)
         {
-            string folderPath = user.GetFolder();
+            string folderPath = $"{user.GetFolder()}/{currentUser}";
 
             if (!Directory.Exists(folderPath))
             {
@@ -67,10 +67,12 @@ namespace sprout__gradeBook
                 writer.WriteLine($"Birthday: {((Student)user).Birthday.ToShortDateString()}");
                 writer.WriteLine($"School: {((Student)user).SchoolName}");
                 writer.WriteLine($"Gender: {((Student)user).Gender}");
+                writer.WriteLine($"Department: {((Student)user).Department}");
                 writer.WriteLine($"Year and Section: {((Student)user).GetYearAndSection()}");
                 writer.WriteLine($"Password: {HashPassword(user.Password)}");
             }
         }
+
 
 
         //check if username exist
