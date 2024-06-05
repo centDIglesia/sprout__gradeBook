@@ -14,10 +14,12 @@ public class Course
 
     public Course(string courseName, string courseCode, string studentCourse, string studentSection, string startTime, string endTime, int studentCount)
     {
-
         CourseName = courseName;
         CourseCode = courseCode;
         courseAndSection = studentCourse + studentSection;
+        StudentCount = studentCount;
+        StartTime = startTime;
+        EndTime = endTime;
         StudentCount = studentCount;
     }
 

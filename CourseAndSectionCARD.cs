@@ -16,6 +16,12 @@ namespace sprout__gradeBook
             set => CoursecSectionOfStudent.Text = value;
         }
 
+        public string CourseF
+        {
+            get => CourseFull.Text;
+            set => CourseFull.Text = value;
+        }
+
         public string Course
         {
             get => CoursecOfStudent.Text;

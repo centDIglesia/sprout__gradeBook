@@ -77,10 +77,14 @@ namespace sprout__gradeBook
                     {
                         string[] courseCode = department.Split(',');
                         string lastPart = courseCode.Last().Trim();
+
+
+
                         CourseAndSectionCARD card = new CourseAndSectionCARD(this)
                         {
                             Course = lastPart,
-                            SectionName = section
+                            SectionName = section,
+                            CourseF = department
                         };
                         courseSectionPanel.Controls.Add(card);
                     }
