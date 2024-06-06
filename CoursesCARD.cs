@@ -90,19 +90,6 @@ namespace sprout__gradeBook
             this.BackgroundImage = Properties.Resources.sub;
         }
 
-        private void subjectCodeLBL_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Courses_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void subjectStudentCountLBL_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+      
     }
 }

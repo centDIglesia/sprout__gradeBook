@@ -114,5 +114,10 @@ namespace sprout__gradeBook
         {
             // Add any logic needed on text change
         }
+
+        private void courseStudentCountTXT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

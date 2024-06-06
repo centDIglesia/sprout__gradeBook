@@ -184,7 +184,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(81, 58);
+            this.pictureBox1.Location = new System.Drawing.Point(81, 54);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(138, 22);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -431,7 +431,7 @@
             this.Controls.Add(this.studentBirthdayPicker);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddStudentForm";
-            this.Text = "AddStudentForm";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.AddStudentForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.saveNewStudentBTN)).EndInit();

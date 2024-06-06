@@ -10,6 +10,7 @@ namespace sprout__gradeBook
     {
 
         //for saving teacherss information from sign up
+        //creating folder
         public static void SaveUser(Users user)
         {
             string folderPath = user.GetFolder();
