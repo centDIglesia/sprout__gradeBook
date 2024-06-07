@@ -117,6 +117,12 @@
     <Compile Include="StudentDefultPasswordGuide.Designer.cs">
       <DependentUpon>StudentDefultPasswordGuide.cs</DependentUpon>
     </Compile>
+    <Compile Include="studentsCARD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="studentsCARD.Designer.cs">
+      <DependentUpon>studentsCARD.cs</DependentUpon>
+    </Compile>
     <Compile Include="StudentScheduleCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -233,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StudentDefultPasswordGuide.resx">
       <DependentUpon>StudentDefultPasswordGuide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="studentsCARD.resx">
+      <DependentUpon>studentsCARD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentScheduleCard.resx">
       <DependentUpon>StudentScheduleCard.cs</DependentUpon>
