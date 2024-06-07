@@ -21,9 +21,8 @@ namespace sprout__gradeBook
 
         private void teacher__studentsDashboard_Load(object sender, EventArgs e)
         {
-
+            LoadStudentCourses();
         }
-
         private string LoadTeacherSchool(string currentUser)
         {
             // This is a simplified example. In a real application, this might query a database or configuration file.
@@ -45,21 +44,60 @@ namespace sprout__gradeBook
             throw new Exception("School information not found in teacher details file.");
         }
 
-        public void loadForm(Form form)
+        private void LoadStudentCourses()
         {
-            if (this.Controls.Count > 0) this.Controls.RemoveAt(0);
+            string folderPath = $"StudentCredentials/{currentUSer}";
+            if (Directory.Exists(folderPath))
+            {
+                string[] filePaths = Directory.GetFiles(folderPath, "*.txt");
+                foreach (string filePath in filePaths)
+                {
+                    string[] lines = File.ReadAllLines(filePath);
+                    string department = "";
+                    string section = "";
+                    foreach (var line in lines)
+                    {
+                        if (line.StartsWith("Year and Section:"))
+                        {
+                            section = line.Substring("Year and Section:".Length).Trim();
+                        }
+                        else if (line.StartsWith("Department:"))
+                        {
+                            department = line.Substring("Department:".Length).Trim();
 
-            form.TopLevel = false;
-            form.Dock = DockStyle.Fill;
-            this.Controls.Add(form);
-            this.Tag = form;
-            form.Show();
+                        }
+
+                        if (!string.IsNullOrEmpty(department) && !string.IsNullOrEmpty(section))
+                        {
+                            break;
+                        }
+                    }
+
+                    if (!string.IsNullOrEmpty(department) && !string.IsNullOrEmpty(section))
+                    {
+                        string[] courseCode = department.Split(',');
+                        string lastPart = courseCode.Last().Trim();
+
+
+
+                        CourseAndSectionCARD card = new CourseAndSectionCARD(this)
+                        {
+                            Course = lastPart,
+                            SectionName = section,
+                            CourseF = department
+                        };
+                        courseSectionPanel.Controls.Add(card);
+                    }
+                }
+            }
         }
+
+
 
 
         private void StudentPanel_Paint(object sender, PaintEventArgs e)
         {
-
+            // Optional: Custom painting logic
         }
 
         private void addStudentsBTN_Click(object sender, EventArgs e)
