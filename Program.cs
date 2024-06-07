@@ -19,8 +19,7 @@ namespace sprout__gradeBook
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            Application.Run(new Student__Dashboard("2022-00011-SM-0"));
+            Application.Run(new Teacher_Dashboard("Ce23@gmail.com"));
         }
     }
 }

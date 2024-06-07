@@ -31,15 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(teacher__studentsDashboard));
             this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
-            this.courseSectionPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.divider_1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.StudentPanel = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.addStudentsBTN = new System.Windows.Forms.PictureBox();
+            this.courseSectionPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StudentPanel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addStudentsBTN)).BeginInit();
+            this.courseSectionPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // kryptonPalette2
@@ -61,17 +61,6 @@
             this.kryptonPalette2.InputControlStyles.InputControlCommon.StateCommon.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette2.InputControlStyles.InputControlCommon.StateCommon.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             // 
-            // courseSectionPanel
-            // 
-            this.courseSectionPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.courseSectionPanel.AutoScroll = true;
-            this.courseSectionPanel.Location = new System.Drawing.Point(44, 44);
-            this.courseSectionPanel.Name = "courseSectionPanel";
-            this.courseSectionPanel.Size = new System.Drawing.Size(739, 514);
-            this.courseSectionPanel.TabIndex = 92;
-            // 
             // divider_1
             // 
             this.divider_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
@@ -92,17 +81,6 @@
             this.pictureBox1.TabIndex = 58;
             this.pictureBox1.TabStop = false;
             // 
-            // StudentPanel
-            // 
-            this.StudentPanel.Location = new System.Drawing.Point(44, 47);
-            this.StudentPanel.Name = "StudentPanel";
-            this.StudentPanel.Size = new System.Drawing.Size(739, 514);
-            this.StudentPanel.StateCommon.Color1 = System.Drawing.Color.White;
-            this.StudentPanel.StateCommon.Image = ((System.Drawing.Image)(resources.GetObject("StudentPanel.StateCommon.Image")));
-            this.StudentPanel.StateCommon.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Stretch;
-            this.StudentPanel.TabIndex = 1;
-            this.StudentPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.StudentPanel_Paint);
-            // 
             // addStudentsBTN
             // 
             this.addStudentsBTN.Image = ((System.Drawing.Image)(resources.GetObject("addStudentsBTN.Image")));
@@ -114,24 +92,46 @@
             this.addStudentsBTN.TabStop = false;
             this.addStudentsBTN.Click += new System.EventHandler(this.addStudentsBTN_Click);
             // 
+            // courseSectionPanel
+            // 
+            this.courseSectionPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.courseSectionPanel.AutoScroll = true;
+            this.courseSectionPanel.Controls.Add(this.flowLayoutPanel1);
+            this.courseSectionPanel.Location = new System.Drawing.Point(47, 53);
+            this.courseSectionPanel.Name = "courseSectionPanel";
+            this.courseSectionPanel.Size = new System.Drawing.Size(739, 514);
+            this.courseSectionPanel.TabIndex = 92;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(739, 0);
+            this.flowLayoutPanel1.TabIndex = 93;
+            // 
             // teacher__studentsDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(827, 639);
+            this.Controls.Add(this.courseSectionPanel);
             this.Controls.Add(this.addStudentsBTN);
             this.Controls.Add(this.divider_1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.courseSectionPanel);
-            this.Controls.Add(this.StudentPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "teacher__studentsDashboard";
             this.Load += new System.EventHandler(this.teacher__studentsDashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StudentPanel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addStudentsBTN)).EndInit();
+            this.courseSectionPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -141,8 +141,8 @@
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox divider_1;
-        private System.Windows.Forms.FlowLayoutPanel courseSectionPanel;
-        private ComponentFactory.Krypton.Toolkit.KryptonPanel StudentPanel;
         private System.Windows.Forms.PictureBox addStudentsBTN;
+        private System.Windows.Forms.FlowLayoutPanel courseSectionPanel;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

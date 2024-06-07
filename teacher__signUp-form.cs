@@ -439,7 +439,7 @@ namespace sprout__gradeBook
                 return;
             }
 
-            string folderPath = "teacherCredentials";
+            string folderPath = "TeacherCredentials";
             string fullPath = Path.Combine(folderPath, username + ".txt");
             bool isExist = File.Exists(fullPath);
 
@@ -544,7 +544,15 @@ namespace sprout__gradeBook
                 Directory.CreateDirectory(sectionsFolderPath);
             }
 
+            // Automatically create a text file for sections handled by this teacher
+            string sectionFilePath = Path.Combine(sectionsFolderPath, $"{username}.txt");
+            if (!File.Exists(sectionFilePath))
+            {
+                using (StreamWriter sectionWriter = File.CreateText(sectionFilePath))
+                {
 
+                }
+            }
 
 
             string studentRecordsFolderPath = "StudentCredentials";

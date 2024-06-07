@@ -92,11 +92,13 @@
             this.CourseFull.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.CourseFull.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.CourseFull.StateCommon.Border.Width = 0;
             this.CourseFull.StateCommon.Content.Color1 = System.Drawing.Color.DarkGray;
             this.CourseFull.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CourseFull.TabIndex = 4;
             this.CourseFull.Text = "corse";
+            this.CourseFull.TextChanged += new System.EventHandler(this.CourseFull_TextChanged);
             // 
             // CourseAndSectionCARD
             // 

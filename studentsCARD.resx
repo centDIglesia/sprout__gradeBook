@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="studentGender.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAALUAAAC3CAYAAABUmx+iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EgAACxIB0t1+/AAAB6hJREFUeF7tnVFW2zgUQOen52Dnhx10lsBPa4svlsAOhg+waftRdgA7oDtId0B3
+        EQAACxEBf2RfkQAAB6hJREFUeF7tnVFW2zgUQOen52Dnhx10lsBPa4svlsAOhg+waftRdgA7oDtId0B3
         wBKyhCwhS+joGQFtEEnsyPGTdO85d86ZEkIiPR5PT7LzD+zP0XX979FVfVE29V3Z1vOirR+tS9H+/++/
         bKqV+5p9TPXQfU9jzj9cfTpxTwdweI5vzo6Ly+rmKSir1ZvAHWoX8NXDzP6CyC+K+3EA4/AayPXjm2Ac
         SflZBDgE5+iyPrMBNg+akYc5J7hhLySYD5mVe0hwQz8kYIrG1sr+gNIkwQ3bKZv6VkGZ0U/7mt3LB3hF
@@ -160,7 +160,7 @@
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAZsAAAD0CAYAAABNTYvDAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EgAACxIB0t1+/AAAMihJREFUeF7tnc2SJUexhBEzGg3zS2ODYWPGYhasxJIX4CV4Hx6KtTbwQCyFFpob
+        EQAACxEBf2RfkQAAMihJREFUeF7tnc2SJUexhBEzGg3zS2ODYWPGYhasxJIX4CV4Hx6KtTbwQCyFFpob
         HhUexzMq63QLs7vA2j+zUGZGRmbWOd3Trvypql/d4+vXr99UlswyYip3ArGn+KeAccUWXxYE+ka6xO3a
         EdTRypVctdnEMaX/cizwWL+b/h+LP5Urv20HUD/bCUtZ66tdljftmorrvKag6i/bE8aVtS8zAX1A80W3
         rXK31VTrQZW1TeXuf59MZ3/3QN/32uz8Vz71zzKh75fGC7uYyp1A7Cn+KfB6yhZfFgT6RrrE7doR1NHK

@@ -11,6 +11,8 @@ namespace sprout__gradeBook
     {
         public string currentUSer { get; set; }
         private string teacherSchool;
+        public FlowLayoutPanel CourseSectionPanel { get { return courseSectionPanel; } }
+
 
         public teacher__studentsDashboard(string currentuser)
         {
@@ -25,7 +27,7 @@ namespace sprout__gradeBook
         }
         private string LoadTeacherSchool(string currentUser)
         {
-           
+
             string teacherDetailsFile = $"teacherCredentials/{currentUser}.txt";
             if (!File.Exists(teacherDetailsFile))
             {
@@ -47,14 +49,17 @@ namespace sprout__gradeBook
         private void LoadStudentCourses()
         {
             string folderPath = $"StudentCredentials/{currentUSer}";
+
             if (Directory.Exists(folderPath))
             {
                 string[] filePaths = Directory.GetFiles(folderPath, "*.txt");
+
                 foreach (string filePath in filePaths)
                 {
                     string[] lines = File.ReadAllLines(filePath);
                     string department = "";
                     string section = "";
+
                     foreach (var line in lines)
                     {
                         if (line.StartsWith("Year and Section:"))
@@ -64,7 +69,6 @@ namespace sprout__gradeBook
                         else if (line.StartsWith("Department:"))
                         {
                             department = line.Substring("Department:".Length).Trim();
-
                         }
 
                         if (!string.IsNullOrEmpty(department) && !string.IsNullOrEmpty(section))
@@ -78,14 +82,15 @@ namespace sprout__gradeBook
                         string[] courseCode = department.Split(',');
                         string lastPart = courseCode.Last().Trim();
 
-
-
+                        // Create a new instance of CourseAndSectionCARD
                         CourseAndSectionCARD card = new CourseAndSectionCARD(this)
                         {
                             Course = lastPart,
                             SectionName = section,
                             CourseF = department
                         };
+
+                        // Add the card to the courseSectionPanel
                         courseSectionPanel.Controls.Add(card);
                     }
                 }
@@ -94,14 +99,15 @@ namespace sprout__gradeBook
 
 
 
+
         private void StudentPanel_Paint(object sender, PaintEventArgs e)
         {
-           
+
         }
 
         private void addStudentsBTN_Click(object sender, EventArgs e)
         {
-          
+
             AddStudentForm addStudentForm = new AddStudentForm(this, teacherSchool);
             addStudentForm.Show();
         }
