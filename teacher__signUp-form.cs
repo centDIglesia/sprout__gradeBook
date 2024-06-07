@@ -544,15 +544,7 @@ namespace sprout__gradeBook
                 Directory.CreateDirectory(sectionsFolderPath);
             }
 
-            // Automatically create a text file for sections handled by this teacher
-            string sectionFilePath = Path.Combine(sectionsFolderPath, $"{username}.txt");
-            if (!File.Exists(sectionFilePath))
-            {
-                using (StreamWriter sectionWriter = File.CreateText(sectionFilePath))
-                {
 
-                }
-            }
 
 
             string studentRecordsFolderPath = "StudentCredentials";
