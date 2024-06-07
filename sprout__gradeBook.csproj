@@ -129,7 +129,7 @@
     <Compile Include="Student Forms\StudentScheduleCard.Designer.cs">
       <DependentUpon>StudentScheduleCard.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
+
     <Compile Include="studentSectionLIST.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,9 +137,9 @@
       <DependentUpon>studentSectionLIST.cs</DependentUpon>
     </Compile>
     <Compile Include="Student__coursesDashboard.cs">
-=======
+
     <Compile Include="Student Forms\Student__coursesDashboard.cs">
->>>>>>> 194df0d50a7f371697caf0d6f20cae76d31aaf30
+
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Student Forms\Student__coursesDashboard.Designer.cs">
