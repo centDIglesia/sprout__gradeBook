@@ -111,12 +111,6 @@
     <Compile Include="Student Forms\StudentDefultPasswordGuide.Designer.cs">
       <DependentUpon>StudentDefultPasswordGuide.cs</DependentUpon>
     </Compile>
-    <Compile Include="Student Forms\Student__GlobalNavigationBar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Student Forms\Student__GlobalNavigationBar.Designer.cs">
-      <DependentUpon>Student__GlobalNavigationBar.cs</DependentUpon>
-    </Compile>
     <Compile Include="studentsCARD.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -129,17 +123,13 @@
     <Compile Include="Student Forms\StudentScheduleCard.Designer.cs">
       <DependentUpon>StudentScheduleCard.cs</DependentUpon>
     </Compile>
-
     <Compile Include="studentSectionLIST.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="studentSectionLIST.Designer.cs">
       <DependentUpon>studentSectionLIST.cs</DependentUpon>
     </Compile>
-    <Compile Include="Student__coursesDashboard.cs">
-
     <Compile Include="Student Forms\Student__coursesDashboard.cs">
-
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Student Forms\Student__coursesDashboard.Designer.cs">
@@ -234,24 +224,14 @@
     <EmbeddedResource Include="Student Forms\StudentDefultPasswordGuide.resx">
       <DependentUpon>StudentDefultPasswordGuide.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Student Forms\Student__GlobalNavigationBar.resx">
-      <DependentUpon>Student__GlobalNavigationBar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="studentsCARD.resx">
       <DependentUpon>studentsCARD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student Forms\StudentScheduleCard.resx">
       <DependentUpon>StudentScheduleCard.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
     <EmbeddedResource Include="studentSectionLIST.resx">
       <DependentUpon>studentSectionLIST.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Student__coursesDashboard.resx">
-=======
-    <EmbeddedResource Include="Student Forms\Student__coursesDashboard.resx">
->>>>>>> 194df0d50a7f371697caf0d6f20cae76d31aaf30
-      <DependentUpon>Student__coursesDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student Forms\Student__Dashboard.resx">
       <DependentUpon>Student__Dashboard.cs</DependentUpon>
