@@ -345,5 +345,11 @@
   <ItemGroup>
     <None Include="Resources\logo-green-wsprout.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\femaleee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maleee.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

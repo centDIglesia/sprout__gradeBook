@@ -93,6 +93,16 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap femaleee {
+            get {
+                object obj = ResourceManager.GetObject("femaleee", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Forgot_Your_Password_ {
             get {
                 object obj = ResourceManager.GetObject("Forgot_Your_Password_", resourceCulture);
@@ -126,6 +136,16 @@ namespace sprout__gradeBook.Properties {
         internal static System.Drawing.Bitmap logo_white {
             get {
                 object obj = ResourceManager.GetObject("logo white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap maleee {
+            get {
+                object obj = ResourceManager.GetObject("maleee", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -32,17 +32,29 @@ namespace sprout__gradeBook
             set => studentcard__studentID.Text = value;
         }
 
+        public Image StudentGender
+        {
+            get => studentGender.Image;
+            set => studentGender.Image = value;
+        }
+
+
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void studentsCARD_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void studentsCARD_Load(object sender, EventArgs e)
+        private void studentcard__studentName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void studentcard__studentName_TextChanged(object sender, EventArgs e)
         {
 
         }
