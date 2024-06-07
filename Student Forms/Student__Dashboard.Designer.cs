@@ -339,7 +339,7 @@
             // notification__icon
             // 
             this.notification__icon.Image = ((System.Drawing.Image)(resources.GetObject("notification__icon.Image")));
-            this.notification__icon.Location = new System.Drawing.Point(904, 36);
+            this.notification__icon.Location = new System.Drawing.Point(750, 22);
             this.notification__icon.Name = "notification__icon";
             this.notification__icon.Size = new System.Drawing.Size(38, 24);
             this.notification__icon.TabIndex = 105;
