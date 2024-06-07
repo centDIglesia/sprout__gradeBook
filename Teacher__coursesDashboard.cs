@@ -43,97 +43,90 @@ namespace sprout__gradeBook
 
         public void populateCourses()
         {
+
+            string folderPath = "CourseInformations";
+            string filePath = Path.Combine(folderPath, $"{CurrentUser}.txt");
+
+            if (!Directory.Exists(folderPath))
+            {
+                MessageBox.Show("Course information directory not found.");
+                return;
+            }
+
+            if (!File.Exists(filePath))
+            {
+                MessageBox.Show($"Course information file for {CurrentUser} not found.");
+                return;
+            }
+
+            string[] fileContents;
             try
             {
-
-
-                string folderPath = "CourseInformations";
-                string filePath = Path.Combine(folderPath, $"{CurrentUser}.txt");
-
-                if (!Directory.Exists(folderPath))
-                {
-                    MessageBox.Show("Course information directory not found.");
-                    return;
-                }
-
-                if (!File.Exists(filePath))
-                {
-                    MessageBox.Show($"Course information file for {CurrentUser} not found.");
-                    return;
-                }
-
-                string[] fileContents;
-                try
-                {
-                    fileContents = File.ReadAllText(filePath)
-                        .Split(new string[] { "----------------------------------------" }, StringSplitOptions.RemoveEmptyEntries);
-                }
-                catch (IOException ex)
-                {
-                    MessageBox.Show($"Error reading course information: {ex.Message}");
-                    return;
-                }
-
-                Course__flowLayoutPanel.Controls.Clear();
-
-                foreach (string courseData in fileContents)
-                {
-                    string[] lines = courseData.Trim().Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None);
-
-                    Dictionary<string, string> courseDetails = new Dictionary<string, string>();
-
-                    foreach (string line in lines)
-                    {
-                        string[] parts = line.Split(new char[] { ':' }, 2);
-                        if (parts.Length == 2)
-                        {
-                            courseDetails[parts[0].Trim()] = parts[1].Trim();
-                        }
-                    }
-
-                    if (courseDetails.ContainsKey("Course Name") &&
-                        courseDetails.ContainsKey("Course Code") &&
-                        courseDetails.ContainsKey("Student Course and Section") &&
-                        courseDetails.ContainsKey("Course Schedule") &&
-                        courseDetails.ContainsKey("Student Count"))
-                    {
-                        CoursesCARD courseControl = new CoursesCARD(this)
-                        {
-                            SubjectName = courseDetails["Course Name"],
-                            SubjectCode = courseDetails["Course Code"],
-                            SubjectCourseSection = courseDetails["Student Course and Section"],
-                            SubjectSchedule = courseDetails["Course Schedule"],
-                            SubjectCount = courseDetails["Student Count"]
-                        };
-
-                        Course__flowLayoutPanel.Controls.Add(courseControl);
-                    }
-                }
+                fileContents = File.ReadAllText(filePath)
+                    .Split(new string[] { "----------------------------------------" }, StringSplitOptions.RemoveEmptyEntries);
             }
-            catch (Exception ex)
+            catch (IOException ex)
             {
-                MessageBox.Show("na");
+                MessageBox.Show($"Error reading course information: {ex.Message}");
+                return;
             }
+
+            courseSectionPanel.Controls.Clear();
+
+            foreach (string courseData in fileContents)
+            {
+                string[] lines = courseData.Trim().Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None);
+
+                Dictionary<string, string> courseDetails = new Dictionary<string, string>();
+
+                foreach (string line in lines)
+                {
+                    string[] parts = line.Split(new char[] { ':' }, 2);
+                    if (parts.Length == 2)
+                    {
+                        courseDetails[parts[0].Trim()] = parts[1].Trim();
+                    }
+                }
+
+                if (courseDetails.ContainsKey("Course Name") &&
+                    courseDetails.ContainsKey("Course Code") &&
+                    courseDetails.ContainsKey("Student Course and Section") &&
+                    courseDetails.ContainsKey("Course Schedule") &&
+                    courseDetails.ContainsKey("Student Count"))
+                {
+                    CoursesCARD courseControl = new CoursesCARD(this)
+                    {
+                        SubjectName = courseDetails["Course Name"],
+                        SubjectCode = courseDetails["Course Code"],
+                        SubjectCourseSection = courseDetails["Student Course and Section"],
+                        SubjectSchedule = courseDetails["Course Schedule"],
+                        SubjectCount = courseDetails["Student Count"]
+                    };
+
+                    courseSectionPanel.Controls.Add(courseControl);
+                }
+            }
+
         }
 
         public void LoadFormIntoPanel(Form form)
         {
-            kryptonPanel1.Controls.Clear();
+            courseSectionPanel.Controls.Clear();
 
             form.TopLevel = false;
             form.Dock = DockStyle.Fill;
-            kryptonPanel1.Controls.Add(form);
+            courseSectionPanel.Controls.Add(form);
             form.Show();
         }
 
         public void hidePanel()
         {
-            Course__flowLayoutPanel.Hide();
+            courseSectionPanel.Hide();
         }
 
         public void ShowPanel()
         {
-            Course__flowLayoutPanel.Show();
+            courseSectionPanel.Show();
         }
 
         private void addcourseBTN_Click(object sender, EventArgs e)

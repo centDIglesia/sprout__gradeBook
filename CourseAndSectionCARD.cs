@@ -8,7 +8,7 @@ namespace sprout__gradeBook
 {
     public partial class CourseAndSectionCARD : UserControl
     {
-        public new teacher__studentsDashboard ParentForm { get; set; } // Reference to the parent form
+        public new teacher__studentsDashboard ParentForm { get; set; }
 
         public string SectionName
         {

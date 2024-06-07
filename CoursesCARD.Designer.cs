@@ -50,8 +50,7 @@
             this.subjectNameLBL.TabIndex = 1;
             this.subjectNameLBL.Text = "Object Oriented Programming";
 
-            this.subjectNameLBL.MouseLeave += new System.EventHandler(this.subjectScheduleLBL_MouseLeave);
-            this.subjectNameLBL.MouseHover += new System.EventHandler(this.subjectScheduleLBL_MouseHover);
+
             // 
             // subjectCourseSectionLBL
             // 
@@ -65,8 +64,7 @@
             this.subjectCourseSectionLBL.TabIndex = 3;
             this.subjectCourseSectionLBL.Text = "BSIT 2-1";
 
-            this.subjectCourseSectionLBL.MouseLeave += new System.EventHandler(this.subjectScheduleLBL_MouseLeave);
-            this.subjectCourseSectionLBL.MouseHover += new System.EventHandler(this.subjectScheduleLBL_MouseHover);
+
             // 
             // subjectCodeLBL
             // 
@@ -79,8 +77,7 @@
             this.subjectCodeLBL.TabIndex = 4;
             this.subjectCodeLBL.Values.Text = "CODE";
 
-            this.subjectCodeLBL.MouseLeave += new System.EventHandler(this.subjectScheduleLBL_MouseLeave);
-            this.subjectCodeLBL.MouseHover += new System.EventHandler(this.subjectScheduleLBL_MouseHover);
+
             // 
             // subjectScheduleLBL
             // 
@@ -94,8 +91,7 @@
             this.subjectScheduleLBL.TabIndex = 5;
             this.subjectScheduleLBL.Text = "12:00 PM-03:00 PM";
 
-            this.subjectScheduleLBL.MouseLeave += new System.EventHandler(this.subjectScheduleLBL_MouseLeave);
-            this.subjectScheduleLBL.MouseHover += new System.EventHandler(this.subjectScheduleLBL_MouseHover);
+
             // 
             // kryptonLabel1
             // 
@@ -153,10 +149,7 @@
             this.DoubleBuffered = true;
             this.Name = "Courses";
             this.Size = new System.Drawing.Size(235, 133);
-            this.Load += new System.EventHandler(this.Courses_Load);
 
-            this.MouseLeave += new System.EventHandler(this.subjectScheduleLBL_MouseLeave);
-            this.MouseHover += new System.EventHandler(this.subjectScheduleLBL_MouseHover);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -27,6 +27,8 @@ namespace sprout__gradeBook
 
         private void saveNewCourseBTN_Click(object sender, EventArgs e)
         {
+            parentForm.populateCourses();
+
             string courseName = courseNameTXT.Text;
             string courseCode = courseCodeTXT.Text;
             string studentCourse = courseCourseTXT.Text;
@@ -68,15 +70,15 @@ namespace sprout__gradeBook
 
         private void FilterStudents(string currentCourse, string currentSection, string filePath)
         {
-            // Extract the department and year-section information from the course file name
+
             string[] fileInfo = Path.GetFileNameWithoutExtension(filePath).Split('_');
             string courseDepartmentInitials = fileInfo[1];
             string courseYearSection = fileInfo[2];
 
-            // Get a list of student credential files
+
             string[] studentCredentialFiles = Directory.GetFiles($"StudentCredentials/{currentUserName}/", "*.txt");
 
-            // Iterate through each student credential file
+
             foreach (string studentCredentialFile in studentCredentialFiles)
             {
                 MessageBox.Show($"Checking student credentials file: {studentCredentialFile}");
@@ -84,7 +86,7 @@ namespace sprout__gradeBook
 
                 string[] studentInfo = File.ReadAllLines(studentCredentialFile);
 
-                // Store the last value of each line in a dictionary
+
                 Dictionary<string, string> studentDetails = new Dictionary<string, string>();
                 foreach (string line in studentInfo)
                 {
@@ -97,16 +99,16 @@ namespace sprout__gradeBook
                     }
                 }
 
-                // Check if the student details match the course criteria
+
                 if (studentDetails.ContainsKey("Department") && studentDetails["Department"].Contains(courseDepartmentInitials) &&
                     studentDetails.ContainsKey("Year and Section") && studentDetails["Year and Section"].Contains(courseYearSection))
                 {
-                    // Extract the student ID
+
                     if (studentDetails.TryGetValue("Student ID", out string studentID))
                     {
                         MessageBox.Show($"Student ID found: {studentID}");
 
-                        // Append the student ID to the course file
+
                         using (StreamWriter writer = File.AppendText(filePath))
                         {
                             writer.WriteLine(studentID);

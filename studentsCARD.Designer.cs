@@ -52,7 +52,7 @@
             this.studentcard__studentID.AutoSize = true;
             this.studentcard__studentID.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentcard__studentID.ForeColor = System.Drawing.Color.DarkGray;
-            this.studentcard__studentID.Location = new System.Drawing.Point(109, 26);
+            this.studentcard__studentID.Location = new System.Drawing.Point(129, 26);
             this.studentcard__studentID.Name = "studentcard__studentID";
             this.studentcard__studentID.Size = new System.Drawing.Size(77, 23);
             this.studentcard__studentID.TabIndex = 1;
@@ -62,11 +62,11 @@
             // studentcard__studentName
             // 
             this.studentcard__studentName.Enabled = false;
-            this.studentcard__studentName.Location = new System.Drawing.Point(113, 49);
+            this.studentcard__studentName.Location = new System.Drawing.Point(133, 49);
             this.studentcard__studentName.Multiline = true;
             this.studentcard__studentName.Name = "studentcard__studentName";
             this.studentcard__studentName.ReadOnly = true;
-            this.studentcard__studentName.Size = new System.Drawing.Size(164, 44);
+            this.studentcard__studentName.Size = new System.Drawing.Size(141, 44);
             this.studentcard__studentName.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.studentcard__studentName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
