@@ -18,7 +18,7 @@ namespace sprout__gradeBook
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Teacher_Dashboard("Vincent23"));
+            Application.Run(new introductionPage());
         }
     }
 }
