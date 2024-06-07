@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(teacher__studentsDashboard));
             this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
-            this.courseSectionPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.divider_1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.StudentPanel = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
@@ -55,17 +54,6 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonPalette2.InputControlStyles.InputControlCommon.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // courseSectionPanel
-            // 
-            this.courseSectionPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.courseSectionPanel.AutoScroll = true;
-            this.courseSectionPanel.Location = new System.Drawing.Point(44, 44);
-            this.courseSectionPanel.Name = "courseSectionPanel";
-            this.courseSectionPanel.Size = new System.Drawing.Size(739, 514);
-            this.courseSectionPanel.TabIndex = 92;
             // 
             // divider_1
             // 
@@ -118,7 +106,6 @@
             this.Controls.Add(this.addStudentsBTN);
             this.Controls.Add(this.divider_1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.courseSectionPanel);
             this.Controls.Add(this.StudentPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "teacher__studentsDashboard";
@@ -136,7 +123,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox divider_1;
-        private System.Windows.Forms.FlowLayoutPanel courseSectionPanel;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel StudentPanel;
         private System.Windows.Forms.PictureBox addStudentsBTN;
     }

@@ -129,6 +129,12 @@
     <Compile Include="StudentScheduleCard.Designer.cs">
       <DependentUpon>StudentScheduleCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="studentSectionLIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="studentSectionLIST.Designer.cs">
+      <DependentUpon>studentSectionLIST.cs</DependentUpon>
+    </Compile>
     <Compile Include="Student__coursesDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StudentScheduleCard.resx">
       <DependentUpon>StudentScheduleCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="studentSectionLIST.resx">
+      <DependentUpon>studentSectionLIST.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student__coursesDashboard.resx">
       <DependentUpon>Student__coursesDashboard.cs</DependentUpon>
