@@ -85,7 +85,6 @@
             this.addTask_btn.StateCommon.Content.ShortText.TextV = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.addTask_btn.TabIndex = 98;
             this.addTask_btn.Values.Text = "";
-            this.addTask_btn.Click += new System.EventHandler(this.addTask_btn_Click);
             // 
             // newTask_input
             // 
@@ -102,7 +101,6 @@
             this.newTask_input.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newTask_input.TabIndex = 97;
             this.newTask_input.Text = "Add new task";
-            this.newTask_input.TextChanged += new System.EventHandler(this.newTask_input_TextChanged);
             this.newTask_input.Enter += new System.EventHandler(this.newTask_input_Enter);
             this.newTask_input.Leave += new System.EventHandler(this.newTask_input_Leave);
             // 
@@ -172,7 +170,6 @@
             this.undoTask_btn.StateCommon.Content.ShortText.TextV = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.undoTask_btn.TabIndex = 99;
             this.undoTask_btn.Values.Text = "";
-            this.undoTask_btn.Click += new System.EventHandler(this.UndoDeleteTask);
             // 
             // student__notificationsPanel
             // 

@@ -43,8 +43,8 @@
             this.sprout__logo__white = new System.Windows.Forms.PictureBox();
             this.global__nav__bg = new System.Windows.Forms.PictureBox();
             this.notification__icon = new System.Windows.Forms.PictureBox();
-            this.roundPictureBox1 = new sprout__gradeBook.RoundPictureBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.student_Name = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Student_viewPanel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.close_btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.back__btn)).BeginInit();
@@ -52,7 +52,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.sprout__logo__white)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.global__nav__bg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.notification__icon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette2
@@ -346,26 +345,29 @@
             this.notification__icon.TabIndex = 105;
             this.notification__icon.TabStop = false;
             // 
-            // roundPictureBox1
+            // student_Name
             // 
-            this.roundPictureBox1.BackColor = System.Drawing.Color.LightGray;
-            this.roundPictureBox1.Location = new System.Drawing.Point(1055, 26);
-            this.roundPictureBox1.Name = "roundPictureBox1";
-            this.roundPictureBox1.Size = new System.Drawing.Size(42, 40);
-            this.roundPictureBox1.TabIndex = 103;
-            this.roundPictureBox1.TabStop = false;
+            this.student_Name.AutoSize = true;
+            this.student_Name.BackColor = System.Drawing.Color.White;
+            this.student_Name.Font = new System.Drawing.Font("Poppins SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.student_Name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.student_Name.Location = new System.Drawing.Point(345, 12);
+            this.student_Name.Name = "student_Name";
+            this.student_Name.Size = new System.Drawing.Size(276, 34);
+            this.student_Name.TabIndex = 106;
+            this.student_Name.Text = "Epifanio Eduardo Celestino";
             // 
-            // label2
+            // label1
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Poppins SemiBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.label2.Location = new System.Drawing.Point(944, 36);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 30);
-            this.label2.TabIndex = 106;
-            this.label2.Text = "user name";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
+            this.label1.Location = new System.Drawing.Point(348, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 22);
+            this.label1.TabIndex = 107;
+            this.label1.Text = "Student";
             // 
             // Student__Dashboard
             // 
@@ -373,10 +375,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1147, 711);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.notification__icon);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.student_Name);
             this.Controls.Add(this.Student_viewPanel);
-            this.Controls.Add(this.roundPictureBox1);
             this.Controls.Add(this.close_btn);
             this.Controls.Add(this.btn_message_student);
             this.Controls.Add(this.btn_grades_student);
@@ -398,7 +400,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.sprout__logo__white)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.global__nav__bg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.notification__icon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -418,8 +419,8 @@
         private System.Windows.Forms.PictureBox global__nav__bg;
         private System.Windows.Forms.PictureBox close_btn;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel Student_viewPanel;
-        private RoundPictureBox roundPictureBox1;
         private System.Windows.Forms.PictureBox notification__icon;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label student_Name;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using sprout__gradeBook.Student_Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ namespace sprout__gradeBook
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Teacher_Dashboard("Vincent23"));
+            Application.Run(new Student__GlobalNavigationBar());
         }
     }
 }

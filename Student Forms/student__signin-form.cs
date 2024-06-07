@@ -13,6 +13,7 @@ namespace sprout__gradeBook
 {
     public partial class studentLoginForm : KryptonForm
     {
+        
         public studentLoginForm()
         {
             InitializeComponent();
@@ -21,8 +22,7 @@ namespace sprout__gradeBook
         private void studentLoginForm_Load(object sender, EventArgs e)
         {
             signIn__StIdTooltip.Hide();
-            signIn__PassTooltip.Hide();
-
+            signIn__PassTooltip.Hide();            
         }
 
         private void signinSTID__txtbox_Enter(object sender, EventArgs e)
@@ -121,6 +121,10 @@ namespace sprout__gradeBook
 
                 if (isValid)
                 {
+                    this.Hide();
+                    Student__Dashboard STD_DSH = new Student__Dashboard(usernameOrId);
+                    STD_DSH.Show();
+
                     MessageBox.Show("Sign in successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
