@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 
-namespace sprout__gradeBook
+namespace sprout__gradeBook.Student_Forms
 {
-    public partial class Student__professorsDashboard : KryptonForm
+    public partial class Student__GlobalNavigationBar : KryptonForm
     {
-        public Student__professorsDashboard()
+        public Student__GlobalNavigationBar()
         {
             InitializeComponent();
         }

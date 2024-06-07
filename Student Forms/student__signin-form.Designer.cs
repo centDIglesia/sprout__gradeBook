@@ -184,7 +184,7 @@
             this.signIn__StIdTooltip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.signIn__StIdTooltip.Location = new System.Drawing.Point(51, 136);
             this.signIn__StIdTooltip.Name = "signIn__StIdTooltip";
-            this.signIn__StIdTooltip.Size = new System.Drawing.Size(123, 22);
+            this.signIn__StIdTooltip.Size = new System.Drawing.Size(122, 22);
             this.signIn__StIdTooltip.TabIndex = 13;
             this.signIn__StIdTooltip.Text = "Student Number";
             // 
