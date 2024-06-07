@@ -32,7 +32,11 @@
             this.student_Name = new System.Windows.Forms.Label();
             this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Student_viewPanel = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Student_viewPanel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.SuspendLayout();
             // 
             // currentStudentID
@@ -62,9 +66,9 @@
             // kryptonButton1
             // 
             this.kryptonButton1.Enabled = false;
-            this.kryptonButton1.Location = new System.Drawing.Point(-15, 7);
+            this.kryptonButton1.Location = new System.Drawing.Point(12, 7);
             this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.Size = new System.Drawing.Size(1173, 61);
+            this.kryptonButton1.Size = new System.Drawing.Size(1123, 61);
             this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.kryptonButton1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -85,12 +89,32 @@
             this.pictureBox1.TabIndex = 112;
             this.pictureBox1.TabStop = false;
             // 
+            // Student_viewPanel
+            // 
+            this.Student_viewPanel.Location = new System.Drawing.Point(18, 74);
+            this.Student_viewPanel.Name = "Student_viewPanel";
+            this.Student_viewPanel.Size = new System.Drawing.Size(362, 625);
+            this.Student_viewPanel.StateCommon.Color1 = System.Drawing.Color.White;
+            this.Student_viewPanel.StateCommon.Color2 = System.Drawing.Color.White;
+            this.Student_viewPanel.TabIndex = 113;
+            // 
+            // kryptonPanel1
+            // 
+            this.kryptonPanel1.Location = new System.Drawing.Point(400, 74);
+            this.kryptonPanel1.Name = "kryptonPanel1";
+            this.kryptonPanel1.Size = new System.Drawing.Size(362, 625);
+            this.kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.White;
+            this.kryptonPanel1.StateCommon.Color2 = System.Drawing.Color.White;
+            this.kryptonPanel1.TabIndex = 114;
+            // 
             // Student__GlobalNavigationBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.ClientSize = new System.Drawing.Size(1147, 711);
+            this.Controls.Add(this.kryptonPanel1);
+            this.Controls.Add(this.Student_viewPanel);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.currentStudentID);
             this.Controls.Add(this.student_Name);
@@ -100,6 +124,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student__GlobalNavigationBar";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Student_viewPanel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,5 +136,7 @@
         private System.Windows.Forms.Label student_Name;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private ComponentFactory.Krypton.Toolkit.KryptonPanel Student_viewPanel;
+        private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
     }
 }
