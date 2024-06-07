@@ -25,7 +25,7 @@ namespace sprout__gradeBook
         }
         private string LoadTeacherSchool(string currentUser)
         {
-            // This is a simplified example. In a real application, this might query a database or configuration file.
+           
             string teacherDetailsFile = $"teacherCredentials/{currentUser}.txt";
             if (!File.Exists(teacherDetailsFile))
             {
@@ -94,15 +94,14 @@ namespace sprout__gradeBook
 
 
 
-
         private void StudentPanel_Paint(object sender, PaintEventArgs e)
         {
-            // Optional: Custom painting logic
+           
         }
 
         private void addStudentsBTN_Click(object sender, EventArgs e)
         {
-            // Replace this with the actual school information
+          
             AddStudentForm addStudentForm = new AddStudentForm(this, teacherSchool);
             addStudentForm.Show();
         }
