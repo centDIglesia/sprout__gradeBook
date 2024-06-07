@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 
@@ -42,67 +43,76 @@ namespace sprout__gradeBook
 
         public void populateCourses()
         {
-            string folderPath = "CourseInformations";
-            string filePath = Path.Combine(folderPath, $"{CurrentUser}.txt");
-
-            if (!Directory.Exists(folderPath))
-            {
-                MessageBox.Show("Course information directory not found.");
-                return;
-            }
-
-            if (!File.Exists(filePath))
-            {
-                MessageBox.Show($"Course information file for {CurrentUser} not found.");
-                return;
-            }
-
-            string[] fileContents;
             try
             {
-                fileContents = File.ReadAllText(filePath)
-                    .Split(new string[] { "----------------------------------------" }, StringSplitOptions.RemoveEmptyEntries);
-            }
-            catch (IOException ex)
-            {
-                MessageBox.Show($"Error reading course information: {ex.Message}");
-                return;
-            }
 
-            Course__flowLayoutPanel.Controls.Clear();
 
-            foreach (string courseData in fileContents)
-            {
-                string[] lines = courseData.Trim().Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None);
+                string folderPath = "CourseInformations";
+                string filePath = Path.Combine(folderPath, $"{CurrentUser}.txt");
 
-                Dictionary<string, string> courseDetails = new Dictionary<string, string>();
-
-                foreach (string line in lines)
+                if (!Directory.Exists(folderPath))
                 {
-                    string[] parts = line.Split(new char[] { ':' }, 2);
-                    if (parts.Length == 2)
+                    MessageBox.Show("Course information directory not found.");
+                    return;
+                }
+
+                if (!File.Exists(filePath))
+                {
+                    MessageBox.Show($"Course information file for {CurrentUser} not found.");
+                    return;
+                }
+
+                string[] fileContents;
+                try
+                {
+                    fileContents = File.ReadAllText(filePath)
+                        .Split(new string[] { "----------------------------------------" }, StringSplitOptions.RemoveEmptyEntries);
+                }
+                catch (IOException ex)
+                {
+                    MessageBox.Show($"Error reading course information: {ex.Message}");
+                    return;
+                }
+
+                Course__flowLayoutPanel.Controls.Clear();
+
+                foreach (string courseData in fileContents)
+                {
+                    string[] lines = courseData.Trim().Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None);
+
+                    Dictionary<string, string> courseDetails = new Dictionary<string, string>();
+
+                    foreach (string line in lines)
                     {
-                        courseDetails[parts[0].Trim()] = parts[1].Trim();
+                        string[] parts = line.Split(new char[] { ':' }, 2);
+                        if (parts.Length == 2)
+                        {
+                            courseDetails[parts[0].Trim()] = parts[1].Trim();
+                        }
+                    }
+
+                    if (courseDetails.ContainsKey("Course Name") &&
+                        courseDetails.ContainsKey("Course Code") &&
+                        courseDetails.ContainsKey("Student Course and Section") &&
+                        courseDetails.ContainsKey("Course Schedule") &&
+                        courseDetails.ContainsKey("Student Count"))
+                    {
+                        CoursesCARD courseControl = new CoursesCARD(this)
+                        {
+                            SubjectName = courseDetails["Course Name"],
+                            SubjectCode = courseDetails["Course Code"],
+                            SubjectCourseSection = courseDetails["Student Course and Section"],
+                            SubjectSchedule = courseDetails["Course Schedule"],
+                            SubjectCount = courseDetails["Student Count"]
+                        };
+
+                        Course__flowLayoutPanel.Controls.Add(courseControl);
                     }
                 }
-
-                if (courseDetails.ContainsKey("Course Name") &&
-                    courseDetails.ContainsKey("Course Code") &&
-                    courseDetails.ContainsKey("Student Course and Section") &&
-                    courseDetails.ContainsKey("Course Schedule") &&
-                    courseDetails.ContainsKey("Student Count"))
-                {
-                    CoursesCARD courseControl = new CoursesCARD(this)
-                    {
-                        SubjectName = courseDetails["Course Name"],
-                        SubjectCode = courseDetails["Course Code"],
-                        SubjectCourseSection = courseDetails["Student Course and Section"],
-                        SubjectSchedule = courseDetails["Course Schedule"],
-                        SubjectCount = courseDetails["Student Count"]
-                    };
-
-                    Course__flowLayoutPanel.Controls.Add(courseControl);
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("na");
             }
         }
 

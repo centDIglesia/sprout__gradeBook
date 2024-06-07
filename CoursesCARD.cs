@@ -90,6 +90,6 @@ namespace sprout__gradeBook
             this.BackgroundImage = Properties.Resources.sub;
         }
 
-      
+
     }
 }

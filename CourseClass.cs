@@ -7,22 +7,27 @@ public class Course
     public string CourseCode { get; set; }
     public string StudentCourse { get; set; }
     public string StudentSection { get; set; }
+    public int StudentYearLvl { get; set; }
     public string StartTime { get; set; }
     public string EndTime { get; set; }
     public int StudentCount { get; set; }
-    public string courseAndSection { get; set; }
+    public string department { get; set; }
 
 
 
-    public Course(string courseName, string courseCode, string studentCourse, string studentSection, string startTime, string endTime, int studentCount)
+    public Course(string courseName, string courseCode, string studentCourse, string studentSection, string startTime, string endTime, int studentCount, int studentYearLvl)
     {
         CourseName = courseName;
         CourseCode = courseCode;
-        courseAndSection = studentCourse + studentSection;
+        department = studentCourse;
         StudentCount = studentCount;
         StartTime = startTime;
         EndTime = endTime;
         StudentCount = studentCount;
+        StudentYearLvl = studentYearLvl;
+        StudentSection = studentSection;
+
+
     }
 
 
@@ -31,6 +36,10 @@ public class Course
         return $"{StartTime}-{EndTime}";
     }
 
+    public string GetYearAndSection()
+    {
+        return $"{StudentYearLvl}-{StudentSection}";
+    }
 
     public void SaveCourse(string currentUser)
     {
@@ -49,7 +58,8 @@ public class Course
 
             courseWriter.WriteLine($"Course Name: {CourseName}");
             courseWriter.WriteLine($"Course Code: {CourseCode}");
-            courseWriter.WriteLine($"Student Course and Section: {courseAndSection}");
+            courseWriter.WriteLine($"Student Department: {department}");
+            courseWriter.WriteLine($"Student year and section: {GetYearAndSection()}");
             courseWriter.WriteLine($"Course Schedule: {GetCourseSchedule()}");
             courseWriter.WriteLine($"Student Count: {StudentCount}");
             courseWriter.WriteLine(new string('-', 40));
@@ -80,4 +90,6 @@ public class Course
 
         return count;
     }
+
+
 }

@@ -52,6 +52,8 @@ namespace sprout__gradeBook
             Account__Manager.SaveStudentUser(newStudent, parent.currentUSer);
             MessageBox.Show("Save successfully");
             this.Close();
+
+
         }
 
         private void AddStudentForm_Load(object sender, EventArgs e)
