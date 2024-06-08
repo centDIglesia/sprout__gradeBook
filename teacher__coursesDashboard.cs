@@ -43,7 +43,7 @@ namespace sprout__gradeBook
         public void populateCourses()
         {
             string folderPath = "CourseInformations";
-
+            courseSectionPanel.Controls.Clear();
             if (Directory.Exists(folderPath))
             {
                 string[] filePaths = Directory.GetFiles(folderPath, $"{CurrentUser}.txt");
@@ -100,7 +100,7 @@ namespace sprout__gradeBook
                                 SubjectCode = courseCode,
                                 SubjectCount = studentCount.ToString(),
                                 SubjectSchedule = schedule,
-                                SubjectCourseSection = section
+                                SubjectCourseSection = $"{department} {section}"
                             };
 
                             courseSectionPanel.Controls.Add(card);

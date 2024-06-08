@@ -111,6 +111,7 @@
     <Compile Include="Student Forms\StudentDefultPasswordGuide.Designer.cs">
       <DependentUpon>StudentDefultPasswordGuide.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentManager.cs" />
     <Compile Include="studentsCARD.cs">
       <SubType>UserControl</SubType>
     </Compile>
