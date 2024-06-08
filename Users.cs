@@ -82,7 +82,7 @@ namespace sprout__gradeBook
 
         private string GeneratePassword(DateTime birthday, string school)
         {
-            return birthday.ToString("dd-MM-yy") + school;
+            return birthday.ToString("yyyy-MM-dd") + school;
         }
 
         public string GetYearAndSection()
