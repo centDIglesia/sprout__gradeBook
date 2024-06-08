@@ -115,7 +115,7 @@ namespace sprout__gradeBook
 
                 if (File.Exists(studentFilePath))
                 {
-                    // Student file found
+
                     userFound = true;
                     bool isAuthenticated = Account__Manager.AuthenticateStudentLogIn(usernameOrId, password, teacherDir);
                     if (isAuthenticated)

@@ -272,7 +272,9 @@
             // 
             // studentBirthdayPicker
             // 
-            this.studentBirthdayPicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.studentBirthdayPicker.CalendarTodayFormat = "dd";
+            this.studentBirthdayPicker.CustomFormat = "yyyy-MM-dd";
+            this.studentBirthdayPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.studentBirthdayPicker.Location = new System.Drawing.Point(81, 270);
             this.studentBirthdayPicker.MaxDate = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
             this.studentBirthdayPicker.Name = "studentBirthdayPicker";
