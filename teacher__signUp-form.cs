@@ -213,12 +213,12 @@ namespace sprout__gradeBook
 
             if (signupSCHOOL__txtbox.Text != "School")
             {
-                if (!UserInput__Validator.ValidateLength(signupSCHOOL__txtbox.Text, 0, 10))
+                if (!UserInput__Validator.ValidateLength(signupSCHOOL__txtbox.Text, 0, 30))
                 {
                     setInputState(signupSCHOOL__txtbox, school__tooltip, Color.Red);
 
                     signupSCHOOL__txtbox.Focus();
-                    MessageBox.Show("The school name must be between 1 and 10 characters long only. Please enter a valid school name.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("The school name must be between 1 and 30 characters long only. Please enter a valid school name.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {

@@ -13,7 +13,7 @@ namespace sprout__gradeBook
 {
     public partial class studentLoginForm : KryptonForm
     {
-        
+
         public studentLoginForm()
         {
             InitializeComponent();
@@ -22,7 +22,7 @@ namespace sprout__gradeBook
         private void studentLoginForm_Load(object sender, EventArgs e)
         {
             signIn__StIdTooltip.Hide();
-            signIn__PassTooltip.Hide();            
+            signIn__PassTooltip.Hide();
         }
 
         private void signinSTID__txtbox_Enter(object sender, EventArgs e)
@@ -88,7 +88,6 @@ namespace sprout__gradeBook
             string usernameOrId = signinSTID__txtbox.Text;
             string password = signinPASS__txtbox.Text;
 
-
             if (usernameOrId == "Student Number" || password == "Password")
             {
                 MessageBox.Show("Please fill out all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -103,36 +102,38 @@ namespace sprout__gradeBook
                 }
 
                 return;
-
             }
 
+            bool userFound = false;
 
+            string baseFolderPath = "StudentCredentials";
+            string[] teacherDirectories = Directory.GetDirectories(baseFolderPath);
 
-
-            string folderPath = "studentCredentials";
-            string fullPath = Path.Combine(folderPath, usernameOrId + ".txt");
-            bool isExist = File.Exists(fullPath);
-
-
-
-            if (isExist)
+            foreach (string teacherDir in teacherDirectories)
             {
-                bool isValid = Account__Manager.AuthenticateStudentLogIn(usernameOrId, password, folderPath);
+                string studentFilePath = Path.Combine(teacherDir, usernameOrId + ".txt");
 
-                if (isValid)
+                if (File.Exists(studentFilePath))
                 {
-                    this.Hide();
-                    Student__Dashboard STD_DSH = new Student__Dashboard(usernameOrId);
-                    STD_DSH.Show();
-
-                    MessageBox.Show("Sign in successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Password is incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Student file found
+                    userFound = true;
+                    bool isAuthenticated = Account__Manager.AuthenticateStudentLogIn(usernameOrId, password, teacherDir);
+                    if (isAuthenticated)
+                    {
+                        MessageBox.Show("Sign in successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Hide();
+                        Student__Dashboard STD_DSH = new Student__Dashboard(usernameOrId);
+                        STD_DSH.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Password is incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    break;
                 }
             }
-            else
+
+            if (!userFound)
             {
                 MessageBox.Show("The student account you entered does not exist.\n" +
                                 "Please check your username or ID and try again. \n\n" +
@@ -142,7 +143,6 @@ namespace sprout__gradeBook
                                 MessageBoxIcon.Error);
             }
         }
-
 
 
 

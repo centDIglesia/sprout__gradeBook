@@ -117,15 +117,10 @@ namespace sprout__gradeBook
         //use to authenticate student log in credentials | student ID and Password |
         public static bool AuthenticateStudentLogIn(string studentId, string password, string folderPath)
         {
-            if (!File.Exists(folderPath))
-            {
-                return false;
-            }
-
             foreach (var filePath in Directory.GetFiles(folderPath, "*.txt"))
             {
-                string storedPassword = "";
-                bool studentIdFound = false;
+                string storedStudentId = "";
+                string storedPasswordHash = "";
 
                 using (StreamReader reader = new StreamReader(filePath))
                 {
@@ -134,30 +129,26 @@ namespace sprout__gradeBook
                         string line = reader.ReadLine();
                         if (line.StartsWith("Student ID:"))
                         {
-                            string fileStudentId = line.Substring("Student ID:".Length).Trim();
-                            if (fileStudentId == studentId)
-                            {
-                                studentIdFound = true;
-                            }
+                            storedStudentId = line.Substring("Student ID:".Length).Trim();
                         }
-
-                        if (line.StartsWith("Password:"))
+                        else if (line.StartsWith("Password:"))
                         {
-                            storedPassword = line.Substring("Password:".Length).Trim();
+                            storedPasswordHash = line.Substring("Password:".Length).Trim();
                         }
                     }
                 }
 
-                if (studentIdFound)
+                if (storedStudentId == studentId)
                 {
                     string hashedInputPassword = HashPassword(password);
-                    return storedPassword == hashedInputPassword;
+                    return storedPasswordHash == hashedInputPassword;
                 }
             }
 
-
+            // Student ID not found
             return false;
         }
+
 
         //function for hashing pssword
         private static string HashPassword(string password)
