@@ -172,7 +172,7 @@
             // pictureBox9
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
-            this.pictureBox9.Location = new System.Drawing.Point(55, 444);
+            this.pictureBox9.Location = new System.Drawing.Point(55, 450);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(717, 163);
             this.pictureBox9.TabIndex = 52;

@@ -8,8 +8,8 @@ namespace sprout__gradeBook
     public partial class AddStudentForm : KryptonForm
     {
         teacher__studentsDashboard parent;
-        private string teacherSchool; 
-        
+        private string teacherSchool;
+
         public AddStudentForm(teacher__studentsDashboard parentDashboard, string school)
         {
             InitializeComponent();
@@ -53,7 +53,7 @@ namespace sprout__gradeBook
             MessageBox.Show("Save successfully");
             this.Close();
 
-
+            parent.LoadStudentCourses();
         }
 
         private void AddStudentForm_Load(object sender, EventArgs e)

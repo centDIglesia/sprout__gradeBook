@@ -3,7 +3,6 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
-using static System.Collections.Specialized.BitVector32;
 
 namespace sprout__gradeBook
 {
@@ -12,7 +11,6 @@ namespace sprout__gradeBook
         public string currentUSer { get; set; }
         private string teacherSchool;
         public FlowLayoutPanel CourseSectionPanel { get { return courseSectionPanel; } }
-
 
         public teacher__studentsDashboard(string currentuser)
         {
@@ -25,13 +23,15 @@ namespace sprout__gradeBook
         {
             LoadStudentCourses();
         }
+
         private string LoadTeacherSchool(string currentUser)
         {
-
             string teacherDetailsFile = $"teacherCredentials/{currentUser}.txt";
+
             if (!File.Exists(teacherDetailsFile))
             {
-                throw new FileNotFoundException("Teacher details file not found.");
+                MessageBox.Show("Teacher details file not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return string.Empty; // Return an empty string or handle this case as needed
             }
 
             string[] lines = File.ReadAllLines(teacherDetailsFile);
@@ -43,71 +43,84 @@ namespace sprout__gradeBook
                 }
             }
 
-            throw new Exception("School information not found in teacher details file.");
+            MessageBox.Show("School information not found in teacher details file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return string.Empty; // Return an empty string or handle this case as needed
         }
 
-        private void LoadStudentCourses()
+        public void LoadStudentCourses()
         {
             string folderPath = $"StudentCredentials/{currentUSer}";
-
+            courseSectionPanel.Controls.Clear();
             if (Directory.Exists(folderPath))
             {
                 string[] filePaths = Directory.GetFiles(folderPath, "*.txt");
 
+                if (filePaths.Length == 0)
+                {
+                    DialogResult result = MessageBox.Show("No student files found. Do you want to add a student?", "Add Student", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        AddStudentForm addStudentForm = new AddStudentForm(this, teacherSchool);
+                        addStudentForm.Show();
+                    }
+                    return; // Exit the method since there are no files to process
+                }
+
                 foreach (string filePath in filePaths)
                 {
-                    string[] lines = File.ReadAllLines(filePath);
-                    string department = "";
-                    string section = "";
+                    string fileContent = File.ReadAllText(filePath);
+                    string[] courseBlocks = fileContent.Split(new string[] { "----------------------------------------" }, StringSplitOptions.RemoveEmptyEntries);
 
-                    foreach (var line in lines)
+                    foreach (string block in courseBlocks)
                     {
-                        if (line.StartsWith("Year and Section:"))
+                        string[] lines = block.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+                        string department = "";
+                        string section = "";
+
+                        foreach (var line in lines)
                         {
-                            section = line.Substring("Year and Section:".Length).Trim();
-                        }
-                        else if (line.StartsWith("Department:"))
-                        {
-                            department = line.Substring("Department:".Length).Trim();
+                            if (line.StartsWith("Year and Section:"))
+                            {
+                                section = line.Substring("Year and Section:".Length).Trim();
+                            }
+                            else if (line.StartsWith("Department:"))
+                            {
+                                department = line.Substring("Department:".Length).Trim();
+                            }
                         }
 
                         if (!string.IsNullOrEmpty(department) && !string.IsNullOrEmpty(section))
                         {
-                            break;
+                            string[] courseCode = department.Split(',');
+                            string lastPart = courseCode.Last().Trim();
+
+                            // Create a new instance of CourseAndSectionCARD
+                            CourseAndSectionCARD card = new CourseAndSectionCARD(this)
+                            {
+                                Course = lastPart,
+                                SectionName = section,
+                                CourseF = department
+                            };
+
+                            // Add the card to the courseSectionPanel
+                            courseSectionPanel.Controls.Add(card);
                         }
-                    }
-
-                    if (!string.IsNullOrEmpty(department) && !string.IsNullOrEmpty(section))
-                    {
-                        string[] courseCode = department.Split(',');
-                        string lastPart = courseCode.Last().Trim();
-
-                        // Create a new instance of CourseAndSectionCARD
-                        CourseAndSectionCARD card = new CourseAndSectionCARD(this)
-                        {
-                            Course = lastPart,
-                            SectionName = section,
-                            CourseF = department
-                        };
-
-                        // Add the card to the courseSectionPanel
-                        courseSectionPanel.Controls.Add(card);
                     }
                 }
             }
+            else
+            {
+                MessageBox.Show($"Directory not found: {folderPath}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
-
-
 
         private void StudentPanel_Paint(object sender, PaintEventArgs e)
         {
-
+            // Handle painting if necessary
         }
 
         private void addStudentsBTN_Click(object sender, EventArgs e)
         {
-
             AddStudentForm addStudentForm = new AddStudentForm(this, teacherSchool);
             addStudentForm.Show();
         }

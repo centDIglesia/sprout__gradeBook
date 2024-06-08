@@ -7,20 +7,16 @@ namespace sprout__gradeBook
     public partial class CoursesCARD : UserControl
     {
 
-        public new teacher__courses_lvl1 ParentForm { get; set; }
-        public CoursesCARD(teacher__courses_lvl1 parentForm)
+        public CoursesCARD()
         {
-            ParentForm = parentForm;
+
             InitializeComponent();
         }
-
 
         private void Courses_Load(object sender, EventArgs e)
         {
             studentCountTooltip.Hide();
-
         }
-
 
         public string SubjectName
         {
@@ -33,7 +29,6 @@ namespace sprout__gradeBook
                 }
             }
         }
-
 
         public string SubjectCode
         {
@@ -58,7 +53,6 @@ namespace sprout__gradeBook
             get => subjectCourseSectionLBL.Text;
             set => subjectCourseSectionLBL.Text = value.Length > 7 ? value.Substring(0, 6) + ".." : value.ToUpper();
         }
-
 
         private void subjectStudentCountLBL_MouseHover(object sender, EventArgs e)
         {
@@ -90,6 +84,14 @@ namespace sprout__gradeBook
             this.BackgroundImage = Properties.Resources.sub;
         }
 
+        private void CoursesCARD_Load(object sender, EventArgs e)
+        {
 
+        }
+
+        private void CoursesCARD_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

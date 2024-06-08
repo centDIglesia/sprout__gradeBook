@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 
@@ -43,71 +42,78 @@ namespace sprout__gradeBook
 
         public void populateCourses()
         {
-
             string folderPath = "CourseInformations";
-            string filePath = Path.Combine(folderPath, $"{CurrentUser}.txt");
 
-            if (!Directory.Exists(folderPath))
+            if (Directory.Exists(folderPath))
             {
-                MessageBox.Show("Course information directory not found.");
-                return;
-            }
+                string[] filePaths = Directory.GetFiles(folderPath, $"{CurrentUser}.txt");
 
-            if (!File.Exists(filePath))
-            {
-                MessageBox.Show($"Course information file for {CurrentUser} not found.");
-                return;
-            }
-
-            string[] fileContents;
-            try
-            {
-                fileContents = File.ReadAllText(filePath)
-                    .Split(new string[] { "----------------------------------------" }, StringSplitOptions.RemoveEmptyEntries);
-            }
-            catch (IOException ex)
-            {
-                MessageBox.Show($"Error reading course information: {ex.Message}");
-                return;
-            }
-
-            courseSectionPanel.Controls.Clear();
-
-            foreach (string courseData in fileContents)
-            {
-                string[] lines = courseData.Trim().Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None);
-
-                Dictionary<string, string> courseDetails = new Dictionary<string, string>();
-
-                foreach (string line in lines)
+                foreach (string filePath in filePaths)
                 {
-                    string[] parts = line.Split(new char[] { ':' }, 2);
-                    if (parts.Length == 2)
+                    string fileContent = File.ReadAllText(filePath);
+                    string[] courseBlocks = fileContent.Split(new string[] { "----------------------------------------" }, StringSplitOptions.RemoveEmptyEntries);
+
+                    foreach (string block in courseBlocks)
                     {
-                        courseDetails[parts[0].Trim()] = parts[1].Trim();
+                        string[] lines = block.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+                        string courseName = "";
+                        string courseCode = "";
+                        string department = "";
+                        string section = "";
+                        string schedule = "";
+                        int studentCount = 0;
+
+                        foreach (var line in lines)
+                        {
+                            if (line.StartsWith("Course Name:"))
+                            {
+                                courseName = line.Substring("Course Name:".Length).Trim();
+                            }
+                            else if (line.StartsWith("Course Code:"))
+                            {
+                                courseCode = line.Substring("Course Code:".Length).Trim();
+                            }
+                            else if (line.StartsWith("Student Department:"))
+                            {
+                                department = line.Substring("Student Department:".Length).Trim();
+                            }
+                            else if (line.StartsWith("Student year and section:"))
+                            {
+                                section = line.Substring("Student year and section:".Length).Trim();
+                            }
+                            else if (line.StartsWith("Course Schedule:"))
+                            {
+                                schedule = line.Substring("Course Schedule:".Length).Trim();
+                            }
+                            else if (line.StartsWith("Student Count:"))
+                            {
+                                studentCount = int.Parse(line.Substring("Student Count:".Length).Trim());
+                            }
+                        }
+
+                        if (!string.IsNullOrEmpty(courseName) && !string.IsNullOrEmpty(courseCode) &&
+                            !string.IsNullOrEmpty(department) && !string.IsNullOrEmpty(section))
+                        {
+                            CoursesCARD card = new CoursesCARD()
+                            {
+                                SubjectName = courseName,
+                                SubjectCode = courseCode,
+                                SubjectCount = studentCount.ToString(),
+                                SubjectSchedule = schedule,
+                                SubjectCourseSection = section
+                            };
+
+                            courseSectionPanel.Controls.Add(card);
+                        }
                     }
                 }
-
-                if (courseDetails.ContainsKey("Course Name") &&
-                    courseDetails.ContainsKey("Course Code") &&
-                    courseDetails.ContainsKey("Student Course and Section") &&
-                    courseDetails.ContainsKey("Course Schedule") &&
-                    courseDetails.ContainsKey("Student Count"))
-                {
-                    CoursesCARD courseControl = new CoursesCARD(this)
-                    {
-                        SubjectName = courseDetails["Course Name"],
-                        SubjectCode = courseDetails["Course Code"],
-                        SubjectCourseSection = courseDetails["Student Course and Section"],
-                        SubjectSchedule = courseDetails["Course Schedule"],
-                        SubjectCount = courseDetails["Student Count"]
-                    };
-
-                    courseSectionPanel.Controls.Add(courseControl);
-                }
             }
-
+            else
+            {
+                MessageBox.Show($"Directory not found: {folderPath}");
+            }
         }
+
 
         public void LoadFormIntoPanel(Form form)
         {

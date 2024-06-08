@@ -49,8 +49,6 @@
             this.subjectNameLBL.Size = new System.Drawing.Size(174, 19);
             this.subjectNameLBL.TabIndex = 1;
             this.subjectNameLBL.Text = "Object Oriented Programming";
-
-
             // 
             // subjectCourseSectionLBL
             // 
@@ -63,8 +61,6 @@
             this.subjectCourseSectionLBL.Size = new System.Drawing.Size(50, 19);
             this.subjectCourseSectionLBL.TabIndex = 3;
             this.subjectCourseSectionLBL.Text = "BSIT 2-1";
-
-
             // 
             // subjectCodeLBL
             // 
@@ -76,8 +72,6 @@
             this.subjectCodeLBL.StateCommon.ShortText.Font = new System.Drawing.Font("Poppins Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subjectCodeLBL.TabIndex = 4;
             this.subjectCodeLBL.Values.Text = "CODE";
-
-
             // 
             // subjectScheduleLBL
             // 
@@ -90,8 +84,6 @@
             this.subjectScheduleLBL.Size = new System.Drawing.Size(106, 19);
             this.subjectScheduleLBL.TabIndex = 5;
             this.subjectScheduleLBL.Text = "12:00 PM-03:00 PM";
-
-
             // 
             // kryptonLabel1
             // 
@@ -115,7 +107,6 @@
             this.subjectStudentCountLBL.StateCommon.ShortText.Font = new System.Drawing.Font("Poppins", 8F);
             this.subjectStudentCountLBL.TabIndex = 7;
             this.subjectStudentCountLBL.Values.Text = "00";
-
             this.subjectStudentCountLBL.MouseLeave += new System.EventHandler(this.subjectStudentCountLBL_MouseLeave);
             this.subjectStudentCountLBL.MouseHover += new System.EventHandler(this.subjectStudentCountLBL_MouseHover);
             // 
@@ -132,7 +123,7 @@
             this.studentCountTooltip.TabIndex = 8;
             this.studentCountTooltip.Text = "Students";
             // 
-            // Courses
+            // CoursesCARD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -147,9 +138,9 @@
             this.Controls.Add(this.subjectCourseSectionLBL);
             this.Controls.Add(this.subjectNameLBL);
             this.DoubleBuffered = true;
-            this.Name = "Courses";
+            this.Name = "CoursesCARD";
             this.Size = new System.Drawing.Size(235, 133);
-
+            this.Load += new System.EventHandler(this.CoursesCARD_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

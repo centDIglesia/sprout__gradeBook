@@ -70,14 +70,19 @@ namespace sprout__gradeBook
 
         private void FilterStudents(string currentCourse, string currentSection, string filePath)
         {
-
             string[] fileInfo = Path.GetFileNameWithoutExtension(filePath).Split('_');
             string courseDepartmentInitials = fileInfo[1];
             string courseYearSection = fileInfo[2];
 
+            string directoryPath = $"StudentCredentials/{currentUserName}/";
 
-            string[] studentCredentialFiles = Directory.GetFiles($"StudentCredentials/{currentUserName}/", "*.txt");
+            if (!Directory.Exists(directoryPath))
+            {
 
+                return;
+            }
+
+            string[] studentCredentialFiles = Directory.GetFiles(directoryPath, "*.txt");
 
             foreach (string studentCredentialFile in studentCredentialFiles)
             {
@@ -85,7 +90,6 @@ namespace sprout__gradeBook
                 MessageBox.Show($"{courseDepartmentInitials},{courseYearSection}");
 
                 string[] studentInfo = File.ReadAllLines(studentCredentialFile);
-
 
                 Dictionary<string, string> studentDetails = new Dictionary<string, string>();
                 foreach (string line in studentInfo)
@@ -99,15 +103,12 @@ namespace sprout__gradeBook
                     }
                 }
 
-
                 if (studentDetails.ContainsKey("Department") && studentDetails["Department"].Contains(courseDepartmentInitials) &&
                     studentDetails.ContainsKey("Year and Section") && studentDetails["Year and Section"].Contains(courseYearSection))
                 {
-
                     if (studentDetails.TryGetValue("Student ID", out string studentID))
                     {
                         MessageBox.Show($"Student ID found: {studentID}");
-
 
                         using (StreamWriter writer = File.AppendText(filePath))
                         {
