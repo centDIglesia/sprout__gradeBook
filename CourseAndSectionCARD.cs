@@ -119,7 +119,7 @@ namespace sprout__gradeBook
                 Image genderImage = null;
                 if (studentGender.ToLower() == "male")
                 {
-                    genderImage = Properties.Resources.maleee;
+                    genderImage = Properties.Resources.lalalalake;
                 }
                 else if (studentGender.ToLower() == "female")
                 {

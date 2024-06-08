@@ -58,5 +58,15 @@ namespace sprout__gradeBook
         {
 
         }
+
+        private void studentGender_MouseHover(object sender, EventArgs e)
+        {
+            studentcard__studentName.StateCommon.Content.Color1 = CustomColor.activeColor;
+        }
+
+        private void studentcard__studentID_MouseLeave(object sender, EventArgs e)
+        {
+            studentcard__studentName.StateCommon.Content.Color1 = CustomColor.mainColor;
+        }
     }
 }

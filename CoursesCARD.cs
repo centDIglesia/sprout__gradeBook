@@ -15,7 +15,7 @@ namespace sprout__gradeBook
 
         private void Courses_Load(object sender, EventArgs e)
         {
-            studentCountTooltip.Hide();
+
         }
 
         public string SubjectName
@@ -84,14 +84,21 @@ namespace sprout__gradeBook
             this.BackgroundImage = Properties.Resources.sub;
         }
 
-        private void CoursesCARD_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void CoursesCARD_Load_1(object sender, EventArgs e)
         {
+            studentCountTooltip.Hide();
+        }
 
+        private void CoursesCARD_MouseHover(object sender, EventArgs e)
+        {
+            this.BackgroundImage = Properties.Resources.subhover;
+        }
+
+
+        private void CoursesCARD_MouseLeave(object sender, EventArgs e)
+        {
+            this.BackgroundImage = Properties.Resources.sub;
         }
     }
 }

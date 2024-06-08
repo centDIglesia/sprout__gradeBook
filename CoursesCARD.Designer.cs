@@ -49,6 +49,9 @@
             this.subjectNameLBL.Size = new System.Drawing.Size(174, 19);
             this.subjectNameLBL.TabIndex = 1;
             this.subjectNameLBL.Text = "Object Oriented Programming";
+
+            this.subjectNameLBL.MouseLeave += new System.EventHandler(this.CoursesCARD_MouseLeave);
+            this.subjectNameLBL.MouseHover += new System.EventHandler(this.CoursesCARD_MouseHover);
             // 
             // subjectCourseSectionLBL
             // 
@@ -61,6 +64,9 @@
             this.subjectCourseSectionLBL.Size = new System.Drawing.Size(50, 19);
             this.subjectCourseSectionLBL.TabIndex = 3;
             this.subjectCourseSectionLBL.Text = "BSIT 2-1";
+
+            this.subjectCourseSectionLBL.MouseLeave += new System.EventHandler(this.CoursesCARD_MouseLeave);
+            this.subjectCourseSectionLBL.MouseHover += new System.EventHandler(this.CoursesCARD_MouseHover);
             // 
             // subjectCodeLBL
             // 
@@ -72,6 +78,9 @@
             this.subjectCodeLBL.StateCommon.ShortText.Font = new System.Drawing.Font("Poppins Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subjectCodeLBL.TabIndex = 4;
             this.subjectCodeLBL.Values.Text = "CODE";
+
+            this.subjectCodeLBL.MouseLeave += new System.EventHandler(this.CoursesCARD_MouseLeave);
+            this.subjectCodeLBL.MouseHover += new System.EventHandler(this.CoursesCARD_MouseHover);
             // 
             // subjectScheduleLBL
             // 
@@ -84,6 +93,9 @@
             this.subjectScheduleLBL.Size = new System.Drawing.Size(106, 19);
             this.subjectScheduleLBL.TabIndex = 5;
             this.subjectScheduleLBL.Text = "12:00 PM-03:00 PM";
+
+            this.subjectScheduleLBL.MouseLeave += new System.EventHandler(this.CoursesCARD_MouseLeave);
+            this.subjectScheduleLBL.MouseHover += new System.EventHandler(this.CoursesCARD_MouseHover);
             // 
             // kryptonLabel1
             // 
@@ -141,6 +153,9 @@
             this.Name = "CoursesCARD";
             this.Size = new System.Drawing.Size(235, 133);
             this.Load += new System.EventHandler(this.CoursesCARD_Load_1);
+
+            this.MouseLeave += new System.EventHandler(this.CoursesCARD_MouseLeave);
+            this.MouseHover += new System.EventHandler(this.CoursesCARD_MouseHover);
             this.ResumeLayout(false);
             this.PerformLayout();
 

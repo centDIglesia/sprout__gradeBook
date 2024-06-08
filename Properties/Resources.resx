@@ -121,11 +121,14 @@
   <data name="Roles_Card_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Roles-Card-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="recycle-bin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\recycle-bin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="next-arrow-green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\next-arrow-green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="student__role" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\student__role.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="teacher__role_clicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\teacher__role-clicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="notification-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\notification-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,14 +136,17 @@
   <data name="back-arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\back-arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="next-arrow-green" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\next-arrow-green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Roles_Card_student_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Roles-Card-student-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="subhover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\subhover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="next-arrow-icn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\next-arrow-icn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="student__role_clicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\student__role-clicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Forgot_Your_Password_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Forgot Your Password_.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,20 +154,20 @@
   <data name="sub" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sub.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="subhover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\subhover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="recycle-bin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\recycle-bin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo-green-wsprout" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo-green-wsprout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="add-course-btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add-course-btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Roles_Card_student_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Roles-Card-student-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="maleee" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\maleee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="teacher__role" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\teacher__role.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="teacher__role_clicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\teacher__role-clicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Forgot_Your_Password_HOVER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Forgot Your Password_HOVER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="closed__eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\closed__eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,31 +175,28 @@
   <data name="susushoverleave" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Rectangle 48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="teacher__role" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\teacher__role.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="open__eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\open__eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="subsubhover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\subsubhover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Forgot_Your_Password_HOVER" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Forgot Your Password_HOVER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="student__role_clicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\student__role-clicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="task-checked" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\task-checked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="task-normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\task-normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo-green-wsprout" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo-green-wsprout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="femaleee" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\femaleee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="maleee" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\maleee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="task-normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\task-normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lalalalake" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lalalalake.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
