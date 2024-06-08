@@ -54,7 +54,7 @@ namespace sprout__gradeBook
 
             if (UserExists(((Student)user).StudentNumber, folderPath))
             {
-                throw new Exception("Student ID already exists. Please choose a different ID.");
+                MessageBox.Show("Student ID already exists.");
             }
 
             // Save the credentials to a file in the selected folder

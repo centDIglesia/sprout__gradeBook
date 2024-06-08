@@ -47,7 +47,7 @@ namespace sprout__gradeBook
             return string.Empty; // Return an empty string or handle this case as needed
         }
 
-        public void LoadStudentCourses()
+        /*public void LoadStudentCourses()
         {
             string folderPath = $"StudentCredentials/{currentUSer}";
             courseSectionPanel.Controls.Clear();
@@ -110,9 +110,98 @@ namespace sprout__gradeBook
             }
             else
             {
-                MessageBox.Show($"Directory not found: {folderPath}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DialogResult result = MessageBox.Show("No student yet. Do you want to add a student?", "Add Student", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    AddStudentForm addStudentForm = new AddStudentForm(this, teacherSchool);
+                    addStudentForm.Show();
+                }
+                return;
             }
         }
+        */
+        public void LoadStudentCourses()
+        {
+            string folderPath = $"StudentCredentials/{currentUSer}";
+            courseSectionPanel.Controls.Clear();
+
+            if (Directory.Exists(folderPath))
+            {
+                string[] filePaths = Directory.GetFiles(folderPath, "*.txt");
+
+                if (filePaths.Length == 0)
+                {
+                    DialogResult result = MessageBox.Show("No student files found. Do you want to add a student?", "Add Student", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        AddStudentForm addStudentForm = new AddStudentForm(this, teacherSchool);
+                        addStudentForm.Show();
+                    }
+                    return;
+                }
+
+                foreach (string filePath in filePaths)
+                {
+                    string fileContent = File.ReadAllText(filePath);
+                    string[] courseBlocks = fileContent.Split(new string[] { "----------------------------------------" }, StringSplitOptions.RemoveEmptyEntries);
+
+                    foreach (string block in courseBlocks)
+                    {
+                        string[] lines = block.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+                        string department = "";
+                        string section = "";
+
+                        foreach (var line in lines)
+                        {
+                            if (line.StartsWith("Year and Section:"))
+                            {
+                                section = line.Substring("Year and Section:".Length).Trim();
+                            }
+                            else if (line.StartsWith("Department:"))
+                            {
+                                department = line.Substring("Department:".Length).Trim();
+                            }
+                        }
+
+                        if (!string.IsNullOrEmpty(department) && !string.IsNullOrEmpty(section))
+                        {
+                            string[] courseCode = department.Split(',');
+                            string lastPart = courseCode.Last().Trim();
+
+                            // Check if a card with the same Course, Section, and CourseF already exists
+                            bool cardExists = courseSectionPanel.Controls
+                                .OfType<CourseAndSectionCARD>()
+                                .Any(card => card.Course == lastPart && card.SectionName == section && card.CourseF == department);
+
+                            if (!cardExists)
+                            {
+                                // Create a new instance of CourseAndSectionCARD
+                                CourseAndSectionCARD card = new CourseAndSectionCARD(this)
+                                {
+                                    Course = lastPart,
+                                    SectionName = section,
+                                    CourseF = department
+                                };
+
+                                // Add the card to the courseSectionPanel
+                                courseSectionPanel.Controls.Add(card);
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("No student yet. Do you want to add a student?", "Add Student", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    AddStudentForm addStudentForm = new AddStudentForm(this, teacherSchool);
+                    addStudentForm.Show();
+                }
+                return;
+            }
+        }
+
 
         private void StudentPanel_Paint(object sender, PaintEventArgs e)
         {

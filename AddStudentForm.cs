@@ -60,5 +60,10 @@ namespace sprout__gradeBook
         {
 
         }
+
+        private void studentIDTXT_Leave(object sender, EventArgs e)
+        {
+            //implement here if student id already exist
+        }
     }
 }
