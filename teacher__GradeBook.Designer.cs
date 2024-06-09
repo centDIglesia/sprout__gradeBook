@@ -71,6 +71,7 @@
             this.StudentIDTXT.StateCommon.ShortText.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StudentIDTXT.TabIndex = 69;
             this.StudentIDTXT.Values.Text = "kryptonLabel3";
+            this.StudentIDTXT.Paint += new System.Windows.Forms.PaintEventHandler(this.StudentIDTXT_Paint);
             // 
             // studentListPanel
             // 
@@ -186,6 +187,7 @@
             this.StudenttnameTXT.StateCommon.ShortText.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
             this.StudenttnameTXT.TabIndex = 74;
             this.StudenttnameTXT.Values.Text = "kryptonLabel3";
+            this.StudenttnameTXT.Paint += new System.Windows.Forms.PaintEventHandler(this.StudenttnameTXT_Paint);
             // 
             // teacher__GradeBook
             // 

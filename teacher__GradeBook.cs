@@ -10,7 +10,17 @@ namespace sprout__gradeBook
     public partial class teacher__GradeBook : KryptonForm
     {
         public string currentUSer { get; set; }
+        public string StudenttnameText
+        {
+            get { return StudenttnameTXT.Text; }
+            set { StudenttnameTXT.Text = value; }
+        }
 
+        public string StudentIDText
+        {
+            get { return StudentIDTXT.Text; }
+            set { StudentIDTXT.Text = value; }
+        }
         public teacher__GradeBook(string currentuser)
         {
             currentUSer = currentuser;
@@ -98,7 +108,7 @@ namespace sprout__gradeBook
 
         private void AddStudentCard(string studentID, string studentName)
         {
-            studentsInGradebookCARD studentCard = new studentsInGradebookCARD
+            studentsInGradebookCARD studentCard = new studentsInGradebookCARD(this) // Pass reference to the current form
             {
                 currentStudentID = studentID,
                 currentStudentName = studentName
@@ -146,6 +156,16 @@ namespace sprout__gradeBook
         }
 
         private void sectionTXT_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void StudenttnameTXT_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void StudentIDTXT_Paint(object sender, PaintEventArgs e)
         {
 
         }

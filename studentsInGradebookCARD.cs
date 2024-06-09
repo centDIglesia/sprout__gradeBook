@@ -6,10 +6,12 @@ namespace sprout__gradeBook
     public partial class studentsInGradebookCARD : UserControl
     {
 
+        private teacher__GradeBook _teacherForm;
 
-        public studentsInGradebookCARD()
+        public studentsInGradebookCARD(teacher__GradeBook teacherForm)
         {
             InitializeComponent();
+            _teacherForm = teacherForm;
         }
 
 
@@ -26,17 +28,24 @@ namespace sprout__gradeBook
             set => idOfStudent.Text = value;
         }
 
-        private void idOfStudent_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void studentsInGradebookCARD_Load(object sender, EventArgs e)
+        private void idOfStudent_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
         private void nameofStudent_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void studentsInGradebookCARD_Click(object sender, EventArgs e)
+        {
+            // Update the text of StudenttnameTXT and StudentIDTXT controls in the teacher__GradeBook form
+            _teacherForm.StudenttnameText = currentStudentName;
+            _teacherForm.StudentIDText = currentStudentID;
+        }
+
+        private void studentsInGradebookCARD_Load(object sender, EventArgs e)
         {
 
         }

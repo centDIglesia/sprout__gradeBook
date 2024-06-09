@@ -59,7 +59,7 @@
             this.nameofStudent.StateCommon.ShortText.Font = new System.Drawing.Font("Poppins Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameofStudent.TabIndex = 0;
             this.nameofStudent.Values.Text = "kryptonLabel1";
-            this.nameofStudent.Click += new System.EventHandler(this.idOfStudent_Click);
+            this.nameofStudent.Click += new System.EventHandler(this.studentsInGradebookCARD_Click);
             this.nameofStudent.Paint += new System.Windows.Forms.PaintEventHandler(this.nameofStudent_Paint);
             // 
             // idOfStudent
@@ -72,7 +72,8 @@
             this.idOfStudent.StateCommon.ShortText.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idOfStudent.TabIndex = 1;
             this.idOfStudent.Values.Text = "kryptonLabel2";
-            this.idOfStudent.Click += new System.EventHandler(this.idOfStudent_Click);
+            this.idOfStudent.Click += new System.EventHandler(this.studentsInGradebookCARD_Click);
+            this.idOfStudent.Paint += new System.Windows.Forms.PaintEventHandler(this.idOfStudent_Paint);
             // 
             // studentsInGradebookCARD
             // 
@@ -87,7 +88,7 @@
             this.Name = "studentsInGradebookCARD";
             this.Size = new System.Drawing.Size(214, 56);
             this.Load += new System.EventHandler(this.studentsInGradebookCARD_Load);
-            this.Click += new System.EventHandler(this.idOfStudent_Click);
+            this.Click += new System.EventHandler(this.studentsInGradebookCARD_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 
