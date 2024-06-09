@@ -172,18 +172,18 @@
             // pictureBox9
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
-            this.pictureBox9.Location = new System.Drawing.Point(55, 450);
+            this.pictureBox9.Location = new System.Drawing.Point(30, 439);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(717, 163);
+            this.pictureBox9.Size = new System.Drawing.Size(774, 178);
             this.pictureBox9.TabIndex = 52;
             this.pictureBox9.TabStop = false;
             // 
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
-            this.pictureBox8.Location = new System.Drawing.Point(55, 240);
+            this.pictureBox8.Location = new System.Drawing.Point(30, 240);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(717, 185);
+            this.pictureBox8.Size = new System.Drawing.Size(774, 185);
             this.pictureBox8.TabIndex = 51;
             this.pictureBox8.TabStop = false;
             // 

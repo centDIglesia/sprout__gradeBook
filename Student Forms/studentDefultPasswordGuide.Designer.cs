@@ -32,8 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentDefultPasswordGuide));
             this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.role__btn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette2
@@ -52,7 +50,7 @@
             // 
             // role__btn
             // 
-            this.role__btn.Location = new System.Drawing.Point(421, 12);
+            this.role__btn.Location = new System.Drawing.Point(432, 12);
             this.role__btn.Name = "role__btn";
             this.role__btn.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.role__btn.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
@@ -86,23 +84,15 @@
             this.role__btn.Values.Text = "Close";
             this.role__btn.Click += new System.EventHandler(this.role__btn_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-18, -13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(526, 334);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // StudentDefultPasswordGuide
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(506, 318);
             this.Controls.Add(this.role__btn);
-            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StudentDefultPasswordGuide";
             this.Palette = this.kryptonPalette2;
@@ -110,7 +100,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "studentDefultPasswordGuide";
             this.Load += new System.EventHandler(this.studentDefultPasswordGuide_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -119,6 +108,5 @@
 
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette2;
         private ComponentFactory.Krypton.Toolkit.KryptonButton role__btn;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

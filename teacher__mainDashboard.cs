@@ -46,6 +46,5 @@ namespace sprout__gradeBook
             int count = Course.GetSectionsCount(currentUser);
             sections__quantity.Text = count.ToString();
         }
-
     }
 }
