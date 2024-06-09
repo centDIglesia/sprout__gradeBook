@@ -13,10 +13,7 @@ namespace sprout__gradeBook
             InitializeComponent();
         }
 
-        private void Courses_Load(object sender, EventArgs e)
-        {
 
-        }
 
         public string SubjectName
         {
@@ -25,7 +22,7 @@ namespace sprout__gradeBook
             {
                 if (!string.IsNullOrEmpty(value))
                 {
-                    subjectNameLBL.Text = value.Length > 29 ? value.Substring(0, 29) + "...." : value;
+                    subjectNameLBL.Text = value.Length > 24 ? value.Substring(0, 24) + "..." : value;
                 }
             }
         }
@@ -51,7 +48,7 @@ namespace sprout__gradeBook
         public string SubjectCourseSection
         {
             get => subjectCourseSectionLBL.Text;
-            set => subjectCourseSectionLBL.Text = value.Length > 7 ? value.Substring(0, 6) + ".." : value.ToUpper();
+            set => subjectCourseSectionLBL.Text = value;
         }
 
         private void subjectStudentCountLBL_MouseHover(object sender, EventArgs e)
@@ -88,17 +85,22 @@ namespace sprout__gradeBook
         private void CoursesCARD_Load_1(object sender, EventArgs e)
         {
             studentCountTooltip.Hide();
+
         }
 
-        private void CoursesCARD_MouseHover(object sender, EventArgs e)
+        private void subjectCourseSectionLBL_MouseHover(object sender, EventArgs e)
         {
-            this.BackgroundImage = Properties.Resources.subhover;
+            this.BackgroundImage = Properties.Resources.Group_66dd;
         }
 
-
-        private void CoursesCARD_MouseLeave(object sender, EventArgs e)
+        private void subjectCourseSectionLBL_TextChanged(object sender, EventArgs e)
         {
-            this.BackgroundImage = Properties.Resources.sub;
+
+        }
+
+        private void subjectNameLBL_MouseLeave(object sender, EventArgs e)
+        {
+            this.BackgroundImage = Properties.Resources.Group_66d;
         }
     }
 }

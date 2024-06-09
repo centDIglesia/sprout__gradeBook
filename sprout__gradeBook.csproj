@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addCourseComponentsFORM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addCourseComponentsFORM.Designer.cs">
+      <DependentUpon>addCourseComponentsFORM.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddCourseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +200,9 @@
     <Compile Include="UserInput__Validator.cs" />
     <Compile Include="Users.cs" />
     <Compile Include="Account__Manager.cs" />
+    <EmbeddedResource Include="addCourseComponentsFORM.resx">
+      <DependentUpon>addCourseComponentsFORM.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddCourseForm.resx">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -363,6 +372,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lalalalake.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 66d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 66dd.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

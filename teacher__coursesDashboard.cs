@@ -32,6 +32,7 @@ namespace sprout__gradeBook
         private void teacher__courses_lvl1_Load(object sender, EventArgs e)
         {
             populateCourses();
+            courseComponentsPanel.Hide();
         }
 
         public void hidebuttons()
