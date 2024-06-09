@@ -70,5 +70,24 @@ namespace sprout__gradeBook
 
             return matchingStudents;
         }
+
+
+        public static int GetStudentCount(string currentUserName)
+        {
+            string directoryPath = $"StudentCredentials/{currentUserName}/";
+
+            // Check if directory exists
+            if (!Directory.Exists(directoryPath))
+            {
+                Console.WriteLine("Directory does not exist.");
+                return 0;
+            }
+
+            // Get all .txt files in the directory
+            string[] textFiles = Directory.GetFiles(directoryPath, "*.txt");
+
+            // Return the count of text files
+            return textFiles.Length;
+        }
     }
 }

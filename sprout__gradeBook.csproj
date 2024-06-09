@@ -154,6 +154,12 @@
     <Compile Include="Teacher__coursesDashboard.Designer.cs">
       <DependentUpon>Teacher__coursesDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="teacher__GradeBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="teacher__GradeBook.Designer.cs">
+      <DependentUpon>teacher__GradeBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="teacher__mainDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher__coursesDashboard.resx">
       <DependentUpon>Teacher__coursesDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="teacher__GradeBook.resx">
+      <DependentUpon>teacher__GradeBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="teacher__mainDashboard.resx">
       <DependentUpon>teacher__mainDashboard.cs</DependentUpon>

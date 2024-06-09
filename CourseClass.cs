@@ -91,5 +91,24 @@ public class Course
         return count;
     }
 
+    public static int GetSectionsCount(string currentUser)
+    {
+        // Construct the directory path
+        string directoryPath = $"CourseInformations/{currentUser}";
 
+        // Check if the directory exists
+        if (!Directory.Exists(directoryPath))
+        {
+            Console.WriteLine("Directory does not exist.");
+            return 0;
+        }
+
+        // Get all .txt files in the directory
+        string[] textFiles = Directory.GetFiles(directoryPath, "*.txt");
+
+        // Return the count of .txt files
+        return textFiles.Length;
+    }
 }
+
+

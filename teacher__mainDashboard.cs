@@ -10,6 +10,8 @@ namespace sprout__gradeBook
         {
             InitializeComponent();
             UpdateCourseCount(currentUser);
+            UpdateStudentCount(currentUser);
+            UpdateSectiionCount(currentUser);
         }
 
         private void close_btn_Click(object sender, EventArgs e)
@@ -31,7 +33,19 @@ namespace sprout__gradeBook
         private void UpdateCourseCount(string currentUser)
         {
             int count = Course.GetCourseCount(currentUser);
-            courseCount.Text = count.ToString();
+            course__quantity.Text = count.ToString();
         }
+
+        private void UpdateStudentCount(string currentUser)
+        {
+            int count = StudentManager.GetStudentCount(currentUser);
+            student__quantity.Text = count.ToString();
+        }
+        private void UpdateSectiionCount(string currentUser)
+        {
+            int count = Course.GetSectionsCount(currentUser);
+            sections__quantity.Text = count.ToString();
+        }
+
     }
 }

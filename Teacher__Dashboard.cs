@@ -62,5 +62,10 @@ namespace sprout__gradeBook
         {
 
         }
+
+        private void btn_gradeBook_Click(object sender, EventArgs e)
+        {
+            loadForm(new teacher__GradeBook(currentUser));
+        }
     }
 }
