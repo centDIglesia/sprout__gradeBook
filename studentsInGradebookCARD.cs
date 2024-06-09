@@ -40,7 +40,7 @@ namespace sprout__gradeBook
 
         private void studentsInGradebookCARD_Click(object sender, EventArgs e)
         {
-            // Update the text of StudenttnameTXT and StudentIDTXT controls in the teacher__GradeBook form
+          
             _teacherForm.StudenttnameText = currentStudentName;
             _teacherForm.StudentIDText = currentStudentID;
         }

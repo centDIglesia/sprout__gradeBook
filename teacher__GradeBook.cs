@@ -74,10 +74,10 @@ namespace sprout__gradeBook
 
             studentListPanel.Controls.Clear();
 
-            // Read all content from the file
+         
             string fileContent = File.ReadAllText(filePath);
 
-            // Split the content by the separator
+           
             string[] studentEntries = fileContent.Split(new[] { "----------------------------" }, StringSplitOptions.RemoveEmptyEntries);
 
             foreach (string entry in studentEntries)
@@ -98,7 +98,7 @@ namespace sprout__gradeBook
                     }
                 }
 
-                // Add the student card if both ID and Name are present
+            
                 if (!string.IsNullOrEmpty(studentID) && !string.IsNullOrEmpty(studentName))
                 {
                     AddStudentCard(studentID, studentName);
@@ -108,7 +108,7 @@ namespace sprout__gradeBook
 
         private void AddStudentCard(string studentID, string studentName)
         {
-            studentsInGradebookCARD studentCard = new studentsInGradebookCARD(this) // Pass reference to the current form
+            studentsInGradebookCARD studentCard = new studentsInGradebookCARD(this) 
             {
                 currentStudentID = studentID,
                 currentStudentName = studentName
