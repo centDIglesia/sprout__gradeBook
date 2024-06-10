@@ -37,18 +37,12 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.courseComponentsPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.deleteBTN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addcourseBTN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).BeginInit();
             this.courseSectionPanel.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
-            this.courseComponentsPanel.SuspendLayout();
-            this.flowLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // deleteBTN
@@ -140,59 +134,12 @@
             this.flowLayoutPanel3.Size = new System.Drawing.Size(739, 0);
             this.flowLayoutPanel3.TabIndex = 93;
             // 
-            // courseComponentsPanel
-            // 
-            this.courseComponentsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.courseComponentsPanel.Controls.Add(this.flowLayoutPanel5);
-            this.courseComponentsPanel.Controls.Add(this.flowLayoutPanel6);
-            this.courseComponentsPanel.Location = new System.Drawing.Point(33, 53);
-            this.courseComponentsPanel.Name = "courseComponentsPanel";
-            this.courseComponentsPanel.Size = new System.Drawing.Size(771, 568);
-            this.courseComponentsPanel.TabIndex = 95;
-            // 
-            // flowLayoutPanel5
-            // 
-            this.flowLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel5.AutoScroll = true;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(739, 0);
-            this.flowLayoutPanel5.TabIndex = 93;
-            // 
-            // flowLayoutPanel6
-            // 
-            this.flowLayoutPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel6.AutoScroll = true;
-            this.flowLayoutPanel6.Controls.Add(this.flowLayoutPanel7);
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(3, 9);
-            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(768, 0);
-            this.flowLayoutPanel6.TabIndex = 94;
-            // 
-            // flowLayoutPanel7
-            // 
-            this.flowLayoutPanel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel7.AutoScroll = true;
-            this.flowLayoutPanel7.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel7.Name = "flowLayoutPanel7";
-            this.flowLayoutPanel7.Size = new System.Drawing.Size(739, 0);
-            this.flowLayoutPanel7.TabIndex = 93;
-            // 
             // teacher__courses_lvl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(827, 639);
-            this.Controls.Add(this.courseComponentsPanel);
             this.Controls.Add(this.courseSectionPanel);
             this.Controls.Add(this.deleteBTN);
             this.Controls.Add(this.addcourseBTN);
@@ -208,8 +155,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).EndInit();
             this.courseSectionPanel.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
-            this.courseComponentsPanel.ResumeLayout(false);
-            this.flowLayoutPanel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -223,9 +168,5 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.FlowLayoutPanel courseComponentsPanel;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel7;
     }
 }

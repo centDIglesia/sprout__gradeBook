@@ -38,16 +38,29 @@ namespace sprout__gradeBook
             subjectCourseandSectionlbl.Text = subjectCourseSection;
         }
 
-        private void editInfoBTN_Click(object sender, EventArgs e)
-        {
-            CourseCode.ReadOnly = false;
-            SubjectNameLbl.ReadOnly = false;
-            subjectScheduleLBL.ReadOnly = false;
-            studentCountLBL.ReadOnly = false;
-            CourseCode.Focus();
-        }
+
 
         private void EditCourseSaveBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditCourseForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditCourseForm_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditCOurseSaveBTN_Click_1(object sender, EventArgs e)
         {
             // Update the properties with the edited values
             subjectCode = CourseCode.Text;
@@ -100,7 +113,7 @@ namespace sprout__gradeBook
             this.Close();
 
 
-            // Notify the parent form to refresh the displayed courses
+           
             if (_parent != null)
             {
                 _parent.populateCourses();
@@ -111,16 +124,6 @@ namespace sprout__gradeBook
             }
 
 
-
-        }
-
-        private void EditCourseForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EditCourseForm_Load_1(object sender, EventArgs e)
-        {
 
         }
     }

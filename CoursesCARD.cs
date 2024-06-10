@@ -6,13 +6,14 @@ namespace sprout__gradeBook
 {
     public partial class CoursesCARD : UserControl
     {
-
-        public CoursesCARD()
+        private readonly teacher__courses_lvl1 _parent;
+        private readonly string _currentUser;
+        public CoursesCARD(teacher__courses_lvl1 parent)
         {
-
             InitializeComponent();
+            _parent = parent;
+            _currentUser = parent.CurrentUser;
         }
-
 
 
         public string SubjectName
@@ -61,46 +62,66 @@ namespace sprout__gradeBook
             studentCountTooltip.Hide();
         }
 
-        private void Courses_MouseHover(object sender, EventArgs e)
-        {
-            this.BackgroundImage = Properties.Resources.subhover;
-        }
-
-        private void Courses_MouseLeave(object sender, EventArgs e)
-        {
-            this.BackgroundImage = Properties.Resources.sub;
-        }
-
-        private void subjectScheduleLBL_MouseHover(object sender, EventArgs e)
-        {
-            this.BackgroundImage = Properties.Resources.subhover;
-        }
-
-        private void subjectScheduleLBL_MouseLeave(object sender, EventArgs e)
-        {
-            this.BackgroundImage = Properties.Resources.sub;
-        }
-
 
         private void CoursesCARD_Load_1(object sender, EventArgs e)
         {
             studentCountTooltip.Hide();
+            pictureBox1.Hide();
+            announcementBTN.Hide();
+
+            COSEbtn.Hide();
+
+            removeBTN.Hide();
 
         }
 
-        private void subjectCourseSectionLBL_MouseHover(object sender, EventArgs e)
+
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.BackgroundImage = Properties.Resources.Group_66dd;
+            pictureBox1.Hide();
+            announcementBTN.Hide();
+
+            COSEbtn.Hide();
+            removeBTN.Hide();
         }
 
-        private void subjectCourseSectionLBL_TextChanged(object sender, EventArgs e)
+        private void subjectCourseSectionLBL_Click(object sender, EventArgs e)
         {
+            pictureBox1.Show();
+            announcementBTN.Show();
 
+            COSEbtn.Show();
+            removeBTN.Show();
         }
 
-        private void subjectNameLBL_MouseLeave(object sender, EventArgs e)
+        private void COSEbtn_Click(object sender, EventArgs e)
         {
-            this.BackgroundImage = Properties.Resources.Group_66d;
+            pictureBox1.Hide();
+            announcementBTN.Hide();
+
+            COSEbtn.Hide();
+            removeBTN.Hide();
+        }
+
+        private void EDITbtn_Click(object sender, EventArgs e)
+        {
+            var editForm = new EditCourseForm(
+                 _parent,
+                 _currentUser,
+                 SubjectName,
+                 SubjectCode,
+                 SubjectCount,
+                 SubjectSchedule,
+                 SubjectCourseSection
+             );
+
+            editForm.ShowDialog();
+        }
+
+        private void removeBTN_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
