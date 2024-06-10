@@ -136,12 +136,6 @@
     <Compile Include="studentSectionLIST.Designer.cs">
       <DependentUpon>studentSectionLIST.cs</DependentUpon>
     </Compile>
-    <Compile Include="Student Forms\Student__coursesDashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Student Forms\Student__coursesDashboard.Designer.cs">
-      <DependentUpon>Student__coursesDashboard.cs</DependentUpon>
-    </Compile>
     <Compile Include="Student Forms\Student__Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
