@@ -100,7 +100,11 @@ namespace sprout__gradeBook
         private void saveGradingsytemBTN_Click(object sender, EventArgs e)
         {
             // Define the file path
-            string filePath = $"CourseInformations/{CurrentUSer}/gradingSystem.txt";
+            string directoryPath = $"CourseGradingSystem/{CurrentUSer}";
+            string filePath = $"{directoryPath}/gradingSystem.txt";
+
+            // Create the directory if it doesn't exist
+            Directory.CreateDirectory(directoryPath);
 
             // Write the grading system information to the file
             using (System.IO.StreamWriter file = new System.IO.StreamWriter(filePath, true))

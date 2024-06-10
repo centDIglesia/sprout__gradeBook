@@ -74,10 +74,10 @@ namespace sprout__gradeBook
 
             studentListPanel.Controls.Clear();
 
-         
+
             string fileContent = File.ReadAllText(filePath);
 
-           
+
             string[] studentEntries = fileContent.Split(new[] { "----------------------------" }, StringSplitOptions.RemoveEmptyEntries);
 
             foreach (string entry in studentEntries)
@@ -98,7 +98,7 @@ namespace sprout__gradeBook
                     }
                 }
 
-            
+
                 if (!string.IsNullOrEmpty(studentID) && !string.IsNullOrEmpty(studentName))
                 {
                     AddStudentCard(studentID, studentName);
@@ -108,7 +108,7 @@ namespace sprout__gradeBook
 
         private void AddStudentCard(string studentID, string studentName)
         {
-            studentsInGradebookCARD studentCard = new studentsInGradebookCARD(this) 
+            studentsInGradebookCARD studentCard = new studentsInGradebookCARD(this)
             {
                 currentStudentID = studentID,
                 currentStudentName = studentName
@@ -166,6 +166,11 @@ namespace sprout__gradeBook
         }
 
         private void StudentIDTXT_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void kryptonDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

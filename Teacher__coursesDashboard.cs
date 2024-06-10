@@ -35,7 +35,7 @@ namespace sprout__gradeBook
             courseComponentsPanel.Hide();
         }
 
-        public void hidebuttons()
+        public void Hidebuttons()
         {
             addcourseBTN.Hide();
             deleteBTN.Hide();

@@ -284,7 +284,7 @@
             this.viewPanel.StateCommon.Color1 = System.Drawing.Color.White;
             this.viewPanel.StateCommon.Color2 = System.Drawing.Color.White;
             this.viewPanel.TabIndex = 52;
-            this.viewPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.viewPanel_Paint);
+
             // 
             // teachers__firstName
             // 
@@ -383,7 +383,7 @@
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "*";
-            this.Load += new System.EventHandler(this.v_Load);
+
             ((System.ComponentModel.ISupportInitialize)(this.viewPanel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.close_btn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.notification__icon)).EndInit();

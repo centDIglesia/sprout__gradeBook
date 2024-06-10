@@ -54,36 +54,25 @@ namespace sprout__gradeBook
             loadForm(new teacher__studentsDashboard(currentUser));
         }
 
-        private void v_Load(object sender, EventArgs e)
-        {
 
-        }
-
-        private void viewPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btn_gradeBook_Click(object sender, EventArgs e)
         {
-            string gradingSystemFilePath = $"CourseInformations/{currentUser}/gradingSystem.txt";
+            string gradingSystemDirectoryPath = $"CourseGradingSystem/{currentUser}";
 
-
-            if (File.Exists(gradingSystemFilePath))
+            if (Directory.Exists(gradingSystemDirectoryPath))
             {
-
                 loadForm(new teacher__GradeBook(currentUser));
             }
             else
             {
-
                 MessageBox.Show("Please create the grading system first.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 createGradingSystemFORM crf = new createGradingSystemFORM(currentUser);
                 crf.Show();
-
             }
         }
+
 
     }
 }
