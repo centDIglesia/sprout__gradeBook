@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using System.IO;
 
 namespace sprout__gradeBook
 {
@@ -65,7 +66,24 @@ namespace sprout__gradeBook
 
         private void btn_gradeBook_Click(object sender, EventArgs e)
         {
-            loadForm(new teacher__GradeBook(currentUser));
+            string gradingSystemFilePath = $"CourseInformations/{currentUser}/gradingSystem.txt";
+
+            // Check if the grading system file exists
+            if (File.Exists(gradingSystemFilePath))
+            {
+                // Load the teacher GradeBook form
+                loadForm(new teacher__GradeBook(currentUser));
+            }
+            else
+            {
+                // Ask the user to create the grading system first
+                MessageBox.Show("Please create the grading system first.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Open the create grading system form
+                createGradingSystemFORM createGS = new createGradingSystemFORM(currentUser);
+                createGS.Show();
+            }
         }
+
     }
 }
