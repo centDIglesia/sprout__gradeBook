@@ -69,7 +69,7 @@
             // 
             // btn_courses
             // 
-            this.btn_courses.Location = new System.Drawing.Point(-1, 217);
+            this.btn_courses.Location = new System.Drawing.Point(-1, 373);
             this.btn_courses.Name = "btn_courses";
             this.btn_courses.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.btn_courses.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
@@ -153,7 +153,7 @@
             // 
             // btn_gradeBook
             // 
-            this.btn_gradeBook.Location = new System.Drawing.Point(-1, 373);
+            this.btn_gradeBook.Location = new System.Drawing.Point(-1, 217);
             this.btn_gradeBook.Name = "btn_gradeBook";
             this.btn_gradeBook.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.btn_gradeBook.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
@@ -364,12 +364,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1147, 711);
+            this.Controls.Add(this.btn_gradeBook);
             this.Controls.Add(this.close_btn);
             this.Controls.Add(this.notification__icon);
             this.Controls.Add(this.teachers__firstName);
             this.Controls.Add(this.viewPanel);
             this.Controls.Add(this.btn_message);
-            this.Controls.Add(this.btn_gradeBook);
             this.Controls.Add(this.btn_students);
             this.Controls.Add(this.btn_courses);
             this.Controls.Add(this.btn_dashboard);
