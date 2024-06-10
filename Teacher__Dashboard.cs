@@ -14,7 +14,7 @@ namespace sprout__gradeBook
 {
     public partial class Teacher_Dashboard : KryptonForm
     {
-        private string currentUser;
+        private readonly string currentUser;
 
         public Teacher_Dashboard(string currentUserName)
         {
@@ -68,20 +68,20 @@ namespace sprout__gradeBook
         {
             string gradingSystemFilePath = $"CourseInformations/{currentUser}/gradingSystem.txt";
 
-            // Check if the grading system file exists
+
             if (File.Exists(gradingSystemFilePath))
             {
-                // Load the teacher GradeBook form
+
                 loadForm(new teacher__GradeBook(currentUser));
             }
             else
             {
-                // Ask the user to create the grading system first
+
                 MessageBox.Show("Please create the grading system first.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Open the create grading system form
-                createGradingSystemFORM createGS = new createGradingSystemFORM(currentUser);
-                createGS.Show();
+                createGradingSystemFORM crf = new createGradingSystemFORM(currentUser);
+                crf.Show();
+
             }
         }
 

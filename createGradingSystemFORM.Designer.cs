@@ -203,10 +203,10 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
-
+        //private gradingSystemCARD gradingSystemCARD1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-
+        // private gradingSystemCARD gradingSystemCARD2;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox saveGradingsytemBTN;
         private System.Windows.Forms.Label totallWeightLLBL;

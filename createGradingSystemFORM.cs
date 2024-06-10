@@ -13,25 +13,33 @@ namespace sprout__gradeBook
         public createGradingSystemFORM(string currentUser)
         {
             CurrentUSer = currentUser;
-
             InitializeComponent();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-
+            // Check if total weight is less than 100
             if (totalWeight < 100)
             {
-
+                // Create a new grading system card
                 gradingSystemCARD newCard = new gradingSystemCARD(this)
                 {
                     ComponentTXT = "Component",
                     ComponentWeightTXT = "0"
                 };
 
-
+                // Add the card to the flow layout panel
                 flowLayoutPanel1.Controls.Add(newCard);
 
+                // Update the total weight label
+                UpdateTotalWeight();
+
+                // Check if total weight is now equal to 100
+                if (totalWeight == 100)
+                {
+                    // Hide the "Add Row" button
+                    pictureBox3.Visible = false;
+                }
             }
             else
             {
@@ -91,10 +99,10 @@ namespace sprout__gradeBook
 
         private void saveGradingsytemBTN_Click(object sender, EventArgs e)
         {
-
+            // Define the file path
             string filePath = $"CourseInformations/{CurrentUSer}/gradingSystem.txt";
 
-
+            // Write the grading system information to the file
             using (System.IO.StreamWriter file = new System.IO.StreamWriter(filePath, true))
             {
                 foreach (Control control in flowLayoutPanel1.Controls)
@@ -103,23 +111,23 @@ namespace sprout__gradeBook
                     {
                         gradingSystemCARD card = (gradingSystemCARD)control;
 
-                        string componentName = card.ComponentTXT.Trim();
+                        string componentName = card.ComponentTXT.Trim(); // Trim to remove leading and trailing whitespaces
                         string componentWeight = card.ComponentWeightTXT;
 
-
+                        // Check if the component text is empty or equal to "Component" and the weight is 0
                         if (string.IsNullOrEmpty(componentName) || componentName == "Component")
                         {
-
+                            // Skip saving this component
                             continue;
                         }
 
-
+                        // Write to file only if the component text is not empty or equal to "Component" and the weight is not 0
                         file.WriteLine($"Component: {componentName}, Weight: {componentWeight}%");
                         file.WriteLine(new string('-', 40));
                     }
                 }
 
-
+                // Calculate total weight after writing to file
                 UpdateTotalWeight();
 
                 if (totalWeight != 100)

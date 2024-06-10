@@ -84,7 +84,7 @@ namespace sprout__gradeBook
             {
                 if (int.TryParse(componentsWeightTXT.Text, out int weight))
                 {
-                    // Update the parent form's total weight
+
                     _parentForm.UpdateTotalWeight();
                 }
                 else

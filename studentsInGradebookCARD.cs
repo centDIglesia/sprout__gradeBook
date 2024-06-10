@@ -6,7 +6,7 @@ namespace sprout__gradeBook
     public partial class studentsInGradebookCARD : UserControl
     {
 
-        private teacher__GradeBook _teacherForm;
+        private readonly teacher__GradeBook _teacherForm;
 
         public studentsInGradebookCARD(teacher__GradeBook teacherForm)
         {
@@ -40,7 +40,7 @@ namespace sprout__gradeBook
 
         private void studentsInGradebookCARD_Click(object sender, EventArgs e)
         {
-          
+
             _teacherForm.StudenttnameText = currentStudentName;
             _teacherForm.StudentIDText = currentStudentID;
         }

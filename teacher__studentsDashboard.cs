@@ -9,7 +9,7 @@ namespace sprout__gradeBook
     public partial class teacher__studentsDashboard : KryptonForm
     {
         public string currentUSer { get; set; }
-        private string teacherSchool;
+        private readonly string teacherSchool;
         public FlowLayoutPanel CourseSectionPanel { get { return courseSectionPanel; } }
 
         public teacher__studentsDashboard(string currentuser)

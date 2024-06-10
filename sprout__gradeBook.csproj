@@ -87,12 +87,24 @@
     <Compile Include="CoursesCARD.Designer.cs">
       <DependentUpon>CoursesCARD.cs</DependentUpon>
     </Compile>
+    <Compile Include="createGradingSystemFORM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="createGradingSystemFORM.Designer.cs">
+      <DependentUpon>createGradingSystemFORM.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomColor.cs" />
     <Compile Include="EditCourseForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditCourseForm.Designer.cs">
       <DependentUpon>EditCourseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gradingSystemCARD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gradingSystemCARD.Designer.cs">
+      <DependentUpon>gradingSystemCARD.cs</DependentUpon>
     </Compile>
     <Compile Include="IntroPage.cs">
       <SubType>Form</SubType>
@@ -212,8 +224,14 @@
     <EmbeddedResource Include="CoursesCARD.resx">
       <DependentUpon>CoursesCARD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="createGradingSystemFORM.resx">
+      <DependentUpon>createGradingSystemFORM.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditCourseForm.resx">
       <DependentUpon>EditCourseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gradingSystemCARD.resx">
+      <DependentUpon>gradingSystemCARD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IntroPage.resx">
       <DependentUpon>IntroPage.cs</DependentUpon>

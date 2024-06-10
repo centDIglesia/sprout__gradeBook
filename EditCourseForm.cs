@@ -9,9 +9,9 @@ namespace sprout__gradeBook
     {
         private readonly teacher__courses_lvl1 _parent;
 
-        private string currentUser;
-        private string originalSubjectName;
-        private string originalSubjectCode;
+        private readonly string currentUser;
+        private readonly string originalSubjectName;
+        private readonly string originalSubjectCode;
         private string subjectName;
         private string subjectCode;
         private string subjectCount;
