@@ -394,5 +394,11 @@
   <ItemGroup>
     <None Include="Resources\close-line.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\student__Dashboard-UI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Student-CourseCard.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
