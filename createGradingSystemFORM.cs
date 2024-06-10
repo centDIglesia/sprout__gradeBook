@@ -9,9 +9,11 @@ namespace sprout__gradeBook
     public partial class createGradingSystemFORM : KryptonForm
     {
         int totalWeight = 0;
-        private string CurrentUSer;
+        private readonly string CurrentUSer;
         public createGradingSystemFORM(string currentUser)
         {
+            CurrentUSer = currentUser;
+
             InitializeComponent();
         }
 
@@ -89,10 +91,10 @@ namespace sprout__gradeBook
 
         private void saveGradingsytemBTN_Click(object sender, EventArgs e)
         {
-        
+
             string filePath = $"CourseInformations/{CurrentUSer}/gradingSystem.txt";
 
-          
+
             using (System.IO.StreamWriter file = new System.IO.StreamWriter(filePath, true))
             {
                 foreach (Control control in flowLayoutPanel1.Controls)
@@ -101,23 +103,23 @@ namespace sprout__gradeBook
                     {
                         gradingSystemCARD card = (gradingSystemCARD)control;
 
-                        string componentName = card.ComponentTXT.Trim(); 
+                        string componentName = card.ComponentTXT.Trim();
                         string componentWeight = card.ComponentWeightTXT;
 
-                       
+
                         if (string.IsNullOrEmpty(componentName) || componentName == "Component")
                         {
-                            
+
                             continue;
                         }
 
-                     
+
                         file.WriteLine($"Component: {componentName}, Weight: {componentWeight}%");
                         file.WriteLine(new string('-', 40));
                     }
                 }
 
-              
+
                 UpdateTotalWeight();
 
                 if (totalWeight != 100)

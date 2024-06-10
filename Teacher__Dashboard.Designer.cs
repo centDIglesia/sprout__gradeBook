@@ -409,7 +409,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton btn_students;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btn_message;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel viewPanel;
-        private RoundPictureBox img__user__icon;
+
         private System.Windows.Forms.PictureBox notification__icon;
         private System.Windows.Forms.Label teachers__firstName;
         private System.Windows.Forms.PictureBox close_btn;

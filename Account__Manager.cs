@@ -171,7 +171,7 @@ namespace sprout__gradeBook
         // ipapasa muna yung folder name, yung current username at yung kukuhanin natin halombawa yung first name 
         // loadUserData("teachersCredential",urrentUser", "First Name");
 
-        public static string loadUserData(string folderName, string currentUser, string dataToAccess)
+        public static string LoadUserData(string folderName, string currentUser, string dataToAccess)
         {
             string folderPath = folderName;
             string fullPath = Path.Combine(folderPath, currentUser + ".txt");

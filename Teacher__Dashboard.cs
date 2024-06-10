@@ -22,7 +22,7 @@ namespace sprout__gradeBook
             currentUser = currentUserName;
 
 
-            teachers__firstName.Text = $"Hi, {Account__Manager.loadUserData("teacherCredentials", currentUserName, "First Name")}";
+            teachers__firstName.Text = $"Hi, {Account__Manager.LoadUserData("teacherCredentials", currentUserName, "First Name")}";
         }
 
         public void loadForm(Form form)
