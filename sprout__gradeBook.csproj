@@ -160,12 +160,6 @@
     <Compile Include="Student Forms\Student__Signin-form.Designer.cs">
       <DependentUpon>Student__Signin-form.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentSide_MessageCard.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="StudentSide_MessageCard.Designer.cs">
-      <DependentUpon>StudentSide_MessageCard.cs</DependentUpon>
-    </Compile>
     <Compile Include="studentsInGradebookCARD.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -272,9 +266,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Student Forms\Student__Signin-form.resx">
       <DependentUpon>Student__Signin-form.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StudentSide_MessageCard.resx">
-      <DependentUpon>StudentSide_MessageCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="studentsInGradebookCARD.resx">
       <DependentUpon>studentsInGradebookCARD.cs</DependentUpon>
@@ -399,15 +390,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Group 66dd.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\student_NavBar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\student__Dashboard-UI.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Student-CourseCard.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
