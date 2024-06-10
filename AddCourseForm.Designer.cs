@@ -49,6 +49,7 @@
             this.courseCourseTXT = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.courseYearlvlTXT = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.saveNewCourseBTN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseCourseTXT)).BeginInit();
@@ -121,7 +122,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Poppins Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.label1.Location = new System.Drawing.Point(32, 184);
+            this.label1.Location = new System.Drawing.Point(32, 177);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 19);
             this.label1.TabIndex = 22;
@@ -191,7 +192,6 @@
             this.courseSectionTXT.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.courseSectionTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
             this.courseSectionTXT.TabIndex = 33;
-
             // 
             // label4
             // 
@@ -220,7 +220,6 @@
             this.courseEndTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
             this.courseEndTXT.TabIndex = 39;
             this.courseEndTXT.Text = "00:00 PM";
-
             this.courseEndTXT.Enter += new System.EventHandler(this.courseEndTXT_Enter);
             this.courseEndTXT.Leave += new System.EventHandler(this.courseEndTXT_Leave);
             // 
@@ -251,7 +250,6 @@
             this.courseStartTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
             this.courseStartTXT.TabIndex = 37;
             this.courseStartTXT.Text = "00:00 PM";
-
             this.courseStartTXT.Enter += new System.EventHandler(this.courseStartTXT_Enter);
             this.courseStartTXT.Leave += new System.EventHandler(this.courseStartTXT_Leave);
             // 
@@ -279,19 +277,20 @@
             "Bachelor of Science in Information Technology , BSIT",
             "Bachelor of Science in Hotel and Restaurant Management , BSHRM",
             "Bachelor of Science in Entrepreneurial Management , BSEM"});
-            this.courseCourseTXT.Location = new System.Drawing.Point(25, 202);
+            this.courseCourseTXT.Location = new System.Drawing.Point(32, 203);
             this.courseCourseTXT.Name = "courseCourseTXT";
             this.courseCourseTXT.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalOffice2003;
-            this.courseCourseTXT.Size = new System.Drawing.Size(364, 31);
-            this.courseCourseTXT.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.White;
+            this.courseCourseTXT.Size = new System.Drawing.Size(351, 21);
+            this.courseCourseTXT.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.courseCourseTXT.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.courseCourseTXT.StateCommon.ComboBox.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.courseCourseTXT.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.courseCourseTXT.StateCommon.ComboBox.Border.Rounding = 4;
+            this.courseCourseTXT.StateCommon.ComboBox.Border.Rounding = 0;
+            this.courseCourseTXT.StateCommon.ComboBox.Border.Width = 0;
             this.courseCourseTXT.StateCommon.ComboBox.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.courseCourseTXT.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.courseCourseTXT.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Poppins", 8F);
             this.courseCourseTXT.StateCommon.ComboBox.Content.Padding = new System.Windows.Forms.Padding(10);
             this.courseCourseTXT.StateCommon.DropBack.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.courseCourseTXT.StateCommon.DropBack.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
@@ -302,10 +301,14 @@
             this.courseCourseTXT.StateCommon.Item.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.courseCourseTXT.StateCommon.Item.Border.Width = 1;
+            this.courseCourseTXT.StateCommon.Item.Border.Width = 0;
             this.courseCourseTXT.StateCommon.Item.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.courseCourseTXT.StateCommon.Item.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.courseCourseTXT.StateCommon.Item.Content.ShortText.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.courseCourseTXT.StateTracking.Item.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.courseCourseTXT.StateTracking.Item.Border.Width = 0;
             this.courseCourseTXT.TabIndex = 83;
             // 
             // courseYearlvlTXT
@@ -335,6 +338,23 @@
             this.label8.TabIndex = 85;
             this.label8.Text = "Year level";
             // 
+            // kryptonTextBox1
+            // 
+            this.kryptonTextBox1.Location = new System.Drawing.Point(24, 197);
+            this.kryptonTextBox1.Name = "kryptonTextBox1";
+            this.kryptonTextBox1.Size = new System.Drawing.Size(364, 35);
+            this.kryptonTextBox1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.kryptonTextBox1.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.kryptonTextBox1.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.kryptonTextBox1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonTextBox1.StateCommon.Border.Rounding = 4;
+            this.kryptonTextBox1.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(155)))));
+            this.kryptonTextBox1.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonTextBox1.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
+            this.kryptonTextBox1.TabIndex = 86;
+            // 
             // AddCourseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -359,6 +379,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.kryptonTextBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddCourseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -401,5 +422,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox courseCourseTXT;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox courseYearlvlTXT;
         private System.Windows.Forms.Label label8;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
     }
 }

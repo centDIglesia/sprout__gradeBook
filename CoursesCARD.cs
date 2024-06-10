@@ -104,24 +104,20 @@ namespace sprout__gradeBook
             removeBTN.Hide();
         }
 
-        private void EDITbtn_Click(object sender, EventArgs e)
-        {
-            var editForm = new EditCourseForm(
-                 _parent,
-                 _currentUser,
-                 SubjectName,
-                 SubjectCode,
-                 SubjectCount,
-                 SubjectSchedule,
-                 SubjectCourseSection
-             );
-
-            editForm.ShowDialog();
-        }
 
         private void removeBTN_Click(object sender, EventArgs e)
         {
+            
+                var confirmResult = MessageBox.Show("Are you sure you want to remove this course?",
+                                                    "Confirm Remove",
+                                                    MessageBoxButtons.YesNo,
+                                                    MessageBoxIcon.Question);
 
+                if (confirmResult == DialogResult.Yes)
+                {
+                    _parent.RemoveCourse(this);
+                }
+            
         }
     }
 }

@@ -32,7 +32,6 @@ namespace sprout__gradeBook
         private void teacher__courses_lvl1_Load(object sender, EventArgs e)
         {
             populateCourses();
-
         }
 
         public void Hidebuttons()
@@ -133,14 +132,11 @@ namespace sprout__gradeBook
                 // Display a message if the directory is not found
                 MessageBox.Show($"Directory not found: {folderPath}");
             }
-
         }
-
 
         public void LoadFormIntoPanel(Form form)
         {
             courseSectionPanel.Controls.Clear();
-
             form.TopLevel = false;
             form.Dock = DockStyle.Fill;
             courseSectionPanel.Controls.Add(form);
@@ -156,6 +152,81 @@ namespace sprout__gradeBook
         {
             courseSectionPanel.Show();
         }
+        public void RemoveCourse(CoursesCARD card)
+        {
+            string folderPath = "CourseInformations";
+            string filePath = Path.Combine(folderPath, $"{CurrentUser}.txt");
+
+            if (File.Exists(filePath))
+            {
+                // Read all lines from the file
+                var lines = File.ReadAllLines(filePath).ToList();
+                var updatedLines = new List<string>();
+
+                // Variables to track block status
+                bool isInTargetBlock = false;
+                bool blockSkipped = false;
+
+                // Define the start and end indicators for a course block
+                string blockStartIndicator = $"Course Name: {card.SubjectName}";
+                string blockEndIndicator = "----------------------------------------";
+
+                foreach (var line in lines)
+                {
+                    // Check if the current line is the start of a course block
+                    if (line.StartsWith("Course Name:"))
+                    {
+                        // Reset block status for a new block
+                        isInTargetBlock = false;
+                        blockSkipped = false;
+                    }
+
+                    // Determine if we are inside the target block
+                    if (line.Contains(blockStartIndicator))
+                    {
+                        isInTargetBlock = true;
+                    }
+
+                    // Skip lines if we are inside the target block and haven't skipped it yet
+                    if (isInTargetBlock && !blockSkipped)
+                    {
+                        // Skip lines in the target block
+                        if (line.StartsWith(blockEndIndicator))
+                        {
+                            // We have reached the end of the block, set blockSkipped to true
+                            blockSkipped = true;
+                            isInTargetBlock = false;
+                        }
+                        continue; // Skip adding this line to updatedLines
+                    }
+
+                    // Add lines that are not part of the target block to updatedLines
+                    updatedLines.Add(line);
+                }
+
+                // Write the updated lines back to the file
+                File.WriteAllLines(filePath, updatedLines);
+
+                // Remove the card from the UI
+                courseSectionPanel.Controls.Remove(card);
+
+                // Refresh the UI
+                populateCourses();
+            }
+            else
+            {
+                MessageBox.Show($"File not found: {filePath}");
+            }
+
+            string specificFilePath = Path.Combine(folderPath, CurrentUser,
+           $"{card.SubjectName}_{card.SubjectCourseSection.Replace(", ", "_")}.txt");
+
+            if (File.Exists(specificFilePath))
+            {
+                File.Delete(specificFilePath);
+            }
+        }
+
 
         private void addcourseBTN_Click(object sender, EventArgs e)
         {
