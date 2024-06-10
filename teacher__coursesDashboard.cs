@@ -32,7 +32,7 @@ namespace sprout__gradeBook
         private void teacher__courses_lvl1_Load(object sender, EventArgs e)
         {
             populateCourses();
-            courseComponentsPanel.Hide();
+
         }
 
         public void Hidebuttons()
@@ -113,7 +113,7 @@ namespace sprout__gradeBook
                             !string.IsNullOrEmpty(department) && !string.IsNullOrEmpty(section))
                         {
                             // Create a CoursesCARD control with the extracted course information
-                            CoursesCARD card = new CoursesCARD()
+                            CoursesCARD card = new CoursesCARD(this)
                             {
                                 SubjectName = courseName,
                                 SubjectCode = courseCode,
