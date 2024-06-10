@@ -18,7 +18,7 @@ namespace sprout__gradeBook
         public Student__Dashboard()
         {
             InitializeComponent();
-        }    
+        }
 
         private void close_btn_Click(object sender, EventArgs e)
         {
@@ -33,7 +33,7 @@ namespace sprout__gradeBook
         }
         public void SetUsernameLabel(string username)
         {
-            student_Name.Text = username;
+            student_Name.Text = $"Hi, {username}";
         }
         public void SetStudentIDLabel(string studentID)
         {
@@ -51,7 +51,11 @@ namespace sprout__gradeBook
 
             }
         }
+
+        private void Student__Dashboard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
-    

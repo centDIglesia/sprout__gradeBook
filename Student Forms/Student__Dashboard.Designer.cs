@@ -172,6 +172,7 @@
             this.Name = "Student__Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student__Dashboard";
+            this.Load += new System.EventHandler(this.Student__Dashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.notification__icon)).EndInit();

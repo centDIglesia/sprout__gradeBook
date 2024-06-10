@@ -75,7 +75,7 @@
             // 
             // studentSIGNINform
             // 
-            this.studentSIGNINform.Location = new System.Drawing.Point(674, 18);
+            this.studentSIGNINform.Location = new System.Drawing.Point(662, 18);
             this.studentSIGNINform.Name = "studentSIGNINform";
             // 
             // studentSIGNINform.Panel
@@ -184,7 +184,7 @@
             this.signIn__StIdTooltip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.signIn__StIdTooltip.Location = new System.Drawing.Point(51, 136);
             this.signIn__StIdTooltip.Name = "signIn__StIdTooltip";
-            this.signIn__StIdTooltip.Size = new System.Drawing.Size(122, 22);
+            this.signIn__StIdTooltip.Size = new System.Drawing.Size(123, 22);
             this.signIn__StIdTooltip.TabIndex = 13;
             this.signIn__StIdTooltip.Text = "Student Number";
             // 
@@ -257,7 +257,7 @@
             this.back__btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.back__btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("back__btn.BackgroundImage")));
             this.back__btn.Image = ((System.Drawing.Image)(resources.GetObject("back__btn.Image")));
-            this.back__btn.Location = new System.Drawing.Point(17, 14);
+            this.back__btn.Location = new System.Drawing.Point(17, 15);
             this.back__btn.Name = "back__btn";
             this.back__btn.Size = new System.Drawing.Size(24, 24);
             this.back__btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -277,7 +277,7 @@
             // 
             this.close_btn.BackColor = System.Drawing.Color.Transparent;
             this.close_btn.Image = ((System.Drawing.Image)(resources.GetObject("close_btn.Image")));
-            this.close_btn.Location = new System.Drawing.Point(1111, 14);
+            this.close_btn.Location = new System.Drawing.Point(1111, 15);
             this.close_btn.Name = "close_btn";
             this.close_btn.Size = new System.Drawing.Size(24, 24);
             this.close_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

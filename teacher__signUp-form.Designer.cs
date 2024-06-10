@@ -121,7 +121,7 @@
             // 
             // teacherSIGNUP__form
             // 
-            this.teacherSIGNUP__form.Location = new System.Drawing.Point(674, 18);
+            this.teacherSIGNUP__form.Location = new System.Drawing.Point(664, 16);
             this.teacherSIGNUP__form.Name = "teacherSIGNUP__form";
             // 
             // teacherSIGNUP__form.Panel
@@ -448,7 +448,7 @@
             // 
             // teacherSIGNINform
             // 
-            this.teacherSIGNINform.Location = new System.Drawing.Point(674, 18);
+            this.teacherSIGNINform.Location = new System.Drawing.Point(664, 16);
             this.teacherSIGNINform.Name = "teacherSIGNINform";
             // 
             // teacherSIGNINform.Panel
@@ -633,7 +633,7 @@
             // 
             this.close_btn.BackColor = System.Drawing.Color.Transparent;
             this.close_btn.Image = ((System.Drawing.Image)(resources.GetObject("close_btn.Image")));
-            this.close_btn.Location = new System.Drawing.Point(1111, 14);
+            this.close_btn.Location = new System.Drawing.Point(1111, 16);
             this.close_btn.Name = "close_btn";
             this.close_btn.Size = new System.Drawing.Size(24, 24);
             this.close_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -646,7 +646,7 @@
             this.back__btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.back__btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("back__btn.BackgroundImage")));
             this.back__btn.Image = ((System.Drawing.Image)(resources.GetObject("back__btn.Image")));
-            this.back__btn.Location = new System.Drawing.Point(17, 14);
+            this.back__btn.Location = new System.Drawing.Point(17, 16);
             this.back__btn.Name = "back__btn";
             this.back__btn.Size = new System.Drawing.Size(24, 24);
             this.back__btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

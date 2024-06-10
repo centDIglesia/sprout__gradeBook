@@ -51,11 +51,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.label1.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(-3, 0);
+            this.label1.Location = new System.Drawing.Point(-11, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(25, 10, 300, 10);
-            this.label1.Size = new System.Drawing.Size(481, 33);
+            this.label1.Size = new System.Drawing.Size(508, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Add components to this course.";
             // 
