@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="kryptonPalette2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>16, 20</value>
+    <value>20, 21</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABFwAAABDCAYAAAChthGUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAAEPBJREFUeF7t3XmczuX+x/H+i7RQOkUKJed0zkllrzRUZBCN3VhDZkSYkWViFmbG
+        DAAACwwBP0AiyAAAEPBJREFUeF7t3XmczuX+x/H+i7RQOkUKJed0zkllrzRUZBCN3VhDZkSYkWViFmbG
         MraZyilZBsmRKDJUSL+QtNhGUXSyKyJjGccyxvt3X9/53uM7X7NgZsxyXs/H4/O4576u63t97/v2l/fj
         +l7XDZmRVNpTAzy1yFO7PQUAAAAAAIA0JisxmUk3O0rJmWewn6eSPAUAAAAAAIDsmfAl++DFMyDWGgoA
         AAAAAICrEWHHKxmZjrR+AAAAAAAAXINYO2ZJ42l4Ma0dAAAAAAAAueBnxy1W4MLGuAAAAAAAALln9sUt
@@ -202,7 +202,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABFwAAAJbCAYAAADZrIBLAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAKTtJREFUeF7t3b2OZWl5NmDOhROwTwD3AXACHwkESCbCEZaJZiQ+iYiRSDAJIBmR
+        DAAACwwBP0AiyAAAKTtJREFUeF7t3b2OZWl5NmDOhROwTwD3AXACHwkESCbCEZaJZiQ+iYiRSDAJIBmR
         DdnISGBphEgsIEICCUcgCDAEM2OBCNv1Vt3rmbfXrKef/qnGNerrkpbo2fveP9XBou67V+36xOHx48eP
         bo53b473bg6A19E6B342p8XndvNY51EAAHh9fbRP3Nzwxu1dACxv5PT4zNZj7h4KAAC85u76xM0fPnf3
         3wBsHt2eJJ/BTdZ5FAAA2D1aRWFd8gLAk97NnjJa2buHAAAA3Hp3FQUAPuq97Cmj5AEAAA7vKQoAjewp

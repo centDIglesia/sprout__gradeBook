@@ -13,9 +13,11 @@ namespace sprout__gradeBook
 {
     public partial class StudentScheduleCard : UserControl
     {
+
         public StudentScheduleCard()
         {
             InitializeComponent();
         }
+
     }
 }
