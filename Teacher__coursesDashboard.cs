@@ -42,20 +42,34 @@ namespace sprout__gradeBook
 
         public void populateCourses()
         {
+            // Define the folder path where course information files are stored
             string folderPath = "CourseInformations";
+
+            // Clear existing controls from the course section panel
             courseSectionPanel.Controls.Clear();
+
+            // Check if the folder exists
             if (Directory.Exists(folderPath))
             {
+                // Get all file paths in the folder with the name of the current user
                 string[] filePaths = Directory.GetFiles(folderPath, $"{CurrentUser}.txt");
 
+                // Iterate through each file path
                 foreach (string filePath in filePaths)
                 {
+                    // Read the content of the file
                     string fileContent = File.ReadAllText(filePath);
+
+                    // Split the file content into blocks using a separator
                     string[] courseBlocks = fileContent.Split(new string[] { "----------------------------------------" }, StringSplitOptions.RemoveEmptyEntries);
 
+                    // Iterate through each block
                     foreach (string block in courseBlocks)
                     {
+                        // Split the block into lines
                         string[] lines = block.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+
+                        // Initialize variables to store course information
                         string courseName = "";
                         string courseCode = "";
                         string department = "";
@@ -63,8 +77,10 @@ namespace sprout__gradeBook
                         string schedule = "";
                         int studentCount = 0;
 
+                        // Iterate through each line
                         foreach (var line in lines)
                         {
+                            // Extract course information based on the line content
                             if (line.StartsWith("Course Name:"))
                             {
                                 courseName = line.Substring("Course Name:".Length).Trim();
@@ -91,9 +107,11 @@ namespace sprout__gradeBook
                             }
                         }
 
+                        // Check if all required information is available
                         if (!string.IsNullOrEmpty(courseName) && !string.IsNullOrEmpty(courseCode) &&
                             !string.IsNullOrEmpty(department) && !string.IsNullOrEmpty(section))
                         {
+                            // Create a CoursesCARD control with the extracted course information
                             CoursesCARD card = new CoursesCARD()
                             {
                                 SubjectName = courseName,
@@ -103,6 +121,7 @@ namespace sprout__gradeBook
                                 SubjectCourseSection = $"{department} {section}"
                             };
 
+                            // Add the card to the course section panel
                             courseSectionPanel.Controls.Add(card);
                         }
                     }
@@ -110,8 +129,10 @@ namespace sprout__gradeBook
             }
             else
             {
+                // Display a message if the directory is not found
                 MessageBox.Show($"Directory not found: {folderPath}");
             }
+
         }
 
 

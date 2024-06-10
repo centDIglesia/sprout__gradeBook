@@ -39,7 +39,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.pictureBox1.Location = new System.Drawing.Point(165, 13);
+            this.pictureBox1.Location = new System.Drawing.Point(186, 14);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(48, 18);
             this.pictureBox1.TabIndex = 0;
@@ -48,10 +48,10 @@
             // subjectScheduleLBL
             // 
             this.subjectScheduleLBL.AutoSize = true;
-            this.subjectScheduleLBL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
+            this.subjectScheduleLBL.BackColor = System.Drawing.Color.White;
             this.subjectScheduleLBL.Font = new System.Drawing.Font("Poppins", 8F);
             this.subjectScheduleLBL.ForeColor = System.Drawing.Color.Black;
-            this.subjectScheduleLBL.Location = new System.Drawing.Point(10, 65);
+            this.subjectScheduleLBL.Location = new System.Drawing.Point(37, 62);
             this.subjectScheduleLBL.Name = "subjectScheduleLBL";
             this.subjectScheduleLBL.Size = new System.Drawing.Size(106, 19);
             this.subjectScheduleLBL.TabIndex = 12;
@@ -59,7 +59,7 @@
             // 
             // subjectCodeLBL
             // 
-            this.subjectCodeLBL.Location = new System.Drawing.Point(8, 13);
+            this.subjectCodeLBL.Location = new System.Drawing.Point(35, 10);
             this.subjectCodeLBL.Name = "subjectCodeLBL";
             this.subjectCodeLBL.Size = new System.Drawing.Size(48, 22);
             this.subjectCodeLBL.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
@@ -71,10 +71,10 @@
             // subjectNameLBL
             // 
             this.subjectNameLBL.AutoSize = true;
-            this.subjectNameLBL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
+            this.subjectNameLBL.BackColor = System.Drawing.Color.White;
             this.subjectNameLBL.Font = new System.Drawing.Font("Poppins", 8F);
             this.subjectNameLBL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.subjectNameLBL.Location = new System.Drawing.Point(10, 46);
+            this.subjectNameLBL.Location = new System.Drawing.Point(37, 43);
             this.subjectNameLBL.Name = "subjectNameLBL";
             this.subjectNameLBL.Size = new System.Drawing.Size(174, 19);
             this.subjectNameLBL.TabIndex = 9;
@@ -83,20 +83,20 @@
             // teacherNameLBL
             // 
             this.teacherNameLBL.AutoSize = true;
-            this.teacherNameLBL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
+            this.teacherNameLBL.BackColor = System.Drawing.Color.White;
             this.teacherNameLBL.Font = new System.Drawing.Font("Poppins", 8F);
             this.teacherNameLBL.ForeColor = System.Drawing.Color.Gray;
-            this.teacherNameLBL.Location = new System.Drawing.Point(93, 99);
+            this.teacherNameLBL.Location = new System.Drawing.Point(109, 91);
             this.teacherNameLBL.Name = "teacherNameLBL";
-            this.teacherNameLBL.Size = new System.Drawing.Size(122, 19);
+            this.teacherNameLBL.Size = new System.Drawing.Size(103, 19);
             this.teacherNameLBL.TabIndex = 14;
-            this.teacherNameLBL.Text = "Jayson Hermogenes";
+            this.teacherNameLBL.Text = "Teacher__Name";
             // 
             // StudentScheduleCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::sprout__gradeBook.Properties.Resources.sub;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Controls.Add(this.teacherNameLBL);
@@ -106,7 +106,7 @@
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.Name = "StudentScheduleCard";
-            this.Size = new System.Drawing.Size(235, 133);
+            this.Size = new System.Drawing.Size(269, 125);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -116,9 +116,9 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label subjectScheduleLBL;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel subjectCodeLBL;
-        private System.Windows.Forms.Label subjectNameLBL;
-        private System.Windows.Forms.Label teacherNameLBL;
+        public System.Windows.Forms.Label teacherNameLBL;
+        public System.Windows.Forms.Label subjectScheduleLBL;
+        public ComponentFactory.Krypton.Toolkit.KryptonLabel subjectCodeLBL;
+        public System.Windows.Forms.Label subjectNameLBL;
     }
 }

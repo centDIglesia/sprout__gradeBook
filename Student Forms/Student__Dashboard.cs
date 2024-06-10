@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -14,15 +15,10 @@ namespace sprout__gradeBook
 {
     public partial class Student__Dashboard : KryptonForm
     {
-        private string currentUser;
-        public Student__Dashboard(string currentUserName)
+        public Student__Dashboard()
         {
             InitializeComponent();
-            currentUser = currentUserName;
-
-            student_Name.Text = $"{Account__Manager.loadUserData("StudentCredentials", currentUserName, "Student Name")}";
         }    
-
 
         private void close_btn_Click(object sender, EventArgs e)
         {
@@ -35,10 +31,25 @@ namespace sprout__gradeBook
             }
             else Application.Exit();
         }
-
-        private void Student__Dashboard_Load(object sender, EventArgs e)
+        public void SetUsernameLabel(string username)
         {
-            
+            student_Name.Text = username;
+        }
+        public void SetStudentIDLabel(string studentID)
+        {
+            student_ID.Text = studentID;
+        }
+        public void SetStudentIcon(string studentID)
+        {
+            if (studentID == "Male")
+            {
+                student_Icon.Image = Properties.Resources.maleee;
+            }
+            else
+            {
+                student_Icon.Image = Properties.Resources.femaleee;
+
+            }
         }
     }
 }
