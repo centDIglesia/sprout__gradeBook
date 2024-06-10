@@ -33,7 +33,7 @@ namespace sprout__gradeBook
         }
         public void SetUsernameLabel(string username)
         {
-            student_Name.Text = $"Hi, {username}";
+            student_Name.Text = username;
         }
         public void SetStudentIDLabel(string studentID)
         {
