@@ -26,7 +26,7 @@ namespace sprout__gradeBook
         private void LoadComponents()
         {
             // Define the file path
-            string filePath = $"CourseInformations/{CurrentUser}/gradingSystem.txt";
+            string filePath = $"CourseGradingSystem/{CurrentUser}/gradingSystem.txt";
 
             // Check if the file exists
             if (File.Exists(filePath))
@@ -53,6 +53,9 @@ namespace sprout__gradeBook
             }
         }
 
-      
+        private void addCourseComponentsFORM_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

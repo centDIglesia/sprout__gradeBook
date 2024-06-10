@@ -19,5 +19,9 @@ namespace sprout__gradeBook
             InitializeComponent();
         }
 
+        private void StudentScheduleCard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

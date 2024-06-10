@@ -130,6 +130,7 @@
             this.componentComboBox.StateCommon.Item.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.componentComboBox.StateCommon.Item.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.componentComboBox.StateTracking.Item.Back.Color1 = System.Drawing.Color.White;
+            this.componentComboBox.StateTracking.Item.Back.Color2 = System.Drawing.Color.White;
             this.componentComboBox.StateTracking.Item.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -221,7 +222,7 @@
             this.Palette = this.kryptonPalette2;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.Text = "addCourseComponents";
-
+            this.Load += new System.EventHandler(this.addCourseComponentsFORM_Load);
             ((System.ComponentModel.ISupportInitialize)(this.componentComboBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

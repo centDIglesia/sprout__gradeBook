@@ -108,6 +108,7 @@
             this.DoubleBuffered = true;
             this.Name = "StudentScheduleCard";
             this.Size = new System.Drawing.Size(309, 121);
+            this.Load += new System.EventHandler(this.StudentScheduleCard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
