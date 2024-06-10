@@ -14,10 +14,10 @@ namespace sprout__gradeBook
 {
     public partial class studentSectionLIST : KryptonForm
     {
-        teacher__studentsDashboard studentsDashboard;
-        public studentSectionLIST()
+        readonly teacher__studentsDashboard studentsDashboard;
+        public studentSectionLIST(teacher__studentsDashboard StudentsDashboard)
         {
-
+            studentsDashboard = StudentsDashboard;
             InitializeComponent();
         }
 

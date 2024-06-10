@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using System.IO;
 
 namespace sprout__gradeBook
 {
     public partial class Teacher_Dashboard : KryptonForm
     {
-        private string currentUser;
+        private readonly string currentUser;
 
         public Teacher_Dashboard(string currentUserName)
         {
@@ -21,7 +22,7 @@ namespace sprout__gradeBook
             currentUser = currentUserName;
 
 
-            teachers__firstName.Text = $"Hi, {Account__Manager.loadUserData("teacherCredentials", currentUserName, "First Name")}";
+            teachers__firstName.Text = $"Hi, {Account__Manager.LoadUserData("teacherCredentials", currentUserName, "First Name")}";
         }
 
         public void loadForm(Form form)
@@ -65,7 +66,24 @@ namespace sprout__gradeBook
 
         private void btn_gradeBook_Click(object sender, EventArgs e)
         {
-            loadForm(new teacher__GradeBook(currentUser));
+            string gradingSystemFilePath = $"CourseInformations/{currentUser}/gradingSystem.txt";
+
+
+            if (File.Exists(gradingSystemFilePath))
+            {
+
+                loadForm(new teacher__GradeBook(currentUser));
+            }
+            else
+            {
+
+                MessageBox.Show("Please create the grading system first.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                createGradingSystemFORM crf = new createGradingSystemFORM(currentUser);
+                crf.Show();
+
+            }
         }
+
     }
 }

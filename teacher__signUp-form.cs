@@ -15,7 +15,6 @@ namespace sprout__gradeBook
 {
     public partial class logInForm : KryptonForm
     {
-
         public logInForm()
         {
             InitializeComponent();

@@ -7,21 +7,22 @@ namespace sprout__gradeBook
 {
     public partial class EditCourseForm : KryptonForm
     {
-        teacher__courses_lvl1 parent;
+        private readonly teacher__courses_lvl1 _parent;
 
-        private string currentUser;
-        private string originalSubjectName;
-        private string originalSubjectCode;
+        private readonly string currentUser;
+        private readonly string originalSubjectName;
+        private readonly string originalSubjectCode;
         private string subjectName;
         private string subjectCode;
         private string subjectCount;
         private string subjectSchedule;
         private string subjectCourseSection;
 
-        public EditCourseForm(string currentUsername, string name, string code, string count, string schedule, string section)
+        public EditCourseForm(teacher__courses_lvl1 parent, string currentUsername, string name, string code, string count, string schedule, string section)
         {
             InitializeComponent();
             currentUser = currentUsername;
+            _parent = parent;
             originalSubjectName = name; // Store original values for comparison
             originalSubjectCode = code; // Store original values for comparison
             subjectName = name;
@@ -100,10 +101,10 @@ namespace sprout__gradeBook
 
 
             // Notify the parent form to refresh the displayed courses
-            if (parent != null)
+            if (_parent != null)
             {
-                parent.populateCourses();
-                parent.ShowPanel();
+                _parent.populateCourses();
+                _parent.ShowPanel();
 
 
 
@@ -114,6 +115,11 @@ namespace sprout__gradeBook
         }
 
         private void EditCourseForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditCourseForm_Load_1(object sender, EventArgs e)
         {
 
         }

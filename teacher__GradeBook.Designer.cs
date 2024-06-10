@@ -86,7 +86,7 @@
             // courseComboBox
             // 
             this.courseComboBox.DropDownWidth = 500;
-            this.courseComboBox.Location = new System.Drawing.Point(50, 69);
+            this.courseComboBox.Location = new System.Drawing.Point(47, 68);
             this.courseComboBox.Name = "courseComboBox";
             this.courseComboBox.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.courseComboBox.Size = new System.Drawing.Size(232, 29);
@@ -228,7 +228,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel StudentNameTXT;
+
         private ComponentFactory.Krypton.Toolkit.KryptonLabel StudentIDTXT;
         private System.Windows.Forms.FlowLayoutPanel studentListPanel;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox courseComboBox;
