@@ -33,6 +33,7 @@
             this.teacherNameLBL = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.subjectCodeLBL = new System.Windows.Forms.Label();
+            this.DayOfTheWeek_lbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,7 +43,7 @@
             this.subjectScheduleLBL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
             this.subjectScheduleLBL.Font = new System.Drawing.Font("Poppins", 8F);
             this.subjectScheduleLBL.ForeColor = System.Drawing.Color.Black;
-            this.subjectScheduleLBL.Location = new System.Drawing.Point(19, 52);
+            this.subjectScheduleLBL.Location = new System.Drawing.Point(15, 51);
             this.subjectScheduleLBL.Name = "subjectScheduleLBL";
             this.subjectScheduleLBL.Size = new System.Drawing.Size(106, 19);
             this.subjectScheduleLBL.TabIndex = 12;
@@ -54,7 +55,7 @@
             this.subjectNameLBL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
             this.subjectNameLBL.Font = new System.Drawing.Font("Poppins", 8F);
             this.subjectNameLBL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.subjectNameLBL.Location = new System.Drawing.Point(19, 33);
+            this.subjectNameLBL.Location = new System.Drawing.Point(15, 32);
             this.subjectNameLBL.Name = "subjectNameLBL";
             this.subjectNameLBL.Size = new System.Drawing.Size(174, 19);
             this.subjectNameLBL.TabIndex = 9;
@@ -65,7 +66,7 @@
             this.teacherNameLBL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
             this.teacherNameLBL.Font = new System.Drawing.Font("Poppins", 8F);
             this.teacherNameLBL.ForeColor = System.Drawing.Color.Gray;
-            this.teacherNameLBL.Location = new System.Drawing.Point(23, 95);
+            this.teacherNameLBL.Location = new System.Drawing.Point(19, 94);
             this.teacherNameLBL.Name = "teacherNameLBL";
             this.teacherNameLBL.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.teacherNameLBL.Size = new System.Drawing.Size(274, 19);
@@ -75,7 +76,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::sprout__gradeBook.Properties.Resources.Student_CourseCard;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(8, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(287, 112);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -88,11 +89,23 @@
             this.subjectCodeLBL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
             this.subjectCodeLBL.Font = new System.Drawing.Font("Poppins Medium", 9.75F, System.Drawing.FontStyle.Bold);
             this.subjectCodeLBL.ForeColor = System.Drawing.Color.White;
-            this.subjectCodeLBL.Location = new System.Drawing.Point(19, 5);
+            this.subjectCodeLBL.Location = new System.Drawing.Point(15, 3);
             this.subjectCodeLBL.Name = "subjectCodeLBL";
             this.subjectCodeLBL.Size = new System.Drawing.Size(50, 23);
             this.subjectCodeLBL.TabIndex = 16;
             this.subjectCodeLBL.Text = "CODE";
+            // 
+            // DayOfTheWeek_lbl
+            // 
+            this.DayOfTheWeek_lbl.AutoSize = true;
+            this.DayOfTheWeek_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
+            this.DayOfTheWeek_lbl.Font = new System.Drawing.Font("Poppins", 8F);
+            this.DayOfTheWeek_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
+            this.DayOfTheWeek_lbl.Location = new System.Drawing.Point(15, 70);
+            this.DayOfTheWeek_lbl.Name = "DayOfTheWeek_lbl";
+            this.DayOfTheWeek_lbl.Size = new System.Drawing.Size(52, 19);
+            this.DayOfTheWeek_lbl.TabIndex = 17;
+            this.DayOfTheWeek_lbl.Text = "Monday";
             // 
             // StudentScheduleCard
             // 
@@ -100,6 +113,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Controls.Add(this.DayOfTheWeek_lbl);
             this.Controls.Add(this.subjectCodeLBL);
             this.Controls.Add(this.teacherNameLBL);
             this.Controls.Add(this.subjectScheduleLBL);
@@ -107,8 +121,7 @@
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.Name = "StudentScheduleCard";
-            this.Size = new System.Drawing.Size(309, 121);
-            this.Load += new System.EventHandler(this.StudentScheduleCard_Load);
+            this.Size = new System.Drawing.Size(302, 117);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -121,5 +134,6 @@
         public System.Windows.Forms.Label subjectNameLBL;
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Label subjectCodeLBL;
+        public System.Windows.Forms.Label DayOfTheWeek_lbl;
     }
 }
