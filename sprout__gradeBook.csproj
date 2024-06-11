@@ -400,5 +400,8 @@
   <ItemGroup>
     <None Include="Resources\Student-CourseCard.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sort-Button.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
