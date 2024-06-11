@@ -123,6 +123,12 @@
     <Compile Include="Round__PictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Student Forms\AddAnnouncementFORM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student Forms\AddAnnouncementFORM.Designer.cs">
+      <DependentUpon>AddAnnouncementFORM.cs</DependentUpon>
+    </Compile>
     <Compile Include="Student Forms\StudentDefultPasswordGuide.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,6 +254,9 @@
     </Compile>
     <EmbeddedResource Include="Role__form.resx">
       <DependentUpon>Role__form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student Forms\AddAnnouncementFORM.resx">
+      <DependentUpon>AddAnnouncementFORM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student Forms\StudentDefultPasswordGuide.resx">
       <DependentUpon>StudentDefultPasswordGuide.cs</DependentUpon>

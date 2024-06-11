@@ -124,8 +124,8 @@ namespace sprout__gradeBook
 
         private void announcementBTN_Click(object sender, EventArgs e)
         {
-             AddAnnouncementFORM addNewAnnouncement = new AddAnnouncementFORM(this);
-              addNewAnnouncement.Show();
+            AddAnnouncementFORM addNewAnnouncement = new AddAnnouncementFORM(this);
+            addNewAnnouncement.Show();
 
 
         }
