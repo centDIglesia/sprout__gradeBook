@@ -33,7 +33,6 @@
             this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.signinPASS__txtbox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.signinEMAIL__txtbox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.componentComboBox = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.kryptonTextBox2 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
@@ -86,23 +85,6 @@
             this.signinPASS__txtbox.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10);
             this.signinPASS__txtbox.TabIndex = 18;
             this.signinPASS__txtbox.Text = "Maximun Grade";
-            // 
-            // signinEMAIL__txtbox
-            // 
-            this.signinEMAIL__txtbox.Location = new System.Drawing.Point(34, 248);
-            this.signinEMAIL__txtbox.Name = "signinEMAIL__txtbox";
-            this.signinEMAIL__txtbox.Size = new System.Drawing.Size(267, 43);
-            this.signinEMAIL__txtbox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.signinEMAIL__txtbox.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.signinEMAIL__txtbox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.signinEMAIL__txtbox.StateCommon.Border.Rounding = 4;
-            this.signinEMAIL__txtbox.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(155)))));
-            this.signinEMAIL__txtbox.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signinEMAIL__txtbox.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10);
-            this.signinEMAIL__txtbox.TabIndex = 17;
-            this.signinEMAIL__txtbox.Text = "Weight in Grade (%)";
             // 
             // componentComboBox
             // 
@@ -196,9 +178,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(200, 317);
+            this.pictureBox1.Location = new System.Drawing.Point(202, 247);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(101, 45);
+            this.pictureBox1.Size = new System.Drawing.Size(99, 46);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
@@ -208,13 +190,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(339, 381);
+            this.ClientSize = new System.Drawing.Size(339, 318);
             this.Controls.Add(this.kryptonTextBox3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.kryptonTextBox2);
             this.Controls.Add(this.componentComboBox);
             this.Controls.Add(this.signinPASS__txtbox);
-            this.Controls.Add(this.signinEMAIL__txtbox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.kryptonTextBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -235,7 +216,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette2;
         private System.Windows.Forms.Label label1;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox signinPASS__txtbox;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox signinEMAIL__txtbox;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox componentComboBox;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox2;

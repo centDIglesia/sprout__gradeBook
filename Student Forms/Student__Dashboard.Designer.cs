@@ -35,16 +35,19 @@
             this.student_ID = new System.Windows.Forms.Label();
             this.student_gradesPanel = new System.Windows.Forms.Panel();
             this.student_CoursePanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.notifCount = new System.Windows.Forms.Label();
             this.close_btn = new System.Windows.Forms.PictureBox();
             this.student_Icon = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.notification__icon = new System.Windows.Forms.PictureBox();
             this.Student__Dashboard__UI = new System.Windows.Forms.PictureBox();
+            this.roundPictureBox1 = new sprout__gradeBook.RoundPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.close_btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.student_Icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.notification__icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Student__Dashboard__UI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette2
@@ -104,6 +107,18 @@
             this.student_CoursePanel.Size = new System.Drawing.Size(328, 535);
             this.student_CoursePanel.TabIndex = 94;
             // 
+            // notifCount
+            // 
+            this.notifCount.AutoSize = true;
+            this.notifCount.BackColor = System.Drawing.Color.Red;
+            this.notifCount.Font = new System.Drawing.Font("Poppins SemiBold", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notifCount.ForeColor = System.Drawing.Color.White;
+            this.notifCount.Location = new System.Drawing.Point(810, 29);
+            this.notifCount.Name = "notifCount";
+            this.notifCount.Size = new System.Drawing.Size(8, 12);
+            this.notifCount.TabIndex = 100;
+            this.notifCount.Text = "1";
+            // 
             // close_btn
             // 
             this.close_btn.BackColor = System.Drawing.Color.Transparent;
@@ -155,6 +170,16 @@
             this.Student__Dashboard__UI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.Student__Dashboard__UI.TabIndex = 95;
             this.Student__Dashboard__UI.TabStop = false;
+            this.Student__Dashboard__UI.Click += new System.EventHandler(this.Student__Dashboard__UI_Click);
+            // 
+            // roundPictureBox1
+            // 
+            this.roundPictureBox1.BackColor = System.Drawing.Color.Red;
+            this.roundPictureBox1.Location = new System.Drawing.Point(805, 27);
+            this.roundPictureBox1.Name = "roundPictureBox1";
+            this.roundPictureBox1.Size = new System.Drawing.Size(15, 15);
+            this.roundPictureBox1.TabIndex = 99;
+            this.roundPictureBox1.TabStop = false;
             // 
             // Student__Dashboard
             // 
@@ -162,6 +187,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1147, 711);
+            this.Controls.Add(this.notifCount);
+            this.Controls.Add(this.roundPictureBox1);
             this.Controls.Add(this.close_btn);
             this.Controls.Add(this.student_CoursePanel);
             this.Controls.Add(this.student_Icon);
@@ -180,6 +207,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.notification__icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Student__Dashboard__UI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,5 +225,7 @@
         public System.Windows.Forms.FlowLayoutPanel student_CoursePanel;
         private System.Windows.Forms.PictureBox Student__Dashboard__UI;
         private System.Windows.Forms.PictureBox close_btn;
+        private RoundPictureBox roundPictureBox1;
+        private System.Windows.Forms.Label notifCount;
     }
 }

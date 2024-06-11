@@ -150,6 +150,11 @@ namespace sprout__gradeBook
             string pattern = @"^(0[1-9]|1[0-2]):([0-5][0-9])\s?(AM|PM)$";
             return Regex.IsMatch(input, pattern, RegexOptions.IgnoreCase);
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 
 }

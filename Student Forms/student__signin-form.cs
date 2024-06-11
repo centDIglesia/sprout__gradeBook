@@ -10,7 +10,7 @@ namespace sprout__gradeBook
     public partial class studentLoginForm : KryptonForm
     {
         private bool isPasswordVisible = false;
-
+        private string currentStudentID;
         public studentLoginForm()
         {
             InitializeComponent();
@@ -71,23 +71,23 @@ namespace sprout__gradeBook
 
         private void signIn__btn_Click(object sender, EventArgs e)
         {
-            string usernameOrId = signinSTID__txtbox.Text;
+            currentStudentID = signinSTID__txtbox.Text;
             string password = signinPASS__txtbox.Text;
 
-            if (usernameOrId == "Student Number" || password == "Password")
+            if (currentStudentID == "Student Number" || password == "Password")
             {
                 MessageBox.Show("Please fill out all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                (usernameOrId == "Student Number" ? signinSTID__txtbox : signinPASS__txtbox).Focus();
+                (currentStudentID == "Student Number" ? signinSTID__txtbox : signinPASS__txtbox).Focus();
                 return;
             }
 
-            if (!TryFindUser(usernameOrId, out var studentFilePath, out var teacherDir))
+            if (!TryFindUser(currentStudentID, out var studentFilePath, out var teacherDir))
             {
                 ShowAccountNotFoundError();
                 return;
             }
 
-            if (Account__Manager.AuthenticateStudentLogIn(usernameOrId, password, teacherDir))
+            if (Account__Manager.AuthenticateStudentLogIn(currentStudentID, password, teacherDir))
             {
                 HandleSuccessfulLogin(studentFilePath);
             }
@@ -140,7 +140,7 @@ namespace sprout__gradeBook
             MessageBox.Show("Sign in successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Hide();
 
-            var dashboard = new Student__Dashboard();
+            var dashboard = new Student__Dashboard(this);
             dashboard.SetUsernameLabel(username);
             dashboard.SetStudentIDLabel(studentID);
             dashboard.SetStudentIcon(studentGender);
@@ -209,14 +209,34 @@ namespace sprout__gradeBook
 
             return $"{firstName} {lastName}";
         }
-
         private Dictionary<string, string> GetCourseBlock(IEnumerable<string> lines)
         {
-            return lines
-                .Select(line => line.Split(new[] { ": " }, 2, StringSplitOptions.None))
-                .ToDictionary(parts => parts[0], parts => parts.Length > 1 ? parts[1] : null);
+            var block = new Dictionary<string, string>();
+
+            foreach (var line in lines)
+            {
+                // Split the line by ": " to get key and value parts
+                var parts = line.Split(new[] { ": " }, 2, StringSplitOptions.None);
+
+                // Check if the key already exists in the dictionary
+                if (!block.ContainsKey(parts[0]))
+                {
+                    // Add key-value pair to the dictionary
+                    block.Add(parts[0], parts.Length > 1 ? parts[1] : null);
+                }
+            }
+
+            return block;
         }
 
+        /*  private Dictionary<string, string> GetCourseBlock(IEnumerable<string> lines)
+          {
+              return lines
+                  .Select(line => line.Split(new[] { ": " }, 2, StringSplitOptions.None))
+                  .ToDictionary(parts => parts[0], parts => parts.Length > 1 ? parts[1] : null);
+          }
+
+          */
         private IEnumerable<Dictionary<string, string>> GetCourseBlocks(string[] lines)
         {
             var blocks = new List<Dictionary<string, string>>();
@@ -280,5 +300,25 @@ namespace sprout__gradeBook
 
             return daysOfWeek.IndexOf(day1).CompareTo(daysOfWeek.IndexOf(day2));
         }
+
+        //return all current teacher of a student
+        public List<string> GetTeachersForStudent()
+        {
+            List<string> teacherUsernames = new List<string>();
+
+            string baseFolderPath = "StudentCredentials";
+            foreach (var dir in Directory.GetDirectories(baseFolderPath))
+            {
+                string studentFilePath = Path.Combine(dir, $"{currentStudentID}.txt");
+                if (File.Exists(studentFilePath))
+                {
+                    string teacherUsername = Path.GetFileName(dir);
+                    teacherUsernames.Add(teacherUsername);
+                }
+            }
+
+            return teacherUsernames;
+        }
+
     }
 }

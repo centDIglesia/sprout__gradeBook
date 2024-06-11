@@ -15,9 +15,11 @@ namespace sprout__gradeBook
 {
     public partial class Student__Dashboard : KryptonForm
     {
-        public Student__Dashboard()
+        private readonly studentLoginForm _studentLoginForm;
+        public Student__Dashboard(studentLoginForm studentLoginForm)
         {
             InitializeComponent();
+            _studentLoginForm = studentLoginForm;
         }
         public void SetUsernameLabel(string username)
         {
@@ -25,7 +27,10 @@ namespace sprout__gradeBook
         }
         public void SetStudentIDLabel(string studentID)
         {
+
             student_ID.Text = studentID;
+
+
         }
         public void SetStudentIcon(string studentID)
         {
@@ -51,6 +56,15 @@ namespace sprout__gradeBook
             else Application.Exit();
         }
 
+        private void Student__Dashboard__UI_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Student__Dashboard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

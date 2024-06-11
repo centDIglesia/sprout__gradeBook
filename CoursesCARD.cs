@@ -1,6 +1,8 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
-using ComponentFactory.Krypton.Toolkit;
+
+
 
 namespace sprout__gradeBook
 {
@@ -107,17 +109,49 @@ namespace sprout__gradeBook
 
         private void removeBTN_Click(object sender, EventArgs e)
         {
-            
-                var confirmResult = MessageBox.Show("Are you sure you want to remove this course?",
-                                                    "Confirm Remove",
-                                                    MessageBoxButtons.YesNo,
-                                                    MessageBoxIcon.Question);
 
-                if (confirmResult == DialogResult.Yes)
-                {
-                    _parent.RemoveCourse(this);
-                }
-            
+            var confirmResult = MessageBox.Show("Are you sure you want to remove this course?",
+                                                "Confirm Remove",
+                                                MessageBoxButtons.YesNo,
+                                                MessageBoxIcon.Question);
+
+            if (confirmResult == DialogResult.Yes)
+            {
+                _parent.RemoveCourse(this);
+            }
+
+        }
+
+        private void announcementBTN_Click(object sender, EventArgs e)
+        {
+             AddAnnouncementFORM addNewAnnouncement = new AddAnnouncementFORM(this);
+              addNewAnnouncement.Show();
+
+
+        }
+
+        public void saveAnnouncement(string title, string description)
+        {
+            string baseDirectory = $"CourseAnnoucement/{_currentUser}";
+
+
+            if (!Directory.Exists(baseDirectory))
+            {
+                Directory.CreateDirectory(baseDirectory);
+            }
+            string fullPath = Path.Combine(baseDirectory, $"{SubjectName}_{SubjectCode}_{SubjectCourseSection}.txt");
+
+            using (StreamWriter write = new StreamWriter(fullPath, true))
+            {
+                write.WriteLine($"From : {_currentUser}");
+                write.WriteLine($"Title : {title}");
+                write.WriteLine($"Description : {description}");
+                write.WriteLine($"time sent : {DateTime.Now.ToString("MMMM d, yyyy, dddd, h:mm tt")}");
+                write.WriteLine("------------------------------");
+            };
+
+            MessageBox.Show("Announcement posted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
     }
 }

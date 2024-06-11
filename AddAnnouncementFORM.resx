@@ -117,48 +117,42 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="kryptonPalette2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="saveNewCourseBTN.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAK8AAAAkCAYAAAD/5WpuAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAsFJREFUeF7tnDFPFEEUx7c8j0+An0A/AWNHoaG20UpDIctppcVhYgORawkmmlBo
-        QUKDtCedxmBBZwJ2WAkmViZHNNTj/uZ4MLvuXrTbSf4v+eV2583MNb99926KzSw6D9zslUX3sZvPjLqL
-        zgvRNvBzasHNnys7jm7PLddNFqKV5G45iNspTK6dIESLoVPIQqtQkxSizeBtVpcQov3cGElekSySVySL
-        5BXJInlFskhekSySVySL5BXJInlFskhekSySVySL5J1A/+26P/z+1X/7+cN/Ovrs883npfy1Z7f9qw/b
-        Ic+8rf13fm7tYWku14zH62Brfzfkpp/cCvczq/f88GCvtBf7V9eJSyRvA/2ddU8g2GD42h8XUhFza49C
-        HrEQjRgLuhvmjM5+hTHWMG+vyBEmqa0lTGrEJU6LtTwMjHN9evZbAk9A8jZQlc4N7ocxqjH3CEbYPUw/
-        vhmqJmHy3tlYCvfxPK4JexB4CBD/eiQq1wQPho2JMpK3gf7OiyAPYtECVCsglRHh4jEwWU1ehGZuLKHJ
-        ankC6ReK74lhHtXX1okykncC+ebqRSUl4j6UODw5+msN1ZQweeHl++0wRhWnghNWia3CTgrbR5SRvP8A
-        glkltj7VqmLcywJVmojlNaER1kS2FsEqr9qD/0fyNmA9r1VaPuOf/8HwTcibzMBJA1ITsbzAfqwlXxXV
-        vmsp6ovr9hdlJG8DVEtkJWgd7BTh7sbTiznWUpAzaRGTqMprMhK0I3GOKmynGexpe30prq9WKru4RPJO
-        AKmQkGMwjrDsdCAGEeM8FZo11bm0B4xXpY6xvSA+nRD1SF6RLJJXJIvkFckieUWySF6RLJJXJIvkFcmS
-        6ZWmIlX0oj2RJOFFe52em61LCtFmpnrnL5nu9txK3QQhWknuVoK4FkUFnlcLIVpL8d8MP+kUxsZm2R+y
-        jukYoqhEGAAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        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
+        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
+        uAdaR2Yb8iwGSQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="kryptonTextBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="kryptonTextBox2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAFgAAAAeCAYAAAColNlFAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EQAACxEBf2RfkQAAApFJREFUaEPtmr9v00AUgD2S/gdlYoS/IO4O6swCE91IoBMMzcBI0rGwRDDAUKkD
+        7VSkwFaEytANibKViR8SE1IqUGdz35VnXcxRavtepvekT7HPdxf78/PzDc6IC3fyS51+/nah150u9PPC
+        aEen393FaSnXxGqwNPWS3cZuvIPRFqqCExw/aKRgaWqClTHByphgZUywMiZYGROsTFLBN54Ois8/vs/w
+        7uh90dt8GO3fhvHeCz//lQfXo8fPgnEa5xQjqeDb7qSJ9clzv72287g4/PbJtw3cdmxMU7YOXvl5mwiW
+        OPx6VFxuML4OKoKXN1bLtsV7V4vjk58+k6WNixq/2Z7J8nCM9Jl82PfHuUkIFRlrO4+KqZuTYCzUEV2N
+        cO7UqAsGBJMtbHMhSKNt6+C1F/3F7RNhltOH9tHkWZmtcpN6m8NyDDeBeRbvXyvH/o9/xbr7r9SiVQRT
+        38goGO9t+zYk0Udk5cNb5Tj6Iez45JcXlY9WfB/kSh/Kzr4TLCJlniYlgnnDGxcGNzZlfVYRXA0y7+If
+        MbJfHUu9Jm4+GfiyIsKRUH0iQEswTxbnEhvXBBXBnCBSoCqAiAkOs599xiGACybIrLCEtBEcC/5n5J4S
+        SYRUzKUGh3AhyKq2i7DYWNqk5qYoEdVgribznIe5CyZLCF4o0ra8cde3IfF0f9Xvs9aVPiI0H65E9+sg
+        wZN01rmmYO6Cqa+yNiaTgUBumEW80AgkSP+P7leOs5KQYI46Gch/aYsVkgpmZcDL4zwXiyCWaCyxqNmx
+        2lftUz2OJHlh1VmmzZOkgo2/McHKmGBlTLAyJliZzD460SXzn0xFDhjt6fS7L+3TKS2c05nv0zq9rn1C
+        lQInlqpwKjfLfgNTGpELfHnOXAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="kryptonPalette2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
 </root>

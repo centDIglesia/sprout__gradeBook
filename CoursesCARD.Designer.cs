@@ -162,6 +162,7 @@
             this.announcementBTN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.announcementBTN.TabIndex = 15;
             this.announcementBTN.TabStop = false;
+            this.announcementBTN.Click += new System.EventHandler(this.announcementBTN_Click);
             // 
             // COSEbtn
             // 
