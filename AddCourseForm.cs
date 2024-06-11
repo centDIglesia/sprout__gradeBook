@@ -34,11 +34,10 @@ namespace sprout__gradeBook
             string studentSection = courseSectionTXT.Text;
             int studentYearLvl = Int32.Parse(courseYearlvlTXT.Text);
             int studentCount = 0;
-            string whatDay = WeekDayTxt.Text;
             string startTime = courseStartTXT.Text;
             string endTime = courseEndTXT.Text;
 
-            Course newCourse = new Course(courseName, courseCode, studentCourse, studentSection, startTime, endTime, studentCount, studentYearLvl, whatDay);
+            Course newCourse = new Course(courseName, courseCode, studentCourse, studentSection, startTime, endTime, studentCount, studentYearLvl);
 
             string folderPath = $"CourseInformations/{currentUserName}";
             if (!Directory.Exists(folderPath))

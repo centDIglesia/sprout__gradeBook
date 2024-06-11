@@ -283,16 +283,6 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Sort_Button {
-            get {
-                object obj = ResourceManager.GetObject("Sort-Button", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap student__Dashboard_UI {
             get {
                 object obj = ResourceManager.GetObject("student__Dashboard-UI", resourceCulture);

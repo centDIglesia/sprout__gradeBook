@@ -12,9 +12,10 @@ public class Course
     public string EndTime { get; set; }
     public int StudentCount { get; set; }
     public string department { get; set; }
-    public string DayoftheWeek { get; set; }
 
-    public Course(string courseName, string courseCode, string studentCourse, string studentSection, string startTime, string endTime, int studentCount, int studentYearLvl, string whatDay)
+
+
+    public Course(string courseName, string courseCode, string studentCourse, string studentSection, string startTime, string endTime, int studentCount, int studentYearLvl)
     {
         CourseName = courseName;
         CourseCode = courseCode;
@@ -25,7 +26,7 @@ public class Course
         StudentCount = studentCount;
         StudentYearLvl = studentYearLvl;
         StudentSection = studentSection;
-        DayoftheWeek = whatDay;
+
 
     }
 
@@ -54,13 +55,13 @@ public class Course
 
         using (StreamWriter courseWriter = new StreamWriter(sectionFilePath, true))
         {
+
             courseWriter.WriteLine($"Course Name: {CourseName}");
             courseWriter.WriteLine($"Course Code: {CourseCode}");
             courseWriter.WriteLine($"Student Department: {department}");
             courseWriter.WriteLine($"Student year and section: {GetYearAndSection()}");
             courseWriter.WriteLine($"Course Schedule: {GetCourseSchedule()}");
             courseWriter.WriteLine($"Student Count: {StudentCount}");
-            courseWriter.WriteLine($"Day of the Week: {DayoftheWeek}");
             courseWriter.WriteLine(new string('-', 40));
         }
     }

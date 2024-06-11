@@ -19,6 +19,18 @@ namespace sprout__gradeBook
         {
             InitializeComponent();
         }
+
+        private void close_btn_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+            else Application.Exit();
+        }
         public void SetUsernameLabel(string username)
         {
             student_Name.Text = $"Hi, {username}";
@@ -39,18 +51,11 @@ namespace sprout__gradeBook
 
             }
         }
-        private void close_btn_Click(object sender, EventArgs e)
+
+        private void Student__Dashboard_Load(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-
-            if (result == DialogResult.No)
-            {
-                return;
-            }
-            else Application.Exit();
         }
-
     }
 }
 
