@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 
@@ -14,6 +9,7 @@ namespace sprout__gradeBook
 {
     public partial class studentLoginForm : KryptonForm
     {
+        private bool isPasswordVisible = false;
 
         public studentLoginForm()
         {
@@ -53,35 +49,24 @@ namespace sprout__gradeBook
             if (signinPASS__txtbox.Text == "Password")
             {
                 signinPASS__txtbox.UseSystemPasswordChar = false;
-
             }
         }
-        bool isPassVisible3 = false;
+
         private void signIn__showPassicon_Click(object sender, EventArgs e)
         {
-
-
-            if (!isPassVisible3)
-            {
-                isPassVisible3 = true;
-                signIn__showPassicon.Image = Properties.Resources.closed__eye;
-                signinPASS__txtbox.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                isPassVisible3 = false;
-                signIn__showPassicon.Image = Properties.Resources.open__eye;
-                signinPASS__txtbox.UseSystemPasswordChar = true;
-            }
-
+            isPasswordVisible = !isPasswordVisible;
+            signIn__showPassicon.Image = isPasswordVisible
+                ? Properties.Resources.closed__eye
+                : Properties.Resources.open__eye;
+            signinPASS__txtbox.UseSystemPasswordChar = !isPasswordVisible;
         }
 
         private void showGuide_Click(object sender, EventArgs e)
         {
-            StudentDefultPasswordGuide studentDefultPasswordGuide = new StudentDefultPasswordGuide();
-            studentDefultPasswordGuide.ShowDialog();
-
-
+            using (var studentDefaultPasswordGuide = new StudentDefultPasswordGuide())
+            {
+                studentDefaultPasswordGuide.ShowDialog();
+            }
         }
 
         private void signIn__btn_Click(object sender, EventArgs e)
@@ -92,158 +77,158 @@ namespace sprout__gradeBook
             if (usernameOrId == "Student Number" || password == "Password")
             {
                 MessageBox.Show("Please fill out all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                if (usernameOrId == "Student Number")
-                {
-                    signinSTID__txtbox.Focus();
-                }
-                else if (password == "Password")
-                {
-                    signinPASS__txtbox.Focus();
-                }
-
+                (usernameOrId == "Student Number" ? signinSTID__txtbox : signinPASS__txtbox).Focus();
                 return;
             }
 
-            bool userFound = false;
-
-            string baseFolderPath = "StudentCredentials";
-            string[] teacherDirectories = Directory.GetDirectories(baseFolderPath);
-
-            foreach (string teacherDir in teacherDirectories)
+            if (!TryFindUser(usernameOrId, out var studentFilePath, out var teacherDir))
             {
-                string studentFilePath = Path.Combine(teacherDir, usernameOrId + ".txt");
-
-                if (File.Exists(studentFilePath))
-                {
-                    userFound = true;
-                    bool isAuthenticated = Account__Manager.AuthenticateStudentLogIn(usernameOrId, password, teacherDir);
-                    if (isAuthenticated)
-                    {
-                        // Read all lines from the file
-                        string[] lines = File.ReadAllLines(studentFilePath);
-
-                        // Extract relevant data
-                        string username = lines.FirstOrDefault(line => line.StartsWith("Username: "))?.Replace("Username: ", "") ?? "Unknown";
-                        string studentID = lines.FirstOrDefault(line => line.StartsWith("Student ID: "))?.Replace("Student ID: ", "") ?? "Unknown";
-                        string studentGender = lines.FirstOrDefault(line => line.StartsWith("Gender: "))?.Replace("Gender: ", "") ?? "Unknown";
-                        string department = lines.FirstOrDefault(line => line.StartsWith("Department: "))?.Replace("Department: ", "") ?? "Unknown";
-                        string yearSection = lines.FirstOrDefault(line => line.StartsWith("Year and Section: "))?.Replace("Year and Section: ", "") ?? "Unknown";
-
-                        MessageBox.Show("Sign in successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Hide();
-
-                        // Pass the username to the next form
-                        Student__Dashboard STD_DSH = new Student__Dashboard();
-                        STD_DSH.SetUsernameLabel(username); // Set the username label
-                        STD_DSH.SetStudentIDLabel(studentID);
-                        STD_DSH.SetStudentIcon(studentGender);
-
-                        // Get the path of the CourseInformations folder
-                        string courseFolderPath = "CourseInformations";
-
-                        // Get all text files in the CourseInformations folder
-                        string[] courseFiles = Directory.GetFiles(courseFolderPath, "*.txt");
-
-                        // Iterate through each file
-                        foreach (string courseFile in courseFiles)
-                        {
-                            // Read all lines from the file
-                            string[] courseLines = File.ReadAllLines(courseFile);
-
-                            // Check each block of course information
-                            foreach (var courseBlock in GetCourseBlocks(courseLines))
-                            {
-                                string courseDepartment = courseBlock.FirstOrDefault(line => line.StartsWith("Student Department: "))?.Replace("Student Department: ", "");
-                                string courseYearSection = courseBlock.FirstOrDefault(line => line.StartsWith("Student year and section: "))?.Replace("Student year and section: ", "");
-
-                                // Check if the block contains the student's department and year/section
-                                if (department == courseDepartment && yearSection == courseYearSection)
-                                {
-                                    // Extract the course information
-                                    string courseName = courseBlock.FirstOrDefault(line => line.StartsWith("Course Name: "))?.Replace("Course Name: ", "");
-                                    string courseCode = courseBlock.FirstOrDefault(line => line.StartsWith("Course Code: "))?.Replace("Course Code: ", "");
-                                    string schedule = courseBlock.FirstOrDefault(line => line.StartsWith("Course Schedule: "))?.Replace("Course Schedule: ", "");
-
-                                    // Get the name of the course file
-                                    string courseFileName = Path.GetFileName(courseFile);
-
-                                    // Search for the corresponding teacher's file in the TeacherCredentials directory
-                                    string teacherCredentialsDir = "TeacherCredentials";
-                                    string teacherFilePath = Path.Combine(teacherCredentialsDir, courseFileName);
-
-                                    string teacherFirstName = "Unknown";
-                                    string teacherLastName = "Unknown";
-
-                                    if (File.Exists(teacherFilePath))
-                                    {
-                                        string[] teacherLines = File.ReadAllLines(teacherFilePath);
-                                        teacherFirstName = teacherLines.FirstOrDefault(line => line.StartsWith("First Name: "))?.Replace("First Name: ", "") ?? "Unknown";
-                                        teacherLastName = teacherLines.FirstOrDefault(line => line.StartsWith("Last Name: "))?.Replace("Last Name: ", "") ?? "Unknown";
-                                    }
-
-                                    // Create a new StudentScheduleCard and set the labels
-                                    StudentScheduleCard card = new StudentScheduleCard();
-                                    card.subjectCodeLBL.Text = courseCode;
-                                    card.subjectNameLBL.Text = courseName;
-                                    card.subjectScheduleLBL.Text = schedule;
-
-                                    // Set the teacher's name on the card
-                                    card.teacherNameLBL.Text = $"{teacherFirstName} {teacherLastName}";
-
-                                    // Add the card to the student_CoursePanel
-                                    STD_DSH.student_CoursePanel.Controls.Add(card);
-                                }
-                            }
-                        }
-
-                        STD_DSH.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Password is incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    break;
-                }
+                ShowAccountNotFoundError();
+                return;
             }
 
-            if (!userFound)
+            if (Account__Manager.AuthenticateStudentLogIn(usernameOrId, password, teacherDir))
             {
-                MessageBox.Show("The student account you entered does not exist.\n" +
-                                "Please check your username or ID and try again. \n\n" +
-                                "If you do not have an account, please contact your teacher for assistance.",
-                                "Account Not Found",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
+                HandleSuccessfulLogin(studentFilePath);
+            }
+            else
+            {
+                MessageBox.Show("Password is incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
         private void close_btn_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-
-            if (result == DialogResult.No)
+            if (MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                return;
+                Application.Exit();
             }
-            else Application.Exit();
         }
 
-        // Helper method to split course information blocks
-        private IEnumerable<List<string>> GetCourseBlocks(string[] lines)
+        private bool TryFindUser(string usernameOrId, out string studentFilePath, out string teacherDir)
         {
-            var blocks = new List<List<string>>();
+            studentFilePath = null;
+            teacherDir = null;
+
+            string baseFolderPath = "StudentCredentials";
+            foreach (var dir in Directory.GetDirectories(baseFolderPath))
+            {
+                studentFilePath = Path.Combine(dir, $"{usernameOrId}.txt");
+                if (File.Exists(studentFilePath))
+                {
+                    teacherDir = dir;
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void HandleSuccessfulLogin(string studentFilePath)
+        {
+            var studentInfo = File.ReadAllLines(studentFilePath)
+                .ToDictionary(
+                    line => line.Substring(0, line.IndexOf(':')),
+                    line => line.Substring(line.IndexOf(':') + 1).Trim()
+                );
+
+            string username = TryGetValueOrDefault(studentInfo, "Username", "Unknown");
+            string studentID = TryGetValueOrDefault(studentInfo, "Student ID", "Unknown");
+            string studentGender = TryGetValueOrDefault(studentInfo, "Gender", "Unknown");
+            string department = TryGetValueOrDefault(studentInfo, "Department", "Unknown");
+            string yearSection = TryGetValueOrDefault(studentInfo, "Year and Section", "Unknown");
+
+            MessageBox.Show("Sign in successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Hide();
+
+            var dashboard = new Student__Dashboard();
+            dashboard.SetUsernameLabel(username);
+            dashboard.SetStudentIDLabel(studentID);
+            dashboard.SetStudentIcon(studentGender);
+
+            PopulateStudentCourses(dashboard, department, yearSection);
+
+            dashboard.Show();
+        }
+
+        private void PopulateStudentCourses(Student__Dashboard dashboard, string department, string yearSection)
+        {
+            string courseFolderPath = "CourseInformations";
+            var courseCards = new List<StudentScheduleCard>();
+
+            foreach (var courseFile in Directory.GetFiles(courseFolderPath, "*.txt"))
+            {
+                foreach (var courseBlock in GetCourseBlocks(File.ReadAllLines(courseFile)))
+                {
+                    if (TryGetValueOrDefault(courseBlock, "Student Department", null) == department &&
+                        TryGetValueOrDefault(courseBlock, "Student year and section", null) == yearSection)
+                    {
+                        var courseName = TryGetValueOrDefault(courseBlock, "Course Name", null);
+                        var courseCode = TryGetValueOrDefault(courseBlock, "Course Code", null);
+                        var schedule = TryGetValueOrDefault(courseBlock, "Course Schedule", null);
+                        var weekDay = TryGetValueOrDefault(courseBlock, "Day of the Week", null);
+                        var teacherName = GetTeacherName(Path.GetFileName(courseFile));
+
+                        var card = new StudentScheduleCard
+                        {
+                            subjectCodeLBL = { Text = courseCode },
+                            subjectNameLBL = { Text = courseName },
+                            subjectScheduleLBL = { Text = schedule },
+                            DayOfTheWeek_lbl = { Text = weekDay },
+                            teacherNameLBL = { Text = teacherName }
+                        };
+
+                        courseCards.Add(card);
+                    }
+                }
+            }
+
+            // Sort the course cards based on the day of the week
+            courseCards.Sort((x, y) => CompareDaysOfWeek(x.DayOfTheWeek_lbl.Text, y.DayOfTheWeek_lbl.Text));
+
+            // Add the sorted course cards to the dashboard
+            foreach (var card in courseCards)
+            {
+                dashboard.student_CoursePanel.Controls.Add(card);
+            }
+        }
+
+        private string GetTeacherName(string courseFileName)
+        {
+            string teacherFilePath = Path.Combine("TeacherCredentials", courseFileName);
+
+            if (!File.Exists(teacherFilePath)) return "Unknown";
+
+            var teacherInfo = File.ReadAllLines(teacherFilePath)
+                .ToDictionary(
+                    line => line.Substring(0, line.IndexOf(':')),
+                    line => line.Substring(line.IndexOf(':') + 1).Trim()
+                );
+
+            var firstName = TryGetValueOrDefault(teacherInfo, "First Name", "Unknown");
+            var lastName = TryGetValueOrDefault(teacherInfo, "Last Name", "Unknown");
+
+            return $"{firstName} {lastName}";
+        }
+
+        private Dictionary<string, string> GetCourseBlock(IEnumerable<string> lines)
+        {
+            return lines
+                .Select(line => line.Split(new[] { ": " }, 2, StringSplitOptions.None))
+                .ToDictionary(parts => parts[0], parts => parts.Length > 1 ? parts[1] : null);
+        }
+
+        private IEnumerable<Dictionary<string, string>> GetCourseBlocks(string[] lines)
+        {
+            var blocks = new List<Dictionary<string, string>>();
             var currentBlock = new List<string>();
 
             foreach (var line in lines)
             {
                 if (line.Trim() == "----------------------------------------")
                 {
-                    if (currentBlock.Count > 0)
+                    if (currentBlock.Any())
                     {
-                        blocks.Add(new List<string>(currentBlock));
+                        blocks.Add(GetCourseBlock(currentBlock));
                         currentBlock.Clear();
                     }
                 }
@@ -253,18 +238,47 @@ namespace sprout__gradeBook
                 }
             }
 
-            if (currentBlock.Count > 0)
+            if (currentBlock.Any())
             {
-                blocks.Add(currentBlock);
+                blocks.Add(GetCourseBlock(currentBlock));
             }
 
             return blocks;
         }
 
+        private static TValue TryGetValueOrDefault<TKey, TValue>(Dictionary<TKey, TValue> dictionary, TKey key, TValue defaultValue = default)
+        {
+            return dictionary.TryGetValue(key, out var value) ? value : defaultValue;
+        }
+
+        private void ShowAccountNotFoundError()
+        {
+            MessageBox.Show("The student account you entered does not exist.\n" +
+                            "Please check your username or ID and try again.\n\n" +
+                            "If you do not have an account, please contact your teacher for assistance.",
+                            "Account Not Found",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+        }
+
         private void studentSIGNINform_Panel_Paint(object sender, PaintEventArgs e)
         {
+        }
 
+        private int CompareDaysOfWeek(string day1, string day2)
+        {
+            var daysOfWeek = new List<string>
+            {
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            };
+
+            return daysOfWeek.IndexOf(day1).CompareTo(daysOfWeek.IndexOf(day2));
         }
     }
 }
-
