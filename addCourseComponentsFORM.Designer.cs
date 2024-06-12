@@ -192,9 +192,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(339, 318);
+            this.Controls.Add(this.kryptonTextBox2);
             this.Controls.Add(this.kryptonTextBox3);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.kryptonTextBox2);
             this.Controls.Add(this.componentComboBox);
             this.Controls.Add(this.signinPASS__txtbox);
             this.Controls.Add(this.label1);

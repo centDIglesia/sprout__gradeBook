@@ -100,10 +100,9 @@ namespace sprout__gradeBook
 
         private void close_btn_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
+            utilityButton b = new utilityButton();
+
+            b.Exitform();
         }
 
         private bool TryFindUser(string usernameOrId, out string studentFilePath, out string teacherDir)
@@ -321,5 +320,12 @@ namespace sprout__gradeBook
             return teacherUsernames;
         }
 
+        private void back__btn_Click(object sender, EventArgs e)
+        {
+            Role__form role = new Role__form();
+
+            role.Show();
+            this.Hide();
+        }
     }
 }

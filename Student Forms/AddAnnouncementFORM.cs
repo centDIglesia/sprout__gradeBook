@@ -47,6 +47,33 @@ namespace sprout__gradeBook
             MessageBox.Show("Announcement saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            utilityButton b = new utilityButton();
+
+            b.Cancelform(this);
+        }
+
+        private void TitleTXTBOX_Enter(object sender, EventArgs e)
+        {
+            UserInput_Manager.ResetInputField(TitleTXTBOX, "Title");
+        }
+
+        private void TitleTXTBOX_Leave(object sender, EventArgs e)
+        {
+            UserInput_Manager.RestoreDefaultText(TitleTXTBOX, "Title");
+        }
+
+        private void descriprtionTXTBOX_Enter(object sender, EventArgs e)
+        {
+            UserInput_Manager.ResetInputField(descriprtionTXTBOX, "Description");
+        }
+
+        private void descriprtionTXTBOX_Leave(object sender, EventArgs e)
+        {
+            UserInput_Manager.RestoreDefaultText(descriprtionTXTBOX, "Description");
+        }
     }
 }
 
