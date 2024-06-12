@@ -150,7 +150,51 @@ namespace sprout__gradeBook
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            utilityButton b = new utilityButton();
+
+            b.Cancelform(this);
+        }
+
+        private void courseNameTXT_Enter(object sender, EventArgs e)
+        {
+            UserInput_Manager.ResetInputField(courseNameTXT, "Course Name");
+        }
+
+        private void courseNameTXT_Leave(object sender, EventArgs e)
+        {
+            UserInput_Manager.RestoreDefaultText(courseNameTXT, "Course Name");
+        }
+
+        private void courseCodeTXT_Enter(object sender, EventArgs e)
+        {
+            UserInput_Manager.ResetInputField(courseCodeTXT, "Course Code");
+        }
+
+        private void courseCodeTXT_Leave(object sender, EventArgs e)
+        {
+            UserInput_Manager.RestoreDefaultText(courseCodeTXT, "Course Code");
+
+        }
+
+        private void courseYearlvlTXT_Enter(object sender, EventArgs e)
+        {
+            UserInput_Manager.ResetInputField(courseYearlvlTXT, "Year Level");
+        }
+
+        private void courseYearlvlTXT_Leave(object sender, EventArgs e)
+        {
+            UserInput_Manager.RestoreDefaultText(courseYearlvlTXT, "Year Level");
+        }
+
+        private void courseSectionTXT_Enter(object sender, EventArgs e)
+        {
+
+            UserInput_Manager.ResetInputField(courseSectionTXT, "Designated Section");
+        }
+
+        private void courseSectionTXT_Leave(object sender, EventArgs e)
+        {
+            UserInput_Manager.RestoreDefaultText(courseSectionTXT, "Designated Section");
         }
     }
 

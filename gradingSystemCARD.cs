@@ -98,5 +98,19 @@ namespace sprout__gradeBook
             }
         }
 
+        private void componentsTXT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void componentsTXT_Enter(object sender, EventArgs e)
+        {
+            UserInput_Manager.ResetInputField(componentsTXT, "Component");
+        }
+
+        private void componentsWeightTXT_Enter(object sender, EventArgs e)
+        {
+            UserInput_Manager.ResetInputField(componentsWeightTXT, "0");
+        }
     }
 }

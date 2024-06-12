@@ -33,12 +33,10 @@
             this.role__btn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.close_btn = new System.Windows.Forms.PictureBox();
-            this.back__btn = new System.Windows.Forms.PictureBox();
             this.student__role = new System.Windows.Forms.PictureBox();
             this.teacher__role = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.close_btn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.back__btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.student__role)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teacher__role)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -68,7 +66,7 @@
             this.role__btn.StateCommon.Border.Width = 0;
             this.role__btn.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0, -1, 0, -1);
             this.role__btn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.role__btn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins", 10F);
+            this.role__btn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.role__btn.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
             this.role__btn.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
             this.role__btn.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -93,7 +91,7 @@
             this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonPalette2.InputControlStyles.InputControlCommon.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonPalette2.InputControlStyles.InputControlCommon.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // close_btn
             // 
@@ -105,17 +103,6 @@
             this.close_btn.TabIndex = 5;
             this.close_btn.TabStop = false;
             this.close_btn.Click += new System.EventHandler(this.close_btn_Click);
-            // 
-            // back__btn
-            // 
-            this.back__btn.Image = ((System.Drawing.Image)(resources.GetObject("back__btn.Image")));
-            this.back__btn.Location = new System.Drawing.Point(17, 14);
-            this.back__btn.Name = "back__btn";
-            this.back__btn.Size = new System.Drawing.Size(24, 24);
-            this.back__btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.back__btn.TabIndex = 4;
-            this.back__btn.TabStop = false;
-            this.back__btn.Click += new System.EventHandler(this.back__btn_Click);
             // 
             // student__role
             // 
@@ -153,27 +140,25 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // role__form
+            // Role__form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1147, 711);
             this.Controls.Add(this.close_btn);
-            this.Controls.Add(this.back__btn);
             this.Controls.Add(this.role__btn);
             this.Controls.Add(this.student__role);
             this.Controls.Add(this.teacher__role);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "role__form";
+            this.Name = "Role__form";
             this.Palette = this.kryptonPalette2;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "role__form";
             this.Load += new System.EventHandler(this.role__form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.close_btn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.back__btn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.student__role)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teacher__role)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -186,7 +171,6 @@
         private System.Windows.Forms.PictureBox teacher__role;
         private System.Windows.Forms.PictureBox student__role;
         private ComponentFactory.Krypton.Toolkit.KryptonButton role__btn;
-        private System.Windows.Forms.PictureBox back__btn;
         private System.Windows.Forms.PictureBox close_btn;
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette2;
     }
