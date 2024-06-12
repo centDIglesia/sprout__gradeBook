@@ -74,7 +74,7 @@ namespace sprout__gradeBook
             }
 
             this.Close();
-            parentForm.Enabled = true;
+            parentForm.Enabled = true; 
             parentForm.populateCourses();
         }
 
