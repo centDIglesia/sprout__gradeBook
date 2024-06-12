@@ -74,7 +74,7 @@ namespace sprout__gradeBook
             }
 
             this.Close();
-            parentForm.Enabled = true; 
+            parentForm.Enabled = true;
             parentForm.populateCourses();
         }
 
@@ -92,7 +92,7 @@ namespace sprout__gradeBook
                 {
                     if (line.Contains($"Course Name: {newCourse.CourseName}") &&
                         line.Contains($"Course Code: {newCourse.CourseCode}") &&
-                        line.Contains($"Student Department: {newCourse.department}") &&
+                        line.Contains($"Student Department: {newCourse.Department}") &&
                         line.Contains($"Student year and section: {newCourse.GetYearAndSection()}") &&
                         line.Contains($"Course Schedule: {newCourse.GetCourseSchedule()}"))
                     {

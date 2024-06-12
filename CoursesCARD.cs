@@ -131,7 +131,7 @@ namespace sprout__gradeBook
 
         public void saveAnnouncement(string title, string description)
         {
-            string baseDirectory = $"CourseAnnoucement/{_currentUser}";
+            string baseDirectory = $"CourseAnnoucement/{_currentUser}/{SubjectCode}";
 
 
             if (!Directory.Exists(baseDirectory))
@@ -149,8 +149,6 @@ namespace sprout__gradeBook
                 write.WriteLine($"time sent : {DateTime.Now.ToString("MMMM d, yyyy, dddd, h:mm tt")}");
                 write.WriteLine("------------------------------");
             };
-
-            MessageBox.Show("Announcement posted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
     }
