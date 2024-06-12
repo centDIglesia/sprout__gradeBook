@@ -112,6 +112,12 @@
     <Compile Include="IntroPage.Designer.cs">
       <DependentUpon>IntroPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="notificationCARD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="notificationCARD.Designer.cs">
+      <DependentUpon>notificationCARD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Role__form.cs">
@@ -171,6 +177,12 @@
     </Compile>
     <Compile Include="studentsInGradebookCARD.Designer.cs">
       <DependentUpon>studentsInGradebookCARD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="students__NoticationUi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="students__NoticationUi.Designer.cs">
+      <DependentUpon>students__NoticationUi.cs</DependentUpon>
     </Compile>
     <Compile Include="Teacher__coursesDashboard.cs">
       <SubType>Form</SubType>
@@ -242,6 +254,9 @@
     <EmbeddedResource Include="IntroPage.resx">
       <DependentUpon>IntroPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="notificationCARD.resx">
+      <DependentUpon>notificationCARD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -278,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="studentsInGradebookCARD.resx">
       <DependentUpon>studentsInGradebookCARD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="students__NoticationUi.resx">
+      <DependentUpon>students__NoticationUi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher__coursesDashboard.resx">
       <DependentUpon>Teacher__coursesDashboard.cs</DependentUpon>

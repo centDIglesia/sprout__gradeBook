@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(notificationCARD));
             this.titleTXTBX = new System.Windows.Forms.Label();
             this.descriptionTXTBX = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.notifTimesent = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // titleTXTBX
@@ -65,6 +66,19 @@
             this.descriptionTXTBX.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.descriptionTXTBX.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descriptionTXTBX.TabIndex = 1;
+            this.descriptionTXTBX.TextChanged += new System.EventHandler(this.descriptionTXTBX_TextChanged);
+            // 
+            // notifTimesent
+            // 
+            this.notifTimesent.AutoSize = true;
+            this.notifTimesent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.notifTimesent.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notifTimesent.ForeColor = System.Drawing.Color.White;
+            this.notifTimesent.Location = new System.Drawing.Point(260, 5);
+            this.notifTimesent.Name = "notifTimesent";
+            this.notifTimesent.Size = new System.Drawing.Size(31, 22);
+            this.notifTimesent.TabIndex = 2;
+            this.notifTimesent.Text = "title";
             // 
             // notificationCARD
             // 
@@ -73,6 +87,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Controls.Add(this.notifTimesent);
             this.Controls.Add(this.descriptionTXTBX);
             this.Controls.Add(this.titleTXTBX);
             this.DoubleBuffered = true;
@@ -88,5 +103,6 @@
 
         private System.Windows.Forms.Label titleTXTBX;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox descriptionTXTBX;
+        private System.Windows.Forms.Label notifTimesent;
     }
 }

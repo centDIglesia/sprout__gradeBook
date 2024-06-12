@@ -65,6 +65,25 @@ namespace sprout__gradeBook
         {
 
         }
+
+        private void loadNotification()
+        {
+
+        }
+
+        private void notifCount_Click(object sender, EventArgs e)
+        {
+            students__NoticationUi students__NoticationFORM = new students__NoticationUi(_studentLoginForm, _studentLoginForm.currentStudentID);
+            students__NoticationFORM.Show();
+
+
+
+        }
+
+        private void roundPictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

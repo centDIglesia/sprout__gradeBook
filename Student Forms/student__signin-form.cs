@@ -10,9 +10,10 @@ namespace sprout__gradeBook
     public partial class studentLoginForm : KryptonForm
     {
         private bool isPasswordVisible = false;
-        private string currentStudentID;
+        public string currentStudentID;
         public studentLoginForm()
         {
+
             InitializeComponent();
         }
 

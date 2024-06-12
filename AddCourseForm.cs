@@ -55,10 +55,7 @@ namespace sprout__gradeBook
                 return;
             }
 
-            using (StreamWriter writer = File.AppendText(filePath))
-            {
-                writer.WriteLine($"----------------------------");
-            }
+
 
             newCourse.SaveCourse(currentUserName);
 

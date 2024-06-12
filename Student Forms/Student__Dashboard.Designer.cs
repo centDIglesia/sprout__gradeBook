@@ -118,6 +118,7 @@
             this.notifCount.Size = new System.Drawing.Size(8, 12);
             this.notifCount.TabIndex = 100;
             this.notifCount.Text = "1";
+            this.notifCount.Click += new System.EventHandler(this.notifCount_Click);
             // 
             // close_btn
             // 
@@ -160,6 +161,7 @@
             this.notification__icon.Size = new System.Drawing.Size(38, 24);
             this.notification__icon.TabIndex = 62;
             this.notification__icon.TabStop = false;
+            this.notification__icon.Click += new System.EventHandler(this.notifCount_Click);
             // 
             // Student__Dashboard__UI
             // 
@@ -180,6 +182,7 @@
             this.roundPictureBox1.Size = new System.Drawing.Size(15, 15);
             this.roundPictureBox1.TabIndex = 99;
             this.roundPictureBox1.TabStop = false;
+            this.roundPictureBox1.Click += new System.EventHandler(this.roundPictureBox1_Click);
             // 
             // Student__Dashboard
             // 

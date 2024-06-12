@@ -25,7 +25,8 @@ namespace sprout__gradeBook
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+
+        private void postBtn_Click_1(object sender, EventArgs e)
         {
             string title = TitleTXTBOX.Text;
             string description = descriprtionTXTBOX.Text;

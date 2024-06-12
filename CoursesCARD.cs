@@ -127,7 +127,6 @@ namespace sprout__gradeBook
             AddAnnouncementFORM addNewAnnouncement = new AddAnnouncementFORM(this);
             addNewAnnouncement.Show();
 
-
         }
 
         public void saveAnnouncement(string title, string description)
@@ -139,13 +138,14 @@ namespace sprout__gradeBook
             {
                 Directory.CreateDirectory(baseDirectory);
             }
-            string fullPath = Path.Combine(baseDirectory, $"{SubjectName}_{SubjectCode}_{SubjectCourseSection}.txt");
+            string fullPath = Path.Combine(baseDirectory, $"Anouncement.txt");
 
             using (StreamWriter write = new StreamWriter(fullPath, true))
             {
+                write.WriteLine($"Receiver : {SubjectCourseSection}");
                 write.WriteLine($"From : {_currentUser}");
                 write.WriteLine($"Title : {title}");
-                write.WriteLine($"Description : {description}");
+                write.WriteLine($"Description : {SubjectCode}, {description} + ");
                 write.WriteLine($"time sent : {DateTime.Now.ToString("MMMM d, yyyy, dddd, h:mm tt")}");
                 write.WriteLine("------------------------------");
             };
