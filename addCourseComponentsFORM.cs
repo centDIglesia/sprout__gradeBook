@@ -113,5 +113,11 @@ namespace sprout__gradeBook
             return result;
         }
 
+
+        private void kryptonTextBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

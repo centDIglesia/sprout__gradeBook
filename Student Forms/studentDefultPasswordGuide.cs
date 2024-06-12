@@ -25,7 +25,10 @@ namespace sprout__gradeBook
 
         private void role__btn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            utilityButton b = new utilityButton();
+
+            b.Closeform(this);
+
         }
     }
 }

@@ -15,14 +15,14 @@ namespace sprout__gradeBook
         public notificationCARD()
         {
             InitializeComponent();
-        }
-
-        public string notifTitle { get => titleTXTBX.Text; set => titleTXTBX.Text = value; }
-
-        public string notifDescription { get => descriptionTXTBX.Text; set => descriptionTXTBX.Text = value; }
-        private void notificationCARD_Load(object sender, EventArgs e)
-        {
 
         }
+
+        public string NotifTitle { get => titleTXTBX.Text; set => titleTXTBX.Text = value; }
+
+        public string NotifDescription { get => descriptionTXTBX.Text; set => descriptionTXTBX.Text = value; }
+
+        public string NotifTimesent { get => notifTimesent.Text; set => notifTimesent.Text = value; }
+        
     }
 }

@@ -55,6 +55,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.saveNewStudentBTN = new System.Windows.Forms.PictureBox();
+            this.kryptonTextBox2 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonCheckSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDepartmentTXT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -72,9 +74,9 @@
             // 
             // studentSectionTXT
             // 
-            this.studentSectionTXT.Location = new System.Drawing.Point(327, 441);
+            this.studentSectionTXT.Location = new System.Drawing.Point(310, 443);
             this.studentSectionTXT.Name = "studentSectionTXT";
-            this.studentSectionTXT.Size = new System.Drawing.Size(237, 35);
+            this.studentSectionTXT.Size = new System.Drawing.Size(237, 37);
             this.studentSectionTXT.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentSectionTXT.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentSectionTXT.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -84,11 +86,14 @@
             this.studentSectionTXT.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(155)))));
             this.studentSectionTXT.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentSectionTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
-            this.studentSectionTXT.TabIndex = 50;
+            this.studentSectionTXT.TabIndex = 11;
+            this.studentSectionTXT.Text = "Section";
+            this.studentSectionTXT.Enter += new System.EventHandler(this.studentSectionTXT_Enter);
+            this.studentSectionTXT.Leave += new System.EventHandler(this.studentSectionTXT_Leave);
             // 
             // studentFnameTXT
             // 
-            this.studentFnameTXT.Location = new System.Drawing.Point(81, 88);
+            this.studentFnameTXT.Location = new System.Drawing.Point(64, 82);
             this.studentFnameTXT.Name = "studentFnameTXT";
             this.studentFnameTXT.Size = new System.Drawing.Size(153, 37);
             this.studentFnameTXT.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
@@ -100,12 +105,15 @@
             this.studentFnameTXT.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(155)))));
             this.studentFnameTXT.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentFnameTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
-            this.studentFnameTXT.TabIndex = 43;
+            this.studentFnameTXT.TabIndex = 1;
             this.studentFnameTXT.Text = "First Name";
+            this.studentFnameTXT.TextChanged += new System.EventHandler(this.studentFnameTXT_TextChanged);
+            this.studentFnameTXT.Enter += new System.EventHandler(this.studentFnameTXT_Enter);
+            this.studentFnameTXT.Leave += new System.EventHandler(this.studentFnameTXT_Leave);
             // 
             // studentMnameTXT
             // 
-            this.studentMnameTXT.Location = new System.Drawing.Point(246, 88);
+            this.studentMnameTXT.Location = new System.Drawing.Point(229, 82);
             this.studentMnameTXT.Name = "studentMnameTXT";
             this.studentMnameTXT.Size = new System.Drawing.Size(153, 37);
             this.studentMnameTXT.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
@@ -117,22 +125,24 @@
             this.studentMnameTXT.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(155)))));
             this.studentMnameTXT.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentMnameTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
-            this.studentMnameTXT.TabIndex = 58;
+            this.studentMnameTXT.TabIndex = 2;
             this.studentMnameTXT.Text = "Middle Name";
+            this.studentMnameTXT.Enter += new System.EventHandler(this.studentMnameTXT_Enter);
+            this.studentMnameTXT.Leave += new System.EventHandler(this.studentMnameTXT_Leave);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Poppins Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.label8.Location = new System.Drawing.Point(342, 43);
+            this.label8.Location = new System.Drawing.Point(325, 37);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(0, 19);
+            this.label8.Size = new System.Drawing.Size(0, 13);
             this.label8.TabIndex = 61;
             // 
             // studentLnameTXT
             // 
-            this.studentLnameTXT.Location = new System.Drawing.Point(411, 88);
+            this.studentLnameTXT.Location = new System.Drawing.Point(394, 82);
             this.studentLnameTXT.Name = "studentLnameTXT";
             this.studentLnameTXT.Size = new System.Drawing.Size(153, 37);
             this.studentLnameTXT.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
@@ -144,14 +154,16 @@
             this.studentLnameTXT.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(155)))));
             this.studentLnameTXT.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentLnameTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
-            this.studentLnameTXT.TabIndex = 60;
+            this.studentLnameTXT.TabIndex = 3;
             this.studentLnameTXT.Text = "Last Name";
+            this.studentLnameTXT.Enter += new System.EventHandler(this.studentLnameTXT_Enter);
+            this.studentLnameTXT.Leave += new System.EventHandler(this.studentLnameTXT_Leave);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.label9.Font = new System.Drawing.Font("Poppins", 8F);
+            this.label9.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(0, 0);
             this.label9.Name = "label9";
@@ -162,9 +174,9 @@
             // 
             // studentIDTXT
             // 
-            this.studentIDTXT.Location = new System.Drawing.Point(81, 151);
+            this.studentIDTXT.Location = new System.Drawing.Point(64, 145);
             this.studentIDTXT.Name = "studentIDTXT";
-            this.studentIDTXT.Size = new System.Drawing.Size(483, 35);
+            this.studentIDTXT.Size = new System.Drawing.Size(483, 37);
             this.studentIDTXT.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentIDTXT.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentIDTXT.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -174,35 +186,37 @@
             this.studentIDTXT.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(155)))));
             this.studentIDTXT.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentIDTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
-            this.studentIDTXT.TabIndex = 67;
+            this.studentIDTXT.TabIndex = 4;
+            this.studentIDTXT.Text = "Student ID";
+            this.studentIDTXT.Enter += new System.EventHandler(this.studentIDTXT_Enter);
             this.studentIDTXT.Leave += new System.EventHandler(this.studentIDTXT_Leave);
             // 
             // studentMaleRADIOBUTTON
             // 
-            this.studentMaleRADIOBUTTON.Location = new System.Drawing.Point(416, 274);
+            this.studentMaleRADIOBUTTON.Location = new System.Drawing.Point(352, 280);
             this.studentMaleRADIOBUTTON.Name = "studentMaleRADIOBUTTON";
             this.studentMaleRADIOBUTTON.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.studentMaleRADIOBUTTON.Size = new System.Drawing.Size(60, 22);
-            this.studentMaleRADIOBUTTON.TabIndex = 69;
+            this.studentMaleRADIOBUTTON.TabIndex = 7;
             this.studentMaleRADIOBUTTON.Values.ExtraText = "   ";
             this.studentMaleRADIOBUTTON.Values.Image = ((System.Drawing.Image)(resources.GetObject("studentMaleRADIOBUTTON.Values.Image")));
             this.studentMaleRADIOBUTTON.Values.Text = "";
             // 
             // studentFemaleRADIOBUTTON
             // 
-            this.studentFemaleRADIOBUTTON.Location = new System.Drawing.Point(482, 274);
+            this.studentFemaleRADIOBUTTON.Location = new System.Drawing.Point(431, 280);
             this.studentFemaleRADIOBUTTON.Name = "studentFemaleRADIOBUTTON";
             this.studentFemaleRADIOBUTTON.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.studentFemaleRADIOBUTTON.Size = new System.Drawing.Size(69, 22);
-            this.studentFemaleRADIOBUTTON.TabIndex = 70;
+            this.studentFemaleRADIOBUTTON.TabIndex = 8;
             this.studentFemaleRADIOBUTTON.Values.Image = ((System.Drawing.Image)(resources.GetObject("studentFemaleRADIOBUTTON.Values.Image")));
             this.studentFemaleRADIOBUTTON.Values.Text = "";
             // 
             // studentEmailTXT
             // 
-            this.studentEmailTXT.Location = new System.Drawing.Point(81, 209);
+            this.studentEmailTXT.Location = new System.Drawing.Point(64, 203);
             this.studentEmailTXT.Name = "studentEmailTXT";
-            this.studentEmailTXT.Size = new System.Drawing.Size(483, 35);
+            this.studentEmailTXT.Size = new System.Drawing.Size(483, 37);
             this.studentEmailTXT.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentEmailTXT.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentEmailTXT.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -212,13 +226,16 @@
             this.studentEmailTXT.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(155)))));
             this.studentEmailTXT.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentEmailTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
-            this.studentEmailTXT.TabIndex = 73;
+            this.studentEmailTXT.TabIndex = 5;
+            this.studentEmailTXT.Text = "Email";
+            this.studentEmailTXT.Enter += new System.EventHandler(this.studentEmailTXT_Enter);
+            this.studentEmailTXT.Leave += new System.EventHandler(this.studentEmailTXT_Leave);
             // 
             // studentYearLevelTXT
             // 
-            this.studentYearLevelTXT.Location = new System.Drawing.Point(81, 441);
+            this.studentYearLevelTXT.Location = new System.Drawing.Point(64, 443);
             this.studentYearLevelTXT.Name = "studentYearLevelTXT";
-            this.studentYearLevelTXT.Size = new System.Drawing.Size(242, 35);
+            this.studentYearLevelTXT.Size = new System.Drawing.Size(242, 37);
             this.studentYearLevelTXT.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentYearLevelTXT.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentYearLevelTXT.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -228,7 +245,10 @@
             this.studentYearLevelTXT.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(155)))));
             this.studentYearLevelTXT.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentYearLevelTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
-            this.studentYearLevelTXT.TabIndex = 45;
+            this.studentYearLevelTXT.TabIndex = 10;
+            this.studentYearLevelTXT.Text = "Year Level";
+            this.studentYearLevelTXT.Enter += new System.EventHandler(this.studentYearLevelTXT_Enter);
+            this.studentYearLevelTXT.Leave += new System.EventHandler(this.studentYearLevelTXT_Leave);
             // 
             // studentDepartmentTXT
             // 
@@ -241,19 +261,21 @@
             "Bachelor of Science in Information Technology , BSIT",
             "Bachelor of Science in Hotel and Restaurant Management , BSHRM",
             "Bachelor of Science in Entrepreneurial Management , BSEM"});
-            this.studentDepartmentTXT.Location = new System.Drawing.Point(81, 384);
+            this.studentDepartmentTXT.Location = new System.Drawing.Point(74, 382);
             this.studentDepartmentTXT.Name = "studentDepartmentTXT";
             this.studentDepartmentTXT.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalOffice2003;
-            this.studentDepartmentTXT.Size = new System.Drawing.Size(483, 31);
-            this.studentDepartmentTXT.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.White;
+            this.studentDepartmentTXT.Size = new System.Drawing.Size(466, 24);
+            this.studentDepartmentTXT.StateActive.ComboBox.Content.Color1 = System.Drawing.Color.White;
+            this.studentDepartmentTXT.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentDepartmentTXT.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentDepartmentTXT.StateCommon.ComboBox.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentDepartmentTXT.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.studentDepartmentTXT.StateCommon.ComboBox.Border.Rounding = 4;
-            this.studentDepartmentTXT.StateCommon.ComboBox.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.studentDepartmentTXT.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentDepartmentTXT.StateCommon.ComboBox.Border.Rounding = 0;
+            this.studentDepartmentTXT.StateCommon.ComboBox.Border.Width = 0;
+            this.studentDepartmentTXT.StateCommon.ComboBox.Content.Color1 = System.Drawing.Color.White;
+            this.studentDepartmentTXT.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentDepartmentTXT.StateCommon.ComboBox.Content.Padding = new System.Windows.Forms.Padding(10);
             this.studentDepartmentTXT.StateCommon.DropBack.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentDepartmentTXT.StateCommon.DropBack.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
@@ -268,33 +290,39 @@
             this.studentDepartmentTXT.StateCommon.Item.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.studentDepartmentTXT.StateCommon.Item.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.studentDepartmentTXT.StateCommon.Item.Content.ShortText.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.studentDepartmentTXT.TabIndex = 78;
+            this.studentDepartmentTXT.StateTracking.Item.Back.Color1 = System.Drawing.Color.White;
+            this.studentDepartmentTXT.StateTracking.Item.Back.Color2 = System.Drawing.Color.White;
+            this.studentDepartmentTXT.StateTracking.Item.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.studentDepartmentTXT.StateTracking.Item.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.studentDepartmentTXT.TabIndex = 9;
+            this.studentDepartmentTXT.Text = "Select Department";
             // 
             // studentBirthdayPicker
             // 
             this.studentBirthdayPicker.CalendarTodayFormat = "dd";
             this.studentBirthdayPicker.CustomFormat = "yyyy-MM-dd";
             this.studentBirthdayPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.studentBirthdayPicker.Location = new System.Drawing.Point(81, 270);
+            this.studentBirthdayPicker.Location = new System.Drawing.Point(73, 278);
             this.studentBirthdayPicker.MaxDate = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
             this.studentBirthdayPicker.Name = "studentBirthdayPicker";
             this.studentBirthdayPicker.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.studentBirthdayPicker.Size = new System.Drawing.Size(240, 30);
-            this.studentBirthdayPicker.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.studentBirthdayPicker.Size = new System.Drawing.Size(240, 24);
+            this.studentBirthdayPicker.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentBirthdayPicker.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentBirthdayPicker.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentBirthdayPicker.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.studentBirthdayPicker.StateCommon.Border.Rounding = 4;
-            this.studentBirthdayPicker.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.studentBirthdayPicker.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.studentBirthdayPicker.TabIndex = 81;
+            this.studentBirthdayPicker.StateCommon.Border.Rounding = 0;
+            this.studentBirthdayPicker.StateCommon.Border.Width = 0;
+            this.studentBirthdayPicker.StateCommon.Content.Color1 = System.Drawing.Color.White;
+            this.studentBirthdayPicker.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentBirthdayPicker.TabIndex = 6;
             // 
             // pictureBox10
             // 
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(87, 368);
+            this.pictureBox10.Location = new System.Drawing.Point(68, 361);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(89, 14);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -304,7 +332,7 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(333, 425);
+            this.pictureBox9.Location = new System.Drawing.Point(316, 424);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(58, 15);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -314,7 +342,7 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(86, 425);
+            this.pictureBox8.Location = new System.Drawing.Point(68, 424);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(76, 15);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -324,17 +352,17 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(76, 330);
+            this.pictureBox7.Location = new System.Drawing.Point(41, 330);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(153, 22);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox7.Size = new System.Drawing.Size(142, 15);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox7.TabIndex = 75;
             this.pictureBox7.TabStop = false;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(343, 277);
+            this.pictureBox3.Location = new System.Drawing.Point(316, 251);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(58, 15);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -344,7 +372,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(84, 192);
+            this.pictureBox6.Location = new System.Drawing.Point(68, 186);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(47, 15);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -354,7 +382,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(87, 250);
+            this.pictureBox5.Location = new System.Drawing.Point(68, 250);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(62, 15);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -364,7 +392,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(85, 133);
+            this.pictureBox4.Location = new System.Drawing.Point(68, 127);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(77, 15);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -374,27 +402,28 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(81, 54);
+            this.pictureBox1.Location = new System.Drawing.Point(41, 49);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(138, 22);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.Size = new System.Drawing.Size(132, 15);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 64;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(282, 503);
+            this.pictureBox2.Location = new System.Drawing.Point(266, 501);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(100, 45);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 42;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // saveNewStudentBTN
             // 
             this.saveNewStudentBTN.Image = ((System.Drawing.Image)(resources.GetObject("saveNewStudentBTN.Image")));
-            this.saveNewStudentBTN.Location = new System.Drawing.Point(383, 503);
+            this.saveNewStudentBTN.Location = new System.Drawing.Point(367, 501);
             this.saveNewStudentBTN.Name = "saveNewStudentBTN";
             this.saveNewStudentBTN.Size = new System.Drawing.Size(185, 45);
             this.saveNewStudentBTN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -402,12 +431,50 @@
             this.saveNewStudentBTN.TabStop = false;
             this.saveNewStudentBTN.Click += new System.EventHandler(this.saveNewStudentBTN_Click);
             // 
+            // kryptonTextBox2
+            // 
+            this.kryptonTextBox2.Enabled = false;
+            this.kryptonTextBox2.Location = new System.Drawing.Point(64, 376);
+            this.kryptonTextBox2.Name = "kryptonTextBox2";
+            this.kryptonTextBox2.ReadOnly = true;
+            this.kryptonTextBox2.Size = new System.Drawing.Size(483, 37);
+            this.kryptonTextBox2.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.kryptonTextBox2.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.kryptonTextBox2.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.kryptonTextBox2.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonTextBox2.StateCommon.Border.Rounding = 4;
+            this.kryptonTextBox2.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(155)))));
+            this.kryptonTextBox2.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonTextBox2.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10);
+            this.kryptonTextBox2.TabIndex = 80;
+            // 
+            // kryptonTextBox1
+            // 
+            this.kryptonTextBox1.Enabled = false;
+            this.kryptonTextBox1.Location = new System.Drawing.Point(64, 272);
+            this.kryptonTextBox1.Name = "kryptonTextBox1";
+            this.kryptonTextBox1.ReadOnly = true;
+            this.kryptonTextBox1.Size = new System.Drawing.Size(256, 37);
+            this.kryptonTextBox1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.kryptonTextBox1.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.kryptonTextBox1.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.kryptonTextBox1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonTextBox1.StateCommon.Border.Rounding = 4;
+            this.kryptonTextBox1.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(155)))));
+            this.kryptonTextBox1.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonTextBox1.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10);
+            this.kryptonTextBox1.TabIndex = 81;
+            // 
             // AddStudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(649, 568);
+            this.ClientSize = new System.Drawing.Size(629, 568);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.studentDepartmentTXT);
             this.Controls.Add(this.pictureBox9);
@@ -432,6 +499,8 @@
             this.Controls.Add(this.saveNewStudentBTN);
             this.Controls.Add(this.studentIDTXT);
             this.Controls.Add(this.studentBirthdayPicker);
+            this.Controls.Add(this.kryptonTextBox2);
+            this.Controls.Add(this.kryptonTextBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddStudentForm";
             this.Text = " ";
@@ -480,5 +549,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox studentDepartmentTXT;
         private System.Windows.Forms.PictureBox pictureBox10;
         private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker studentBirthdayPicker;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox2;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
     }
 }

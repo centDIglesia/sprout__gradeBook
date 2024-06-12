@@ -121,7 +121,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAAAKRJREFUSEvtlMENgzAMADMCI7D/Mh2BUUKuOksgQoXV8Gk5KUrs2OeIB+Xhj6m1
+        DwAACw8BkvkDpQAAAKRJREFUSEvtlMENgzAMADMCI7D/Mh2BUUKuOksgQoXV8Gk5KUrs2OeIB+Xhj6m1
         Tm3NhqdQQ63hNZS/2loQmD7AnTXUXh+yaYTuEHLewceHdKHBRtgJOJuDvDygUQG8Ra7v5QECRcA+Th4g
         UhiMkwMypcFtr2ffnod/f+JDzvIcNCqAnYizOcgPocFG6ArIeQe5Ia343l8F0IDA8BRq0vKHX6KUFT2N
         jkCqZFTlAAAAAElFTkSuQmCC
@@ -130,7 +130,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfAAAAKvCAYAAACVnJ1ZAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAA08tJREFUeF7s/U2uLN9y3ImKFClekrd7IAhQQw211NUE1KsRaAo1DjWeBvZqMOwW
+        EAAACxABrSO9dQAA08tJREFUeF7s/U2uLN9y3ImKFClekrd7IAhQQw211NUE1KsRaAo1DjWeBvZqMOwW
         AYFQgwL13CzdfNvyiNz73CcVwIwyA+yu74/I8z/3F74iMs+/+F/V//yf//PPOvu/TZjT7XXsYPJ2T113
         dRLa5K6i3o151+9d/62f5n03/9bu72nnb8dB1mfGvZO3/+64u37e39u/k/p5fx/3Li/5OEh5T70d+ql8
         p+/m+07q/27MXf27Oq/fZUl1f2p/0+/0+V+W9iN7HTuYvN1T112dhDa5q6h3Y971e9d/66d5382/tft7
@@ -1039,5 +1039,8 @@
   </data>
   <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="kryptonPalette2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>154, 17</value>
   </metadata>
 </root>

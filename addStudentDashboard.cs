@@ -29,6 +29,9 @@ namespace sprout__gradeBook
 
         }
 
+        private void addStudentDashboard_Leave(object sender, EventArgs e)
+        {
 
+        }
     }
 }

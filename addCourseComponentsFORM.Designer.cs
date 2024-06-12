@@ -60,17 +60,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.label1.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(-11, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(25, 10, 300, 10);
+
             this.label1.Size = new System.Drawing.Size(558, 45);
+
             this.label1.TabIndex = 0;
             this.label1.Text = "Add components to this course.";
             // 
             // maximunGrade
             // 
+
             this.maximunGrade.Location = new System.Drawing.Point(34, 187);
             this.maximunGrade.Name = "maximunGrade";
             this.maximunGrade.Size = new System.Drawing.Size(267, 49);
@@ -85,6 +88,7 @@
             this.maximunGrade.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10);
             this.maximunGrade.TabIndex = 18;
             this.maximunGrade.Text = "Maximun Grade";
+
             // 
             // componentComboBox
             // 
@@ -92,14 +96,17 @@
             this.componentComboBox.Location = new System.Drawing.Point(43, 82);
             this.componentComboBox.Name = "componentComboBox";
             this.componentComboBox.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+
             this.componentComboBox.Size = new System.Drawing.Size(252, 28);
+
+
             this.componentComboBox.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.componentComboBox.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.componentComboBox.StateCommon.ComboBox.Border.Width = 0;
             this.componentComboBox.StateCommon.ComboBox.Content.Color1 = System.Drawing.Color.White;
-            this.componentComboBox.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Poppins", 9F);
+            this.componentComboBox.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.componentComboBox.StateCommon.ComboBox.Content.Padding = new System.Windows.Forms.Padding(10);
             this.componentComboBox.StateCommon.DropBack.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.componentComboBox.StateCommon.DropBack.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
@@ -119,7 +126,7 @@
             this.componentComboBox.StateTracking.Item.Border.Width = 0;
             this.componentComboBox.StateTracking.Item.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.componentComboBox.StateTracking.Item.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.componentComboBox.TabIndex = 19;
+            this.componentComboBox.TabIndex = 1;
             this.componentComboBox.Text = "Select component";
             // kryptonTextBox1
             // 
@@ -127,7 +134,9 @@
             this.kryptonTextBox1.Location = new System.Drawing.Point(34, 74);
             this.kryptonTextBox1.Name = "kryptonTextBox1";
             this.kryptonTextBox1.ReadOnly = true;
+
             this.kryptonTextBox1.Size = new System.Drawing.Size(267, 45);
+
             this.kryptonTextBox1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.kryptonTextBox1.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.kryptonTextBox1.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
@@ -136,12 +145,13 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonTextBox1.StateCommon.Border.Rounding = 4;
             this.kryptonTextBox1.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(155)))));
-            this.kryptonTextBox1.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonTextBox1.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonTextBox1.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10);
             this.kryptonTextBox1.TabIndex = 20;
             // 
             // componentNumber
             // 
+
             this.componentNumber.Location = new System.Drawing.Point(34, 130);
             this.componentNumber.Name = "componentNumber";
             this.componentNumber.Size = new System.Drawing.Size(130, 49);
@@ -184,6 +194,7 @@
             this.AddSubComponent_BTN.TabIndex = 22;
             this.AddSubComponent_BTN.TabStop = false;
             this.AddSubComponent_BTN.Click += new System.EventHandler(this.AddSubComponent_BTN_Click);
+
             // 
             // addCourseComponentsFORM
             // 
@@ -191,9 +202,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(339, 318);
+
             this.Controls.Add(this.numberOfItems);
             this.Controls.Add(this.AddSubComponent_BTN);
             this.Controls.Add(this.componentNumber);
+
             this.Controls.Add(this.componentComboBox);
             this.Controls.Add(this.maximunGrade);
             this.Controls.Add(this.label1);

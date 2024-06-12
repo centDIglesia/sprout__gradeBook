@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace sprout__gradeBook
@@ -98,6 +100,13 @@ namespace sprout__gradeBook
             }
             throw new InvalidOperationException("Current user is not a teacher.");
         }
+
+        public string GetDepartmentYearSection()
+        {
+            return $"{Department},{YearLevel}-{Section}";
+        }
+
+
     }
 
     public class Teacher : Users
