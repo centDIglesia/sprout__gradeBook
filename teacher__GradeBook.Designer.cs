@@ -34,18 +34,21 @@
             this.StudentIDTXT = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.studentListPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.courseComboBox = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.divider_1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sectionTXT = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.StudenttnameTXT = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.componentButton_Panel = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.divider_1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+
             ((System.ComponentModel.ISupportInitialize)(this.courseComboBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette2
@@ -64,7 +67,8 @@
             // 
             // StudentIDTXT
             // 
-            this.StudentIDTXT.Location = new System.Drawing.Point(411, 111);
+            this.StudentIDTXT.Location = new System.Drawing.Point(511, 142);
+            this.StudentIDTXT.Margin = new System.Windows.Forms.Padding(4);
             this.StudentIDTXT.Name = "StudentIDTXT";
             this.StudentIDTXT.Size = new System.Drawing.Size(90, 19);
             this.StudentIDTXT.StateCommon.ShortText.Color1 = System.Drawing.Color.Silver;
@@ -72,25 +76,28 @@
             this.StudentIDTXT.StateCommon.ShortText.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StudentIDTXT.TabIndex = 69;
             this.StudentIDTXT.Values.Text = "kryptonLabel3";
-            this.StudentIDTXT.Paint += new System.Windows.Forms.PaintEventHandler(this.StudentIDTXT_Paint);
             // 
             // studentListPanel
             // 
             this.studentListPanel.AutoScroll = true;
             this.studentListPanel.AutoScrollMinSize = new System.Drawing.Size(1, 0);
-            this.studentListPanel.Location = new System.Drawing.Point(47, 116);
+            this.studentListPanel.Location = new System.Drawing.Point(71, 154);
+            this.studentListPanel.Margin = new System.Windows.Forms.Padding(4);
             this.studentListPanel.Name = "studentListPanel";
-            this.studentListPanel.Size = new System.Drawing.Size(235, 488);
+            this.studentListPanel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.studentListPanel.Size = new System.Drawing.Size(267, 576);
             this.studentListPanel.TabIndex = 70;
-            this.studentListPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.studentListPanel_Paint);
             // 
             // courseComboBox
             // 
             this.courseComboBox.DropDownWidth = 500;
-            this.courseComboBox.Location = new System.Drawing.Point(57, 72);
+
+            this.courseComboBox.Location = new System.Drawing.Point(73, 94);
+            this.courseComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.courseComboBox.Name = "courseComboBox";
             this.courseComboBox.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.courseComboBox.Size = new System.Drawing.Size(216, 21);
+            this.courseComboBox.Size = new System.Drawing.Size(264, 29);
+
             this.courseComboBox.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.courseComboBox.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -123,6 +130,7 @@
             this.courseComboBox.Text = "Select Course";
             this.courseComboBox.SelectedIndexChanged += new System.EventHandler(this.kryptonComboBox1_SelectedIndexChanged);
             // 
+
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
@@ -165,23 +173,26 @@
             this.pictureBox1.TabIndex = 61;
             this.pictureBox1.TabStop = false;
             // 
+
             // sectionTXT
             // 
-            this.sectionTXT.Location = new System.Drawing.Point(411, 65);
+            this.sectionTXT.Location = new System.Drawing.Point(511, 80);
+            this.sectionTXT.Margin = new System.Windows.Forms.Padding(4);
             this.sectionTXT.Name = "sectionTXT";
             this.sectionTXT.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.sectionTXT.Size = new System.Drawing.Size(99, 21);
-            this.sectionTXT.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
+            this.sectionTXT.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.sectionTXT.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
             this.sectionTXT.StateCommon.ShortText.Font = new System.Drawing.Font("Poppins Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sectionTXT.TabIndex = 73;
             this.sectionTXT.Values.Text = "kryptonLabel3";
-            this.sectionTXT.Paint += new System.Windows.Forms.PaintEventHandler(this.sectionTXT_Paint);
             // 
             // StudenttnameTXT
             // 
-            this.StudenttnameTXT.Location = new System.Drawing.Point(410, 84);
+            this.StudenttnameTXT.Location = new System.Drawing.Point(509, 108);
+            this.StudenttnameTXT.Margin = new System.Windows.Forms.Padding(4);
             this.StudenttnameTXT.Name = "StudenttnameTXT";
+            this.StudenttnameTXT.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.StudenttnameTXT.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StudenttnameTXT.Size = new System.Drawing.Size(129, 27);
             this.StudenttnameTXT.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
@@ -189,7 +200,74 @@
             this.StudenttnameTXT.StateCommon.ShortText.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
             this.StudenttnameTXT.TabIndex = 74;
             this.StudenttnameTXT.Values.Text = "kryptonLabel3";
-            this.StudenttnameTXT.Paint += new System.Windows.Forms.PaintEventHandler(this.StudenttnameTXT_Paint);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.AutoScrollMinSize = new System.Drawing.Size(1, 0);
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(387, 288);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(697, 427);
+            this.flowLayoutPanel1.TabIndex = 71;
+            // 
+            // componentButton_Panel
+            // 
+            this.componentButton_Panel.AutoScroll = true;
+            this.componentButton_Panel.AutoScrollMinSize = new System.Drawing.Size(1, 0);
+            this.componentButton_Panel.AutoSize = true;
+            this.componentButton_Panel.BackColor = System.Drawing.Color.White;
+            this.componentButton_Panel.Location = new System.Drawing.Point(387, 198);
+            this.componentButton_Panel.Margin = new System.Windows.Forms.Padding(4);
+            this.componentButton_Panel.Name = "componentButton_Panel";
+            this.componentButton_Panel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.componentButton_Panel.Size = new System.Drawing.Size(697, 71);
+            this.componentButton_Panel.TabIndex = 72;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Silver;
+            this.pictureBox5.Location = new System.Drawing.Point(71, 144);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(267, 2);
+            this.pictureBox5.TabIndex = 84;
+            this.pictureBox5.TabStop = false;
+            // 
+            // divider_1
+            // 
+            this.divider_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
+            this.divider_1.Location = new System.Drawing.Point(37, 58);
+            this.divider_1.Margin = new System.Windows.Forms.Padding(4);
+            this.divider_1.Name = "divider_1";
+            this.divider_1.Size = new System.Drawing.Size(1047, 1);
+            this.divider_1.TabIndex = 60;
+            this.divider_1.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(37, 16);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(239, 33);
+            this.pictureBox1.TabIndex = 61;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(37, 64);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(255, 567);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox4.TabIndex = 83;
+            this.pictureBox4.TabStop = false;
             // 
             // kryptonTextBox1
             // 
@@ -212,32 +290,35 @@
             // 
             // teacher__GradeBook
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(827, 639);
-            this.Controls.Add(this.courseComboBox);
-            this.Controls.Add(this.kryptonTextBox1);
+
+            this.ClientSize = new System.Drawing.Size(1103, 786);
+            this.Controls.Add(this.componentButton_Panel);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.pictureBox5);
+
             this.Controls.Add(this.StudenttnameTXT);
+            this.Controls.Add(this.StudentIDTXT);
             this.Controls.Add(this.sectionTXT);
             this.Controls.Add(this.studentListPanel);
-            this.Controls.Add(this.StudentIDTXT);
-            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.divider_1);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "teacher__GradeBook";
             this.Palette = this.kryptonPalette2;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.Text = "teacher__GradeBook";
             this.Load += new System.EventHandler(this.teacher__GradeBook_Load);
             ((System.ComponentModel.ISupportInitialize)(this.courseComboBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,16 +327,19 @@
         #endregion
 
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette2;
-        private System.Windows.Forms.PictureBox divider_1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
 
         private ComponentFactory.Krypton.Toolkit.KryptonLabel StudentIDTXT;
         private System.Windows.Forms.FlowLayoutPanel studentListPanel;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox courseComboBox;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel sectionTXT;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel StudenttnameTXT;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
+
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox divider_1;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel componentButton_Panel;
+
     }
 }

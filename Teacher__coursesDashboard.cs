@@ -245,7 +245,11 @@ namespace sprout__gradeBook
             populateCourses();
         }
 
-        //get the teacher firstname
+
+        private void courseSectionPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
 
     }
 }

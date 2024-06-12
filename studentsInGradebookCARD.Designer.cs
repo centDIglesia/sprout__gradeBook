@@ -44,14 +44,14 @@
             this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Border.Color1 = System.Drawing.Color.White;
             this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Border.Color2 = System.Drawing.Color.White;
-            this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonPalette2.InputControlStyles.InputControlCommon.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // nameofStudent
             // 
-            this.nameofStudent.Location = new System.Drawing.Point(7, 9);
+            this.nameofStudent.Location = new System.Drawing.Point(7, 6);
             this.nameofStudent.Name = "nameofStudent";
             this.nameofStudent.Size = new System.Drawing.Size(103, 22);
             this.nameofStudent.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
@@ -86,7 +86,7 @@
             this.Controls.Add(this.idOfStudent);
             this.DoubleBuffered = true;
             this.Name = "studentsInGradebookCARD";
-            this.Size = new System.Drawing.Size(214, 56);
+            this.Size = new System.Drawing.Size(235, 52);
             this.Load += new System.EventHandler(this.studentsInGradebookCARD_Load);
             this.Click += new System.EventHandler(this.studentsInGradebookCARD_Click);
             this.ResumeLayout(false);

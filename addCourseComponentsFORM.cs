@@ -15,52 +15,109 @@ namespace sprout__gradeBook
     public partial class addCourseComponentsFORM : KryptonForm
     {
         private readonly string CurrentUser;
-        public addCourseComponentsFORM(string currentUser)
+        private readonly string subjectcode;
+        private readonly string subjectsection;
+
+        public addCourseComponentsFORM(string currentUser, string subCode, string subSection)
         {
             InitializeComponent();
-
             CurrentUser = currentUser;
+            subjectcode = subCode;
+            subjectsection = subSection;
             LoadComponents();
         }
 
         private void LoadComponents()
         {
-            // Define the file path
-            string filePath = $"CourseGradingSystem/{CurrentUser}/gradingSystem.txt";
+            // Define the directory path
+            string directoryPath = $"CourseGradingSystem/{CurrentUser}";
 
-            // Check if the file exists
-            if (File.Exists(filePath))
+            // Check if the directory exists
+            if (Directory.Exists(directoryPath))
             {
-                // Read all lines from the file
-                string[] lines = File.ReadAllLines(filePath);
+                // Get all text files in the directory
+                string[] filePaths = Directory.GetFiles(directoryPath, "gradingSystem.txt");
 
-                // Add each component to the combo box
-                foreach (string line in lines)
+                // Loop through each file path
+                foreach (string filePath in filePaths)
                 {
-                    if (line.StartsWith("Component:"))
-                    {
-                        // Extract the component name
-                        string componentName = line.Substring(line.IndexOf(":") + 2);
+                    // Read all lines from the file
+                    string[] lines = File.ReadAllLines(filePath);
 
-                        // Add the component to the combo box
-                        componentComboBox.Items.Add(componentName);
+                    // Loop through each line in the file
+                    foreach (string line in lines)
+                    {
+                        if (line.StartsWith("Component:"))
+                        {
+                            // Extract the component name
+                            string componentName = line.Substring(line.IndexOf(":") + 2).Trim();
+
+                            // Add the component to the combo box
+                            componentComboBox.Items.Add(componentName);
+                        }
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Grading system file not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Grading system directory not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void addCourseComponentsFORM_Load(object sender, EventArgs e)
-        {
+        private void AddSubComponent_BTN_Click(object sender, EventArgs e)
+        {            
+            if (componentComboBox.SelectedItem != null)
+            {             
+                string selectedComponent = componentComboBox.SelectedItem.ToString();
+                
+                int endIndex = selectedComponent.IndexOf(","); 
+                if (endIndex > 0)
+                {
+                    string componentName = selectedComponent.Substring(0, endIndex).Trim();
 
+                    string modifiedSection = RemoveStringBetweenCharacters(subjectsection, ',');
+                    string directoryPath = $"CourseGradingSystem/{CurrentUser}/gradingSystem/{componentName}/{subjectcode},{modifiedSection}.txt";
+
+                    MessageBox.Show($"Adding subcomponent to: {directoryPath}", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    using (StreamWriter file = new StreamWriter(directoryPath, true))
+                    {
+                        file.WriteLine($"{componentName} # : {componentNumber.Text}");
+                        file.WriteLine($"{componentName} {componentNumber.Text} items : {numberOfItems.Text}");
+                        file.WriteLine($"{componentName} {componentNumber.Text} max grade : {maximunGrade.Text}");
+                        file.WriteLine(new string('-', 40));
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Invalid component format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a component first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+        static string RemoveStringBetweenCharacters(string input, char delimiter)
+        {
+            int firstCommaIndex = input.IndexOf(delimiter);
+            int secondCommaIndex = input.IndexOf(delimiter, firstCommaIndex + 1);
+
+            if (firstCommaIndex == -1 || secondCommaIndex == -1 || firstCommaIndex >= secondCommaIndex)
+            {
+                return input; // If commas are not found or in an invalid state, return the input as is
+            }
+
+            // Construct the result by removing the string between the first and second commas
+            string result = input.Substring(0, firstCommaIndex) + input.Substring(secondCommaIndex);
+            return result;
+        }
+
 
         private void kryptonTextBox2_Enter(object sender, EventArgs e)
         {
 
         }
+
     }
 }
