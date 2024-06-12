@@ -131,8 +131,8 @@ namespace sprout__gradeBook
 
         public void saveAnnouncement(string title, string description)
         {
-            string baseDirectory = $"CourseAnnoucement/{_currentUser}/{SubjectCode}";
-
+            string baseDirectory = $"CourseAnnoucement/{_currentUser}";
+            //get currentusername name
 
             if (!Directory.Exists(baseDirectory))
             {
@@ -143,13 +143,45 @@ namespace sprout__gradeBook
             using (StreamWriter write = new StreamWriter(fullPath, true))
             {
                 write.WriteLine($"Receiver : {SubjectCourseSection}");
-                write.WriteLine($"From : {_currentUser}");
+
                 write.WriteLine($"Title : {title}");
-                write.WriteLine($"Description : {SubjectCode}, {description} + ");
+                write.WriteLine($"Description : From | {GetFirstName()} | {SubjectCode}\n\t{description}");
                 write.WriteLine($"time sent : {DateTime.Now.ToString("MMMM d, yyyy, dddd, h:mm tt")}");
                 write.WriteLine("------------------------------");
             };
 
+        }
+
+        public string GetFirstName()
+        {
+            string filePath = $"TeacherCredentials/{_currentUser}.txt";
+
+
+            if (!File.Exists(filePath))
+            {
+                throw new FileNotFoundException("The credential file could not be found.");
+            }
+
+            // Read all lines from the file
+            string[] lines = File.ReadAllLines(filePath);
+
+
+            foreach (var line in lines)
+            {
+
+                if (line.StartsWith("First Name:", StringComparison.OrdinalIgnoreCase))
+                {
+                    // Extract the first name by splitting the line
+                    string[] parts = line.Split(new[] { ':' }, 2);
+                    if (parts.Length == 2)
+                    {
+                        return parts[1].Trim();
+                    }
+                }
+            }
+
+
+            throw new InvalidOperationException("The first name could not be found in the credential file.");
         }
     }
 }

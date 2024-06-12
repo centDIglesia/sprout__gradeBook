@@ -58,25 +58,24 @@
             this.descriptionTXTBX.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.descriptionTXTBX.StateCommon.Border.Color1 = System.Drawing.Color.White;
             this.descriptionTXTBX.StateCommon.Border.Color2 = System.Drawing.Color.White;
-            this.descriptionTXTBX.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            this.descriptionTXTBX.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.descriptionTXTBX.StateCommon.Border.Rounding = 0;
             this.descriptionTXTBX.StateCommon.Border.Width = 0;
             this.descriptionTXTBX.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.descriptionTXTBX.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descriptionTXTBX.TabIndex = 1;
-            this.descriptionTXTBX.TextChanged += new System.EventHandler(this.descriptionTXTBX_TextChanged);
             // 
             // notifTimesent
             // 
             this.notifTimesent.AutoSize = true;
             this.notifTimesent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.notifTimesent.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notifTimesent.ForeColor = System.Drawing.Color.White;
-            this.notifTimesent.Location = new System.Drawing.Point(260, 5);
+            this.notifTimesent.Font = new System.Drawing.Font("Poppins", 8F);
+            this.notifTimesent.ForeColor = System.Drawing.Color.Gray;
+            this.notifTimesent.Location = new System.Drawing.Point(85, 7);
             this.notifTimesent.Name = "notifTimesent";
-            this.notifTimesent.Size = new System.Drawing.Size(31, 22);
+            this.notifTimesent.Size = new System.Drawing.Size(30, 19);
             this.notifTimesent.TabIndex = 2;
             this.notifTimesent.Text = "title";
             // 
@@ -92,8 +91,7 @@
             this.Controls.Add(this.titleTXTBX);
             this.DoubleBuffered = true;
             this.Name = "notificationCARD";
-            this.Size = new System.Drawing.Size(302, 123);
-            this.Load += new System.EventHandler(this.notificationCARD_Load);
+            this.Size = new System.Drawing.Size(304, 126);
             this.ResumeLayout(false);
             this.PerformLayout();
 

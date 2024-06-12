@@ -11,6 +11,7 @@ namespace sprout__gradeBook
     {
         private bool isPasswordVisible = false;
         public string currentStudentID;
+
         public studentLoginForm()
         {
 
@@ -327,5 +328,38 @@ namespace sprout__gradeBook
             role.Show();
             this.Hide();
         }
+
+        public string GetCurrentStudentDepartmentYearSection()
+        {
+            var teachers = GetTeachersForStudent();
+            string folderPath = "StudentCredentials";
+            foreach (var teacher in teachers)
+            {
+                string studentFilePath = Path.Combine(folderPath, teacher, $"{currentStudentID}.txt");
+                if (File.Exists(studentFilePath))
+                {
+                    var studentDetails = File.ReadAllLines(studentFilePath);
+
+                    string department = studentDetails
+                        .FirstOrDefault(line => line.StartsWith("Department:"))
+                        ?.Split(new[] { ':' }, 2)[1].Trim();
+
+                    string yearAndSection = studentDetails
+                        .FirstOrDefault(line => line.StartsWith("Year and Section:"))
+                        ?.Split(new[] { ':' }, 2)[1].Trim();
+
+                    if (!string.IsNullOrEmpty(department) && !string.IsNullOrEmpty(yearAndSection))
+                    {
+                        return $"{department} {yearAndSection}";
+                    }
+                }
+            }
+
+            return "Department and Year/Section not found.";
+        }
+
+
+
+
     }
 }

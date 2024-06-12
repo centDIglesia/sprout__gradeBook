@@ -244,5 +244,8 @@ namespace sprout__gradeBook
         {
             populateCourses();
         }
+
+        //get the teacher firstname
+
     }
 }

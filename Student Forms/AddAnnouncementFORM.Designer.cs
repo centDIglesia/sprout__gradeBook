@@ -53,6 +53,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.descriprtionTXTBOX.StateCommon.Border.Rounding = 4;
             this.descriprtionTXTBOX.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.descriprtionTXTBOX.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descriprtionTXTBOX.TabIndex = 0;
             this.descriprtionTXTBOX.Text = "Description";
             this.descriprtionTXTBOX.Enter += new System.EventHandler(this.descriprtionTXTBOX_Enter);
@@ -72,7 +73,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.TitleTXTBOX.StateCommon.Border.Rounding = 4;
             this.TitleTXTBOX.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.TitleTXTBOX.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TitleTXTBOX.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TitleTXTBOX.TabIndex = 1;
             this.TitleTXTBOX.Text = "Title";
             this.TitleTXTBOX.Enter += new System.EventHandler(this.TitleTXTBOX_Enter);
@@ -82,21 +83,21 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.label1.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(-4, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(15, 6, 400, 5);
-            this.label1.Size = new System.Drawing.Size(554, 27);
+            this.label1.Size = new System.Drawing.Size(561, 33);
             this.label1.TabIndex = 2;
             this.label1.Text = "Create Announcement";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(223, 299);
+            this.pictureBox2.Location = new System.Drawing.Point(219, 299);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(97, 37);
+            this.pictureBox2.Size = new System.Drawing.Size(100, 37);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
