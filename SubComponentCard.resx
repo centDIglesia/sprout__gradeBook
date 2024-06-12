@@ -117,20 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="kryptonPalette2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAANoAAAA7CAYAAAAdBZT8AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAAWpJREFUeF7t1b1NQ0EYRFF6oQHTjmOohIAMV+GWiJEg4CdxBwsrkJiHHWBgHJ0r
-        nWy/cLRnQ1I9Q5NOkKFJJ2hvaE/3d2N7vR6bq9W4WZ8DR5jb2b0+fq7pq8XQ5gMDg7+5vbwYz+8fVrYY
-        2lzjoUPgOHNL2WJohw6A38kMDUoyQ4OSzNCgJDM0KMkMDUoyQ4OSzNCgJDM0KMkMDUoyQ4OSzNCgJDM0
-        KMkMDUoyQ4OSzNCgJDM0KMkMDUoyQ4OSzNCgJDM0KMkMDUoyQ4OSzNCgJDM0KMkMDUoyQ4OSzNCgJDM0
-        KMkMDUoyQ4OSzNCgJDM0KMkMDUoyQ4OSzNCgJDM0KMkMDUoyQ4OSzNCgJDM0KMkMDUoyQ4OSzNCgJDM0
-        KMkMDUoyQ4OSbDG07fX64AFwnLmlbDG0p/u7sblaHTwEfmZzuRq7l4fPVX20GNpsPvCzwfHmwOZ25of1
-        vb2hSfr/DE06QYYm1RvjDXWcusZTKTfcAAAAAElFTkSuQmCC
-</value>
-  </data>
 </root>

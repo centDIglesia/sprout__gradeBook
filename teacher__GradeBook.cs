@@ -7,8 +7,10 @@ using ComponentFactory.Krypton.Toolkit;
 
 namespace sprout__gradeBook
 {
+   
     public partial class teacher__GradeBook : KryptonForm
     {
+        public static teacher__GradeBook _gradeBook;
         public string currentUSer { get; set; }
         public string StudenttnameText
         {
@@ -25,14 +27,10 @@ namespace sprout__gradeBook
         {
             currentUSer = currentuser;
             InitializeComponent();
-
-
-
         }
 
         private void teacher__GradeBook_Load(object sender, EventArgs e)
         {
-
             LoadTxtFilesIntoComboBox(currentUSer);
             courseComboBox.SelectedIndexChanged += CourseComboBox_SelectedIndexChanged;
         }
@@ -116,27 +114,13 @@ namespace sprout__gradeBook
 
             studentListPanel.Controls.Add(studentCard);
         }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void kryptonComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             sectionTXT.Text = RemoveSubstring(courseComboBox.Text, "_", ",");
-        }
 
-        private void studentListPanel_Paint(object sender, PaintEventArgs e)
-        {
 
         }
-        private string RemoveSubstring(string input, string startPattern, string endPattern)
+        public static string RemoveSubstring(string input, string startPattern, string endPattern)
         {
             int startIndex = input.IndexOf(startPattern);
             int endIndex = input.IndexOf(endPattern);
@@ -150,29 +134,9 @@ namespace sprout__gradeBook
                 return input;
             }
         }
-        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        public void populateComponentButtonInComponentButtonPanel()
         {
-
-        }
-
-        private void sectionTXT_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void StudenttnameTXT_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void StudentIDTXT_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void kryptonDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            string currentSection = sectionTXT.Text;
         }
     }
 }

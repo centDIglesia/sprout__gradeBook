@@ -74,6 +74,12 @@
     <Compile Include="AddStudentForm.Designer.cs">
       <DependentUpon>AddStudentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Component-Button-Card.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component-Button-Card.Designer.cs">
+      <DependentUpon>Component-Button-Card.cs</DependentUpon>
+    </Compile>
     <Compile Include="CourseAndSectionCARD.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -172,6 +178,12 @@
     <Compile Include="studentsInGradebookCARD.Designer.cs">
       <DependentUpon>studentsInGradebookCARD.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubComponentCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SubComponentCard.Designer.cs">
+      <DependentUpon>SubComponentCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teacher__coursesDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddStudentForm.resx">
       <DependentUpon>AddStudentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component-Button-Card.resx">
+      <DependentUpon>Component-Button-Card.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CourseAndSectionCARD.resx">
       <DependentUpon>CourseAndSectionCARD.cs</DependentUpon>
@@ -278,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="studentsInGradebookCARD.resx">
       <DependentUpon>studentsInGradebookCARD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubComponentCard.resx">
+      <DependentUpon>SubComponentCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher__coursesDashboard.resx">
       <DependentUpon>Teacher__coursesDashboard.cs</DependentUpon>

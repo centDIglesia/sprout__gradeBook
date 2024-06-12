@@ -244,5 +244,10 @@ namespace sprout__gradeBook
         {
             populateCourses();
         }
+
+        private void courseSectionPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

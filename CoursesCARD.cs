@@ -75,6 +75,8 @@ namespace sprout__gradeBook
 
             removeBTN.Hide();
 
+            addSubComponentBTN.Hide();
+
         }
 
 
@@ -86,6 +88,7 @@ namespace sprout__gradeBook
 
             COSEbtn.Hide();
             removeBTN.Hide();
+            addSubComponentBTN.Hide();
         }
 
         private void subjectCourseSectionLBL_Click(object sender, EventArgs e)
@@ -95,6 +98,7 @@ namespace sprout__gradeBook
 
             COSEbtn.Show();
             removeBTN.Show();
+            addSubComponentBTN.Show();
         }
 
         private void COSEbtn_Click(object sender, EventArgs e)
@@ -104,6 +108,8 @@ namespace sprout__gradeBook
 
             COSEbtn.Hide();
             removeBTN.Hide();
+
+            addSubComponentBTN.Hide();
         }
 
 
@@ -152,6 +158,12 @@ namespace sprout__gradeBook
 
             MessageBox.Show("Announcement posted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+        }
+
+        private void addSubComponentBTN_Click(object sender, EventArgs e)
+        {
+            addCourseComponentsFORM subComp = new addCourseComponentsFORM(_currentUser, SubjectCode, SubjectCourseSection);
+            subComp.Show();
         }
     }
 }
