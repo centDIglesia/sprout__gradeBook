@@ -33,8 +33,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Design">
+      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Docking">
+      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Navigator">
+      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Ribbon">
+      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+    </Reference>
     <Reference Include="ComponentFactory.Krypton.Toolkit">
-      <HintPath>..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Workspace">
+      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -220,10 +235,17 @@
     <Compile Include="teacher__studentsDashboard.Designer.cs">
       <DependentUpon>teacher__studentsDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="TermsCons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TermsCons.Designer.cs">
+      <DependentUpon>TermsCons.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInput_Manager.cs" />
     <Compile Include="UserInput__Validator.cs" />
     <Compile Include="Users.cs" />
     <Compile Include="Account__Manager.cs" />
+    <Compile Include="utilityButton.cs" />
     <EmbeddedResource Include="addCourseComponentsFORM.resx">
       <DependentUpon>addCourseComponentsFORM.cs</DependentUpon>
     </EmbeddedResource>
@@ -314,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="teacher__studentsDashboard.resx">
       <DependentUpon>teacher__studentsDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TermsCons.resx">
+      <DependentUpon>TermsCons.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

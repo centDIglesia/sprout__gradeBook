@@ -73,6 +73,16 @@ namespace sprout__gradeBook
             }
         }
 
+        private void close_btn_Click(object sender, EventArgs e)
+        {
+            utilityButton b = new utilityButton();
 
+            b.Exitform();
+        }
+
+        private void back__btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
