@@ -91,8 +91,10 @@
             this.studentSIGNINform.Panel.Controls.Add(this.signIn__btn);
             this.studentSIGNINform.Panel.Controls.Add(this.signinSTID__txtbox);
             this.studentSIGNINform.Panel.Controls.Add(this.pictureBox11);
-            this.studentSIGNINform.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.studentSIGNINform_Panel_Paint);
-            this.studentSIGNINform.Size = new System.Drawing.Size(588, 827);
+
+
+            this.studentSIGNINform.Size = new System.Drawing.Size(441, 672);
+
             this.studentSIGNINform.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("studentSIGNINform.StateCommon.Back.Image")));
             this.studentSIGNINform.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Stretch;
             this.studentSIGNINform.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 

@@ -39,7 +39,7 @@
             // 
             this.studentGender.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.studentGender.Enabled = false;
-            this.studentGender.Image = global::sprout__gradeBook.Properties.Resources.lalalalake;
+            this.studentGender.Image = global::sprout__gradeBook.Properties.Resources.Male_Icon;
             this.studentGender.Location = new System.Drawing.Point(21, 26);
             this.studentGender.Name = "studentGender";
             this.studentGender.Size = new System.Drawing.Size(75, 75);

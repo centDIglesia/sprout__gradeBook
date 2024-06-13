@@ -14,9 +14,11 @@ namespace sprout__gradeBook
 {
     public partial class Student__Dashboard : KryptonForm
     {
+
         private readonly string currentstudentDepartment;
         private readonly studentLoginForm _studentLoginForm;
         private int notifCount = 0;
+
 
         public Student__Dashboard(studentLoginForm studentLoginForm)
         {
@@ -26,36 +28,52 @@ namespace sprout__gradeBook
             GetNotificationCount(); // Call method to initialize notifCount
         }
 
+
         public void SetUsernameLabel(string username)
         {
             student_Name.Text = $"Hi, {username}";
         }
+
 
         public void SetStudentIDLabel(string studentID)
         {
             student_ID.Text = studentID;
         }
 
-        public void SetStudentIcon(string gender)
+
+        // Method to set the student's icon based on their gender
+        public void SetStudentIcon(string studentID)
+
         {
             if (gender == "Male")
             {
-                student_Icon.Image = Properties.Resources.maleee;
+                student_Icon.Image = Properties.Resources.Male_Icon;
             }
             else
             {
-                student_Icon.Image = Properties.Resources.femaleee;
+
+                student_Icon.Image = Properties.Resources.Female_Icon;
             }
         }
 
+        // Event handler for the close button click event
+
         private void close_btn_Click(object sender, EventArgs e)
         {
+            // Prompt the user with an exit confirmation dialog
             DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+
+            // If the user clicks 'No', do nothing
+            if (result == DialogResult.No)
+
             if (result == DialogResult.Yes)
+
+            // If the user clicks 'Yes', exit the application
+            else
             {
                 Application.Exit();
-            }
+
         }
 
         private void notifCount_Click(object sender, EventArgs e)
@@ -113,6 +131,7 @@ namespace sprout__gradeBook
                         }
                     }
                 }
+
             }
         }
     }
