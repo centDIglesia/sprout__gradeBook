@@ -384,12 +384,6 @@
     <None Include="Resources\teacher__role.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\closed__eye.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\open__eye.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Forgot Your Password_HOVER.png" />
   </ItemGroup>
   <ItemGroup>
@@ -468,6 +462,8 @@
     <None Include="Resources\Sort-Button.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\open__eye.png" />
+    <None Include="Resources\closed__eye.png" />
     <Content Include="Resources\Female_Icon.png" />
     <Content Include="Resources\Male_Icon.png" />
     <None Include="Resources\open__eye1.png" />

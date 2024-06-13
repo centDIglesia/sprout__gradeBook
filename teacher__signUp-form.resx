@@ -117,10 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="kryptonPalette2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="kryptonPalette2.TrayLocation" type="System.Drawing.Point, System.Drawing">
+    <value>17, 17</value>
+  </data>
   <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAVwAAAAhCAYAAACV3ROHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -1507,7 +1507,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAoMAAALHCAYAAAD1p0j0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAA/7JJREFUeF7s/U2SBD+vtg8xPb+dMAf+7IAxC4CA532fQwRLYApTdsCMJcAa2AcT
+        DQAACw0B7QfALAAA/7JJREFUeF7s/U2SBD+vtg8xPb+dMAf+7IAxC4CA532fQwRLYApTdsCMJcAa2AcT
         RgwIIhgfdN0puZUuZZbroz+qShlxRXdn2rLTlqU7ndXd/6P/6qOPPvroo48++ujjY48Wg3300UcfffTR
         Rx8ffLQY7KOPPvroo48++vjgo8VgH3300UcfffTRxwcfLQb76KOPPvroo48+PvhoMdhHH3300UcfffTx
         wUeLwT766KOPPvroo48PPloM9tFHH3300UcffXzw0WKwjz766KOPPvro44OPFoN99NFHH3300UcfH3zc
@@ -2918,5 +2918,12 @@
         qKOOOur44KPEYB111FFHHXXUUccHHyUG66ijjjrqqKOOOj72+Pu///9WoA+jver+EAAAAABJRU5ErkJg
         gg==
 </value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="closed__eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\closed__eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="open__eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\open__eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
