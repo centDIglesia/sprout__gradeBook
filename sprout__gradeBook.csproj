@@ -464,6 +464,7 @@
   <ItemGroup>
     <None Include="Resources\open__eye.png" />
     <None Include="Resources\closed__eye.png" />
+    <None Include="Resources\Add row +.png" />
     <Content Include="Resources\Female_Icon.png" />
     <Content Include="Resources\Male_Icon.png" />
     <None Include="Resources\open__eye1.png" />

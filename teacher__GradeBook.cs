@@ -7,7 +7,7 @@ using ComponentFactory.Krypton.Toolkit;
 
 namespace sprout__gradeBook
 {
-   
+
     public partial class teacher__GradeBook : KryptonForm
     {
         public static teacher__GradeBook _gradeBook;
@@ -137,6 +137,11 @@ namespace sprout__gradeBook
         public void populateComponentButtonInComponentButtonPanel()
         {
             string currentSection = sectionTXT.Text;
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
