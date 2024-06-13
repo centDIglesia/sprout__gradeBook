@@ -192,8 +192,27 @@ namespace sprout__gradeBook
 
         private void addSubComponentBTN_Click(object sender, EventArgs e)
         {
-            addCourseComponentsFORM subComp = new addCourseComponentsFORM(_currentUser, SubjectCode, SubjectCourseSection);
-            subComp.Show();
+            string baseDirectoryPath = Path.Combine("CourseGradingSystem", _currentUser, $"{SubjectCode}_{SubjectCourseSection}");
+            string filePath = Path.Combine(baseDirectoryPath, "gradingSystem.txt");
+
+            // Check if the grading system file exists
+            if (File.Exists(filePath))
+            {
+                // Grading system already exists, inform the user
+                MessageBox.Show(
+                    "A grading system already exists for this course. Thank you!.",
+                    "Grading System Already Exists",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+            else
+            {
+                // Grading system does not exist, proceed to create a new one
+                createGradingSystemFORM crf = new createGradingSystemFORM(_currentUser, SubjectCode, SubjectCourseSection);
+                crf.Show();
+            }
         }
+
     }
 }

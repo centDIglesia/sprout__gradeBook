@@ -43,15 +43,7 @@
             this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.component_Button_Card1 = new sprout__gradeBook.Component_Button_Card();
-            this.component_Button_Card2 = new sprout__gradeBook.Component_Button_Card();
-            this.component_Button_Card3 = new sprout__gradeBook.Component_Button_Card();
-            this.component_Button_Card4 = new sprout__gradeBook.Component_Button_Card();
-            this.component_Button_Card5 = new sprout__gradeBook.Component_Button_Card();
-            this.component_Button_Card6 = new sprout__gradeBook.Component_Button_Card();
-            this.component_Button_Card7 = new sprout__gradeBook.Component_Button_Card();
-            this.component_Button_Card8 = new sprout__gradeBook.Component_Button_Card();
+            this.ComponentsButtonPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.courseComboBox)).BeginInit();
@@ -61,7 +53,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
@@ -264,110 +255,22 @@
             this.pictureBox6.TabIndex = 92;
             this.pictureBox6.TabStop = false;
             // 
-            // flowLayoutPanel2
+            // ComponentsButtonPanel
             // 
-            this.flowLayoutPanel2.AutoScroll = true;
-            this.flowLayoutPanel2.AutoScrollMinSize = new System.Drawing.Size(1, 0);
-            this.flowLayoutPanel2.Controls.Add(this.component_Button_Card1);
-            this.flowLayoutPanel2.Controls.Add(this.component_Button_Card2);
-            this.flowLayoutPanel2.Controls.Add(this.component_Button_Card3);
-            this.flowLayoutPanel2.Controls.Add(this.component_Button_Card4);
-            this.flowLayoutPanel2.Controls.Add(this.component_Button_Card5);
-            this.flowLayoutPanel2.Controls.Add(this.component_Button_Card6);
-            this.flowLayoutPanel2.Controls.Add(this.component_Button_Card7);
-            this.flowLayoutPanel2.Controls.Add(this.component_Button_Card8);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(314, 162);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(496, 96);
-            this.flowLayoutPanel2.TabIndex = 72;
-            // 
-            // component_Button_Card1
-            // 
-            this.component_Button_Card1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.component_Button_Card1.compName = "label1";
-            this.component_Button_Card1.Location = new System.Drawing.Point(2, 2);
-            this.component_Button_Card1.Margin = new System.Windows.Forms.Padding(2);
-            this.component_Button_Card1.Name = "component_Button_Card1";
-            this.component_Button_Card1.Size = new System.Drawing.Size(120, 44);
-            this.component_Button_Card1.TabIndex = 0;
-            // 
-            // component_Button_Card2
-            // 
-            this.component_Button_Card2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.component_Button_Card2.compName = "label1";
-            this.component_Button_Card2.Location = new System.Drawing.Point(126, 2);
-            this.component_Button_Card2.Margin = new System.Windows.Forms.Padding(2);
-            this.component_Button_Card2.Name = "component_Button_Card2";
-            this.component_Button_Card2.Size = new System.Drawing.Size(120, 44);
-            this.component_Button_Card2.TabIndex = 1;
-            // 
-            // component_Button_Card3
-            // 
-            this.component_Button_Card3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.component_Button_Card3.compName = "label1";
-            this.component_Button_Card3.Location = new System.Drawing.Point(250, 2);
-            this.component_Button_Card3.Margin = new System.Windows.Forms.Padding(2);
-            this.component_Button_Card3.Name = "component_Button_Card3";
-            this.component_Button_Card3.Size = new System.Drawing.Size(120, 44);
-            this.component_Button_Card3.TabIndex = 2;
-            // 
-            // component_Button_Card4
-            // 
-            this.component_Button_Card4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.component_Button_Card4.compName = "label1";
-            this.component_Button_Card4.Location = new System.Drawing.Point(374, 2);
-            this.component_Button_Card4.Margin = new System.Windows.Forms.Padding(2);
-            this.component_Button_Card4.Name = "component_Button_Card4";
-            this.component_Button_Card4.Size = new System.Drawing.Size(120, 44);
-            this.component_Button_Card4.TabIndex = 3;
-            // 
-            // component_Button_Card5
-            // 
-            this.component_Button_Card5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.component_Button_Card5.compName = "label1";
-            this.component_Button_Card5.Location = new System.Drawing.Point(2, 50);
-            this.component_Button_Card5.Margin = new System.Windows.Forms.Padding(2);
-            this.component_Button_Card5.Name = "component_Button_Card5";
-            this.component_Button_Card5.Size = new System.Drawing.Size(120, 44);
-            this.component_Button_Card5.TabIndex = 4;
-            // 
-            // component_Button_Card6
-            // 
-            this.component_Button_Card6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.component_Button_Card6.compName = "label1";
-            this.component_Button_Card6.Location = new System.Drawing.Point(126, 50);
-            this.component_Button_Card6.Margin = new System.Windows.Forms.Padding(2);
-            this.component_Button_Card6.Name = "component_Button_Card6";
-            this.component_Button_Card6.Size = new System.Drawing.Size(120, 44);
-            this.component_Button_Card6.TabIndex = 5;
-            // 
-            // component_Button_Card7
-            // 
-            this.component_Button_Card7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.component_Button_Card7.compName = "label1";
-            this.component_Button_Card7.Location = new System.Drawing.Point(250, 50);
-            this.component_Button_Card7.Margin = new System.Windows.Forms.Padding(2);
-            this.component_Button_Card7.Name = "component_Button_Card7";
-            this.component_Button_Card7.Size = new System.Drawing.Size(120, 44);
-            this.component_Button_Card7.TabIndex = 6;
-            // 
-            // component_Button_Card8
-            // 
-            this.component_Button_Card8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.component_Button_Card8.compName = "label1";
-            this.component_Button_Card8.Location = new System.Drawing.Point(374, 50);
-            this.component_Button_Card8.Margin = new System.Windows.Forms.Padding(2);
-            this.component_Button_Card8.Name = "component_Button_Card8";
-            this.component_Button_Card8.Size = new System.Drawing.Size(120, 44);
-            this.component_Button_Card8.TabIndex = 7;
+            this.ComponentsButtonPanel.AutoScroll = true;
+            this.ComponentsButtonPanel.AutoScrollMinSize = new System.Drawing.Size(1, 0);
+            this.ComponentsButtonPanel.Location = new System.Drawing.Point(314, 162);
+            this.ComponentsButtonPanel.Name = "ComponentsButtonPanel";
+            this.ComponentsButtonPanel.Size = new System.Drawing.Size(496, 96);
+            this.ComponentsButtonPanel.TabIndex = 72;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.AutoScrollMinSize = new System.Drawing.Size(1, 0);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(325, 320);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(324, 317);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(472, 231);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(475, 235);
             this.flowLayoutPanel1.TabIndex = 71;
             // 
             // pictureBox5
@@ -389,7 +292,7 @@
             this.ClientSize = new System.Drawing.Size(827, 639);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.flowLayoutPanel2);
+            this.Controls.Add(this.ComponentsButtonPanel);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.courseComboBox);
             this.Controls.Add(this.kryptonTextBox1);
@@ -415,7 +318,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            this.flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -438,15 +340,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private Component_Button_Card component_Button_Card1;
-        private Component_Button_Card component_Button_Card2;
-        private Component_Button_Card component_Button_Card3;
-        private Component_Button_Card component_Button_Card4;
-        private Component_Button_Card component_Button_Card5;
-        private Component_Button_Card component_Button_Card6;
-        private Component_Button_Card component_Button_Card7;
-        private Component_Button_Card component_Button_Card8;
+        private System.Windows.Forms.FlowLayoutPanel ComponentsButtonPanel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.PictureBox pictureBox5;
     }

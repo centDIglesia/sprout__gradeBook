@@ -41,7 +41,13 @@ namespace sprout__gradeBook
 
             if (!Directory.Exists(directoryPath))
             {
-                MessageBox.Show("Directory does not exist.");
+                MessageBox.Show(
+      "Please ensure you have added the course details and set up the grading system before proceeding. To add a course, navigate to the 'Courses' section and click on 'Add New Course'. Then, click on the course and add a 'Grading System' by selecting the 'Grading System' button and setting up the required components.",
+      "Incomplete Setup",
+      MessageBoxButtons.OK,
+      MessageBoxIcon.Warning
+  );
+
                 return;
             }
 
@@ -117,6 +123,55 @@ namespace sprout__gradeBook
         private void kryptonComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             sectionTXT.Text = RemoveSubstring(courseComboBox.Text, "_", ",");
+
+
+
+
+            // Define the directory path based on the selected grading system path
+            string selectedGradingSystemPath = courseComboBox.Text;
+
+            string baseDirectoryPath = $"CourseGradingSystem/{currentUSer}/{selectedGradingSystemPath}";
+            string filePath = Path.Combine(baseDirectoryPath, "gradingSystem.txt");
+
+            // Clear existing controls in the ComponentsButtonPanel
+            ComponentsButtonPanel.Controls.Clear();
+
+
+            if (File.Exists(filePath))
+            {
+
+                string[] lines = File.ReadAllLines(filePath);
+
+
+                foreach (string line in lines)
+                {
+
+                    if (line.StartsWith("-") || string.IsNullOrWhiteSpace(line)) continue;
+
+
+                    string[] parts = line.Split(',');
+                    if (parts.Length == 2)
+                    {
+                        string componentName = parts[0];
+                        string componentWeight = parts[1];
+
+
+                        Component_Button_Card componentCard = new Component_Button_Card
+                        {
+                            compName = $"{componentName} ({componentWeight})"
+                        };
+
+                        // Add the new control to the ComponentsButtonPanel
+                        ComponentsButtonPanel.Controls.Add(componentCard);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show($"Grading system file not found.{filePath}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
 
 
         }

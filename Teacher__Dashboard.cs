@@ -59,7 +59,9 @@ namespace sprout__gradeBook
         private void btn_gradeBook_Click(object sender, EventArgs e)
         {
             string gradingSystemDirectoryPath = $"CourseGradingSystem/{currentUser}";
+
             loadForm(new teacher__GradeBook(currentUser));
+
             /*
              if (Directory.Exists(gradingSystemDirectoryPath))
              {
