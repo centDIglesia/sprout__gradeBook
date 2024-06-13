@@ -199,13 +199,17 @@
     <Compile Include="studentsInGradebookCARD.Designer.cs">
       <DependentUpon>studentsInGradebookCARD.cs</DependentUpon>
     </Compile>
-
+    <Compile Include="students__NoticationUi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="students__NoticationUi.Designer.cs">
+      <DependentUpon>students__NoticationUi.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubComponentCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="SubComponentCard.Designer.cs">
       <DependentUpon>SubComponentCard.cs</DependentUpon>
-
     </Compile>
     <Compile Include="Teacher__coursesDashboard.cs">
       <SubType>Form</SubType>
@@ -327,10 +331,11 @@
     <EmbeddedResource Include="studentsInGradebookCARD.resx">
       <DependentUpon>studentsInGradebookCARD.cs</DependentUpon>
     </EmbeddedResource>
-
+    <EmbeddedResource Include="students__NoticationUi.resx">
+      <DependentUpon>students__NoticationUi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SubComponentCard.resx">
       <DependentUpon>SubComponentCard.cs</DependentUpon>
-
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher__coursesDashboard.resx">
       <DependentUpon>Teacher__coursesDashboard.cs</DependentUpon>
