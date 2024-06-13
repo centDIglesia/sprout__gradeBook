@@ -10,10 +10,13 @@ namespace sprout__gradeBook
     public partial class studentLoginForm : KryptonForm
     {
         private bool isPasswordVisible = false;
+
         private string currentStudentID;
+
 
         public studentLoginForm()
         {
+
             InitializeComponent();
         }
 
@@ -108,6 +111,15 @@ namespace sprout__gradeBook
                 MessageBox.Show("Password is incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+        private void close_btn_Click(object sender, EventArgs e)
+        {
+            utilityButton b = new utilityButton();
+
+            b.Exitform();
+        }
+
 
         private bool TryFindUser(string usernameOrId, out string studentFilePath, out string teacherDir)
         {
@@ -310,6 +322,46 @@ namespace sprout__gradeBook
                 Application.Exit();
             }
         }
+
+        private void back__btn_Click(object sender, EventArgs e)
+        {
+            Role__form role = new Role__form();
+
+            role.Show();
+            this.Hide();
+        }
+
+        public string GetCurrentStudentDepartmentYearSection()
+        {
+            var teachers = GetTeachersForStudent();
+            string folderPath = "StudentCredentials";
+            foreach (var teacher in teachers)
+            {
+                string studentFilePath = Path.Combine(folderPath, teacher, $"{currentStudentID}.txt");
+                if (File.Exists(studentFilePath))
+                {
+                    var studentDetails = File.ReadAllLines(studentFilePath);
+
+                    string department = studentDetails
+                        .FirstOrDefault(line => line.StartsWith("Department:"))
+                        ?.Split(new[] { ':' }, 2)[1].Trim();
+
+                    string yearAndSection = studentDetails
+                        .FirstOrDefault(line => line.StartsWith("Year and Section:"))
+                        ?.Split(new[] { ':' }, 2)[1].Trim();
+
+                    if (!string.IsNullOrEmpty(department) && !string.IsNullOrEmpty(yearAndSection))
+                    {
+                        return $"{department} {yearAndSection}";
+                    }
+                }
+            }
+
+            return "Department and Year/Section not found.";
+        }
+
+
+
 
     }
 }

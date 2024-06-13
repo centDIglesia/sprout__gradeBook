@@ -33,8 +33,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Design">
+      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Docking">
+      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Navigator">
+      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Ribbon">
+      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+    </Reference>
     <Reference Include="ComponentFactory.Krypton.Toolkit">
-      <HintPath>..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Workspace">
+      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -74,6 +89,12 @@
     <Compile Include="AddStudentForm.Designer.cs">
       <DependentUpon>AddStudentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Component-Button-Card.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component-Button-Card.Designer.cs">
+      <DependentUpon>Component-Button-Card.cs</DependentUpon>
+    </Compile>
     <Compile Include="CourseAndSectionCARD.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -111,6 +132,12 @@
     </Compile>
     <Compile Include="IntroPage.Designer.cs">
       <DependentUpon>IntroPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="notificationCARD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="notificationCARD.Designer.cs">
+      <DependentUpon>notificationCARD.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -172,6 +199,18 @@
     <Compile Include="studentsInGradebookCARD.Designer.cs">
       <DependentUpon>studentsInGradebookCARD.cs</DependentUpon>
     </Compile>
+    <Compile Include="students__NoticationUi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="students__NoticationUi.Designer.cs">
+      <DependentUpon>students__NoticationUi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubComponentCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SubComponentCard.Designer.cs">
+      <DependentUpon>SubComponentCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teacher__coursesDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,10 +247,17 @@
     <Compile Include="teacher__studentsDashboard.Designer.cs">
       <DependentUpon>teacher__studentsDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="TermsCons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TermsCons.Designer.cs">
+      <DependentUpon>TermsCons.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInput_Manager.cs" />
     <Compile Include="UserInput__Validator.cs" />
     <Compile Include="Users.cs" />
     <Compile Include="Account__Manager.cs" />
+    <Compile Include="utilityButton.cs" />
     <EmbeddedResource Include="addCourseComponentsFORM.resx">
       <DependentUpon>addCourseComponentsFORM.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddStudentForm.resx">
       <DependentUpon>AddStudentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component-Button-Card.resx">
+      <DependentUpon>Component-Button-Card.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CourseAndSectionCARD.resx">
       <DependentUpon>CourseAndSectionCARD.cs</DependentUpon>
@@ -241,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IntroPage.resx">
       <DependentUpon>IntroPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="notificationCARD.resx">
+      <DependentUpon>notificationCARD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -279,6 +331,12 @@
     <EmbeddedResource Include="studentsInGradebookCARD.resx">
       <DependentUpon>studentsInGradebookCARD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="students__NoticationUi.resx">
+      <DependentUpon>students__NoticationUi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubComponentCard.resx">
+      <DependentUpon>SubComponentCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Teacher__coursesDashboard.resx">
       <DependentUpon>Teacher__coursesDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -296,6 +354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="teacher__studentsDashboard.resx">
       <DependentUpon>teacher__studentsDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TermsCons.resx">
+      <DependentUpon>TermsCons.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

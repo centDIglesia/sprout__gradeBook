@@ -565,14 +565,9 @@ namespace sprout__gradeBook
 
         private void close_btn_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            utilityButton b = new utilityButton();
 
-
-            if (result == DialogResult.No)
-            {
-                return;
-            }
-            else Application.Exit();
+            b.Exitform();
         }
         //sign up show password icon fuction
 
@@ -633,6 +628,19 @@ namespace sprout__gradeBook
         }
 
         private void signinEMAIL__txtbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void back__btn_Click(object sender, EventArgs e)
+        {
+            Role__form r = new Role__form();
+
+            r.Show();
+            this.Hide();
+        }
+
+        private void pictureBox12_Click(object sender, EventArgs e)
         {
 
         }

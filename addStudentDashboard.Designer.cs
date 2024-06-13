@@ -97,6 +97,7 @@
             this.Name = "addStudentDashboard";
             this.Text = "addStudentDashboard";
             this.Load += new System.EventHandler(this.addStudentDashboard_Load);
+            this.Leave += new System.EventHandler(this.addStudentDashboard_Leave);
             ((System.ComponentModel.ISupportInitialize)(this.deleteBTN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addstudentBTN)).EndInit();
             this.ResumeLayout(false);

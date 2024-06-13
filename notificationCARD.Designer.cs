@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(notificationCARD));
             this.titleTXTBX = new System.Windows.Forms.Label();
             this.descriptionTXTBX = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.notifTimesent = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // titleTXTBX
@@ -57,14 +58,26 @@
             this.descriptionTXTBX.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.descriptionTXTBX.StateCommon.Border.Color1 = System.Drawing.Color.White;
             this.descriptionTXTBX.StateCommon.Border.Color2 = System.Drawing.Color.White;
-            this.descriptionTXTBX.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            this.descriptionTXTBX.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.descriptionTXTBX.StateCommon.Border.Rounding = 0;
             this.descriptionTXTBX.StateCommon.Border.Width = 0;
             this.descriptionTXTBX.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.descriptionTXTBX.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descriptionTXTBX.TabIndex = 1;
+            // 
+            // notifTimesent
+            // 
+            this.notifTimesent.AutoSize = true;
+            this.notifTimesent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.notifTimesent.Font = new System.Drawing.Font("Poppins", 8F);
+            this.notifTimesent.ForeColor = System.Drawing.Color.Gray;
+            this.notifTimesent.Location = new System.Drawing.Point(85, 7);
+            this.notifTimesent.Name = "notifTimesent";
+            this.notifTimesent.Size = new System.Drawing.Size(30, 19);
+            this.notifTimesent.TabIndex = 2;
+            this.notifTimesent.Text = "title";
             // 
             // notificationCARD
             // 
@@ -73,12 +86,12 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Controls.Add(this.notifTimesent);
             this.Controls.Add(this.descriptionTXTBX);
             this.Controls.Add(this.titleTXTBX);
             this.DoubleBuffered = true;
             this.Name = "notificationCARD";
-            this.Size = new System.Drawing.Size(302, 123);
-            this.Load += new System.EventHandler(this.notificationCARD_Load);
+            this.Size = new System.Drawing.Size(304, 126);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -88,5 +101,6 @@
 
         private System.Windows.Forms.Label titleTXTBX;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox descriptionTXTBX;
+        private System.Windows.Forms.Label notifTimesent;
     }
 }

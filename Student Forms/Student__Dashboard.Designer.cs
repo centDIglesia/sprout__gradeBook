@@ -35,19 +35,19 @@
             this.student_ID = new System.Windows.Forms.Label();
             this.student_gradesPanel = new System.Windows.Forms.Panel();
             this.student_CoursePanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.notifCount = new System.Windows.Forms.Label();
+            this.notificationCount = new System.Windows.Forms.Label();
             this.close_btn = new System.Windows.Forms.PictureBox();
             this.student_Icon = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.notification__icon = new System.Windows.Forms.PictureBox();
             this.Student__Dashboard__UI = new System.Windows.Forms.PictureBox();
-            this.roundPictureBox1 = new sprout__gradeBook.RoundPictureBox();
+            this.notificationBg = new sprout__gradeBook.RoundPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.close_btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.student_Icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.notification__icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Student__Dashboard__UI)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notificationBg)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette2
@@ -59,8 +59,8 @@
             this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Border.Color1 = System.Drawing.Color.White;
             this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Border.Color2 = System.Drawing.Color.White;
-            this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonPalette2.InputControlStyles.InputControlCommon.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
@@ -92,7 +92,9 @@
             // 
             this.student_gradesPanel.AutoScroll = true;
             this.student_gradesPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
+
             this.student_gradesPanel.Location = new System.Drawing.Point(401, 132);
+
             this.student_gradesPanel.Name = "student_gradesPanel";
             this.student_gradesPanel.Size = new System.Drawing.Size(716, 451);
             this.student_gradesPanel.TabIndex = 67;
@@ -107,8 +109,9 @@
             this.student_CoursePanel.Size = new System.Drawing.Size(324, 535);
             this.student_CoursePanel.TabIndex = 94;
             // 
-            // notifCount
+            // notificationCount
             // 
+
             this.notifCount.AutoSize = true;
             this.notifCount.BackColor = System.Drawing.Color.Red;
             this.notifCount.Font = new System.Drawing.Font("Poppins SemiBold", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -118,6 +121,7 @@
             this.notifCount.Size = new System.Drawing.Size(8, 12);
             this.notifCount.TabIndex = 100;
             this.notifCount.Text = "1";
+
             // 
             // close_btn
             // 
@@ -155,11 +159,14 @@
             // 
             this.notification__icon.BackColor = System.Drawing.Color.White;
             this.notification__icon.Image = ((System.Drawing.Image)(resources.GetObject("notification__icon.Image")));
+
             this.notification__icon.Location = new System.Drawing.Point(782, 29);
+
             this.notification__icon.Name = "notification__icon";
             this.notification__icon.Size = new System.Drawing.Size(38, 24);
             this.notification__icon.TabIndex = 62;
             this.notification__icon.TabStop = false;
+            this.notification__icon.Click += new System.EventHandler(this.notifCount_Click);
             // 
             // Student__Dashboard__UI
             // 
@@ -171,14 +178,16 @@
             this.Student__Dashboard__UI.TabIndex = 95;
             this.Student__Dashboard__UI.TabStop = false;
             // 
-            // roundPictureBox1
+            // notificationBg
             // 
+
             this.roundPictureBox1.BackColor = System.Drawing.Color.Red;
             this.roundPictureBox1.Location = new System.Drawing.Point(793, 27);
             this.roundPictureBox1.Name = "roundPictureBox1";
             this.roundPictureBox1.Size = new System.Drawing.Size(15, 10);
             this.roundPictureBox1.TabIndex = 99;
             this.roundPictureBox1.TabStop = false;
+
             // 
             // Student__Dashboard
             // 
@@ -186,8 +195,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1147, 711);
-            this.Controls.Add(this.notifCount);
-            this.Controls.Add(this.roundPictureBox1);
+            this.Controls.Add(this.notificationCount);
+            this.Controls.Add(this.notificationBg);
             this.Controls.Add(this.close_btn);
             this.Controls.Add(this.student_CoursePanel);
             this.Controls.Add(this.student_Icon);
@@ -201,12 +210,13 @@
             this.Name = "Student__Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student__Dashboard";
+            this.Load += new System.EventHandler(this.Student__Dashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.close_btn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.student_Icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.notification__icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Student__Dashboard__UI)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notificationBg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,7 +234,7 @@
         public System.Windows.Forms.FlowLayoutPanel student_CoursePanel;
         private System.Windows.Forms.PictureBox Student__Dashboard__UI;
         private System.Windows.Forms.PictureBox close_btn;
-        private RoundPictureBox roundPictureBox1;
-        private System.Windows.Forms.Label notifCount;
+        private RoundPictureBox notificationBg;
+        private System.Windows.Forms.Label notificationCount;
     }
 }

@@ -75,6 +75,8 @@ namespace sprout__gradeBook
 
             removeBTN.Hide();
 
+            addSubComponentBTN.Hide();
+
         }
 
 
@@ -86,6 +88,7 @@ namespace sprout__gradeBook
 
             COSEbtn.Hide();
             removeBTN.Hide();
+            addSubComponentBTN.Hide();
         }
 
         private void subjectCourseSectionLBL_Click(object sender, EventArgs e)
@@ -95,6 +98,7 @@ namespace sprout__gradeBook
 
             COSEbtn.Show();
             removeBTN.Show();
+            addSubComponentBTN.Show();
         }
 
         private void COSEbtn_Click(object sender, EventArgs e)
@@ -104,6 +108,8 @@ namespace sprout__gradeBook
 
             COSEbtn.Hide();
             removeBTN.Hide();
+
+            addSubComponentBTN.Hide();
         }
 
 
@@ -127,31 +133,67 @@ namespace sprout__gradeBook
             AddAnnouncementFORM addNewAnnouncement = new AddAnnouncementFORM(this);
             addNewAnnouncement.Show();
 
-
         }
 
         public void saveAnnouncement(string title, string description)
         {
             string baseDirectory = $"CourseAnnoucement/{_currentUser}";
-
+            //get currentusername name
 
             if (!Directory.Exists(baseDirectory))
             {
                 Directory.CreateDirectory(baseDirectory);
             }
-            string fullPath = Path.Combine(baseDirectory, $"{SubjectName}_{SubjectCode}_{SubjectCourseSection}.txt");
+            string fullPath = Path.Combine(baseDirectory, $"Anouncement.txt");
 
             using (StreamWriter write = new StreamWriter(fullPath, true))
             {
-                write.WriteLine($"From : {_currentUser}");
+                write.WriteLine($"Receiver : {SubjectCourseSection}");
+
                 write.WriteLine($"Title : {title}");
-                write.WriteLine($"Description : {description}");
+                write.WriteLine($"Description : From | {GetFirstName()} | {SubjectCode}\n\t{description}");
                 write.WriteLine($"time sent : {DateTime.Now.ToString("MMMM d, yyyy, dddd, h:mm tt")}");
                 write.WriteLine("------------------------------");
             };
 
-            MessageBox.Show("Announcement posted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
 
+        public string GetFirstName()
+        {
+            string filePath = $"TeacherCredentials/{_currentUser}.txt";
+
+
+            if (!File.Exists(filePath))
+            {
+                throw new FileNotFoundException("The credential file could not be found.");
+            }
+
+            // Read all lines from the file
+            string[] lines = File.ReadAllLines(filePath);
+
+
+            foreach (var line in lines)
+            {
+
+                if (line.StartsWith("First Name:", StringComparison.OrdinalIgnoreCase))
+                {
+                    // Extract the first name by splitting the line
+                    string[] parts = line.Split(new[] { ':' }, 2);
+                    if (parts.Length == 2)
+                    {
+                        return parts[1].Trim();
+                    }
+                }
+            }
+
+
+            throw new InvalidOperationException("The first name could not be found in the credential file.");
+        }
+
+        private void addSubComponentBTN_Click(object sender, EventArgs e)
+        {
+            addCourseComponentsFORM subComp = new addCourseComponentsFORM(_currentUser, SubjectCode, SubjectCourseSection);
+            subComp.Show();
         }
     }
 }

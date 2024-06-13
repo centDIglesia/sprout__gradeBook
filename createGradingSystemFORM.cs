@@ -9,10 +9,10 @@ namespace sprout__gradeBook
     public partial class createGradingSystemFORM : KryptonForm
     {
         int totalWeight = 0;
-        private readonly string CurrentUSer;
+        private readonly string CurrentUser;
         public createGradingSystemFORM(string currentUser)
         {
-            CurrentUSer = currentUser;
+            CurrentUser = currentUser;
             InitializeComponent();
         }
 
@@ -99,50 +99,77 @@ namespace sprout__gradeBook
 
         private void saveGradingsytemBTN_Click(object sender, EventArgs e)
         {
-            // Define the file path
-            string directoryPath = $"CourseGradingSystem/{CurrentUSer}";
-            string filePath = $"{directoryPath}/gradingSystem.txt";
+            // Define the base directory path
+            string baseDirectoryPath = $"CourseGradingSystem/{CurrentUser}/gradingSystem";
 
-            // Create the directory if it doesn't exist
-            Directory.CreateDirectory(directoryPath);
+            // Create the base directory if it doesn't exist
+            Directory.CreateDirectory(baseDirectoryPath);
 
-            // Write the grading system information to the file
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter(filePath, true))
+            // Loop through each control in the flowLayoutPanel1
+            foreach (Control control in flowLayoutPanel1.Controls)
             {
-                foreach (Control control in flowLayoutPanel1.Controls)
+                if (control is gradingSystemCARD)
                 {
-                    if (control is gradingSystemCARD)
+                    gradingSystemCARD card = (gradingSystemCARD)control;
+
+                    string componentName = card.ComponentTXT.Trim(); // Trim to remove leading and trailing whitespaces
+                    string componentWeight = card.ComponentWeightTXT;
+
+                    // Check if the component text is empty or equal to "Component"
+                    if (string.IsNullOrEmpty(componentName) || componentName == "Component")
                     {
-                        gradingSystemCARD card = (gradingSystemCARD)control;
+                        // Skip saving this component
+                        continue;
+                    }
 
-                        string componentName = card.ComponentTXT.Trim(); // Trim to remove leading and trailing whitespaces
-                        string componentWeight = card.ComponentWeightTXT;
+                    // Define the directory path for each component
+                    string componentDirectoryPath = $"{baseDirectoryPath}/{componentName}";
+                    Directory.CreateDirectory(componentDirectoryPath); // Create a directory for each component
 
-                        // Check if the component text is empty or equal to "Component" and the weight is 0
-                        if (string.IsNullOrEmpty(componentName) || componentName == "Component")
-                        {
-                            // Skip saving this component
-                            continue;
-                        }
+                    // You don't need to write anything to the directory, as it's just a folder.
 
+                    // Note: You can still perform additional actions if needed for each component folder.
+
+                }
+            }
+
+            string txtbaseDirectoryPath = $"CourseGradingSystem/{CurrentUser}/gradingSystem.txt";
+            foreach (Control control in flowLayoutPanel1.Controls)
+            {
+                if (control is gradingSystemCARD)
+                {
+                    gradingSystemCARD card = (gradingSystemCARD)control;
+
+                    string componentName = card.ComponentTXT.Trim(); // Trim to remove leading and trailing whitespaces
+                    string componentWeight = card.ComponentWeightTXT;
+
+                    // Check if the component text is empty or equal to "Component" and the weight is 0
+                    if (string.IsNullOrEmpty(componentName) || componentName == "Component")
+                    {
+                        // Skip saving this component
+                        continue;
+                    }
+                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(txtbaseDirectoryPath, true))
+                    {
                         // Write to file only if the component text is not empty or equal to "Component" and the weight is not 0
                         file.WriteLine($"Component: {componentName}, Weight: {componentWeight}%");
                         file.WriteLine(new string('-', 40));
                     }
                 }
+            }
 
-                // Calculate total weight after writing to file
-                UpdateTotalWeight();
+            // Calculate total weight after writing to file
+            UpdateTotalWeight();
 
-                if (totalWeight != 100)
-                {
-                    MessageBox.Show($"Total weight must be equal to 100%. Current total weight is {totalWeight}%.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+            if (totalWeight != 100)
+            {
+                MessageBox.Show($"Total weight must be equal to 100%. Current total weight is {totalWeight}%.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             MessageBox.Show("Grading system saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
 
 
 
@@ -154,7 +181,7 @@ namespace sprout__gradeBook
         public void UpdateTextFile(string deletedComponentName)
         {
             // Define the file path
-            string filePath = $"CourseInformations/{CurrentUSer}/gradingSystem.txt";
+            string filePath = $"CourseInformations/{CurrentUser}/gradingSystem.txt";
 
             // Read all lines from the file
             string[] lines = File.ReadAllLines(filePath);
