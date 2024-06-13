@@ -123,9 +123,9 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap femaleee {
+        internal static System.Drawing.Bitmap Female_Icon {
             get {
-                object obj = ResourceManager.GetObject("femaleee", resourceCulture);
+                object obj = ResourceManager.GetObject("Female_Icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,16 +173,6 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap lalalalake {
-            get {
-                object obj = ResourceManager.GetObject("lalalalake", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap logo_green_wsprout {
             get {
                 object obj = ResourceManager.GetObject("logo-green-wsprout", resourceCulture);
@@ -196,6 +186,16 @@ namespace sprout__gradeBook.Properties {
         internal static System.Drawing.Bitmap logo_white {
             get {
                 object obj = ResourceManager.GetObject("logo white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Male_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Male_Icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

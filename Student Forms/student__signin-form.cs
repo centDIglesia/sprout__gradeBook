@@ -11,6 +11,7 @@ namespace sprout__gradeBook
     {
         private bool isPasswordVisible = false;
         private string currentStudentID;
+
         public studentLoginForm()
         {
             InitializeComponent();
@@ -18,24 +19,28 @@ namespace sprout__gradeBook
 
         private void studentLoginForm_Load(object sender, EventArgs e)
         {
+            // Hide tooltips on form load
             signIn__StIdTooltip.Hide();
             signIn__PassTooltip.Hide();
         }
 
         private void signinSTID__txtbox_Enter(object sender, EventArgs e)
         {
+            // Clear default text and show tooltip
             UserInput_Manager.ResetInputField(signinSTID__txtbox, "Student Number");
             signIn__StIdTooltip.Show();
         }
 
         private void signinSTID__txtbox_Leave(object sender, EventArgs e)
         {
+            // Restore default text and manage tooltip visibility
             UserInput_Manager.RestoreDefaultText(signinSTID__txtbox, "Student Number");
             UserInput_Manager.ToggleTooltip(signinSTID__txtbox, signIn__StIdTooltip, "Student Number");
         }
 
         private void signinPASS__txtbox_Enter(object sender, EventArgs e)
         {
+            // Hide password characters and show tooltip
             signinPASS__txtbox.UseSystemPasswordChar = true;
             UserInput_Manager.ResetInputField(signinPASS__txtbox, "Password");
             signIn__PassTooltip.Show();
@@ -43,9 +48,11 @@ namespace sprout__gradeBook
 
         private void signinPASS__txtbox_Leave(object sender, EventArgs e)
         {
+            // Restore default text and manage tooltip visibility
             UserInput_Manager.RestoreDefaultText(signinPASS__txtbox, "Password");
             UserInput_Manager.ToggleTooltip(signinPASS__txtbox, signIn__PassTooltip, "Password");
 
+            // Disable password masking if default text is shown
             if (signinPASS__txtbox.Text == "Password")
             {
                 signinPASS__txtbox.UseSystemPasswordChar = false;
@@ -54,6 +61,7 @@ namespace sprout__gradeBook
 
         private void signIn__showPassicon_Click(object sender, EventArgs e)
         {
+            // Toggle password visibility
             isPasswordVisible = !isPasswordVisible;
             signIn__showPassicon.Image = isPasswordVisible
                 ? Properties.Resources.closed__eye
@@ -63,6 +71,7 @@ namespace sprout__gradeBook
 
         private void showGuide_Click(object sender, EventArgs e)
         {
+            // Show student default password guide
             using (var studentDefaultPasswordGuide = new StudentDefultPasswordGuide())
             {
                 studentDefaultPasswordGuide.ShowDialog();
@@ -71,9 +80,11 @@ namespace sprout__gradeBook
 
         private void signIn__btn_Click(object sender, EventArgs e)
         {
+            // Get user inputs
             currentStudentID = signinSTID__txtbox.Text;
             string password = signinPASS__txtbox.Text;
 
+            // Validate inputs
             if (currentStudentID == "Student Number" || password == "Password")
             {
                 MessageBox.Show("Please fill out all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -81,6 +92,7 @@ namespace sprout__gradeBook
                 return;
             }
 
+            // Authenticate user
             if (!TryFindUser(currentStudentID, out var studentFilePath, out var teacherDir))
             {
                 ShowAccountNotFoundError();
@@ -97,19 +109,12 @@ namespace sprout__gradeBook
             }
         }
 
-        private void close_btn_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
-
         private bool TryFindUser(string usernameOrId, out string studentFilePath, out string teacherDir)
         {
             studentFilePath = null;
             teacherDir = null;
 
+            // Search for user file in the directories
             string baseFolderPath = "StudentCredentials";
             foreach (var dir in Directory.GetDirectories(baseFolderPath))
             {
@@ -125,26 +130,31 @@ namespace sprout__gradeBook
 
         private void HandleSuccessfulLogin(string studentFilePath)
         {
+            // Read and parse student info
             var studentInfo = File.ReadAllLines(studentFilePath)
                 .ToDictionary(
                     line => line.Substring(0, line.IndexOf(':')),
                     line => line.Substring(line.IndexOf(':') + 1).Trim()
                 );
 
+            // Extract student details
             string username = TryGetValueOrDefault(studentInfo, "Username", "Unknown");
             string studentID = TryGetValueOrDefault(studentInfo, "Student ID", "Unknown");
             string studentGender = TryGetValueOrDefault(studentInfo, "Gender", "Unknown");
             string department = TryGetValueOrDefault(studentInfo, "Department", "Unknown");
             string yearSection = TryGetValueOrDefault(studentInfo, "Year and Section", "Unknown");
 
+            // Notify user of successful login
             MessageBox.Show("Sign in successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Hide();
 
+            // Show dashboard and set student details
             var dashboard = new Student__Dashboard(this);
             dashboard.SetUsernameLabel(username);
             dashboard.SetStudentIDLabel(studentID);
             dashboard.SetStudentIcon(studentGender);
 
+            // Populate dashboard with student courses
             PopulateStudentCourses(dashboard, department, yearSection);
 
             dashboard.Show();
@@ -155,6 +165,7 @@ namespace sprout__gradeBook
             string courseFolderPath = "CourseInformations";
             var courseCards = new List<StudentScheduleCard>();
 
+            // Read course files and populate schedule cards
             foreach (var courseFile in Directory.GetFiles(courseFolderPath, "*.txt"))
             {
                 foreach (var courseBlock in GetCourseBlocks(File.ReadAllLines(courseFile)))
@@ -198,6 +209,7 @@ namespace sprout__gradeBook
 
             if (!File.Exists(teacherFilePath)) return "Unknown";
 
+            // Read and parse teacher info
             var teacherInfo = File.ReadAllLines(teacherFilePath)
                 .ToDictionary(
                     line => line.Substring(0, line.IndexOf(':')),
@@ -209,19 +221,17 @@ namespace sprout__gradeBook
 
             return $"{firstName} {lastName}";
         }
+
         private Dictionary<string, string> GetCourseBlock(IEnumerable<string> lines)
         {
             var block = new Dictionary<string, string>();
 
+            // Parse lines into key-value pairs
             foreach (var line in lines)
             {
-                // Split the line by ": " to get key and value parts
                 var parts = line.Split(new[] { ": " }, 2, StringSplitOptions.None);
-
-                // Check if the key already exists in the dictionary
                 if (!block.ContainsKey(parts[0]))
                 {
-                    // Add key-value pair to the dictionary
                     block.Add(parts[0], parts.Length > 1 ? parts[1] : null);
                 }
             }
@@ -229,19 +239,12 @@ namespace sprout__gradeBook
             return block;
         }
 
-        /*  private Dictionary<string, string> GetCourseBlock(IEnumerable<string> lines)
-          {
-              return lines
-                  .Select(line => line.Split(new[] { ": " }, 2, StringSplitOptions.None))
-                  .ToDictionary(parts => parts[0], parts => parts.Length > 1 ? parts[1] : null);
-          }
-
-          */
         private IEnumerable<Dictionary<string, string>> GetCourseBlocks(string[] lines)
         {
             var blocks = new List<Dictionary<string, string>>();
             var currentBlock = new List<string>();
 
+            // Split lines into course blocks
             foreach (var line in lines)
             {
                 if (line.Trim() == "----------------------------------------")
@@ -268,11 +271,13 @@ namespace sprout__gradeBook
 
         private static TValue TryGetValueOrDefault<TKey, TValue>(Dictionary<TKey, TValue> dictionary, TKey key, TValue defaultValue = default)
         {
+            // Return value if key exists, otherwise return default value
             return dictionary.TryGetValue(key, out var value) ? value : defaultValue;
         }
 
         private void ShowAccountNotFoundError()
         {
+            // Show account not found error message
             MessageBox.Show("The student account you entered does not exist.\n" +
                             "Please check your username or ID and try again.\n\n" +
                             "If you do not have an account, please contact your teacher for assistance.",
@@ -281,12 +286,9 @@ namespace sprout__gradeBook
                             MessageBoxIcon.Error);
         }
 
-        private void studentSIGNINform_Panel_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
         private int CompareDaysOfWeek(string day1, string day2)
         {
+            // Define order of days for sorting
             var daysOfWeek = new List<string>
             {
                 "Monday",
@@ -300,24 +302,13 @@ namespace sprout__gradeBook
 
             return daysOfWeek.IndexOf(day1).CompareTo(daysOfWeek.IndexOf(day2));
         }
-
-        //return all current teacher of a student
-        public List<string> GetTeachersForStudent()
+        private void close_btn_Click(object sender, EventArgs e)
         {
-            List<string> teacherUsernames = new List<string>();
-
-            string baseFolderPath = "StudentCredentials";
-            foreach (var dir in Directory.GetDirectories(baseFolderPath))
+            // Confirm and exit application
+            if (MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                string studentFilePath = Path.Combine(dir, $"{currentStudentID}.txt");
-                if (File.Exists(studentFilePath))
-                {
-                    string teacherUsername = Path.GetFileName(dir);
-                    teacherUsernames.Add(teacherUsername);
-                }
+                Application.Exit();
             }
-
-            return teacherUsernames;
         }
 
     }
