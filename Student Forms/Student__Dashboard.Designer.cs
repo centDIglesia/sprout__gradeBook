@@ -112,15 +112,6 @@
             // notificationCount
             // 
 
-            this.notifCount.AutoSize = true;
-            this.notifCount.BackColor = System.Drawing.Color.Red;
-            this.notifCount.Font = new System.Drawing.Font("Poppins SemiBold", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notifCount.ForeColor = System.Drawing.Color.White;
-            this.notifCount.Location = new System.Drawing.Point(798, 27);
-            this.notifCount.Name = "notifCount";
-            this.notifCount.Size = new System.Drawing.Size(8, 12);
-            this.notifCount.TabIndex = 100;
-            this.notifCount.Text = "1";
 
             // 
             // close_btn
@@ -181,12 +172,7 @@
             // notificationBg
             // 
 
-            this.roundPictureBox1.BackColor = System.Drawing.Color.Red;
-            this.roundPictureBox1.Location = new System.Drawing.Point(793, 27);
-            this.roundPictureBox1.Name = "roundPictureBox1";
-            this.roundPictureBox1.Size = new System.Drawing.Size(15, 10);
-            this.roundPictureBox1.TabIndex = 99;
-            this.roundPictureBox1.TabStop = false;
+
 
             // 
             // Student__Dashboard

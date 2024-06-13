@@ -43,19 +43,16 @@ namespace sprout__gradeBook
 
         // Method to set the student's icon based on their gender
         public void SetStudentIcon(string studentID)
-
         {
-            if (gender == "Male")
+            if (studentID == "Male")
             {
                 student_Icon.Image = Properties.Resources.Male_Icon;
             }
             else
             {
-
                 student_Icon.Image = Properties.Resources.Female_Icon;
             }
         }
-
         // Event handler for the close button click event
 
         private void close_btn_Click(object sender, EventArgs e)
@@ -63,19 +60,17 @@ namespace sprout__gradeBook
             // Prompt the user with an exit confirmation dialog
             DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-
             // If the user clicks 'No', do nothing
             if (result == DialogResult.No)
-
-            if (result == DialogResult.Yes)
-
+            {
+                return;
+            }
             // If the user clicks 'Yes', exit the application
             else
             {
                 Application.Exit();
-
+            }
         }
-
         private void notifCount_Click(object sender, EventArgs e)
         {
             students__NoticationUi students__NoticationFORM = new students__NoticationUi(_studentLoginForm, _studentLoginForm.currentStudentID, currentstudentDepartment);

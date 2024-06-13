@@ -473,5 +473,9 @@
   <ItemGroup>
     <None Include="Resources\Sort-Button.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Female_Icon.png" />
+    <Content Include="Resources\Male_Icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
