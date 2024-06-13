@@ -119,11 +119,11 @@ namespace sprout__gradeBook
                 Image genderImage = null;
                 if (studentGender.ToLower() == "male")
                 {
-                    genderImage = Properties.Resources.lalalalake;
+                    genderImage = Properties.Resources.Male_Icon;
                 }
                 else if (studentGender.ToLower() == "female")
                 {
-                    genderImage = Properties.Resources.femaleee;
+                    genderImage = Properties.Resources.Female_Icon;
                 }
 
                 studentsCARD studentCard = new studentsCARD()

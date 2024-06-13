@@ -148,7 +148,7 @@
   <data name="teacher__role" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\teacher__role.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="femaleee" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Female_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\femaleee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Add row +" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -166,7 +166,7 @@
   <data name="Group 66d" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Group 66d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lalalalake" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Male_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lalalalake.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Roles_Card_student_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">

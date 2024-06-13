@@ -70,7 +70,7 @@
             this.student_Name.BackColor = System.Drawing.Color.White;
             this.student_Name.Font = new System.Drawing.Font("Poppins SemiBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.student_Name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.student_Name.Location = new System.Drawing.Point(834, 21);
+            this.student_Name.Location = new System.Drawing.Point(826, 21);
             this.student_Name.Name = "student_Name";
             this.student_Name.Size = new System.Drawing.Size(159, 30);
             this.student_Name.TabIndex = 64;
@@ -82,7 +82,7 @@
             this.student_ID.BackColor = System.Drawing.Color.White;
             this.student_ID.Font = new System.Drawing.Font("Poppins Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.student_ID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
-            this.student_ID.Location = new System.Drawing.Point(836, 44);
+            this.student_ID.Location = new System.Drawing.Point(828, 44);
             this.student_ID.Name = "student_ID";
             this.student_ID.Size = new System.Drawing.Size(99, 22);
             this.student_ID.TabIndex = 65;
@@ -92,9 +92,11 @@
             // 
             this.student_gradesPanel.AutoScroll = true;
             this.student_gradesPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
-            this.student_gradesPanel.Location = new System.Drawing.Point(401, 140);
+
+            this.student_gradesPanel.Location = new System.Drawing.Point(401, 132);
+
             this.student_gradesPanel.Name = "student_gradesPanel";
-            this.student_gradesPanel.Size = new System.Drawing.Size(716, 516);
+            this.student_gradesPanel.Size = new System.Drawing.Size(716, 451);
             this.student_gradesPanel.TabIndex = 67;
             // 
             // student_CoursePanel
@@ -102,29 +104,30 @@
             this.student_CoursePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.student_CoursePanel.AutoScroll = true;
             this.student_CoursePanel.BackColor = System.Drawing.Color.White;
-            this.student_CoursePanel.Location = new System.Drawing.Point(24, 139);
+            this.student_CoursePanel.Location = new System.Drawing.Point(23, 132);
             this.student_CoursePanel.Name = "student_CoursePanel";
-            this.student_CoursePanel.Size = new System.Drawing.Size(328, 535);
+            this.student_CoursePanel.Size = new System.Drawing.Size(324, 535);
             this.student_CoursePanel.TabIndex = 94;
             // 
             // notificationCount
             // 
-            this.notificationCount.AutoSize = true;
-            this.notificationCount.BackColor = System.Drawing.Color.Red;
-            this.notificationCount.Font = new System.Drawing.Font("Poppins SemiBold", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notificationCount.ForeColor = System.Drawing.Color.White;
-            this.notificationCount.Location = new System.Drawing.Point(809, 29);
-            this.notificationCount.Name = "notificationCount";
-            this.notificationCount.Size = new System.Drawing.Size(8, 12);
-            this.notificationCount.TabIndex = 100;
-            this.notificationCount.Text = "1";
-            this.notificationCount.Click += new System.EventHandler(this.notifCount_Click);
+
+            this.notifCount.AutoSize = true;
+            this.notifCount.BackColor = System.Drawing.Color.Red;
+            this.notifCount.Font = new System.Drawing.Font("Poppins SemiBold", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notifCount.ForeColor = System.Drawing.Color.White;
+            this.notifCount.Location = new System.Drawing.Point(798, 27);
+            this.notifCount.Name = "notifCount";
+            this.notifCount.Size = new System.Drawing.Size(8, 12);
+            this.notifCount.TabIndex = 100;
+            this.notifCount.Text = "1";
+
             // 
             // close_btn
             // 
             this.close_btn.BackColor = System.Drawing.Color.Transparent;
             this.close_btn.Image = ((System.Drawing.Image)(resources.GetObject("close_btn.Image")));
-            this.close_btn.Location = new System.Drawing.Point(1118, 2);
+            this.close_btn.Location = new System.Drawing.Point(1117, 9);
             this.close_btn.Name = "close_btn";
             this.close_btn.Size = new System.Drawing.Size(24, 24);
             this.close_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -135,7 +138,7 @@
             // student_Icon
             // 
             this.student_Icon.BackColor = System.Drawing.Color.White;
-            this.student_Icon.Image = global::sprout__gradeBook.Properties.Resources.femaleee;
+            this.student_Icon.Image = global::sprout__gradeBook.Properties.Resources.Female_Icon;
             this.student_Icon.Location = new System.Drawing.Point(1043, 14);
             this.student_Icon.Name = "student_Icon";
             this.student_Icon.Size = new System.Drawing.Size(71, 57);
@@ -146,9 +149,9 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.pictureBox3.Location = new System.Drawing.Point(831, 9);
+            this.pictureBox3.Location = new System.Drawing.Point(819, 9);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(2, 67);
+            this.pictureBox3.Size = new System.Drawing.Size(1, 67);
             this.pictureBox3.TabIndex = 66;
             this.pictureBox3.TabStop = false;
             // 
@@ -156,7 +159,9 @@
             // 
             this.notification__icon.BackColor = System.Drawing.Color.White;
             this.notification__icon.Image = ((System.Drawing.Image)(resources.GetObject("notification__icon.Image")));
-            this.notification__icon.Location = new System.Drawing.Point(795, 27);
+
+            this.notification__icon.Location = new System.Drawing.Point(782, 29);
+
             this.notification__icon.Name = "notification__icon";
             this.notification__icon.Size = new System.Drawing.Size(38, 24);
             this.notification__icon.TabIndex = 62;
@@ -166,21 +171,23 @@
             // Student__Dashboard__UI
             // 
             this.Student__Dashboard__UI.Image = global::sprout__gradeBook.Properties.Resources.student__Dashboard_UI;
-            this.Student__Dashboard__UI.Location = new System.Drawing.Point(-3, -1);
+            this.Student__Dashboard__UI.Location = new System.Drawing.Point(3, 4);
             this.Student__Dashboard__UI.Name = "Student__Dashboard__UI";
-            this.Student__Dashboard__UI.Size = new System.Drawing.Size(1155, 719);
-            this.Student__Dashboard__UI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.Student__Dashboard__UI.Size = new System.Drawing.Size(1140, 697);
+            this.Student__Dashboard__UI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.Student__Dashboard__UI.TabIndex = 95;
             this.Student__Dashboard__UI.TabStop = false;
             // 
             // notificationBg
             // 
-            this.notificationBg.BackColor = System.Drawing.Color.Red;
-            this.notificationBg.Location = new System.Drawing.Point(805, 27);
-            this.notificationBg.Name = "notificationBg";
-            this.notificationBg.Size = new System.Drawing.Size(15, 15);
-            this.notificationBg.TabIndex = 99;
-            this.notificationBg.TabStop = false;
+
+            this.roundPictureBox1.BackColor = System.Drawing.Color.Red;
+            this.roundPictureBox1.Location = new System.Drawing.Point(793, 27);
+            this.roundPictureBox1.Name = "roundPictureBox1";
+            this.roundPictureBox1.Size = new System.Drawing.Size(15, 10);
+            this.roundPictureBox1.TabIndex = 99;
+            this.roundPictureBox1.TabStop = false;
+
             // 
             // Student__Dashboard
             // 
