@@ -32,7 +32,9 @@
             this.studentGender = new System.Windows.Forms.PictureBox();
             this.studentcard__studentID = new System.Windows.Forms.Label();
             this.studentcard__studentName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.clickedBG = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.studentGender)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clickedBG)).BeginInit();
             this.SuspendLayout();
             // 
             // studentGender
@@ -73,8 +75,8 @@
             this.studentcard__studentName.ReadOnly = true;
             this.studentcard__studentName.Size = new System.Drawing.Size(141, 44);
             this.studentcard__studentName.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.studentcard__studentName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            this.studentcard__studentName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.studentcard__studentName.StateCommon.Border.Rounding = 0;
             this.studentcard__studentName.StateCommon.Border.Width = 0;
@@ -88,6 +90,17 @@
             this.studentcard__studentName.MouseLeave += new System.EventHandler(this.studentcard__studentID_MouseLeave);
             this.studentcard__studentName.MouseHover += new System.EventHandler(this.studentGender_MouseHover);
             // 
+            // clickedBG
+            // 
+            this.clickedBG.Image = ((System.Drawing.Image)(resources.GetObject("clickedBG.Image")));
+            this.clickedBG.Location = new System.Drawing.Point(0, 0);
+            this.clickedBG.Name = "clickedBG";
+            this.clickedBG.Size = new System.Drawing.Size(276, 126);
+            this.clickedBG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.clickedBG.TabIndex = 4;
+            this.clickedBG.TabStop = false;
+            this.clickedBG.Click += new System.EventHandler(this.clickedBG_Click);
+            // 
             // studentsCARD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -95,6 +108,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.clickedBG);
             this.Controls.Add(this.studentcard__studentName);
             this.Controls.Add(this.studentcard__studentID);
             this.Controls.Add(this.studentGender);
@@ -106,6 +120,7 @@
             this.MouseLeave += new System.EventHandler(this.studentcard__studentID_MouseLeave);
             this.MouseHover += new System.EventHandler(this.studentGender_MouseHover);
             ((System.ComponentModel.ISupportInitialize)(this.studentGender)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clickedBG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,5 +131,6 @@
         private System.Windows.Forms.PictureBox studentGender;
         private System.Windows.Forms.Label studentcard__studentID;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox studentcard__studentName;
+        private System.Windows.Forms.PictureBox clickedBG;
     }
 }

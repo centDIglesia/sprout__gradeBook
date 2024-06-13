@@ -46,12 +46,12 @@ namespace sprout__gradeBook
 
         private void studentsCARD_Load(object sender, EventArgs e)
         {
-
+            clickedBG.Hide();
         }
 
         private void studentcard__studentName_Click(object sender, EventArgs e)
         {
-
+            clickedBG.Show();
         }
 
         private void studentcard__studentName_TextChanged(object sender, EventArgs e)
@@ -67,6 +67,11 @@ namespace sprout__gradeBook
         private void studentcard__studentID_MouseLeave(object sender, EventArgs e)
         {
             studentcard__studentName.StateCommon.Content.Color1 = CustomColor.mainColor;
+        }
+
+        private void clickedBG_Click(object sender, EventArgs e)
+        {
+            clickedBG.Hide();
         }
     }
 }
