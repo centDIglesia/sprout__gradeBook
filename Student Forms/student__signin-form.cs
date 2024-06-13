@@ -11,7 +11,7 @@ namespace sprout__gradeBook
     {
         private bool isPasswordVisible = false;
 
-        private string currentStudentID;
+        public string currentStudentID;
 
 
         public studentLoginForm()
@@ -314,14 +314,6 @@ namespace sprout__gradeBook
 
             return daysOfWeek.IndexOf(day1).CompareTo(daysOfWeek.IndexOf(day2));
         }
-        private void close_btn_Click(object sender, EventArgs e)
-        {
-            // Confirm and exit application
-            if (MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
 
         private void back__btn_Click(object sender, EventArgs e)
         {
@@ -329,6 +321,23 @@ namespace sprout__gradeBook
 
             role.Show();
             this.Hide();
+        }
+        public List<string> GetTeachersForStudent()
+        {
+            List<string> teacherUsernames = new List<string>();
+
+            string baseFolderPath = "StudentCredentials";
+            foreach (var dir in Directory.GetDirectories(baseFolderPath))
+            {
+                string studentFilePath = Path.Combine(dir, $"{currentStudentID}.txt");
+                if (File.Exists(studentFilePath))
+                {
+                    string teacherUsername = Path.GetFileName(dir);
+                    teacherUsernames.Add(teacherUsername);
+                }
+            }
+
+            return teacherUsernames;
         }
 
         public string GetCurrentStudentDepartmentYearSection()
