@@ -172,7 +172,6 @@ namespace sprout__gradeBook
             parentForm.populateCourses();
         }
 
-
         private bool DoesCourseExist(string filePath, Course newCourse)
         {
             if (!File.Exists(filePath))
