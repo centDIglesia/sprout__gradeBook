@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using System.Collections;
 
 namespace sprout__gradeBook
 {
@@ -197,6 +198,32 @@ namespace sprout__gradeBook
         private void pictureBox5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void addSubcomponents_Click(object sender, EventArgs e)
+        {
+            AddComponentGradeCard();
+        }
+
+        private void subcomponentsPane_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void AddComponentGradeCard()
+        {
+
+            ComponentGradesCARD componentCard = new ComponentGradesCARD
+            {
+                ComponentNumber = "Component 1",
+                ComponentGrade = 85.1,
+                ComponentMaximumGrade = 100,
+                ComponentPercentageGrade = 100,
+            };
+            subcomponentsPane.Controls.Add(componentCard);
+
+            // Refresh the layout
+            subcomponentsPane.Refresh();
         }
     }
 }
