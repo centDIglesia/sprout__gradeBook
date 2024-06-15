@@ -95,6 +95,12 @@
     <Compile Include="Component-Button-Card.Designer.cs">
       <DependentUpon>Component-Button-Card.cs</DependentUpon>
     </Compile>
+    <Compile Include="ComponentGradesCARD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ComponentGradesCARD.Designer.cs">
+      <DependentUpon>ComponentGradesCARD.cs</DependentUpon>
+    </Compile>
     <Compile Include="CourseAndSectionCARD.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -295,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Component-Button-Card.resx">
       <DependentUpon>Component-Button-Card.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComponentGradesCARD.resx">
+      <DependentUpon>ComponentGradesCARD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CourseAndSectionCARD.resx">
       <DependentUpon>CourseAndSectionCARD.cs</DependentUpon>
