@@ -69,11 +69,11 @@
             // 
             this.student_Name.AutoSize = true;
             this.student_Name.BackColor = System.Drawing.Color.White;
-            this.student_Name.Font = new System.Drawing.Font("Poppins SemiBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.student_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.student_Name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.student_Name.Location = new System.Drawing.Point(826, 21);
             this.student_Name.Name = "student_Name";
-            this.student_Name.Size = new System.Drawing.Size(159, 30);
+            this.student_Name.Size = new System.Drawing.Size(141, 20);
             this.student_Name.TabIndex = 64;
             this.student_Name.Text = "Student__Name";
             // 
@@ -81,11 +81,11 @@
             // 
             this.student_ID.AutoSize = true;
             this.student_ID.BackColor = System.Drawing.Color.White;
-            this.student_ID.Font = new System.Drawing.Font("Poppins Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.student_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.student_ID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
             this.student_ID.Location = new System.Drawing.Point(828, 44);
             this.student_ID.Name = "student_ID";
-            this.student_ID.Size = new System.Drawing.Size(99, 22);
+            this.student_ID.Size = new System.Drawing.Size(86, 15);
             this.student_ID.TabIndex = 65;
             this.student_ID.Text = "Student__ID";
             // 
@@ -196,7 +196,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonTextBox1.StateCommon.Border.Rounding = 10;
             this.kryptonTextBox1.StateCommon.Content.Color1 = System.Drawing.Color.White;
-            this.kryptonTextBox1.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonTextBox1.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonTextBox1.TabIndex = 100;
             this.kryptonTextBox1.Text = "4";
             // 

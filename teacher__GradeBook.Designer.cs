@@ -46,11 +46,11 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.componentGradesCARD1 = new sprout__gradeBook.ComponentGradesCARD();
-            this.componentGradesCARD2 = new sprout__gradeBook.ComponentGradesCARD();
-            this.componentGradesCARD3 = new sprout__gradeBook.ComponentGradesCARD();
-            this.componentGradesCARD4 = new sprout__gradeBook.ComponentGradesCARD();
             this.componentGradesCARD5 = new sprout__gradeBook.ComponentGradesCARD();
+            this.componentGradesCARD4 = new sprout__gradeBook.ComponentGradesCARD();
+            this.componentGradesCARD3 = new sprout__gradeBook.ComponentGradesCARD();
+            this.componentGradesCARD2 = new sprout__gradeBook.ComponentGradesCARD();
+            this.componentGradesCARD1 = new sprout__gradeBook.ComponentGradesCARD();
             ((System.ComponentModel.ISupportInitialize)(this.courseComboBox)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -80,10 +80,10 @@
             // 
             this.StudentIDTXT.Location = new System.Drawing.Point(411, 111);
             this.StudentIDTXT.Name = "StudentIDTXT";
-            this.StudentIDTXT.Size = new System.Drawing.Size(90, 19);
+            this.StudentIDTXT.Size = new System.Drawing.Size(81, 16);
             this.StudentIDTXT.StateCommon.ShortText.Color1 = System.Drawing.Color.Silver;
             this.StudentIDTXT.StateCommon.ShortText.Color2 = System.Drawing.Color.Silver;
-            this.StudentIDTXT.StateCommon.ShortText.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StudentIDTXT.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StudentIDTXT.TabIndex = 69;
             this.StudentIDTXT.Values.Text = "kryptonLabel3";
             // 
@@ -102,21 +102,21 @@
             this.courseComboBox.Location = new System.Drawing.Point(64, 84);
             this.courseComboBox.Name = "courseComboBox";
             this.courseComboBox.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.courseComboBox.Size = new System.Drawing.Size(208, 21);
+            this.courseComboBox.Size = new System.Drawing.Size(208, 18);
             this.courseComboBox.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.courseComboBox.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.courseComboBox.StateCommon.ComboBox.Border.Width = 0;
             this.courseComboBox.StateCommon.ComboBox.Content.Color1 = System.Drawing.Color.White;
-            this.courseComboBox.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Poppins", 8F);
+            this.courseComboBox.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.courseComboBox.StateCommon.DropBack.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.courseComboBox.StateCommon.DropBack.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.courseComboBox.StateCommon.Item.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.courseComboBox.StateCommon.Item.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.courseComboBox.StateCommon.Item.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.courseComboBox.StateCommon.Item.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.courseComboBox.StateCommon.Item.Content.ShortText.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.courseComboBox.StateCommon.Item.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.courseComboBox.StateNormal.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -140,10 +140,10 @@
             this.sectionTXT.Location = new System.Drawing.Point(411, 65);
             this.sectionTXT.Name = "sectionTXT";
             this.sectionTXT.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.sectionTXT.Size = new System.Drawing.Size(99, 21);
+            this.sectionTXT.Size = new System.Drawing.Size(91, 18);
             this.sectionTXT.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
             this.sectionTXT.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
-            this.sectionTXT.StateCommon.ShortText.Font = new System.Drawing.Font("Poppins Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sectionTXT.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sectionTXT.TabIndex = 73;
             this.sectionTXT.Values.Text = "kryptonLabel3";
             // 
@@ -152,10 +152,10 @@
             this.StudenttnameTXT.Location = new System.Drawing.Point(410, 84);
             this.StudenttnameTXT.Name = "StudenttnameTXT";
             this.StudenttnameTXT.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.StudenttnameTXT.Size = new System.Drawing.Size(129, 27);
+            this.StudenttnameTXT.Size = new System.Drawing.Size(120, 23);
             this.StudenttnameTXT.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.StudenttnameTXT.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.StudenttnameTXT.StateCommon.ShortText.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.StudenttnameTXT.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.StudenttnameTXT.TabIndex = 74;
             this.StudenttnameTXT.Values.Text = "kryptonLabel3";
             // 
@@ -190,6 +190,7 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.AutoScrollMinSize = new System.Drawing.Size(1, 0);
             this.flowLayoutPanel1.Controls.Add(this.componentGradesCARD1);
             this.flowLayoutPanel1.Controls.Add(this.componentGradesCARD2);
@@ -271,29 +272,13 @@
             this.pictureBox4.TabIndex = 90;
             this.pictureBox4.TabStop = false;
             // 
-            // componentGradesCARD1
+            // componentGradesCARD5
             // 
-            this.componentGradesCARD1.BackColor = System.Drawing.Color.White;
-            this.componentGradesCARD1.Location = new System.Drawing.Point(3, 3);
-            this.componentGradesCARD1.Name = "componentGradesCARD1";
-            this.componentGradesCARD1.Size = new System.Drawing.Size(470, 41);
-            this.componentGradesCARD1.TabIndex = 0;
-            // 
-            // componentGradesCARD2
-            // 
-            this.componentGradesCARD2.BackColor = System.Drawing.Color.White;
-            this.componentGradesCARD2.Location = new System.Drawing.Point(3, 50);
-            this.componentGradesCARD2.Name = "componentGradesCARD2";
-            this.componentGradesCARD2.Size = new System.Drawing.Size(470, 41);
-            this.componentGradesCARD2.TabIndex = 1;
-            // 
-            // componentGradesCARD3
-            // 
-            this.componentGradesCARD3.BackColor = System.Drawing.Color.White;
-            this.componentGradesCARD3.Location = new System.Drawing.Point(3, 97);
-            this.componentGradesCARD3.Name = "componentGradesCARD3";
-            this.componentGradesCARD3.Size = new System.Drawing.Size(470, 41);
-            this.componentGradesCARD3.TabIndex = 2;
+            this.componentGradesCARD5.BackColor = System.Drawing.Color.White;
+            this.componentGradesCARD5.Location = new System.Drawing.Point(3, 191);
+            this.componentGradesCARD5.Name = "componentGradesCARD5";
+            this.componentGradesCARD5.Size = new System.Drawing.Size(470, 41);
+            this.componentGradesCARD5.TabIndex = 4;
             // 
             // componentGradesCARD4
             // 
@@ -303,13 +288,29 @@
             this.componentGradesCARD4.Size = new System.Drawing.Size(470, 41);
             this.componentGradesCARD4.TabIndex = 3;
             // 
-            // componentGradesCARD5
+            // componentGradesCARD3
             // 
-            this.componentGradesCARD5.BackColor = System.Drawing.Color.White;
-            this.componentGradesCARD5.Location = new System.Drawing.Point(3, 191);
-            this.componentGradesCARD5.Name = "componentGradesCARD5";
-            this.componentGradesCARD5.Size = new System.Drawing.Size(470, 41);
-            this.componentGradesCARD5.TabIndex = 4;
+            this.componentGradesCARD3.BackColor = System.Drawing.Color.White;
+            this.componentGradesCARD3.Location = new System.Drawing.Point(3, 97);
+            this.componentGradesCARD3.Name = "componentGradesCARD3";
+            this.componentGradesCARD3.Size = new System.Drawing.Size(470, 41);
+            this.componentGradesCARD3.TabIndex = 2;
+            // 
+            // componentGradesCARD2
+            // 
+            this.componentGradesCARD2.BackColor = System.Drawing.Color.White;
+            this.componentGradesCARD2.Location = new System.Drawing.Point(3, 50);
+            this.componentGradesCARD2.Name = "componentGradesCARD2";
+            this.componentGradesCARD2.Size = new System.Drawing.Size(470, 41);
+            this.componentGradesCARD2.TabIndex = 1;
+            // 
+            // componentGradesCARD1
+            // 
+            this.componentGradesCARD1.BackColor = System.Drawing.Color.White;
+            this.componentGradesCARD1.Location = new System.Drawing.Point(3, 3);
+            this.componentGradesCARD1.Name = "componentGradesCARD1";
+            this.componentGradesCARD1.Size = new System.Drawing.Size(470, 41);
+            this.componentGradesCARD1.TabIndex = 0;
             // 
             // teacher__GradeBook
             // 

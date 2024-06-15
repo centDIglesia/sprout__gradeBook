@@ -15,12 +15,13 @@ namespace sprout__gradeBook
         [STAThread]
 
 
+
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
             Application.Run(new introductionPage());
+
 
         }
     }
