@@ -54,8 +54,6 @@ namespace sprout__gradeBook
             loadForm(new teacher__studentsDashboard(currentUser));
         }
 
-
-
         private void btn_gradeBook_Click(object sender, EventArgs e)
         {
             string gradingSystemDirectoryPath = $"CourseGradingSystem/{currentUser}";

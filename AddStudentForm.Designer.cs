@@ -76,7 +76,7 @@
             // 
             this.studentSectionTXT.Location = new System.Drawing.Point(310, 443);
             this.studentSectionTXT.Name = "studentSectionTXT";
-            this.studentSectionTXT.Size = new System.Drawing.Size(237, 37);
+            this.studentSectionTXT.Size = new System.Drawing.Size(237, 31);
             this.studentSectionTXT.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentSectionTXT.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentSectionTXT.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -84,7 +84,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.studentSectionTXT.StateCommon.Border.Rounding = 4;
             this.studentSectionTXT.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(155)))));
-            this.studentSectionTXT.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentSectionTXT.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentSectionTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
             this.studentSectionTXT.TabIndex = 11;
             this.studentSectionTXT.Text = "Section";
@@ -95,7 +95,7 @@
             // 
             this.studentFnameTXT.Location = new System.Drawing.Point(64, 82);
             this.studentFnameTXT.Name = "studentFnameTXT";
-            this.studentFnameTXT.Size = new System.Drawing.Size(153, 37);
+            this.studentFnameTXT.Size = new System.Drawing.Size(153, 31);
             this.studentFnameTXT.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentFnameTXT.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentFnameTXT.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -103,7 +103,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.studentFnameTXT.StateCommon.Border.Rounding = 4;
             this.studentFnameTXT.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(155)))));
-            this.studentFnameTXT.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentFnameTXT.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentFnameTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
             this.studentFnameTXT.TabIndex = 1;
             this.studentFnameTXT.Text = "First Name";
@@ -115,7 +115,7 @@
             // 
             this.studentMnameTXT.Location = new System.Drawing.Point(229, 82);
             this.studentMnameTXT.Name = "studentMnameTXT";
-            this.studentMnameTXT.Size = new System.Drawing.Size(153, 37);
+            this.studentMnameTXT.Size = new System.Drawing.Size(153, 31);
             this.studentMnameTXT.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentMnameTXT.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentMnameTXT.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -123,7 +123,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.studentMnameTXT.StateCommon.Border.Rounding = 4;
             this.studentMnameTXT.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(155)))));
-            this.studentMnameTXT.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentMnameTXT.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentMnameTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
             this.studentMnameTXT.TabIndex = 2;
             this.studentMnameTXT.Text = "Middle Name";
@@ -144,7 +144,7 @@
             // 
             this.studentLnameTXT.Location = new System.Drawing.Point(394, 82);
             this.studentLnameTXT.Name = "studentLnameTXT";
-            this.studentLnameTXT.Size = new System.Drawing.Size(153, 37);
+            this.studentLnameTXT.Size = new System.Drawing.Size(153, 31);
             this.studentLnameTXT.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentLnameTXT.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentLnameTXT.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -152,7 +152,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.studentLnameTXT.StateCommon.Border.Rounding = 4;
             this.studentLnameTXT.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(155)))));
-            this.studentLnameTXT.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentLnameTXT.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentLnameTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
             this.studentLnameTXT.TabIndex = 3;
             this.studentLnameTXT.Text = "Last Name";
@@ -163,12 +163,12 @@
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.label9.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(0, 0);
             this.label9.Name = "label9";
             this.label9.Padding = new System.Windows.Forms.Padding(10, 5, 270, 5);
-            this.label9.Size = new System.Drawing.Size(695, 29);
+            this.label9.Size = new System.Drawing.Size(633, 23);
             this.label9.TabIndex = 62;
             this.label9.Text = "Please complete the following form to add a new student to our database.";
             // 
@@ -176,7 +176,7 @@
             // 
             this.studentIDTXT.Location = new System.Drawing.Point(64, 145);
             this.studentIDTXT.Name = "studentIDTXT";
-            this.studentIDTXT.Size = new System.Drawing.Size(483, 37);
+            this.studentIDTXT.Size = new System.Drawing.Size(483, 31);
             this.studentIDTXT.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentIDTXT.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentIDTXT.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -184,7 +184,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.studentIDTXT.StateCommon.Border.Rounding = 4;
             this.studentIDTXT.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(155)))));
-            this.studentIDTXT.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentIDTXT.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentIDTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
             this.studentIDTXT.TabIndex = 4;
             this.studentIDTXT.Text = "Student ID";
@@ -216,7 +216,7 @@
             // 
             this.studentEmailTXT.Location = new System.Drawing.Point(64, 203);
             this.studentEmailTXT.Name = "studentEmailTXT";
-            this.studentEmailTXT.Size = new System.Drawing.Size(483, 37);
+            this.studentEmailTXT.Size = new System.Drawing.Size(483, 31);
             this.studentEmailTXT.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentEmailTXT.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentEmailTXT.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -224,7 +224,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.studentEmailTXT.StateCommon.Border.Rounding = 4;
             this.studentEmailTXT.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(155)))));
-            this.studentEmailTXT.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentEmailTXT.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentEmailTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
             this.studentEmailTXT.TabIndex = 5;
             this.studentEmailTXT.Text = "Email";
@@ -235,7 +235,7 @@
             // 
             this.studentYearLevelTXT.Location = new System.Drawing.Point(64, 443);
             this.studentYearLevelTXT.Name = "studentYearLevelTXT";
-            this.studentYearLevelTXT.Size = new System.Drawing.Size(242, 37);
+            this.studentYearLevelTXT.Size = new System.Drawing.Size(242, 31);
             this.studentYearLevelTXT.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentYearLevelTXT.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentYearLevelTXT.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -243,7 +243,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.studentYearLevelTXT.StateCommon.Border.Rounding = 4;
             this.studentYearLevelTXT.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(155)))));
-            this.studentYearLevelTXT.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentYearLevelTXT.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentYearLevelTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
             this.studentYearLevelTXT.TabIndex = 10;
             this.studentYearLevelTXT.Text = "Year Level";
@@ -289,7 +289,7 @@
             this.studentDepartmentTXT.StateCommon.Item.Border.Width = 1;
             this.studentDepartmentTXT.StateCommon.Item.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.studentDepartmentTXT.StateCommon.Item.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.studentDepartmentTXT.StateCommon.Item.Content.ShortText.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentDepartmentTXT.StateCommon.Item.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentDepartmentTXT.StateTracking.Item.Back.Color1 = System.Drawing.Color.White;
             this.studentDepartmentTXT.StateTracking.Item.Back.Color2 = System.Drawing.Color.White;
             this.studentDepartmentTXT.StateTracking.Item.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
@@ -299,6 +299,7 @@
             // 
             // studentBirthdayPicker
             // 
+            this.studentBirthdayPicker.CalendarTodayDate = new System.DateTime(2024, 6, 13, 0, 0, 0, 0);
             this.studentBirthdayPicker.CalendarTodayFormat = "dd";
             this.studentBirthdayPicker.CustomFormat = "yyyy-MM-dd";
             this.studentBirthdayPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -306,7 +307,7 @@
             this.studentBirthdayPicker.MaxDate = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
             this.studentBirthdayPicker.Name = "studentBirthdayPicker";
             this.studentBirthdayPicker.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.studentBirthdayPicker.Size = new System.Drawing.Size(240, 24);
+            this.studentBirthdayPicker.Size = new System.Drawing.Size(240, 18);
             this.studentBirthdayPicker.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentBirthdayPicker.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentBirthdayPicker.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
@@ -316,7 +317,7 @@
             this.studentBirthdayPicker.StateCommon.Border.Rounding = 0;
             this.studentBirthdayPicker.StateCommon.Border.Width = 0;
             this.studentBirthdayPicker.StateCommon.Content.Color1 = System.Drawing.Color.White;
-            this.studentBirthdayPicker.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentBirthdayPicker.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentBirthdayPicker.TabIndex = 6;
             // 
             // pictureBox10
@@ -504,6 +505,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddStudentForm";
             this.Text = " ";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.AddStudentForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonCheckSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDepartmentTXT)).EndInit();
