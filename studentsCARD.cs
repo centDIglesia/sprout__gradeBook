@@ -74,9 +74,28 @@ namespace sprout__gradeBook
 
         private void feedback_btn_Click(object sender, EventArgs e)
         {
-            Teacher__Feedback teacher__Feedback = new Teacher__Feedback(this);
-            teacher__Feedback.StudentName = this.StudentName;
-            teacher__Feedback.Show();
+            Form formbackground = new Form();
+
+            using (Teacher__Feedback teacher__Feedback = new Teacher__Feedback(this))
+            {
+                formbackground.StartPosition = FormStartPosition.CenterScreen;
+                formbackground.FormBorderStyle = FormBorderStyle.None;
+                formbackground.Opacity = .90d;
+                formbackground.BackColor = CustomColor.mainColor;
+                formbackground.Size = new Size(1147, 711);
+
+                teacher__Feedback.StudentName = this.StudentName;
+
+                formbackground.Location = this.Location;
+
+                formbackground.ShowInTaskbar = false;
+                formbackground.Show();
+
+                teacher__Feedback.Owner = formbackground;
+                teacher__Feedback.ShowDialog();
+            }
+            formbackground.Dispose();
+
         }
         public void saveFeedback(string title, string description)
         {
