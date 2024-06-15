@@ -129,9 +129,27 @@ namespace sprout__gradeBook
         }
 
         private void announcementBTN_Click(object sender, EventArgs e)
-        {
-            AddAnnouncementFORM addNewAnnouncement = new AddAnnouncementFORM(this);
-            addNewAnnouncement.Show();
+        { 
+            Form formbackground = new Form();
+
+            using (AddAnnouncementFORM addNewAnnouncement = new AddAnnouncementFORM(this)) 
+            {
+                formbackground.StartPosition = FormStartPosition.CenterScreen;
+                formbackground.FormBorderStyle = FormBorderStyle.None;
+                formbackground.Opacity = .70d;
+                formbackground.BackColor = CustomColor.mainColor;
+                formbackground.Size = new System.Drawing.Size(1147, 711);
+
+                formbackground.Location = this.Location;
+
+                formbackground.ShowInTaskbar = false;
+                formbackground.Show();
+
+                addNewAnnouncement.Owner = formbackground;
+                addNewAnnouncement.ShowDialog();
+            }
+            formbackground.Dispose();
+
         }
         public void saveAnnouncement(string title, string description)
         {
@@ -203,9 +221,26 @@ namespace sprout__gradeBook
             }
             else
             {
-                // If grading system does not exist, proceed to create a new one
-                createGradingSystemFORM crf = new createGradingSystemFORM(_currentUser, SubjectCode, SubjectCourseSection);
-                crf.Show();
+                Form formbackground = new Form();
+
+                using (createGradingSystemFORM gsForm = new createGradingSystemFORM(_currentUser, SubjectCode, SubjectCourseSection))
+                {
+                    formbackground.StartPosition = FormStartPosition.CenterScreen;
+                    formbackground.FormBorderStyle = FormBorderStyle.None;
+                    formbackground.Opacity = .70d;
+                    formbackground.BackColor = CustomColor.mainColor;
+                    formbackground.Size = new System.Drawing.Size(1147, 711);
+
+                    formbackground.Location = this.Location;
+
+                    formbackground.ShowInTaskbar = false;
+                    formbackground.Show();
+
+                    gsForm.Owner = formbackground;
+                    gsForm.ShowDialog();
+                }
+                formbackground.Dispose();
+
             }
         }
 

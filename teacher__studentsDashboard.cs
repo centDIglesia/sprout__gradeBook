@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Drawing;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 
@@ -210,8 +211,28 @@ namespace sprout__gradeBook
 
         private void addStudentsBTN_Click(object sender, EventArgs e)
         {
-            AddStudentForm addStudentForm = new AddStudentForm(this, teacherSchool);
-            addStudentForm.Show();
+            Form formbackground = new Form();
+
+            using (AddStudentForm addStudentForm = new AddStudentForm(this, teacherSchool))
+            {
+                formbackground.StartPosition = FormStartPosition.CenterScreen;
+                formbackground.FormBorderStyle = FormBorderStyle.None;
+                formbackground.Opacity = .70d;
+                formbackground.BackColor = StateCommon.Back.Color1 = CustomColor.mainColor;
+                formbackground.Size = new Size(1147, 711);
+
+                formbackground.Location = this.Location;
+
+                formbackground.ShowInTaskbar = false;
+                formbackground.Show();
+
+                addStudentForm.Owner = formbackground;
+                addStudentForm.ShowDialog();
+            }
+            formbackground.Dispose();
         }
+
+
     }
+
 }

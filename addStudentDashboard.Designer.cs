@@ -95,6 +95,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "addStudentDashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "addStudentDashboard";
             this.Load += new System.EventHandler(this.addStudentDashboard_Load);
             this.Leave += new System.EventHandler(this.addStudentDashboard_Leave);

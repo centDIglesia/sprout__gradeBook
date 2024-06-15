@@ -69,7 +69,7 @@ namespace sprout__gradeBook
                 formbackgroud.StartPosition = FormStartPosition.Manual;
                 formbackgroud.FormBorderStyle = FormBorderStyle.None;
                 formbackgroud.Opacity = .70d;
-                formbackgroud.BackColor = Color.Black;
+                formbackgroud.BackColor = StateCommon.Back.Color1 = CustomColor.mainColor;
                 formbackgroud.Size = this.Size;
                 formbackgroud.Location = this.Location;
                 formbackgroud.ShowInTaskbar = false;
@@ -137,8 +137,24 @@ namespace sprout__gradeBook
 
         private void feedback_btn_Click(object sender, EventArgs e)
         {
-            Student__FeedbackUI feedbackUI = new Student__FeedbackUI(_studentLoginForm, _studentLoginForm.currentStudentID);
-            feedbackUI.Show();
+            Form formbackgroud = new Form();
+
+            using (Student__FeedbackUI feedbackUI = new Student__FeedbackUI(_studentLoginForm, _studentLoginForm.currentStudentID))
+            {
+                formbackgroud.StartPosition = FormStartPosition.Manual;
+                formbackgroud.FormBorderStyle = FormBorderStyle.None;
+                formbackgroud.Opacity = .70d;
+                formbackgroud.BackColor = CustomColor.mainColor;
+                formbackgroud.Size = this.Size;
+                formbackgroud.Location = this.Location;
+                formbackgroud.ShowInTaskbar = false;
+                formbackgroud.Show();
+
+                feedbackUI.Owner = formbackgroud;
+                feedbackUI.ShowDialog();
+            }
+            formbackgroud.Dispose();
+
         }
 
     }
