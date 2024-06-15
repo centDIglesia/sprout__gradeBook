@@ -98,7 +98,7 @@
             this.compPercentage.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.compPercentage.TabIndex = 4;
             this.compPercentage.Text = "vv";
-            this.compPercentage.TextChanged += new System.EventHandler(this.compPercentage_TextChanged);
+           
             // 
             // pictureBox1
             // 

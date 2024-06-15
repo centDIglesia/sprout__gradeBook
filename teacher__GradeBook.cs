@@ -82,7 +82,7 @@ namespace sprout__gradeBook
                 // Handle the case where the selected item does not have the expected format
                 MessageBox.Show("Selected course format is incorrect. Please select a valid course.", "Invalid Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-           
+
         }
 
 
@@ -142,7 +142,7 @@ namespace sprout__gradeBook
             sectionTXT.Text = RemoveSubstring(courseComboBox.Text, "_", ",");
 
 
-                        // Define the directory path based on the selected grading system path
+            // Define the directory path based on the selected grading system path
             string selectedGradingSystemPath = courseComboBox.Text;
 
             string baseDirectoryPath = $"CourseGradingSystem/{currentUSer}/{selectedGradingSystemPath}";
@@ -236,7 +236,6 @@ namespace sprout__gradeBook
             };
             subcomponentsPane.Controls.Add(componentCard);
 
-            // Refresh the layout
             subcomponentsPane.Refresh();
         }
     }
