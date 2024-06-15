@@ -12,16 +12,33 @@ namespace sprout__gradeBook
 {
     public partial class Component_Button_Card : UserControl
     {
-        public Component_Button_Card()
+        bool compCardisClicked = false;
+
+        private readonly Label _currentComponentlbl;
+        public Component_Button_Card(Label currentComponentlbl)
         {
             InitializeComponent();
+            _currentComponentlbl = currentComponentlbl;
+
         }
 
-        private void compoentName_Click(object sender, EventArgs e)
+        public string compName { get => compoentName.Text; set => compoentName.Text = value; }
+
+
+        private void Component_Button_Card_Click(object sender, EventArgs e)
         {
 
         }
 
-        public string compName { get=> compoentName.Text; set=> compoentName.Text = value; }
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+             compCardisClicked = true;
+            _currentComponentlbl.Text = compName;
+        }
+
+        public bool IsCardClicked()
+        {
+            return compCardisClicked;
+        }
     }
 }
