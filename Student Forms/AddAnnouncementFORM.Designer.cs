@@ -88,7 +88,7 @@
             this.label1.Location = new System.Drawing.Point(-4, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(15, 6, 400, 5);
-            this.label1.Size = new System.Drawing.Size(561, 33);
+            this.label1.Size = new System.Drawing.Size(599, 37);
             this.label1.TabIndex = 2;
             this.label1.Text = "Create Announcement";
             // 
@@ -143,6 +143,7 @@
             this.Name = "AddAnnouncementFORM";
             this.Palette = this.kryptonPalette2;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddAnnouncementFORM";
             this.Load += new System.EventHandler(this.AddAnnouncementFORM_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

@@ -29,55 +29,55 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(notificationCARD));
-            this.titleTXTBX = new System.Windows.Forms.Label();
-            this.descriptionTXTBX = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.notifTimesent = new System.Windows.Forms.Label();
+            this.announcementTitle_txt = new System.Windows.Forms.Label();
+            this.description_txt = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.timeStamp_txt = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // titleTXTBX
+            // announcementTitle_txt
             // 
-            this.titleTXTBX.AutoSize = true;
-            this.titleTXTBX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.titleTXTBX.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleTXTBX.ForeColor = System.Drawing.Color.White;
-            this.titleTXTBX.Location = new System.Drawing.Point(8, 5);
-            this.titleTXTBX.Name = "titleTXTBX";
-            this.titleTXTBX.Size = new System.Drawing.Size(31, 22);
-            this.titleTXTBX.TabIndex = 0;
-            this.titleTXTBX.Text = "title";
+            this.announcementTitle_txt.AutoSize = true;
+            this.announcementTitle_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.announcementTitle_txt.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.announcementTitle_txt.ForeColor = System.Drawing.Color.White;
+            this.announcementTitle_txt.Location = new System.Drawing.Point(7, 6);
+            this.announcementTitle_txt.Name = "announcementTitle_txt";
+            this.announcementTitle_txt.Size = new System.Drawing.Size(144, 23);
+            this.announcementTitle_txt.TabIndex = 0;
+            this.announcementTitle_txt.Text = "announcementTitle";
             // 
-            // descriptionTXTBX
+            // description_txt
             // 
-            this.descriptionTXTBX.Enabled = false;
-            this.descriptionTXTBX.Location = new System.Drawing.Point(11, 32);
-            this.descriptionTXTBX.Multiline = true;
-            this.descriptionTXTBX.Name = "descriptionTXTBX";
-            this.descriptionTXTBX.ReadOnly = true;
-            this.descriptionTXTBX.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.descriptionTXTBX.Size = new System.Drawing.Size(280, 80);
-            this.descriptionTXTBX.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.descriptionTXTBX.StateCommon.Border.Color1 = System.Drawing.Color.White;
-            this.descriptionTXTBX.StateCommon.Border.Color2 = System.Drawing.Color.White;
-            this.descriptionTXTBX.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.description_txt.Enabled = false;
+            this.description_txt.Location = new System.Drawing.Point(11, 33);
+            this.description_txt.Multiline = true;
+            this.description_txt.Name = "description_txt";
+            this.description_txt.ReadOnly = true;
+            this.description_txt.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.description_txt.Size = new System.Drawing.Size(280, 80);
+            this.description_txt.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.description_txt.StateCommon.Border.Color1 = System.Drawing.Color.White;
+            this.description_txt.StateCommon.Border.Color2 = System.Drawing.Color.White;
+            this.description_txt.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.descriptionTXTBX.StateCommon.Border.Rounding = 0;
-            this.descriptionTXTBX.StateCommon.Border.Width = 0;
-            this.descriptionTXTBX.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.descriptionTXTBX.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionTXTBX.TabIndex = 1;
+            this.description_txt.StateCommon.Border.Rounding = 0;
+            this.description_txt.StateCommon.Border.Width = 0;
+            this.description_txt.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.description_txt.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.description_txt.TabIndex = 1;
             // 
-            // notifTimesent
+            // timeStamp_txt
             // 
-            this.notifTimesent.AutoSize = true;
-            this.notifTimesent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.notifTimesent.Font = new System.Drawing.Font("Poppins", 8F);
-            this.notifTimesent.ForeColor = System.Drawing.Color.Gray;
-            this.notifTimesent.Location = new System.Drawing.Point(85, 7);
-            this.notifTimesent.Name = "notifTimesent";
-            this.notifTimesent.Size = new System.Drawing.Size(30, 19);
-            this.notifTimesent.TabIndex = 2;
-            this.notifTimesent.Text = "title";
+            this.timeStamp_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.timeStamp_txt.Font = new System.Drawing.Font("Poppins", 8F);
+            this.timeStamp_txt.ForeColor = System.Drawing.Color.Silver;
+            this.timeStamp_txt.Location = new System.Drawing.Point(189, 8);
+            this.timeStamp_txt.Name = "timeStamp_txt";
+            this.timeStamp_txt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.timeStamp_txt.Size = new System.Drawing.Size(104, 19);
+            this.timeStamp_txt.TabIndex = 2;
+            this.timeStamp_txt.Text = "timeStamp";
             // 
             // notificationCARD
             // 
@@ -86,9 +86,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Controls.Add(this.notifTimesent);
-            this.Controls.Add(this.descriptionTXTBX);
-            this.Controls.Add(this.titleTXTBX);
+            this.Controls.Add(this.timeStamp_txt);
+            this.Controls.Add(this.description_txt);
+            this.Controls.Add(this.announcementTitle_txt);
             this.DoubleBuffered = true;
             this.Name = "notificationCARD";
             this.Size = new System.Drawing.Size(304, 126);
@@ -99,8 +99,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label titleTXTBX;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox descriptionTXTBX;
-        private System.Windows.Forms.Label notifTimesent;
+        private System.Windows.Forms.Label announcementTitle_txt;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox description_txt;
+        private System.Windows.Forms.Label timeStamp_txt;
     }
 }
