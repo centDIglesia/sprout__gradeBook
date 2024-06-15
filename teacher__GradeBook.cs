@@ -64,50 +64,66 @@ namespace sprout__gradeBook
         private void CourseComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedCourse = courseComboBox.SelectedItem.ToString();
-            string filePath = $"CourseInformations/{currentUSer}/{selectedCourse}.txt";
 
-            LoadStudentCards(filePath);
+            // Split the selected course to remove the code
+            string[] trimmedCourseParts = selectedCourse.Split('_');
+
+            // Ensure we have two parts after splitting
+            if (trimmedCourseParts.Length == 2)
+            {
+                string trimmedCourseName = trimmedCourseParts[1].Trim();
+                string studentFilePath = $"StudentCredentials/{currentUSer}/DepartmentandSections/{trimmedCourseName}.txt";
+
+                // Load the student cards using the trimmed course name
+                LoadStudentCards(studentFilePath);
+            }
+            else
+            {
+                // Handle the case where the selected item does not have the expected format
+                MessageBox.Show("Selected course format is incorrect. Please select a valid course.", "Invalid Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+           
         }
+
 
         private void LoadStudentCards(string filePath)
         {
-            if (!File.Exists(filePath))
-            {
-                MessageBox.Show("File does not exist.");
-                return;
-            }
-
+            // Clear existing student cards
             studentListPanel.Controls.Clear();
 
-
-            string fileContent = File.ReadAllText(filePath);
-
-
-            string[] studentEntries = fileContent.Split(new[] { "----------------------------" }, StringSplitOptions.RemoveEmptyEntries);
-
-            foreach (string entry in studentEntries)
+            try
             {
-                string[] lines = entry.Trim().Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
-                string studentID = string.Empty;
-                string studentName = string.Empty;
+                // Read all lines from the file
+                string[] lines = File.ReadAllLines(filePath);
+
+                string studentID = null;
+                string studentName = null;
 
                 foreach (string line in lines)
                 {
+                    // Look for the "Student ID:" prefix
                     if (line.StartsWith("Student ID:"))
                     {
                         studentID = line.Substring("Student ID:".Length).Trim();
                     }
+                    // Look for the "Student Name:" prefix
                     else if (line.StartsWith("Student Name:"))
                     {
                         studentName = line.Substring("Student Name:".Length).Trim();
                     }
+                    // If both ID and Name are found, add the student card
+                    if (!string.IsNullOrEmpty(studentID) && !string.IsNullOrEmpty(studentName))
+                    {
+                        AddStudentCard(studentID, studentName);
+                        studentID = null; // Reset for the next student
+                        studentName = null; // Reset for the next student
+                    }
                 }
-
-
-                if (!string.IsNullOrEmpty(studentID) && !string.IsNullOrEmpty(studentName))
-                {
-                    AddStudentCard(studentID, studentName);
-                }
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (e.g., file not found, read errors)
+                MessageBox.Show($"Error loading student data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -126,9 +142,7 @@ namespace sprout__gradeBook
             sectionTXT.Text = RemoveSubstring(courseComboBox.Text, "_", ",");
 
 
-
-
-            // Define the directory path based on the selected grading system path
+                        // Define the directory path based on the selected grading system path
             string selectedGradingSystemPath = courseComboBox.Text;
 
             string baseDirectoryPath = $"CourseGradingSystem/{currentUSer}/{selectedGradingSystemPath}";

@@ -15,11 +15,14 @@ namespace sprout__gradeBook
         [STAThread]
 
 
+
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Teacher_Dashboard("fdsfsd5T@gmail.com"));
+            Application.Run(new introductionPage());
+
+
         }
     }
 }

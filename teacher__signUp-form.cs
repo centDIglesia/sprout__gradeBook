@@ -18,6 +18,7 @@ namespace sprout__gradeBook
         public logInForm()
         {
             InitializeComponent();
+            this.AcceptButton = signIn__btn;    
         }
 
         private void teacher__signUp_form_Load(object sender, EventArgs e)
@@ -643,6 +644,14 @@ namespace sprout__gradeBook
         private void pictureBox12_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void back__btn_Click_1(object sender, EventArgs e)
+        {
+            Role__form r = new Role__form();
+
+            r.Show();
+            this.Hide();
         }
     }
 }

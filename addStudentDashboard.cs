@@ -26,7 +26,7 @@ namespace sprout__gradeBook
 
         private void addstudentBTN_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void addStudentDashboard_Leave(object sender, EventArgs e)

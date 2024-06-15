@@ -8,8 +8,7 @@ namespace sprout__gradeBook
 {
     public partial class CourseAndSectionCARD : UserControl
     {
-        public new teacher__studentsDashboard ParentForm { get; set; }
-
+        private readonly teacher__studentsDashboard ParentForm;
         public string SectionName
         {
             get => CoursecSectionOfStudent.Text;
@@ -126,7 +125,7 @@ namespace sprout__gradeBook
                     genderImage = Properties.Resources.Female_Icon;
                 }
 
-                studentsCARD studentCard = new studentsCARD()
+                studentsCARD studentCard = new studentsCARD(ParentForm)
                 {
                     StudentName = studentName,
                     StudentID = studentID,

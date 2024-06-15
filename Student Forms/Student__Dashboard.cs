@@ -57,37 +57,42 @@ namespace sprout__gradeBook
 
         private void close_btn_Click(object sender, EventArgs e)
         {
-            // Prompt the user with an exit confirmation dialog
-            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            // If the user clicks 'No', do nothing
-            if (result == DialogResult.No)
-            {
-                return;
-            }
-            // If the user clicks 'Yes', exit the application
-            else
-            {
-                Application.Exit();
-            }
+           utilityButton b = new utilityButton();
+            b.Exitform();
         }
         private void notifCount_Click(object sender, EventArgs e)
         {
-            students__NoticationUi students__NoticationFORM = new students__NoticationUi(_studentLoginForm, _studentLoginForm.currentStudentID, currentstudentDepartment);
-            students__NoticationFORM.Show();
+            Form formbackgroud = new Form();
+
+            using (students__NoticationUi students__NoticationFORM = new students__NoticationUi(_studentLoginForm, _studentLoginForm.currentStudentID, currentstudentDepartment))
+            {
+                formbackgroud.StartPosition = FormStartPosition.Manual;
+                formbackgroud.FormBorderStyle = FormBorderStyle.None;
+                formbackgroud.Opacity = .70d;
+                formbackgroud.BackColor = Color.Black;
+                formbackgroud.Size = this.Size;
+                formbackgroud.Location = this.Location;
+                formbackgroud.ShowInTaskbar = false;
+                formbackgroud.Show();
+
+                students__NoticationFORM.Owner = formbackgroud;
+                students__NoticationFORM.ShowDialog();
+            } 
+            formbackgroud.Dispose();
+           
         }
+
+
+
 
         private void Student__Dashboard_Load(object sender, EventArgs e)
         {
-            notificationCount.Text = notifCount.ToString();
-            notificationCount.Hide();
-            notificationBg.Hide();
-
-
+            kryptonTextBox1.Text = notifCount.ToString();
+            kryptonTextBox1.Hide();
             if (notifCount > 0)
             {
-                notificationCount.Show();
-                notificationCount.Show();
+                kryptonTextBox1.Show();
+
             }
         }
 
@@ -97,7 +102,7 @@ namespace sprout__gradeBook
 
             foreach (string teacher in teachers)
             {
-                string teacherAnnouncementFile = $"CourseAnnoucement/{teacher}/Anouncement.txt";
+                string teacherAnnouncementFile = $"CourseAnnouncement/{teacher}/Anouncement.txt";
 
                 if (File.Exists(teacherAnnouncementFile))
                 {
@@ -129,5 +134,12 @@ namespace sprout__gradeBook
 
             }
         }
+
+        private void feedback_btn_Click(object sender, EventArgs e)
+        {
+            Student__FeedbackUI feedbackUI = new Student__FeedbackUI(_studentLoginForm, _studentLoginForm.currentStudentID);
+            feedbackUI.Show();
+        }
+
     }
 }
