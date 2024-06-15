@@ -18,6 +18,7 @@ namespace sprout__gradeBook
         public logInForm()
         {
             InitializeComponent();
+            this.AcceptButton = signIn__btn;    
         }
 
         private void teacher__signUp_form_Load(object sender, EventArgs e)

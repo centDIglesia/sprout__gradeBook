@@ -45,7 +45,14 @@ namespace sprout__gradeBook
             }
         }
 
+        internal static void ResetInputField(KryptonMaskedTextBox courseStartTXT, string v)
+        {
+            throw new NotImplementedException();
+        }
 
-
+        internal static void RestoreDefaultText(KryptonMaskedTextBox courseStartTXT, string v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

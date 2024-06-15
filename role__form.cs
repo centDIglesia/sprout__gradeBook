@@ -16,6 +16,7 @@ namespace sprout__gradeBook
         public Role__form()
         {
             InitializeComponent();
+            this.AcceptButton = role__btn;
         }
 
         bool teacherClicked = false;//true
@@ -61,7 +62,7 @@ namespace sprout__gradeBook
 
         private void role__btn_Click(object sender, EventArgs e)
         {
-
+                
 
             if (selectedRole == "student")
             {
