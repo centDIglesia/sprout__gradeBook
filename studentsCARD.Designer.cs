@@ -33,8 +33,10 @@
             this.studentcard__studentID = new System.Windows.Forms.Label();
             this.studentcard__studentName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.clickedBG = new System.Windows.Forms.PictureBox();
+            this.feedback_btn = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.studentGender)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clickedBG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedback_btn)).BeginInit();
             this.SuspendLayout();
             // 
             // studentGender
@@ -59,7 +61,7 @@
             this.studentcard__studentID.ForeColor = System.Drawing.Color.DarkGray;
             this.studentcard__studentID.Location = new System.Drawing.Point(106, 29);
             this.studentcard__studentID.Name = "studentcard__studentID";
-            this.studentcard__studentID.Size = new System.Drawing.Size(77, 23);
+            this.studentcard__studentID.Size = new System.Drawing.Size(76, 23);
             this.studentcard__studentID.TabIndex = 1;
             this.studentcard__studentID.Text = "Student ID";
             this.studentcard__studentID.Click += new System.EventHandler(this.studentcard__studentName_Click);
@@ -75,8 +77,8 @@
             this.studentcard__studentName.ReadOnly = true;
             this.studentcard__studentName.Size = new System.Drawing.Size(141, 44);
             this.studentcard__studentName.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.studentcard__studentName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.studentcard__studentName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.studentcard__studentName.StateCommon.Border.Rounding = 0;
             this.studentcard__studentName.StateCommon.Border.Width = 0;
@@ -85,7 +87,6 @@
             this.studentcard__studentName.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
             this.studentcard__studentName.TabIndex = 3;
             this.studentcard__studentName.Text = "Student Name dsdsfdsfdd";
-            this.studentcard__studentName.TextChanged += new System.EventHandler(this.studentcard__studentName_TextChanged);
             this.studentcard__studentName.Click += new System.EventHandler(this.studentcard__studentName_Click);
             this.studentcard__studentName.MouseLeave += new System.EventHandler(this.studentcard__studentID_MouseLeave);
             this.studentcard__studentName.MouseHover += new System.EventHandler(this.studentGender_MouseHover);
@@ -101,6 +102,17 @@
             this.clickedBG.TabStop = false;
             this.clickedBG.Click += new System.EventHandler(this.clickedBG_Click);
             // 
+            // feedback_btn
+            // 
+            this.feedback_btn.Image = ((System.Drawing.Image)(resources.GetObject("feedback_btn.Image")));
+            this.feedback_btn.Location = new System.Drawing.Point(62, 42);
+            this.feedback_btn.Name = "feedback_btn";
+            this.feedback_btn.Size = new System.Drawing.Size(144, 35);
+            this.feedback_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.feedback_btn.TabIndex = 5;
+            this.feedback_btn.TabStop = false;
+            this.feedback_btn.Click += new System.EventHandler(this.feedback_btn_Click);
+            // 
             // studentsCARD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -108,6 +120,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.feedback_btn);
             this.Controls.Add(this.clickedBG);
             this.Controls.Add(this.studentcard__studentName);
             this.Controls.Add(this.studentcard__studentID);
@@ -121,6 +134,7 @@
             this.MouseHover += new System.EventHandler(this.studentGender_MouseHover);
             ((System.ComponentModel.ISupportInitialize)(this.studentGender)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clickedBG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedback_btn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,5 +146,6 @@
         private System.Windows.Forms.Label studentcard__studentID;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox studentcard__studentName;
         private System.Windows.Forms.PictureBox clickedBG;
+        private System.Windows.Forms.PictureBox feedback_btn;
     }
 }

@@ -58,17 +58,20 @@ namespace sprout__gradeBook
         {
             string gradingSystemDirectoryPath = $"CourseGradingSystem/{currentUser}";
 
-            if (Directory.Exists(gradingSystemDirectoryPath))
-            {
-                loadForm(new teacher__GradeBook(currentUser));
-            }
-            else
-            {
-                MessageBox.Show("Please create the grading system first.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            loadForm(new teacher__GradeBook(currentUser));
 
-                createGradingSystemFORM crf = new createGradingSystemFORM(currentUser);
-                crf.Show();
-            }
+            /*
+             if (Directory.Exists(gradingSystemDirectoryPath))
+             {
+                 loadForm(new teacher__GradeBook(currentUser));
+             }
+             else
+             {
+                 MessageBox.Show("Please create the grading system first.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                 createGradingSystemFORM crf = new createGradingSystemFORM(currentUser);
+                 crf.Show();
+             }*/
         }
 
         private void close_btn_Click(object sender, EventArgs e)

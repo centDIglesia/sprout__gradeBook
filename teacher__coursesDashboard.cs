@@ -37,7 +37,7 @@ namespace sprout__gradeBook
         public void Hidebuttons()
         {
             addcourseBTN.Hide();
-            deleteBTN.Hide();
+
         }
 
         public void populateCourses()
@@ -152,18 +152,95 @@ namespace sprout__gradeBook
         {
             courseSectionPanel.Show();
         }
+        /*      public void RemoveCourse(CoursesCARD card)
+              {
+                  string folderPath = "CourseInformations";
+                  string filePath = Path.Combine(folderPath, $"{CurrentUser}.txt");
+
+                  if (File.Exists(filePath))
+                  {
+                      // Read all lines from the file
+                      var lines = File.ReadAllLines(filePath).ToList();
+                      var updatedLines = new List<string>();
+
+                      // Variables to track block status
+                      bool isInTargetBlock = false;
+                      bool blockSkipped = false;
+
+                      // Define the start and end indicators for a course block
+                      string blockStartIndicator = $"Course Name: {card.SubjectName}";
+                      string blockEndIndicator = "----------------------------------------";
+
+                      foreach (var line in lines)
+                      {
+                          // Check if the current line is the start of a course block
+                          if (line.StartsWith("Course Name:"))
+                          {
+                              // Reset block status for a new block
+                              isInTargetBlock = false;
+                              blockSkipped = false;
+                          }
+
+                          // Determine if we are inside the target block
+                          if (line.Contains(blockStartIndicator))
+                          {
+                              isInTargetBlock = true;
+                          }
+
+                          // Skip lines if we are inside the target block and haven't skipped it yet
+                          if (isInTargetBlock && !blockSkipped)
+                          {
+                              // Skip lines in the target block
+                              if (line.StartsWith(blockEndIndicator))
+                              {
+                                  // We have reached the end of the block, set blockSkipped to true
+                                  blockSkipped = true;
+                                  isInTargetBlock = false;
+                              }
+                              continue; // Skip adding this line to updatedLines
+                          }
+
+                          // Add lines that are not part of the target block to updatedLines
+                          updatedLines.Add(line);
+                      }
+
+                      // Write the updated lines back to the file
+                      File.WriteAllLines(filePath, updatedLines);
+
+                      // Remove the card from the UI
+                      courseSectionPanel.Controls.Remove(card);
+
+                      // Refresh the UI
+                      populateCourses();
+                  }
+                  else
+                  {
+                      MessageBox.Show($"File not found: {filePath}");
+                  }
+
+                  string specificFilePath = Path.Combine(folderPath, CurrentUser,
+                 $"{card.SubjectName}_{card.SubjectCourseSection.Replace(", ", "_")}.txt");
+
+                  if (File.Exists(specificFilePath))
+                  {
+                      File.Delete(specificFilePath);
+                  }
+              }
+
+              */
         public void RemoveCourse(CoursesCARD card)
         {
             string folderPath = "CourseInformations";
-            string filePath = Path.Combine(folderPath, $"{CurrentUser}.txt");
+            string mainFilePath = Path.Combine(folderPath, $"{CurrentUser}.txt");
 
-            if (File.Exists(filePath))
+            // Initialize a flag to track if the specific course file deletion is needed
+            bool specificFileDeleted = false;
+
+            if (File.Exists(mainFilePath))
             {
-                // Read all lines from the file
-                var lines = File.ReadAllLines(filePath).ToList();
+                var lines = File.ReadAllLines(mainFilePath).ToList();
                 var updatedLines = new List<string>();
 
-                // Variables to track block status
                 bool isInTargetBlock = false;
                 bool blockSkipped = false;
 
@@ -173,39 +250,31 @@ namespace sprout__gradeBook
 
                 foreach (var line in lines)
                 {
-                    // Check if the current line is the start of a course block
                     if (line.StartsWith("Course Name:"))
                     {
-                        // Reset block status for a new block
                         isInTargetBlock = false;
                         blockSkipped = false;
                     }
 
-                    // Determine if we are inside the target block
                     if (line.Contains(blockStartIndicator))
                     {
                         isInTargetBlock = true;
                     }
 
-                    // Skip lines if we are inside the target block and haven't skipped it yet
                     if (isInTargetBlock && !blockSkipped)
                     {
-                        // Skip lines in the target block
                         if (line.StartsWith(blockEndIndicator))
                         {
-                            // We have reached the end of the block, set blockSkipped to true
                             blockSkipped = true;
                             isInTargetBlock = false;
                         }
-                        continue; // Skip adding this line to updatedLines
+                        continue; // Skip lines within the target block
                     }
 
-                    // Add lines that are not part of the target block to updatedLines
                     updatedLines.Add(line);
                 }
 
-                // Write the updated lines back to the file
-                File.WriteAllLines(filePath, updatedLines);
+                File.WriteAllLines(mainFilePath, updatedLines);
 
                 // Remove the card from the UI
                 courseSectionPanel.Controls.Remove(card);
@@ -215,16 +284,26 @@ namespace sprout__gradeBook
             }
             else
             {
-                MessageBox.Show($"File not found: {filePath}");
+                MessageBox.Show($"File not found: {mainFilePath}");
             }
 
-            string specificFilePath = Path.Combine(folderPath, CurrentUser,
-           $"{card.SubjectName}_{card.SubjectCourseSection.Replace(", ", "_")}.txt");
+            // Construct the specific file path
+            string specificFileName = $"{card.SubjectCode}_{card.SubjectCourseSection}.txt";
+            string specificFilePath = Path.Combine(folderPath, CurrentUser, specificFileName);
 
             if (File.Exists(specificFilePath))
             {
                 File.Delete(specificFilePath);
+                specificFileDeleted = true;
             }
+
+            // Provide feedback if the specific file was deleted
+            if (specificFileDeleted)
+            {
+                MessageBox.Show($"Course file deleted successfuly", "File Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+
         }
 
 

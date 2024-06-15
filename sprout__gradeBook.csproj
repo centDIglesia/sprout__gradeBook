@@ -95,6 +95,12 @@
     <Compile Include="Component-Button-Card.Designer.cs">
       <DependentUpon>Component-Button-Card.cs</DependentUpon>
     </Compile>
+    <Compile Include="ComponentGradesCARD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ComponentGradesCARD.Designer.cs">
+      <DependentUpon>ComponentGradesCARD.cs</DependentUpon>
+    </Compile>
     <Compile Include="CourseAndSectionCARD.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -120,6 +126,12 @@
     </Compile>
     <Compile Include="EditCourseForm.Designer.cs">
       <DependentUpon>EditCourseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Feedback__Card.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Feedback__Card.Designer.cs">
+      <DependentUpon>Feedback__Card.cs</DependentUpon>
     </Compile>
     <Compile Include="gradingSystemCARD.cs">
       <SubType>UserControl</SubType>
@@ -210,6 +222,12 @@
     <Compile Include="students__NoticationUi.Designer.cs">
       <DependentUpon>students__NoticationUi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Student__FeedbackUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student__FeedbackUI.Designer.cs">
+      <DependentUpon>Student__FeedbackUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubComponentCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -221,6 +239,12 @@
     </Compile>
     <Compile Include="Teacher__coursesDashboard.Designer.cs">
       <DependentUpon>Teacher__coursesDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher__Feedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher__Feedback.Designer.cs">
+      <DependentUpon>Teacher__Feedback.cs</DependentUpon>
     </Compile>
     <Compile Include="teacher__GradeBook.cs">
       <SubType>Form</SubType>
@@ -278,6 +302,9 @@
     <EmbeddedResource Include="Component-Button-Card.resx">
       <DependentUpon>Component-Button-Card.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ComponentGradesCARD.resx">
+      <DependentUpon>ComponentGradesCARD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CourseAndSectionCARD.resx">
       <DependentUpon>CourseAndSectionCARD.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditCourseForm.resx">
       <DependentUpon>EditCourseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feedback__Card.resx">
+      <DependentUpon>Feedback__Card.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gradingSystemCARD.resx">
       <DependentUpon>gradingSystemCARD.cs</DependentUpon>
@@ -334,11 +364,17 @@
     <EmbeddedResource Include="students__NoticationUi.resx">
       <DependentUpon>students__NoticationUi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Student__FeedbackUI.resx">
+      <DependentUpon>Student__FeedbackUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SubComponentCard.resx">
       <DependentUpon>SubComponentCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher__coursesDashboard.resx">
       <DependentUpon>Teacher__coursesDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher__Feedback.resx">
+      <DependentUpon>Teacher__Feedback.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="teacher__GradeBook.resx">
       <DependentUpon>teacher__GradeBook.cs</DependentUpon>
@@ -382,12 +418,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\teacher__role.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\closed__eye.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\open__eye.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Forgot Your Password_HOVER.png" />
@@ -468,6 +498,10 @@
     <None Include="Resources\Sort-Button.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\open__eye.png" />
+    <None Include="Resources\closed__eye.png" />
+    <None Include="Resources\Add row +.png" />
+    <None Include="Resources\Feedback_Icon.png" />
     <Content Include="Resources\Female_Icon.png" />
     <Content Include="Resources\Male_Icon.png" />
     <None Include="Resources\open__eye1.png" />

@@ -18,11 +18,11 @@ namespace sprout__gradeBook
 
         }
 
-        public string NotifTitle { get => titleTXTBX.Text; set => titleTXTBX.Text = value; }
+        public string NotifTitle { get => announcementTitle_txt.Text; set => announcementTitle_txt.Text = value; }
 
-        public string NotifDescription { get => descriptionTXTBX.Text; set => descriptionTXTBX.Text = value; }
+        public string NotifDescription { get => description_txt.Text; set => description_txt.Text = value; }
 
-        public string NotifTimesent { get => notifTimesent.Text; set => notifTimesent.Text = value; }
+        public string NotifTimesent { get => timeStamp_txt.Text; set => timeStamp_txt.Text = value; }
         
     }
 }

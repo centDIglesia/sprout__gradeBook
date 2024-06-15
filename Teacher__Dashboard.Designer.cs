@@ -35,7 +35,7 @@
             this.btn_dashboard = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btn_gradeBook = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btn_students = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btn_message = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btn_feedback = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.viewPanel = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.teachers__firstName = new System.Windows.Forms.Label();
             this.close_btn = new System.Windows.Forms.PictureBox();
@@ -43,14 +43,12 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.sprout__logo__white = new System.Windows.Forms.PictureBox();
             this.global__nav__bg = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.viewPanel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.close_btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.notification__icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sprout__logo__white)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.global__nav__bg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette2
@@ -235,46 +233,46 @@
             this.btn_students.Values.Text = "Students";
             this.btn_students.Click += new System.EventHandler(this.btn_students_Click);
             // 
-            // btn_message
+            // btn_feedback
             // 
-            this.btn_message.Location = new System.Drawing.Point(-1, 451);
-            this.btn_message.Name = "btn_message";
-            this.btn_message.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.btn_message.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.btn_message.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.btn_message.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.btn_message.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.btn_feedback.Location = new System.Drawing.Point(-1, 451);
+            this.btn_feedback.Name = "btn_feedback";
+            this.btn_feedback.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.btn_feedback.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.btn_feedback.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.btn_feedback.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.btn_feedback.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btn_message.OverrideDefault.Border.Rounding = 0;
-            this.btn_message.OverrideDefault.Border.Width = 0;
-            this.btn_message.OverrideDefault.Content.Padding = new System.Windows.Forms.Padding(10, -1, -1, -1);
-            this.btn_message.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.btn_message.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btn_message.Size = new System.Drawing.Size(324, 78);
-            this.btn_message.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.btn_message.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.btn_message.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.btn_message.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.btn_message.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.btn_feedback.OverrideDefault.Border.Rounding = 0;
+            this.btn_feedback.OverrideDefault.Border.Width = 0;
+            this.btn_feedback.OverrideDefault.Content.Padding = new System.Windows.Forms.Padding(10, -1, -1, -1);
+            this.btn_feedback.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.btn_feedback.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btn_feedback.Size = new System.Drawing.Size(324, 78);
+            this.btn_feedback.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.btn_feedback.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.btn_feedback.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.btn_feedback.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.btn_feedback.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btn_message.StateCommon.Border.Rounding = 0;
-            this.btn_message.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0, -1, 0, -1);
-            this.btn_message.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.btn_message.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
-            this.btn_message.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(73)))), ((int)(((byte)(28)))));
-            this.btn_message.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(73)))), ((int)(((byte)(28)))));
-            this.btn_message.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
-            this.btn_message.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
-            this.btn_message.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
-            this.btn_message.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
-            this.btn_message.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.btn_feedback.StateCommon.Border.Rounding = 0;
+            this.btn_feedback.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0, -1, 0, -1);
+            this.btn_feedback.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btn_feedback.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins SemiBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_feedback.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(73)))), ((int)(((byte)(28)))));
+            this.btn_feedback.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(73)))), ((int)(((byte)(28)))));
+            this.btn_feedback.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
+            this.btn_feedback.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
+            this.btn_feedback.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
+            this.btn_feedback.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
+            this.btn_feedback.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btn_message.StateTracking.Border.Rounding = 0;
-            this.btn_message.TabIndex = 51;
-            this.btn_message.Values.Text = "Message";
+            this.btn_feedback.StateTracking.Border.Rounding = 0;
+            this.btn_feedback.TabIndex = 51;
+            this.btn_feedback.Values.Text = "Feedback";
             // 
             // viewPanel
             // 
@@ -289,11 +287,11 @@
             // 
             this.teachers__firstName.AutoSize = true;
             this.teachers__firstName.BackColor = System.Drawing.Color.White;
-            this.teachers__firstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.teachers__firstName.Font = new System.Drawing.Font("Poppins SemiBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.teachers__firstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.teachers__firstName.Location = new System.Drawing.Point(944, 36);
+            this.teachers__firstName.Location = new System.Drawing.Point(944, 33);
             this.teachers__firstName.Name = "teachers__firstName";
-            this.teachers__firstName.Size = new System.Drawing.Size(97, 20);
+            this.teachers__firstName.Size = new System.Drawing.Size(105, 30);
             this.teachers__firstName.TabIndex = 63;
             this.teachers__firstName.Text = "user name";
             // 
@@ -347,27 +345,18 @@
             this.global__nav__bg.TabIndex = 0;
             this.global__nav__bg.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(22, 649);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(156, 50);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // Teacher_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1147, 711);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_gradeBook);
             this.Controls.Add(this.close_btn);
             this.Controls.Add(this.notification__icon);
             this.Controls.Add(this.teachers__firstName);
             this.Controls.Add(this.viewPanel);
-            this.Controls.Add(this.btn_message);
+            this.Controls.Add(this.btn_feedback);
             this.Controls.Add(this.btn_students);
             this.Controls.Add(this.btn_courses);
             this.Controls.Add(this.btn_dashboard);
@@ -386,7 +375,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sprout__logo__white)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.global__nav__bg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -402,12 +390,11 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton btn_dashboard;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btn_gradeBook;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btn_students;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btn_message;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btn_feedback;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel viewPanel;
 
         private System.Windows.Forms.PictureBox notification__icon;
         private System.Windows.Forms.Label teachers__firstName;
         private System.Windows.Forms.PictureBox close_btn;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

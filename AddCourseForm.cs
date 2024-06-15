@@ -24,55 +24,149 @@ namespace sprout__gradeBook
         {
 
         }
+        /* private void saveNewCourseBTN_Click(object sender, EventArgs e)
+         {
+             parentForm.populateCourses();
+
+             string courseName = courseNameTXT.Text;
+             string courseCode = courseCodeTXT.Text;
+             string studentCourse = courseCourseTXT.Text;
+             string studentSection = courseSectionTXT.Text;
+             int studentYearLvl = Int32.Parse(courseYearlvlTXT.Text);
+             int studentCount = 0;
+             string whatDay = WeekDayTxt.Text;
+             string startTime = courseStartTXT.Text;
+             string endTime = courseEndTXT.Text;
+
+             Course newCourse = new Course(courseName, courseCode, studentCourse, studentSection, startTime, endTime, studentCount, studentYearLvl, whatDay);
+
+             newCourse.SaveCourse(currentUserName);
+
+             if (!int.TryParse(courseYearlvlTXT.Text, out int studentYearLvl1))
+             {
+                 MessageBox.Show("Invalid Year Level. Please enter a valid number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 return;
+             }
+
+
+             string folderPath = Path.Combine("CourseInformations", currentUserName);
+             if (Directory.Exists(folderPath))
+             {
+                 MessageBox.Show("hi");
+                 string fileName = $"{courseCode}_{studentCourse}_{studentYearLvl}-{studentSection}.txt";
+                 string filePath = Path.Combine(folderPath, fileName);
+
+
+                 List<StudentInfo> matchingStudents = StudentManager.GetStudentsByDepartmentAndSection(currentUserName, studentCourse, $"{studentYearLvl}-{studentSection}");
+
+                 foreach (var student in matchingStudents)
+                 {
+                     using (StreamWriter writer = File.AppendText(filePath))
+                     {
+                         writer.WriteLine($"Student ID: {student.StudentID}");
+                         writer.WriteLine($"Student Name: {student.StudentName}");
+                         writer.WriteLine($"----------------------------");
+                     }
+                 }
+             }
+
+
+
+
+             this.Close();
+             parentForm.Enabled = true;
+             parentForm.populateCourses();
+         }
+        */
+
         private void saveNewCourseBTN_Click(object sender, EventArgs e)
         {
+            // Populate courses in the parent form
             parentForm.populateCourses();
 
-            string courseName = courseNameTXT.Text;
-            string courseCode = courseCodeTXT.Text;
-            string studentCourse = courseCourseTXT.Text;
-            string studentSection = courseSectionTXT.Text;
-            int studentYearLvl = Int32.Parse(courseYearlvlTXT.Text);
-            int studentCount = 0;
-            string whatDay = WeekDayTxt.Text;
-            string startTime = courseStartTXT.Text;
-            string endTime = courseEndTXT.Text;
+            // Get course details from text boxes
+            string courseName = courseNameTXT.Text.Trim();
+            string courseCode = courseCodeTXT.Text.Trim();
+            string studentCourse = courseCourseTXT.Text.Trim();
+            string studentSection = courseSectionTXT.Text.Trim();
+            string whatDay = WeekDayTxt.Text.Trim();
+            string startTime = courseStartTXT.Text.Trim();
+            string endTime = courseEndTXT.Text.Trim();
 
+            // Validate Year Level input
+            if (!int.TryParse(courseYearlvlTXT.Text, out int studentYearLvl))
+            {
+                MessageBox.Show("Invalid Year Level. Please enter a valid number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            int studentCount = 0; // Initialize student count
+
+            // Create a new Course object
             Course newCourse = new Course(courseName, courseCode, studentCourse, studentSection, startTime, endTime, studentCount, studentYearLvl, whatDay);
 
-            string folderPath = $"CourseInformations/{currentUserName}";
+            // Save course details to file
+            newCourse.SaveCourse(currentUserName);
+
+            // Construct the folder path
+            string folderPath = Path.Combine("CourseInformations", currentUserName);
+
+            // Ensure the directory exists
             if (!Directory.Exists(folderPath))
             {
                 Directory.CreateDirectory(folderPath);
             }
 
-            string fileName = $"{courseCode}_{studentCourse}_{studentYearLvl}-{studentSection}.txt";
+            // Construct the file path
+            string fileName = $"{courseCode}_{studentCourse} {studentYearLvl}-{studentSection}.txt";
             string filePath = Path.Combine(folderPath, fileName);
 
-            if (DoesCourseExist(filePath, newCourse))
+            try
             {
-                MessageBox.Show("The course you are trying to add already exists!");
-                return;
-            }
-
-
-
-            newCourse.SaveCourse(currentUserName);
-
-            // Get students matching the department and section
-            List<StudentInfo> matchingStudents = StudentManager.GetStudentsByDepartmentAndSection(currentUserName, studentCourse, $"{studentYearLvl}-{studentSection}");
-
-            // Append student information to the course file if found
-            foreach (var student in matchingStudents)
-            {
-                using (StreamWriter writer = File.AppendText(filePath))
+                // Check if the course file already exists
+                if (File.Exists(filePath))
                 {
-                    writer.WriteLine($"Student ID: {student.StudentID}");
-                    writer.WriteLine($"Student Name: {student.StudentName}");
-                    writer.WriteLine($"----------------------------");
+                    // Append student information to the existing file
+                    List<StudentInfo> matchingStudents = StudentManager.GetStudentsByDepartmentAndSection(currentUserName, studentCourse, $"{studentYearLvl}-{studentSection}");
+
+                    using (StreamWriter writer = new StreamWriter(filePath, true)) // true for append mode
+                    {
+                        foreach (var student in matchingStudents)
+                        {
+                            // Append student details
+                            writer.WriteLine($"Student ID: {student.StudentID}");
+                            writer.WriteLine($"Student Name: {student.StudentName}");
+                            writer.WriteLine(new string('-', 30));
+                        }
+                    }
                 }
+                else
+                {
+                    // Create a new file and write student details
+                    List<StudentInfo> matchingStudents = StudentManager.GetStudentsByDepartmentAndSection(currentUserName, studentCourse, $"{studentYearLvl}-{studentSection}");
+
+                    using (StreamWriter writer = new StreamWriter(filePath))
+                    {
+                        foreach (var student in matchingStudents)
+                        {
+                            // Write student details to the new file
+                            writer.WriteLine($"Student ID: {student.StudentID}");
+                            writer.WriteLine($"Student Name: {student.StudentName}");
+                            writer.WriteLine(new string('-', 30));
+                        }
+                    }
+                }
+
+                // Success message
+                MessageBox.Show("Course and student details saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                // Error handling
+                MessageBox.Show($"An error occurred while saving the course details: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+            // Close the current form and re-enable the parent form
             this.Close();
             parentForm.Enabled = true;
             parentForm.populateCourses();
@@ -93,8 +187,7 @@ namespace sprout__gradeBook
                     if (line.Contains($"Course Name: {newCourse.CourseName}") &&
                         line.Contains($"Course Code: {newCourse.CourseCode}") &&
                         line.Contains($"Student Department: {newCourse.Department}") &&
-                        line.Contains($"Student year and section: {newCourse.GetYearAndSection()}") &&
-                        line.Contains($"Course Schedule: {newCourse.GetCourseSchedule()}"))
+                        line.Contains($"Student year and section: {newCourse.GetYearAndSection()}"))
                     {
                         return true;
                     }

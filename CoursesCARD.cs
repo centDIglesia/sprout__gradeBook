@@ -132,13 +132,10 @@ namespace sprout__gradeBook
         {
             AddAnnouncementFORM addNewAnnouncement = new AddAnnouncementFORM(this);
             addNewAnnouncement.Show();
-
         }
-
         public void saveAnnouncement(string title, string description)
         {
-            string baseDirectory = $"CourseAnnoucement/{_currentUser}";
-            //get currentusername name
+            string baseDirectory = $"CourseAnnouncement/{_currentUser}";
 
             if (!Directory.Exists(baseDirectory))
             {
@@ -149,13 +146,11 @@ namespace sprout__gradeBook
             using (StreamWriter write = new StreamWriter(fullPath, true))
             {
                 write.WriteLine($"Receiver : {SubjectCourseSection}");
-
                 write.WriteLine($"Title : {title}");
-                write.WriteLine($"Description : From | {GetFirstName()} | {SubjectCode}\n\t{description}");
-                write.WriteLine($"time sent : {DateTime.Now.ToString("MMMM d, yyyy, dddd, h:mm tt")}");
+                write.WriteLine($"Description : From | {GetFirstName()} | {SubjectCode}{Environment.NewLine}{description}");
+                write.WriteLine($"Time sent : {DateTime.Now.ToString("MMMM d, yyyy, dddd, h:mm tt")}");
                 write.WriteLine("------------------------------");
             };
-
         }
 
         public string GetFirstName()
@@ -192,8 +187,27 @@ namespace sprout__gradeBook
 
         private void addSubComponentBTN_Click(object sender, EventArgs e)
         {
-            addCourseComponentsFORM subComp = new addCourseComponentsFORM(_currentUser, SubjectCode, SubjectCourseSection);
-            subComp.Show();
+            string baseDirectoryPath = Path.Combine("CourseGradingSystem", _currentUser, $"{SubjectCode}_{SubjectCourseSection}");
+            string filePath = Path.Combine(baseDirectoryPath, "gradingSystem.txt");
+
+            // Check if the grading system file exists
+            if (File.Exists(filePath))
+            {
+                // If grading system already exists, inform the user
+                MessageBox.Show(
+                    "A grading system already exists for this course. Thank you!.",
+                    "Grading System Already Exists",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+            else
+            {
+                // If grading system does not exist, proceed to create a new one
+                createGradingSystemFORM crf = new createGradingSystemFORM(_currentUser, SubjectCode, SubjectCourseSection);
+                crf.Show();
+            }
         }
+
     }
 }

@@ -7,71 +7,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ComponentFactory.Krypton.Toolkit;
 using System.IO;
+using ComponentFactory.Krypton.Toolkit;
 
 namespace sprout__gradeBook
 {
-    public partial class students__NoticationUi : KryptonForm
+
+    public partial class Student__FeedbackUI : KryptonForm
     {
         private readonly studentLoginForm _studentLoginForm;
         private readonly string _CurrentStudentId;
-        private readonly string _CurrentStudentIdDepandSection;
 
-        public students__NoticationUi(studentLoginForm studentLoginForm, string studentID, string currentStudentDepartment)
+        public Student__FeedbackUI(studentLoginForm studentLoginForm, string studentID)
         {
             InitializeComponent();
             _studentLoginForm = studentLoginForm;
             _CurrentStudentId = studentID;
-            _CurrentStudentIdDepandSection = currentStudentDepartment;
         }
-
-        private void students__NoticationFORM_Load(object sender, EventArgs e)
+    
+         private void Student__FeedbackUI_Load(object sender, EventArgs e)
         {
-
-            LoadNotificationCards();
-
+            LoadFeedbackCards();
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            utilityButton b = new utilityButton();
-
-            b.Closeform(this);
-        }
-        private List<string> GetAllTextFilesInDirectory(string directoryPath)
-        {
-            try
-            {
-                if (Directory.Exists(directoryPath))
-                {
-                    return Directory.GetFiles(directoryPath, "*.txt").ToList();
-                }
-                else
-                {
-                    MessageBox.Show($"Directory {directoryPath} does not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return new List<string>();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred while accessing directory {directoryPath}: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return new List<string>();
-            }
-        }
-
-        private void LoadNotificationCards()
+        private void LoadFeedbackCards()
         {
             List<string> teachers = _studentLoginForm.GetTeachersForStudent();
-            notificationPanel.Controls.Clear();  // Clear any existing notifications
+            feedbackPanel.Controls.Clear();  // Clear any existing notifications
 
             foreach (string teacher in teachers)
             {
-                string teacherAnnouncementFile = $"CourseAnnouncement/{teacher}/Anouncement.txt";
+                string teacherFeedbackFile = $"StudentFeedbacks/{teacher}/Feedbacks.txt";
 
-                if (File.Exists(teacherAnnouncementFile))
+                if (File.Exists(teacherFeedbackFile))
                 {
-                    var announcementLines = File.ReadAllLines(teacherAnnouncementFile);
+                    var announcementLines = File.ReadAllLines(teacherFeedbackFile);
 
                     // Split the file into individual announcements
                     var announcements = string.Join("\n", announcementLines)
@@ -111,32 +80,30 @@ namespace sprout__gradeBook
                         }
 
                         if (announcementDict.TryGetValue("Receiver", out var receiver) &&
-                            receiver.Equals(_CurrentStudentIdDepandSection, StringComparison.OrdinalIgnoreCase))
+                            receiver.Equals(_CurrentStudentId, StringComparison.OrdinalIgnoreCase))
                         {
                             string title = announcementDict.TryGetValue("Title", out var t) ? t : "No Title";
                             string description = announcementDict.TryGetValue("Description", out var d) ? d : "No Description";
-                            string timeSent = announcementDict.TryGetValue("Time sent", out var ts) ? ts : "Unknown Time";
+                            string sender = announcementDict.TryGetValue("Sender", out var ts) ? ts : "Unknown Time";
 
-                            AddNotificationCard(title, description, timeSent);
+                            AddFeedbackCard(title, description, sender);
                         }
                     }
                 }
             }
         }
-
-
-
-        private void AddNotificationCard(string title, string description, string timeSent)
+        private void AddFeedbackCard(string title, string description, string sender)
         {
-            var notifCard = new notificationCARD
+            var feedback__Card = new Feedback__Card
             {
-                NotifTitle = title,
-                NotifDescription = description,
-                NotifTimesent = timeSent
+                Feedback_Title = title,
+                Feedback_Description = description,
+                Feedback_Sender = sender
             };
 
 
-            notificationPanel.Controls.Add(notifCard);
+            feedbackPanel.Controls.Add(feedback__Card);
         }
+
     }
 }
