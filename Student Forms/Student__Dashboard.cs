@@ -57,19 +57,8 @@ namespace sprout__gradeBook
 
         private void close_btn_Click(object sender, EventArgs e)
         {
-            // Prompt the user with an exit confirmation dialog
-            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            // If the user clicks 'No', do nothing
-            if (result == DialogResult.No)
-            {
-                return;
-            }
-            // If the user clicks 'Yes', exit the application
-            else
-            {
-                Application.Exit();
-            }
+           utilityButton b = new utilityButton();
+            b.Exitform();
         }
         private void notifCount_Click(object sender, EventArgs e)
         {

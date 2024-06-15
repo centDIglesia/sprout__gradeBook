@@ -644,5 +644,13 @@ namespace sprout__gradeBook
         {
 
         }
+
+        private void back__btn_Click_1(object sender, EventArgs e)
+        {
+            Role__form r = new Role__form();
+
+            r.Show();
+            this.Hide();
+        }
     }
 }
