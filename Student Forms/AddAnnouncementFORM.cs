@@ -19,13 +19,10 @@ namespace sprout__gradeBook
             _parentCard = parentCard;
             InitializeComponent();
         }
-
         private void AddAnnouncementFORM_Load(object sender, EventArgs e)
         {
 
         }
-
-
         private void postBtn_Click_1(object sender, EventArgs e)
         {
             string title = TitleTXTBOX.Text;

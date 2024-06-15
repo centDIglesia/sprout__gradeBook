@@ -13,7 +13,6 @@ namespace sprout__gradeBook
 
         public string currentStudentID;
 
-
         public studentLoginForm()
         {
 
@@ -368,9 +367,5 @@ namespace sprout__gradeBook
 
             return "Department and Year/Section not found.";
         }
-
-
-
-
     }
 }
