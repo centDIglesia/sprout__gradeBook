@@ -504,6 +504,7 @@
             this.Controls.Add(this.kryptonTextBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddStudentForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.AddStudentForm_Load);

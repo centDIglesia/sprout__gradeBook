@@ -197,6 +197,26 @@
             this.label4.TabIndex = 40;
             this.label4.Text = "Time End";
             // 
+
+            // courseEndTXT
+            // 
+            this.courseEndTXT.Location = new System.Drawing.Point(214, 457);
+            this.courseEndTXT.Name = "courseEndTXT";
+            this.courseEndTXT.Size = new System.Drawing.Size(175, 31);
+            this.courseEndTXT.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.courseEndTXT.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.courseEndTXT.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.courseEndTXT.StateCommon.Border.Rounding = 4;
+            this.courseEndTXT.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(155)))));
+            this.courseEndTXT.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.courseEndTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
+            this.courseEndTXT.TabIndex = 8;
+            this.courseEndTXT.Text = "00:00 PM";
+            this.courseEndTXT.Enter += new System.EventHandler(this.courseEndTXT_Enter);
+            this.courseEndTXT.Leave += new System.EventHandler(this.courseEndTXT_Leave);
+
             // label6
             // 
             this.label6.AutoSize = true;
@@ -208,6 +228,27 @@
             this.label6.TabIndex = 38;
             this.label6.Text = "Time Start";
             // 
+
+            // courseStartTXT
+            // 
+            this.courseStartTXT.Location = new System.Drawing.Point(25, 457);
+            this.courseStartTXT.Name = "courseStartTXT";
+            this.courseStartTXT.Size = new System.Drawing.Size(175, 31);
+            this.courseStartTXT.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.courseStartTXT.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.courseStartTXT.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.courseStartTXT.StateCommon.Border.Rounding = 4;
+            this.courseStartTXT.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(155)))));
+            this.courseStartTXT.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.courseStartTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
+            this.courseStartTXT.TabIndex = 7;
+            this.courseStartTXT.Text = "00:00 PM";
+            this.courseStartTXT.Enter += new System.EventHandler(this.courseStartTXT_Enter);
+            this.courseStartTXT.Leave += new System.EventHandler(this.courseStartTXT_Leave);
+            // 
+
             // label7
             // 
             this.label7.AutoSize = true;

@@ -309,9 +309,24 @@ namespace sprout__gradeBook
 
         private void addcourseBTN_Click(object sender, EventArgs e)
         {
-            AddCourseForm adf = new AddCourseForm(CurrentUser, this);
-            adf.Show();
-            Enabled = false;
+            Form formbackgroud = new Form();
+            using (AddCourseForm courseForm = new AddCourseForm(CurrentUser, this))
+            {
+                Enabled = false;
+
+                formbackgroud.StartPosition = FormStartPosition.CenterScreen;
+                formbackgroud.FormBorderStyle = FormBorderStyle.None;
+                formbackgroud.Opacity = .70d;
+                formbackgroud.BackColor = StateCommon.Back.Color1 = CustomColor.mainColor;
+                formbackgroud.Size = new System.Drawing.Size(1147, 711);
+                formbackgroud.Location = this.Location;
+                formbackgroud.ShowInTaskbar = false;
+                formbackgroud.Show();
+
+                courseForm.Owner = formbackgroud;
+                courseForm.ShowDialog();
+            }
+            formbackgroud.Dispose();
         }
 
         private void deleteBTN_Click(object sender, EventArgs e)

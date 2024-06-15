@@ -105,5 +105,10 @@ namespace sprout__gradeBook
             feedbackPanel.Controls.Add(feedback__Card);
         }
 
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            utilityButton b = new utilityButton();
+            b.Closeform(this);
+        }
     }
 }
