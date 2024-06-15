@@ -73,12 +73,26 @@ namespace sprout__gradeBook
 
         private void showGuide_Click(object sender, EventArgs e)
         {
+            Form formbackgroud = new Form();
             // Show student default password guide
             using (var studentDefaultPasswordGuide = new StudentDefultPasswordGuide())
             {
+                formbackgroud.StartPosition = FormStartPosition.Manual;
+                formbackgroud.FormBorderStyle = FormBorderStyle.None;
+                formbackgroud.Opacity = .70d;
+                formbackgroud.BackColor = CustomColor.mainColor;
+                formbackgroud.Size = this.Size;
+                formbackgroud.Location = this.Location;
+                formbackgroud.ShowInTaskbar = false;
+                formbackgroud.Show();
+
+                studentDefaultPasswordGuide.Owner = formbackgroud;
                 studentDefaultPasswordGuide.ShowDialog();
             }
+            formbackgroud.Dispose();
         }
+    
+ 
 
         private void signIn__btn_Click(object sender, EventArgs e)
         {
