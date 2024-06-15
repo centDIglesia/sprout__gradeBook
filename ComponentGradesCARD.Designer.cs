@@ -41,14 +41,14 @@
             // 
             this.compNumber.Location = new System.Drawing.Point(11, 8);
             this.compNumber.Name = "compNumber";
-            this.compNumber.Size = new System.Drawing.Size(113, 29);
+            this.compNumber.Size = new System.Drawing.Size(113, 22);
             this.compNumber.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.compNumber.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.compNumber.StateCommon.Border.Width = 0;
             this.compNumber.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(101)))), ((int)(((byte)(55)))));
-            this.compNumber.StateCommon.Content.Font = new System.Drawing.Font("Poppins Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.compNumber.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.compNumber.TabIndex = 1;
             this.compNumber.Text = "kryptonTextBox1";
             // 
@@ -56,14 +56,14 @@
             // 
             this.compGrade.Location = new System.Drawing.Point(181, 8);
             this.compGrade.Name = "compGrade";
-            this.compGrade.Size = new System.Drawing.Size(30, 29);
+            this.compGrade.Size = new System.Drawing.Size(30, 22);
             this.compGrade.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.compGrade.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.compGrade.StateCommon.Border.Width = 0;
             this.compGrade.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(101)))), ((int)(((byte)(55)))));
-            this.compGrade.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.compGrade.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.compGrade.TabIndex = 2;
             this.compGrade.Text = "000";
             // 
@@ -71,14 +71,14 @@
             // 
             this.compMaxGrade.Location = new System.Drawing.Point(224, 8);
             this.compMaxGrade.Name = "compMaxGrade";
-            this.compMaxGrade.Size = new System.Drawing.Size(78, 29);
+            this.compMaxGrade.Size = new System.Drawing.Size(78, 22);
             this.compMaxGrade.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.compMaxGrade.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.compMaxGrade.StateCommon.Border.Width = 0;
             this.compMaxGrade.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(101)))), ((int)(((byte)(55)))));
-            this.compMaxGrade.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.compMaxGrade.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.compMaxGrade.TabIndex = 3;
             this.compMaxGrade.Text = "000";
             // 
@@ -88,16 +88,17 @@
             this.compPercentage.Location = new System.Drawing.Point(375, 8);
             this.compPercentage.Name = "compPercentage";
             this.compPercentage.ReadOnly = true;
-            this.compPercentage.Size = new System.Drawing.Size(78, 29);
+            this.compPercentage.Size = new System.Drawing.Size(78, 22);
             this.compPercentage.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.compPercentage.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.compPercentage.StateCommon.Border.Width = 0;
             this.compPercentage.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(101)))), ((int)(((byte)(55)))));
-            this.compPercentage.StateCommon.Content.Font = new System.Drawing.Font("Poppins Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.compPercentage.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.compPercentage.TabIndex = 4;
             this.compPercentage.Text = "vv";
+            this.compPercentage.TextChanged += new System.EventHandler(this.compPercentage_TextChanged);
             // 
             // pictureBox1
             // 
@@ -108,6 +109,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // ComponentGradesCARD
             // 

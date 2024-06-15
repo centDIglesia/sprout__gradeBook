@@ -87,11 +87,11 @@ namespace sprout__gradeBook
 
         private void Student__Dashboard_Load(object sender, EventArgs e)
         {
-            notificationCount.Text = notifCount.ToString();
-            notificationCount.Hide();
+            kryptonTextBox1.Text = notifCount.ToString();
+            kryptonTextBox1.Hide();
             if (notifCount > 0)
             {
-                notificationCount.Show();
+                kryptonTextBox1.Show();
 
             }
         }

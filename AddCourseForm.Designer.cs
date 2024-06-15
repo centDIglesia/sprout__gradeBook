@@ -40,9 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.courseSectionTXT = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.courseEndTXT = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.courseStartTXT = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.courseCourseTXT = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.courseYearlvlTXT = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
@@ -54,6 +52,8 @@
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.saveNewCourseBTN = new System.Windows.Forms.PictureBox();
+            this.courseStartTXT = new ComponentFactory.Krypton.Toolkit.KryptonMaskedTextBox();
+            this.courseEndTXT = new ComponentFactory.Krypton.Toolkit.KryptonMaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.courseCourseTXT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WeekDayTxt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -147,7 +147,7 @@
             // 
             // kryptonLabel2
             // 
-            this.kryptonLabel2.Location = new System.Drawing.Point(12, 339);
+            this.kryptonLabel2.Location = new System.Drawing.Point(14, 338);
             this.kryptonLabel2.Name = "kryptonLabel2";
             this.kryptonLabel2.Size = new System.Drawing.Size(97, 16);
             this.kryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.DarkGray;
@@ -197,6 +197,7 @@
             this.label4.TabIndex = 40;
             this.label4.Text = "Time End";
             // 
+
             // courseEndTXT
             // 
             this.courseEndTXT.Location = new System.Drawing.Point(214, 457);
@@ -215,7 +216,7 @@
             this.courseEndTXT.Text = "00:00 PM";
             this.courseEndTXT.Enter += new System.EventHandler(this.courseEndTXT_Enter);
             this.courseEndTXT.Leave += new System.EventHandler(this.courseEndTXT_Leave);
-            // 
+
             // label6
             // 
             this.label6.AutoSize = true;
@@ -227,6 +228,7 @@
             this.label6.TabIndex = 38;
             this.label6.Text = "Time Start";
             // 
+
             // courseStartTXT
             // 
             this.courseStartTXT.Location = new System.Drawing.Point(25, 457);
@@ -246,6 +248,7 @@
             this.courseStartTXT.Enter += new System.EventHandler(this.courseStartTXT_Enter);
             this.courseStartTXT.Leave += new System.EventHandler(this.courseStartTXT_Leave);
             // 
+
             // label7
             // 
             this.label7.AutoSize = true;
@@ -450,7 +453,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(294, 521);
+            this.pictureBox2.Location = new System.Drawing.Point(107, 516);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(100, 45);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -461,7 +464,7 @@
             // saveNewCourseBTN
             // 
             this.saveNewCourseBTN.Image = ((System.Drawing.Image)(resources.GetObject("saveNewCourseBTN.Image")));
-            this.saveNewCourseBTN.Location = new System.Drawing.Point(108, 521);
+            this.saveNewCourseBTN.Location = new System.Drawing.Point(204, 516);
             this.saveNewCourseBTN.Name = "saveNewCourseBTN";
             this.saveNewCourseBTN.Size = new System.Drawing.Size(185, 45);
             this.saveNewCourseBTN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -469,20 +472,54 @@
             this.saveNewCourseBTN.TabStop = false;
             this.saveNewCourseBTN.Click += new System.EventHandler(this.saveNewCourseBTN_Click);
             // 
+            // courseStartTXT
+            // 
+            this.courseStartTXT.Location = new System.Drawing.Point(25, 457);
+            this.courseStartTXT.Mask = "00:00 LL";
+            this.courseStartTXT.Name = "courseStartTXT";
+            this.courseStartTXT.Size = new System.Drawing.Size(175, 34);
+            this.courseStartTXT.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.courseStartTXT.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.courseStartTXT.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.courseStartTXT.StateCommon.Border.Rounding = 4;
+            this.courseStartTXT.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(155)))));
+            this.courseStartTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
+            this.courseStartTXT.TabIndex = 91;
+            this.courseStartTXT.Text = "  :   ";
+            // 
+            // courseEndTXT
+            // 
+            this.courseEndTXT.Location = new System.Drawing.Point(214, 457);
+            this.courseEndTXT.Mask = "00:00 LL";
+            this.courseEndTXT.Name = "courseEndTXT";
+            this.courseEndTXT.Size = new System.Drawing.Size(175, 34);
+            this.courseEndTXT.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.courseEndTXT.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.courseEndTXT.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.courseEndTXT.StateCommon.Border.Rounding = 4;
+            this.courseEndTXT.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(155)))));
+            this.courseEndTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
+            this.courseEndTXT.TabIndex = 92;
+            this.courseEndTXT.Text = "  :   ";
+            // 
             // AddCourseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(415, 578);
+            this.Controls.Add(this.courseEndTXT);
+            this.Controls.Add(this.courseStartTXT);
             this.Controls.Add(this.kryptonLabel1);
             this.Controls.Add(this.WeekDayTxt);
             this.Controls.Add(this.courseYearlvlTXT);
             this.Controls.Add(this.courseNameTXT);
             this.Controls.Add(this.courseCourseTXT);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.courseEndTXT);
-            this.Controls.Add(this.courseStartTXT);
             this.Controls.Add(this.courseSectionTXT);
             this.Controls.Add(this.kryptonLabel2);
             this.Controls.Add(this.courseCodeTXT);
@@ -534,9 +571,7 @@
         private System.Windows.Forms.Label label2;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox courseSectionTXT;
         private System.Windows.Forms.Label label4;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox courseEndTXT;
         private System.Windows.Forms.Label label6;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox courseStartTXT;
         private System.Windows.Forms.Label label7;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox courseCourseTXT;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox courseYearlvlTXT;
@@ -546,5 +581,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox2;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private ComponentFactory.Krypton.Toolkit.KryptonMaskedTextBox courseStartTXT;
+        private ComponentFactory.Krypton.Toolkit.KryptonMaskedTextBox courseEndTXT;
     }
 }
