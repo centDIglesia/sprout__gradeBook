@@ -5,6 +5,8 @@ using System.Linq;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using System.Collections;
+using System.Text;
+using System.Collections.Generic;
 
 namespace sprout__gradeBook
 {
@@ -13,8 +15,11 @@ namespace sprout__gradeBook
 
     public partial class teacher__GradeBook : KryptonForm
     {
-
+        public Component_Button_Card _currentActiveComponentButton;
         public static teacher__GradeBook _gradeBook;
+        List<double> _FinalGradesInEachComponents = new List<double>();
+
+
         public string currentUSer { get; set; }
 
         public string StudenttnameText
@@ -47,10 +52,10 @@ namespace sprout__gradeBook
             ComponentsButtonPanel.Hide();
 
 
-            //display this if the componentsButton is clicked
+
             pictureBox4.Hide();
             addSubcomponents.Hide();
-            saveGradeBtn.Hide();
+            saveGradeBtn.Visible = false;
             pictureBox5.Hide();
             doneBtn.Hide();
 
@@ -128,7 +133,7 @@ namespace sprout__gradeBook
         {
             pictureBox4.Show();
             addSubcomponents.Show();
-            saveGradeBtn.Show();
+
             doneBtn.Show();
             pictureBox5.Show();
         }
@@ -260,7 +265,7 @@ namespace sprout__gradeBook
 
 
 
-        int componentCount = 0;
+        public int componentCount = 0;
         private void addSubcomponents_Click(object sender, EventArgs e)
         {
             componentCount++;
@@ -284,14 +289,20 @@ namespace sprout__gradeBook
                     ComponentMaximumGrade = 00.0,
 
                 };
-                subcomponentsPane.Controls.Add(componentCard);
+                subcomponentsPanel.Controls.Add(componentCard);
 
-                subcomponentsPane.Refresh();
+
 
                 CalculateAndDisplayFinalGrade();
             }
 
         }
+
+        public void clearSubcomponentsPanel()
+        {
+            subcomponentsPanel.Controls.Clear();
+        }
+
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
@@ -302,7 +313,6 @@ namespace sprout__gradeBook
         {
             double totalPercentage = 0.0;
             int componentCardCount = 0;
-
 
             string text = currentComponent.Text;
 
@@ -319,7 +329,7 @@ namespace sprout__gradeBook
                     finalGradelbl.Text = text;
 
                     // Calculate average percentage based on component cards
-                    foreach (Control control in subcomponentsPane.Controls)
+                    foreach (Control control in subcomponentsPanel.Controls)
                     {
                         if (control is ComponentGradesCARD componentCard)
                         {
@@ -331,7 +341,11 @@ namespace sprout__gradeBook
                     if (componentCardCount > 0)
                     {
                         double averagePercentage = (totalPercentage / componentCardCount) * (weight / 100.0);
+
+
                         finalGradelbl.Text += " in Final Grade : " + averagePercentage.ToString("0.00") + "%";
+
+
                     }
                     else
                     {
@@ -347,6 +361,9 @@ namespace sprout__gradeBook
             {
                 finalGradelbl.Text = "Invalid format in currentComponent.Text";
             }
+
+
+
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
@@ -360,5 +377,140 @@ namespace sprout__gradeBook
             kryptonTextBox1.Show();
             pictureBox2.Show();
         }
+        public void SetComponentButtonsEnabled(bool enabled)
+        {
+            foreach (Control control in ComponentsButtonPanel.Controls)
+            {
+                if (control is Component_Button_Card compButton)
+                {
+                    // Enable the button only if it is not graded
+                    compButton.Enabled = enabled && !compButton.IsCurrentComponentButtonGraded;
+                }
+            }
+        }
+        private string grades = "";
+        private void doneBtn_Click(object sender, EventArgs e)
+        {
+            if (_currentActiveComponentButton != null)
+            {
+                _currentActiveComponentButton.IsCurrentComponentButtonGraded = true;
+                MessageBox.Show($"{_currentActiveComponentButton.compName} is marked as graded.");
+                _currentActiveComponentButton = null;
+
+
+                CheckAllComponentsGraded();
+
+
+                SetComponentButtonsEnabled(true);
+            }
+
+            grades += $"{finalGradelbl.Text}\n";
+
+
+            string input = finalGradelbl.Text;
+
+
+            string[] parts = input.Split(':');
+
+            if (parts.Length > 1)
+            {
+
+                string afterColon = parts[1].Trim();
+                string percentageValue = afterColon.Replace("%", "");
+
+
+                if (double.TryParse(percentageValue, out double result))
+                {
+                    _FinalGradesInEachComponents.Add(result);
+                }
+
+            }
+        }
+        private void CheckAllComponentsGraded()
+        {
+            bool allGraded = true;
+            foreach (Control control in ComponentsButtonPanel.Controls)
+            {
+                if (control is Component_Button_Card componentCard)
+                {
+                    if (!componentCard.IsCurrentComponentButtonGraded)
+                    {
+                        allGraded = false;
+                        break;
+                    }
+                }
+            }
+
+
+            saveGradeBtn.Visible = allGraded;
+
+        }
+
+        private void saveGradeBtn_Click(object sender, EventArgs e)
+        {
+            bool allGraded = true;
+            foreach (Control control in ComponentsButtonPanel.Controls)
+            {
+                if (control is Component_Button_Card componentCard)
+                {
+                    if (!componentCard.IsCurrentComponentButtonGraded)
+                    {
+                        allGraded = false;
+                        break;
+                    }
+                }
+            }
+
+            if (allGraded)
+            {
+
+                SaveGradesToFile();
+            }
+            else
+            {
+                MessageBox.Show("Please grade all components before saving.", "Incomplete Grading", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void SaveGradesToFile()
+        {
+            try
+            {
+
+                string directoryPath = $"studentFinalGrades/{currentUSer}/";
+                Directory.CreateDirectory(directoryPath);
+
+
+                string selectedCourse = courseComboBox.SelectedItem.ToString();
+                string courseCode = selectedCourse.Split('_')[0].Trim();
+
+
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine($"Term | {GradePeriodComboBox.Text}");
+                sb.AppendLine($"Course Code | {courseCode}");
+                sb.AppendLine($"Grade | {grades}");
+                double totalFinalGrade = _FinalGradesInEachComponents.Sum();
+                sb.AppendLine($"Total Final Grade | {totalFinalGrade.ToString("0.00")}%");
+                sb.AppendLine($"-------------------");
+
+
+                string filePath = Path.Combine(directoryPath, $"{StudentIDTXT.Text}.txt");
+
+                // Write grades to file
+                File.AppendAllText(filePath, sb.ToString());
+
+                MessageBox.Show("Grades have been saved successfully.", "Save Grades", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                grades = "";
+                _FinalGradesInEachComponents.Clear();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error saving grades: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
     }
 }

@@ -12,8 +12,9 @@ namespace sprout__gradeBook
 {
     public partial class Component_Button_Card : UserControl
     {
+        public bool IsCurrentComponentButtonGraded { get; set; } = false;
 
-        private displayGradeBookPanelDelegate _displayGradeBookPanelDelegate;
+        private readonly displayGradeBookPanelDelegate _displayGradeBookPanelDelegate;
         private readonly Label _currentComponentlbl;
         public Component_Button_Card(Label currentComponentlbl, displayGradeBookPanelDelegate displayGradeBookPanelDelegate)
         {
@@ -33,8 +34,31 @@ namespace sprout__gradeBook
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
 
+            var parentForm = this.FindForm() as teacher__GradeBook;
+
+            if (parentForm == null)
+                return;
+
+            if (parentForm._currentActiveComponentButton != null &&
+                parentForm._currentActiveComponentButton != this)
+            {
+                MessageBox.Show("Please complete the current component action before proceeding to another.", "Action Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+            parentForm._currentActiveComponentButton = this;
+            parentForm.SetComponentButtonsEnabled(false);
+
+            parentForm.clearSubcomponentsPanel();
+
+            parentForm.componentCount = 0;
+
             _currentComponentlbl.Text = compName;
             _displayGradeBookPanelDelegate();
+
+
+
         }
 
 
