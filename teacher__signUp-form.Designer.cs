@@ -498,6 +498,7 @@
             // pictureBox12
             // 
             this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox12.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
             this.pictureBox12.Location = new System.Drawing.Point(51, 378);
             this.pictureBox12.Name = "pictureBox12";
@@ -505,6 +506,7 @@
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox12.TabIndex = 22;
             this.pictureBox12.TabStop = false;
+            this.pictureBox12.Click += new System.EventHandler(this.pictureBox12_Click_1);
             // 
             // forgetPass__btn
             // 
@@ -610,7 +612,7 @@
             this.signup__switchBTN.BackColor = System.Drawing.Color.Transparent;
             this.signup__switchBTN.Cursor = System.Windows.Forms.Cursors.Hand;
             this.signup__switchBTN.Image = ((System.Drawing.Image)(resources.GetObject("signup__switchBTN.Image")));
-            this.signup__switchBTN.Location = new System.Drawing.Point(110, 83);
+            this.signup__switchBTN.Location = new System.Drawing.Point(110, 85);
             this.signup__switchBTN.Name = "signup__switchBTN";
             this.signup__switchBTN.Size = new System.Drawing.Size(233, 15);
             this.signup__switchBTN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -621,7 +623,7 @@
             // pictureBox11
             // 
             this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(74, 46);
+            this.pictureBox11.Location = new System.Drawing.Point(74, 44);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(311, 31);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;

@@ -5,9 +5,14 @@ namespace sprout__gradeBook
 {
     public partial class ComponentGradesCARD : UserControl
     {
-        public ComponentGradesCARD()
+
+        private CalculateAndDisplayFinalGradeDelegate _methodCalculateAndDisplayFinalGrade;
+
+        public ComponentGradesCARD(CalculateAndDisplayFinalGradeDelegate CalculateAndDisplayFinalGrade)
         {
             InitializeComponent();
+            _methodCalculateAndDisplayFinalGrade = CalculateAndDisplayFinalGrade;
+
         }
 
 
@@ -59,11 +64,54 @@ namespace sprout__gradeBook
 
                 return (grade / maxGrade) * 100;
             }
-            set => compPercentage.Text = value.ToString("0.00");
+            set => compPercentage.Text = value.ToString("0.00") + "%";
         }
 
 
+
+        private void CalculateAndDisplayPercentage()
+        {
+
+            if (double.TryParse(compGrade.Text, out double grade) && double.TryParse(compMaxGrade.Text, out double maxGrade) && maxGrade > 0)
+            {
+
+                double percentage = (grade / maxGrade) * 100;
+
+                compPercentage.Text = percentage.ToString("0.00") + "%";
+            }
+            else
+            {
+
+                compPercentage.Text = "0.00" + "%";
+            }
+            _methodCalculateAndDisplayFinalGrade();
+
+        }
+
+
+
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void compGrade_TextChanged(object sender, EventArgs e)
+        {
+            CalculateAndDisplayPercentage();
+
+        }
+
+        private void compMaxGrade_TextChanged(object sender, EventArgs e)
+        {
+            CalculateAndDisplayPercentage();
+        }
+
+        private void compPercentage_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void compNumber_TextChanged(object sender, EventArgs e)
         {
 
         }

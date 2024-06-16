@@ -12,16 +12,31 @@ namespace sprout__gradeBook
 {
     public partial class Component_Button_Card : UserControl
     {
-        public Component_Button_Card()
+
+        private displayGradeBookPanelDelegate _displayGradeBookPanelDelegate;
+        private readonly Label _currentComponentlbl;
+        public Component_Button_Card(Label currentComponentlbl, displayGradeBookPanelDelegate displayGradeBookPanelDelegate)
         {
             InitializeComponent();
+            _currentComponentlbl = currentComponentlbl;
+            _displayGradeBookPanelDelegate = displayGradeBookPanelDelegate;
         }
 
-        private void compoentName_Click(object sender, EventArgs e)
+        public string compName { get => compoentName.Text; set => compoentName.Text = value; }
+
+
+        private void Component_Button_Card_Click(object sender, EventArgs e)
         {
 
         }
 
-        public string compName { get=> compoentName.Text; set=> compoentName.Text = value; }
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+            _currentComponentlbl.Text = compName;
+            _displayGradeBookPanelDelegate();
+        }
+
+
     }
 }

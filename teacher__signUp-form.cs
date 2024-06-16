@@ -622,5 +622,43 @@ namespace sprout__gradeBook
             r.Show();
             this.Hide();
         }
+
+
+        private void pictureBox12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void back__btn_Click_1(object sender, EventArgs e)
+        {
+            Role__form r = new Role__form();
+            r.Show();
+            this.Hide();
+        }
+
+        private void pictureBox12_Click_1(object sender, EventArgs e)
+        {
+            Form formbackground = new Form();
+
+            using (TermsCons terms = new TermsCons())
+            {
+                formbackground.StartPosition = FormStartPosition.CenterScreen;
+                formbackground.FormBorderStyle = FormBorderStyle.None;
+                formbackground.Opacity = .70d;
+                formbackground.BackColor = StateCommon.Back.Color1 = CustomColor.mainColor;
+                formbackground.Size = this.Size;
+
+                formbackground.Location = this.Location;
+
+                formbackground.ShowInTaskbar = false;
+                formbackground.Show();
+
+                terms.Owner = formbackground;
+                terms.ShowDialog();
+            }
+            formbackground.Dispose();
+
+        }
+
     }
 }

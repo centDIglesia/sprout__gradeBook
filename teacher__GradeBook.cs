@@ -8,11 +8,15 @@ using System.Collections;
 
 namespace sprout__gradeBook
 {
+    public delegate void CalculateAndDisplayFinalGradeDelegate();
+    public delegate void displayGradeBookPanelDelegate();
 
     public partial class teacher__GradeBook : KryptonForm
     {
+
         public static teacher__GradeBook _gradeBook;
         public string currentUSer { get; set; }
+
         public string StudenttnameText
         {
             get { return StudenttnameTXT.Text; }
@@ -28,13 +32,37 @@ namespace sprout__gradeBook
         {
             currentUSer = currentuser;
             InitializeComponent();
+
         }
 
         private void teacher__GradeBook_Load(object sender, EventArgs e)
         {
             LoadTxtFilesIntoComboBox(currentUSer);
             courseComboBox.SelectedIndexChanged += CourseComboBox_SelectedIndexChanged;
+
+            genderPict.Hide();
+            StudentIDTXT.Hide();
+            StudenttnameTXT.Hide();
+            sectionTXT.Hide();
+            ComponentsButtonPanel.Hide();
+
+
+            //display this if the componentsButton is clicked
+            pictureBox4.Hide();
+            addSubcomponents.Hide();
+            saveGradeBtn.Hide();
+            pictureBox5.Hide();
+            doneBtn.Hide();
+
+            courseComboBox.Hide();
+            kryptonTextBox1.Hide();
+            pictureBox2.Hide();
+
         }
+
+
+
+
 
         private void LoadTxtFilesIntoComboBox(string currentUser)
         {
@@ -65,25 +93,46 @@ namespace sprout__gradeBook
         {
             string selectedCourse = courseComboBox.SelectedItem.ToString();
 
-            // Split the selected course to remove the code
+
             string[] trimmedCourseParts = selectedCourse.Split('_');
 
-            // Ensure we have two parts after splitting
+
             if (trimmedCourseParts.Length == 2)
             {
                 string trimmedCourseName = trimmedCourseParts[1].Trim();
                 string studentFilePath = $"StudentCredentials/{currentUSer}/DepartmentandSections/{trimmedCourseName}.txt";
 
-                // Load the student cards using the trimmed course name
+
                 LoadStudentCards(studentFilePath);
             }
             else
             {
-                // Handle the case where the selected item does not have the expected format
+
                 MessageBox.Show("Selected course format is incorrect. Please select a valid course.", "Invalid Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
+            DisplayIfCourseSelected();
+
         }
+
+
+        private void DisplayIfCourseSelected()
+        {
+            genderPict.Show();
+            StudentIDTXT.Show();
+            StudenttnameTXT.Show();
+            sectionTXT.Show();
+            ComponentsButtonPanel.Show();
+        }
+        public void DisplayIfCompButtonIsclicked()
+        {
+            pictureBox4.Show();
+            addSubcomponents.Show();
+            saveGradeBtn.Show();
+            doneBtn.Show();
+            pictureBox5.Show();
+        }
+
 
 
         private void LoadStudentCards(string filePath)
@@ -171,7 +220,7 @@ namespace sprout__gradeBook
                         string componentWeight = parts[1];
 
 
-                        Component_Button_Card componentCard = new Component_Button_Card
+                        Component_Button_Card componentCard = new Component_Button_Card(currentComponent, DisplayIfCompButtonIsclicked)
                         {
                             compName = $"{componentName} ({componentWeight})"
                         };
@@ -209,34 +258,107 @@ namespace sprout__gradeBook
             string currentSection = sectionTXT.Text;
         }
 
+
+
+        int componentCount = 0;
+        private void addSubcomponents_Click(object sender, EventArgs e)
+        {
+            componentCount++;
+            AddComponentGradeCard();
+        }
+
+
+
+        private void AddComponentGradeCard()
+        {
+            int startIndex = currentComponent.Text.IndexOf("(");
+
+            if (startIndex != -1)
+            {
+                string compName = (currentComponent.Text).Substring(0, startIndex).Trim();
+
+                ComponentGradesCARD componentCard = new ComponentGradesCARD(CalculateAndDisplayFinalGrade)
+                {
+                    ComponentNumber = $"{compName} #{componentCount}",
+                    ComponentGrade = 00.0,
+                    ComponentMaximumGrade = 00.0,
+
+                };
+                subcomponentsPane.Controls.Add(componentCard);
+
+                subcomponentsPane.Refresh();
+
+                CalculateAndDisplayFinalGrade();
+            }
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CalculateAndDisplayFinalGrade()
+        {
+            double totalPercentage = 0.0;
+            int componentCardCount = 0;
+
+
+            string text = currentComponent.Text;
+
+            // Extract weight from currentComponent.Text
+            int startIndex = text.IndexOf("(");
+            int endIndex = text.IndexOf(")");
+
+            if (startIndex != -1 && endIndex != -1)
+            {
+                string weightText = text.Substring(startIndex + 1, endIndex - startIndex - 1).Trim('%', ' ');
+
+                if (double.TryParse(weightText, out double weight))
+                {
+                    finalGradelbl.Text = text;
+
+                    // Calculate average percentage based on component cards
+                    foreach (Control control in subcomponentsPane.Controls)
+                    {
+                        if (control is ComponentGradesCARD componentCard)
+                        {
+                            totalPercentage += componentCard.ComponentPercentageGrade;
+                            componentCardCount++;
+                        }
+                    }
+
+                    if (componentCardCount > 0)
+                    {
+                        double averagePercentage = (totalPercentage / componentCardCount) * (weight / 100.0);
+                        finalGradelbl.Text += " in Final Grade : " + averagePercentage.ToString("0.00") + "%";
+                    }
+                    else
+                    {
+                        finalGradelbl.Text += "Average Grade: 0.00%";
+                    }
+                }
+                else
+                {
+                    finalGradelbl.Text = "Invalid weight format in currentComponent.Text";
+                }
+            }
+            else
+            {
+                finalGradelbl.Text = "Invalid format in currentComponent.Text";
+            }
+        }
+
         private void pictureBox5_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void addSubcomponents_Click(object sender, EventArgs e)
+        private void kryptonComboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            AddComponentGradeCard();
-        }
-
-        private void subcomponentsPane_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void AddComponentGradeCard()
-        {
-
-            ComponentGradesCARD componentCard = new ComponentGradesCARD
-            {
-                ComponentNumber = "Component 1",
-                ComponentGrade = 85.1,
-                ComponentMaximumGrade = 100,
-                ComponentPercentageGrade = 100,
-            };
-            subcomponentsPane.Controls.Add(componentCard);
-
-            subcomponentsPane.Refresh();
+            courseComboBox.Show();
+            kryptonTextBox1.Show();
+            pictureBox2.Show();
         }
     }
 }
