@@ -120,7 +120,7 @@ namespace sprout__gradeBook
                             // If card does not exist, create and add a new one
                             if (!cardExists)
                             {
-                                CourseAndSectionCARD card = new CourseAndSectionCARD(this)
+                                CourseAndSectionCARD card = new CourseAndSectionCARD(currentUSer,this)
                                 {
                                     Course = lastPart,
                                     SectionName = section,

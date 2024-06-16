@@ -28,7 +28,7 @@ namespace sprout__gradeBook
         private void Student__FeedbackUI_Load(object sender, EventArgs e)
         {
             LoadFeedbackCards();
-            studentFeedbackUI_Timer.Start();
+
         }
 
         private void LoadFeedbackCards()

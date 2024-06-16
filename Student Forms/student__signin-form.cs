@@ -374,52 +374,7 @@ namespace sprout__gradeBook
             role.Show();
             this.Hide();
         }
-        public List<string> GetTeachersForStudent()
-        {
-            List<string> teacherUsernames = new List<string>();
 
-            string baseFolderPath = "StudentCredentials";
-            foreach (var dir in Directory.GetDirectories(baseFolderPath))
-            {
-                string studentFilePath = Path.Combine(dir, $"{currentStudentID}.txt");
-                if (File.Exists(studentFilePath))
-                {
-                    string teacherUsername = Path.GetFileName(dir);
-                    teacherUsernames.Add(teacherUsername);
-                }
-            }
-
-            return teacherUsernames;
-        }
-
-        public string GetCurrentStudentDepartmentYearSection()
-        {
-            var teachers = GetTeachersForStudent();
-            string folderPath = "StudentCredentials";
-            foreach (var teacher in teachers)
-            {
-                string studentFilePath = Path.Combine(folderPath, teacher, $"{currentStudentID}.txt");
-                if (File.Exists(studentFilePath))
-                {
-                    var studentDetails = File.ReadAllLines(studentFilePath);
-
-                    string department = studentDetails
-                        .FirstOrDefault(line => line.StartsWith("Department:"))
-                        ?.Split(new[] { ':' }, 2)[1].Trim();
-
-                    string yearAndSection = studentDetails
-                        .FirstOrDefault(line => line.StartsWith("Year and Section:"))
-                        ?.Split(new[] { ':' }, 2)[1].Trim();
-
-                    if (!string.IsNullOrEmpty(department) && !string.IsNullOrEmpty(yearAndSection))
-                    {
-                        return $"{department} {yearAndSection}";
-                    }
-                }
-            }
-
-            return "Department and Year/Section not found.";
-        }
 
         private void pictureBox12_Click(object sender, EventArgs e)
         {
@@ -442,6 +397,11 @@ namespace sprout__gradeBook
                 terms.ShowDialog();
             }
             formbackground.Dispose();
+        }
+
+        private void studentSIGNINform_Panel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

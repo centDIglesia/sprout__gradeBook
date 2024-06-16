@@ -8,7 +8,8 @@ namespace sprout__gradeBook
 {
     public partial class CourseAndSectionCARD : UserControl
     {
-        private readonly teacher__studentsDashboard ParentForm;
+        private readonly string _CurrentUser;
+        private readonly teacher__studentsDashboard _parentForm;
         public string SectionName
         {
             get => CoursecSectionOfStudent.Text;
@@ -27,10 +28,11 @@ namespace sprout__gradeBook
             set => CoursecOfStudent.Text = value;
         }
 
-        public CourseAndSectionCARD(teacher__studentsDashboard parentForm)
+        public CourseAndSectionCARD(string currentUser, teacher__studentsDashboard parentForm)
         {
             InitializeComponent();
-            ParentForm = parentForm;
+            _CurrentUser = currentUser;
+            _parentForm = parentForm;
         }
 
         private void CoursecSectionOfStudent_MouseHover(object sender, EventArgs e)
@@ -52,7 +54,7 @@ namespace sprout__gradeBook
             string currentSection = SectionName;
             string currentCourse = CourseF;
 
-            string directoryPath = $"StudentCredentials/{ParentForm.currentUSer}";
+            string directoryPath = $"StudentCredentials/{_parentForm.currentUSer}";
             if (!Directory.Exists(directoryPath))
             {
                 MessageBox.Show("Directory not found.");
@@ -69,7 +71,7 @@ namespace sprout__gradeBook
 
         private void FilterAndPopulateStudents(string currentCourse, string currentSection, string filePath)
         {
-            ParentForm.CourseSectionPanel.Controls.Clear();
+            _parentForm.CourseSectionPanel.Controls.Clear();
 
             string[] files = Directory.GetFiles(Path.GetDirectoryName(filePath), "*.txt");
 
@@ -125,14 +127,14 @@ namespace sprout__gradeBook
                     genderImage = Properties.Resources.Female_Icon;
                 }
 
-                studentsCARD studentCard = new studentsCARD(ParentForm)
+                studentsCARD studentCard = new studentsCARD(_parentForm)
                 {
                     StudentName = studentName,
                     StudentID = studentID,
                     StudentGender = genderImage
                 };
 
-                ParentForm.CourseSectionPanel.Controls.Add(studentCard);
+                _parentForm.CourseSectionPanel.Controls.Add(studentCard);
             }
         }
 
