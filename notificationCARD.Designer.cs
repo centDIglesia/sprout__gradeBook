@@ -37,7 +37,7 @@
             // announcementTitle_txt
             // 
             this.announcementTitle_txt.AutoSize = true;
-            this.announcementTitle_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.announcementTitle_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
             this.announcementTitle_txt.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold);
             this.announcementTitle_txt.ForeColor = System.Drawing.Color.White;
             this.announcementTitle_txt.Location = new System.Drawing.Point(7, 6);
@@ -69,7 +69,7 @@
             // 
             // timeStamp_txt
             // 
-            this.timeStamp_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.timeStamp_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
             this.timeStamp_txt.Font = new System.Drawing.Font("Poppins", 8F);
             this.timeStamp_txt.ForeColor = System.Drawing.Color.Silver;
             this.timeStamp_txt.Location = new System.Drawing.Point(189, 8);

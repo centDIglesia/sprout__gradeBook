@@ -41,14 +41,15 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.notification__icon = new System.Windows.Forms.PictureBox();
             this.Student__Dashboard__UI = new System.Windows.Forms.PictureBox();
-            this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.notificationCount = new System.Windows.Forms.Label();
+            this.notificationCount_bg = new sprout__gradeBook.RoundPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.feedback_btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.close_btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.student_Icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.notification__icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Student__Dashboard__UI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notificationCount_bg)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette2
@@ -111,7 +112,7 @@
             // feedback_btn
             // 
             this.feedback_btn.Image = global::sprout__gradeBook.Properties.Resources.Feedback_Icon;
-            this.feedback_btn.Location = new System.Drawing.Point(757, 27);
+            this.feedback_btn.Location = new System.Drawing.Point(743, 27);
             this.feedback_btn.Name = "feedback_btn";
             this.feedback_btn.Size = new System.Drawing.Size(24, 24);
             this.feedback_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -154,10 +155,10 @@
             // notification__icon
             // 
             this.notification__icon.BackColor = System.Drawing.Color.White;
-            this.notification__icon.Image = global::sprout__gradeBook.Properties.Resources.notification_icon;
-            this.notification__icon.Location = new System.Drawing.Point(787, 27);
+            this.notification__icon.Image = ((System.Drawing.Image)(resources.GetObject("notification__icon.Image")));
+            this.notification__icon.Location = new System.Drawing.Point(774, 26);
             this.notification__icon.Name = "notification__icon";
-            this.notification__icon.Size = new System.Drawing.Size(22, 22);
+            this.notification__icon.Size = new System.Drawing.Size(24, 24);
             this.notification__icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.notification__icon.TabIndex = 62;
             this.notification__icon.TabStop = false;
@@ -173,32 +174,26 @@
             this.Student__Dashboard__UI.TabIndex = 95;
             this.Student__Dashboard__UI.TabStop = false;
             // 
-            // kryptonTextBox1
-            // 
-            this.kryptonTextBox1.Location = new System.Drawing.Point(621, 21);
-            this.kryptonTextBox1.Multiline = true;
-            this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(21, 27);
-            this.kryptonTextBox1.StateCommon.Back.Color1 = System.Drawing.Color.Red;
-            this.kryptonTextBox1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox1.StateCommon.Border.Rounding = 10;
-            this.kryptonTextBox1.StateCommon.Content.Color1 = System.Drawing.Color.White;
-            this.kryptonTextBox1.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonTextBox1.TabIndex = 100;
-            this.kryptonTextBox1.Text = "4";
-            // 
             // notificationCount
             // 
-            this.notificationCount.BackColor = System.Drawing.Color.Firebrick;
+            this.notificationCount.AutoSize = true;
+            this.notificationCount.BackColor = System.Drawing.Color.Red;
+            this.notificationCount.Font = new System.Drawing.Font("Gadugi", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notificationCount.ForeColor = System.Drawing.Color.White;
-            this.notificationCount.Location = new System.Drawing.Point(592, 21);
+            this.notificationCount.Location = new System.Drawing.Point(792, 25);
             this.notificationCount.Name = "notificationCount";
-            this.notificationCount.Size = new System.Drawing.Size(23, 23);
-            this.notificationCount.TabIndex = 0;
+            this.notificationCount.Size = new System.Drawing.Size(10, 12);
+            this.notificationCount.TabIndex = 100;
             this.notificationCount.Text = "4";
-            this.notificationCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // notificationCount_bg
+            // 
+            this.notificationCount_bg.BackColor = System.Drawing.Color.Red;
+            this.notificationCount_bg.Location = new System.Drawing.Point(789, 23);
+            this.notificationCount_bg.Name = "notificationCount_bg";
+            this.notificationCount_bg.Size = new System.Drawing.Size(15, 15);
+            this.notificationCount_bg.TabIndex = 101;
+            this.notificationCount_bg.TabStop = false;
             // 
             // Student__Dashboard
             // 
@@ -206,9 +201,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1147, 711);
-            this.Controls.Add(this.kryptonTextBox1);
-            this.Controls.Add(this.feedback_btn);
             this.Controls.Add(this.notificationCount);
+            this.Controls.Add(this.notificationCount_bg);
+            this.Controls.Add(this.feedback_btn);
             this.Controls.Add(this.close_btn);
             this.Controls.Add(this.student_CoursePanel);
             this.Controls.Add(this.student_Icon);
@@ -229,6 +224,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.notification__icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Student__Dashboard__UI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notificationCount_bg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,7 +233,6 @@
         #endregion
 
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette2;
-        private System.Windows.Forms.PictureBox notification__icon;
         private System.Windows.Forms.Label student_Name;
         private System.Windows.Forms.Label student_ID;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -247,7 +242,8 @@
         private System.Windows.Forms.PictureBox Student__Dashboard__UI;
         private System.Windows.Forms.PictureBox close_btn;
         private System.Windows.Forms.PictureBox feedback_btn;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
+        private System.Windows.Forms.PictureBox notification__icon;
         private System.Windows.Forms.Label notificationCount;
+        private RoundPictureBox notificationCount_bg;
     }
 }

@@ -9,127 +9,67 @@ namespace sprout__gradeBook
 {
     public partial class teacher__studentsDashboard : KryptonForm
     {
+        // Properties
         public string currentUSer { get; set; }
-        private readonly string teacherSchool;
         public FlowLayoutPanel CourseSectionPanel { get { return courseSectionPanel; } }
 
+        // Private fields
+        private readonly string teacherSchool;
+
+        // Constructor
         public teacher__studentsDashboard(string currentuser)
         {
             InitializeComponent();
             currentUSer = currentuser;
-            teacherSchool = LoadTeacherSchool(currentuser);
+            teacherSchool = LoadTeacherSchool(currentuser); // Load teacher's school from credentials
         }
 
+        // Load event handler for form load
         private void teacher__studentsDashboard_Load(object sender, EventArgs e)
         {
-            LoadStudentCourses();
+            LoadStudentCourses(); // Load student courses on form load
         }
 
+        // Method to load teacher's school from credentials file
         private string LoadTeacherSchool(string currentUser)
         {
-            string teacherDetailsFile = $"teacherCredentials/{currentUser}.txt";
+            string teacherDetailsFile = $"TeacherCredentials/{currentUser}.txt";
 
+            // Check if the teacher details file exists
             if (!File.Exists(teacherDetailsFile))
             {
                 MessageBox.Show("Teacher details file not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return string.Empty; // Return an empty string or handle this case as needed
+                return string.Empty; // Handle this case as needed
             }
 
+            // Read lines from teacher details file
             string[] lines = File.ReadAllLines(teacherDetailsFile);
             foreach (var line in lines)
             {
+                // Find and return school information
                 if (line.StartsWith("School:"))
                 {
                     return line.Split(':')[1].Trim();
                 }
             }
 
+            // Display error if school information is not found
             MessageBox.Show("School information not found in teacher details file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            return string.Empty; // Return an empty string or handle this case as needed
+            return string.Empty; // Handle this case as needed
         }
 
-        /*public void LoadStudentCourses()
-        {
-            string folderPath = $"StudentCredentials/{currentUSer}";
-            courseSectionPanel.Controls.Clear();
-            if (Directory.Exists(folderPath))
-            {
-                string[] filePaths = Directory.GetFiles(folderPath, "*.txt");
-
-                if (filePaths.Length == 0)
-                {
-                    DialogResult result = MessageBox.Show("No student files found. Do you want to add a student?", "Add Student", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (result == DialogResult.Yes)
-                    {
-                        AddStudentForm addStudentForm = new AddStudentForm(this, teacherSchool);
-                        addStudentForm.Show();
-                    }
-                    return; // Exit the method since there are no files to process
-                }
-
-                foreach (string filePath in filePaths)
-                {
-                    string fileContent = File.ReadAllText(filePath);
-                    string[] courseBlocks = fileContent.Split(new string[] { "----------------------------------------" }, StringSplitOptions.RemoveEmptyEntries);
-
-                    foreach (string block in courseBlocks)
-                    {
-                        string[] lines = block.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
-                        string department = "";
-                        string section = "";
-
-                        foreach (var line in lines)
-                        {
-                            if (line.StartsWith("Year and Section:"))
-                            {
-                                section = line.Substring("Year and Section:".Length).Trim();
-                            }
-                            else if (line.StartsWith("Department:"))
-                            {
-                                department = line.Substring("Department:".Length).Trim();
-                            }
-                        }
-
-                        if (!string.IsNullOrEmpty(department) && !string.IsNullOrEmpty(section))
-                        {
-                            string[] courseCode = department.Split(',');
-                            string lastPart = courseCode.Last().Trim();
-
-                            // Create a new instance of CourseAndSectionCARD
-                            CourseAndSectionCARD card = new CourseAndSectionCARD(this)
-                            {
-                                Course = lastPart,
-                                SectionName = section,
-                                CourseF = department
-                            };
-
-                            // Add the card to the courseSectionPanel
-                            courseSectionPanel.Controls.Add(card);
-                        }
-                    }
-                }
-            }
-            else
-            {
-                DialogResult result = MessageBox.Show("No student yet. Do you want to add a student?", "Add Student", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                {
-                    AddStudentForm addStudentForm = new AddStudentForm(this, teacherSchool);
-                    addStudentForm.Show();
-                }
-                return;
-            }
-        }
-        */
+        // Method to load student courses into the UI
         public void LoadStudentCourses()
         {
             string folderPath = $"StudentCredentials/{currentUSer}";
-            courseSectionPanel.Controls.Clear();
+            courseSectionPanel.Controls.Clear(); // Clear existing course cards
 
+            // Check if the folder for student credentials exists
             if (Directory.Exists(folderPath))
             {
                 string[] filePaths = Directory.GetFiles(folderPath, "*.txt");
 
+                // If no student files found, prompt to add a student
                 if (filePaths.Length == 0)
                 {
                     DialogResult result = MessageBox.Show("No student files found. Do you want to add a student?", "Add Student", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -141,6 +81,7 @@ namespace sprout__gradeBook
                     return;
                 }
 
+                // Process each student file
                 foreach (string filePath in filePaths)
                 {
                     string fileContent = File.ReadAllText(filePath);
@@ -152,6 +93,7 @@ namespace sprout__gradeBook
                         string department = "";
                         string section = "";
 
+                        // Extract department and section information
                         foreach (var line in lines)
                         {
                             if (line.StartsWith("Year and Section:"))
@@ -164,6 +106,7 @@ namespace sprout__gradeBook
                             }
                         }
 
+                        // Ensure department and section are not empty
                         if (!string.IsNullOrEmpty(department) && !string.IsNullOrEmpty(section))
                         {
                             string[] courseCode = department.Split(',');
@@ -174,17 +117,15 @@ namespace sprout__gradeBook
                                 .OfType<CourseAndSectionCARD>()
                                 .Any(card => card.Course == lastPart && card.SectionName == section && card.CourseF == department);
 
+                            // If card does not exist, create and add a new one
                             if (!cardExists)
                             {
-                                // Create a new instance of CourseAndSectionCARD
                                 CourseAndSectionCARD card = new CourseAndSectionCARD(this)
                                 {
                                     Course = lastPart,
                                     SectionName = section,
                                     CourseF = department
                                 };
-
-                                // Add the card to the courseSectionPanel
                                 courseSectionPanel.Controls.Add(card);
                             }
                         }
@@ -193,6 +134,7 @@ namespace sprout__gradeBook
             }
             else
             {
+                // If student folder does not exist, prompt to add a student
                 DialogResult result = MessageBox.Show("No student yet. Do you want to add a student?", "Add Student", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
@@ -203,36 +145,30 @@ namespace sprout__gradeBook
             }
         }
 
-
-        private void StudentPanel_Paint(object sender, PaintEventArgs e)
-        {
-            // Handle painting if necessary
-        }
-
+        // Event handler for adding students
         private void addStudentsBTN_Click(object sender, EventArgs e)
         {
             Form formbackground = new Form();
 
+            // Open AddStudentForm as a modal dialog
             using (AddStudentForm addStudentForm = new AddStudentForm(this, teacherSchool))
             {
+                // Configure background form appearance
                 formbackground.StartPosition = FormStartPosition.CenterScreen;
                 formbackground.FormBorderStyle = FormBorderStyle.None;
                 formbackground.Opacity = .70d;
                 formbackground.BackColor = StateCommon.Back.Color1 = CustomColor.mainColor;
                 formbackground.Size = new Size(1147, 711);
-
                 formbackground.Location = this.Location;
-
                 formbackground.ShowInTaskbar = false;
                 formbackground.Show();
 
+                // Set ownership of addStudentForm to formbackground
                 addStudentForm.Owner = formbackground;
                 addStudentForm.ShowDialog();
             }
-            formbackground.Dispose();
+
+            formbackground.Dispose(); // Dispose of the background form after use
         }
-
-
     }
-
 }
