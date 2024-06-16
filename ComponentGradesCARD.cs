@@ -7,6 +7,7 @@ namespace sprout__gradeBook
     {
 
         private CalculateAndDisplayFinalGradeDelegate _methodCalculateAndDisplayFinalGrade;
+
         public ComponentGradesCARD(CalculateAndDisplayFinalGradeDelegate CalculateAndDisplayFinalGrade)
         {
             InitializeComponent();

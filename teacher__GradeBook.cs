@@ -9,6 +9,7 @@ using System.Collections;
 namespace sprout__gradeBook
 {
     public delegate void CalculateAndDisplayFinalGradeDelegate();
+    public delegate void displayGradeBookPanelDelegate();
 
     public partial class teacher__GradeBook : KryptonForm
     {
@@ -47,7 +48,16 @@ namespace sprout__gradeBook
 
 
             //display this if the componentsButton is clicked
-           
+            pictureBox4.Hide();
+            addSubcomponents.Hide();
+            saveGradeBtn.Hide();
+            pictureBox5.Hide();
+            doneBtn.Hide();
+
+            courseComboBox.Hide();
+            kryptonTextBox1.Hide();
+            pictureBox2.Hide();
+
         }
 
 
@@ -114,9 +124,13 @@ namespace sprout__gradeBook
             sectionTXT.Show();
             ComponentsButtonPanel.Show();
         }
-        private void DisplayIfCompButtonIsclicked()
+        public void DisplayIfCompButtonIsclicked()
         {
             pictureBox4.Show();
+            addSubcomponents.Show();
+            saveGradeBtn.Show();
+            doneBtn.Show();
+            pictureBox5.Show();
         }
 
 
@@ -206,7 +220,7 @@ namespace sprout__gradeBook
                         string componentWeight = parts[1];
 
 
-                        Component_Button_Card componentCard = new Component_Button_Card(currentComponent)
+                        Component_Button_Card componentCard = new Component_Button_Card(currentComponent, DisplayIfCompButtonIsclicked)
                         {
                             compName = $"{componentName} ({componentWeight})"
                         };
@@ -335,6 +349,16 @@ namespace sprout__gradeBook
             }
         }
 
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void kryptonComboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            courseComboBox.Show();
+            kryptonTextBox1.Show();
+            pictureBox2.Show();
+        }
     }
 }
