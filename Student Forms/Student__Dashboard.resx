@@ -129,6 +129,16 @@
         wGcQxZYQYwBFlggkGACLCnPaFRUgALKEGFeB1JBs+CgYToCBAQBxpomvsOO9YAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="notification__icon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EAAACxABrSO9dQAAAP1JREFUSEvtlNENgjAQhnkxgfLSERyBF0N5YwQ3sC9QfNIR2AQ30A0cpSMwgvbw
+        NJEcbSm+mPAlfwiF++/oXYlW/odNtcviSkgQq4t93IgtPlqGMSoTJe5MiQehblGiROUnwnQsHZQEKifM
+        pqT5ueQY6ofZFk0YTasWLYa6SaGRlIlF0CcMd5M0k021CsPtzNz7Lzn7AC+EVs9U3qMNDYwaq/OeDnbL
+        2QMuM24m4TIO9FV6FAe0svP6ktmJNIb7MyRqROtzHryrHwPnAabKSFoSza/+DVPFFU264W9KJAquHgDT
+        wdBMV2rMcRm275PIXG+4/HsgERSBtyshRNETjoEvPhkdTaIAAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>50</value>
   </metadata>

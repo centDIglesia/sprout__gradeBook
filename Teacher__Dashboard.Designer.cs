@@ -260,7 +260,7 @@
             this.btn_feedback.StateCommon.Border.Rounding = 0;
             this.btn_feedback.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0, -1, 0, -1);
             this.btn_feedback.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.btn_feedback.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins SemiBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_feedback.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
             this.btn_feedback.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(73)))), ((int)(((byte)(28)))));
             this.btn_feedback.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(73)))), ((int)(((byte)(28)))));
             this.btn_feedback.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
@@ -272,7 +272,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btn_feedback.StateTracking.Border.Rounding = 0;
             this.btn_feedback.TabIndex = 51;
-            this.btn_feedback.Values.Text = "Feedback";
+            this.btn_feedback.Values.Text = "Attendance";
             // 
             // viewPanel
             // 

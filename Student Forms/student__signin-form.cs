@@ -5,18 +5,19 @@ using System.Linq;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 
+
 namespace sprout__gradeBook
 {
     public partial class studentLoginForm : KryptonForm
     {
         private bool isPasswordVisible = false;
-
         public string currentStudentID;
 
         public studentLoginForm()
         {
-
             InitializeComponent();
+
+            this.AcceptButton = signIn__btn;
         }
 
         private void studentLoginForm_Load(object sender, EventArgs e)
@@ -26,23 +27,22 @@ namespace sprout__gradeBook
             signIn__PassTooltip.Hide();
         }
 
+        // Event handlers for entering and leaving student ID text box
         private void signinSTID__txtbox_Enter(object sender, EventArgs e)
         {
-            // Clear default text and show tooltip
             UserInput_Manager.ResetInputField(signinSTID__txtbox, "Student Number");
             signIn__StIdTooltip.Show();
         }
 
         private void signinSTID__txtbox_Leave(object sender, EventArgs e)
         {
-            // Restore default text and manage tooltip visibility
             UserInput_Manager.RestoreDefaultText(signinSTID__txtbox, "Student Number");
             UserInput_Manager.ToggleTooltip(signinSTID__txtbox, signIn__StIdTooltip, "Student Number");
         }
 
+        // Event handlers for entering and leaving password text box
         private void signinPASS__txtbox_Enter(object sender, EventArgs e)
         {
-            // Hide password characters and show tooltip
             signinPASS__txtbox.UseSystemPasswordChar = true;
             UserInput_Manager.ResetInputField(signinPASS__txtbox, "Password");
             signIn__PassTooltip.Show();
@@ -50,7 +50,6 @@ namespace sprout__gradeBook
 
         private void signinPASS__txtbox_Leave(object sender, EventArgs e)
         {
-            // Restore default text and manage tooltip visibility
             UserInput_Manager.RestoreDefaultText(signinPASS__txtbox, "Password");
             UserInput_Manager.ToggleTooltip(signinPASS__txtbox, signIn__PassTooltip, "Password");
 
@@ -61,9 +60,9 @@ namespace sprout__gradeBook
             }
         }
 
+        // Toggle password visibility
         private void signIn__showPassicon_Click(object sender, EventArgs e)
         {
-            // Toggle password visibility
             isPasswordVisible = !isPasswordVisible;
             signIn__showPassicon.Image = isPasswordVisible
                 ? Properties.Resources.closed__eye
@@ -71,29 +70,29 @@ namespace sprout__gradeBook
             signinPASS__txtbox.UseSystemPasswordChar = !isPasswordVisible;
         }
 
+        // Show student default password guide
         private void showGuide_Click(object sender, EventArgs e)
         {
-            Form formbackgroud = new Form();
-            // Show student default password guide
-            using (var studentDefaultPasswordGuide = new StudentDefultPasswordGuide())
+            using (var formbackground = new Form())
             {
-                formbackgroud.StartPosition = FormStartPosition.Manual;
-                formbackgroud.FormBorderStyle = FormBorderStyle.None;
-                formbackgroud.Opacity = .70d;
-                formbackgroud.BackColor = CustomColor.mainColor;
-                formbackgroud.Size = this.Size;
-                formbackgroud.Location = this.Location;
-                formbackgroud.ShowInTaskbar = false;
-                formbackgroud.Show();
+                using (var studentDefaultPasswordGuide = new StudentDefultPasswordGuide())
+                {
+                    formbackground.StartPosition = FormStartPosition.Manual;
+                    formbackground.FormBorderStyle = FormBorderStyle.None;
+                    formbackground.Opacity = .70d;
+                    formbackground.BackColor = CustomColor.mainColor;
+                    formbackground.Size = this.Size;
+                    formbackground.Location = this.Location;
+                    formbackground.ShowInTaskbar = false;
+                    formbackground.Show();
 
-                studentDefaultPasswordGuide.Owner = formbackgroud;
-                studentDefaultPasswordGuide.ShowDialog();
+                    studentDefaultPasswordGuide.Owner = formbackground;
+                    studentDefaultPasswordGuide.ShowDialog();
+                }
             }
-            formbackgroud.Dispose();
         }
-    
- 
 
+        // Sign in button click event handler
         private void signIn__btn_Click(object sender, EventArgs e)
         {
             // Get user inputs
@@ -125,21 +124,18 @@ namespace sprout__gradeBook
             }
         }
 
-
+        // Close button click event handler
         private void close_btn_Click(object sender, EventArgs e)
         {
-            utilityButton b = new utilityButton();
-
-            b.Exitform();
+            new utilityButton().Exitform();
         }
 
-
+        // Attempt to find user in directories
         private bool TryFindUser(string usernameOrId, out string studentFilePath, out string teacherDir)
         {
             studentFilePath = null;
             teacherDir = null;
 
-            // Search for user file in the directories
             string baseFolderPath = "StudentCredentials";
             foreach (var dir in Directory.GetDirectories(baseFolderPath))
             {
@@ -153,44 +149,40 @@ namespace sprout__gradeBook
             return false;
         }
 
+        // Handle successful login, retrieve student info, display dashboard
         private void HandleSuccessfulLogin(string studentFilePath)
         {
-            // Read and parse student info
             var studentInfo = File.ReadAllLines(studentFilePath)
                 .ToDictionary(
                     line => line.Substring(0, line.IndexOf(':')),
                     line => line.Substring(line.IndexOf(':') + 1).Trim()
                 );
 
-            // Extract student details
             string username = TryGetValueOrDefault(studentInfo, "Username", "Unknown");
             string studentID = TryGetValueOrDefault(studentInfo, "Student ID", "Unknown");
             string studentGender = TryGetValueOrDefault(studentInfo, "Gender", "Unknown");
             string department = TryGetValueOrDefault(studentInfo, "Department", "Unknown");
             string yearSection = TryGetValueOrDefault(studentInfo, "Year and Section", "Unknown");
 
-            // Notify user of successful login
             MessageBox.Show("Sign in successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Hide();
 
-            // Show dashboard and set student details
             var dashboard = new Student__Dashboard(this);
             dashboard.SetUsernameLabel(username);
             dashboard.SetStudentIDLabel(studentID);
             dashboard.SetStudentIcon(studentGender);
 
-            // Populate dashboard with student courses
             PopulateStudentCourses(dashboard, department, yearSection);
 
             dashboard.Show();
         }
 
+        // Populate student courses on dashboard
         private void PopulateStudentCourses(Student__Dashboard dashboard, string department, string yearSection)
         {
             string courseFolderPath = "CourseInformations";
             var courseCards = new List<StudentScheduleCard>();
 
-            // Read course files and populate schedule cards
             foreach (var courseFile in Directory.GetFiles(courseFolderPath, "*.txt"))
             {
                 foreach (var courseBlock in GetCourseBlocks(File.ReadAllLines(courseFile)))
@@ -218,123 +210,15 @@ namespace sprout__gradeBook
                 }
             }
 
-            // Sort the course cards based on the day of the week
             courseCards.Sort((x, y) => CompareDaysOfWeek(x.DayOfTheWeek_lbl.Text, y.DayOfTheWeek_lbl.Text));
 
-            // Add the sorted course cards to the dashboard
             foreach (var card in courseCards)
             {
                 dashboard.student_CoursePanel.Controls.Add(card);
             }
         }
 
-        private string GetTeacherName(string courseFileName)
-        {
-            string teacherFilePath = Path.Combine("TeacherCredentials", courseFileName);
-
-            if (!File.Exists(teacherFilePath)) return "Unknown";
-
-            // Read and parse teacher info
-            var teacherInfo = File.ReadAllLines(teacherFilePath)
-                .ToDictionary(
-                    line => line.Substring(0, line.IndexOf(':')),
-                    line => line.Substring(line.IndexOf(':') + 1).Trim()
-                );
-
-            var firstName = TryGetValueOrDefault(teacherInfo, "First Name", "Unknown");
-            var lastName = TryGetValueOrDefault(teacherInfo, "Last Name", "Unknown");
-
-            return $"{firstName} {lastName}";
-        }
-
-        private Dictionary<string, string> GetCourseBlock(IEnumerable<string> lines)
-        {
-            var block = new Dictionary<string, string>();
-
-            // Parse lines into key-value pairs
-            foreach (var line in lines)
-            {
-                var parts = line.Split(new[] { ": " }, 2, StringSplitOptions.None);
-                if (!block.ContainsKey(parts[0]))
-                {
-                    block.Add(parts[0], parts.Length > 1 ? parts[1] : null);
-                }
-            }
-
-            return block;
-        }
-
-        private IEnumerable<Dictionary<string, string>> GetCourseBlocks(string[] lines)
-        {
-            var blocks = new List<Dictionary<string, string>>();
-            var currentBlock = new List<string>();
-
-            // Split lines into course blocks
-            foreach (var line in lines)
-            {
-                if (line.Trim() == "----------------------------------------")
-                {
-                    if (currentBlock.Any())
-                    {
-                        blocks.Add(GetCourseBlock(currentBlock));
-                        currentBlock.Clear();
-                    }
-                }
-                else
-                {
-                    currentBlock.Add(line);
-                }
-            }
-
-            if (currentBlock.Any())
-            {
-                blocks.Add(GetCourseBlock(currentBlock));
-            }
-
-            return blocks;
-        }
-
-        private static TValue TryGetValueOrDefault<TKey, TValue>(Dictionary<TKey, TValue> dictionary, TKey key, TValue defaultValue = default)
-        {
-            // Return value if key exists, otherwise return default value
-            return dictionary.TryGetValue(key, out var value) ? value : defaultValue;
-        }
-
-        private void ShowAccountNotFoundError()
-        {
-            // Show account not found error message
-            MessageBox.Show("The student account you entered does not exist.\n" +
-                            "Please check your username or ID and try again.\n\n" +
-                            "If you do not have an account, please contact your teacher for assistance.",
-                            "Account Not Found",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-        }
-
-        private int CompareDaysOfWeek(string day1, string day2)
-        {
-            // Define order of days for sorting
-            var daysOfWeek = new List<string>
-            {
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
-                "Sunday"
-            };
-
-            return daysOfWeek.IndexOf(day1).CompareTo(daysOfWeek.IndexOf(day2));
-        }
-
-        private void back__btn_Click(object sender, EventArgs e)
-        {
-            Role__form role = new Role__form();
-
-            role.Show();
-            this.Hide();
-        }
+        // Get teacher usernames for student
         public List<string> GetTeachersForStudent()
         {
             List<string> teacherUsernames = new List<string>();
@@ -353,6 +237,7 @@ namespace sprout__gradeBook
             return teacherUsernames;
         }
 
+        // Get current student's department and year/section
         public string GetCurrentStudentDepartmentYearSection()
         {
             var teachers = GetTeachersForStudent();
@@ -380,6 +265,114 @@ namespace sprout__gradeBook
             }
 
             return "Department and Year/Section not found.";
+        }
+
+        // Helper method to show account not found error
+        private void ShowAccountNotFoundError()
+        {
+            MessageBox.Show("The student account you entered does not exist.\n" +
+                            "Please check your username or ID and try again.\n\n" +
+                            "If you do not have an account, please contact your teacher for assistance.",
+                            "Account Not Found",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+        }
+
+        // Helper method to compare days of the week
+        private int CompareDaysOfWeek(string day1, string day2)
+        {
+            var daysOfWeek = new List<string>
+            {
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            };
+
+            return daysOfWeek.IndexOf(day1).CompareTo(daysOfWeek.IndexOf(day2));
+        }
+
+        // Method to retrieve teacher name from file
+        private string GetTeacherName(string courseFileName)
+        {
+            string teacherFilePath = Path.Combine("TeacherCredentials", courseFileName);
+
+            if (!File.Exists(teacherFilePath)) return "Unknown";
+
+            var teacherInfo = File.ReadAllLines(teacherFilePath)
+                .ToDictionary(
+                    line => line.Substring(0, line.IndexOf(':')),
+                    line => line.Substring(line.IndexOf(':') + 1).Trim()
+                );
+
+            var firstName = TryGetValueOrDefault(teacherInfo, "First Name", "Unknown");
+            var lastName = TryGetValueOrDefault(teacherInfo, "Last Name", "Unknown");
+
+            return $"{firstName} {lastName}";
+        }
+
+        // Helper method to parse course blocks
+        private Dictionary<string, string> GetCourseBlock(IEnumerable<string> lines)
+        {
+            var block = new Dictionary<string, string>();
+
+            foreach (var line in lines)
+            {
+                var parts = line.Split(new[] { ": " }, 2, StringSplitOptions.None);
+                if (!block.ContainsKey(parts[0]))
+                {
+                    block.Add(parts[0], parts.Length > 1 ? parts[1] : null);
+                }
+            }
+
+            return block;
+        }
+
+        // Helper method to get course blocks from lines
+        private IEnumerable<Dictionary<string, string>> GetCourseBlocks(string[] lines)
+        {
+            var blocks = new List<Dictionary<string, string>>();
+            var currentBlock = new List<string>();
+
+            foreach (var line in lines)
+            {
+                if (line.Trim() == "----------------------------------------")
+                {
+                    if (currentBlock.Any())
+                    {
+                        blocks.Add(GetCourseBlock(currentBlock));
+                        currentBlock.Clear();
+                    }
+                }
+                else
+                {
+                    currentBlock.Add(line);
+                }
+            }
+
+            if (currentBlock.Any())
+            {
+                blocks.Add(GetCourseBlock(currentBlock));
+            }
+
+            return blocks;
+        }
+
+        // Helper method to safely retrieve value from dictionary
+        private static TValue TryGetValueOrDefault<TKey, TValue>(Dictionary<TKey, TValue> dictionary, TKey key, TValue defaultValue = default)
+        {
+            return dictionary.TryGetValue(key, out var value) ? value : defaultValue;
+        }
+
+        // Button click event to go back to role form
+        private void back__btn_Click(object sender, EventArgs e)
+        {
+            Role__form role = new Role__form();
+            role.Show();
+            this.Hide();
         }
     }
 }

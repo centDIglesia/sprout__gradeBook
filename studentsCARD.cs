@@ -16,21 +16,22 @@ namespace sprout__gradeBook
     {
         private readonly teacher__studentsDashboard _parent;
         private readonly string _currentUser;
-     
+
         public studentsCARD(teacher__studentsDashboard parent)
         {
             InitializeComponent();
-            _currentUser = parent.currentUSer;
-             _parent = parent;
-           
+
+            // Initialize parent and current user
+            _parent = parent;
+            _currentUser = parent.currentUSer; // Assuming currentUSer is a property in teacher__studentsDashboard
         }
 
+        // Properties to get/set student information
         public string StudentName
         {
             get => studentcard__studentName.Text;
             set => studentcard__studentName.Text = value;
         }
-
 
         public string StudentID
         {
@@ -44,98 +45,117 @@ namespace sprout__gradeBook
             set => studentGender.Image = value;
         }
 
+        // Form load event handler
         private void studentsCARD_Load(object sender, EventArgs e)
         {
+            // Hide initial elements
             clickedBG.Hide();
             feedback_btn.Hide();
         }
 
+        // Click event handler for student name
         private void studentcard__studentName_Click(object sender, EventArgs e)
         {
+            // Show background and feedback button on name click
             clickedBG.Show();
             feedback_btn.Show();
         }
 
+        // Mouse hover event handler for student gender
         private void studentGender_MouseHover(object sender, EventArgs e)
         {
+            // Change text color on hover
             studentcard__studentName.StateCommon.Content.Color1 = CustomColor.activeColor;
         }
 
+        // Mouse leave event handler for student ID
         private void studentcard__studentID_MouseLeave(object sender, EventArgs e)
         {
+            // Restore text color on mouse leave
             studentcard__studentName.StateCommon.Content.Color1 = CustomColor.mainColor;
         }
 
+        // Click event handler for background when clicked
         private void clickedBG_Click(object sender, EventArgs e)
         {
+            // Hide background and feedback button
             clickedBG.Hide();
             feedback_btn.Hide();
         }
 
+        // Click event handler for feedback button
         private void feedback_btn_Click(object sender, EventArgs e)
         {
-            Form formbackground = new Form();
-
-            using (Teacher__Feedback teacher__Feedback = new Teacher__Feedback(this))
+            // Open feedback form
+            using (Form formbackground = new Form())
             {
-                formbackground.StartPosition = FormStartPosition.CenterScreen;
-                formbackground.FormBorderStyle = FormBorderStyle.None;
-                formbackground.Opacity = .90d;
-                formbackground.BackColor = CustomColor.mainColor;
-                formbackground.Size = new Size(1147, 711);
+                using (Teacher__Feedback teacher__Feedback = new Teacher__Feedback(this))
+                {
+                    // Configure background form properties
+                    formbackground.StartPosition = FormStartPosition.CenterScreen;
+                    formbackground.FormBorderStyle = FormBorderStyle.None;
+                    formbackground.Opacity = .90d;
+                    formbackground.BackColor = CustomColor.mainColor;
+                    formbackground.Size = new Size(1147, 711);
+                    formbackground.Location = this.Location;
+                    formbackground.ShowInTaskbar = false;
+                    formbackground.Show();
 
-                teacher__Feedback.StudentName = this.StudentName;
+                    // Pass student name to feedback form
+                    teacher__Feedback.StudentName = this.StudentName;
 
-                formbackground.Location = this.Location;
-
-                formbackground.ShowInTaskbar = false;
-                formbackground.Show();
-
-                teacher__Feedback.Owner = formbackground;
-                teacher__Feedback.ShowDialog();
+                    // Set owner and show feedback form
+                    teacher__Feedback.Owner = formbackground;
+                    teacher__Feedback.ShowDialog();
+                }
             }
-            formbackground.Dispose();
-
         }
+
+        // Method to save feedback to file
         public void saveFeedback(string title, string description)
         {
+            // Create directory if it doesn't exist
             string baseDirectory = $"StudentFeedbacks/{_currentUser}";
-
             if (!Directory.Exists(baseDirectory))
             {
                 Directory.CreateDirectory(baseDirectory);
             }
+
+            // Define file path for feedback
             string fullPath = Path.Combine(baseDirectory, $"Feedbacks.txt");
 
+            // Write feedback to file
             using (StreamWriter write = new StreamWriter(fullPath, true))
             {
                 write.WriteLine($"Receiver : {StudentID} | {StudentName}");
                 write.WriteLine($"Title : {title}");
                 write.WriteLine($"Sender : {GetFirstName()}");
-                write.WriteLine($"Description :{description}");
+                write.WriteLine($"Description : {description}");
                 write.WriteLine("------------------------------");
             };
         }
+
+        // Method to retrieve first name from teacher credentials
         public string GetFirstName()
         {
+            // Define file path for teacher credentials
             string filePath = $"TeacherCredentials/{_currentUser}.txt";
 
-
+            // Check if file exists
             if (!File.Exists(filePath))
             {
                 throw new FileNotFoundException("The credential file could not be found.");
             }
 
-            // Read all lines from the file
+            // Read all lines from file
             string[] lines = File.ReadAllLines(filePath);
 
-
+            // Search for first name in file
             foreach (var line in lines)
             {
-
                 if (line.StartsWith("First Name:", StringComparison.OrdinalIgnoreCase))
                 {
-                    // Extract the first name by splitting the line
+                    // Extract first name from line
                     string[] parts = line.Split(new[] { ':' }, 2);
                     if (parts.Length == 2)
                     {
@@ -144,9 +164,8 @@ namespace sprout__gradeBook
                 }
             }
 
-
+            // Throw exception if first name not found
             throw new InvalidOperationException("The first name could not be found in the credential file.");
         }
-
     }
 }

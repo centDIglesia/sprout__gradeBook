@@ -60,7 +60,6 @@
             this.nameofStudent.TabIndex = 0;
             this.nameofStudent.Values.Text = "kryptonLabel1";
             this.nameofStudent.Click += new System.EventHandler(this.studentsInGradebookCARD_Click);
-            this.nameofStudent.Paint += new System.Windows.Forms.PaintEventHandler(this.nameofStudent_Paint);
             // 
             // idOfStudent
             // 
@@ -73,7 +72,6 @@
             this.idOfStudent.TabIndex = 1;
             this.idOfStudent.Values.Text = "kryptonLabel2";
             this.idOfStudent.Click += new System.EventHandler(this.studentsInGradebookCARD_Click);
-            this.idOfStudent.Paint += new System.Windows.Forms.PaintEventHandler(this.idOfStudent_Paint);
             // 
             // studentsInGradebookCARD
             // 
@@ -87,7 +85,6 @@
             this.DoubleBuffered = true;
             this.Name = "studentsInGradebookCARD";
             this.Size = new System.Drawing.Size(235, 52);
-            this.Load += new System.EventHandler(this.studentsInGradebookCARD_Load);
             this.Click += new System.EventHandler(this.studentsInGradebookCARD_Click);
             this.ResumeLayout(false);
             this.PerformLayout();

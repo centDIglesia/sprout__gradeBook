@@ -32,19 +32,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(studentLoginForm));
             this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.studentSIGNINform = new ComponentFactory.Krypton.Toolkit.KryptonGroup();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.showGuide = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.forgetPass__btn = new System.Windows.Forms.PictureBox();
-            this.signIn__showPassicon = new System.Windows.Forms.PictureBox();
             this.signIn__PassTooltip = new System.Windows.Forms.Label();
             this.signinPASS__txtbox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.signIn__StIdTooltip = new System.Windows.Forms.Label();
             this.signIn__btn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.signinSTID__txtbox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.showGuide = new System.Windows.Forms.PictureBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.forgetPass__btn = new System.Windows.Forms.PictureBox();
+            this.signIn__showPassicon = new System.Windows.Forms.PictureBox();
+            this.close_btn = new System.Windows.Forms.PictureBox();
             this.back__btn = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.close_btn = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.studentSIGNINform)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentSIGNINform.Panel)).BeginInit();
             this.studentSIGNINform.Panel.SuspendLayout();
@@ -54,9 +54,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.forgetPass__btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.signIn__showPassicon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.close_btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.back__btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.close_btn)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette2
@@ -101,69 +101,12 @@
             this.studentSIGNINform.StateCommon.Border.Width = 0;
             this.studentSIGNINform.TabIndex = 22;
             // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(112, 43);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(235, 24);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox11.TabIndex = 0;
-            this.pictureBox11.TabStop = false;
-            // 
-            // showGuide
-            // 
-            this.showGuide.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.showGuide.Image = ((System.Drawing.Image)(resources.GetObject("showGuide.Image")));
-            this.showGuide.Location = new System.Drawing.Point(130, 72);
-            this.showGuide.Name = "showGuide";
-            this.showGuide.Size = new System.Drawing.Size(198, 14);
-            this.showGuide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.showGuide.TabIndex = 23;
-            this.showGuide.TabStop = false;
-            this.showGuide.Click += new System.EventHandler(this.showGuide_Click);
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(61, 371);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(323, 14);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox12.TabIndex = 22;
-            this.pictureBox12.TabStop = false;
-            // 
-            // forgetPass__btn
-            // 
-            this.forgetPass__btn.BackColor = System.Drawing.Color.Transparent;
-            this.forgetPass__btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.forgetPass__btn.Image = ((System.Drawing.Image)(resources.GetObject("forgetPass__btn.Image")));
-            this.forgetPass__btn.Location = new System.Drawing.Point(261, 263);
-            this.forgetPass__btn.Name = "forgetPass__btn";
-            this.forgetPass__btn.Size = new System.Drawing.Size(139, 13);
-            this.forgetPass__btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.forgetPass__btn.TabIndex = 21;
-            this.forgetPass__btn.TabStop = false;
-            // 
-            // signIn__showPassicon
-            // 
-            this.signIn__showPassicon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.signIn__showPassicon.Image = global::sprout__gradeBook.Properties.Resources.open__eye;
-            this.signIn__showPassicon.Location = new System.Drawing.Point(365, 224);
-            this.signIn__showPassicon.Name = "signIn__showPassicon";
-            this.signIn__showPassicon.Size = new System.Drawing.Size(22, 18);
-            this.signIn__showPassicon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.signIn__showPassicon.TabIndex = 20;
-            this.signIn__showPassicon.TabStop = false;
-            this.signIn__showPassicon.Click += new System.EventHandler(this.signIn__showPassicon_Click);
-            // 
             // signIn__PassTooltip
             // 
             this.signIn__PassTooltip.AutoSize = true;
             this.signIn__PassTooltip.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signIn__PassTooltip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.signIn__PassTooltip.Location = new System.Drawing.Point(51, 202);
+            this.signIn__PassTooltip.Location = new System.Drawing.Point(51, 207);
             this.signIn__PassTooltip.Name = "signIn__PassTooltip";
             this.signIn__PassTooltip.Size = new System.Drawing.Size(69, 15);
             this.signIn__PassTooltip.TabIndex = 18;
@@ -171,7 +114,7 @@
             // 
             // signinPASS__txtbox
             // 
-            this.signinPASS__txtbox.Location = new System.Drawing.Point(45, 213);
+            this.signinPASS__txtbox.Location = new System.Drawing.Point(45, 218);
             this.signinPASS__txtbox.Name = "signinPASS__txtbox";
             this.signinPASS__txtbox.Size = new System.Drawing.Size(357, 37);
             this.signinPASS__txtbox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
@@ -193,7 +136,7 @@
             this.signIn__StIdTooltip.AutoSize = true;
             this.signIn__StIdTooltip.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signIn__StIdTooltip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.signIn__StIdTooltip.Location = new System.Drawing.Point(51, 136);
+            this.signIn__StIdTooltip.Location = new System.Drawing.Point(51, 141);
             this.signIn__StIdTooltip.Name = "signIn__StIdTooltip";
             this.signIn__StIdTooltip.Size = new System.Drawing.Size(111, 15);
             this.signIn__StIdTooltip.TabIndex = 13;
@@ -201,7 +144,7 @@
             // 
             // signIn__btn
             // 
-            this.signIn__btn.Location = new System.Drawing.Point(45, 311);
+            this.signIn__btn.Location = new System.Drawing.Point(45, 316);
             this.signIn__btn.Name = "signIn__btn";
             this.signIn__btn.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.signIn__btn.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
@@ -236,7 +179,7 @@
             // 
             // signinSTID__txtbox
             // 
-            this.signinSTID__txtbox.Location = new System.Drawing.Point(45, 145);
+            this.signinSTID__txtbox.Location = new System.Drawing.Point(45, 150);
             this.signinSTID__txtbox.Name = "signinSTID__txtbox";
             this.signinSTID__txtbox.Size = new System.Drawing.Size(357, 37);
             this.signinSTID__txtbox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
@@ -252,6 +195,75 @@
             this.signinSTID__txtbox.Text = "Student Number";
             this.signinSTID__txtbox.Enter += new System.EventHandler(this.signinSTID__txtbox_Enter);
             this.signinSTID__txtbox.Leave += new System.EventHandler(this.signinSTID__txtbox_Leave);
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
+            this.pictureBox11.Location = new System.Drawing.Point(112, 48);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(235, 24);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox11.TabIndex = 0;
+            this.pictureBox11.TabStop = false;
+            // 
+            // showGuide
+            // 
+            this.showGuide.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.showGuide.Image = ((System.Drawing.Image)(resources.GetObject("showGuide.Image")));
+            this.showGuide.Location = new System.Drawing.Point(130, 77);
+            this.showGuide.Name = "showGuide";
+            this.showGuide.Size = new System.Drawing.Size(198, 14);
+            this.showGuide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.showGuide.TabIndex = 23;
+            this.showGuide.TabStop = false;
+            this.showGuide.Click += new System.EventHandler(this.showGuide_Click);
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
+            this.pictureBox12.Location = new System.Drawing.Point(61, 376);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(323, 14);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox12.TabIndex = 22;
+            this.pictureBox12.TabStop = false;
+            // 
+            // forgetPass__btn
+            // 
+            this.forgetPass__btn.BackColor = System.Drawing.Color.Transparent;
+            this.forgetPass__btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.forgetPass__btn.Image = ((System.Drawing.Image)(resources.GetObject("forgetPass__btn.Image")));
+            this.forgetPass__btn.Location = new System.Drawing.Point(261, 268);
+            this.forgetPass__btn.Name = "forgetPass__btn";
+            this.forgetPass__btn.Size = new System.Drawing.Size(139, 13);
+            this.forgetPass__btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.forgetPass__btn.TabIndex = 21;
+            this.forgetPass__btn.TabStop = false;
+            // 
+            // signIn__showPassicon
+            // 
+            this.signIn__showPassicon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.signIn__showPassicon.Image = global::sprout__gradeBook.Properties.Resources.open__eye;
+            this.signIn__showPassicon.Location = new System.Drawing.Point(365, 229);
+            this.signIn__showPassicon.Name = "signIn__showPassicon";
+            this.signIn__showPassicon.Size = new System.Drawing.Size(22, 18);
+            this.signIn__showPassicon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.signIn__showPassicon.TabIndex = 20;
+            this.signIn__showPassicon.TabStop = false;
+            this.signIn__showPassicon.Click += new System.EventHandler(this.signIn__showPassicon_Click);
+            // 
+            // close_btn
+            // 
+            this.close_btn.BackColor = System.Drawing.Color.Transparent;
+            this.close_btn.Image = ((System.Drawing.Image)(resources.GetObject("close_btn.Image")));
+            this.close_btn.Location = new System.Drawing.Point(1111, 15);
+            this.close_btn.Name = "close_btn";
+            this.close_btn.Size = new System.Drawing.Size(24, 24);
+            this.close_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.close_btn.TabIndex = 27;
+            this.close_btn.TabStop = false;
+            this.close_btn.Click += new System.EventHandler(this.close_btn_Click);
             // 
             // back__btn
             // 
@@ -274,18 +286,6 @@
             this.pictureBox2.Size = new System.Drawing.Size(643, 711);
             this.pictureBox2.TabIndex = 23;
             this.pictureBox2.TabStop = false;
-            // 
-            // close_btn
-            // 
-            this.close_btn.BackColor = System.Drawing.Color.Transparent;
-            this.close_btn.Image = ((System.Drawing.Image)(resources.GetObject("close_btn.Image")));
-            this.close_btn.Location = new System.Drawing.Point(1111, 15);
-            this.close_btn.Name = "close_btn";
-            this.close_btn.Size = new System.Drawing.Size(24, 24);
-            this.close_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.close_btn.TabIndex = 27;
-            this.close_btn.TabStop = false;
-            this.close_btn.Click += new System.EventHandler(this.close_btn_Click);
             // 
             // studentLoginForm
             // 
@@ -312,9 +312,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.forgetPass__btn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.signIn__showPassicon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.close_btn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.back__btn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.close_btn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -24,11 +24,12 @@ namespace sprout__gradeBook
             _studentLoginForm = studentLoginForm;
             _CurrentStudentId = studentID;
         }
-    
-         private void Student__FeedbackUI_Load(object sender, EventArgs e)
+
+        private void Student__FeedbackUI_Load(object sender, EventArgs e)
         {
             LoadFeedbackCards();
         }
+
         private void LoadFeedbackCards()
         {
             List<string> teachers = _studentLoginForm.GetTeachersForStudent();
@@ -40,16 +41,16 @@ namespace sprout__gradeBook
 
                 if (File.Exists(teacherFeedbackFile))
                 {
-                    var announcementLines = File.ReadAllLines(teacherFeedbackFile);
+                    var feedbackLines = File.ReadAllLines(teacherFeedbackFile);
 
                     // Split the file into individual announcements
-                    var announcements = string.Join("\n", announcementLines)
+                    var feedbacks = string.Join("\n", feedbackLines)
                         .Split(new[] { "------------------------------" }, StringSplitOptions.RemoveEmptyEntries);
 
-                    foreach (var announcement in announcements)
+                    foreach (var feedback in feedbacks)
                     {
-                        var lines = announcement.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
-                        var announcementDict = new Dictionary<string, string>();
+                        var lines = feedback.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+                        var feedbackDict = new Dictionary<string, string>();
 
                         string currentKey = null;
                         StringBuilder currentValue = new StringBuilder();
@@ -61,7 +62,7 @@ namespace sprout__gradeBook
                             {
                                 if (currentKey != null)
                                 {
-                                    announcementDict[currentKey] = currentValue.ToString().Trim();
+                                    feedbackDict[currentKey] = currentValue.ToString().Trim();
                                 }
 
                                 currentKey = parts[0].Trim();
@@ -76,17 +77,25 @@ namespace sprout__gradeBook
 
                         if (currentKey != null)
                         {
-                            announcementDict[currentKey] = currentValue.ToString().Trim();
+                            feedbackDict[currentKey] = currentValue.ToString().Trim();
                         }
 
-                        if (announcementDict.TryGetValue("Receiver", out var receiver) &&
-                            receiver.Equals(_CurrentStudentId, StringComparison.OrdinalIgnoreCase))
+                        // Check if the receiver's ID matches the current student's ID
+                        if (feedbackDict.TryGetValue("Receiver", out var receiver))
                         {
-                            string title = announcementDict.TryGetValue("Title", out var t) ? t : "No Title";
-                            string description = announcementDict.TryGetValue("Description", out var d) ? d : "No Description";
-                            string sender = announcementDict.TryGetValue("Sender", out var ts) ? ts : "Unknown Time";
+                            var receiverParts = receiver.Split('|');
+                            if (receiverParts.Length > 0)
+                            {
+                                var receiverID = receiverParts[0].Trim();
+                                if (receiverID.Equals(_CurrentStudentId, StringComparison.OrdinalIgnoreCase))
+                                {
+                                    string title = feedbackDict.TryGetValue("Title", out var t) ? t : "No Title";
+                                    string description = feedbackDict.TryGetValue("Description", out var d) ? d : "No Description";
+                                    string sender = feedbackDict.TryGetValue("Sender", out var ts) ? ts : "Unknown Sender";
 
-                            AddFeedbackCard(title, description, sender);
+                                    AddFeedbackCard(title, description, sender);
+                                }
+                            }
                         }
                     }
                 }
@@ -94,18 +103,16 @@ namespace sprout__gradeBook
         }
         private void AddFeedbackCard(string title, string description, string sender)
         {
-            var feedback__Card = new Feedback__Card
+            Feedback__Card feedback__Card = new Feedback__Card
             {
                 Feedback_Title = title,
                 Feedback_Description = description,
                 Feedback_Sender = sender
             };
 
-
             feedbackPanel.Controls.Add(feedback__Card);
         }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void Close_btn_Click(object sender, EventArgs e)
         {
             utilityButton b = new utilityButton();
             b.Closeform(this);

@@ -87,7 +87,7 @@
             this.courseSectionPanel.Name = "courseSectionPanel";
             this.courseSectionPanel.Size = new System.Drawing.Size(774, 514);
             this.courseSectionPanel.TabIndex = 93;
-            this.courseSectionPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.courseSectionPanel_Paint);
+
             // 
             // flowLayoutPanel1
             // 
