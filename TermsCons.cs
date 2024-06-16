@@ -21,5 +21,11 @@ namespace sprout__gradeBook
         {
 
         }
+
+        private void signIn__btn_Click(object sender, EventArgs e)
+        {
+            utilityButton b = new utilityButton();
+            b.Closeform(this);
+        }
     }
 }
