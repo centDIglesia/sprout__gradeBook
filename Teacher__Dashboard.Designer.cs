@@ -39,9 +39,9 @@
             this.btn_feedback = new System.Windows.Forms.PictureBox();
             this.btn_gradeBook = new System.Windows.Forms.PictureBox();
             this.close_btn = new System.Windows.Forms.PictureBox();
-            this.notification__icon = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.global__nav__bg = new System.Windows.Forms.PictureBox();
+            this.notification__icon = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.viewPanel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_dashboard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_students)).BeginInit();
@@ -49,9 +49,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_feedback)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_gradeBook)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.close_btn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.notification__icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.global__nav__bg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notification__icon)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette2
@@ -84,7 +84,7 @@
             this.teachers__firstName.BackColor = System.Drawing.Color.White;
             this.teachers__firstName.Font = new System.Drawing.Font("Poppins SemiBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.teachers__firstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.teachers__firstName.Location = new System.Drawing.Point(944, 33);
+            this.teachers__firstName.Location = new System.Drawing.Point(944, 35);
             this.teachers__firstName.Name = "teachers__firstName";
             this.teachers__firstName.Size = new System.Drawing.Size(106, 30);
             this.teachers__firstName.TabIndex = 63;
@@ -172,15 +172,6 @@
             this.close_btn.TabStop = false;
             this.close_btn.Click += new System.EventHandler(this.close_btn_Click);
             // 
-            // notification__icon
-            // 
-            this.notification__icon.Image = ((System.Drawing.Image)(resources.GetObject("notification__icon.Image")));
-            this.notification__icon.Location = new System.Drawing.Point(904, 36);
-            this.notification__icon.Name = "notification__icon";
-            this.notification__icon.Size = new System.Drawing.Size(38, 24);
-            this.notification__icon.TabIndex = 61;
-            this.notification__icon.TabStop = false;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(84)))), ((int)(((byte)(46)))));
@@ -200,6 +191,16 @@
             this.global__nav__bg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.global__nav__bg.TabIndex = 0;
             this.global__nav__bg.TabStop = false;
+            // 
+            // notification__icon
+            // 
+            this.notification__icon.Image = ((System.Drawing.Image)(resources.GetObject("notification__icon.Image")));
+            this.notification__icon.Location = new System.Drawing.Point(892, 35);
+            this.notification__icon.Name = "notification__icon";
+            this.notification__icon.Size = new System.Drawing.Size(46, 29);
+            this.notification__icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.notification__icon.TabIndex = 61;
+            this.notification__icon.TabStop = false;
             // 
             // Teacher_Dashboard
             // 
@@ -231,9 +232,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_feedback)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_gradeBook)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.close_btn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.notification__icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.global__nav__bg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notification__icon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,8 +246,6 @@
         private System.Windows.Forms.PictureBox global__nav__bg;
         private System.Windows.Forms.PictureBox pictureBox2;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel viewPanel;
-
-        private System.Windows.Forms.PictureBox notification__icon;
         private System.Windows.Forms.Label teachers__firstName;
         private System.Windows.Forms.PictureBox close_btn;
         private System.Windows.Forms.PictureBox btn_dashboard;
@@ -254,5 +253,6 @@
         private System.Windows.Forms.PictureBox btn_feedback;
         private System.Windows.Forms.PictureBox btn_courses;
         private System.Windows.Forms.PictureBox btn_gradeBook;
+        private System.Windows.Forms.PictureBox notification__icon;
     }
 }

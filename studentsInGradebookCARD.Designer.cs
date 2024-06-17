@@ -66,8 +66,8 @@
             this.idOfStudent.Location = new System.Drawing.Point(7, 27);
             this.idOfStudent.Name = "idOfStudent";
             this.idOfStudent.Size = new System.Drawing.Size(89, 19);
-            this.idOfStudent.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
-            this.idOfStudent.StateCommon.ShortText.Color2 = System.Drawing.Color.White;
+            this.idOfStudent.StateCommon.ShortText.Color1 = System.Drawing.Color.DarkGray;
+            this.idOfStudent.StateCommon.ShortText.Color2 = System.Drawing.Color.DarkGray;
             this.idOfStudent.StateCommon.ShortText.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idOfStudent.TabIndex = 1;
             this.idOfStudent.Values.Text = "kryptonLabel2";
@@ -85,6 +85,7 @@
             this.DoubleBuffered = true;
             this.Name = "studentsInGradebookCARD";
             this.Size = new System.Drawing.Size(235, 52);
+            this.Load += new System.EventHandler(this.studentsInGradebookCARD_Load);
             this.Click += new System.EventHandler(this.studentsInGradebookCARD_Click);
             this.ResumeLayout(false);
             this.PerformLayout();

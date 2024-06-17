@@ -83,12 +83,12 @@
             // 
             this.StudentIDTXT.Location = new System.Drawing.Point(411, 111);
             this.StudentIDTXT.Name = "StudentIDTXT";
-            this.StudentIDTXT.Size = new System.Drawing.Size(90, 19);
+            this.StudentIDTXT.Size = new System.Drawing.Size(68, 19);
             this.StudentIDTXT.StateCommon.ShortText.Color1 = System.Drawing.Color.Silver;
             this.StudentIDTXT.StateCommon.ShortText.Color2 = System.Drawing.Color.Silver;
             this.StudentIDTXT.StateCommon.ShortText.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StudentIDTXT.TabIndex = 69;
-            this.StudentIDTXT.Values.Text = "kryptonLabel3";
+            this.StudentIDTXT.Values.Text = "Student ID";
             // 
             // studentListPanel
             // 
@@ -143,24 +143,24 @@
             this.sectionTXT.Location = new System.Drawing.Point(411, 65);
             this.sectionTXT.Name = "sectionTXT";
             this.sectionTXT.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.sectionTXT.Size = new System.Drawing.Size(90, 19);
+            this.sectionTXT.Size = new System.Drawing.Size(184, 19);
             this.sectionTXT.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
             this.sectionTXT.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
             this.sectionTXT.StateCommon.ShortText.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sectionTXT.TabIndex = 73;
-            this.sectionTXT.Values.Text = "kryptonLabel3";
+            this.sectionTXT.Values.Text = "Course_Dept_YearandSection";
             // 
             // StudenttnameTXT
             // 
             this.StudenttnameTXT.Location = new System.Drawing.Point(411, 86);
             this.StudenttnameTXT.Name = "StudenttnameTXT";
             this.StudenttnameTXT.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.StudenttnameTXT.Size = new System.Drawing.Size(106, 22);
+            this.StudenttnameTXT.Size = new System.Drawing.Size(109, 22);
             this.StudenttnameTXT.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.StudenttnameTXT.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.StudenttnameTXT.StateCommon.ShortText.Font = new System.Drawing.Font("Poppins Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StudenttnameTXT.TabIndex = 74;
-            this.StudenttnameTXT.Values.Text = "kryptonLabel3";
+            this.StudenttnameTXT.Values.Text = "Student Name";
             // 
             // kryptonTextBox1
             // 
@@ -197,13 +197,13 @@
             this.subcomponentsPanel.AutoScrollMinSize = new System.Drawing.Size(1, 0);
             this.subcomponentsPanel.Location = new System.Drawing.Point(320, 361);
             this.subcomponentsPanel.Name = "subcomponentsPanel";
-            this.subcomponentsPanel.Size = new System.Drawing.Size(483, 231);
+            this.subcomponentsPanel.Size = new System.Drawing.Size(483, 224);
             this.subcomponentsPanel.TabIndex = 71;
             // 
             // addSubcomponents
             // 
             this.addSubcomponents.Image = ((System.Drawing.Image)(resources.GetObject("addSubcomponents.Image")));
-            this.addSubcomponents.Location = new System.Drawing.Point(326, 597);
+            this.addSubcomponents.Location = new System.Drawing.Point(326, 593);
             this.addSubcomponents.Name = "addSubcomponents";
             this.addSubcomponents.Size = new System.Drawing.Size(140, 13);
             this.addSubcomponents.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -214,7 +214,7 @@
             // saveGradeBtn
             // 
             this.saveGradeBtn.Image = ((System.Drawing.Image)(resources.GetObject("saveGradeBtn.Image")));
-            this.saveGradeBtn.Location = new System.Drawing.Point(667, 53);
+            this.saveGradeBtn.Location = new System.Drawing.Point(670, 78);
             this.saveGradeBtn.Name = "saveGradeBtn";
             this.saveGradeBtn.Size = new System.Drawing.Size(123, 42);
             this.saveGradeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -288,7 +288,7 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox5.Location = new System.Drawing.Point(327, 591);
+            this.pictureBox5.Location = new System.Drawing.Point(323, 584);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(470, 1);
             this.pictureBox5.TabIndex = 95;
@@ -372,7 +372,7 @@
             // doneBtn
             // 
             this.doneBtn.Image = ((System.Drawing.Image)(resources.GetObject("doneBtn.Image")));
-            this.doneBtn.Location = new System.Drawing.Point(762, 598);
+            this.doneBtn.Location = new System.Drawing.Point(762, 594);
             this.doneBtn.Name = "doneBtn";
             this.doneBtn.Size = new System.Drawing.Size(31, 10);
             this.doneBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
