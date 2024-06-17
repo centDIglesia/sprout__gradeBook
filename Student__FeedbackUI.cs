@@ -118,12 +118,5 @@ namespace sprout__gradeBook
             utilityButton b = new utilityButton();
             b.Closeform(this);
         }
-
-
-
-        private void studentFeedbackUI_Timer_Tick(object sender, EventArgs e)
-        {
-            Opacity += .2;
-        }
     }
 }
