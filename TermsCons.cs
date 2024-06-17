@@ -47,7 +47,7 @@ namespace sprout__gradeBook
 
         private void declineBtn_Click(object sender, EventArgs e)
         {         
-            MessageBox.Show("You must accept the Terms and Conditions to use the system. Please accept the terms to proceed.");
+            MessageBox.Show("You must accept the Terms and Conditions to use the system. Please accept the terms to proceed.", "Decline Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             return;
         }
 
