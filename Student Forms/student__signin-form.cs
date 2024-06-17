@@ -384,6 +384,11 @@ namespace sprout__gradeBook
 
         private void pictureBox12_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void pictureBox12_Click_1(object sender, EventArgs e)
+        {
             Form formbackground = new Form();
 
             using (TermsCons terms = new TermsCons())
@@ -403,6 +408,11 @@ namespace sprout__gradeBook
                 terms.ShowDialog();
             }
             formbackground.Dispose();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

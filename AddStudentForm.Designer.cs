@@ -424,7 +424,7 @@
             // saveNewStudentBTN
             // 
             this.saveNewStudentBTN.Image = ((System.Drawing.Image)(resources.GetObject("saveNewStudentBTN.Image")));
-            this.saveNewStudentBTN.Location = new System.Drawing.Point(367, 501);
+            this.saveNewStudentBTN.Location = new System.Drawing.Point(372, 501);
             this.saveNewStudentBTN.Name = "saveNewStudentBTN";
             this.saveNewStudentBTN.Size = new System.Drawing.Size(185, 45);
             this.saveNewStudentBTN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;

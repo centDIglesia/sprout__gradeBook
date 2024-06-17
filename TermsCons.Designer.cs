@@ -28,44 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.signIn__btn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.accept__btn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.SuspendLayout();
             // 
-            // signIn__btn
+            // accept__btn
             // 
-            this.signIn__btn.Location = new System.Drawing.Point(32, 291);
-            this.signIn__btn.Name = "signIn__btn";
-            this.signIn__btn.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.signIn__btn.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.signIn__btn.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.accept__btn.Location = new System.Drawing.Point(32, 291);
+            this.accept__btn.Name = "accept__btn";
+            this.accept__btn.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.accept__btn.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.accept__btn.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.signIn__btn.OverrideDefault.Border.Rounding = 4;
-            this.signIn__btn.OverrideDefault.Border.Width = 0;
-            this.signIn__btn.OverrideDefault.Content.Padding = new System.Windows.Forms.Padding(10, -1, -1, -1);
-            this.signIn__btn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.signIn__btn.Size = new System.Drawing.Size(231, 30);
-            this.signIn__btn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.signIn__btn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.signIn__btn.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.accept__btn.OverrideDefault.Border.Rounding = 4;
+            this.accept__btn.OverrideDefault.Border.Width = 0;
+            this.accept__btn.OverrideDefault.Content.Padding = new System.Windows.Forms.Padding(10, -1, -1, -1);
+            this.accept__btn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.accept__btn.Size = new System.Drawing.Size(231, 30);
+            this.accept__btn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.accept__btn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.accept__btn.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.signIn__btn.StateCommon.Border.Rounding = 4;
-            this.signIn__btn.StateCommon.Border.Width = 0;
-            this.signIn__btn.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0, -1, 0, -1);
-            this.signIn__btn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.signIn__btn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.signIn__btn.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
-            this.signIn__btn.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
-            this.signIn__btn.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.accept__btn.StateCommon.Border.Rounding = 4;
+            this.accept__btn.StateCommon.Border.Width = 0;
+            this.accept__btn.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0, -1, 0, -1);
+            this.accept__btn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.accept__btn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.accept__btn.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
+            this.accept__btn.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
+            this.accept__btn.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.signIn__btn.StateTracking.Border.Rounding = 4;
-            this.signIn__btn.StateTracking.Border.Width = 0;
-            this.signIn__btn.TabIndex = 10;
-            this.signIn__btn.Values.Text = "I ACCEPT";
-            this.signIn__btn.Click += new System.EventHandler(this.signIn__btn_Click);
+            this.accept__btn.StateTracking.Border.Rounding = 4;
+            this.accept__btn.StateTracking.Border.Width = 0;
+            this.accept__btn.TabIndex = 10;
+            this.accept__btn.Values.Text = "I ACCEPT";
+            this.accept__btn.Click += new System.EventHandler(this.signIn__btn_Click);
             // 
             // kryptonTextBox1
             // 
@@ -92,7 +92,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(299, 346);
             this.Controls.Add(this.kryptonTextBox1);
-            this.Controls.Add(this.signIn__btn);
+            this.Controls.Add(this.accept__btn);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TermsCons";
@@ -105,7 +105,7 @@
         }
 
         #endregion
-        private ComponentFactory.Krypton.Toolkit.KryptonButton signIn__btn;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton accept__btn;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
     }
 }
