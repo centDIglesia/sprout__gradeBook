@@ -86,6 +86,12 @@
     <Compile Include="AddStudentForm.Designer.cs">
       <DependentUpon>AddStudentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Attendance__Row.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Attendance__Row.Designer.cs">
+      <DependentUpon>Attendance__Row.cs</DependentUpon>
+    </Compile>
     <Compile Include="Component-Button-Card.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -231,6 +237,12 @@
     <Compile Include="SubComponentCard.Designer.cs">
       <DependentUpon>SubComponentCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teacher__Attendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher__Attendance.Designer.cs">
+      <DependentUpon>Teacher__Attendance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teacher__coursesDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,6 +307,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddStudentForm.resx">
       <DependentUpon>AddStudentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Attendance__Row.resx">
+      <DependentUpon>Attendance__Row.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Component-Button-Card.resx">
       <DependentUpon>Component-Button-Card.cs</DependentUpon>
@@ -366,6 +381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SubComponentCard.resx">
       <DependentUpon>SubComponentCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher__Attendance.resx">
+      <DependentUpon>Teacher__Attendance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher__coursesDashboard.resx">
       <DependentUpon>Teacher__coursesDashboard.cs</DependentUpon>
@@ -495,12 +513,21 @@
     <None Include="Resources\Sort-Button.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Present_Checked.png" />
+    <None Include="Resources\Present_Unchecked.png" />
     <None Include="Resources\Notification_Bell.png" />
     <None Include="Resources\open__eye.png" />
     <None Include="Resources\closed__eye.png" />
     <None Include="Resources\Add row +.png" />
     <None Include="Resources\Feedback_Icon.png" />
+    <None Include="Resources\Excused_Unchecked.png" />
+    <None Include="Resources\Absent_Unchecked.png" />
+    <None Include="Resources\Excused_Checked.png" />
+    <None Include="Resources\Absent_Checked.png" />
+    <None Include="Resources\Attendance_Sheet.png" />
     <Content Include="Resources\Female_Icon.png" />
+    <None Include="Resources\Late_Unchecked.png" />
+    <None Include="Resources\Late_Checked.png" />
     <Content Include="Resources\Male_Icon.png" />
     <None Include="Resources\open__eye1.png" />
   </ItemGroup>
