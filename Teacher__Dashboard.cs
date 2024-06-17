@@ -191,5 +191,32 @@ namespace sprout__gradeBook
             }
 
         }
+
+        private void logoutBtn_MouseHover(object sender, EventArgs e)
+        {
+            logoutBtn.Image = Properties.Resources.lghover;
+        }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            utilityButton ut = new utilityButton();
+
+            Role__form role__Form = new Role__form();
+            this.Close();
+
+            role__Form.Show();
+
+
+        }
+
+        private void logoutBtn_MouseLeave(object sender, EventArgs e)
+        {
+            logoutBtn.Image = Properties.Resources.lgdrak;
+        }
+
+        private void logoutBtn_MouseHover_1(object sender, EventArgs e)
+        {
+            logoutBtn.Image = Properties.Resources.lghover;
+        }
     }
 }

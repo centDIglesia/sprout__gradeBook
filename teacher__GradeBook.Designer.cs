@@ -39,6 +39,12 @@
             this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.ComponentsButtonPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.subcomponentsPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.currentComponent = new System.Windows.Forms.Label();
+            this.finalGradelbl = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.GradePeriodComboBox = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.kryptonTextBox2 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.doneBtn = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.addSubcomponents = new System.Windows.Forms.PictureBox();
             this.saveGradeBtn = new System.Windows.Forms.PictureBox();
             this.genderPict = new System.Windows.Forms.PictureBox();
@@ -46,13 +52,11 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.currentComponent = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.finalGradelbl = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.GradePeriodComboBox = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
-            this.kryptonTextBox2 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.doneBtn = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.courseComboBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GradePeriodComboBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doneBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addSubcomponents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saveGradeBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.genderPict)).BeginInit();
@@ -60,9 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GradePeriodComboBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doneBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette2
@@ -186,9 +188,9 @@
             // 
             this.ComponentsButtonPanel.AutoScroll = true;
             this.ComponentsButtonPanel.AutoScrollMinSize = new System.Drawing.Size(1, 0);
-            this.ComponentsButtonPanel.Location = new System.Drawing.Point(313, 174);
+            this.ComponentsButtonPanel.Location = new System.Drawing.Point(312, 171);
             this.ComponentsButtonPanel.Name = "ComponentsButtonPanel";
-            this.ComponentsButtonPanel.Size = new System.Drawing.Size(496, 96);
+            this.ComponentsButtonPanel.Size = new System.Drawing.Size(496, 89);
             this.ComponentsButtonPanel.TabIndex = 72;
             // 
             // subcomponentsPanel
@@ -199,6 +201,113 @@
             this.subcomponentsPanel.Name = "subcomponentsPanel";
             this.subcomponentsPanel.Size = new System.Drawing.Size(483, 224);
             this.subcomponentsPanel.TabIndex = 71;
+            // 
+            // currentComponent
+            // 
+            this.currentComponent.AutoSize = true;
+            this.currentComponent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.currentComponent.Font = new System.Drawing.Font("Poppins Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentComponent.ForeColor = System.Drawing.Color.White;
+            this.currentComponent.Location = new System.Drawing.Point(341, 327);
+            this.currentComponent.Name = "currentComponent";
+            this.currentComponent.Size = new System.Drawing.Size(0, 19);
+            this.currentComponent.TabIndex = 94;
+            this.currentComponent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // finalGradelbl
+            // 
+            this.finalGradelbl.Location = new System.Drawing.Point(319, 279);
+            this.finalGradelbl.Name = "finalGradelbl";
+            this.finalGradelbl.Size = new System.Drawing.Size(6, 2);
+            this.finalGradelbl.StateCommon.ShortText.Color1 = System.Drawing.Color.Silver;
+            this.finalGradelbl.StateCommon.ShortText.Color2 = System.Drawing.Color.Silver;
+            this.finalGradelbl.StateCommon.ShortText.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.finalGradelbl.TabIndex = 96;
+            this.finalGradelbl.Values.Text = "";
+            // 
+            // GradePeriodComboBox
+            // 
+            this.GradePeriodComboBox.DropDownHeight = 100;
+            this.GradePeriodComboBox.DropDownWidth = 200;
+            this.GradePeriodComboBox.Items.AddRange(new object[] {
+            "Midterm Grade",
+            "Final Grade"});
+            this.GradePeriodComboBox.Location = new System.Drawing.Point(612, 59);
+            this.GradePeriodComboBox.Name = "GradePeriodComboBox";
+            this.GradePeriodComboBox.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.GradePeriodComboBox.Size = new System.Drawing.Size(168, 22);
+            this.GradePeriodComboBox.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.GradePeriodComboBox.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.GradePeriodComboBox.StateCommon.ComboBox.Border.Width = 0;
+            this.GradePeriodComboBox.StateCommon.ComboBox.Content.Color1 = System.Drawing.Color.White;
+            this.GradePeriodComboBox.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GradePeriodComboBox.StateCommon.DropBack.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.GradePeriodComboBox.StateCommon.DropBack.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.GradePeriodComboBox.StateCommon.Item.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.GradePeriodComboBox.StateCommon.Item.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.GradePeriodComboBox.StateCommon.Item.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.GradePeriodComboBox.StateCommon.Item.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.GradePeriodComboBox.StateCommon.Item.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GradePeriodComboBox.StateNormal.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.GradePeriodComboBox.StateNormal.ComboBox.Border.Width = 0;
+            this.GradePeriodComboBox.StateTracking.Item.Back.Color1 = System.Drawing.Color.White;
+            this.GradePeriodComboBox.StateTracking.Item.Back.Color2 = System.Drawing.Color.White;
+            this.GradePeriodComboBox.StateTracking.Item.Border.Color1 = System.Drawing.Color.White;
+            this.GradePeriodComboBox.StateTracking.Item.Border.Color2 = System.Drawing.Color.White;
+            this.GradePeriodComboBox.StateTracking.Item.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.GradePeriodComboBox.StateTracking.Item.Border.Width = 0;
+            this.GradePeriodComboBox.StateTracking.Item.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.GradePeriodComboBox.StateTracking.Item.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.GradePeriodComboBox.TabIndex = 97;
+            this.GradePeriodComboBox.Text = "Select Grade Period";
+            this.GradePeriodComboBox.SelectedIndexChanged += new System.EventHandler(this.kryptonComboBox1_SelectedIndexChanged_1);
+            // 
+            // kryptonTextBox2
+            // 
+            this.kryptonTextBox2.Enabled = false;
+            this.kryptonTextBox2.Location = new System.Drawing.Point(598, 55);
+            this.kryptonTextBox2.Multiline = true;
+            this.kryptonTextBox2.Name = "kryptonTextBox2";
+            this.kryptonTextBox2.ReadOnly = true;
+            this.kryptonTextBox2.Size = new System.Drawing.Size(193, 31);
+            this.kryptonTextBox2.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.kryptonTextBox2.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.kryptonTextBox2.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.kryptonTextBox2.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonTextBox2.StateCommon.Border.Rounding = 4;
+            this.kryptonTextBox2.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(155)))));
+            this.kryptonTextBox2.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonTextBox2.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10);
+            this.kryptonTextBox2.TabIndex = 98;
+            // 
+            // doneBtn
+            // 
+            this.doneBtn.Image = ((System.Drawing.Image)(resources.GetObject("doneBtn.Image")));
+            this.doneBtn.Location = new System.Drawing.Point(762, 594);
+            this.doneBtn.Name = "doneBtn";
+            this.doneBtn.Size = new System.Drawing.Size(31, 10);
+            this.doneBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.doneBtn.TabIndex = 99;
+            this.doneBtn.TabStop = false;
+            this.doneBtn.Click += new System.EventHandler(this.doneBtn_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Gainsboro;
+            this.pictureBox5.Location = new System.Drawing.Point(323, 584);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(470, 1);
+            this.pictureBox5.TabIndex = 95;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // addSubcomponents
             // 
@@ -214,7 +323,7 @@
             // saveGradeBtn
             // 
             this.saveGradeBtn.Image = ((System.Drawing.Image)(resources.GetObject("saveGradeBtn.Image")));
-            this.saveGradeBtn.Location = new System.Drawing.Point(670, 78);
+            this.saveGradeBtn.Location = new System.Drawing.Point(673, 96);
             this.saveGradeBtn.Name = "saveGradeBtn";
             this.saveGradeBtn.Size = new System.Drawing.Size(123, 42);
             this.saveGradeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -273,112 +382,15 @@
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // currentComponent
+            // pictureBox3
             // 
-            this.currentComponent.AutoSize = true;
-            this.currentComponent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.currentComponent.Font = new System.Drawing.Font("Poppins Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.currentComponent.ForeColor = System.Drawing.Color.White;
-            this.currentComponent.Location = new System.Drawing.Point(341, 327);
-            this.currentComponent.Name = "currentComponent";
-            this.currentComponent.Size = new System.Drawing.Size(0, 19);
-            this.currentComponent.TabIndex = 94;
-            this.currentComponent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox5.Location = new System.Drawing.Point(323, 584);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(470, 1);
-            this.pictureBox5.TabIndex = 95;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
-            // 
-            // finalGradelbl
-            // 
-            this.finalGradelbl.Location = new System.Drawing.Point(319, 279);
-            this.finalGradelbl.Name = "finalGradelbl";
-            this.finalGradelbl.Size = new System.Drawing.Size(6, 2);
-            this.finalGradelbl.StateCommon.ShortText.Color1 = System.Drawing.Color.Silver;
-            this.finalGradelbl.StateCommon.ShortText.Color2 = System.Drawing.Color.Silver;
-            this.finalGradelbl.StateCommon.ShortText.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.finalGradelbl.TabIndex = 96;
-            this.finalGradelbl.Values.Text = "";
-            // 
-            // GradePeriodComboBox
-            // 
-            this.GradePeriodComboBox.DropDownHeight = 100;
-            this.GradePeriodComboBox.DropDownWidth = 200;
-            this.GradePeriodComboBox.Items.AddRange(new object[] {
-            "Midterm Grade",
-            "Final Grade"});
-            this.GradePeriodComboBox.Location = new System.Drawing.Point(612, 12);
-            this.GradePeriodComboBox.Name = "GradePeriodComboBox";
-            this.GradePeriodComboBox.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.GradePeriodComboBox.Size = new System.Drawing.Size(168, 22);
-            this.GradePeriodComboBox.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.GradePeriodComboBox.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.GradePeriodComboBox.StateCommon.ComboBox.Border.Width = 0;
-            this.GradePeriodComboBox.StateCommon.ComboBox.Content.Color1 = System.Drawing.Color.White;
-            this.GradePeriodComboBox.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GradePeriodComboBox.StateCommon.DropBack.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.GradePeriodComboBox.StateCommon.DropBack.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.GradePeriodComboBox.StateCommon.Item.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.GradePeriodComboBox.StateCommon.Item.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.GradePeriodComboBox.StateCommon.Item.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.GradePeriodComboBox.StateCommon.Item.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.GradePeriodComboBox.StateCommon.Item.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GradePeriodComboBox.StateNormal.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.GradePeriodComboBox.StateNormal.ComboBox.Border.Width = 0;
-            this.GradePeriodComboBox.StateTracking.Item.Back.Color1 = System.Drawing.Color.White;
-            this.GradePeriodComboBox.StateTracking.Item.Back.Color2 = System.Drawing.Color.White;
-            this.GradePeriodComboBox.StateTracking.Item.Border.Color1 = System.Drawing.Color.White;
-            this.GradePeriodComboBox.StateTracking.Item.Border.Color2 = System.Drawing.Color.White;
-            this.GradePeriodComboBox.StateTracking.Item.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.GradePeriodComboBox.StateTracking.Item.Border.Width = 0;
-            this.GradePeriodComboBox.StateTracking.Item.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.GradePeriodComboBox.StateTracking.Item.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.GradePeriodComboBox.TabIndex = 97;
-            this.GradePeriodComboBox.Text = "Select Grade Period";
-            this.GradePeriodComboBox.SelectedIndexChanged += new System.EventHandler(this.kryptonComboBox1_SelectedIndexChanged_1);
-            // 
-            // kryptonTextBox2
-            // 
-            this.kryptonTextBox2.Enabled = false;
-            this.kryptonTextBox2.Location = new System.Drawing.Point(598, 8);
-            this.kryptonTextBox2.Multiline = true;
-            this.kryptonTextBox2.Name = "kryptonTextBox2";
-            this.kryptonTextBox2.ReadOnly = true;
-            this.kryptonTextBox2.Size = new System.Drawing.Size(193, 31);
-            this.kryptonTextBox2.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.kryptonTextBox2.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.kryptonTextBox2.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.kryptonTextBox2.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox2.StateCommon.Border.Rounding = 4;
-            this.kryptonTextBox2.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(155)))));
-            this.kryptonTextBox2.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonTextBox2.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10);
-            this.kryptonTextBox2.TabIndex = 98;
-            // 
-            // doneBtn
-            // 
-            this.doneBtn.Image = ((System.Drawing.Image)(resources.GetObject("doneBtn.Image")));
-            this.doneBtn.Location = new System.Drawing.Point(762, 594);
-            this.doneBtn.Name = "doneBtn";
-            this.doneBtn.Size = new System.Drawing.Size(31, 10);
-            this.doneBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.doneBtn.TabIndex = 99;
-            this.doneBtn.TabStop = false;
-            this.doneBtn.Click += new System.EventHandler(this.doneBtn_Click);
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(310, 151);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(500, 122);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.TabIndex = 100;
+            this.pictureBox3.TabStop = false;
             // 
             // teacher__GradeBook
             // 
@@ -387,6 +399,8 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(827, 639);
+            this.Controls.Add(this.ComponentsButtonPanel);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.doneBtn);
             this.Controls.Add(this.GradePeriodComboBox);
             this.Controls.Add(this.kryptonTextBox2);
@@ -395,7 +409,6 @@
             this.Controls.Add(this.currentComponent);
             this.Controls.Add(this.addSubcomponents);
             this.Controls.Add(this.subcomponentsPanel);
-            this.Controls.Add(this.ComponentsButtonPanel);
             this.Controls.Add(this.saveGradeBtn);
             this.Controls.Add(this.courseComboBox);
             this.Controls.Add(this.kryptonTextBox1);
@@ -415,6 +428,9 @@
             this.Text = "teacher__GradeBook";
             this.Load += new System.EventHandler(this.teacher__GradeBook_Load);
             ((System.ComponentModel.ISupportInitialize)(this.courseComboBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GradePeriodComboBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doneBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addSubcomponents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.saveGradeBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.genderPict)).EndInit();
@@ -422,9 +438,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GradePeriodComboBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doneBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -455,5 +469,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox GradePeriodComboBox;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox2;
         private System.Windows.Forms.PictureBox doneBtn;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
