@@ -5,7 +5,6 @@ using System.Linq;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 
-
 namespace sprout__gradeBook
 {
     public partial class studentLoginForm : KryptonForm
@@ -17,7 +16,7 @@ namespace sprout__gradeBook
         {
             InitializeComponent();
 
-
+           
         }
 
         private void studentLoginForm_Load(object sender, EventArgs e)
@@ -272,6 +271,29 @@ namespace sprout__gradeBook
             return "Department and Year/Section not found.";
         }
 
+        private void pictureBox12_Click(object sender, EventArgs e)
+        {
+            Form formbackground = new Form();
+
+            using (TermsCons terms = new TermsCons())
+            {
+                formbackground.StartPosition = FormStartPosition.CenterScreen;
+                formbackground.FormBorderStyle = FormBorderStyle.None;
+                formbackground.Opacity = .70d;
+                formbackground.BackColor = StateCommon.Back.Color1 = CustomColor.mainColor;
+                formbackground.Size = this.Size;
+
+                formbackground.Location = this.Location;
+
+                formbackground.ShowInTaskbar = false;
+                formbackground.Show();
+
+                terms.Owner = formbackground;
+                terms.ShowDialog();
+            }
+            formbackground.Dispose();
+        }
+
         // Helper method to show account not found error
         private void ShowAccountNotFoundError()
         {
@@ -381,6 +403,7 @@ namespace sprout__gradeBook
         }
 
 
+
         private void pictureBox12_Click(object sender, EventArgs e)
         {
 
@@ -419,5 +442,6 @@ namespace sprout__gradeBook
 
             signIn__btn.Image = Properties.Resources.Frame_101_ddefault;
         }
+
     }
 }

@@ -1058,6 +1058,7 @@
         L9f54IP/H9Hnr7zINoZfAAAAAElFTkSuQmCC
 </value>
   </data>
+
   <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAB6CAYAAABJG6GWAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -1090,4 +1091,5 @@
         a8VXq38AaAkYGrM4J6gAAAAASUVORK5CYII=
 </value>
   </data>
+
 </root>

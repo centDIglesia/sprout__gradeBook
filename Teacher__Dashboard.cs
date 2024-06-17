@@ -115,7 +115,13 @@ namespace sprout__gradeBook
             isGradebookButtonClicked = true;
         }
 
-        private void viewPanel_Paint(object sender, PaintEventArgs e)
+        private void btn_attendance_Click(object sender, EventArgs e)
+        {
+            loadForm(new Teacher__Attendance(currentUser));
+        }
+        // Event handler for close button
+        private void close_btn_Click(object sender, EventArgs e)
+
         {
 
         }
@@ -218,5 +224,7 @@ namespace sprout__gradeBook
         {
             logoutBtn.Image = Properties.Resources.lghover;
         }
+
+
     }
 }

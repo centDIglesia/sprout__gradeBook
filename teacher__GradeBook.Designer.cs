@@ -52,7 +52,9 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+
             ((System.ComponentModel.ISupportInitialize)(this.courseComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GradePeriodComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doneBtn)).BeginInit();
@@ -64,7 +66,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+
             this.SuspendLayout();
             // 
             // kryptonPalette2
@@ -302,7 +306,9 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox5.Location = new System.Drawing.Point(323, 584);
+
+            this.pictureBox5.Location = new System.Drawing.Point(327, 591);
+
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(470, 1);
             this.pictureBox5.TabIndex = 95;
@@ -312,7 +318,9 @@
             // addSubcomponents
             // 
             this.addSubcomponents.Image = ((System.Drawing.Image)(resources.GetObject("addSubcomponents.Image")));
-            this.addSubcomponents.Location = new System.Drawing.Point(326, 593);
+
+            this.addSubcomponents.Location = new System.Drawing.Point(326, 597);
+
             this.addSubcomponents.Name = "addSubcomponents";
             this.addSubcomponents.Size = new System.Drawing.Size(140, 13);
             this.addSubcomponents.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -323,7 +331,9 @@
             // saveGradeBtn
             // 
             this.saveGradeBtn.Image = ((System.Drawing.Image)(resources.GetObject("saveGradeBtn.Image")));
-            this.saveGradeBtn.Location = new System.Drawing.Point(673, 96);
+
+            this.saveGradeBtn.Location = new System.Drawing.Point(667, 53);
+
             this.saveGradeBtn.Name = "saveGradeBtn";
             this.saveGradeBtn.Size = new System.Drawing.Size(123, 42);
             this.saveGradeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -382,6 +392,7 @@
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
+
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
@@ -392,6 +403,7 @@
             this.pictureBox3.TabIndex = 100;
             this.pictureBox3.TabStop = false;
             // 
+
             // teacher__GradeBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -438,7 +450,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+
             this.ResumeLayout(false);
             this.PerformLayout();
 
