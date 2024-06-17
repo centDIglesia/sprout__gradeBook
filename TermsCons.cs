@@ -33,5 +33,27 @@ namespace sprout__gradeBook
         {
             pictureBox1.Image = Properties.Resources.Group_85sd;
         }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void acceptBtn_Click(object sender, EventArgs e)
+        {
+            utilityButton b = new utilityButton();
+            b.Closeform(this);
+        }
+
+        private void declineBtn_Click(object sender, EventArgs e)
+        {         
+            MessageBox.Show("You must accept the Terms and Conditions to use the system. Please accept the terms to proceed.");
+            return;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
     }
 }
