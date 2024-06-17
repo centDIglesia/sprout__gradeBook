@@ -41,16 +41,16 @@ namespace sprout__gradeBook
         {
             if (!_teacherForm.isFirstStudentClicked)
             {
-                // For the first student, set the flag and proceed without checks
+
                 _teacherForm.isFirstStudentClicked = true;
             }
             else
             {
-                // For subsequent students, check if the current student is graded
+
                 if (_teacherForm.isStudentGraded)
                 {
                     _teacherForm.ResetComponentsForNewStudent();
-                    _teacherForm.isStudentGraded = false; // Reset the flag for the next student
+                    _teacherForm.isStudentGraded = false;
                 }
                 else
                 {
@@ -62,7 +62,7 @@ namespace sprout__gradeBook
                 }
             }
 
-            // Update student name and ID
+
             _teacherForm.StudenttnameText = currentStudentName;
             _teacherForm.StudentIDText = currentStudentID;
 

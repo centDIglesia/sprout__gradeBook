@@ -15,10 +15,10 @@ namespace sprout__gradeBook
 {
     public partial class logInForm : KryptonForm
     {
-         public logInForm()
+        public logInForm()
         {
             InitializeComponent();
-            this.AcceptButton = signIn__btn;
+
         }
 
         private void teacher__signUp_form_Load(object sender, EventArgs e)
@@ -413,6 +413,122 @@ namespace sprout__gradeBook
 
         private void signIn__btn_Click(object sender, EventArgs e)
         {
+
+        }
+
+
+        // TEACHER SIGN UP BUTTON 
+
+        private void signUp__btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void close_btn_Click(object sender, EventArgs e)
+        {
+            utilityButton b = new utilityButton();
+
+            b.Exitform();
+        }
+        //sign up show password icon fuction
+
+        bool isPassVisible = false;
+
+        private void showPass__icon_Click(object sender, EventArgs e)
+        {
+
+
+            if (!isPassVisible)
+            {
+                isPassVisible = true;
+                showPass__icon.Image = Properties.Resources.closed__eye;
+                signupPASS__txtbox.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                isPassVisible = false;
+                showPass__icon.Image = Properties.Resources.open__eye;
+                if (signupPASS__txtbox.Text != "Password")
+                {
+                    signupPASS__txtbox.UseSystemPasswordChar = true;
+                }
+            }
+        }
+
+        //sign in show password icon fuction
+        bool isPassVisible2 = false;
+        private void signIn__showPassicon_Click(object sender, EventArgs e)
+        {
+            if (!isPassVisible2)
+            {
+                isPassVisible2 = true;
+                signIn__showPassicon.Image = Properties.Resources.closed__eye;
+                signinPASS__txtbox.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                isPassVisible2 = false;
+                signIn__showPassicon.Image = Properties.Resources.open__eye;
+                if (signinPASS__txtbox.Text != "Password")
+                {
+                    signinPASS__txtbox.UseSystemPasswordChar = true;
+                }
+            }
+        }
+
+        private void setInputState(KryptonTextBox textBox, PictureBox tooltipLabel, Color color)
+        {
+            textBox.StateCommon.Border.Color1 = color;
+            textBox.StateCommon.Content.Color1 = color;
+            tooltipLabel.ForeColor = color;
+        }
+        private void back__btn_Click(object sender, EventArgs e)
+        {
+            Role__form r = new Role__form();
+
+            r.Show();
+            this.Hide();
+        }
+
+
+        private void pictureBox12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void back__btn_Click_1(object sender, EventArgs e)
+        {
+            Role__form r = new Role__form();
+            r.Show();
+            this.Hide();
+        }
+
+        private void pictureBox12_Click_1(object sender, EventArgs e)
+        {
+            Form formbackground = new Form();
+
+            using (TermsCons terms = new TermsCons())
+            {
+                formbackground.StartPosition = FormStartPosition.CenterScreen;
+                formbackground.FormBorderStyle = FormBorderStyle.None;
+                formbackground.Opacity = .70d;
+                formbackground.BackColor = StateCommon.Back.Color1 = CustomColor.mainColor;
+                formbackground.Size = this.Size;
+
+                formbackground.Location = this.Location;
+
+                formbackground.ShowInTaskbar = false;
+                formbackground.Show();
+
+                terms.Owner = formbackground;
+                terms.ShowDialog();
+            }
+            formbackground.Dispose();
+
+        }
+
+        private void signIn__btn_Click_1(object sender, EventArgs e)
+        {
             string username = signinEMAIL__txtbox.Text;
             string password = signinPASS__txtbox.Text;
 
@@ -461,11 +577,24 @@ namespace sprout__gradeBook
             }
         }
 
-
-        // TEACHER SIGN UP BUTTON 
-
-        private void signUp__btn_Click(object sender, EventArgs e)
+        private void signIn__btn_MouseHover(object sender, EventArgs e)
         {
+            signIn__btn.Image = Properties.Resources.Frame_101_hover;
+        }
+
+        private void teacherSIGNINform_Panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void signIn__btn_MouseLeave(object sender, EventArgs e)
+        {
+            signIn__btn.Image = Properties.Resources.Frame_101_ddefault;
+        }
+
+        private void signUp__btn_Click_1(object sender, EventArgs e)
+        {
+
             string firstName = UserInput__Validator.trimInput(signupFNAME__txtbox.Text);
             string lastName = UserInput__Validator.trimInput(signupLNAME__txtbox.Text);
             string email = UserInput__Validator.trimInput(signupEMAIL__txtbox.Text);
@@ -554,111 +683,21 @@ namespace sprout__gradeBook
                 Directory.CreateDirectory(studentRecordsFolderPath);
             }
 
-
         }
 
-        private void close_btn_Click(object sender, EventArgs e)
+        private void signUp__btn_MouseHover(object sender, EventArgs e)
         {
-            utilityButton b = new utilityButton();
-
-            b.Exitform();
+            signUp__btn.Image = Properties.Resources.Frame_10hover;
         }
-        //sign up show password icon fuction
 
-        bool isPassVisible = false;
-
-        private void showPass__icon_Click(object sender, EventArgs e)
+        private void signUp__btn_MouseLeave(object sender, EventArgs e)
         {
-
-
-            if (!isPassVisible)
-            {
-                isPassVisible = true;
-                showPass__icon.Image = Properties.Resources.closed__eye;
-                signupPASS__txtbox.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                isPassVisible = false;
-                showPass__icon.Image = Properties.Resources.open__eye;
-                if (signupPASS__txtbox.Text != "Password")
-                {
-                    signupPASS__txtbox.UseSystemPasswordChar = true;
-                }
-            }
+            signUp__btn.Image = Properties.Resources.Frame_10def;
         }
 
-        //sign in show password icon fuction
-        bool isPassVisible2 = false;
-        private void signIn__showPassicon_Click(object sender, EventArgs e)
-        {
-            if (!isPassVisible2)
-            {
-                isPassVisible2 = true;
-                signIn__showPassicon.Image = Properties.Resources.closed__eye;
-                signinPASS__txtbox.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                isPassVisible2 = false;
-                signIn__showPassicon.Image = Properties.Resources.open__eye;
-                if (signinPASS__txtbox.Text != "Password")
-                {
-                    signinPASS__txtbox.UseSystemPasswordChar = true;
-                }
-            }
-        }
-
-        private void setInputState(KryptonTextBox textBox, Label tooltipLabel, Color color)
-        {
-            textBox.StateCommon.Border.Color1 = color;
-            textBox.StateCommon.Content.Color1 = color;
-            tooltipLabel.ForeColor = color;
-        }
-        private void back__btn_Click(object sender, EventArgs e)
-        {
-            Role__form r = new Role__form();
-
-            r.Show();
-            this.Hide();
-        }
-
-
-        private void pictureBox12_Click(object sender, EventArgs e)
+        private void teacherSIGNUP__form_Panel_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
-        private void back__btn_Click_1(object sender, EventArgs e)
-        {
-            Role__form r = new Role__form();
-            r.Show();
-            this.Hide();
-        }
-
-        private void pictureBox12_Click_1(object sender, EventArgs e)
-        {
-            Form formbackground = new Form();
-
-            using (TermsCons terms = new TermsCons())
-            {
-                formbackground.StartPosition = FormStartPosition.CenterScreen;
-                formbackground.FormBorderStyle = FormBorderStyle.None;
-                formbackground.Opacity = .70d;
-                formbackground.BackColor = StateCommon.Back.Color1 = CustomColor.mainColor;
-                formbackground.Size = this.Size;
-
-                formbackground.Location = this.Location;
-
-                formbackground.ShowInTaskbar = false;
-                formbackground.Show();
-
-                terms.Owner = formbackground;
-                terms.ShowDialog();
-            }
-            formbackground.Dispose();
-
-        }
-
     }
 }

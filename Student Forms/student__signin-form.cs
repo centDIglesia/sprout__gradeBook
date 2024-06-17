@@ -17,7 +17,7 @@ namespace sprout__gradeBook
         {
             InitializeComponent();
 
-            this.AcceptButton = signIn__btn;
+
         }
 
         private void studentLoginForm_Load(object sender, EventArgs e)
@@ -92,10 +92,8 @@ namespace sprout__gradeBook
             }
         }
 
-        // Sign in button click event handler
-        private void signIn__btn_Click(object sender, EventArgs e)
+        private void signIn__btn_Click_1(object sender, EventArgs e)
         {
-            // Get user inputs
             currentStudentID = signinSTID__txtbox.Text;
             string password = signinPASS__txtbox.Text;
 
@@ -122,6 +120,13 @@ namespace sprout__gradeBook
             {
                 MessageBox.Show("Password is incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        // Sign in button click event handler
+        private void signIn__btn_Click(object sender, EventArgs e)
+        {
+            // Get user inputs
+
         }
 
         // Close button click event handler
@@ -404,8 +409,15 @@ namespace sprout__gradeBook
             formbackground.Dispose();
         }
 
+        private void signIn__btn_MouseHover(object sender, EventArgs e)
+        {
+            signIn__btn.Image = Properties.Resources.Frame_101_hover;
+        }
 
+        private void signIn__btn_MouseLeave(object sender, EventArgs e)
+        {
 
-
+            signIn__btn.Image = Properties.Resources.Frame_101_ddefault;
+        }
     }
 }

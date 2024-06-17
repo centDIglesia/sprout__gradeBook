@@ -86,6 +86,9 @@
     <Compile Include="AddStudentForm.Designer.cs">
       <DependentUpon>AddStudentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AlphaPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Component-Button-Card.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -495,6 +498,12 @@
     <None Include="Resources\Sort-Button.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Usernamed.png" />
+    <None Include="Resources\Schoold.png" />
+    <None Include="Resources\Passwordd.png" />
+    <None Include="Resources\nekstBTNNMM.png" />
+    <None Include="Resources\nekstBTN.png" />
+    <None Include="Resources\nekstBTNN.png" />
     <None Include="Resources\Rectangle 196s.png" />
     <None Include="Resources\Vector.png" />
     <None Include="Resources\studenthover.png" />
@@ -507,6 +516,7 @@
     <None Include="Resources\dashboardhover.png" />
     <None Include="Resources\attendancehover.png" />
     <None Include="Resources\couresehover.png" />
+    <None Include="Resources\Confirm Passwordd.png" />
     <Content Include="Resources\Female_Icon.png" />
     <None Include="Resources\gradebookhover.png" />
     <None Include="Resources\Group 75.png" />
@@ -533,6 +543,12 @@
     <None Include="Resources\lghover.png" />
     <None Include="Resources\lgdrak.png" />
     <None Include="Resources\Group 85sd.png" />
+    <None Include="Resources\Frame 101-hover.png" />
+    <None Include="Resources\Frame 101-ddefault.png" />
+    <None Include="Resources\Frame 10hover.png" />
+    <None Include="Resources\Frame 10def.png" />
+    <None Include="Resources\First Named.png" />
+    <None Include="Resources\Last Named.png" />
     <Content Include="Resources\Male_Icon.png" />
     <None Include="Resources\open__eye1.png" />
   </ItemGroup>

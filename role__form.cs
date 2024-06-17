@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 
@@ -13,7 +6,6 @@ namespace sprout__gradeBook
 {
     public partial class Role__form : KryptonForm
     {
-        // Fields to track role selection and selected role
         private bool teacherClicked = false;
         private bool studentClicked = false;
         public static string selectedRole = "";
@@ -21,21 +13,18 @@ namespace sprout__gradeBook
         public Role__form()
         {
             InitializeComponent();
-            this.AcceptButton = role__btn;
+            role__btn.Hide();
         }
 
-        // Event handler for teacher role button click
         private void teacher__role_Click(object sender, EventArgs e)
         {
             role__btn.Show();
             if (!teacherClicked)
             {
-                // Change button appearance
                 teacher__role.Image = Properties.Resources.Roles_Card_hover;
                 teacherClicked = true;
                 selectedRole = "teacher";
 
-                // Reset student button if clicked
                 if (studentClicked)
                 {
                     student__role.Image = Properties.Resources.student__role;
@@ -44,18 +33,15 @@ namespace sprout__gradeBook
             }
         }
 
-        // Event handler for student role button click
         private void student__role_Click(object sender, EventArgs e)
         {
             role__btn.Show();
             if (!studentClicked)
             {
-                // Change button appearance
                 student__role.Image = Properties.Resources.Roles_Card_student_hover;
                 studentClicked = true;
                 selectedRole = "student";
 
-                // Reset teacher button if clicked
                 if (teacherClicked)
                 {
                     teacher__role.Image = Properties.Resources.teacher__role;
@@ -64,10 +50,52 @@ namespace sprout__gradeBook
             }
         }
 
-        // Event handler for role button click
         private void role__btn_Click(object sender, EventArgs e)
         {
-            // Show appropriate login form based on selected role
+
+        }
+
+        private void teacher__role_MouseHover(object sender, EventArgs e)
+        {
+            if (!teacherClicked)
+                teacher__role.Image = Properties.Resources.teacher__role_clicked;
+        }
+
+        private void student__role_MouseHover(object sender, EventArgs e)
+        {
+            if (!studentClicked)
+                student__role.Image = Properties.Resources.student__role_clicked;
+        }
+
+        private void teacher__role_MouseLeave(object sender, EventArgs e)
+        {
+            if (teacherClicked)
+                teacher__role.Image = Properties.Resources.Roles_Card_hover;
+            else
+                teacher__role.Image = Properties.Resources.teacher__role;
+        }
+
+        private void student__role_MouseLeave(object sender, EventArgs e)
+        {
+            if (studentClicked)
+                student__role.Image = Properties.Resources.Roles_Card_student_hover;
+            else
+                student__role.Image = Properties.Resources.student__role;
+        }
+
+        private void role__btn_MouseHover(object sender, EventArgs e)
+        {
+            role__btn.Image = Properties.Resources.nekstBTN;
+        }
+
+        private void role__btn_MouseLeave(object sender, EventArgs e)
+        {
+            role__btn.Image = Properties.Resources.nekstBTNN;
+        }
+
+        private void role__btn_Click_1(object sender, EventArgs e)
+        {
+            role__btn.Image = Properties.Resources.nekstBTNNMM;
             if (selectedRole == "student")
             {
                 this.Hide();
@@ -82,53 +110,12 @@ namespace sprout__gradeBook
             }
         }
 
-        // Event handler for form load
-        private void role__form_Load(object sender, EventArgs e)
-        {
-            // Hide role button initially
-            role__btn.Hide();
-        }
-
-        // Event handler for close button click
         private void close_btn_Click(object sender, EventArgs e)
         {
-            // Close the form using utility method
-            utilityButton b = new utilityButton();
-            b.Exitform();
-        }
+            utilityButton ui = new utilityButton();
 
-        // Event handler for teacher role mouse hover
-        private void teacher__role_MouseHover(object sender, EventArgs e)
-        {
-            // Change image on hover
-            teacher__role.Image = Properties.Resources.teacher__role_clicked;
-        }
+            ui.Exitform();
 
-        // Event handler for student role mouse hover
-        private void student__role_MouseHover(object sender, EventArgs e)
-        {
-            // Change image on hover
-            student__role.Image = Properties.Resources.student__role_clicked;
-        }
-
-        // Event handler for teacher role mouse leave
-        private void teacher__role_MouseLeave(object sender, EventArgs e)
-        {
-            // Restore image on leave
-            if (teacherClicked)
-                teacher__role.Image = Properties.Resources.Roles_Card_hover;
-            else
-                teacher__role.Image = Properties.Resources.teacher__role;
-        }
-
-        // Event handler for student role mouse leave
-        private void student__role_MouseLeave(object sender, EventArgs e)
-        {
-            // Restore image on leave
-            if (studentClicked)
-                student__role.Image = Properties.Resources.Roles_Card_student_hover;
-            else
-                student__role.Image = Properties.Resources.student__role;
         }
     }
 }
