@@ -21,7 +21,7 @@ namespace sprout__gradeBook
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new Teacher_Dashboard("fdsfsd5T@gmail.com"));
+            Application.Run(new introductionPage());
 
 
 

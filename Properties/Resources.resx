@@ -130,6 +130,9 @@
   <data name="Frame_95" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Frame 95.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Student-CourseCard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Student-CourseCard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="back-arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\back-arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,14 +145,14 @@
   <data name="open__eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\open__eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Group 66dd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Group 66dd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Male_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Male_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="next-arrow-icn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\next-arrow-icn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="student__role_clicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\student__role-clicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Frame_91" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Frame 91.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -195,9 +198,6 @@
   </data>
   <data name="teacher__role" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\teacher__role.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="student__role" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\student__role.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="lghover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lghover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -274,6 +274,9 @@
   <data name="gradebookhover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gradebookhover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="lgdrak" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lgdrak.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="sub" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sub.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -310,16 +313,19 @@
   <data name="notification-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\notification-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Student-CourseCard" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Student-CourseCard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="student__role_clicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\student__role-clicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Group 66dd" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Group 66dd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="student__role" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\student__role.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Feedback_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Feedback_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lgdrak" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lgdrak.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Group 85sd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Group 85sd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rectangle 196s" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rectangle 196s.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
