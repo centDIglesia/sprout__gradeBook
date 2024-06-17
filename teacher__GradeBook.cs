@@ -4,14 +4,28 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using System.Collections;
+using System.Text;
+using System.Collections.Generic;
 
 namespace sprout__gradeBook
 {
+    public delegate void CalculateAndDisplayFinalGradeDelegate();
+    public delegate void displayGradeBookPanelDelegate();
 
     public partial class teacher__GradeBook : KryptonForm
     {
+        public Component_Button_Card _currentActiveComponentButton;
         public static teacher__GradeBook _gradeBook;
+        List<double> _FinalGradesInEachComponents = new List<double>();
+        public bool isFirstStudentClicked { get; set; } = false;
+
+
+        public bool isStudentGraded { get; set; } = false;
+
+
         public string currentUSer { get; set; }
+
         public string StudenttnameText
         {
             get { return StudenttnameTXT.Text; }
@@ -27,13 +41,47 @@ namespace sprout__gradeBook
         {
             currentUSer = currentuser;
             InitializeComponent();
+
+        }
+        public Dictionary<string, bool> StudentGradedStatus { get; set; } = new Dictionary<string, bool>();
+
+        public bool IsStudentGraded(string studentID)
+        {
+            return StudentGradedStatus.ContainsKey(studentID) && StudentGradedStatus[studentID];
         }
 
         private void teacher__GradeBook_Load(object sender, EventArgs e)
         {
             LoadTxtFilesIntoComboBox(currentUSer);
             courseComboBox.SelectedIndexChanged += CourseComboBox_SelectedIndexChanged;
+
+            HideInitialElements();
         }
+
+
+        private void HideInitialElements()
+        {
+            genderPict.Hide();
+            StudentIDTXT.Hide();
+            StudenttnameTXT.Hide();
+            sectionTXT.Hide();
+            ComponentsButtonPanel.Hide();
+
+
+
+            pictureBox4.Hide();
+            addSubcomponents.Hide();
+            saveGradeBtn.Visible = false;
+            pictureBox5.Hide();
+            doneBtn.Hide();
+
+            courseComboBox.Hide();
+            kryptonTextBox1.Hide();
+            pictureBox2.Hide();
+            pictureBox3.Hide();
+
+        }
+
 
         private void LoadTxtFilesIntoComboBox(string currentUser)
         {
@@ -42,7 +90,7 @@ namespace sprout__gradeBook
             if (!Directory.Exists(directoryPath))
             {
                 MessageBox.Show(
-      "Please ensure you have added the course details and set up the grading system before proceeding. To add a course, navigate to the 'Courses' section and click on 'Add New Course'. Then, click on the course and add a 'Grading System' by selecting the 'Grading System' button and setting up the required components.",
+      "Please ensure you have added the course details and set up the grading system before proceeding.\n\n To add a course, navigate to the 'Courses' section and click on 'Add New Course'.\n\n Then, click on the course and add a 'Grading System' by selecting the 'Grading System' button and setting up the required components.",
       "Incomplete Setup",
       MessageBoxButtons.OK,
       MessageBoxIcon.Warning
@@ -63,50 +111,104 @@ namespace sprout__gradeBook
         private void CourseComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedCourse = courseComboBox.SelectedItem.ToString();
-            string filePath = $"CourseInformations/{currentUSer}/{selectedCourse}.txt";
 
-            LoadStudentCards(filePath);
+
+            string[] trimmedCourseParts = selectedCourse.Split('_');
+
+
+            if (trimmedCourseParts.Length == 2)
+            {
+                string trimmedCourseName = trimmedCourseParts[1].Trim();
+                string studentFilePath = $"StudentCredentials/{currentUSer}/DepartmentandSections/{trimmedCourseName}.txt";
+
+                if (!File.Exists(studentFilePath))
+                {
+
+                    MessageBox.Show("No students found for the selected course. Please add students before proceeding.", "No Students Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    return;
+                }
+
+                LoadStudentCards(studentFilePath);
+            }
+            else
+            {
+
+                MessageBox.Show("Selected course format is incorrect. Please select a valid course.", "Invalid Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+
+            DisplayIfCourseSelected();
+
         }
+
+
+        private void DisplayIfCourseSelected()
+        {
+            genderPict.Show();
+            StudentIDTXT.Show();
+            StudenttnameTXT.Show();
+            sectionTXT.Show();
+            ComponentsButtonPanel.Show();
+            pictureBox3.Show();
+        }
+        public void DisplayIfCompButtonIsclicked()
+        {
+            pictureBox4.Show();
+            addSubcomponents.Show();
+
+            doneBtn.Show();
+            pictureBox5.Show();
+
+        }
+
+
 
         private void LoadStudentCards(string filePath)
         {
-            if (!File.Exists(filePath))
-            {
-                MessageBox.Show("File does not exist.");
-                return;
-            }
 
             studentListPanel.Controls.Clear();
 
-
-            string fileContent = File.ReadAllText(filePath);
-
-
-            string[] studentEntries = fileContent.Split(new[] { "----------------------------" }, StringSplitOptions.RemoveEmptyEntries);
-
-            foreach (string entry in studentEntries)
+            try
             {
-                string[] lines = entry.Trim().Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
-                string studentID = string.Empty;
-                string studentName = string.Empty;
+
+                string[] lines = File.ReadAllLines(filePath);
+
+                string studentID = null;
+                string studentName = null;
 
                 foreach (string line in lines)
                 {
+
                     if (line.StartsWith("Student ID:"))
                     {
                         studentID = line.Substring("Student ID:".Length).Trim();
                     }
+
                     else if (line.StartsWith("Student Name:"))
                     {
                         studentName = line.Substring("Student Name:".Length).Trim();
                     }
+
+                    if (!string.IsNullOrEmpty(studentID) && !string.IsNullOrEmpty(studentName))
+                    {
+                        AddStudentCard(studentID, studentName);
+                        studentID = null;
+                        studentName = null;
+                    }
                 }
 
-
-                if (!string.IsNullOrEmpty(studentID) && !string.IsNullOrEmpty(studentName))
+                if (studentListPanel.Controls.Count == 0)
                 {
-                    AddStudentCard(studentID, studentName);
+                    MessageBox.Show("No students found in the selected course. Please add students before proceeding.", "No Students Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    return;
                 }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show($"Error loading student data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -123,8 +225,6 @@ namespace sprout__gradeBook
         private void kryptonComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             sectionTXT.Text = RemoveSubstring(courseComboBox.Text, "_", ",");
-
-
 
 
             // Define the directory path based on the selected grading system path
@@ -156,7 +256,7 @@ namespace sprout__gradeBook
                         string componentWeight = parts[1];
 
 
-                        Component_Button_Card componentCard = new Component_Button_Card
+                        Component_Button_Card componentCard = new Component_Button_Card(currentComponent, DisplayIfCompButtonIsclicked)
                         {
                             compName = $"{componentName} ({componentWeight})"
                         };
@@ -168,7 +268,16 @@ namespace sprout__gradeBook
             }
             else
             {
-                MessageBox.Show($"Grading system file not found.{filePath}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+             "No grading system for the selected course yet. Please create it first. Thank you!",
+             "Error",
+             MessageBoxButtons.OK,
+             MessageBoxIcon.Error
+         );
+
+
+
+                return;
             }
 
 
@@ -194,9 +303,311 @@ namespace sprout__gradeBook
             string currentSection = sectionTXT.Text;
         }
 
+
+
+        public int componentCount = 0;
+        private void addSubcomponents_Click(object sender, EventArgs e)
+        {
+            componentCount++;
+            AddComponentGradeCard();
+        }
+
+
+
+        private void AddComponentGradeCard()
+        {
+            int startIndex = currentComponent.Text.IndexOf("(");
+
+            if (startIndex != -1)
+            {
+                string compName = (currentComponent.Text).Substring(0, startIndex).Trim();
+
+                ComponentGradesCARD componentCard = new ComponentGradesCARD(CalculateAndDisplayFinalGrade)
+                {
+                    ComponentNumber = $"{compName} #{componentCount}",
+                    ComponentGrade = 00.0,
+                    ComponentMaximumGrade = 00.0,
+
+                };
+                subcomponentsPanel.Controls.Add(componentCard);
+
+
+
+                CalculateAndDisplayFinalGrade();
+            }
+
+        }
+
+        public void clearSubcomponentsPanel()
+        {
+            subcomponentsPanel.Controls.Clear();
+        }
+
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CalculateAndDisplayFinalGrade()
+        {
+            double totalPercentage = 0.0;
+            int componentCardCount = 0;
+
+            string text = currentComponent.Text;
+
+            // Extract weight from currentComponent.Text
+            int startIndex = text.IndexOf("(");
+            int endIndex = text.IndexOf(")");
+
+            if (startIndex != -1 && endIndex != -1)
+            {
+                string weightText = text.Substring(startIndex + 1, endIndex - startIndex - 1).Trim('%', ' ');
+
+                if (double.TryParse(weightText, out double weight))
+                {
+                    finalGradelbl.Text = text;
+
+                    // Calculate average percentage based on component cards
+                    foreach (Control control in subcomponentsPanel.Controls)
+                    {
+                        if (control is ComponentGradesCARD componentCard)
+                        {
+                            totalPercentage += componentCard.ComponentPercentageGrade;
+                            componentCardCount++;
+                        }
+                    }
+
+                    if (componentCardCount > 0)
+                    {
+                        double averagePercentage = (totalPercentage / componentCardCount) * (weight / 100.0);
+
+
+                        finalGradelbl.Text += " in Final Grade : " + averagePercentage.ToString("0.00") + "%";
+
+
+                    }
+                    else
+                    {
+                        finalGradelbl.Text += "Average Grade: 0.00%";
+                    }
+                }
+                else
+                {
+                    finalGradelbl.Text = "Invalid weight format in currentComponent.Text";
+                }
+            }
+            else
+            {
+                finalGradelbl.Text = "Invalid format in currentComponent.Text";
+            }
+
+
+
+        }
+
         private void pictureBox5_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void kryptonComboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            courseComboBox.Show();
+            kryptonTextBox1.Show();
+            pictureBox2.Show();
+        }
+        public void SetComponentButtonsEnabled(bool enabled)
+        {
+            foreach (Control control in ComponentsButtonPanel.Controls)
+            {
+                if (control is Component_Button_Card compButton)
+                {
+
+                    compButton.Enabled = enabled && !compButton.IsCurrentComponentButtonGraded;
+                }
+            }
+        }
+
+
+
+        private string grades = "";
+        private void doneBtn_Click(object sender, EventArgs e)
+        {
+            if (_currentActiveComponentButton != null)
+            {
+                _currentActiveComponentButton.IsCurrentComponentButtonGraded = true;
+                MessageBox.Show($"{_currentActiveComponentButton.compName} is marked as graded.");
+                _currentActiveComponentButton = null;
+
+
+                CheckAllComponentsGraded();
+
+
+                SetComponentButtonsEnabled(true);
+            }
+
+            grades += $"{finalGradelbl.Text}\n";
+
+
+            string input = finalGradelbl.Text;
+
+
+            string[] parts = input.Split(':');
+
+            if (parts.Length > 1)
+            {
+
+                string afterColon = parts[1].Trim();
+                string percentageValue = afterColon.Replace("%", "");
+
+
+                if (double.TryParse(percentageValue, out double result))
+                {
+                    _FinalGradesInEachComponents.Add(result);
+                }
+
+            }
+        }
+
+
+
+        private void CheckAllComponentsGraded()
+        {
+            bool allGraded = true;
+            foreach (Control control in ComponentsButtonPanel.Controls)
+            {
+                if (control is Component_Button_Card componentCard)
+                {
+                    if (!componentCard.IsCurrentComponentButtonGraded)
+                    {
+                        allGraded = false;
+                        break;
+                    }
+                }
+            }
+
+
+            saveGradeBtn.Visible = allGraded;
+
+        }
+
+        private void saveGradeBtn_Click(object sender, EventArgs e)
+        {
+            bool allGraded = true;
+            foreach (Control control in ComponentsButtonPanel.Controls)
+            {
+                if (control is Component_Button_Card componentCard)
+                {
+                    if (!componentCard.IsCurrentComponentButtonGraded)
+                    {
+                        allGraded = false;
+                        break;
+                    }
+                }
+            }
+
+            if (allGraded)
+            {
+                isStudentGraded = true;
+                SaveGradesToFile();
+
+                // Mark the current student as graded
+                if (!StudentGradedStatus.ContainsKey(StudentIDText))
+                {
+                    StudentGradedStatus.Add(StudentIDText, true);
+                }
+                else
+                {
+                    StudentGradedStatus[StudentIDText] = true;
+                }
+
+                // Update the check mark
+                var currentCard = studentListPanel.Controls
+                    .OfType<studentsInGradebookCARD>()
+                    .FirstOrDefault(c => c.currentStudentID == StudentIDText);
+
+                if (currentCard != null)
+                {
+                    currentCard.MarkAsGraded.Visible = true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please grade all components before saving.", "Incomplete Grading", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+
+        private void SaveGradesToFile()
+        {
+            try
+            {
+
+                string directoryPath = $"studentFinalGrades/{currentUSer}/";
+                Directory.CreateDirectory(directoryPath);
+
+
+                string selectedCourse = courseComboBox.SelectedItem.ToString();
+                string courseCode = selectedCourse.Split('_')[0].Trim();
+
+
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine($"Term | {GradePeriodComboBox.Text}");
+                sb.AppendLine($"Course Code | {courseCode}");
+                sb.AppendLine($"Grade | {grades}");
+                double totalFinalGrade = _FinalGradesInEachComponents.Sum();
+                sb.AppendLine($"Total Final Grade | {totalFinalGrade.ToString("0.00")}%");
+                sb.AppendLine($"-------------------");
+
+
+                string filePath = Path.Combine(directoryPath, $"{StudentIDTXT.Text}.txt");
+
+                // Write grades to file
+                File.AppendAllText(filePath, sb.ToString());
+
+                MessageBox.Show(
+             $"Grades for {StudenttnameTXT.Text} have been successfully recorded for the course '{courseCode}'.",
+             "Grades Recorded Successfully",
+             MessageBoxButtons.OK,
+             MessageBoxIcon.Information
+         );
+
+                grades = "";
+                _FinalGradesInEachComponents.Clear();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error saving grades: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public void ResetComponentsForNewStudent()
+        {
+            // Clear subcomponentsPanel
+            subcomponentsPanel.Controls.Clear();
+
+            // Reset each component button and enable it
+            foreach (Control control in ComponentsButtonPanel.Controls)
+            {
+                if (control is Component_Button_Card componentButton)
+                {
+                    componentButton.IsCurrentComponentButtonGraded = false;
+                    componentButton.Enabled = true; // Re-enable the button
+                }
+            }
+
+            // Reset other necessary fields and states
+            saveGradeBtn.Hide();
+            _currentActiveComponentButton = null;
+            componentCount = 0;
+            finalGradelbl.Text = string.Empty;
+            grades = string.Empty;
+            _FinalGradesInEachComponents.Clear();
+            isStudentGraded = false; // Reset the flag
+        }
+
+
+
     }
 }

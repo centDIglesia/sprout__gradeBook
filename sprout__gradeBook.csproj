@@ -34,22 +34,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ComponentFactory.Krypton.Design">
-      <HintPath>D:\Krypton-master\Krypton-master\Bin\ComponentFactory.Krypton.Design.dll</HintPath>
+      <HintPath>..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Design.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Docking">
-      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
+      <HintPath>..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Navigator">
-      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
+      <HintPath>..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Ribbon">
-      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+      <HintPath>..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Toolkit">
-      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentFactory.Krypton.Workspace">
-      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
+      <HintPath>..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -498,11 +495,44 @@
     <None Include="Resources\Sort-Button.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Rectangle 196s.png" />
+    <None Include="Resources\Vector.png" />
+    <None Include="Resources\studenthover.png" />
+    <None Include="Resources\Notification_Bell.png" />
     <None Include="Resources\open__eye.png" />
     <None Include="Resources\closed__eye.png" />
     <None Include="Resources\Add row +.png" />
     <None Include="Resources\Feedback_Icon.png" />
+    <None Include="Resources\dashhovers.png" />
+    <None Include="Resources\dashboardhover.png" />
+    <None Include="Resources\attendancehover.png" />
+    <None Include="Resources\couresehover.png" />
     <Content Include="Resources\Female_Icon.png" />
+    <None Include="Resources\gradebookhover.png" />
+    <None Include="Resources\Group 75.png" />
+    <None Include="Resources\Frame 71.png" />
+    <None Include="Resources\Group 72.png" />
+    <None Include="Resources\Group 76.png" />
+    <None Include="Resources\Group 77.png" />
+    <None Include="Resources\Frame 95.png" />
+    <None Include="Resources\Frame 94.png" />
+    <None Include="Resources\Frame 93.png" />
+    <None Include="Resources\Frame 91.png" />
+    <None Include="Resources\Frame 92.png" />
+    <None Include="Resources\Frame 90.png" />
+    <None Include="Resources\Frame 88.png" />
+    <None Include="Resources\Frame 89.png" />
+    <None Include="Resources\Frame 87.png" />
+    <None Include="Resources\Frame 86.png" />
+    <None Include="Resources\Frame 84.png" />
+    <None Include="Resources\Frame 85.png" />
+    <None Include="Resources\Frame 81.png" />
+    <None Include="Resources\Frame 83.png" />
+    <None Include="Resources\Frame 80.png" />
+    <None Include="Resources\lg.png" />
+    <None Include="Resources\lghover.png" />
+    <None Include="Resources\lgdrak.png" />
+    <None Include="Resources\Group 85sd.png" />
     <Content Include="Resources\Male_Icon.png" />
     <None Include="Resources\open__eye1.png" />
   </ItemGroup>

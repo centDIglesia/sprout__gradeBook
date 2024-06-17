@@ -15,12 +15,20 @@ namespace sprout__gradeBook
 {
     public partial class logInForm : KryptonForm
     {
-        public logInForm()
+         public logInForm()
         {
             InitializeComponent();
+            this.AcceptButton = signIn__btn;
         }
 
         private void teacher__signUp_form_Load(object sender, EventArgs e)
+        {
+            // Hide all tooltips initially
+            HideTooltips();
+        }
+
+        // Hide all tooltips
+        private void HideTooltips()
         {
             fname__tooltip.Hide();
             lname__tooltip.Hide();
@@ -32,7 +40,6 @@ namespace sprout__gradeBook
             teacherSIGNUP__form.Hide();
             signIn__EmailTooltip.Hide();
             signIn__PassTooltip.Hide();
-
         }
         //sign up form
         //first name
@@ -68,13 +75,7 @@ namespace sprout__gradeBook
                 }
                 else
                     setInputState(signupFNAME__txtbox, fname__tooltip, CustomColor.mainColor);
-
-
             }
-
-
-
-
         }
 
         //last name
@@ -112,9 +113,7 @@ namespace sprout__gradeBook
 
             }
 
-
         }
-
 
         //email
         private void signupEMAIL__txtbox_Leave(object sender, EventArgs e)
@@ -152,15 +151,10 @@ namespace sprout__gradeBook
             }
 
         }
-
         private void signupEMAIL__txtbox_Enter(object sender, EventArgs e)
         {
-
-
             UserInput_Manager.ResetInputField(signupEMAIL__txtbox, "Email");
             email__tooltip.Show();
-
-
         }
 
         //user name
@@ -621,17 +615,6 @@ namespace sprout__gradeBook
             textBox.StateCommon.Content.Color1 = color;
             tooltipLabel.ForeColor = color;
         }
-
-        private void teacherSIGNINform_Panel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void signinEMAIL__txtbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void back__btn_Click(object sender, EventArgs e)
         {
             Role__form r = new Role__form();
@@ -639,6 +622,7 @@ namespace sprout__gradeBook
             r.Show();
             this.Hide();
         }
+
 
         private void pictureBox12_Click(object sender, EventArgs e)
         {
@@ -675,5 +659,6 @@ namespace sprout__gradeBook
             formbackground.Dispose();
 
         }
+
     }
 }

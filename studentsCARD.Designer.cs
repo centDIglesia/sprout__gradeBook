@@ -61,7 +61,7 @@
             this.studentcard__studentID.ForeColor = System.Drawing.Color.DarkGray;
             this.studentcard__studentID.Location = new System.Drawing.Point(106, 29);
             this.studentcard__studentID.Name = "studentcard__studentID";
-            this.studentcard__studentID.Size = new System.Drawing.Size(76, 23);
+            this.studentcard__studentID.Size = new System.Drawing.Size(77, 23);
             this.studentcard__studentID.TabIndex = 1;
             this.studentcard__studentID.Text = "Student ID";
             this.studentcard__studentID.Click += new System.EventHandler(this.studentcard__studentName_Click);
@@ -104,11 +104,12 @@
             // 
             // feedback_btn
             // 
+            this.feedback_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
             this.feedback_btn.Image = ((System.Drawing.Image)(resources.GetObject("feedback_btn.Image")));
-            this.feedback_btn.Location = new System.Drawing.Point(62, 42);
+            this.feedback_btn.Location = new System.Drawing.Point(66, 39);
             this.feedback_btn.Name = "feedback_btn";
-            this.feedback_btn.Size = new System.Drawing.Size(144, 35);
-            this.feedback_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.feedback_btn.Size = new System.Drawing.Size(154, 45);
+            this.feedback_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.feedback_btn.TabIndex = 5;
             this.feedback_btn.TabStop = false;
             this.feedback_btn.Click += new System.EventHandler(this.feedback_btn_Click);

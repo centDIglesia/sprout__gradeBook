@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ComponentFactory.Krypton.Toolkit;
 
 namespace sprout__gradeBook
 {
-    public partial class TermsCons: Form
+    public partial class TermsCons: KryptonForm
     {
         public TermsCons()
         {
@@ -26,6 +27,11 @@ namespace sprout__gradeBook
         {
             utilityButton b = new utilityButton();
             b.Closeform(this);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Properties.Resources.Group_85sd;
         }
     }
 }

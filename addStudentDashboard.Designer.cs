@@ -32,11 +32,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addStudentDashboard));
             this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
-            this.displayStudentsflowlayout = new System.Windows.Forms.FlowLayoutPanel();
-            this.deleteBTN = new System.Windows.Forms.PictureBox();
-            this.addstudentBTN = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.deleteBTN)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addstudentBTN)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette2
@@ -53,34 +48,6 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonPalette2.InputControlStyles.InputControlCommon.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // displayStudentsflowlayout
-            // 
-            this.displayStudentsflowlayout.Location = new System.Drawing.Point(16, 16);
-            this.displayStudentsflowlayout.Name = "displayStudentsflowlayout";
-            this.displayStudentsflowlayout.Size = new System.Drawing.Size(704, 472);
-            this.displayStudentsflowlayout.TabIndex = 0;
-            // 
-            // deleteBTN
-            // 
-            this.deleteBTN.Image = global::sprout__gradeBook.Properties.Resources.recycle_bin;
-            this.deleteBTN.Location = new System.Drawing.Point(674, 494);
-            this.deleteBTN.Name = "deleteBTN";
-            this.deleteBTN.Size = new System.Drawing.Size(49, 50);
-            this.deleteBTN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.deleteBTN.TabIndex = 90;
-            this.deleteBTN.TabStop = false;
-            // 
-            // addstudentBTN
-            // 
-            this.addstudentBTN.Image = ((System.Drawing.Image)(resources.GetObject("addstudentBTN.Image")));
-            this.addstudentBTN.Location = new System.Drawing.Point(526, 494);
-            this.addstudentBTN.Name = "addstudentBTN";
-            this.addstudentBTN.Size = new System.Drawing.Size(149, 50);
-            this.addstudentBTN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.addstudentBTN.TabIndex = 91;
-            this.addstudentBTN.TabStop = false;
-            this.addstudentBTN.Click += new System.EventHandler(this.addstudentBTN_Click);
-            // 
             // addStudentDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -89,9 +56,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(739, 556);
-            this.Controls.Add(this.deleteBTN);
-            this.Controls.Add(this.displayStudentsflowlayout);
-            this.Controls.Add(this.addstudentBTN);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "addStudentDashboard";
@@ -99,8 +63,6 @@
             this.Text = "addStudentDashboard";
             this.Load += new System.EventHandler(this.addStudentDashboard_Load);
             this.Leave += new System.EventHandler(this.addStudentDashboard_Leave);
-            ((System.ComponentModel.ISupportInitialize)(this.deleteBTN)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addstudentBTN)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -108,8 +70,5 @@
         #endregion
 
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette2;
-        private System.Windows.Forms.FlowLayoutPanel displayStudentsflowlayout;
-        private System.Windows.Forms.PictureBox deleteBTN;
-        private System.Windows.Forms.PictureBox addstudentBTN;
     }
 }

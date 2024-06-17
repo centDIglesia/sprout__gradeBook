@@ -32,34 +32,6 @@ namespace sprout__gradeBook
             LoadNotificationCards();
 
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            utilityButton b = new utilityButton();
-
-            b.Closeform(this);
-        }
-        private List<string> GetAllTextFilesInDirectory(string directoryPath)
-        {
-            try
-            {
-                if (Directory.Exists(directoryPath))
-                {
-                    return Directory.GetFiles(directoryPath, "*.txt").ToList();
-                }
-                else
-                {
-                    MessageBox.Show($"Directory {directoryPath} does not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return new List<string>();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred while accessing directory {directoryPath}: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return new List<string>();
-            }
-        }
-
         private void LoadNotificationCards()
         {
             List<string> teachers = _studentLoginForm.GetTeachersForStudent();
@@ -123,9 +95,6 @@ namespace sprout__gradeBook
                 }
             }
         }
-
-
-
         private void AddNotificationCard(string title, string description, string timeSent)
         {
             var notifCard = new notificationCARD
@@ -138,5 +107,36 @@ namespace sprout__gradeBook
 
             notificationPanel.Controls.Add(notifCard);
         }
+
+        private void Close_btn_Click(object sender, EventArgs e)
+        {            
+            utilityButton b = new utilityButton();
+
+            b.Closeform(this);
+        }
     }
 }
+
+
+/*
+private List<string> GetAllTextFilesInDirectory(string directoryPath)
+{
+    try
+    {
+        if (Directory.Exists(directoryPath))
+        {
+            return Directory.GetFiles(directoryPath, "*.txt").ToList();
+        }
+        else
+        {
+            MessageBox.Show($"Directory {directoryPath} does not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return new List<string>();
+        }
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show($"An error occurred while accessing directory {directoryPath}: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        return new List<string>();
+    }
+}
+*/

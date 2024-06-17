@@ -9,8 +9,9 @@ namespace sprout__gradeBook
 {
     public partial class teacher__courses_lvl1 : KryptonForm
     {
+        // Static instance to maintain a single instance of the form
         public static teacher__courses_lvl1 lvl1Instance;
-        public string CurrentUser { get; private set; }
+        public string CurrentUser { get; private set; } // Holds the current username
 
         public teacher__courses_lvl1(string currentUsername)
         {
@@ -19,57 +20,38 @@ namespace sprout__gradeBook
             lvl1Instance = this;
         }
 
-        private void close_btn_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
-
+        // Event handler when the form is loaded
         private void teacher__courses_lvl1_Load(object sender, EventArgs e)
         {
-            populateCourses();
+            populateCourses(); // Populate courses on form load
         }
 
-        public void Hidebuttons()
-        {
-            addcourseBTN.Hide();
-
-        }
-
+        // Method to populate courses from stored files
         public void populateCourses()
         {
-            // Define the folder path where course information files are stored
-            string folderPath = "CourseInformations";
+            string folderPath = "CourseInformations"; // Folder where course files are stored
 
-            // Clear existing controls from the course section panel
-            courseSectionPanel.Controls.Clear();
+            courseSectionPanel.Controls.Clear(); // Clear existing course cards
 
-            // Check if the folder exists
+            // Check if the directory exists
             if (Directory.Exists(folderPath))
             {
-                // Get all file paths in the folder with the name of the current user
+                // Get all files related to the current user
                 string[] filePaths = Directory.GetFiles(folderPath, $"{CurrentUser}.txt");
 
-                // Iterate through each file path
+                // Process each file
                 foreach (string filePath in filePaths)
                 {
-                    // Read the content of the file
-                    string fileContent = File.ReadAllText(filePath);
+                    string fileContent = File.ReadAllText(filePath); // Read file content
 
-                    // Split the file content into blocks using a separator
+                    // Split content into course blocks
                     string[] courseBlocks = fileContent.Split(new string[] { "----------------------------------------" }, StringSplitOptions.RemoveEmptyEntries);
 
-                    // Iterate through each block
                     foreach (string block in courseBlocks)
                     {
-                        // Split the block into lines
-                        string[] lines = block.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+                        string[] lines = block.Split(new[] { Environment.NewLine }, StringSplitOptions.None); // Split block into lines
 
-                        // Initialize variables to store course information
+                        // Variables to hold course information
                         string courseName = "";
                         string courseCode = "";
                         string department = "";
@@ -77,10 +59,9 @@ namespace sprout__gradeBook
                         string schedule = "";
                         int studentCount = 0;
 
-                        // Iterate through each line
+                        // Extract course details from lines
                         foreach (var line in lines)
                         {
-                            // Extract course information based on the line content
                             if (line.StartsWith("Course Name:"))
                             {
                                 courseName = line.Substring("Course Name:".Length).Trim();
@@ -111,7 +92,7 @@ namespace sprout__gradeBook
                         if (!string.IsNullOrEmpty(courseName) && !string.IsNullOrEmpty(courseCode) &&
                             !string.IsNullOrEmpty(department) && !string.IsNullOrEmpty(section))
                         {
-                            // Create a CoursesCARD control with the extracted course information
+                            // Create a CoursesCARD control with course information
                             CoursesCARD card = new CoursesCARD(this)
                             {
                                 SubjectName = courseName,
@@ -129,113 +110,26 @@ namespace sprout__gradeBook
             }
             else
             {
-                // Display a message if the directory is not found
+                // Display an error message if the directory does not exist
                 MessageBox.Show($"Directory not found: {folderPath}");
             }
         }
 
-        public void LoadFormIntoPanel(Form form)
-        {
-            courseSectionPanel.Controls.Clear();
-            form.TopLevel = false;
-            form.Dock = DockStyle.Fill;
-            courseSectionPanel.Controls.Add(form);
-            form.Show();
-        }
-
-        public void hidePanel()
-        {
-            courseSectionPanel.Hide();
-        }
-
+        // Method to show the course section panel
         public void ShowPanel()
         {
             courseSectionPanel.Show();
         }
-        /*      public void RemoveCourse(CoursesCARD card)
-              {
-                  string folderPath = "CourseInformations";
-                  string filePath = Path.Combine(folderPath, $"{CurrentUser}.txt");
 
-                  if (File.Exists(filePath))
-                  {
-                      // Read all lines from the file
-                      var lines = File.ReadAllLines(filePath).ToList();
-                      var updatedLines = new List<string>();
-
-                      // Variables to track block status
-                      bool isInTargetBlock = false;
-                      bool blockSkipped = false;
-
-                      // Define the start and end indicators for a course block
-                      string blockStartIndicator = $"Course Name: {card.SubjectName}";
-                      string blockEndIndicator = "----------------------------------------";
-
-                      foreach (var line in lines)
-                      {
-                          // Check if the current line is the start of a course block
-                          if (line.StartsWith("Course Name:"))
-                          {
-                              // Reset block status for a new block
-                              isInTargetBlock = false;
-                              blockSkipped = false;
-                          }
-
-                          // Determine if we are inside the target block
-                          if (line.Contains(blockStartIndicator))
-                          {
-                              isInTargetBlock = true;
-                          }
-
-                          // Skip lines if we are inside the target block and haven't skipped it yet
-                          if (isInTargetBlock && !blockSkipped)
-                          {
-                              // Skip lines in the target block
-                              if (line.StartsWith(blockEndIndicator))
-                              {
-                                  // We have reached the end of the block, set blockSkipped to true
-                                  blockSkipped = true;
-                                  isInTargetBlock = false;
-                              }
-                              continue; // Skip adding this line to updatedLines
-                          }
-
-                          // Add lines that are not part of the target block to updatedLines
-                          updatedLines.Add(line);
-                      }
-
-                      // Write the updated lines back to the file
-                      File.WriteAllLines(filePath, updatedLines);
-
-                      // Remove the card from the UI
-                      courseSectionPanel.Controls.Remove(card);
-
-                      // Refresh the UI
-                      populateCourses();
-                  }
-                  else
-                  {
-                      MessageBox.Show($"File not found: {filePath}");
-                  }
-
-                  string specificFilePath = Path.Combine(folderPath, CurrentUser,
-                 $"{card.SubjectName}_{card.SubjectCourseSection.Replace(", ", "_")}.txt");
-
-                  if (File.Exists(specificFilePath))
-                  {
-                      File.Delete(specificFilePath);
-                  }
-              }
-
-              */
+        // Method to remove a course card from the UI and data files
         public void RemoveCourse(CoursesCARD card)
         {
             string folderPath = "CourseInformations";
             string mainFilePath = Path.Combine(folderPath, $"{CurrentUser}.txt");
 
-            // Initialize a flag to track if the specific course file deletion is needed
-            bool specificFileDeleted = false;
+            bool specificFileDeleted = false; // Flag to track specific file deletion
 
+            // Check if the main file exists
             if (File.Exists(mainFilePath))
             {
                 var lines = File.ReadAllLines(mainFilePath).ToList();
@@ -244,10 +138,11 @@ namespace sprout__gradeBook
                 bool isInTargetBlock = false;
                 bool blockSkipped = false;
 
-                // Define the start and end indicators for a course block
+                // Define start and end markers for course block
                 string blockStartIndicator = $"Course Name: {card.SubjectName}";
                 string blockEndIndicator = "----------------------------------------";
 
+                // Iterate through lines to update the file
                 foreach (var line in lines)
                 {
                     if (line.StartsWith("Course Name:"))
@@ -274,76 +169,64 @@ namespace sprout__gradeBook
                     updatedLines.Add(line);
                 }
 
+                // Write updated lines back to the file
                 File.WriteAllLines(mainFilePath, updatedLines);
 
-                // Remove the card from the UI
+                // Remove the card from UI
                 courseSectionPanel.Controls.Remove(card);
 
-                // Refresh the UI
+                // Refresh courses after removal
                 populateCourses();
             }
             else
             {
+                // Display an error message if the file does not exist
                 MessageBox.Show($"File not found: {mainFilePath}");
             }
 
-            // Construct the specific file path
+            // Construct path for specific course file
             string specificFileName = $"{card.SubjectCode}_{card.SubjectCourseSection}.txt";
             string specificFilePath = Path.Combine(folderPath, CurrentUser, specificFileName);
 
+            // Delete specific course file if exists
             if (File.Exists(specificFilePath))
             {
                 File.Delete(specificFilePath);
                 specificFileDeleted = true;
             }
 
-            // Provide feedback if the specific file was deleted
+            // Show confirmation if specific file was deleted
             if (specificFileDeleted)
             {
-                MessageBox.Show($"Course file deleted successfuly", "File Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Course file deleted successfully", "File Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-
         }
 
-
+        // Event handler for adding a new course
         private void addcourseBTN_Click(object sender, EventArgs e)
         {
-            Form formbackgroud = new Form();
+            // Open AddCourseForm as a modal dialog
+            Form formBackground = new Form();
             using (AddCourseForm courseForm = new AddCourseForm(CurrentUser, this))
             {
                 Enabled = false;
 
-                formbackgroud.StartPosition = FormStartPosition.CenterScreen;
-                formbackgroud.FormBorderStyle = FormBorderStyle.None;
-                formbackgroud.Opacity = .70d;
-                formbackgroud.BackColor = StateCommon.Back.Color1 = CustomColor.mainColor;
-                formbackgroud.Size = new System.Drawing.Size(1147, 711);
-                formbackgroud.Location = this.Location;
-                formbackgroud.ShowInTaskbar = false;
-                formbackgroud.Show();
+                // Configure background form appearance
+                formBackground.StartPosition = FormStartPosition.CenterScreen;
+                formBackground.FormBorderStyle = FormBorderStyle.None;
+                formBackground.Opacity = .70d;
+                formBackground.BackColor = StateCommon.Back.Color1 = CustomColor.mainColor;
+                formBackground.Size = new System.Drawing.Size(1147, 711);
+                formBackground.Location = this.Location;
+                formBackground.ShowInTaskbar = false;
+                formBackground.Show();
 
-                courseForm.Owner = formbackgroud;
+                // Set ownership of courseForm to formBackground
+                courseForm.Owner = formBackground;
                 courseForm.ShowDialog();
             }
-            formbackgroud.Dispose();
+
+            formBackground.Dispose(); // Dispose of the background form
         }
-
-        private void deleteBTN_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void refreshBTN_Click_1(object sender, EventArgs e)
-        {
-            populateCourses();
-        }
-
-
-        private void courseSectionPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
     }
 }

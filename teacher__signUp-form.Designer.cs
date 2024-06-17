@@ -53,12 +53,12 @@
             this.signIN__switchBTN = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.teacherSIGNINform = new ComponentFactory.Krypton.Toolkit.KryptonGroup();
+            this.signIn__PassTooltip = new System.Windows.Forms.PictureBox();
+            this.signIn__EmailTooltip = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.forgetPass__btn = new System.Windows.Forms.PictureBox();
             this.signIn__showPassicon = new System.Windows.Forms.PictureBox();
-            this.signIn__PassTooltip = new System.Windows.Forms.Label();
             this.signinPASS__txtbox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.signIn__EmailTooltip = new System.Windows.Forms.Label();
             this.signIn__btn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.signinEMAIL__txtbox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.signup__switchBTN = new System.Windows.Forms.PictureBox();
@@ -78,6 +78,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.teacherSIGNINform.Panel)).BeginInit();
             this.teacherSIGNINform.Panel.SuspendLayout();
             this.teacherSIGNINform.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.signIn__PassTooltip)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.signIn__EmailTooltip)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.forgetPass__btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.signIn__showPassicon)).BeginInit();
@@ -452,17 +454,16 @@
             // 
             // teacherSIGNINform.Panel
             // 
+            this.teacherSIGNINform.Panel.Controls.Add(this.signIn__PassTooltip);
+            this.teacherSIGNINform.Panel.Controls.Add(this.signIn__EmailTooltip);
             this.teacherSIGNINform.Panel.Controls.Add(this.pictureBox12);
             this.teacherSIGNINform.Panel.Controls.Add(this.forgetPass__btn);
             this.teacherSIGNINform.Panel.Controls.Add(this.signIn__showPassicon);
-            this.teacherSIGNINform.Panel.Controls.Add(this.signIn__PassTooltip);
             this.teacherSIGNINform.Panel.Controls.Add(this.signinPASS__txtbox);
-            this.teacherSIGNINform.Panel.Controls.Add(this.signIn__EmailTooltip);
             this.teacherSIGNINform.Panel.Controls.Add(this.signIn__btn);
             this.teacherSIGNINform.Panel.Controls.Add(this.signinEMAIL__txtbox);
             this.teacherSIGNINform.Panel.Controls.Add(this.signup__switchBTN);
             this.teacherSIGNINform.Panel.Controls.Add(this.pictureBox11);
-            this.teacherSIGNINform.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.teacherSIGNINform_Panel_Paint);
             this.teacherSIGNINform.Size = new System.Drawing.Size(441, 672);
             this.teacherSIGNINform.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("teacherSIGNINform.StateCommon.Back.Image")));
             this.teacherSIGNINform.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Stretch;
@@ -472,15 +473,37 @@
             this.teacherSIGNINform.StateCommon.Border.Width = 0;
             this.teacherSIGNINform.TabIndex = 21;
             // 
+            // signIn__PassTooltip
+            // 
+            this.signIn__PassTooltip.Image = ((System.Drawing.Image)(resources.GetObject("signIn__PassTooltip.Image")));
+            this.signIn__PassTooltip.Location = new System.Drawing.Point(51, 205);
+            this.signIn__PassTooltip.Name = "signIn__PassTooltip";
+            this.signIn__PassTooltip.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.signIn__PassTooltip.Size = new System.Drawing.Size(74, 12);
+            this.signIn__PassTooltip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.signIn__PassTooltip.TabIndex = 24;
+            this.signIn__PassTooltip.TabStop = false;
+            // 
+            // signIn__EmailTooltip
+            // 
+            this.signIn__EmailTooltip.Image = ((System.Drawing.Image)(resources.GetObject("signIn__EmailTooltip.Image")));
+            this.signIn__EmailTooltip.Location = new System.Drawing.Point(51, 137);
+            this.signIn__EmailTooltip.Name = "signIn__EmailTooltip";
+            this.signIn__EmailTooltip.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.signIn__EmailTooltip.Size = new System.Drawing.Size(79, 11);
+            this.signIn__EmailTooltip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.signIn__EmailTooltip.TabIndex = 23;
+            this.signIn__EmailTooltip.TabStop = false;
+            // 
             // pictureBox12
             // 
             this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox12.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(61, 371);
+            this.pictureBox12.Location = new System.Drawing.Point(51, 378);
             this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(324, 33);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox12.Size = new System.Drawing.Size(343, 14);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox12.TabIndex = 22;
             this.pictureBox12.TabStop = false;
             this.pictureBox12.Click += new System.EventHandler(this.pictureBox12_Click_1);
@@ -492,8 +515,8 @@
             this.forgetPass__btn.Image = ((System.Drawing.Image)(resources.GetObject("forgetPass__btn.Image")));
             this.forgetPass__btn.Location = new System.Drawing.Point(261, 263);
             this.forgetPass__btn.Name = "forgetPass__btn";
-            this.forgetPass__btn.Size = new System.Drawing.Size(141, 18);
-            this.forgetPass__btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.forgetPass__btn.Size = new System.Drawing.Size(139, 13);
+            this.forgetPass__btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.forgetPass__btn.TabIndex = 21;
             this.forgetPass__btn.TabStop = false;
             this.forgetPass__btn.MouseLeave += new System.EventHandler(this.forgetPass__btn_MouseLeave);
@@ -502,30 +525,20 @@
             // signIn__showPassicon
             // 
             this.signIn__showPassicon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.signIn__showPassicon.Image = global::sprout__gradeBook.Properties.Resources.closed__eye;
             this.signIn__showPassicon.Location = new System.Drawing.Point(367, 226);
             this.signIn__showPassicon.Name = "signIn__showPassicon";
             this.signIn__showPassicon.Size = new System.Drawing.Size(20, 16);
-            this.signIn__showPassicon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.signIn__showPassicon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.signIn__showPassicon.TabIndex = 20;
             this.signIn__showPassicon.TabStop = false;
             this.signIn__showPassicon.Click += new System.EventHandler(this.signIn__showPassicon_Click);
-            // 
-            // signIn__PassTooltip
-            // 
-            this.signIn__PassTooltip.AutoSize = true;
-            this.signIn__PassTooltip.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signIn__PassTooltip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.signIn__PassTooltip.Location = new System.Drawing.Point(51, 202);
-            this.signIn__PassTooltip.Name = "signIn__PassTooltip";
-            this.signIn__PassTooltip.Size = new System.Drawing.Size(61, 13);
-            this.signIn__PassTooltip.TabIndex = 18;
-            this.signIn__PassTooltip.Text = "Password";
             // 
             // signinPASS__txtbox
             // 
             this.signinPASS__txtbox.Location = new System.Drawing.Point(45, 213);
             this.signinPASS__txtbox.Name = "signinPASS__txtbox";
-            this.signinPASS__txtbox.Size = new System.Drawing.Size(357, 37);
+            this.signinPASS__txtbox.Size = new System.Drawing.Size(357, 43);
             this.signinPASS__txtbox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.signinPASS__txtbox.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.signinPASS__txtbox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -533,23 +546,12 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.signinPASS__txtbox.StateCommon.Border.Rounding = 4;
             this.signinPASS__txtbox.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(155)))));
-            this.signinPASS__txtbox.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signinPASS__txtbox.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signinPASS__txtbox.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10);
             this.signinPASS__txtbox.TabIndex = 16;
             this.signinPASS__txtbox.Text = "Password";
             this.signinPASS__txtbox.Enter += new System.EventHandler(this.signInPass__txtbox_Enter);
             this.signinPASS__txtbox.Leave += new System.EventHandler(this.signInPass__txtbox_Leave);
-            // 
-            // signIn__EmailTooltip
-            // 
-            this.signIn__EmailTooltip.AutoSize = true;
-            this.signIn__EmailTooltip.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signIn__EmailTooltip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.signIn__EmailTooltip.Location = new System.Drawing.Point(51, 136);
-            this.signIn__EmailTooltip.Name = "signIn__EmailTooltip";
-            this.signIn__EmailTooltip.Size = new System.Drawing.Size(63, 13);
-            this.signIn__EmailTooltip.TabIndex = 13;
-            this.signIn__EmailTooltip.Text = "Username";
             // 
             // signIn__btn
             // 
@@ -590,7 +592,7 @@
             // 
             this.signinEMAIL__txtbox.Location = new System.Drawing.Point(45, 145);
             this.signinEMAIL__txtbox.Name = "signinEMAIL__txtbox";
-            this.signinEMAIL__txtbox.Size = new System.Drawing.Size(357, 37);
+            this.signinEMAIL__txtbox.Size = new System.Drawing.Size(357, 43);
             this.signinEMAIL__txtbox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.signinEMAIL__txtbox.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.signinEMAIL__txtbox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -598,11 +600,10 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.signinEMAIL__txtbox.StateCommon.Border.Rounding = 4;
             this.signinEMAIL__txtbox.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(155)))));
-            this.signinEMAIL__txtbox.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signinEMAIL__txtbox.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signinEMAIL__txtbox.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10);
             this.signinEMAIL__txtbox.TabIndex = 4;
             this.signinEMAIL__txtbox.Text = "Username";
-            this.signinEMAIL__txtbox.TextChanged += new System.EventHandler(this.signinEMAIL__txtbox_TextChanged);
             this.signinEMAIL__txtbox.Enter += new System.EventHandler(this.signInEmail__txtbox_Enter);
             this.signinEMAIL__txtbox.Leave += new System.EventHandler(this.signInEmail__txtbox_Leave);
             // 
@@ -611,10 +612,10 @@
             this.signup__switchBTN.BackColor = System.Drawing.Color.Transparent;
             this.signup__switchBTN.Cursor = System.Windows.Forms.Cursors.Hand;
             this.signup__switchBTN.Image = ((System.Drawing.Image)(resources.GetObject("signup__switchBTN.Image")));
-            this.signup__switchBTN.Location = new System.Drawing.Point(115, 83);
+            this.signup__switchBTN.Location = new System.Drawing.Point(110, 85);
             this.signup__switchBTN.Name = "signup__switchBTN";
-            this.signup__switchBTN.Size = new System.Drawing.Size(221, 19);
-            this.signup__switchBTN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.signup__switchBTN.Size = new System.Drawing.Size(233, 15);
+            this.signup__switchBTN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.signup__switchBTN.TabIndex = 1;
             this.signup__switchBTN.TabStop = false;
             this.signup__switchBTN.Click += new System.EventHandler(this.signup__switchBTN_Click);
@@ -622,10 +623,10 @@
             // pictureBox11
             // 
             this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(104, 43);
+            this.pictureBox11.Location = new System.Drawing.Point(74, 44);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(243, 45);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox11.Size = new System.Drawing.Size(311, 31);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox11.TabIndex = 0;
             this.pictureBox11.TabStop = false;
             // 
@@ -646,13 +647,13 @@
             this.back__btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.back__btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("back__btn.BackgroundImage")));
             this.back__btn.Image = ((System.Drawing.Image)(resources.GetObject("back__btn.Image")));
-            this.back__btn.Location = new System.Drawing.Point(17, 16);
+            this.back__btn.Location = new System.Drawing.Point(17, 17);
             this.back__btn.Name = "back__btn";
             this.back__btn.Size = new System.Drawing.Size(24, 24);
             this.back__btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.back__btn.TabIndex = 25;
             this.back__btn.TabStop = false;
-            this.back__btn.Click += new System.EventHandler(this.back__btn_Click_1);
+            this.back__btn.Click += new System.EventHandler(this.back__btn_Click);
             // 
             // pictureBox2
             // 
@@ -695,6 +696,8 @@
             this.teacherSIGNINform.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.teacherSIGNINform)).EndInit();
             this.teacherSIGNINform.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.signIn__PassTooltip)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.signIn__EmailTooltip)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.forgetPass__btn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.signIn__showPassicon)).EndInit();
@@ -733,9 +736,7 @@
         private System.Windows.Forms.PictureBox showPass__icon;
         private ComponentFactory.Krypton.Toolkit.KryptonGroup teacherSIGNINform;
         private System.Windows.Forms.PictureBox signIn__showPassicon;
-        private System.Windows.Forms.Label signIn__PassTooltip;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox signinPASS__txtbox;
-        private System.Windows.Forms.Label signIn__EmailTooltip;
         private ComponentFactory.Krypton.Toolkit.KryptonButton signIn__btn;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox signinEMAIL__txtbox;
         private System.Windows.Forms.PictureBox signup__switchBTN;
@@ -745,5 +746,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox back__btn;
         private System.Windows.Forms.PictureBox close_btn;
+        private System.Windows.Forms.PictureBox signIn__EmailTooltip;
+        private System.Windows.Forms.PictureBox signIn__PassTooltip;
     }
 }

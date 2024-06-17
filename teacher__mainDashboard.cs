@@ -6,42 +6,32 @@ namespace sprout__gradeBook
 {
     public partial class teacher__mainDashboard : KryptonForm
     {
+        // Constructor for the teacher main dashboard form
         public teacher__mainDashboard(string currentUser)
         {
             InitializeComponent();
+
+            // Update counts on initialization
             UpdateCourseCount(currentUser);
             UpdateStudentCount(currentUser);
-            UpdateSectiionCount(currentUser);
+            UpdateSectionCount(currentUser);
         }
-
-        private void close_btn_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.No)
-            {
-                return;
-            }
-            else Application.Exit();
-        }
-
-        private void teacher__dashboard_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        // Update the displayed count of courses
         private void UpdateCourseCount(string currentUser)
         {
             int count = Course.GetCourseCount(currentUser);
             course__quantity.Text = count.ToString();
         }
 
+        // Update the displayed count of students
         private void UpdateStudentCount(string currentUser)
         {
             int count = StudentManager.GetStudentCount(currentUser);
             student__quantity.Text = count.ToString();
         }
-        private void UpdateSectiionCount(string currentUser)
+
+        // Update the displayed count of sections
+        private void UpdateSectionCount(string currentUser)
         {
             int count = Course.GetSectionsCount(currentUser);
             sections__quantity.Text = count.ToString();

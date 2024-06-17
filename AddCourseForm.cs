@@ -18,66 +18,29 @@ namespace sprout__gradeBook
             currentUserName = currentUser;
             parentForm = parent;
             InitializeComponent();
+
+            // Set up validation for time fields
+            courseStartTXT.ValidatingType = typeof(DateTime);
+            courseEndTXT.ValidatingType = typeof(DateTime);
         }
 
-        private void AddCourseForm_Load(object sender, EventArgs e)
+        private void CourseStartTXT_TypeValidationCompleted(object sender, TypeValidationEventArgs e)
         {
-
+            if (!e.IsValidInput)
+            {
+                MessageBox.Show("Invalid start time. Please enter a valid time in the format HH:MM AM/PM.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Cancel = true;
+            }
         }
-        /* private void saveNewCourseBTN_Click(object sender, EventArgs e)
-         {
-             parentForm.populateCourses();
 
-             string courseName = courseNameTXT.Text;
-             string courseCode = courseCodeTXT.Text;
-             string studentCourse = courseCourseTXT.Text;
-             string studentSection = courseSectionTXT.Text;
-             int studentYearLvl = Int32.Parse(courseYearlvlTXT.Text);
-             int studentCount = 0;
-             string whatDay = WeekDayTxt.Text;
-             string startTime = courseStartTXT.Text;
-             string endTime = courseEndTXT.Text;
-
-             Course newCourse = new Course(courseName, courseCode, studentCourse, studentSection, startTime, endTime, studentCount, studentYearLvl, whatDay);
-
-             newCourse.SaveCourse(currentUserName);
-
-             if (!int.TryParse(courseYearlvlTXT.Text, out int studentYearLvl1))
-             {
-                 MessageBox.Show("Invalid Year Level. Please enter a valid number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                 return;
-             }
-
-
-             string folderPath = Path.Combine("CourseInformations", currentUserName);
-             if (Directory.Exists(folderPath))
-             {
-                 MessageBox.Show("hi");
-                 string fileName = $"{courseCode}_{studentCourse}_{studentYearLvl}-{studentSection}.txt";
-                 string filePath = Path.Combine(folderPath, fileName);
-
-
-                 List<StudentInfo> matchingStudents = StudentManager.GetStudentsByDepartmentAndSection(currentUserName, studentCourse, $"{studentYearLvl}-{studentSection}");
-
-                 foreach (var student in matchingStudents)
-                 {
-                     using (StreamWriter writer = File.AppendText(filePath))
-                     {
-                         writer.WriteLine($"Student ID: {student.StudentID}");
-                         writer.WriteLine($"Student Name: {student.StudentName}");
-                         writer.WriteLine($"----------------------------");
-                     }
-                 }
-             }
-
-
-
-
-             this.Close();
-             parentForm.Enabled = true;
-             parentForm.populateCourses();
-         }
-        */
+        private void CourseEndTXT_TypeValidationCompleted(object sender, TypeValidationEventArgs e)
+        {
+            if (!e.IsValidInput)
+            {
+                MessageBox.Show("Invalid end time. Please enter a valid time in the format HH:MM AM/PM.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Cancel = true;
+            }
+        }
 
         private void saveNewCourseBTN_Click(object sender, EventArgs e)
         {
@@ -105,9 +68,6 @@ namespace sprout__gradeBook
             // Create a new Course object
             Course newCourse = new Course(courseName, courseCode, studentCourse, studentSection, startTime, endTime, studentCount, studentYearLvl, whatDay);
 
-            // Save course details to file
-            newCourse.SaveCourse(currentUserName);
-
             // Construct the folder path
             string folderPath = Path.Combine("CourseInformations", currentUserName);
 
@@ -120,6 +80,16 @@ namespace sprout__gradeBook
             // Construct the file path
             string fileName = $"{courseCode}_{studentCourse} {studentYearLvl}-{studentSection}.txt";
             string filePath = Path.Combine(folderPath, fileName);
+
+            // Check if the course file already exists
+            if (DoesCourseExist(filePath, newCourse))
+            {
+                MessageBox.Show("This course already exists. Please enter a new course.", "Course Exists", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Save course details to file
+            newCourse.SaveCourse(currentUserName);
 
             try
             {
@@ -197,57 +167,6 @@ namespace sprout__gradeBook
             return false;
         }
 
-
-
-        private void courseStartTXT_Enter(object sender, EventArgs e)
-        {
-            UserInput_Manager.ResetInputField(courseStartTXT, "00:00 PM");
-        }
-
-        private void courseStartTXT_Leave(object sender, EventArgs e)
-        {
-            if (!IsValid12HourTimeFormat(courseStartTXT.Text))
-            {
-                MessageBox.Show("Please enter a valid time in 12-hour format (e.g., 01:00 PM).");
-                courseStartTXT.Focus();
-            }
-            else
-            {
-                UserInput_Manager.RestoreDefaultText(courseStartTXT, "00:00 PM");
-            }
-        }
-
-        private void courseEndTXT_Enter(object sender, EventArgs e)
-        {
-            UserInput_Manager.ResetInputField(courseEndTXT, "00:00 PM");
-        }
-
-        private void courseEndTXT_Leave(object sender, EventArgs e)
-        {
-            if (!IsValid12HourTimeFormat(courseEndTXT.Text))
-            {
-                MessageBox.Show("Please enter a valid time in 12-hour format (e.g., 01:00 PM).");
-                courseEndTXT.Focus();
-            }
-            else
-            {
-                UserInput_Manager.RestoreDefaultText(courseEndTXT, "00:00 PM");
-            }
-        }
-
-        public static bool IsValid12HourTimeFormat(string input)
-        {
-            string pattern = @"^(0[1-9]|1[0-2]):([0-5][0-9])\s?(AM|PM)$";
-            return Regex.IsMatch(input, pattern, RegexOptions.IgnoreCase);
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            utilityButton b = new utilityButton();
-
-            b.Cancelform(this);
-        }
-
         private void courseNameTXT_Enter(object sender, EventArgs e)
         {
             UserInput_Manager.ResetInputField(courseNameTXT, "Course Name");
@@ -256,6 +175,12 @@ namespace sprout__gradeBook
         private void courseNameTXT_Leave(object sender, EventArgs e)
         {
             UserInput_Manager.RestoreDefaultText(courseNameTXT, "Course Name");
+
+            if (string.IsNullOrWhiteSpace(courseNameTXT.Text))
+            {
+                MessageBox.Show("Course Name cannot be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                courseNameTXT.Focus();
+            }
         }
 
         private void courseCodeTXT_Enter(object sender, EventArgs e)
@@ -267,6 +192,11 @@ namespace sprout__gradeBook
         {
             UserInput_Manager.RestoreDefaultText(courseCodeTXT, "Course Code");
 
+            if (string.IsNullOrWhiteSpace(courseCodeTXT.Text))
+            {
+                MessageBox.Show("Course Code cannot be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                courseCodeTXT.Focus();
+            }
         }
 
         private void courseYearlvlTXT_Enter(object sender, EventArgs e)
@@ -277,18 +207,39 @@ namespace sprout__gradeBook
         private void courseYearlvlTXT_Leave(object sender, EventArgs e)
         {
             UserInput_Manager.RestoreDefaultText(courseYearlvlTXT, "Year Level");
+
+            if (string.IsNullOrWhiteSpace(courseYearlvlTXT.Text))
+            {
+                MessageBox.Show("Year Level cannot be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                courseYearlvlTXT.Focus();
+            }
+            else if (!int.TryParse(courseYearlvlTXT.Text, out _))
+            {
+                MessageBox.Show("Year Level must be a valid number.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                courseYearlvlTXT.Focus();
+            }
         }
 
         private void courseSectionTXT_Enter(object sender, EventArgs e)
         {
-
             UserInput_Manager.ResetInputField(courseSectionTXT, "Designated Section");
         }
 
         private void courseSectionTXT_Leave(object sender, EventArgs e)
         {
             UserInput_Manager.RestoreDefaultText(courseSectionTXT, "Designated Section");
+
+            if (string.IsNullOrWhiteSpace(courseSectionTXT.Text))
+            {
+                MessageBox.Show("Designated Section cannot be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                courseSectionTXT.Focus();
+            }
+        }
+
+        private void Cancel_btn_Click(object sender, EventArgs e)
+        {
+            utilityButton b = new utilityButton();
+            b.Cancelform(this);
         }
     }
-
 }

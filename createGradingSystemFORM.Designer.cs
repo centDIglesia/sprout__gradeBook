@@ -85,7 +85,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonTextBox1.StateCommon.Border.Width = 0;
             this.kryptonTextBox1.StateCommon.Content.Color1 = System.Drawing.Color.White;
-            this.kryptonTextBox1.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonTextBox1.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonTextBox1.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5);
             this.kryptonTextBox1.TabIndex = 2;
             this.kryptonTextBox1.Text = "Please outline your grading system for this course here. Include the types of ass" +
@@ -95,10 +95,10 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(523, 470);
+            this.pictureBox3.Location = new System.Drawing.Point(531, 472);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(84, 22);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox3.Size = new System.Drawing.Size(76, 13);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
@@ -108,8 +108,8 @@
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(444, 94);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(84, 27);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.Size = new System.Drawing.Size(73, 22);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             // 
@@ -118,8 +118,8 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(54, 94);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(139, 27);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.Size = new System.Drawing.Size(132, 21);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
@@ -132,6 +132,7 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 7;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // saveGradingsytemBTN
             // 
@@ -147,11 +148,11 @@
             // totallWeightLLBL
             // 
             this.totallWeightLLBL.AutoSize = true;
-            this.totallWeightLLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totallWeightLLBL.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totallWeightLLBL.ForeColor = System.Drawing.Color.Gray;
-            this.totallWeightLLBL.Location = new System.Drawing.Point(30, 463);
+            this.totallWeightLLBL.Location = new System.Drawing.Point(27, 467);
             this.totallWeightLLBL.Name = "totallWeightLLBL";
-            this.totallWeightLLBL.Size = new System.Drawing.Size(85, 16);
+            this.totallWeightLLBL.Size = new System.Drawing.Size(97, 23);
             this.totallWeightLLBL.TabIndex = 9;
             this.totallWeightLLBL.Text = "Total weight: ";
             this.totallWeightLLBL.Click += new System.EventHandler(this.totallWeightLLBL_Click);

@@ -81,18 +81,15 @@ namespace sprout__gradeBook
             formbackgroud.Dispose();
            
         }
-
-
-
-
         private void Student__Dashboard_Load(object sender, EventArgs e)
         {
             notificationCount.Text = notifCount.ToString();
             notificationCount.Hide();
+            notificationCount_bg.Hide();
             if (notifCount > 0)
             {
                 notificationCount.Show();
-
+                notificationCount_bg.Show();
             }
         }
 

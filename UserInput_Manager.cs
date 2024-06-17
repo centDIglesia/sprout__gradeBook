@@ -45,7 +45,26 @@ namespace sprout__gradeBook
             }
         }
 
+        public static void ToggleTooltip(KryptonTextBox textBox, PictureBox tooltip, string defaultText)
+        {
+            if (textBox.Text != defaultText)
+            {
+                tooltip.Show();
+            }
+            else
+            {
+                tooltip.Hide();
+            }
+        }
 
+        internal static void ResetInputField(KryptonMaskedTextBox courseStartTXT, string v)
+        {
+            throw new NotImplementedException();
+        }
 
+        internal static void RestoreDefaultText(KryptonMaskedTextBox courseStartTXT, string v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
