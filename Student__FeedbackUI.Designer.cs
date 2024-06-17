@@ -135,10 +135,6 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
-            // studentFeedbackUI_Timer
-            // 
-            this.studentFeedbackUI_Timer.Tick += new System.EventHandler(this.studentFeedbackUI_Timer_Tick);
-            // 
             // Student__FeedbackUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

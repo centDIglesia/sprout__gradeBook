@@ -28,7 +28,7 @@ namespace sprout__gradeBook
         private void Student__FeedbackUI_Load(object sender, EventArgs e)
         {
             LoadFeedbackCards();
-            studentFeedbackUI_Timer.Start();
+
         }
 
         private void LoadFeedbackCards()
@@ -119,11 +119,5 @@ namespace sprout__gradeBook
             b.Closeform(this);
         }
 
-
-
-        private void studentFeedbackUI_Timer_Tick(object sender, EventArgs e)
-        {
-            Opacity += .2;
-        }
     }
 }
