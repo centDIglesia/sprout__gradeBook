@@ -476,7 +476,7 @@ namespace sprout__gradeBook
             }
         }
 
-        private void setInputState(KryptonTextBox textBox, PictureBox tooltipLabel, Color color)
+        public static void setInputState(KryptonTextBox textBox, PictureBox tooltipLabel, Color color)
         {
             textBox.StateCommon.Border.Color1 = color;
             textBox.StateCommon.Content.Color1 = color;
