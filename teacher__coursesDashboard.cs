@@ -228,5 +228,10 @@ namespace sprout__gradeBook
 
             formBackground.Dispose(); // Dispose of the background form
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -92,7 +92,6 @@
             this.studentSIGNINform.Panel.Controls.Add(this.signinSTID__txtbox);
             this.studentSIGNINform.Panel.MaximumSize = new System.Drawing.Size(1000, 1000);
             this.studentSIGNINform.Panel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.studentSIGNINform.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.studentSIGNINform_Panel_Paint);
             this.studentSIGNINform.Size = new System.Drawing.Size(443, 667);
             this.studentSIGNINform.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("studentSIGNINform.StateCommon.Back.Image")));
             this.studentSIGNINform.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Stretch;
@@ -288,7 +287,6 @@
             this.pictureBox2.Size = new System.Drawing.Size(643, 711);
             this.pictureBox2.TabIndex = 23;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // studentLoginForm
             // 
