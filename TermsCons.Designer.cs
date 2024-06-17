@@ -43,40 +43,7 @@
             this.SuspendLayout();
             // 
 
-            // accept__btn
-            // 
-            this.accept__btn.Location = new System.Drawing.Point(32, 291);
-            this.accept__btn.Name = "accept__btn";
-            this.accept__btn.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.accept__btn.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.accept__btn.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.accept__btn.OverrideDefault.Border.Rounding = 4;
-            this.accept__btn.OverrideDefault.Border.Width = 0;
-            this.accept__btn.OverrideDefault.Content.Padding = new System.Windows.Forms.Padding(10, -1, -1, -1);
-            this.accept__btn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.accept__btn.Size = new System.Drawing.Size(231, 30);
-            this.accept__btn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.accept__btn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.accept__btn.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.accept__btn.StateCommon.Border.Rounding = 4;
-            this.accept__btn.StateCommon.Border.Width = 0;
-            this.accept__btn.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0, -1, 0, -1);
-            this.accept__btn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.accept__btn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.accept__btn.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
-            this.accept__btn.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
-            this.accept__btn.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.accept__btn.StateTracking.Border.Rounding = 4;
-            this.accept__btn.StateTracking.Border.Width = 0;
-            this.accept__btn.TabIndex = 10;
-            this.accept__btn.Values.Text = "I ACCEPT";
-            this.accept__btn.Click += new System.EventHandler(this.signIn__btn_Click);
+
 
             // kryptonTextBox1
             // 
@@ -87,8 +54,8 @@
             this.kryptonTextBox1.ReadOnly = true;
             this.kryptonTextBox1.Size = new System.Drawing.Size(314, 31);
             this.kryptonTextBox1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.kryptonTextBox1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            this.kryptonTextBox1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonTextBox1.StateCommon.Border.Width = 0;
             this.kryptonTextBox1.StateCommon.Content.Color1 = System.Drawing.Color.White;
@@ -149,7 +116,7 @@
             this.Controls.Add(this.acceptBtn);
             this.Controls.Add(this.kryptonTextBox1);
 
-            this.Controls.Add(this.accept__btn);
+
 
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -168,7 +135,6 @@
 
         #endregion
 
-        private ComponentFactory.Krypton.Toolkit.KryptonButton accept__btn;
 
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
         private System.Windows.Forms.PictureBox acceptBtn;

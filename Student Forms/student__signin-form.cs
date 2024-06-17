@@ -404,8 +404,8 @@ namespace sprout__gradeBook
             formbackground.Dispose();
         }
 
-        {
 
-        }
+
+
     }
 }
