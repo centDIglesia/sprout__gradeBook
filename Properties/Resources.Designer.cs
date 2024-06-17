@@ -113,9 +113,11 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+
         internal static System.Drawing.Bitmap Attendance_Sheet {
             get {
                 object obj = ResourceManager.GetObject("Attendance_Sheet", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +155,15 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+
         internal static System.Drawing.Bitmap Excused_Checked {
             get {
                 object obj = ResourceManager.GetObject("Excused_Checked", resourceCulture);
+
+        internal static System.Drawing.Bitmap Confirm_Passwordd {
+            get {
+                object obj = ResourceManager.GetObject("Confirm Passwordd", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +171,34 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+
         internal static System.Drawing.Bitmap Excused_Unchecked {
             get {
                 object obj = ResourceManager.GetObject("Excused_Unchecked", resourceCulture);
+
+        internal static System.Drawing.Bitmap couresehover {
+            get {
+                object obj = ResourceManager.GetObject("couresehover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dashboardhover {
+            get {
+                object obj = ResourceManager.GetObject("dashboardhover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dashhovers {
+            get {
+                object obj = ResourceManager.GetObject("dashhovers", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,6 +226,16 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap First_Named {
+            get {
+                object obj = ResourceManager.GetObject("First Named", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Forgot_Your_Password_ {
             get {
                 object obj = ResourceManager.GetObject("Forgot_Your_Password_", resourceCulture);
@@ -206,6 +249,216 @@ namespace sprout__gradeBook.Properties {
         internal static System.Drawing.Bitmap Forgot_Your_Password_HOVER {
             get {
                 object obj = ResourceManager.GetObject("Forgot_Your_Password_HOVER", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Frame_101_ddefault {
+            get {
+                object obj = ResourceManager.GetObject("Frame 101-ddefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Frame_101_hover {
+            get {
+                object obj = ResourceManager.GetObject("Frame 101-hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Frame_10def {
+            get {
+                object obj = ResourceManager.GetObject("Frame 10def", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Frame_10hover {
+            get {
+                object obj = ResourceManager.GetObject("Frame 10hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Frame_71 {
+            get {
+                object obj = ResourceManager.GetObject("Frame_71", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Frame_80 {
+            get {
+                object obj = ResourceManager.GetObject("Frame_80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Frame_81 {
+            get {
+                object obj = ResourceManager.GetObject("Frame_81", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Frame_83 {
+            get {
+                object obj = ResourceManager.GetObject("Frame_83", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Frame_84 {
+            get {
+                object obj = ResourceManager.GetObject("Frame_84", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Frame_85 {
+            get {
+                object obj = ResourceManager.GetObject("Frame_85", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Frame_86 {
+            get {
+                object obj = ResourceManager.GetObject("Frame_86", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Frame_87 {
+            get {
+                object obj = ResourceManager.GetObject("Frame_87", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Frame_88 {
+            get {
+                object obj = ResourceManager.GetObject("Frame_88", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Frame_89 {
+            get {
+                object obj = ResourceManager.GetObject("Frame_89", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Frame_90 {
+            get {
+                object obj = ResourceManager.GetObject("Frame_90", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Frame_91 {
+            get {
+                object obj = ResourceManager.GetObject("Frame_91", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Frame_92 {
+            get {
+                object obj = ResourceManager.GetObject("Frame_92", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Frame_93 {
+            get {
+                object obj = ResourceManager.GetObject("Frame_93", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Frame_94 {
+            get {
+                object obj = ResourceManager.GetObject("Frame_94", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Frame_95 {
+            get {
+                object obj = ResourceManager.GetObject("Frame_95", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gradebookhover {
+            get {
+                object obj = ResourceManager.GetObject("gradebookhover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,9 +486,15 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+
         internal static System.Drawing.Bitmap Late_Checked {
             get {
                 object obj = ResourceManager.GetObject("Late_Checked", resourceCulture);
+
+        internal static System.Drawing.Bitmap Group_72 {
+            get {
+                object obj = ResourceManager.GetObject("Group_72", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,9 +502,85 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+
         internal static System.Drawing.Bitmap Late_Unchecked {
             get {
                 object obj = ResourceManager.GetObject("Late_Unchecked", resourceCulture);
+
+        internal static System.Drawing.Bitmap Group_75 {
+            get {
+                object obj = ResourceManager.GetObject("Group_75", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Group_76 {
+            get {
+                object obj = ResourceManager.GetObject("Group_76", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Group_77 {
+            get {
+                object obj = ResourceManager.GetObject("Group_77", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Group_85sd {
+            get {
+                object obj = ResourceManager.GetObject("Group 85sd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Last_Named {
+            get {
+                object obj = ResourceManager.GetObject("Last Named", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lg {
+            get {
+                object obj = ResourceManager.GetObject("lg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lgdrak {
+            get {
+                object obj = ResourceManager.GetObject("lgdrak", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lghover {
+            get {
+                object obj = ResourceManager.GetObject("lghover", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -286,6 +621,36 @@ namespace sprout__gradeBook.Properties {
         internal static System.Drawing.Bitmap maleee {
             get {
                 object obj = ResourceManager.GetObject("maleee", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nekstBTN {
+            get {
+                object obj = ResourceManager.GetObject("nekstBTN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nekstBTNN {
+            get {
+                object obj = ResourceManager.GetObject("nekstBTNN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nekstBTNNMM {
+            get {
+                object obj = ResourceManager.GetObject("nekstBTNNMM", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -353,9 +718,15 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+
         internal static System.Drawing.Bitmap Present_Checked {
             get {
                 object obj = ResourceManager.GetObject("Present_Checked", resourceCulture);
+
+        internal static System.Drawing.Bitmap Passwordd {
+            get {
+                object obj = ResourceManager.GetObject("Passwordd", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -363,9 +734,15 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+
         internal static System.Drawing.Bitmap Present_Unchecked {
             get {
                 object obj = ResourceManager.GetObject("Present_Unchecked", resourceCulture);
+
+        internal static System.Drawing.Bitmap Rectangle_196s {
+            get {
+                object obj = ResourceManager.GetObject("Rectangle 196s", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -396,6 +773,16 @@ namespace sprout__gradeBook.Properties {
         internal static System.Drawing.Bitmap Roles_Card_student_hover {
             get {
                 object obj = ResourceManager.GetObject("Roles_Card_student_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Schoold {
+            get {
+                object obj = ResourceManager.GetObject("Schoold", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -446,6 +833,16 @@ namespace sprout__gradeBook.Properties {
         internal static System.Drawing.Bitmap Student_CourseCard {
             get {
                 object obj = ResourceManager.GetObject("Student-CourseCard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap studenthover {
+            get {
+                object obj = ResourceManager.GetObject("studenthover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -526,6 +923,26 @@ namespace sprout__gradeBook.Properties {
         internal static System.Drawing.Bitmap teacher__role_clicked {
             get {
                 object obj = ResourceManager.GetObject("teacher__role_clicked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Usernamed {
+            get {
+                object obj = ResourceManager.GetObject("Usernamed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Vector {
+            get {
+                object obj = ResourceManager.GetObject("Vector", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -51,7 +51,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.stidtootip = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.saveNewStudentBTN = new System.Windows.Forms.PictureBox();
@@ -66,7 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stidtootip)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saveNewStudentBTN)).BeginInit();
@@ -188,6 +188,7 @@
             this.studentIDTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
             this.studentIDTXT.TabIndex = 4;
             this.studentIDTXT.Text = "Student ID";
+            this.studentIDTXT.TextChanged += new System.EventHandler(this.studentIDTXT_TextChanged);
             this.studentIDTXT.Enter += new System.EventHandler(this.studentIDTXT_Enter);
             this.studentIDTXT.Leave += new System.EventHandler(this.studentIDTXT_Leave);
             // 
@@ -390,15 +391,15 @@
             this.pictureBox5.TabIndex = 71;
             this.pictureBox5.TabStop = false;
             // 
-            // pictureBox4
+            // stidtootip
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(68, 127);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(77, 15);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox4.TabIndex = 66;
-            this.pictureBox4.TabStop = false;
+            this.stidtootip.Image = ((System.Drawing.Image)(resources.GetObject("stidtootip.Image")));
+            this.stidtootip.Location = new System.Drawing.Point(68, 127);
+            this.stidtootip.Name = "stidtootip";
+            this.stidtootip.Size = new System.Drawing.Size(77, 15);
+            this.stidtootip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.stidtootip.TabIndex = 66;
+            this.stidtootip.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -424,7 +425,7 @@
             // saveNewStudentBTN
             // 
             this.saveNewStudentBTN.Image = ((System.Drawing.Image)(resources.GetObject("saveNewStudentBTN.Image")));
-            this.saveNewStudentBTN.Location = new System.Drawing.Point(367, 501);
+            this.saveNewStudentBTN.Location = new System.Drawing.Point(372, 501);
             this.saveNewStudentBTN.Name = "saveNewStudentBTN";
             this.saveNewStudentBTN.Size = new System.Drawing.Size(185, 45);
             this.saveNewStudentBTN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -487,7 +488,7 @@
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.studentFemaleRADIOBUTTON);
             this.Controls.Add(this.studentMaleRADIOBUTTON);
-            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.stidtootip);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -517,7 +518,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stidtootip)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.saveNewStudentBTN)).EndInit();
@@ -537,7 +538,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox stidtootip;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox studentIDTXT;
         private ComponentFactory.Krypton.Toolkit.KryptonCheckSet kryptonCheckSet1;
         private ComponentFactory.Krypton.Toolkit.KryptonRadioButton studentMaleRADIOBUTTON;

@@ -41,42 +41,188 @@ namespace sprout__gradeBook
             form.Show();
         }
 
-        // Event handler for dashboard button
-        private void btn_dashboard_Click(object sender, EventArgs e)
-        {
-            loadForm(new teacher__mainDashboard(currentUser));
-        }
-
-        // Event handler for courses button
-        private void btn_courses_Click(object sender, EventArgs e)
-        {
-            loadForm(new teacher__courses_lvl1(currentUser));
-        }
-
-        // Event handler for students button
-        private void btn_students_Click(object sender, EventArgs e)
-        {
-            loadForm(new teacher__studentsDashboard(currentUser));
-        }
-
-        // Event handler for grade book button
-        private void btn_gradeBook_Click(object sender, EventArgs e)
-        {
-            // Construct path to the grading system directory for the current user
-            string gradingSystemDirectoryPath = $"CourseGradingSystem/{currentUser}";
-
-            loadForm(new teacher__GradeBook(currentUser));
-        }
-        private void btn_attendance_Click(object sender, EventArgs e)
-        {
-            loadForm(new Teacher__Attendance(currentUser));
-        }
         // Event handler for close button
         private void close_btn_Click(object sender, EventArgs e)
         {
             // Create utility button instance and call exit method
             utilityButton b = new utilityButton();
             b.Exitform();
+        }
+
+        private bool isDashboardButtonClicked = false;
+        private bool isGradebookButtonClicked = false;
+        private bool isStudentsButtonClicked = false;
+        private bool isCourseButtonClicked = false;
+        private bool isAttendanceButtonClicked = false;
+        private void btn_dashboard_Click_1(object sender, EventArgs e)
+        {
+            ResetButtonStates();
+            loadForm(new teacher__mainDashboard(currentUser));
+            btn_dashboard.Image = Properties.Resources.Frame_95;
+
+            isDashboardButtonClicked = true;
+
+        }
+        private void btn_dashboard_MouseHover(object sender, EventArgs e)
+        {
+            if (!isDashboardButtonClicked)
+            {
+                btn_dashboard.Image = Properties.Resources.Frame_83;
+            }
+        }
+
+        private void btn_dashboard_MouseLeave(object sender, EventArgs e)
+        {
+            if (!isDashboardButtonClicked)
+            {
+                btn_dashboard.Image = Properties.Resources.Frame_87;
+            }
+        }
+
+        private void btn_students_Click_1(object sender, EventArgs e)
+        {
+            ResetButtonStates();
+            loadForm(new teacher__studentsDashboard(currentUser));
+            btn_students.Image = Properties.Resources.Frame_94;
+
+            isStudentsButtonClicked = true;
+        }
+
+        private void btn_courses_Click_1(object sender, EventArgs e)
+        {
+            ResetButtonStates();
+            loadForm(new teacher__courses_lvl1(currentUser));
+            btn_courses.Image = Properties.Resources.Frame_91;
+
+            isCourseButtonClicked = true;
+        }
+
+        private void btn_feedback_Click(object sender, EventArgs e)
+        {
+            ResetButtonStates();
+            btn_feedback.Image = Properties.Resources.Frame_93;
+
+            isAttendanceButtonClicked = true;
+        }
+
+        private void btn_gradeBook_Click_1(object sender, EventArgs e)
+        {
+            ResetButtonStates();
+            loadForm(new teacher__GradeBook(currentUser));
+
+            btn_gradeBook.Image = Properties.Resources.Frame_95;
+
+            isGradebookButtonClicked = true;
+        }
+
+        private void btn_attendance_Click(object sender, EventArgs e)
+        {
+            loadForm(new Teacher__Attendance(currentUser));
+        }
+        // Event handler for close button
+        private void close_btn_Click(object sender, EventArgs e)
+
+        {
+
+        }
+
+        private void ResetButtonStates()
+        {
+
+            isDashboardButtonClicked = false;
+            isGradebookButtonClicked = false;
+            isStudentsButtonClicked = false;
+            isCourseButtonClicked = false;
+            isAttendanceButtonClicked = false;
+
+
+            btn_dashboard.Image = Properties.Resources.Frame_87;
+            btn_students.Image = Properties.Resources.Frame_89;
+            btn_courses.Image = Properties.Resources.Frame_86;
+            btn_gradeBook.Image = Properties.Resources.Frame_90;
+            btn_feedback.Image = Properties.Resources.Frame_88;
+
+        }
+
+        private void btn_students_MouseHover(object sender, EventArgs e)
+        {
+            if (!isStudentsButtonClicked)
+            {
+                btn_students.Image = Properties.Resources.Frame_85;
+            }
+
+        }
+
+        private void btn_students_MouseLeave(object sender, EventArgs e)
+        {
+            if (!isStudentsButtonClicked)
+            { btn_students.Image = Properties.Resources.Frame_89; }
+        }
+
+        private void btn_courses_MouseHover(object sender, EventArgs e)
+        {
+            if (!isCourseButtonClicked)
+            { btn_courses.Image = Properties.Resources.Frame_80; }
+        }
+
+        private void btn_courses_MouseLeave(object sender, EventArgs e)
+        {
+            if (!isCourseButtonClicked)
+            { btn_courses.Image = Properties.Resources.Frame_86; }
+        }
+
+        private void btn_gradeBook_MouseHover(object sender, EventArgs e)
+        {
+            if (!isGradebookButtonClicked)
+            { btn_gradeBook.Image = Properties.Resources.Frame_84; }
+        }
+
+        private void btn_gradeBook_MouseLeave(object sender, EventArgs e)
+        {
+            if (!isGradebookButtonClicked)
+            { btn_gradeBook.Image = Properties.Resources.Frame_90; }
+        }
+
+        private void btn_feedback_MouseHover(object sender, EventArgs e)
+        {
+            if (!isAttendanceButtonClicked)
+            { btn_feedback.Image = Properties.Resources.Frame_81; }
+        }
+
+        private void btn_feedback_MouseLeave(object sender, EventArgs e)
+        {
+            if (!isAttendanceButtonClicked)
+            {
+                btn_feedback.Image = Properties.Resources.Frame_88;
+            }
+
+        }
+
+        private void logoutBtn_MouseHover(object sender, EventArgs e)
+        {
+            logoutBtn.Image = Properties.Resources.lghover;
+        }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            utilityButton ut = new utilityButton();
+
+            Role__form role__Form = new Role__form();
+            this.Close();
+
+            role__Form.Show();
+
+
+        }
+
+        private void logoutBtn_MouseLeave(object sender, EventArgs e)
+        {
+            logoutBtn.Image = Properties.Resources.lgdrak;
+        }
+
+        private void logoutBtn_MouseHover_1(object sender, EventArgs e)
+        {
+            logoutBtn.Image = Properties.Resources.lghover;
         }
 
 

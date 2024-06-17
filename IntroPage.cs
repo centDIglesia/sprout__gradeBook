@@ -13,7 +13,7 @@ namespace sprout__gradeBook
 {
     public partial class introductionPage : KryptonForm
     {
-       
+
 
         public introductionPage()
         {
@@ -34,13 +34,28 @@ namespace sprout__gradeBook
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            timer1.Stop(); 
+            timer1.Stop();
+
+
+            Role__form roleForm = new Role__form();
+
+            roleForm.Show();
 
             this.Hide();
-            Role__form roleForm = new Role__form();
-            
-            roleForm.Show();
-           
+
+        }
+
+
+
+
+        private void logoImage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void round_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

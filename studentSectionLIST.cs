@@ -15,10 +15,12 @@ namespace sprout__gradeBook
     public partial class studentSectionLIST : KryptonForm
     {
         readonly teacher__studentsDashboard studentsDashboard;
-        public studentSectionLIST(teacher__studentsDashboard StudentsDashboard)
+        private readonly string _currentUser;
+        public studentSectionLIST(teacher__studentsDashboard StudentsDashboard, string currentUser)
         {
             studentsDashboard = StudentsDashboard;
             InitializeComponent();
+            _currentUser = currentUser;
         }
 
         private void studentSectionLIST_Load(object sender, EventArgs e)
@@ -62,7 +64,7 @@ namespace sprout__gradeBook
 
 
 
-                        CourseAndSectionCARD card = new CourseAndSectionCARD(studentsDashboard)
+                        CourseAndSectionCARD card = new CourseAndSectionCARD(_currentUser, studentsDashboard)
                         {
                             Course = lastPart,
                             SectionName = section,

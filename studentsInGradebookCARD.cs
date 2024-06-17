@@ -6,40 +6,79 @@ namespace sprout__gradeBook
     public partial class studentsInGradebookCARD : UserControl
     {
 
-        // Private field to hold reference to the teacher's grade book form
-        private readonly teacher__GradeBook _teacherForm;
 
-        // Constructor for the studentsInGradebookCARD class
+        private readonly teacher__GradeBook _teacherForm;
+        public PictureBox MarkAsGraded { get; set; }
+
         public studentsInGradebookCARD(teacher__GradeBook teacherForm)
         {
             InitializeComponent();
 
-            // Initialize _teacherForm with the provided teacherForm instance
+
             _teacherForm = teacherForm;
+
+            MarkAsGraded = markAsGraded;
         }
 
-        // Property to get/set the current student's name
+
         public string currentStudentName
         {
-            get => nameofStudent.Text;   // Return the text of nameofStudent control
-            set => nameofStudent.Text = value;   // Set the text of nameofStudent control
+            get => nameofStudent.Text;
+            set => nameofStudent.Text = value;
         }
 
-        // Property to get/set the current student's ID
+
         public string currentStudentID
         {
-            get => idOfStudent.Text;   // Return the text of idOfStudent control
-            set => idOfStudent.Text = value;   // Set the text of idOfStudent control
+            get => idOfStudent.Text;
+            set => idOfStudent.Text = value;
         }
 
-        // Event handler for the click event of the form
+
+
+
         private void studentsInGradebookCARD_Click(object sender, EventArgs e)
         {
-            // When the form is clicked, update the teacher's grade book form
-            _teacherForm.StudenttnameText = currentStudentName;   // Update student name in teacher form
-            _teacherForm.StudentIDText = currentStudentID;   // Update student ID in teacher form
+            if (!_teacherForm.isFirstStudentClicked)
+            {
+
+                _teacherForm.isFirstStudentClicked = true;
+            }
+            else
+            {
+
+                if (_teacherForm.isStudentGraded)
+                {
+                    _teacherForm.ResetComponentsForNewStudent();
+                    _teacherForm.isStudentGraded = false;
+                }
+                else
+                {
+                    var result = MessageBox.Show("You have not saved the grades for the current student. Do you want to proceed and discard unsaved changes?", "Unsaved Changes", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.No)
+                    {
+                        return;
+                    }
+                }
+            }
+
+
+            _teacherForm.StudenttnameText = currentStudentName;
+            _teacherForm.StudentIDText = currentStudentID;
+
+            MarkAsGraded.Visible = _teacherForm.IsStudentGraded(currentStudentID);
         }
 
+
+        private void studentsInGradebookCARD_Load(object sender, EventArgs e)
+        {
+            markAsGraded.Hide();
+        }
+
+        private void MarkAsGraded_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

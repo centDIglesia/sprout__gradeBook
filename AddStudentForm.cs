@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -68,7 +69,7 @@ namespace sprout__gradeBook
 
             this.Close();
 
-            parent.LoadStudentCourses(); // Ensure this method exists and refreshes student courses
+            parent.LoadStudentCourses();
         }
 
 
@@ -82,6 +83,26 @@ namespace sprout__gradeBook
         {
             //implement here if student id already exist
             UserInput_Manager.RestoreDefaultText(studentIDTXT, "Student ID");
+
+            string folderPath = $"StudentCredentials/{parent.currentUSer}";
+            if (studentIDTXT.Text != "Student ID")
+            {
+                bool usernameExists = Account__Manager.UserExists(studentIDTXT.Text, folderPath);
+                if (usernameExists)
+                {
+
+
+                    logInForm.setInputState(studentIDTXT, stidtootip, Color.Red);
+                    MessageBox.Show("Username already exists. Please choose a different username.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    studentIDTXT.Clear();
+                    studentIDTXT.Focus();
+                }
+                else
+                {
+                    logInForm.setInputState(studentIDTXT, stidtootip, CustomColor.mainColor);
+
+                }
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -163,9 +184,10 @@ namespace sprout__gradeBook
             UserInput_Manager.RestoreDefaultText(studentLnameTXT, "Last Name");
         }
 
+        private void studentIDTXT_TextChanged(object sender, EventArgs e)
+        {
 
-
-
+        }
     }
 
 }

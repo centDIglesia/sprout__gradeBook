@@ -32,8 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(introductionPage));
             this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.logoImage = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.logoImage)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette2
@@ -55,15 +55,16 @@
             this.timer1.Interval = 3000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // pictureBox1
+            // logoImage
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(446, 217);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(253, 237);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.logoImage.Image = ((System.Drawing.Image)(resources.GetObject("logoImage.Image")));
+            this.logoImage.Location = new System.Drawing.Point(403, 134);
+            this.logoImage.Name = "logoImage";
+            this.logoImage.Size = new System.Drawing.Size(341, 341);
+            this.logoImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.logoImage.TabIndex = 0;
+            this.logoImage.TabStop = false;
+            this.logoImage.Click += new System.EventHandler(this.logoImage_Click);
             // 
             // introductionPage
             // 
@@ -71,7 +72,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.ClientSize = new System.Drawing.Size(1147, 711);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.logoImage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "introductionPage";
             this.Palette = this.kryptonPalette2;
@@ -79,16 +80,17 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "intro__form";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoImage)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox logoImage;
     }
 }
 

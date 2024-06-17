@@ -34,19 +34,22 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ComponentFactory.Krypton.Design">
-      <HintPath>..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Design.dll</HintPath>
+      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Design.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Docking">
-      <HintPath>..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
+      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Navigator">
-      <HintPath>..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
+      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Ribbon">
-      <HintPath>..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Toolkit">
-      <HintPath>..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Workspace">
+      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -86,11 +89,16 @@
     <Compile Include="AddStudentForm.Designer.cs">
       <DependentUpon>AddStudentForm.cs</DependentUpon>
     </Compile>
+
     <Compile Include="Attendance__Row.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Attendance__Row.Designer.cs">
       <DependentUpon>Attendance__Row.cs</DependentUpon>
+
+    <Compile Include="AlphaPictureBox.cs">
+      <SubType>Component</SubType>
+
     </Compile>
     <Compile Include="Component-Button-Card.cs">
       <SubType>UserControl</SubType>
@@ -160,6 +168,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
     <Compile Include="Role__form.cs">
       <SubType>Form</SubType>
@@ -346,6 +359,10 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Role__form.resx">
       <DependentUpon>Role__form.cs</DependentUpon>
     </EmbeddedResource>
@@ -513,13 +530,26 @@
     <None Include="Resources\Sort-Button.png" />
   </ItemGroup>
   <ItemGroup>
+
     <None Include="Resources\Present_Checked.png" />
     <None Include="Resources\Present_Unchecked.png" />
+
+    <None Include="Resources\Usernamed.png" />
+    <None Include="Resources\Schoold.png" />
+    <None Include="Resources\Passwordd.png" />
+    <None Include="Resources\nekstBTNNMM.png" />
+    <None Include="Resources\nekstBTN.png" />
+    <None Include="Resources\nekstBTNN.png" />
+    <None Include="Resources\Rectangle 196s.png" />
+    <None Include="Resources\Vector.png" />
+    <None Include="Resources\studenthover.png" />
+
     <None Include="Resources\Notification_Bell.png" />
     <None Include="Resources\open__eye.png" />
     <None Include="Resources\closed__eye.png" />
     <None Include="Resources\Add row +.png" />
     <None Include="Resources\Feedback_Icon.png" />
+
     <None Include="Resources\Excused_Unchecked.png" />
     <None Include="Resources\Absent_Unchecked.png" />
     <None Include="Resources\Excused_Checked.png" />
@@ -528,6 +558,45 @@
     <Content Include="Resources\Female_Icon.png" />
     <None Include="Resources\Late_Unchecked.png" />
     <None Include="Resources\Late_Checked.png" />
+
+    <None Include="Resources\dashhovers.png" />
+    <None Include="Resources\dashboardhover.png" />
+    <None Include="Resources\attendancehover.png" />
+    <None Include="Resources\couresehover.png" />
+    <None Include="Resources\Confirm Passwordd.png" />
+    <Content Include="Resources\Female_Icon.png" />
+    <None Include="Resources\gradebookhover.png" />
+    <None Include="Resources\Group 75.png" />
+    <None Include="Resources\Frame 71.png" />
+    <None Include="Resources\Group 72.png" />
+    <None Include="Resources\Group 76.png" />
+    <None Include="Resources\Group 77.png" />
+    <None Include="Resources\Frame 95.png" />
+    <None Include="Resources\Frame 94.png" />
+    <None Include="Resources\Frame 93.png" />
+    <None Include="Resources\Frame 91.png" />
+    <None Include="Resources\Frame 92.png" />
+    <None Include="Resources\Frame 90.png" />
+    <None Include="Resources\Frame 88.png" />
+    <None Include="Resources\Frame 89.png" />
+    <None Include="Resources\Frame 87.png" />
+    <None Include="Resources\Frame 86.png" />
+    <None Include="Resources\Frame 84.png" />
+    <None Include="Resources\Frame 85.png" />
+    <None Include="Resources\Frame 81.png" />
+    <None Include="Resources\Frame 83.png" />
+    <None Include="Resources\Frame 80.png" />
+    <None Include="Resources\lg.png" />
+    <None Include="Resources\lghover.png" />
+    <None Include="Resources\lgdrak.png" />
+    <None Include="Resources\Group 85sd.png" />
+    <None Include="Resources\Frame 101-hover.png" />
+    <None Include="Resources\Frame 101-ddefault.png" />
+    <None Include="Resources\Frame 10hover.png" />
+    <None Include="Resources\Frame 10def.png" />
+    <None Include="Resources\First Named.png" />
+    <None Include="Resources\Last Named.png" />
+
     <Content Include="Resources\Male_Icon.png" />
     <None Include="Resources\open__eye1.png" />
   </ItemGroup>

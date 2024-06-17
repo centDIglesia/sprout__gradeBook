@@ -18,6 +18,10 @@ namespace sprout__gradeBook
         public Component_Button_Card _currentActiveComponentButton;
         public static teacher__GradeBook _gradeBook;
         List<double> _FinalGradesInEachComponents = new List<double>();
+        public bool isFirstStudentClicked { get; set; } = false;
+
+
+        public bool isStudentGraded { get; set; } = false;
 
 
         public string currentUSer { get; set; }
@@ -39,12 +43,24 @@ namespace sprout__gradeBook
             InitializeComponent();
 
         }
+        public Dictionary<string, bool> StudentGradedStatus { get; set; } = new Dictionary<string, bool>();
+
+        public bool IsStudentGraded(string studentID)
+        {
+            return StudentGradedStatus.ContainsKey(studentID) && StudentGradedStatus[studentID];
+        }
 
         private void teacher__GradeBook_Load(object sender, EventArgs e)
         {
             LoadTxtFilesIntoComboBox(currentUSer);
             courseComboBox.SelectedIndexChanged += CourseComboBox_SelectedIndexChanged;
 
+            HideInitialElements();
+        }
+
+
+        private void HideInitialElements()
+        {
             genderPict.Hide();
             StudentIDTXT.Hide();
             StudenttnameTXT.Hide();
@@ -62,11 +78,9 @@ namespace sprout__gradeBook
             courseComboBox.Hide();
             kryptonTextBox1.Hide();
             pictureBox2.Hide();
+            pictureBox3.Hide();
 
         }
-
-
-
 
 
         private void LoadTxtFilesIntoComboBox(string currentUser)
@@ -76,7 +90,7 @@ namespace sprout__gradeBook
             if (!Directory.Exists(directoryPath))
             {
                 MessageBox.Show(
-      "Please ensure you have added the course details and set up the grading system before proceeding. To add a course, navigate to the 'Courses' section and click on 'Add New Course'. Then, click on the course and add a 'Grading System' by selecting the 'Grading System' button and setting up the required components.",
+      "Please ensure you have added the course details and set up the grading system before proceeding.\n\n To add a course, navigate to the 'Courses' section and click on 'Add New Course'.\n\n Then, click on the course and add a 'Grading System' by selecting the 'Grading System' button and setting up the required components.",
       "Incomplete Setup",
       MessageBoxButtons.OK,
       MessageBoxIcon.Warning
@@ -107,6 +121,13 @@ namespace sprout__gradeBook
                 string trimmedCourseName = trimmedCourseParts[1].Trim();
                 string studentFilePath = $"StudentCredentials/{currentUSer}/DepartmentandSections/{trimmedCourseName}.txt";
 
+                if (!File.Exists(studentFilePath))
+                {
+
+                    MessageBox.Show("No students found for the selected course. Please add students before proceeding.", "No Students Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    return;
+                }
 
                 LoadStudentCards(studentFilePath);
             }
@@ -114,6 +135,7 @@ namespace sprout__gradeBook
             {
 
                 MessageBox.Show("Selected course format is incorrect. Please select a valid course.", "Invalid Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             }
 
             DisplayIfCourseSelected();
@@ -128,6 +150,7 @@ namespace sprout__gradeBook
             StudenttnameTXT.Show();
             sectionTXT.Show();
             ComponentsButtonPanel.Show();
+            pictureBox3.Show();
         }
         public void DisplayIfCompButtonIsclicked()
         {
@@ -136,18 +159,19 @@ namespace sprout__gradeBook
 
             doneBtn.Show();
             pictureBox5.Show();
+
         }
 
 
 
         private void LoadStudentCards(string filePath)
         {
-            // Clear existing student cards
+
             studentListPanel.Controls.Clear();
 
             try
             {
-                // Read all lines from the file
+
                 string[] lines = File.ReadAllLines(filePath);
 
                 string studentID = null;
@@ -155,28 +179,35 @@ namespace sprout__gradeBook
 
                 foreach (string line in lines)
                 {
-                    // Look for the "Student ID:" prefix
+
                     if (line.StartsWith("Student ID:"))
                     {
                         studentID = line.Substring("Student ID:".Length).Trim();
                     }
-                    // Look for the "Student Name:" prefix
+
                     else if (line.StartsWith("Student Name:"))
                     {
                         studentName = line.Substring("Student Name:".Length).Trim();
                     }
-                    // If both ID and Name are found, add the student card
+
                     if (!string.IsNullOrEmpty(studentID) && !string.IsNullOrEmpty(studentName))
                     {
                         AddStudentCard(studentID, studentName);
-                        studentID = null; // Reset for the next student
-                        studentName = null; // Reset for the next student
+                        studentID = null;
+                        studentName = null;
                     }
+                }
+
+                if (studentListPanel.Controls.Count == 0)
+                {
+                    MessageBox.Show("No students found in the selected course. Please add students before proceeding.", "No Students Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    return;
                 }
             }
             catch (Exception ex)
             {
-                // Handle exceptions (e.g., file not found, read errors)
+
                 MessageBox.Show($"Error loading student data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -237,7 +268,16 @@ namespace sprout__gradeBook
             }
             else
             {
-                MessageBox.Show($"Grading system file not found.{filePath}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+             "No grading system for the selected course yet. Please create it first. Thank you!",
+             "Error",
+             MessageBoxButtons.OK,
+             MessageBoxIcon.Error
+         );
+
+
+
+                return;
             }
 
 
@@ -383,11 +423,14 @@ namespace sprout__gradeBook
             {
                 if (control is Component_Button_Card compButton)
                 {
-                    // Enable the button only if it is not graded
+
                     compButton.Enabled = enabled && !compButton.IsCurrentComponentButtonGraded;
                 }
             }
         }
+
+
+
         private string grades = "";
         private void doneBtn_Click(object sender, EventArgs e)
         {
@@ -426,6 +469,9 @@ namespace sprout__gradeBook
 
             }
         }
+
+
+
         private void CheckAllComponentsGraded()
         {
             bool allGraded = true;
@@ -463,14 +509,35 @@ namespace sprout__gradeBook
 
             if (allGraded)
             {
-
+                isStudentGraded = true;
                 SaveGradesToFile();
+
+                // Mark the current student as graded
+                if (!StudentGradedStatus.ContainsKey(StudentIDText))
+                {
+                    StudentGradedStatus.Add(StudentIDText, true);
+                }
+                else
+                {
+                    StudentGradedStatus[StudentIDText] = true;
+                }
+
+                // Update the check mark
+                var currentCard = studentListPanel.Controls
+                    .OfType<studentsInGradebookCARD>()
+                    .FirstOrDefault(c => c.currentStudentID == StudentIDText);
+
+                if (currentCard != null)
+                {
+                    currentCard.MarkAsGraded.Visible = true;
+                }
             }
             else
             {
                 MessageBox.Show("Please grade all components before saving.", "Incomplete Grading", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
 
         private void SaveGradesToFile()
         {
@@ -499,7 +566,12 @@ namespace sprout__gradeBook
                 // Write grades to file
                 File.AppendAllText(filePath, sb.ToString());
 
-                MessageBox.Show("Grades have been saved successfully.", "Save Grades", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(
+             $"Grades for {StudenttnameTXT.Text} have been successfully recorded for the course '{courseCode}'.",
+             "Grades Recorded Successfully",
+             MessageBoxButtons.OK,
+             MessageBoxIcon.Information
+         );
 
                 grades = "";
                 _FinalGradesInEachComponents.Clear();
@@ -510,6 +582,31 @@ namespace sprout__gradeBook
                 MessageBox.Show($"Error saving grades: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        public void ResetComponentsForNewStudent()
+        {
+            // Clear subcomponentsPanel
+            subcomponentsPanel.Controls.Clear();
+
+            // Reset each component button and enable it
+            foreach (Control control in ComponentsButtonPanel.Controls)
+            {
+                if (control is Component_Button_Card componentButton)
+                {
+                    componentButton.IsCurrentComponentButtonGraded = false;
+                    componentButton.Enabled = true; // Re-enable the button
+                }
+            }
+
+            // Reset other necessary fields and states
+            saveGradeBtn.Hide();
+            _currentActiveComponentButton = null;
+            componentCount = 0;
+            finalGradelbl.Text = string.Empty;
+            grades = string.Empty;
+            _FinalGradesInEachComponents.Clear();
+            isStudentGraded = false; // Reset the flag
+        }
+
 
 
     }

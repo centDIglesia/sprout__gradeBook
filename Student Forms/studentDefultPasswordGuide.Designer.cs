@@ -31,7 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentDefultPasswordGuide));
             this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
-            this.role__btn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.closeBTN = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.closeBTN)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette2
@@ -48,41 +49,16 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonPalette2.InputControlStyles.InputControlCommon.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // role__btn
+            // closeBTN
             // 
-            this.role__btn.Location = new System.Drawing.Point(432, 12);
-            this.role__btn.Name = "role__btn";
-            this.role__btn.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.role__btn.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.role__btn.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.role__btn.OverrideDefault.Border.Rounding = 4;
-            this.role__btn.OverrideDefault.Border.Width = 0;
-            this.role__btn.OverrideDefault.Content.Padding = new System.Windows.Forms.Padding(10, -1, -1, -1);
-            this.role__btn.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.role__btn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.role__btn.Size = new System.Drawing.Size(63, 38);
-            this.role__btn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.role__btn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.role__btn.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.role__btn.StateCommon.Border.Rounding = 4;
-            this.role__btn.StateCommon.Border.Width = 0;
-            this.role__btn.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0, -1, 0, -1);
-            this.role__btn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.role__btn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins", 10F);
-            this.role__btn.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
-            this.role__btn.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
-            this.role__btn.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.role__btn.StateTracking.Border.Rounding = 4;
-            this.role__btn.StateTracking.Border.Width = 0;
-            this.role__btn.TabIndex = 4;
-            this.role__btn.Values.Text = "Close";
-            this.role__btn.Click += new System.EventHandler(this.role__btn_Click);
+            this.closeBTN.Image = global::sprout__gradeBook.Properties.Resources.close_line;
+            this.closeBTN.Location = new System.Drawing.Point(470, 12);
+            this.closeBTN.Name = "closeBTN";
+            this.closeBTN.Size = new System.Drawing.Size(24, 24);
+            this.closeBTN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.closeBTN.TabIndex = 5;
+            this.closeBTN.TabStop = false;
+            this.closeBTN.Click += new System.EventHandler(this.closeBTN_Click);
             // 
             // StudentDefultPasswordGuide
             // 
@@ -92,7 +68,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(506, 318);
-            this.Controls.Add(this.role__btn);
+            this.Controls.Add(this.closeBTN);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StudentDefultPasswordGuide";
             this.Palette = this.kryptonPalette2;
@@ -100,13 +76,15 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "studentDefultPasswordGuide";
             this.Load += new System.EventHandler(this.studentDefultPasswordGuide_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.closeBTN)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette2;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton role__btn;
+        private System.Windows.Forms.PictureBox closeBTN;
     }
 }
