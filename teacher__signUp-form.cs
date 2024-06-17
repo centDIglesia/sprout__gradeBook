@@ -408,21 +408,7 @@ namespace sprout__gradeBook
         }
 
 
-        // TEACHER SIGN IN BUTTON 
 
-
-        private void signIn__btn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        // TEACHER SIGN UP BUTTON 
-
-        private void signUp__btn_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void close_btn_Click(object sender, EventArgs e)
         {

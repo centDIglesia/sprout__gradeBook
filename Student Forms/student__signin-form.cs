@@ -16,7 +16,7 @@ namespace sprout__gradeBook
         {
             InitializeComponent();
 
-           
+
         }
 
         private void studentLoginForm_Load(object sender, EventArgs e)
@@ -402,12 +402,6 @@ namespace sprout__gradeBook
             this.Hide();
         }
 
-
-
-        private void pictureBox12_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void pictureBox12_Click_1(object sender, EventArgs e)
         {

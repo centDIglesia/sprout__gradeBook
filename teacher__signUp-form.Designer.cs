@@ -247,7 +247,6 @@
             // 
             // signUp__btn
             // 
-            this.signUp__btn.Image = global::sprout__gradeBook.Properties.Resources.Frame_10def;
             this.signUp__btn.Location = new System.Drawing.Point(42, 533);
             this.signUp__btn.Name = "signUp__btn";
             this.signUp__btn.Padding = new System.Windows.Forms.Padding(2);
@@ -477,7 +476,6 @@
             // 
             // signIn__btn
             // 
-            this.signIn__btn.Image = global::sprout__gradeBook.Properties.Resources.Frame_101_ddefault;
             this.signIn__btn.Location = new System.Drawing.Point(45, 308);
             this.signIn__btn.Name = "signIn__btn";
             this.signIn__btn.Padding = new System.Windows.Forms.Padding(2);
@@ -541,11 +539,10 @@
             // signIn__showPassicon
             // 
             this.signIn__showPassicon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.signIn__showPassicon.Image = global::sprout__gradeBook.Properties.Resources.closed__eye;
             this.signIn__showPassicon.Location = new System.Drawing.Point(367, 226);
             this.signIn__showPassicon.Name = "signIn__showPassicon";
             this.signIn__showPassicon.Size = new System.Drawing.Size(20, 16);
-            this.signIn__showPassicon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.signIn__showPassicon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.signIn__showPassicon.TabIndex = 20;
             this.signIn__showPassicon.TabStop = false;
             this.signIn__showPassicon.Click += new System.EventHandler(this.signIn__showPassicon_Click);

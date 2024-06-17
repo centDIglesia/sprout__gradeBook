@@ -113,11 +113,19 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-
         internal static System.Drawing.Bitmap Attendance_Sheet {
             get {
                 object obj = ResourceManager.GetObject("Attendance_Sheet", resourceCulture);
-
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap attendancehover {
+            get {
+                object obj = ResourceManager.GetObject("attendancehover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -155,15 +163,9 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-
-        internal static System.Drawing.Bitmap Excused_Checked {
+        internal static System.Drawing.Bitmap closed__eye1 {
             get {
-                object obj = ResourceManager.GetObject("Excused_Checked", resourceCulture);
-
-        internal static System.Drawing.Bitmap Confirm_Passwordd {
-            get {
-                object obj = ResourceManager.GetObject("Confirm Passwordd", resourceCulture);
-
+                object obj = ResourceManager.GetObject("closed__eye1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -171,11 +173,16 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-
-        internal static System.Drawing.Bitmap Excused_Unchecked {
+        internal static System.Drawing.Bitmap Confirm_Passwordd {
             get {
-                object obj = ResourceManager.GetObject("Excused_Unchecked", resourceCulture);
-
+                object obj = ResourceManager.GetObject("Confirm Passwordd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap couresehover {
             get {
                 object obj = ResourceManager.GetObject("couresehover", resourceCulture);
@@ -199,6 +206,26 @@ namespace sprout__gradeBook.Properties {
         internal static System.Drawing.Bitmap dashhovers {
             get {
                 object obj = ResourceManager.GetObject("dashhovers", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Excused_Checked {
+            get {
+                object obj = ResourceManager.GetObject("Excused_Checked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Excused_Unchecked {
+            get {
+                object obj = ResourceManager.GetObject("Excused_Unchecked", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -486,15 +513,9 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-
-        internal static System.Drawing.Bitmap Late_Checked {
-            get {
-                object obj = ResourceManager.GetObject("Late_Checked", resourceCulture);
-
         internal static System.Drawing.Bitmap Group_72 {
             get {
                 object obj = ResourceManager.GetObject("Group_72", resourceCulture);
-
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -502,11 +523,6 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-
-        internal static System.Drawing.Bitmap Late_Unchecked {
-            get {
-                object obj = ResourceManager.GetObject("Late_Unchecked", resourceCulture);
-
         internal static System.Drawing.Bitmap Group_75 {
             get {
                 object obj = ResourceManager.GetObject("Group_75", resourceCulture);
@@ -557,6 +573,26 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Late_Checked {
+            get {
+                object obj = ResourceManager.GetObject("Late_Checked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Late_Unchecked {
+            get {
+                object obj = ResourceManager.GetObject("Late_Unchecked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lg {
             get {
                 object obj = ResourceManager.GetObject("lg", resourceCulture);
@@ -580,7 +616,6 @@ namespace sprout__gradeBook.Properties {
         internal static System.Drawing.Bitmap lghover {
             get {
                 object obj = ResourceManager.GetObject("lghover", resourceCulture);
-
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -718,15 +753,9 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-
-        internal static System.Drawing.Bitmap Present_Checked {
-            get {
-                object obj = ResourceManager.GetObject("Present_Checked", resourceCulture);
-
         internal static System.Drawing.Bitmap Passwordd {
             get {
                 object obj = ResourceManager.GetObject("Passwordd", resourceCulture);
-
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -734,15 +763,29 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-
+        internal static System.Drawing.Bitmap Present_Checked {
+            get {
+                object obj = ResourceManager.GetObject("Present_Checked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Present_Unchecked {
             get {
                 object obj = ResourceManager.GetObject("Present_Unchecked", resourceCulture);
-
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Rectangle_196s {
             get {
                 object obj = ResourceManager.GetObject("Rectangle 196s", resourceCulture);
-
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
