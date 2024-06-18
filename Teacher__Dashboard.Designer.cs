@@ -33,27 +33,27 @@
             this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.viewPanel = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.teachers__firstName = new System.Windows.Forms.Label();
+            this.btn_dashboard = new System.Windows.Forms.PictureBox();
+            this.btn_students = new System.Windows.Forms.PictureBox();
+            this.btn_courses = new System.Windows.Forms.PictureBox();
+            this.btn_gradeBook = new System.Windows.Forms.PictureBox();
             this.logoutBtn = new System.Windows.Forms.PictureBox();
             this.btn_attendance = new System.Windows.Forms.PictureBox();
             this.close_btn = new System.Windows.Forms.PictureBox();
             this.notification__icon = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.global__nav__bg = new System.Windows.Forms.PictureBox();
-            this.btn_gradeBook = new System.Windows.Forms.PictureBox();
-            this.btn_courses = new System.Windows.Forms.PictureBox();
-            this.btn_students = new System.Windows.Forms.PictureBox();
-            this.btn_dashboard = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.viewPanel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_dashboard)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_students)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_courses)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_gradeBook)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoutBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_attendance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.close_btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.notification__icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.global__nav__bg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_gradeBook)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_courses)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_students)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_dashboard)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette2
@@ -91,12 +91,69 @@
             this.teachers__firstName.TabIndex = 63;
             this.teachers__firstName.Text = "user name";
             // 
+            // btn_dashboard
+            // 
+            this.btn_dashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.btn_dashboard.Image = ((System.Drawing.Image)(resources.GetObject("btn_dashboard.Image")));
+            this.btn_dashboard.Location = new System.Drawing.Point(42, 134);
+            this.btn_dashboard.Name = "btn_dashboard";
+            this.btn_dashboard.Size = new System.Drawing.Size(254, 101);
+            this.btn_dashboard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btn_dashboard.TabIndex = 74;
+            this.btn_dashboard.TabStop = false;
+            this.btn_dashboard.Click += new System.EventHandler(this.btn_dashboard_Click);
+            this.btn_dashboard.MouseLeave += new System.EventHandler(this.btn_dashboard_MouseLeave_1);
+            this.btn_dashboard.MouseHover += new System.EventHandler(this.btn_dashboard_MouseHover_1);
+            // 
+            // btn_students
+            // 
+            this.btn_students.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.btn_students.Image = ((System.Drawing.Image)(resources.GetObject("btn_students.Image")));
+            this.btn_students.Location = new System.Drawing.Point(42, 235);
+            this.btn_students.Name = "btn_students";
+            this.btn_students.Size = new System.Drawing.Size(254, 101);
+            this.btn_students.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btn_students.TabIndex = 73;
+            this.btn_students.TabStop = false;
+            this.btn_students.Click += new System.EventHandler(this.btn_students_Click);
+            this.btn_students.MouseLeave += new System.EventHandler(this.btn_students_MouseLeave);
+            this.btn_students.MouseHover += new System.EventHandler(this.btn_students_MouseHover);
+            // 
+            // btn_courses
+            // 
+            this.btn_courses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.btn_courses.Image = ((System.Drawing.Image)(resources.GetObject("btn_courses.Image")));
+            this.btn_courses.Location = new System.Drawing.Point(42, 336);
+            this.btn_courses.Name = "btn_courses";
+            this.btn_courses.Size = new System.Drawing.Size(254, 101);
+            this.btn_courses.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btn_courses.TabIndex = 72;
+            this.btn_courses.TabStop = false;
+            this.btn_courses.Click += new System.EventHandler(this.btn_courses_Click);
+            this.btn_courses.MouseLeave += new System.EventHandler(this.btn_courses_MouseLeave_1);
+            this.btn_courses.MouseHover += new System.EventHandler(this.btn_courses_MouseHover_1);
+            // 
+            // btn_gradeBook
+            // 
+            this.btn_gradeBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.btn_gradeBook.Image = ((System.Drawing.Image)(resources.GetObject("btn_gradeBook.Image")));
+            this.btn_gradeBook.Location = new System.Drawing.Point(42, 437);
+            this.btn_gradeBook.Name = "btn_gradeBook";
+            this.btn_gradeBook.Size = new System.Drawing.Size(254, 101);
+            this.btn_gradeBook.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btn_gradeBook.TabIndex = 71;
+            this.btn_gradeBook.TabStop = false;
+            this.btn_gradeBook.Click += new System.EventHandler(this.btn_gradeBook_Click);
+            this.btn_gradeBook.MouseLeave += new System.EventHandler(this.btn_gradeBook_MouseLeave);
+            this.btn_gradeBook.MouseHover += new System.EventHandler(this.btn_gradeBook_MouseHover);
+            // 
             // logoutBtn
             // 
             this.logoutBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.logoutBtn.Location = new System.Drawing.Point(43, 657);
+            this.logoutBtn.Image = global::sprout__gradeBook.Properties.Resources.llogut;
+            this.logoutBtn.Location = new System.Drawing.Point(35, 662);
             this.logoutBtn.Name = "logoutBtn";
-            this.logoutBtn.Size = new System.Drawing.Size(65, 18);
+            this.logoutBtn.Size = new System.Drawing.Size(54, 18);
             this.logoutBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.logoutBtn.TabIndex = 70;
             this.logoutBtn.TabStop = false;
@@ -160,62 +217,6 @@
             this.global__nav__bg.TabIndex = 0;
             this.global__nav__bg.TabStop = false;
             // 
-            // btn_gradeBook
-            // 
-            this.btn_gradeBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.btn_gradeBook.Image = ((System.Drawing.Image)(resources.GetObject("btn_gradeBook.Image")));
-            this.btn_gradeBook.Location = new System.Drawing.Point(42, 437);
-            this.btn_gradeBook.Name = "btn_gradeBook";
-            this.btn_gradeBook.Size = new System.Drawing.Size(254, 101);
-            this.btn_gradeBook.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btn_gradeBook.TabIndex = 71;
-            this.btn_gradeBook.TabStop = false;
-            this.btn_gradeBook.Click += new System.EventHandler(this.btn_gradeBook_Click);
-            this.btn_gradeBook.MouseLeave += new System.EventHandler(this.btn_gradeBook_MouseLeave);
-            this.btn_gradeBook.MouseHover += new System.EventHandler(this.btn_gradeBook_MouseHover);
-            // 
-            // btn_courses
-            // 
-            this.btn_courses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.btn_courses.Image = ((System.Drawing.Image)(resources.GetObject("btn_courses.Image")));
-            this.btn_courses.Location = new System.Drawing.Point(42, 336);
-            this.btn_courses.Name = "btn_courses";
-            this.btn_courses.Size = new System.Drawing.Size(254, 101);
-            this.btn_courses.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btn_courses.TabIndex = 72;
-            this.btn_courses.TabStop = false;
-            this.btn_courses.Click += new System.EventHandler(this.btn_courses_Click);
-            this.btn_courses.MouseLeave += new System.EventHandler(this.btn_courses_MouseLeave_1);
-            this.btn_courses.MouseHover += new System.EventHandler(this.btn_courses_MouseHover_1);
-            // 
-            // btn_students
-            // 
-            this.btn_students.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.btn_students.Image = ((System.Drawing.Image)(resources.GetObject("btn_students.Image")));
-            this.btn_students.Location = new System.Drawing.Point(42, 235);
-            this.btn_students.Name = "btn_students";
-            this.btn_students.Size = new System.Drawing.Size(254, 101);
-            this.btn_students.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btn_students.TabIndex = 73;
-            this.btn_students.TabStop = false;
-            this.btn_students.Click += new System.EventHandler(this.btn_students_Click);
-            this.btn_students.MouseLeave += new System.EventHandler(this.btn_students_MouseLeave);
-            this.btn_students.MouseHover += new System.EventHandler(this.btn_students_MouseHover);
-            // 
-            // btn_dashboard
-            // 
-            this.btn_dashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.btn_dashboard.Image = ((System.Drawing.Image)(resources.GetObject("btn_dashboard.Image")));
-            this.btn_dashboard.Location = new System.Drawing.Point(42, 134);
-            this.btn_dashboard.Name = "btn_dashboard";
-            this.btn_dashboard.Size = new System.Drawing.Size(254, 101);
-            this.btn_dashboard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btn_dashboard.TabIndex = 74;
-            this.btn_dashboard.TabStop = false;
-            this.btn_dashboard.Click += new System.EventHandler(this.btn_dashboard_Click);
-            this.btn_dashboard.MouseLeave += new System.EventHandler(this.btn_dashboard_MouseLeave_1);
-            this.btn_dashboard.MouseHover += new System.EventHandler(this.btn_dashboard_MouseHover_1);
-            // 
             // Teacher_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -241,16 +242,16 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "*";
             ((System.ComponentModel.ISupportInitialize)(this.viewPanel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_dashboard)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_students)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_courses)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_gradeBook)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoutBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_attendance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.close_btn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.notification__icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.global__nav__bg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_gradeBook)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_courses)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_students)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_dashboard)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

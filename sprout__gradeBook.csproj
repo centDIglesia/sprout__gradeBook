@@ -528,6 +528,7 @@
     <None Include="Resources\Sort-Button.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\open__eye2.png" />
     <None Include="Resources\Present_Checked.png" />
     <None Include="Resources\Present_Unchecked.png" />
     <None Include="Resources\Usernamed.png" />
@@ -590,6 +591,8 @@
     <None Include="Resources\Frame 10def.png" />
     <None Include="Resources\First Named.png" />
     <None Include="Resources\Last Named.png" />
+    <None Include="Resources\llogut.png" />
+    <None Include="Resources\logutt.png" />
     <Content Include="Resources\Male_Icon.png" />
     <None Include="Resources\open__eye1.png" />
   </ItemGroup>
