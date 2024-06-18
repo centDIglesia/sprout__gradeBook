@@ -91,7 +91,7 @@ namespace sprout__gradeBook
             }
         }
 
-        private void signIn__btn_Click_1(object sender, EventArgs e)
+        private void signIn__btn_Click(object sender, EventArgs e)
         {
             currentStudentID = signinSTID__txtbox.Text;
             string password = signinPASS__txtbox.Text;
@@ -121,12 +121,6 @@ namespace sprout__gradeBook
             }
         }
 
-        // Sign in button click event handler
-        private void signIn__btn_Click(object sender, EventArgs e)
-        {
-            // Get user inputs
-
-        }
 
         // Close button click event handler
         private void close_btn_Click(object sender, EventArgs e)
@@ -405,25 +399,7 @@ namespace sprout__gradeBook
 
         private void pictureBox12_Click_1(object sender, EventArgs e)
         {
-            Form formbackground = new Form();
 
-            using (TermsCons terms = new TermsCons())
-            {
-                formbackground.StartPosition = FormStartPosition.CenterScreen;
-                formbackground.FormBorderStyle = FormBorderStyle.None;
-                formbackground.Opacity = .70d;
-                formbackground.BackColor = StateCommon.Back.Color1 = CustomColor.mainColor;
-                formbackground.Size = this.Size;
-
-                formbackground.Location = this.Location;
-
-                formbackground.ShowInTaskbar = false;
-                formbackground.Show();
-
-                terms.Owner = formbackground;
-                terms.ShowDialog();
-            }
-            formbackground.Dispose();
         }
 
         private void signIn__btn_MouseHover(object sender, EventArgs e)

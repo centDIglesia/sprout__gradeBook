@@ -25,7 +25,7 @@ namespace sprout__gradeBook
             string studentFname = studentFnameTXT.Text;
             string studentMname = studentMnameTXT.Text;
             string studentLname = studentLnameTXT.Text;
-            string studentID = studentIDTXT.Text; // Ensure studentID is initialized here
+            string studentID = studentIDTXT.Text; 
             string studentEmail = studentEmailTXT.Text;
             DateTime studentBirthday = studentBirthdayPicker.Value;
             string studentGender = studentMaleRADIOBUTTON.Checked ? "Male" : (studentFemaleRADIOBUTTON.Checked ? "Female" : "");
@@ -34,12 +34,50 @@ namespace sprout__gradeBook
             string studentYearLevel = studentYearLevelTXT.Text;
             string studentSection = studentSectionTXT.Text;
 
+
+            // Validate inputs
+            if (!UserInput__Validator.ValidateNotEmpty(studentFname, "First Name"))
+            {
+                MessageBox.Show("Student's First Name cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                studentFnameTXT.Focus();
+                return;
+            }
+
+            if (!UserInput__Validator.ValidateNotEmpty(studentMname, "Middle Name"))
+            {
+                MessageBox.Show("Student's Middle name cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                studentMnameTXT.Focus();
+                return;
+            }
+
+            if (!UserInput__Validator.ValidateNotEmpty(studentMname, "Last Name"))
+            {
+                MessageBox.Show("Student's Last name cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                studentLnameTXT.Focus();
+                return;
+            }
+
+            if (!UserInput__Validator.ValidateNotEmpty(studentID, "Student ID"))
+            {
+                MessageBox.Show("Student's Department cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                studentIDTXT.Focus();
+                return;
+            }
+
             // Validate gender selection
             if (string.IsNullOrEmpty(studentGender))
             {
                 MessageBox.Show("Please select a gender.", "Incomplete Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            if (!UserInput__Validator.ValidateNotEmpty(studentSection, "Section"))
+            {
+                MessageBox.Show("Student's Designated Section cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                studentSectionTXT.Focus();
+                return;
+            }
+
 
             // Create a new student object
             Student newStudent = new Student(studentID, studentFname, studentMname, studentLname, studentEmail, studentUsername, studentBirthday, studentGender, studentYearLevel, studentSection, studentDepartment, teacherSchool);
