@@ -234,7 +234,7 @@ namespace sprout__gradeBook
         {
 
 
-            //formBackground.Dispose(); // Dispose of the background form
+            formBackground.Dispose(); // Dispose of the background form
         }
     }
 }
