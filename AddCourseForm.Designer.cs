@@ -448,7 +448,7 @@
             this.courseStartTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
             this.courseStartTXT.TabIndex = 91;
             this.courseStartTXT.Text = "  :   ";
-            this.courseStartTXT.TypeValidationCompleted += new System.Windows.Forms.TypeValidationEventHandler(this.CourseStartTXT_TypeValidationCompleted);
+
             // 
             // courseEndTXT
             // 
@@ -467,7 +467,7 @@
             this.courseEndTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
             this.courseEndTXT.TabIndex = 92;
             this.courseEndTXT.Text = "  :   ";
-            this.courseEndTXT.TypeValidationCompleted += new System.Windows.Forms.TypeValidationEventHandler(this.CourseEndTXT_TypeValidationCompleted);
+
             // 
             // AddCourseForm
             // 

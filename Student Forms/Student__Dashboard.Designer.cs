@@ -94,9 +94,9 @@
             // 
             this.student_gradesPanel.AutoScroll = true;
             this.student_gradesPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
-            this.student_gradesPanel.Location = new System.Drawing.Point(401, 132);
+            this.student_gradesPanel.Location = new System.Drawing.Point(401, 187);
             this.student_gradesPanel.Name = "student_gradesPanel";
-            this.student_gradesPanel.Size = new System.Drawing.Size(716, 451);
+            this.student_gradesPanel.Size = new System.Drawing.Size(716, 396);
             this.student_gradesPanel.TabIndex = 67;
             // 
             // student_CoursePanel

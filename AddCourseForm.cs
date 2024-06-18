@@ -24,23 +24,7 @@ namespace sprout__gradeBook
             courseEndTXT.ValidatingType = typeof(DateTime);
         }
 
-        private void CourseStartTXT_TypeValidationCompleted(object sender, TypeValidationEventArgs e)
-        {
-            if (!e.IsValidInput)
-            {
-                MessageBox.Show("Invalid start time. Please enter a valid time in the format HH:MM AM/PM.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                e.Cancel = true;
-            }
-        }
 
-        private void CourseEndTXT_TypeValidationCompleted(object sender, TypeValidationEventArgs e)
-        {
-            if (!e.IsValidInput)
-            {
-                MessageBox.Show("Invalid end time. Please enter a valid time in the format HH:MM AM/PM.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                e.Cancel = true;
-            }
-        }
 
         private void saveNewCourseBTN_Click(object sender, EventArgs e)
         {
@@ -55,6 +39,20 @@ namespace sprout__gradeBook
             string whatDay = WeekDayTxt.Text.Trim();
             string startTime = courseStartTXT.Text.Trim();
             string endTime = courseEndTXT.Text.Trim();
+            // Validate inputs
+            if (!UserInput__Validator.ValidateNotEmpty(courseName, "Course Name"))
+            {
+                MessageBox.Show("Course Name cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                courseNameTXT.Focus();
+                return;
+            }
+
+            if (!UserInput__Validator.ValidateNotEmpty(courseCode, "Course Code"))
+            {
+                MessageBox.Show("Course Code cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                courseCodeTXT.Focus();
+                return;
+            }
 
             // Validate Year Level input
             if (!int.TryParse(courseYearlvlTXT.Text, out int studentYearLvl))
@@ -62,6 +60,45 @@ namespace sprout__gradeBook
                 MessageBox.Show("Invalid Year Level. Please enter a valid number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            if (!UserInput__Validator.ValidateNotEmpty(studentCourse, " "))
+            {
+                MessageBox.Show("Student's Department cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                courseCourseTXT.Focus();
+                return;
+            }
+
+            if (!UserInput__Validator.ValidateNotEmpty(studentSection, "Designated Section"))
+            {
+                MessageBox.Show("Student's Designated Section cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                courseSectionTXT.Focus();
+                return;
+            }
+
+            if (!UserInput__Validator.ValidateNotEmpty(whatDay, " "))
+            {
+                MessageBox.Show("Day of the week cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                WeekDayTxt.Focus();
+                return;
+            }
+
+            // Validate start time format
+            if (!UserInput__Validator.ValidateTimeFormat(startTime))
+            {
+                MessageBox.Show("Invalid start time. Please enter a valid time in the format HH:MM AM/PM.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                courseStartTXT.Focus();
+                return;
+            }
+
+            // Validate end time format
+            if (!UserInput__Validator.ValidateTimeFormat(endTime))
+            {
+                MessageBox.Show("Invalid end time. Please enter a valid time in the format HH:MM AM/PM.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                courseEndTXT.Focus();
+                return;
+            }
+
+
 
             int studentCount = 0; // Initialize student count
 
@@ -175,12 +212,6 @@ namespace sprout__gradeBook
         private void courseNameTXT_Leave(object sender, EventArgs e)
         {
             UserInput_Manager.RestoreDefaultText(courseNameTXT, "Course Name");
-
-            if (string.IsNullOrWhiteSpace(courseNameTXT.Text))
-            {
-                MessageBox.Show("Course Name cannot be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                courseNameTXT.Focus();
-            }
         }
 
         private void courseCodeTXT_Enter(object sender, EventArgs e)
@@ -191,35 +222,15 @@ namespace sprout__gradeBook
         private void courseCodeTXT_Leave(object sender, EventArgs e)
         {
             UserInput_Manager.RestoreDefaultText(courseCodeTXT, "Course Code");
-
-            if (string.IsNullOrWhiteSpace(courseCodeTXT.Text))
-            {
-                MessageBox.Show("Course Code cannot be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                courseCodeTXT.Focus();
-            }
         }
-
         private void courseYearlvlTXT_Enter(object sender, EventArgs e)
         {
             UserInput_Manager.ResetInputField(courseYearlvlTXT, "Year Level");
         }
-
         private void courseYearlvlTXT_Leave(object sender, EventArgs e)
         {
             UserInput_Manager.RestoreDefaultText(courseYearlvlTXT, "Year Level");
-
-            if (string.IsNullOrWhiteSpace(courseYearlvlTXT.Text))
-            {
-                MessageBox.Show("Year Level cannot be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                courseYearlvlTXT.Focus();
-            }
-            else if (!int.TryParse(courseYearlvlTXT.Text, out _))
-            {
-                MessageBox.Show("Year Level must be a valid number.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                courseYearlvlTXT.Focus();
-            }
         }
-
         private void courseSectionTXT_Enter(object sender, EventArgs e)
         {
             UserInput_Manager.ResetInputField(courseSectionTXT, "Designated Section");
@@ -228,12 +239,6 @@ namespace sprout__gradeBook
         private void courseSectionTXT_Leave(object sender, EventArgs e)
         {
             UserInput_Manager.RestoreDefaultText(courseSectionTXT, "Designated Section");
-
-            if (string.IsNullOrWhiteSpace(courseSectionTXT.Text))
-            {
-                MessageBox.Show("Designated Section cannot be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                courseSectionTXT.Focus();
-            }
         }
 
         private void Cancel_btn_Click(object sender, EventArgs e)
