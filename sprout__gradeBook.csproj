@@ -34,22 +34,22 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ComponentFactory.Krypton.Design">
-      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Design.dll</HintPath>
+      <HintPath>..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Design.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Docking">
-      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
+      <HintPath>..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Navigator">
-      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
+      <HintPath>..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Ribbon">
-      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+      <HintPath>..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Toolkit">
-      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+      <HintPath>..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Workspace">
-      <HintPath>..\..\..\OneDrive\Desktop\Krypton\Krypton-master\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
+      <HintPath>..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -192,6 +192,12 @@
     </Compile>
     <Compile Include="Student Forms\StudentDefultPasswordGuide.Designer.cs">
       <DependentUpon>StudentDefultPasswordGuide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student Forms\Student__GradeRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Student Forms\Student__GradeRow.Designer.cs">
+      <DependentUpon>Student__GradeRow.cs</DependentUpon>
     </Compile>
     <Compile Include="StudentManager.cs" />
     <Compile Include="studentsCARD.cs">
@@ -369,6 +375,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Student Forms\StudentDefultPasswordGuide.resx">
       <DependentUpon>StudentDefultPasswordGuide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student Forms\Student__GradeRow.resx">
+      <DependentUpon>Student__GradeRow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="studentsCARD.resx">
       <DependentUpon>studentsCARD.cs</DependentUpon>

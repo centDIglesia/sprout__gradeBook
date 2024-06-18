@@ -11,7 +11,7 @@ namespace sprout__gradeBook
 
         public static bool ValidateNotEmpty(string input, string fieldLabel)
         {
-            return string.IsNullOrEmpty(input) || input != fieldLabel;
+            return !string.IsNullOrEmpty(input) && input != fieldLabel;
         }
 
 
@@ -54,6 +54,13 @@ namespace sprout__gradeBook
         public static bool ValidateAlphabetic(string input)
         {
             return input.All(char.IsLetter);
+        }
+
+        // New method to validate time format
+        public static bool ValidateTimeFormat(string input)
+        {
+            DateTime tempDate;
+            return DateTime.TryParseExact(input, "hh:mm tt", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out tempDate);
         }
     }
 }

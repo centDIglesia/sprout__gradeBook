@@ -35,15 +35,15 @@
             this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Close_btn = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.topBorder = new System.Windows.Forms.Label();
+            this.bottomBorder = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-
+            this.rightBorder = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Close_btn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bottomBorder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rightBorder)).BeginInit();
             this.SuspendLayout();
             // 
             // feedbackPanel
@@ -64,8 +64,8 @@
             this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Border.Color1 = System.Drawing.Color.White;
             this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Border.Color2 = System.Drawing.Color.White;
-            this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonPalette2.InputControlStyles.InputControlCommon.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
@@ -94,26 +94,26 @@
             this.Close_btn.TabStop = false;
             this.Close_btn.Click += new System.EventHandler(this.Close_btn_Click);
             // 
-            // label1
+            // topBorder
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.label1.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(-1, 0);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(15, 6, 253, 5);
-            this.label1.Size = new System.Drawing.Size(401, 34);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Feedbacks";
+            this.topBorder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.topBorder.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.topBorder.ForeColor = System.Drawing.Color.White;
+            this.topBorder.Location = new System.Drawing.Point(-1, 0);
+            this.topBorder.Name = "topBorder";
+            this.topBorder.Padding = new System.Windows.Forms.Padding(15, 6, 253, 5);
+            this.topBorder.Size = new System.Drawing.Size(401, 34);
+            this.topBorder.TabIndex = 5;
+            this.topBorder.Text = "Feedbacks";
             // 
-            // pictureBox4
+            // bottomBorder
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.pictureBox4.Location = new System.Drawing.Point(0, 530);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(400, 5);
-            this.pictureBox4.TabIndex = 12;
-            this.pictureBox4.TabStop = false;
+            this.bottomBorder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.bottomBorder.Location = new System.Drawing.Point(0, 530);
+            this.bottomBorder.Name = "bottomBorder";
+            this.bottomBorder.Size = new System.Drawing.Size(400, 5);
+            this.bottomBorder.TabIndex = 12;
+            this.bottomBorder.TabStop = false;
             // 
             // pictureBox3
             // 
@@ -124,26 +124,26 @@
             this.pictureBox3.TabIndex = 11;
             this.pictureBox3.TabStop = false;
             // 
-            // pictureBox1
+            // rightBorder
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.pictureBox1.Location = new System.Drawing.Point(395, 34);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(5, 496);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-
+            this.rightBorder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.rightBorder.Location = new System.Drawing.Point(395, 34);
+            this.rightBorder.Name = "rightBorder";
+            this.rightBorder.Size = new System.Drawing.Size(5, 496);
+            this.rightBorder.TabIndex = 13;
+            this.rightBorder.TabStop = false;
+            // 
             // Student__FeedbackUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 535);
-            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.rightBorder);
+            this.Controls.Add(this.bottomBorder);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Close_btn);
             this.Controls.Add(this.feedbackPanel);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.topBorder);
             this.Controls.Add(this.pictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Student__FeedbackUI";
@@ -151,9 +151,9 @@
             this.Load += new System.EventHandler(this.Student__FeedbackUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Close_btn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bottomBorder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rightBorder)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,13 +166,9 @@
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox Close_btn;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label topBorder;
+        private System.Windows.Forms.PictureBox bottomBorder;
         private System.Windows.Forms.PictureBox pictureBox3;
-
-
-        private System.Windows.Forms.PictureBox pictureBox1;
-
-
+        private System.Windows.Forms.PictureBox rightBorder;
     }
 }
