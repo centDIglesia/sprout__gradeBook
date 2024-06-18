@@ -346,6 +346,8 @@ namespace sprout__gradeBook
         {
             teacherSIGNINform.Show();
             teacherSIGNUP__form.Hide();
+
+          
         }
 
         //sign in form

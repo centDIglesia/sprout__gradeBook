@@ -397,11 +397,6 @@ namespace sprout__gradeBook
         }
 
 
-        private void pictureBox12_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void signIn__btn_MouseHover(object sender, EventArgs e)
         {
             signIn__btn.Image = Properties.Resources.Frame_101_hover;
