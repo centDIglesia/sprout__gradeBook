@@ -166,12 +166,12 @@ namespace sprout__gradeBook
 
         private void logoutBtn_MouseLeave(object sender, EventArgs e)
         {
-            logoutBtn.Image = Properties.Resources.lgdrak;
+            logoutBtn.Image = Properties.Resources.llogut;
         }
 
         private void logoutBtn_MouseHover_1(object sender, EventArgs e)
         {
-            logoutBtn.Image = Properties.Resources.lghover;
+            logoutBtn.Image = Properties.Resources.logutt;
         }
 
 
@@ -284,7 +284,7 @@ namespace sprout__gradeBook
         {
             if (!isDashboardButtonClicked)
             {
-                btn_students.Image = Properties.Resources.Frame_83;
+                btn_dashboard.Image = Properties.Resources.Frame_83;
             }
         }
 
@@ -292,7 +292,7 @@ namespace sprout__gradeBook
         {
             if (!isDashboardButtonClicked)
             {
-                btn_students.Image = Properties.Resources.Frame_87;
+                btn_dashboard.Image = Properties.Resources.Frame_87;
             }
         }
 
