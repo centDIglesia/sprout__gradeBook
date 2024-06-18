@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(studentLoginForm));
-            this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette();
+            this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.studentSIGNINform = new ComponentFactory.Krypton.Toolkit.KryptonGroup();
             this.signIn__btn = new System.Windows.Forms.PictureBox();
             this.signIn__PassTooltip = new System.Windows.Forms.PictureBox();
@@ -193,7 +194,8 @@
             this.signIn__showPassicon.Image = global::sprout__gradeBook.Properties.Resources.open__eye;
             this.signIn__showPassicon.Location = new System.Drawing.Point(365, 229);
             this.signIn__showPassicon.Name = "signIn__showPassicon";
-            this.signIn__showPassicon.Size = new System.Drawing.Size(22, 18);
+            this.signIn__showPassicon.Padding = new System.Windows.Forms.Padding(1);
+            this.signIn__showPassicon.Size = new System.Drawing.Size(24, 20);
             this.signIn__showPassicon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.signIn__showPassicon.TabIndex = 20;
             this.signIn__showPassicon.TabStop = false;
