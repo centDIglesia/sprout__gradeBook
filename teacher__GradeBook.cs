@@ -54,7 +54,7 @@ namespace sprout__gradeBook
         {
             LoadTxtFilesIntoComboBox(currentUSer);
             courseComboBox.SelectedIndexChanged += CourseComboBox_SelectedIndexChanged;
-       
+
             HideInitialElements();
         }
 
@@ -416,6 +416,7 @@ namespace sprout__gradeBook
             courseComboBox.Show();
             kryptonTextBox1.Show();
             pictureBox2.Show();
+            CurrentGradePeriod.Text = GradePeriodComboBox.Text;
 
         }
         public void SetComponentButtonsEnabled(bool enabled)

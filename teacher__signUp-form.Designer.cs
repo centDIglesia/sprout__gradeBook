@@ -170,7 +170,7 @@
             // cpass__tooltip
             // 
             this.cpass__tooltip.Image = ((System.Drawing.Image)(resources.GetObject("cpass__tooltip.Image")));
-            this.cpass__tooltip.Location = new System.Drawing.Point(46, 467);
+            this.cpass__tooltip.Location = new System.Drawing.Point(46, 459);
             this.cpass__tooltip.Name = "cpass__tooltip";
             this.cpass__tooltip.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.cpass__tooltip.Size = new System.Drawing.Size(118, 11);
@@ -181,7 +181,7 @@
             // pass__tooltip
             // 
             this.pass__tooltip.Image = ((System.Drawing.Image)(resources.GetObject("pass__tooltip.Image")));
-            this.pass__tooltip.Location = new System.Drawing.Point(46, 404);
+            this.pass__tooltip.Location = new System.Drawing.Point(46, 396);
             this.pass__tooltip.Name = "pass__tooltip";
             this.pass__tooltip.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.pass__tooltip.Size = new System.Drawing.Size(64, 10);
@@ -192,7 +192,7 @@
             // school__tooltip
             // 
             this.school__tooltip.Image = ((System.Drawing.Image)(resources.GetObject("school__tooltip.Image")));
-            this.school__tooltip.Location = new System.Drawing.Point(46, 323);
+            this.school__tooltip.Location = new System.Drawing.Point(46, 315);
             this.school__tooltip.Name = "school__tooltip";
             this.school__tooltip.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.school__tooltip.Size = new System.Drawing.Size(46, 10);
@@ -203,7 +203,7 @@
             // uname__tooltip
             // 
             this.uname__tooltip.Image = ((System.Drawing.Image)(resources.GetObject("uname__tooltip.Image")));
-            this.uname__tooltip.Location = new System.Drawing.Point(46, 261);
+            this.uname__tooltip.Location = new System.Drawing.Point(46, 253);
             this.uname__tooltip.Name = "uname__tooltip";
             this.uname__tooltip.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.uname__tooltip.Size = new System.Drawing.Size(69, 10);
@@ -214,7 +214,7 @@
             // fname__tooltip
             // 
             this.fname__tooltip.Image = ((System.Drawing.Image)(resources.GetObject("fname__tooltip.Image")));
-            this.fname__tooltip.Location = new System.Drawing.Point(46, 137);
+            this.fname__tooltip.Location = new System.Drawing.Point(46, 129);
             this.fname__tooltip.Name = "fname__tooltip";
             this.fname__tooltip.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.fname__tooltip.Size = new System.Drawing.Size(72, 11);
@@ -225,7 +225,7 @@
             // lname__tooltip
             // 
             this.lname__tooltip.Image = ((System.Drawing.Image)(resources.GetObject("lname__tooltip.Image")));
-            this.lname__tooltip.Location = new System.Drawing.Point(229, 138);
+            this.lname__tooltip.Location = new System.Drawing.Point(229, 130);
             this.lname__tooltip.Name = "lname__tooltip";
             this.lname__tooltip.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.lname__tooltip.Size = new System.Drawing.Size(71, 10);
@@ -236,7 +236,7 @@
             // email__tooltip
             // 
             this.email__tooltip.Image = ((System.Drawing.Image)(resources.GetObject("email__tooltip.Image")));
-            this.email__tooltip.Location = new System.Drawing.Point(46, 199);
+            this.email__tooltip.Location = new System.Drawing.Point(46, 191);
             this.email__tooltip.Name = "email__tooltip";
             this.email__tooltip.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.email__tooltip.Size = new System.Drawing.Size(40, 11);

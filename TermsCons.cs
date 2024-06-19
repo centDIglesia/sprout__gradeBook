@@ -51,5 +51,9 @@ namespace sprout__gradeBook
 
         }
 
+        private void TermsCons_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
