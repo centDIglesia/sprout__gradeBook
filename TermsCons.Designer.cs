@@ -45,7 +45,7 @@
             this.kryptonTextBox1.Multiline = true;
             this.kryptonTextBox1.Name = "kryptonTextBox1";
             this.kryptonTextBox1.ReadOnly = true;
-            this.kryptonTextBox1.Size = new System.Drawing.Size(401, 31);
+            this.kryptonTextBox1.Size = new System.Drawing.Size(386, 31);
             this.kryptonTextBox1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.kryptonTextBox1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -56,6 +56,7 @@
             this.kryptonTextBox1.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5);
             this.kryptonTextBox1.TabIndex = 64;
             this.kryptonTextBox1.Text = "Terms and Conditions";
+            this.kryptonTextBox1.TextChanged += new System.EventHandler(this.kryptonTextBox1_TextChanged);
             // 
             // acceptBtn
             // 
@@ -98,8 +99,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(394, 554);
-            this.Controls.Add(this.Paragraph);
+
+            this.ClientSize = new System.Drawing.Size(383, 554);
+            this.Controls.Add(this.pictureBox1);
+
             this.Controls.Add(this.declineBtn);
             this.Controls.Add(this.acceptBtn);
             this.Controls.Add(this.kryptonTextBox1);
