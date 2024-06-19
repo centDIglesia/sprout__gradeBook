@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -22,10 +23,19 @@ namespace sprout__gradeBook
             // Set up validation for time fields
             courseStartTXT.ValidatingType = typeof(DateTime);
             courseEndTXT.ValidatingType = typeof(DateTime);
+
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(SaveCourse_KeyDown);
         }
 
-
-
+        private void SaveCourse_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                saveNewCourseBTN_Click(sender, e);
+                e.Handled = true;
+            }
+        }
         private void saveNewCourseBTN_Click(object sender, EventArgs e)
         {
             // Populate courses in the parent form
@@ -39,6 +49,7 @@ namespace sprout__gradeBook
             string whatDay = WeekDayTxt.Text.Trim();
             string startTime = courseStartTXT.Text.Trim();
             string endTime = courseEndTXT.Text.Trim();
+
             // Validate inputs
             if (!UserInput__Validator.ValidateNotEmpty(courseName, "Course Name"))
             {
@@ -82,6 +93,22 @@ namespace sprout__gradeBook
                 return;
             }
 
+            // Validate start time is not empty
+            if (!UserInput__Validator.ValidateNotEmpty(startTime, "Start Time"))
+            {
+                MessageBox.Show("Start Time cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                courseStartTXT.Focus();
+                return;
+            }
+
+            // Validate end time is not empty
+            if (!UserInput__Validator.ValidateNotEmpty(endTime, "End Time"))
+            {
+                MessageBox.Show("End Time cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                courseEndTXT.Focus();
+                return;
+            }
+
             // Validate start time format
             if (!UserInput__Validator.ValidateTimeFormat(startTime))
             {
@@ -98,7 +125,13 @@ namespace sprout__gradeBook
                 return;
             }
 
-
+            // Validate end time is after start time
+            if (!UserInput__Validator.ValidateEndTimeAfterStartTime(startTime, endTime))
+            {
+                MessageBox.Show("End time must be after start time.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                courseEndTXT.Focus();
+                return;
+            }
 
             int studentCount = 0; // Initialize student count
 
