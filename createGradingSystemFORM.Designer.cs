@@ -37,15 +37,17 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.saveGradingsytemBTN = new System.Windows.Forms.PictureBox();
             this.totallWeightLLBL = new System.Windows.Forms.Label();
             this.divider_1 = new System.Windows.Forms.PictureBox();
+            this.Close_btn = new System.Windows.Forms.PictureBox();
+            this.saveGradingsytemBTN = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saveGradingsytemBTN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Close_btn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saveGradingsytemBTN)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette2
@@ -65,11 +67,10 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(31, 134);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(32, 124);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(576, 321);
             this.flowLayoutPanel1.TabIndex = 0;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // kryptonTextBox1
             // 
@@ -95,7 +96,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(531, 472);
+            this.pictureBox3.Location = new System.Drawing.Point(532, 462);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(76, 13);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -106,7 +107,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(444, 94);
+            this.pictureBox2.Location = new System.Drawing.Point(445, 84);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(73, 22);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -116,7 +117,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(54, 94);
+            this.pictureBox1.Location = new System.Drawing.Point(55, 84);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(132, 21);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -126,45 +127,54 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(13, 124);
+            this.pictureBox4.Location = new System.Drawing.Point(14, 114);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(612, 377);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 7;
             this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
-            // saveGradingsytemBTN
-            // 
-            this.saveGradingsytemBTN.Image = ((System.Drawing.Image)(resources.GetObject("saveGradingsytemBTN.Image")));
-            this.saveGradingsytemBTN.Location = new System.Drawing.Point(518, 506);
-            this.saveGradingsytemBTN.Name = "saveGradingsytemBTN";
-            this.saveGradingsytemBTN.Size = new System.Drawing.Size(107, 37);
-            this.saveGradingsytemBTN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.saveGradingsytemBTN.TabIndex = 8;
-            this.saveGradingsytemBTN.TabStop = false;
-            this.saveGradingsytemBTN.Click += new System.EventHandler(this.saveGradingsytemBTN_Click);
             // 
             // totallWeightLLBL
             // 
             this.totallWeightLLBL.AutoSize = true;
             this.totallWeightLLBL.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totallWeightLLBL.ForeColor = System.Drawing.Color.Gray;
-            this.totallWeightLLBL.Location = new System.Drawing.Point(27, 467);
+            this.totallWeightLLBL.Location = new System.Drawing.Point(28, 457);
             this.totallWeightLLBL.Name = "totallWeightLLBL";
-            this.totallWeightLLBL.Size = new System.Drawing.Size(97, 23);
+            this.totallWeightLLBL.Size = new System.Drawing.Size(95, 23);
             this.totallWeightLLBL.TabIndex = 9;
             this.totallWeightLLBL.Text = "Total weight: ";
-            this.totallWeightLLBL.Click += new System.EventHandler(this.totallWeightLLBL_Click);
             // 
             // divider_1
             // 
             this.divider_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
-            this.divider_1.Location = new System.Drawing.Point(34, 463);
+            this.divider_1.Location = new System.Drawing.Point(35, 453);
             this.divider_1.Name = "divider_1";
             this.divider_1.Size = new System.Drawing.Size(570, 1);
             this.divider_1.TabIndex = 60;
             this.divider_1.TabStop = false;
+            // 
+            // Close_btn
+            // 
+            this.Close_btn.Image = ((System.Drawing.Image)(resources.GetObject("Close_btn.Image")));
+            this.Close_btn.Location = new System.Drawing.Point(14, 498);
+            this.Close_btn.Name = "Close_btn";
+            this.Close_btn.Size = new System.Drawing.Size(100, 45);
+            this.Close_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.Close_btn.TabIndex = 63;
+            this.Close_btn.TabStop = false;
+            this.Close_btn.Click += new System.EventHandler(this.Close_btn_Click);
+            // 
+            // saveGradingsytemBTN
+            // 
+            this.saveGradingsytemBTN.Image = ((System.Drawing.Image)(resources.GetObject("saveGradingsytemBTN.Image")));
+            this.saveGradingsytemBTN.Location = new System.Drawing.Point(441, 498);
+            this.saveGradingsytemBTN.Name = "saveGradingsytemBTN";
+            this.saveGradingsytemBTN.Size = new System.Drawing.Size(185, 45);
+            this.saveGradingsytemBTN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.saveGradingsytemBTN.TabIndex = 62;
+            this.saveGradingsytemBTN.TabStop = false;
+            this.saveGradingsytemBTN.Click += new System.EventHandler(this.saveGradingsytemBTN_Click);
             // 
             // createGradingSystemFORM
             // 
@@ -172,9 +182,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(644, 565);
+            this.Controls.Add(this.Close_btn);
+            this.Controls.Add(this.saveGradingsytemBTN);
             this.Controls.Add(this.divider_1);
             this.Controls.Add(this.totallWeightLLBL);
-            this.Controls.Add(this.saveGradingsytemBTN);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -187,13 +198,13 @@
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "createGradingSystemFORM";
-            this.Load += new System.EventHandler(this.createGradingSystemFORM_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saveGradingsytemBTN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Close_btn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saveGradingsytemBTN)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,8 +221,9 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         // private gradingSystemCARD gradingSystemCARD2;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox saveGradingsytemBTN;
         private System.Windows.Forms.Label totallWeightLLBL;
         private System.Windows.Forms.PictureBox divider_1;
+        private System.Windows.Forms.PictureBox Close_btn;
+        private System.Windows.Forms.PictureBox saveGradingsytemBTN;
     }
 }

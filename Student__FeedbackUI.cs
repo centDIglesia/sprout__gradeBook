@@ -23,8 +23,19 @@ namespace sprout__gradeBook
             InitializeComponent();
             _studentLoginForm = studentLoginForm;
             _CurrentStudentId = studentID;
+            // Attach KeyDown event handler
+            this.KeyPreview = true; // Ensure form receives key events
+            this.KeyDown += Student__FeedbackUI_KeyDown;
         }
 
+        private void Student__FeedbackUI_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if Escape key is pressed
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close_btn_Click(sender, e); // Call the existing Close_btn_Click method
+            }
+        }
         private void Student__FeedbackUI_Load(object sender, EventArgs e)
         {
             LoadFeedbackCards();

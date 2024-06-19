@@ -32,10 +32,10 @@
             this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.acceptBtn = new System.Windows.Forms.PictureBox();
             this.declineBtn = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Paragraph = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.acceptBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.declineBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Paragraph)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonTextBox1
@@ -81,17 +81,16 @@
             this.declineBtn.TabStop = false;
             this.declineBtn.Click += new System.EventHandler(this.declineBtn_Click);
             // 
-            // pictureBox1
+            // Paragraph
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(27, 45);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(333, 432);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            this.Paragraph.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Paragraph.BackgroundImage")));
+            this.Paragraph.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Paragraph.Location = new System.Drawing.Point(27, 45);
+            this.Paragraph.Name = "Paragraph";
+            this.Paragraph.Size = new System.Drawing.Size(333, 432);
+            this.Paragraph.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.Paragraph.TabIndex = 0;
+            this.Paragraph.TabStop = false;
             // 
             // TermsCons
             // 
@@ -100,7 +99,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(394, 554);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.Paragraph);
             this.Controls.Add(this.declineBtn);
             this.Controls.Add(this.acceptBtn);
             this.Controls.Add(this.kryptonTextBox1);
@@ -109,10 +108,9 @@
             this.Name = "TermsCons";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TermsCons";
-            this.Load += new System.EventHandler(this.TermsCons_Load);
             ((System.ComponentModel.ISupportInitialize)(this.acceptBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.declineBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Paragraph)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,6 +122,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
         private System.Windows.Forms.PictureBox acceptBtn;
         private System.Windows.Forms.PictureBox declineBtn;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox Paragraph;
     }
 }

@@ -18,17 +18,32 @@ namespace sprout__gradeBook
         public logInForm()
         {
             InitializeComponent();
-
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(logInForm_KeyDown);
         }
 
         private void teacher__signUp_form_Load(object sender, EventArgs e)
         {
             // Hide all tooltips initially
             HideTooltips();
+            
         }
-
-        // Hide all tooltips
-        private void HideTooltips()
+        private void logInForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (teacherSIGNINform.Visible)
+                {
+                    signIn__btn_Click(sender, e);
+                }
+                else if (teacherSIGNUP__form.Visible)
+                {
+                    signUp__btn_Click(sender, e);
+                }
+            }
+        }
+            // Hide all tooltips
+            private void HideTooltips()
         {
             fname__tooltip.Hide();
             lname__tooltip.Hide();
@@ -422,8 +437,6 @@ namespace sprout__gradeBook
 
         private void showPass__icon_Click(object sender, EventArgs e)
         {
-
-
             if (!isPassVisible)
             {
                 isPassVisible = true;
@@ -513,7 +526,7 @@ namespace sprout__gradeBook
 
         }
 
-        private void signIn__btn_Click_1(object sender, EventArgs e)
+        private void signIn__btn_Click(object sender, EventArgs e)
         {
             string username = signinEMAIL__txtbox.Text;
             string password = signinPASS__txtbox.Text;
@@ -543,6 +556,8 @@ namespace sprout__gradeBook
                 bool isValid = Account__Manager.AuthenticateTeacherLogIn(username, password, folderPath);
                 if (isValid)
                 {
+                    MessageBox.Show("Sign in successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); // Display message box here
+
                     this.Hide();
 
                     Teacher_Dashboard tdas = new Teacher_Dashboard(username);
@@ -578,7 +593,7 @@ namespace sprout__gradeBook
             signIn__btn.Image = Properties.Resources.Frame_101_ddefault;
         }
 
-        private void signUp__btn_Click_1(object sender, EventArgs e)
+        private void signUp__btn_Click(object sender, EventArgs e)
         {
 
             string firstName = UserInput__Validator.trimInput(signupFNAME__txtbox.Text);
@@ -681,9 +696,5 @@ namespace sprout__gradeBook
             signUp__btn.Image = Properties.Resources.Frame_10def;
         }
 
-        private void teacherSIGNUP__form_Panel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

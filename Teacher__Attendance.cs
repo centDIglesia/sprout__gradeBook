@@ -20,8 +20,18 @@ namespace sprout__gradeBook
         {
             currentUSer = currentuser;
             InitializeComponent();
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(Save_Attendance_KeyDown);
         }
+        private void Save_Attendance_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                generateReportButton_Click(sender, e);
+                e.Handled = true;
+            }
 
+        }
         private void LoadTxtFilesIntoComboBox(string currentUser)
         {
             string directoryPath = $"CourseInformations/{currentUser}/";
@@ -68,6 +78,8 @@ namespace sprout__gradeBook
                 string studentID = null;
                 string studentName = null;
 
+                List<(string studentID, string studentName, string lastName)> students = new List<(string, string, string)>();
+
                 foreach (string line in lines)
                 {
                     // Look for the "Student ID:" prefix
@@ -79,14 +91,24 @@ namespace sprout__gradeBook
                     else if (line.StartsWith("Student Name:"))
                     {
                         studentName = line.Substring("Student Name:".Length).Trim();
-                    }
-                    // If both ID and Name are found, add the student card
-                    if (!string.IsNullOrEmpty(studentID) && !string.IsNullOrEmpty(studentName))
-                    {
-                        AddStudentCard(studentID, studentName);
+
+                        // Get the last name from the student's credentials file
+                        string studentFilePath = $"StudentCredentials/{currentUSer}/{studentID}.txt";
+                        string lastName = GetLastNameFromFile(studentFilePath);
+
+                        students.Add((studentID, studentName, lastName));
+
                         studentID = null; // Reset for the next student
                         studentName = null; // Reset for the next student
                     }
+                }
+
+                // Sort students by last name
+                var sortedStudents = students.OrderBy(s => s.lastName);
+
+                foreach (var student in sortedStudents)
+                {
+                    AddStudentCard(student.studentID, student.studentName);
                 }
             }
             catch (Exception ex)
@@ -94,6 +116,28 @@ namespace sprout__gradeBook
                 // Handle exceptions (e.g., file not found, read errors)
                 MessageBox.Show($"Error loading student data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private string GetLastNameFromFile(string filePath)
+        {
+            try
+            {
+                string[] lines = File.ReadAllLines(filePath);
+                foreach (string line in lines)
+                {
+                    // Look for the "Last Name:" prefix
+                    if (line.StartsWith("Last Name:"))
+                    {
+                        return line.Substring("Last Name:".Length).Trim();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (e.g., file not found, read errors)
+                MessageBox.Show($"Error reading last name from file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return string.Empty;
         }
 
         private void AddStudentCard(string studentID, string studentName)

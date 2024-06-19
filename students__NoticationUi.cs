@@ -24,6 +24,18 @@ namespace sprout__gradeBook
             _studentLoginForm = studentLoginForm;
             _CurrentStudentId = studentID;
             _CurrentStudentIdDepandSection = currentStudentDepartment;
+            // Attach KeyDown event handler
+            this.KeyPreview = true; // Ensure form receives key events
+            this.KeyDown += Student__NotificationUI_KeyDown;
+        }
+
+        private void Student__NotificationUI_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if Escape key is pressed
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close_btn_Click(sender, e); // Call the existing Close_btn_Click method
+            }
         }
 
         private void students__NoticationFORM_Load(object sender, EventArgs e)

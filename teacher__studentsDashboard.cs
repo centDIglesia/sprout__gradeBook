@@ -28,6 +28,8 @@ namespace sprout__gradeBook
         private void teacher__studentsDashboard_Load(object sender, EventArgs e)
         {
             LoadStudentCourses(); // Load student courses on form load
+            BacktoStudentDashboard.Hide();
+            ClickedCourse.Hide(); // Initially hide ClickedCourse label
         }
 
         // Method to load teacher's school from credentials file
@@ -170,5 +172,25 @@ namespace sprout__gradeBook
 
             formbackground.Dispose(); // Dispose of the background form after use
         }
+
+        // Event handler for BacktoStudentDashboard label click
+        private void BacktoStudentDashboard_Click(object sender, EventArgs e)
+        {
+            // Clear ClickedCourse label text and hide it
+            ClickedCourse.Text = "";
+            ClickedCourse.Hide();
+
+            // Hide BacktoStudentDashboard label
+            BacktoStudentDashboard.Hide();
+
+            LoadStudentCourses();
+        }
+        public void ShowCourseDetails(string courseName, string yearSection)
+        {
+            ClickedCourse.Text = $"{courseName} {yearSection}";
+            ClickedCourse.Show();
+            BacktoStudentDashboard.Show();
+        }
+
     }
 }

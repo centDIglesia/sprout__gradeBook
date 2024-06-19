@@ -57,7 +57,7 @@
             this.subjectNameLBL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.subjectNameLBL.Location = new System.Drawing.Point(16, 45);
             this.subjectNameLBL.Name = "subjectNameLBL";
-            this.subjectNameLBL.Size = new System.Drawing.Size(218, 22);
+            this.subjectNameLBL.Size = new System.Drawing.Size(216, 22);
             this.subjectNameLBL.TabIndex = 1;
             this.subjectNameLBL.Text = "Object Oriented Programming";
             this.subjectNameLBL.Click += new System.EventHandler(this.subjectCourseSectionLBL_Click);
@@ -70,8 +70,6 @@
             this.subjectCodeLBL.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
             this.subjectCodeLBL.StateCommon.ShortText.Color2 = System.Drawing.Color.White;
             this.subjectCodeLBL.StateCommon.ShortText.Font = new System.Drawing.Font("Poppins Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subjectCodeLBL.StateCommon.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.subjectCodeLBL.StateCommon.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.subjectCodeLBL.TabIndex = 4;
             this.subjectCodeLBL.Values.Text = "CODE";
             this.subjectCodeLBL.Click += new System.EventHandler(this.subjectCourseSectionLBL_Click);
@@ -97,8 +95,6 @@
             this.subjectStudentCountLBL.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
             this.subjectStudentCountLBL.StateCommon.ShortText.Color2 = System.Drawing.Color.White;
             this.subjectStudentCountLBL.StateCommon.ShortText.Font = new System.Drawing.Font("Poppins", 8F);
-            this.subjectStudentCountLBL.StateCommon.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.subjectStudentCountLBL.StateCommon.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.subjectStudentCountLBL.TabIndex = 7;
             this.subjectStudentCountLBL.Values.Text = "00";
             this.subjectStudentCountLBL.MouseLeave += new System.EventHandler(this.subjectStudentCountLBL_MouseLeave);
@@ -126,10 +122,9 @@
             this.subjectCourseSectionLBL.ReadOnly = true;
             this.subjectCourseSectionLBL.Size = new System.Drawing.Size(209, 74);
             this.subjectCourseSectionLBL.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.subjectCourseSectionLBL.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.subjectCourseSectionLBL.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.subjectCourseSectionLBL.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.subjectCourseSectionLBL.StateCommon.Border.Width = 0;
             this.subjectCourseSectionLBL.StateCommon.Content.Color1 = System.Drawing.Color.Gray;
             this.subjectCourseSectionLBL.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

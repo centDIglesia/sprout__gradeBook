@@ -18,6 +18,16 @@ namespace sprout__gradeBook
             InitializeComponent();
             parent = parentDashboard;
             teacherSchool = school;
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(SaveStudent_KeyDown);
+        }
+        private void SaveStudent_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                saveNewStudentBTN_Click(sender, e);
+                e.Handled = true;
+            }
         }
         private void saveNewStudentBTN_Click(object sender, EventArgs e)
         {
@@ -110,13 +120,6 @@ namespace sprout__gradeBook
             parent.LoadStudentCourses();
         }
 
-
-
-        private void AddStudentForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void studentIDTXT_Leave(object sender, EventArgs e)
         {
             //implement here if student id already exist
@@ -148,11 +151,6 @@ namespace sprout__gradeBook
             utilityButton b = new utilityButton();
 
             b.Cancelform(this);
-        }
-
-        private void studentFnameTXT_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void studentIDTXT_Enter(object sender, EventArgs e)
@@ -222,10 +220,6 @@ namespace sprout__gradeBook
             UserInput_Manager.RestoreDefaultText(studentLnameTXT, "Last Name");
         }
 
-        private void studentIDTXT_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 
 }

@@ -537,6 +537,8 @@
     <None Include="Resources\Sort-Button.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Student_GradesHeader.png" />
+    <None Include="Resources\Student__GradesRow.png" />
     <None Include="Resources\open__eye2.png" />
     <None Include="Resources\Present_Checked.png" />
     <None Include="Resources\Present_Unchecked.png" />
@@ -558,8 +560,8 @@
     <None Include="Resources\Absent_Unchecked.png" />
     <None Include="Resources\Excused_Checked.png" />
     <None Include="Resources\Absent_Checked.png" />
-    <None Include="Resources\Attendance_Sheet.png" />
     <None Include="Resources\closed__eye1.png" />
+    <None Include="Resources\Attendance__Sheet.png" />
     <Content Include="Resources\Female_Icon.png" />
     <None Include="Resources\Late_Unchecked.png" />
     <None Include="Resources\Late_Checked.png" />
