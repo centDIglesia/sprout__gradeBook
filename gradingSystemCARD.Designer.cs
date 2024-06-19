@@ -39,6 +39,8 @@
             // componentsTXT
             // 
             this.componentsTXT.Location = new System.Drawing.Point(36, 8);
+            this.componentsTXT.MaximumSize = new System.Drawing.Size(360, 32);
+            this.componentsTXT.MinimumSize = new System.Drawing.Size(360, 32);
             this.componentsTXT.Multiline = true;
             this.componentsTXT.Name = "componentsTXT";
             this.componentsTXT.Size = new System.Drawing.Size(360, 32);
@@ -50,7 +52,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.componentsTXT.StateCommon.Border.Rounding = 4;
             this.componentsTXT.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.componentsTXT.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.componentsTXT.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.componentsTXT.TabIndex = 0;
             this.componentsTXT.Text = "Component";
             this.componentsTXT.TextChanged += new System.EventHandler(this.componentsTXT_TextChanged);
@@ -59,6 +61,8 @@
             // componentsWeightTXT
             // 
             this.componentsWeightTXT.Location = new System.Drawing.Point(405, 8);
+            this.componentsWeightTXT.MaximumSize = new System.Drawing.Size(127, 32);
+            this.componentsWeightTXT.MinimumSize = new System.Drawing.Size(127, 32);
             this.componentsWeightTXT.Multiline = true;
             this.componentsWeightTXT.Name = "componentsWeightTXT";
             this.componentsWeightTXT.Size = new System.Drawing.Size(127, 32);
@@ -71,7 +75,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.componentsWeightTXT.StateCommon.Border.Rounding = 4;
             this.componentsWeightTXT.StateCommon.Content.Color1 = System.Drawing.Color.White;
-            this.componentsWeightTXT.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.componentsWeightTXT.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.componentsWeightTXT.TabIndex = 1;
             this.componentsWeightTXT.Text = "0";
             this.componentsWeightTXT.TextChanged += new System.EventHandler(this.componentsWeightTXT_TextChanged);

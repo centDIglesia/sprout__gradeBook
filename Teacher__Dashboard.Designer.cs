@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Teacher_Dashboard));
-            this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette();
+            this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.viewPanel = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.teachers__firstName = new System.Windows.Forms.Label();
             this.btn_dashboard = new System.Windows.Forms.PictureBox();
@@ -241,6 +242,7 @@
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "*";
+            this.Load += new System.EventHandler(this.Teacher_Dashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.viewPanel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_dashboard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_students)).EndInit();

@@ -26,82 +26,120 @@ namespace sprout__gradeBook
             populateCourses(); // Populate courses on form load
         }
 
-        // Method to populate courses from stored files
-        // Method to populate courses from stored files
+
         public void populateCourses()
         {
-            string folderPath = "CourseInformations"; // Root folder where course files are stored
+            // Construct the file path
+            string filePath = $"CourseInformations/{CurrentUser}.txt";
 
-            courseSectionPanel.Controls.Clear(); // Clear existing course cards
+            // Clear the existing controls from the course section panel.
+            courseSectionPanel.Controls.Clear();
 
-            // Check if the directory exists
-            if (Directory.Exists(folderPath))
+            if (File.Exists(filePath))
             {
-                // Get all folders (each folder corresponds to a user)
-                string[] userDirectories = Directory.GetDirectories(folderPath);
-
-                // Iterate through each user directory
-                foreach (string userDirectory in userDirectories)
+                try
                 {
-                    string currentUser = Path.GetFileName(userDirectory); // Get the current user from directory name
+                    // Read all lines from the file.
+                    string[] fileLines = File.ReadAllLines(filePath);
 
-                    // Get all files related to the current user
-                    string[] filePaths = Directory.GetFiles(userDirectory);
+                    // Variables to hold course details.
+                    string courseCode = string.Empty;
+                    string courseName = string.Empty;
+                    string studentDepartment = string.Empty;
+                    string studentYearAndSection = string.Empty;
+                    string studentCount = "0";
+                    bool inCourseSection = false;
 
-                    // Process each file
-                    foreach (string filePath in filePaths)
+                    // Loop through the lines to parse course details.
+                    foreach (string line in fileLines)
                     {
-                        string fileName = Path.GetFileNameWithoutExtension(filePath); // Get filename without extension
-                        string[] fileNameParts = fileName.Split('_'); // Split filename to get course details
-
-                        if (fileNameParts.Length >= 2)
+                        if (line.StartsWith("Course Code:"))
                         {
-                            string courseCode = fileNameParts[0].Trim();
-                            string courseName = fileNameParts[1].Trim();
-
-                            // Read file content to get student count
-                            string[] fileContent = File.ReadAllLines(filePath);
-
-                            int studentCount = 0;
-
-                            // Count the number of students based on the format
-                            for (int i = 0; i < fileContent.Length; i++)
-                            {
-                                if (fileContent[i].StartsWith("Student ID:"))
-                                {
-                                    studentCount++;
-                                }
-                            }
-
-                            // Create a CoursesCARD control with course information
-                            CoursesCARD card = new CoursesCARD(this)
-                            {
-                                SubjectName = courseName,
-                                SubjectCode = courseCode,
-                                SubjectCount = studentCount.ToString(),
-                                SubjectCourseSection = courseName // Assuming the course section is the same as course name
-                                                                  // Add additional properties as needed (e.g., SubjectSchedule)
-                            };
-
-                            // Add the card to the course section panel
-                            courseSectionPanel.Controls.Add(card);
+                            courseCode = line.Split(':')[1].Trim();
                         }
-                        else
+                        else if (line.StartsWith("Course Name:"))
                         {
-                            // Handle cases where filename format is incorrect
-                            MessageBox.Show($"Invalid filename format: {fileName}. Skipping file.");
+                            courseName = line.Split(':')[1].Trim();
+                        }
+                        else if (line.StartsWith("Student Department:"))
+                        {
+                            studentDepartment = line.Split(':')[1].Trim();
+                        }
+                        else if (line.StartsWith("Student year and section:"))
+                        {
+                            studentYearAndSection = line.Split(':')[1].Trim();
+                            inCourseSection = true; // Indicates we are processing a valid course section.
+                        }
+
+                        else if (line.StartsWith("----------------------------------------"))
+                        {
+                            // Check if we are in a valid course section and create the course card.
+                            if (inCourseSection)
+                            {
+                                string courseSection = $"{studentDepartment} {studentYearAndSection}";
+
+                                // Create a new CoursesCARD object and populate its properties.
+                                CoursesCARD card = new CoursesCARD(this)
+                                {
+                                    SubjectName = courseName,
+                                    SubjectCode = courseCode,
+                                    SubjectCount = studentCount,
+                                    SubjectCourseSection = courseSection
+                                };
+
+                                // Add the created card to the panel.
+                                courseSectionPanel.Controls.Add(card);
+
+                                // Reset variables for the next course section.
+                                inCourseSection = false;
+                                courseCode = string.Empty;
+                                courseName = string.Empty;
+                                studentDepartment = string.Empty;
+                                studentYearAndSection = string.Empty;
+                                studentCount = "0";
+                            }
                         }
                     }
+
+
+
+                    // Handle the last course if file doesn't end with a delimiter.
+                    if (inCourseSection)
+                    {
+                        string courseSection = $"{studentDepartment}, {studentYearAndSection}";
+
+                        // Create and add the last CoursesCARD.
+                        CoursesCARD card = new CoursesCARD(this)
+                        {
+                            SubjectName = courseName,
+                            SubjectCode = courseCode,
+                            SubjectCount = studentCount,
+                            SubjectCourseSection = courseSection
+                        };
+                        courseSectionPanel.Controls.Add(card);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Show an error message if there is an exception during file reading.
+                    MessageBox.Show($"Error reading file: {ex.Message}");
                 }
             }
             else
             {
-                // Display an error message if the directory does not exist
-                MessageBox.Show($"Directory not found: {folderPath}");
+                // Show a message if the specified file is not found.
+                MessageBox.Show($"File not found: {filePath}");
             }
         }
 
+        private string getStudentCount(string studentFilePath)
+        {
+            // string filepath = $"CourseInformations/{CurrentUser}";
 
+
+
+            return "";
+        }
         // Method to show the course section panel
         public void ShowPanel()
         {

@@ -67,7 +67,6 @@
             this.compGrade.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(101)))), ((int)(((byte)(55)))));
             this.compGrade.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.compGrade.TabIndex = 2;
-            this.compGrade.Text = "000";
             this.compGrade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.compGrade.TextChanged += new System.EventHandler(this.compGrade_TextChanged);
             this.compGrade.Enter += new System.EventHandler(this.compGrade_Enter);
@@ -77,7 +76,7 @@
             // 
             this.compMaxGrade.Location = new System.Drawing.Point(245, 8);
             this.compMaxGrade.Name = "compMaxGrade";
-            this.compMaxGrade.Size = new System.Drawing.Size(112, 22);
+            this.compMaxGrade.Size = new System.Drawing.Size(112, 21);
             this.compMaxGrade.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.compMaxGrade.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -86,7 +85,6 @@
             this.compMaxGrade.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(101)))), ((int)(((byte)(55)))));
             this.compMaxGrade.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.compMaxGrade.TabIndex = 3;
-            this.compMaxGrade.Text = "000";
             this.compMaxGrade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.compMaxGrade.TextChanged += new System.EventHandler(this.compMaxGrade_TextChanged);
             this.compMaxGrade.Enter += new System.EventHandler(this.compMaxGrade_Enter);

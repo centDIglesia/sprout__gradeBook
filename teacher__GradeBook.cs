@@ -15,11 +15,13 @@ namespace sprout__gradeBook
 
     public partial class teacher__GradeBook : KryptonForm
     {
+
         public Component_Button_Card _currentActiveComponentButton;
         public static teacher__GradeBook _gradeBook;
         List<double> _FinalGradesInEachComponents = new List<double>();
-        public bool isFirstStudentClicked { get; set; } = false;
 
+        public string selectedGradePeriod;
+        public bool isFirstStudentClicked { get; set; } = false;
 
         public bool isStudentGraded { get; set; } = false;
 
@@ -54,7 +56,7 @@ namespace sprout__gradeBook
         {
             LoadTxtFilesIntoComboBox(currentUSer);
             courseComboBox.SelectedIndexChanged += CourseComboBox_SelectedIndexChanged;
-
+            GradePeriodComboBox.SelectedIndexChanged += GradePeriodComboBox_SelectedIndexChanged_1;
             HideInitialElements();
         }
 
@@ -94,9 +96,11 @@ namespace sprout__gradeBook
       "Incomplete Setup",
       MessageBoxButtons.OK,
       MessageBoxIcon.Warning
-  );
 
+
+  );
                 return;
+
             }
 
             string[] txtFiles = Directory.GetFiles(directoryPath, "*.txt");
@@ -110,11 +114,12 @@ namespace sprout__gradeBook
 
         private void CourseComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            // Disable courseComboBox immediately after a value is selected
+
+
             string selectedCourse = courseComboBox.SelectedItem.ToString();
-
-
             string[] trimmedCourseParts = selectedCourse.Split('_');
-
 
             if (trimmedCourseParts.Length == 2)
             {
@@ -123,9 +128,7 @@ namespace sprout__gradeBook
 
                 if (!File.Exists(studentFilePath))
                 {
-
                     MessageBox.Show("No students found for the selected course. Please add students before proceeding.", "No Students Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                     return;
                 }
 
@@ -133,12 +136,12 @@ namespace sprout__gradeBook
             }
             else
             {
-
                 MessageBox.Show("Selected course format is incorrect. Please select a valid course.", "Invalid Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
             }
 
             DisplayIfCourseSelected();
+
+
 
         }
 
@@ -161,8 +164,6 @@ namespace sprout__gradeBook
             pictureBox5.Show();
 
         }
-
-
 
         private void LoadStudentCards(string filePath)
         {
@@ -212,9 +213,10 @@ namespace sprout__gradeBook
             }
         }
 
+
         private void AddStudentCard(string studentID, string studentName)
         {
-            studentsInGradebookCARD studentCard = new studentsInGradebookCARD(this)
+            studentsInGradebookCARD studentCard = new studentsInGradebookCARD(this, subcomponentsPanel, ComponentsButtonPanel)
             {
                 currentStudentID = studentID,
                 currentStudentName = studentName
@@ -222,6 +224,9 @@ namespace sprout__gradeBook
 
             studentListPanel.Controls.Add(studentCard);
         }
+
+
+
         private void kryptonComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             sectionTXT.Text = RemoveSubstring(courseComboBox.Text, "_", ",");
@@ -273,14 +278,11 @@ namespace sprout__gradeBook
              "Error",
              MessageBoxButtons.OK,
              MessageBoxIcon.Error
+
          );
-
-
-
                 return;
+
             }
-
-
 
 
         }
@@ -306,7 +308,7 @@ namespace sprout__gradeBook
 
 
         public int componentCount = 0;
-        private void addSubcomponents_Click(object sender, EventArgs e)
+        private void addSubcomponents_Click_1(object sender, EventArgs e)
         {
             componentCount++;
             AddComponentGradeCard();
@@ -325,8 +327,8 @@ namespace sprout__gradeBook
                 ComponentGradesCARD componentCard = new ComponentGradesCARD(CalculateAndDisplayFinalGrade)
                 {
                     ComponentNumber = $"{compName} #{componentCount}",
-                    ComponentGrade = 00.0,
-                    ComponentMaximumGrade = 00.0,
+                    ComponentGrade = 0,
+                    ComponentMaximumGrade = 99.9,
 
                 };
                 subcomponentsPanel.Controls.Add(componentCard);
@@ -413,10 +415,7 @@ namespace sprout__gradeBook
 
         private void kryptonComboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            courseComboBox.Show();
-            kryptonTextBox1.Show();
-            pictureBox2.Show();
-            CurrentGradePeriod.Text = GradePeriodComboBox.Text;
+
 
         }
         public void SetComponentButtonsEnabled(bool enabled)
@@ -434,41 +433,39 @@ namespace sprout__gradeBook
 
 
         private string grades = "";
-        private void doneBtn_Click(object sender, EventArgs e)
+        private void doneBtn_Click_1(object sender, EventArgs e)
         {
+
             if (_currentActiveComponentButton != null)
             {
                 _currentActiveComponentButton.IsCurrentComponentButtonGraded = true;
                 MessageBox.Show($"{_currentActiveComponentButton.compName} is marked as graded.");
                 _currentActiveComponentButton = null;
 
-
                 CheckAllComponentsGraded();
-
-
                 SetComponentButtonsEnabled(true);
+
+                // Check if all students are graded
+                CheckIfAllStudentsGraded();
+
+                UpdateComponentPanelVisibility();
             }
 
             grades += $"{finalGradelbl.Text}\n";
 
-
             string input = finalGradelbl.Text;
-
 
             string[] parts = input.Split(':');
 
             if (parts.Length > 1)
             {
-
                 string afterColon = parts[1].Trim();
                 string percentageValue = afterColon.Replace("%", "");
-
 
                 if (double.TryParse(percentageValue, out double result))
                 {
                     _FinalGradesInEachComponents.Add(result);
                 }
-
             }
         }
 
@@ -494,8 +491,10 @@ namespace sprout__gradeBook
 
         }
 
-        private void saveGradeBtn_Click(object sender, EventArgs e)
+        private void saveGradeBtn_Click_1(object sender, EventArgs e)
         {
+            IsTermAlreadyGraded(StudentIDText, GradePeriodComboBox.SelectedItem?.ToString());
+
             bool allGraded = true;
             foreach (Control control in ComponentsButtonPanel.Controls)
             {
@@ -533,12 +532,18 @@ namespace sprout__gradeBook
                 {
                     currentCard.MarkAsGraded.Visible = true;
                 }
+
+                // Check if all students are graded
+                CheckIfAllStudentsGraded(true); // Pass true to show the message now
+
             }
             else
             {
                 MessageBox.Show("Please grade all components before saving.", "Incomplete Grading", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+
 
 
         private void SaveGradesToFile()
@@ -584,6 +589,7 @@ namespace sprout__gradeBook
                 MessageBox.Show($"Error saving grades: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         public void ResetComponentsForNewStudent()
         {
             // Clear subcomponentsPanel
@@ -607,6 +613,93 @@ namespace sprout__gradeBook
             grades = string.Empty;
             _FinalGradesInEachComponents.Clear();
             isStudentGraded = false; // Reset the flag
+        }
+
+        private void sectionTXT_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        public bool IsTermAlreadyGraded(string studentID, string term)
+        {
+            string directoryPath = $"studentFinalGrades/{currentUSer}/";
+            string filePath = Path.Combine(directoryPath, $"{studentID}.txt");
+
+            if (!File.Exists(filePath))
+            {
+                return false; // File doesn't exist, so term can't be graded
+            }
+
+            string[] lines = File.ReadAllLines(filePath);
+
+            foreach (string line in lines)
+            {
+                if (line.StartsWith("Term |") && line.Contains(term))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+
+        public void CheckIfAllStudentsGraded(bool showMessageIfAllGraded = false)
+        {
+            bool allGraded = true;
+
+            foreach (Control control in studentListPanel.Controls)
+            {
+                if (control is studentsInGradebookCARD studentCard)
+                {
+                    if (!IsStudentGraded(studentCard.currentStudentID))
+                    {
+                        allGraded = false;
+                        break;
+                    }
+                }
+            }
+
+            if (allGraded)
+            {
+                if (showMessageIfAllGraded)
+                {
+                    MessageBox.Show("All students have been graded.", "All Students Graded", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+
+            }
+
+        }
+
+
+        private void GradePeriodComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            studentListPanel.Controls.Clear();
+            ComponentsButtonPanel.Controls.Clear();
+            selectedGradePeriod = GradePeriodComboBox.SelectedItem?.ToString();
+            courseComboBox.Show();
+            kryptonTextBox1.Show();
+            pictureBox2.Show();
+
+
+        }
+
+        private void kryptonTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void UpdateComponentPanelVisibility()
+        {
+            // Get the current student ID and check if graded
+            string studentID = StudentIDText;
+            bool isGraded = IsTermAlreadyGraded(studentID, GradePeriodComboBox.SelectedItem?.ToString());
+
+            // Hide the panels if the student is graded
+            subcomponentsPanel.Visible = !isGraded;
+            ComponentsButtonPanel.Visible = !isGraded;
         }
 
 
