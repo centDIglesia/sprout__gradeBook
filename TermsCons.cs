@@ -51,11 +51,6 @@ namespace sprout__gradeBook
             return;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
         private void kryptonTextBox1_TextChanged(object sender, EventArgs e)
         {
 
