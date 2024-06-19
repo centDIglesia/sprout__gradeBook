@@ -184,6 +184,7 @@
             this.kryptonTextBox1.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonTextBox1.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10);
             this.kryptonTextBox1.TabIndex = 89;
+            this.kryptonTextBox1.TextChanged += new System.EventHandler(this.kryptonTextBox1_TextChanged);
             // 
             // ComponentsButtonPanel
             // 
@@ -276,7 +277,7 @@
             this.GradePeriodComboBox.StateTracking.Item.Content.ShortText.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GradePeriodComboBox.TabIndex = 97;
             this.GradePeriodComboBox.Text = "Select Grade Period";
-            this.GradePeriodComboBox.SelectedIndexChanged += new System.EventHandler(this.kryptonComboBox1_SelectedIndexChanged_1);
+            this.GradePeriodComboBox.SelectedIndexChanged += new System.EventHandler(this.GradePeriodComboBox_SelectedIndexChanged_1);
             // 
             // kryptonTextBox2
             // 
@@ -307,7 +308,7 @@
             this.doneBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.doneBtn.TabIndex = 99;
             this.doneBtn.TabStop = false;
-            this.doneBtn.Click += new System.EventHandler(this.doneBtn_Click);
+            this.doneBtn.Click += new System.EventHandler(this.doneBtn_Click_1);
             // 
             // pictureBox5
             // 
@@ -317,7 +318,6 @@
             this.pictureBox5.Size = new System.Drawing.Size(470, 1);
             this.pictureBox5.TabIndex = 95;
             this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // addSubcomponents
             // 
@@ -328,7 +328,7 @@
             this.addSubcomponents.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.addSubcomponents.TabIndex = 93;
             this.addSubcomponents.TabStop = false;
-            this.addSubcomponents.Click += new System.EventHandler(this.addSubcomponents_Click);
+            this.addSubcomponents.Click += new System.EventHandler(this.addSubcomponents_Click_1);
             // 
             // saveGradeBtn
             // 
@@ -339,7 +339,7 @@
             this.saveGradeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.saveGradeBtn.TabIndex = 92;
             this.saveGradeBtn.TabStop = false;
-            this.saveGradeBtn.Click += new System.EventHandler(this.saveGradeBtn_Click);
+            this.saveGradeBtn.Click += new System.EventHandler(this.saveGradeBtn_Click_1);
             // 
             // genderPict
             // 
@@ -390,7 +390,6 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox4.TabIndex = 90;
             this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // pictureBox3
             // 

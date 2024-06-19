@@ -301,5 +301,10 @@ namespace sprout__gradeBook
             utilityButton uti = new utilityButton();
             uti.Exitform();
         }
+
+        private void Teacher_Dashboard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
