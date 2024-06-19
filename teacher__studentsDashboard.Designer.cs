@@ -36,6 +36,8 @@
             this.addStudentsBTN = new System.Windows.Forms.PictureBox();
             this.courseSectionPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.BacktoStudentDashboard = new System.Windows.Forms.Label();
+            this.ClickedCourse = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addStudentsBTN)).BeginInit();
@@ -94,9 +96,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.courseSectionPanel.AutoScroll = true;
             this.courseSectionPanel.Controls.Add(this.flowLayoutPanel1);
-            this.courseSectionPanel.Location = new System.Drawing.Point(47, 53);
+            this.courseSectionPanel.Location = new System.Drawing.Point(46, 53);
             this.courseSectionPanel.Name = "courseSectionPanel";
-            this.courseSectionPanel.Size = new System.Drawing.Size(739, 514);
+            this.courseSectionPanel.Size = new System.Drawing.Size(781, 514);
             this.courseSectionPanel.TabIndex = 92;
             // 
             // flowLayoutPanel1
@@ -110,12 +112,38 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(739, 0);
             this.flowLayoutPanel1.TabIndex = 93;
             // 
+            // BacktoStudentDashboard
+            // 
+            this.BacktoStudentDashboard.AutoSize = true;
+            this.BacktoStudentDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BacktoStudentDashboard.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BacktoStudentDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.BacktoStudentDashboard.Location = new System.Drawing.Point(186, 17);
+            this.BacktoStudentDashboard.Name = "BacktoStudentDashboard";
+            this.BacktoStudentDashboard.Size = new System.Drawing.Size(52, 22);
+            this.BacktoStudentDashboard.TabIndex = 93;
+            this.BacktoStudentDashboard.Text = "Back  /";
+            this.BacktoStudentDashboard.Click += new System.EventHandler(this.BacktoStudentDashboard_Click);
+            // 
+            // ClickedCourse
+            // 
+            this.ClickedCourse.AutoSize = true;
+            this.ClickedCourse.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClickedCourse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.ClickedCourse.Location = new System.Drawing.Point(233, 17);
+            this.ClickedCourse.Name = "ClickedCourse";
+            this.ClickedCourse.Size = new System.Drawing.Size(100, 22);
+            this.ClickedCourse.TabIndex = 94;
+            this.ClickedCourse.Text = "_CourseName";
+            // 
             // teacher__studentsDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(827, 639);
+            this.Controls.Add(this.ClickedCourse);
+            this.Controls.Add(this.BacktoStudentDashboard);
             this.Controls.Add(this.courseSectionPanel);
             this.Controls.Add(this.addStudentsBTN);
             this.Controls.Add(this.divider_1);
@@ -129,6 +157,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.addStudentsBTN)).EndInit();
             this.courseSectionPanel.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -140,5 +169,7 @@
         private System.Windows.Forms.PictureBox addStudentsBTN;
         private System.Windows.Forms.FlowLayoutPanel courseSectionPanel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label BacktoStudentDashboard;
+        private System.Windows.Forms.Label ClickedCourse;
     }
 }

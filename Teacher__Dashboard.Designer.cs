@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Teacher_Dashboard));
-            this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
+            this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette();
             this.viewPanel = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.teachers__firstName = new System.Windows.Forms.Label();
             this.btn_dashboard = new System.Windows.Forms.PictureBox();
@@ -72,7 +71,7 @@
             // 
             // viewPanel
             // 
-            this.viewPanel.Location = new System.Drawing.Point(325, 72);
+            this.viewPanel.Location = new System.Drawing.Point(328, 71);
             this.viewPanel.Name = "viewPanel";
             this.viewPanel.Size = new System.Drawing.Size(822, 639);
             this.viewPanel.StateCommon.Color1 = System.Drawing.Color.White;
@@ -85,7 +84,7 @@
             this.teachers__firstName.BackColor = System.Drawing.Color.White;
             this.teachers__firstName.Font = new System.Drawing.Font("Poppins SemiBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.teachers__firstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.teachers__firstName.Location = new System.Drawing.Point(944, 35);
+            this.teachers__firstName.Location = new System.Drawing.Point(944, 37);
             this.teachers__firstName.Name = "teachers__firstName";
             this.teachers__firstName.Size = new System.Drawing.Size(106, 30);
             this.teachers__firstName.TabIndex = 63;
@@ -212,7 +211,8 @@
             this.global__nav__bg.Image = ((System.Drawing.Image)(resources.GetObject("global__nav__bg.Image")));
             this.global__nav__bg.Location = new System.Drawing.Point(13, 13);
             this.global__nav__bg.Name = "global__nav__bg";
-            this.global__nav__bg.Size = new System.Drawing.Size(312, 684);
+            this.global__nav__bg.Padding = new System.Windows.Forms.Padding(2);
+            this.global__nav__bg.Size = new System.Drawing.Size(316, 688);
             this.global__nav__bg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.global__nav__bg.TabIndex = 0;
             this.global__nav__bg.TabStop = false;

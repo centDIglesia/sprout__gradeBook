@@ -44,7 +44,7 @@ namespace sprout__gradeBook
         // Method to set the student's icon based on their gender
         public void SetStudentIcon(string gender)
         {
-            if (gender == "Male")
+            if (string.Equals(gender, "Male", StringComparison.OrdinalIgnoreCase))
             {
                 student_Icon.Image = Properties.Resources.Male_Icon;
             }
