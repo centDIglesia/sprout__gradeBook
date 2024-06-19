@@ -24,7 +24,7 @@ namespace sprout__gradeBook
             {
                 signIn__btn_Click(sender, e);
                 e.Handled = true;
-            }            
+            }
         }
         private void studentLoginForm_Load(object sender, EventArgs e)
         {
@@ -415,5 +415,9 @@ namespace sprout__gradeBook
             signIn__btn.Image = Properties.Resources.Frame_101_ddefault;
         }
 
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
