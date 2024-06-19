@@ -113,9 +113,9 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Attendance_Sheet {
+        internal static System.Drawing.Bitmap Attendance__Sheet {
             get {
-                object obj = ResourceManager.GetObject("Attendance_Sheet", resourceCulture);
+                object obj = ResourceManager.GetObject("Attendance__Sheet", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -513,16 +513,6 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Group_69 {
-            get {
-                object obj = ResourceManager.GetObject("Group 69", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Group_72 {
             get {
                 object obj = ResourceManager.GetObject("Group_72", resourceCulture);
@@ -893,9 +883,9 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Student__GradeRow {
+        internal static System.Drawing.Bitmap Student__GradesRow {
             get {
-                object obj = ResourceManager.GetObject("Student__GradeRow", resourceCulture);
+                object obj = ResourceManager.GetObject("Student__GradesRow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -926,6 +916,16 @@ namespace sprout__gradeBook.Properties {
         internal static System.Drawing.Bitmap Student_CourseCard {
             get {
                 object obj = ResourceManager.GetObject("Student-CourseCard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Student_GradesHeader {
+            get {
+                object obj = ResourceManager.GetObject("Student_GradesHeader", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

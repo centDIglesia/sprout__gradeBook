@@ -107,7 +107,6 @@
             this.studentFnameTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
             this.studentFnameTXT.TabIndex = 1;
             this.studentFnameTXT.Text = "First Name";
-            this.studentFnameTXT.TextChanged += new System.EventHandler(this.studentFnameTXT_TextChanged);
             this.studentFnameTXT.Enter += new System.EventHandler(this.studentFnameTXT_Enter);
             this.studentFnameTXT.Leave += new System.EventHandler(this.studentFnameTXT_Leave);
             // 
@@ -188,7 +187,6 @@
             this.studentIDTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
             this.studentIDTXT.TabIndex = 4;
             this.studentIDTXT.Text = "Student ID";
-            this.studentIDTXT.TextChanged += new System.EventHandler(this.studentIDTXT_TextChanged);
             this.studentIDTXT.Enter += new System.EventHandler(this.studentIDTXT_Enter);
             this.studentIDTXT.Leave += new System.EventHandler(this.studentIDTXT_Leave);
             // 
@@ -508,7 +506,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.AddStudentForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonCheckSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDepartmentTXT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();

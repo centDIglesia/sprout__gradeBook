@@ -84,7 +84,7 @@
             this.courseSectionPanel.AutoSize = true;
             this.courseSectionPanel.Controls.Add(this.flowLayoutPanel1);
             this.courseSectionPanel.Controls.Add(this.flowLayoutPanel2);
-            this.courseSectionPanel.Location = new System.Drawing.Point(33, 53);
+            this.courseSectionPanel.Location = new System.Drawing.Point(39, 53);
             this.courseSectionPanel.Name = "courseSectionPanel";
             this.courseSectionPanel.Size = new System.Drawing.Size(774, 514);
             this.courseSectionPanel.TabIndex = 93;

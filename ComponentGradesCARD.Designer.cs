@@ -49,7 +49,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.compNumber.StateCommon.Border.Width = 0;
             this.compNumber.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(101)))), ((int)(((byte)(55)))));
-            this.compNumber.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.compNumber.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.compNumber.TabIndex = 1;
             this.compNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.compNumber.TextChanged += new System.EventHandler(this.compNumber_TextChanged);
@@ -70,6 +70,8 @@
             this.compGrade.Text = "000";
             this.compGrade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.compGrade.TextChanged += new System.EventHandler(this.compGrade_TextChanged);
+            this.compGrade.Enter += new System.EventHandler(this.compGrade_Enter);
+            this.compGrade.Leave += new System.EventHandler(this.compGrade_Leave);
             // 
             // compMaxGrade
             // 
@@ -87,6 +89,8 @@
             this.compMaxGrade.Text = "000";
             this.compMaxGrade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.compMaxGrade.TextChanged += new System.EventHandler(this.compMaxGrade_TextChanged);
+            this.compMaxGrade.Enter += new System.EventHandler(this.compMaxGrade_Enter);
+            this.compMaxGrade.Leave += new System.EventHandler(this.compMaxGrade_Leave);
             // 
             // compPercentage
             // 

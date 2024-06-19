@@ -28,6 +28,8 @@ namespace sprout__gradeBook
         private void teacher__studentsDashboard_Load(object sender, EventArgs e)
         {
             LoadStudentCourses(); // Load student courses on form load
+            BacktoStudentDashboard.Hide();
+            ClickedCourse.Hide(); // Initially hide ClickedCourse label
         }
 
         // Method to load teacher's school from credentials file
@@ -150,25 +152,46 @@ namespace sprout__gradeBook
         {
             Form formbackground = new Form();
 
-            // Open AddStudentForm as a modal dialog
-            using (AddStudentForm addStudentForm = new AddStudentForm(this, teacherSchool))
+            using (AddStudentForm terms = new AddStudentForm(this, teacherSchool))
             {
-                // Configure background form appearance
                 formbackground.StartPosition = FormStartPosition.CenterScreen;
                 formbackground.FormBorderStyle = FormBorderStyle.None;
                 formbackground.Opacity = .70d;
                 formbackground.BackColor = StateCommon.Back.Color1 = CustomColor.mainColor;
                 formbackground.Size = new Size(1147, 711);
+
                 formbackground.Location = this.Location;
+
                 formbackground.ShowInTaskbar = false;
                 formbackground.Show();
 
-                // Set ownership of addStudentForm to formbackground
-                addStudentForm.Owner = formbackground;
-                addStudentForm.ShowDialog();
+                terms.Owner = formbackground;
+                terms.ShowDialog();
             }
+            formbackground.Dispose();
 
-            formbackground.Dispose(); // Dispose of the background form after use
+
+            
         }
+
+        // Event handler for BacktoStudentDashboard label click
+        private void BacktoStudentDashboard_Click(object sender, EventArgs e)
+        {
+            // Clear ClickedCourse label text and hide it
+            ClickedCourse.Text = "";
+            ClickedCourse.Hide();
+
+            // Hide BacktoStudentDashboard label
+            BacktoStudentDashboard.Hide();
+
+            LoadStudentCourses();
+        }
+        public void ShowCourseDetails(string courseName, string yearSection)
+        {
+            ClickedCourse.Text = $"{courseName} {yearSection}";
+            ClickedCourse.Show();
+            BacktoStudentDashboard.Show();
+        }
+
     }
 }

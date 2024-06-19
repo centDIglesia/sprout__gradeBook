@@ -32,10 +32,10 @@
             this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.acceptBtn = new System.Windows.Forms.PictureBox();
             this.declineBtn = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Paragraph = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.acceptBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.declineBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Paragraph)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonTextBox1
@@ -56,6 +56,7 @@
             this.kryptonTextBox1.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5);
             this.kryptonTextBox1.TabIndex = 64;
             this.kryptonTextBox1.Text = "Terms and Conditions";
+            this.kryptonTextBox1.TextChanged += new System.EventHandler(this.kryptonTextBox1_TextChanged);
             // 
             // acceptBtn
             // 
@@ -81,7 +82,7 @@
             this.declineBtn.TabStop = false;
             this.declineBtn.Click += new System.EventHandler(this.declineBtn_Click);
             // 
-            // pictureBox1
+            // Paragraph
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -99,8 +100,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(394, 554);
+
+            this.ClientSize = new System.Drawing.Size(383, 554);
             this.Controls.Add(this.pictureBox1);
+
             this.Controls.Add(this.declineBtn);
             this.Controls.Add(this.acceptBtn);
             this.Controls.Add(this.kryptonTextBox1);
@@ -109,10 +112,9 @@
             this.Name = "TermsCons";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TermsCons";
-            this.Load += new System.EventHandler(this.TermsCons_Load);
             ((System.ComponentModel.ISupportInitialize)(this.acceptBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.declineBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Paragraph)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,6 +126,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
         private System.Windows.Forms.PictureBox acceptBtn;
         private System.Windows.Forms.PictureBox declineBtn;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox Paragraph;
     }
 }

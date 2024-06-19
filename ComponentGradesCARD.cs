@@ -115,5 +115,25 @@ namespace sprout__gradeBook
         {
 
         }
+
+        private void compGrade_Enter(object sender, EventArgs e)
+        {
+            UserInput_Manager.ResetInputField(compGrade, "0");
+        }
+
+        private void compMaxGrade_Leave(object sender, EventArgs e)
+        {
+            UserInput_Manager.RestoreDefaultText(compMaxGrade, "0");
+        }
+
+        private void compMaxGrade_Enter(object sender, EventArgs e)
+        {
+            UserInput_Manager.ResetInputField(compMaxGrade, "0");
+        }
+
+        private void compGrade_Leave(object sender, EventArgs e)
+        {
+            UserInput_Manager.RestoreDefaultText(compGrade, "0");
+        }
     }
 }

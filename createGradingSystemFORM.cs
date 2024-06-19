@@ -18,8 +18,18 @@ namespace sprout__gradeBook
             InitializeComponent();
             CurrentsubjCode = subjCode;
             CurrentsubjDeptYearAndSection = subjDeptYearAndSection;
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(Create_GradingSystem_KeyDown);
         }
+        private void Create_GradingSystem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                saveGradingsytemBTN_Click(sender, e);
+                e.Handled = true;
+            }
 
+        }
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             // Check if total weight is less than 100
@@ -91,16 +101,6 @@ namespace sprout__gradeBook
         }
 
 
-        private void createGradingSystemFORM_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void saveGradingsytemBTN_Click(object sender, EventArgs e)
         {
             string baseDirectoryPath = $"CourseGradingSystem/{CurrentUser}/{CurrentsubjCode}_{CurrentsubjDeptYearAndSection}";
@@ -145,14 +145,6 @@ namespace sprout__gradeBook
             this.Close();
         }
 
-
-
-
-
-        private void totallWeightLLBL_Click(object sender, EventArgs e)
-        {
-
-        }
         public void UpdateTextFile(string deletedComponentName)
         {
             // Define the file path
@@ -181,9 +173,10 @@ namespace sprout__gradeBook
             File.WriteAllLines(filePath, updatedLines);
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
+        private void Close_btn_Click(object sender, EventArgs e)
         {
-
+            utilityButton Close = new utilityButton();
+            Close.Cancelform(this);
         }
     }
 }
