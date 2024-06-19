@@ -55,5 +55,10 @@ namespace sprout__gradeBook
         {
             
         }
+
+        private void kryptonTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

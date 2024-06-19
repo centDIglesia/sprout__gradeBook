@@ -150,25 +150,26 @@ namespace sprout__gradeBook
         {
             Form formbackground = new Form();
 
-            // Open AddStudentForm as a modal dialog
-            using (AddStudentForm addStudentForm = new AddStudentForm(this, teacherSchool))
+            using (AddStudentForm terms = new AddStudentForm(this, teacherSchool))
             {
-                // Configure background form appearance
                 formbackground.StartPosition = FormStartPosition.CenterScreen;
                 formbackground.FormBorderStyle = FormBorderStyle.None;
                 formbackground.Opacity = .70d;
                 formbackground.BackColor = StateCommon.Back.Color1 = CustomColor.mainColor;
                 formbackground.Size = new Size(1147, 711);
+
                 formbackground.Location = this.Location;
+
                 formbackground.ShowInTaskbar = false;
                 formbackground.Show();
 
-                // Set ownership of addStudentForm to formbackground
-                addStudentForm.Owner = formbackground;
-                addStudentForm.ShowDialog();
+                terms.Owner = formbackground;
+                terms.ShowDialog();
             }
+            formbackground.Dispose();
 
-            formbackground.Dispose(); // Dispose of the background form after use
+
+            
         }
     }
 }
