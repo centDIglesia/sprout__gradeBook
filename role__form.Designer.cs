@@ -79,7 +79,7 @@
             this.role__btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.role__btn.TabIndex = 6;
             this.role__btn.TabStop = false;
-            this.role__btn.Click += new System.EventHandler(this.role__btn_Click_1);
+            this.role__btn.Click += new System.EventHandler(this.role__btn_Click);
             this.role__btn.MouseLeave += new System.EventHandler(this.role__btn_MouseLeave);
             this.role__btn.MouseHover += new System.EventHandler(this.role__btn_MouseHover);
             // 

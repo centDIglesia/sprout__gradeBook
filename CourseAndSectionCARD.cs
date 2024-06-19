@@ -54,6 +54,10 @@ namespace sprout__gradeBook
             string currentSection = SectionName;
             string currentCourse = CourseF;
 
+
+            // Call the method to show the BacktoStudentDashboard label with course details
+            _parentForm.ShowCourseDetails(currentCourse, currentSection);
+
             string directoryPath = $"StudentCredentials/{_parentForm.currentUSer}";
             if (!Directory.Exists(directoryPath))
             {

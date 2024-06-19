@@ -1,24 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace sprout__gradeBook
 {
     public static class UserInput__Validator
     {
-
         public static bool ValidateNotEmpty(string input, string fieldLabel)
         {
             return !string.IsNullOrEmpty(input) && input != fieldLabel;
         }
 
-
         public static bool ValidateEmail(string email)
         {
             return email.Contains("@gmail.com");
-
         }
 
         public static bool ContainsLowercase(string password)
@@ -56,12 +55,26 @@ namespace sprout__gradeBook
             return input.All(char.IsLetter);
         }
 
-        // New method to validate time format
-        public static bool ValidateTimeFormat(string input)
+        public static bool ValidateTimeFormat(string time)
         {
-            DateTime tempDate;
-            return DateTime.TryParseExact(input, "hh:mm tt", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out tempDate);
+            // Regular expression pattern for HH:MM AM/PM format
+            string pattern = @"^(0[1-9]|1[0-2]):[0-5][0-9] (AM|PM)$";
+
+            // Check if the input matches the pattern
+            return Regex.IsMatch(time, pattern);
         }
+
+        public static bool ValidateEndTimeAfterStartTime(string startTime, string endTime)
+        {
+            // Parse start and end times
+            DateTime startDateTime = DateTime.ParseExact(startTime, "hh:mm tt", CultureInfo.InvariantCulture);
+            DateTime endDateTime = DateTime.ParseExact(endTime, "hh:mm tt", CultureInfo.InvariantCulture);
+
+            // Compare start and end times
+            return endDateTime > startDateTime;
+        }
+
+
     }
 }
 

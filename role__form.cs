@@ -14,6 +14,42 @@ namespace sprout__gradeBook
         {
             InitializeComponent();
             role__btn.Hide();
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(Role__form_KeyDown);
+        }
+        private void Role__form_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                role__btn_Click(sender, e);
+                e.Handled = true;
+            }
+            else if (e.KeyCode == Keys.Left)
+            {
+                teacher__role_Click(sender, e);
+                e.Handled = true;
+            }
+            else if (e.KeyCode == Keys.Right)
+            {
+                student__role_Click(sender, e);
+                e.Handled = true;
+            }
+        }
+        private void role__btn_Click(object sender, EventArgs e)
+        {
+            role__btn.Image = Properties.Resources.nekstBTNNMM;
+            if (selectedRole == "student")
+            {
+                this.Hide();
+                studentLoginForm stdForm = new studentLoginForm();
+                stdForm.Show();
+            }
+            else if (selectedRole == "teacher")
+            {
+                this.Hide();
+                logInForm SignUp_Form = new logInForm();
+                SignUp_Form.Show();
+            }
         }
 
         private void teacher__role_Click(object sender, EventArgs e)
@@ -48,11 +84,6 @@ namespace sprout__gradeBook
                     teacherClicked = false;
                 }
             }
-        }
-
-        private void role__btn_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void teacher__role_MouseHover(object sender, EventArgs e)
@@ -91,23 +122,6 @@ namespace sprout__gradeBook
         private void role__btn_MouseLeave(object sender, EventArgs e)
         {
             role__btn.Image = Properties.Resources.nekstBTNN;
-        }
-
-        private void role__btn_Click_1(object sender, EventArgs e)
-        {
-            role__btn.Image = Properties.Resources.nekstBTNNMM;
-            if (selectedRole == "student")
-            {
-                this.Hide();
-                studentLoginForm stdForm = new studentLoginForm();
-                stdForm.Show();
-            }
-            else if (selectedRole == "teacher")
-            {
-                this.Hide();
-                logInForm SignUp_Form = new logInForm();
-                SignUp_Form.Show();
-            }
         }
 
         private void close_btn_Click(object sender, EventArgs e)

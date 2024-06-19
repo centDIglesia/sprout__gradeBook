@@ -53,7 +53,6 @@ namespace sprout__gradeBook
             get => subjectCourseSectionLBL.Text;
             set => subjectCourseSectionLBL.Text = value;
         }
-
         private void subjectStudentCountLBL_MouseHover(object sender, EventArgs e)
         {
             studentCountTooltip.Show();

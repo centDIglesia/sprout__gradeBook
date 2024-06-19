@@ -19,7 +19,18 @@ namespace sprout__gradeBook
         {
             _parentCard = ParentCard;
             InitializeComponent();
-        }      
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(Teacher_Feedback_KeyDown);
+        }
+        private void Teacher_Feedback_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                sendFeedback_btn_Click(sender, e);
+                e.Handled = true;
+            }
+
+        }
         public string StudentName
         {
             get => studentName;

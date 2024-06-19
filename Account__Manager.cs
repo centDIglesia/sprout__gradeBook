@@ -63,6 +63,7 @@ namespace sprout__gradeBook
             {
                 writer.WriteLine($"Student ID: {((Student)user).StudentNumber}");
                 writer.WriteLine($"Student Name: {((Student)user).FullName}");
+                writer.WriteLine($"Last Name: {((Student)user).LastName}");
                 writer.WriteLine($"Email: {user.Email}");
                 writer.WriteLine($"Username: {user.Username}");
                 writer.WriteLine($"Birthday: {((Student)user).Birthday.ToShortDateString()}");

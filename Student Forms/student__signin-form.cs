@@ -15,10 +15,17 @@ namespace sprout__gradeBook
         public studentLoginForm()
         {
             InitializeComponent();
-
-
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(Student_LogIn_KeyDown);
         }
-
+        private void Student_LogIn_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                signIn__btn_Click(sender, e);
+                e.Handled = true;
+            }            
+        }
         private void studentLoginForm_Load(object sender, EventArgs e)
         {
             // Hide tooltips on form load

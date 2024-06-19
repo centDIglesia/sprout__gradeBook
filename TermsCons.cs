@@ -16,40 +16,28 @@ namespace sprout__gradeBook
         public TermsCons()
         {
             InitializeComponent();
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(TermsandConditions_KeyDown);
         }
-
-        private void TermsCons_Load(object sender, EventArgs e)
+        private void TermsandConditions_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Enter)
+            {
+                acceptBtn_Click(sender, e);
+                e.Handled = true;
+            }
         }
-
-        private void signIn__btn_Click(object sender, EventArgs e)
-        {
-            utilityButton b = new utilityButton();
-            b.Closeform(this);
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            pictureBox1.Image = Properties.Resources.Group_85sd;
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-           
-        }
-
         private void acceptBtn_Click(object sender, EventArgs e)
         {
             utilityButton b = new utilityButton();
             b.Closeform(this);
         }
-
         private void declineBtn_Click(object sender, EventArgs e)
         {         
             MessageBox.Show("You must accept the Terms and Conditions to use the system. Please accept the terms to proceed.", "Decline Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             return;
         }
+
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -60,5 +48,6 @@ namespace sprout__gradeBook
         {
 
         }
+
     }
 }

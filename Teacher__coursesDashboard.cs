@@ -27,83 +27,69 @@ namespace sprout__gradeBook
         }
 
         // Method to populate courses from stored files
+        // Method to populate courses from stored files
         public void populateCourses()
         {
-            string folderPath = "CourseInformations"; // Folder where course files are stored
+            string folderPath = "CourseInformations"; // Root folder where course files are stored
 
             courseSectionPanel.Controls.Clear(); // Clear existing course cards
 
             // Check if the directory exists
             if (Directory.Exists(folderPath))
             {
-                // Get all files related to the current user
-                string[] filePaths = Directory.GetFiles(folderPath, $"{CurrentUser}.txt");
+                // Get all folders (each folder corresponds to a user)
+                string[] userDirectories = Directory.GetDirectories(folderPath);
 
-                // Process each file
-                foreach (string filePath in filePaths)
+                // Iterate through each user directory
+                foreach (string userDirectory in userDirectories)
                 {
-                    string fileContent = File.ReadAllText(filePath); // Read file content
+                    string currentUser = Path.GetFileName(userDirectory); // Get the current user from directory name
 
-                    // Split content into course blocks
-                    string[] courseBlocks = fileContent.Split(new string[] { "----------------------------------------" }, StringSplitOptions.RemoveEmptyEntries);
+                    // Get all files related to the current user
+                    string[] filePaths = Directory.GetFiles(userDirectory);
 
-                    foreach (string block in courseBlocks)
+                    // Process each file
+                    foreach (string filePath in filePaths)
                     {
-                        string[] lines = block.Split(new[] { Environment.NewLine }, StringSplitOptions.None); // Split block into lines
+                        string fileName = Path.GetFileNameWithoutExtension(filePath); // Get filename without extension
+                        string[] fileNameParts = fileName.Split('_'); // Split filename to get course details
 
-                        // Variables to hold course information
-                        string courseName = "";
-                        string courseCode = "";
-                        string department = "";
-                        string section = "";
-                        string schedule = "";
-                        int studentCount = 0;
-
-                        // Extract course details from lines
-                        foreach (var line in lines)
+                        if (fileNameParts.Length >= 2)
                         {
-                            if (line.StartsWith("Course Name:"))
-                            {
-                                courseName = line.Substring("Course Name:".Length).Trim();
-                            }
-                            else if (line.StartsWith("Course Code:"))
-                            {
-                                courseCode = line.Substring("Course Code:".Length).Trim();
-                            }
-                            else if (line.StartsWith("Student Department:"))
-                            {
-                                department = line.Substring("Student Department:".Length).Trim();
-                            }
-                            else if (line.StartsWith("Student year and section:"))
-                            {
-                                section = line.Substring("Student year and section:".Length).Trim();
-                            }
-                            else if (line.StartsWith("Course Schedule:"))
-                            {
-                                schedule = line.Substring("Course Schedule:".Length).Trim();
-                            }
-                            else if (line.StartsWith("Student Count:"))
-                            {
-                                studentCount = int.Parse(line.Substring("Student Count:".Length).Trim());
-                            }
-                        }
+                            string courseCode = fileNameParts[0].Trim();
+                            string courseName = fileNameParts[1].Trim();
 
-                        // Check if all required information is available
-                        if (!string.IsNullOrEmpty(courseName) && !string.IsNullOrEmpty(courseCode) &&
-                            !string.IsNullOrEmpty(department) && !string.IsNullOrEmpty(section))
-                        {
+                            // Read file content to get student count
+                            string[] fileContent = File.ReadAllLines(filePath);
+
+                            int studentCount = 0;
+
+                            // Count the number of students based on the format
+                            for (int i = 0; i < fileContent.Length; i++)
+                            {
+                                if (fileContent[i].StartsWith("Student ID:"))
+                                {
+                                    studentCount++;
+                                }
+                            }
+
                             // Create a CoursesCARD control with course information
                             CoursesCARD card = new CoursesCARD(this)
                             {
                                 SubjectName = courseName,
                                 SubjectCode = courseCode,
                                 SubjectCount = studentCount.ToString(),
-                                SubjectSchedule = schedule,
-                                SubjectCourseSection = $"{department} {section}"
+                                SubjectCourseSection = courseName // Assuming the course section is the same as course name
+                                                                  // Add additional properties as needed (e.g., SubjectSchedule)
                             };
 
                             // Add the card to the course section panel
                             courseSectionPanel.Controls.Add(card);
+                        }
+                        else
+                        {
+                            // Handle cases where filename format is incorrect
+                            MessageBox.Show($"Invalid filename format: {fileName}. Skipping file.");
                         }
                     }
                 }
@@ -114,6 +100,7 @@ namespace sprout__gradeBook
                 MessageBox.Show($"Directory not found: {folderPath}");
             }
         }
+
 
         // Method to show the course section panel
         public void ShowPanel()
