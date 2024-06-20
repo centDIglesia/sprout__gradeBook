@@ -128,10 +128,10 @@ namespace sprout__gradeBook
         }
 
         private void announcementBTN_Click(object sender, EventArgs e)
-        { 
+        {
             Form formbackground = new Form();
 
-            using (AddAnnouncementFORM addNewAnnouncement = new AddAnnouncementFORM(this)) 
+            using (AddAnnouncementFORM addNewAnnouncement = new AddAnnouncementFORM(this))
             {
                 formbackground.StartPosition = FormStartPosition.CenterScreen;
                 formbackground.FormBorderStyle = FormBorderStyle.None;
@@ -242,6 +242,9 @@ namespace sprout__gradeBook
 
             }
         }
+
+
+
 
     }
 }

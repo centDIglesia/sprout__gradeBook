@@ -262,7 +262,7 @@
             // 
             this.showPass__icon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.showPass__icon.Image = global::sprout__gradeBook.Properties.Resources.open__eye2;
-            this.showPass__icon.Location = new System.Drawing.Point(365, 424);
+            this.showPass__icon.Location = new System.Drawing.Point(364, 414);
             this.showPass__icon.Name = "showPass__icon";
             this.showPass__icon.Size = new System.Drawing.Size(22, 18);
             this.showPass__icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -315,6 +315,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(44, 597);
             this.pictureBox3.Name = "pictureBox3";
@@ -322,6 +323,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox3.TabIndex = 10;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // signupSCHOOL__txtbox
             // 
@@ -430,6 +432,7 @@
             // signIN__switchBTN
             // 
             this.signIN__switchBTN.BackColor = System.Drawing.Color.Transparent;
+            this.signIN__switchBTN.Cursor = System.Windows.Forms.Cursors.Hand;
             this.signIN__switchBTN.Image = ((System.Drawing.Image)(resources.GetObject("signIN__switchBTN.Image")));
             this.signIN__switchBTN.Location = new System.Drawing.Point(110, 83);
             this.signIN__switchBTN.Name = "signIN__switchBTN";
@@ -451,7 +454,7 @@
             // 
             // teacherSIGNINform
             // 
-            this.teacherSIGNINform.Location = new System.Drawing.Point(147, 16);
+            this.teacherSIGNINform.Location = new System.Drawing.Point(664, 16);
             this.teacherSIGNINform.Name = "teacherSIGNINform";
             // 
             // teacherSIGNINform.Panel
@@ -543,7 +546,7 @@
             // 
             this.signIn__showPassicon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.signIn__showPassicon.Image = global::sprout__gradeBook.Properties.Resources.open__eye;
-            this.signIn__showPassicon.Location = new System.Drawing.Point(367, 226);
+            this.signIn__showPassicon.Location = new System.Drawing.Point(367, 225);
             this.signIn__showPassicon.Name = "signIn__showPassicon";
             this.signIn__showPassicon.Size = new System.Drawing.Size(22, 18);
             this.signIn__showPassicon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;

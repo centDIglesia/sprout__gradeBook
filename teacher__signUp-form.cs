@@ -702,5 +702,28 @@ namespace sprout__gradeBook
         {
 
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Form formbackground = new Form();
+
+            using (TermsCons terms = new TermsCons())
+            {
+                formbackground.StartPosition = FormStartPosition.CenterScreen;
+                formbackground.FormBorderStyle = FormBorderStyle.None;
+                formbackground.Opacity = .70d;
+                formbackground.BackColor = StateCommon.Back.Color1 = CustomColor.mainColor;
+                formbackground.Size = this.Size;
+
+                formbackground.Location = this.Location;
+
+                formbackground.ShowInTaskbar = false;
+                formbackground.Show();
+
+                terms.Owner = formbackground;
+                terms.ShowDialog();
+            }
+            formbackground.Dispose();
+        }
     }
 }

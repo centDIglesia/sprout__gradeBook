@@ -155,10 +155,11 @@ namespace sprout__gradeBook
         private void logoutBtn_Click(object sender, EventArgs e)
         {
             utilityButton ut = new utilityButton();
+            ut.ConfirmLogout(this);
+
+
 
             Role__form role__Form = new Role__form();
-            this.Close();
-
             role__Form.Show();
 
 

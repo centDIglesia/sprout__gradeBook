@@ -37,7 +37,7 @@ namespace sprout__gradeBook
             string studentLname = studentLnameTXT.Text;
             string studentID = studentIDTXT.Text; 
             string studentEmail = studentEmailTXT.Text;
-            DateTime studentBirthday = studentBirthdayPicker.Value;
+            DateTime studentBirthday = studentBirthdayPickerf.Value;
             string studentGender = studentMaleRADIOBUTTON.Checked ? "Male" : (studentFemaleRADIOBUTTON.Checked ? "Female" : "");
             string studentUsername = $"{studentFname} {studentLname}";
             string studentDepartment = studentDepartmentTXT.Text;
@@ -71,6 +71,20 @@ namespace sprout__gradeBook
             {
                 MessageBox.Show("Student's Department cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 studentIDTXT.Focus();
+                return;
+            }
+
+            if (!UserInput__Validator.ValidateNotEmpty(studentEmail, "Email"))
+            {
+                MessageBox.Show("Student's Email cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                studentEmailTXT.Focus();
+                return;
+            }
+
+            if (!UserInput__Validator.ValidateEmail(studentEmailTXT.Text))
+            {
+                MessageBox.Show("Student's Email is invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                studentEmailTXT.Focus();
                 return;
             }
 
