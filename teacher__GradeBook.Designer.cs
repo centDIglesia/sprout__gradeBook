@@ -199,7 +199,7 @@
             // 
             this.subcomponentsPanel.AutoScroll = true;
             this.subcomponentsPanel.AutoScrollMinSize = new System.Drawing.Size(1, 0);
-            this.subcomponentsPanel.Location = new System.Drawing.Point(320, 361);
+            this.subcomponentsPanel.Location = new System.Drawing.Point(314, 363);
             this.subcomponentsPanel.Name = "subcomponentsPanel";
             this.subcomponentsPanel.Size = new System.Drawing.Size(483, 224);
             this.subcomponentsPanel.TabIndex = 71;
@@ -384,7 +384,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(306, 295);
+            this.pictureBox4.Location = new System.Drawing.Point(300, 297);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(509, 332);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -419,6 +419,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(827, 639);
+            this.Controls.Add(this.subcomponentsPanel);
             this.Controls.Add(this.CurrentGradePeriod);
             this.Controls.Add(this.ComponentsButtonPanel);
             this.Controls.Add(this.pictureBox3);
@@ -429,7 +430,6 @@
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.currentComponent);
             this.Controls.Add(this.addSubcomponents);
-            this.Controls.Add(this.subcomponentsPanel);
             this.Controls.Add(this.saveGradeBtn);
             this.Controls.Add(this.courseComboBox);
             this.Controls.Add(this.kryptonTextBox1);

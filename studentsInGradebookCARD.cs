@@ -13,9 +13,9 @@ namespace sprout__gradeBook
         public PictureBox MarkAsGraded { get; set; }
         private Panel _subcomponentsPanel;
         private Panel _ComponentsButtonPanel;
+        private PictureBox _addSubcomponents;
 
-
-        public studentsInGradebookCARD(teacher__GradeBook teacherForm, Panel subcom, Panel compsbutton)
+        public studentsInGradebookCARD(teacher__GradeBook teacherForm, Panel subcom, Panel compsbutton, PictureBox addSubcomponents)
         {
             InitializeComponent();
             _subcomponentsPanel = subcom;
@@ -29,6 +29,7 @@ namespace sprout__gradeBook
 
             MarkAsGraded = markAsGraded;
             MarkAsGraded.Hide();
+            _addSubcomponents = addSubcomponents;
         }
 
 
@@ -90,12 +91,13 @@ namespace sprout__gradeBook
             _teacherForm.StudenttnameText = currentStudentName;
             _teacherForm.StudentIDText = currentStudentID;
 
-            // Update MarkAsGraded visibility based on grading status
+
             MarkAsGraded.Visible = _teacherForm.IsStudentGraded(currentStudentID);
 
             // Check if all students are graded
             _teacherForm.CheckIfAllStudentsGraded();
         }
+
 
         private void InitializeStudentGradedState()
         {
@@ -103,8 +105,11 @@ namespace sprout__gradeBook
             MarkAsGraded.Visible = isGraded;
             _subcomponentsPanel.Visible = !isGraded;
             _ComponentsButtonPanel.Visible = !isGraded;
+            _addSubcomponents.Enabled = !isGraded;
             _teacherForm.isStudentGraded = isGraded;
+
         }
+
 
 
         private void studentsInGradebookCARD_Load(object sender, EventArgs e)

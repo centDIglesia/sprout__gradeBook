@@ -21,7 +21,7 @@ namespace sprout__gradeBook
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new Teacher_Dashboard("Cent7344"));
+            Application.Run(new teacher__GradeBook("Sir, Jayson"));
 
 
         }

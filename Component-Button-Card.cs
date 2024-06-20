@@ -46,7 +46,9 @@ namespace sprout__gradeBook
                 return;
             }
 
-
+            parentForm.ResetSubcomponentsPanel();
+            parentForm.ShowSubcomponentsAndDoneBtn();
+           
             parentForm._currentActiveComponentButton = this;
             parentForm.SetComponentButtonsEnabled(false);
 

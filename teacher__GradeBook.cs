@@ -216,7 +216,7 @@ namespace sprout__gradeBook
 
         private void AddStudentCard(string studentID, string studentName)
         {
-            studentsInGradebookCARD studentCard = new studentsInGradebookCARD(this, subcomponentsPanel, ComponentsButtonPanel)
+            studentsInGradebookCARD studentCard = new studentsInGradebookCARD(this, subcomponentsPanel, ComponentsButtonPanel, addSubcomponents)
             {
                 currentStudentID = studentID,
                 currentStudentName = studentName
@@ -435,6 +435,38 @@ namespace sprout__gradeBook
         private string grades = "";
         private void doneBtn_Click_1(object sender, EventArgs e)
         {
+            foreach (Control control in subcomponentsPanel.Controls)
+            {
+                if (control is ComponentGradesCARD componentCard)
+                {
+                    double componentGrade = componentCard.ComponentGrade;
+                    double componentMaximumGrade = componentCard.ComponentMaximumGrade;
+
+                    if (componentGrade > componentMaximumGrade)
+                    {
+                        MessageBox.Show($"Component Grade {componentGrade} cannot be higher than Component Maximum Grade {componentMaximumGrade}.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        componentCard.Focus();  // Set focus to the invalid card
+                        return;
+                    }
+
+                    if (componentMaximumGrade > 999)
+                    {
+                        MessageBox.Show($"Component Maximum Grade cannot be greater than 999. Current value is {componentMaximumGrade}.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        componentCard.Focus();  // Set focus to the invalid card
+                        return;
+                    }
+
+                    if (componentGrade > 999 || componentGrade > componentMaximumGrade)
+                    {
+                        MessageBox.Show($"Component Grade cannot be greater than 999 ,nor greater than Maximum Grade.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        componentCard.Focus();  // Set focus to the invalid card
+                        return;
+                    }
+
+                }
+            }
+
+
 
             if (_currentActiveComponentButton != null)
             {
@@ -447,6 +479,9 @@ namespace sprout__gradeBook
 
                 // Check if all students are graded
                 CheckIfAllStudentsGraded();
+
+                HideSubcomponentsAndDoneBtn();
+                ResetSubcomponentsPanel();
 
                 UpdateComponentPanelVisibility();
             }
@@ -493,6 +528,7 @@ namespace sprout__gradeBook
 
         private void saveGradeBtn_Click_1(object sender, EventArgs e)
         {
+
             IsTermAlreadyGraded(StudentIDText, GradePeriodComboBox.SelectedItem?.ToString());
 
             bool allGraded = true;
@@ -513,6 +549,7 @@ namespace sprout__gradeBook
                 isStudentGraded = true;
                 SaveGradesToFile();
 
+
                 // Mark the current student as graded
                 if (!StudentGradedStatus.ContainsKey(StudentIDText))
                 {
@@ -523,7 +560,7 @@ namespace sprout__gradeBook
                     StudentGradedStatus[StudentIDText] = true;
                 }
 
-                // Update the check mark
+
                 var currentCard = studentListPanel.Controls
                     .OfType<studentsInGradebookCARD>()
                     .FirstOrDefault(c => c.currentStudentID == StudentIDText);
@@ -541,10 +578,30 @@ namespace sprout__gradeBook
             {
                 MessageBox.Show("Please grade all components before saving.", "Incomplete Grading", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
+            HideGradingElements();
         }
 
-
-
+        private void HideGradingElements()
+        {
+            saveGradeBtn.Visible = false;
+            ComponentsButtonPanel.Visible = false;
+            pictureBox4.Visible = false;
+            subcomponentsPanel.Visible = false;
+            addSubcomponents.Visible = false;
+            doneBtn.Visible = false;
+            currentComponent.Visible = false;
+            pictureBox3.Visible = false;
+        }
+        private void ShowGradingElements()
+        {
+            saveGradeBtn.Visible = true;
+            ComponentsButtonPanel.Visible = true;
+            pictureBox4.Visible = true;
+            subcomponentsPanel.Visible = true;
+            addSubcomponents.Visible = true;
+            doneBtn.Visible = true;
+        }
 
         private void SaveGradesToFile()
         {
@@ -590,6 +647,81 @@ namespace sprout__gradeBook
             }
         }
 
+
+
+        /*  private void SaveGradesToFile()
+          {
+              try
+              {
+                  string directoryPath = $"studentFinalGrades/{currentUSer}/";
+                  Directory.CreateDirectory(directoryPath);
+
+                  string selectedCourse = courseComboBox.SelectedItem.ToString();
+                  string courseCode = selectedCourse.Split('_')[0].Trim();
+                  string term = GradePeriodComboBox.Text;
+                  string studentID = StudentIDTXT.Text;
+                  string studentName = StudenttnameTXT.Text;
+
+                  // Construct file path based on student ID and term
+                  string filePath = Path.Combine(directoryPath, $"{studentID}_{term}.txt");
+
+                  // Create the file content
+                  StringBuilder sb = new StringBuilder();
+                  sb.AppendLine($"Term | {term}");
+                  sb.AppendLine($"Course Code | {courseCode}");
+                  sb.AppendLine($"Grade | {grades}");
+                  double totalFinalGrade = _FinalGradesInEachComponents.Sum();
+                  sb.AppendLine($"Total Final Grade | {totalFinalGrade.ToString("0.00")}%");
+                  sb.AppendLine($"-------------------");
+
+                  // Check if the file already exists
+                  if (File.Exists(filePath))
+                  {
+                      // Overwrite the existing file or prompt user with a message
+                      var result = MessageBox.Show(
+                          $"A grade record for {studentName} in the term '{term}' and course '{courseCode}' already exists. Do you want to overwrite it?",
+                          "Grade Record Exists",
+                          MessageBoxButtons.YesNo,
+                          MessageBoxIcon.Warning);
+
+                      if (result == DialogResult.Yes)
+                      {
+                          File.WriteAllText(filePath, sb.ToString());
+                          MessageBox.Show(
+                              $"Grades for {studentName} have been successfully updated for the course '{courseCode}'.",
+                              "Grades Recorded Successfully",
+                              MessageBoxButtons.OK,
+                              MessageBoxIcon.Information);
+                      }
+                      else
+                      {
+                          MessageBox.Show(
+                              "Grades were not saved because a record already exists and you chose not to overwrite it.",
+                              "Grades Not Saved",
+                              MessageBoxButtons.OK,
+                              MessageBoxIcon.Information);
+                      }
+                  }
+                  else
+                  {
+                      // Write grades to file
+                      File.WriteAllText(filePath, sb.ToString());
+                      MessageBox.Show(
+                          $"Grades for {studentName} have been successfully recorded for the course '{courseCode}'.",
+                          "Grades Recorded Successfully",
+                          MessageBoxButtons.OK,
+                          MessageBoxIcon.Information);
+                  }
+
+                  grades = "";
+                  _FinalGradesInEachComponents.Clear();
+              }
+              catch (Exception ex)
+              {
+                  MessageBox.Show($"Error saving grades: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+              }
+          }
+  */
         public void ResetComponentsForNewStudent()
         {
             // Clear subcomponentsPanel
@@ -702,7 +834,23 @@ namespace sprout__gradeBook
             ComponentsButtonPanel.Visible = !isGraded;
         }
 
+        public void ShowSubcomponentsAndDoneBtn()
+        {
+            addSubcomponents.Show();
+            doneBtn.Show();
+        }
 
+        public void HideSubcomponentsAndDoneBtn()
+        {
+            addSubcomponents.Hide();
+            doneBtn.Hide();
+        }
+
+        public void ResetSubcomponentsPanel()
+        {
+            subcomponentsPanel.Controls.Clear();
+            componentCount = 0;
+        }
 
     }
 }
