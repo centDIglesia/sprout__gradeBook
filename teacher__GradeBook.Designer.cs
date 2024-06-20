@@ -384,7 +384,7 @@
             // addSubcomponents
             // 
             this.addSubcomponents.Image = ((System.Drawing.Image)(resources.GetObject("addSubcomponents.Image")));
-            this.addSubcomponents.Location = new System.Drawing.Point(326, 593);
+            this.addSubcomponents.Location = new System.Drawing.Point(326, 596);
             this.addSubcomponents.Name = "addSubcomponents";
             this.addSubcomponents.Size = new System.Drawing.Size(140, 13);
             this.addSubcomponents.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -395,7 +395,7 @@
             // doneBtn
             // 
             this.doneBtn.Image = ((System.Drawing.Image)(resources.GetObject("doneBtn.Image")));
-            this.doneBtn.Location = new System.Drawing.Point(762, 594);
+            this.doneBtn.Location = new System.Drawing.Point(762, 597);
             this.doneBtn.Name = "doneBtn";
             this.doneBtn.Size = new System.Drawing.Size(31, 10);
             this.doneBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;

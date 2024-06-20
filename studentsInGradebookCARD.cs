@@ -14,8 +14,9 @@ namespace sprout__gradeBook
         private Panel _subcomponentsPanel;
         private Panel _ComponentsButtonPanel;
         private PictureBox _addSubcomponents;
+        private KryptonLabel _CurrentGradePeriod;
 
-        public studentsInGradebookCARD(teacher__GradeBook teacherForm, Panel subcom, Panel compsbutton, PictureBox addSubcomponents)
+        public studentsInGradebookCARD(teacher__GradeBook teacherForm, Panel subcom, Panel compsbutton, PictureBox addSubcomponents, KryptonLabel CurrentGradePeriod)
         {
             InitializeComponent();
             _subcomponentsPanel = subcom;
@@ -24,7 +25,7 @@ namespace sprout__gradeBook
 
             _teacherForm = teacherForm;
 
-
+            _CurrentGradePeriod = CurrentGradePeriod;
 
 
             MarkAsGraded = markAsGraded;
@@ -51,6 +52,7 @@ namespace sprout__gradeBook
 
         private void studentsInGradebookCARD_Click(object sender, EventArgs e)
         {
+            _CurrentGradePeriod.Text = "Pease select a component first.";
             HandleStudentClick();
         }
 

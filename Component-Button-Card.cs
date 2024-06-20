@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComponentFactory.Krypton.Toolkit;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,11 +17,13 @@ namespace sprout__gradeBook
 
         private readonly displayGradeBookPanelDelegate _displayGradeBookPanelDelegate;
         private readonly Label _currentComponentlbl;
-        public Component_Button_Card(Label currentComponentlbl, displayGradeBookPanelDelegate displayGradeBookPanelDelegate)
+        private readonly KryptonLabel _CurrentGradePeriod;
+        public Component_Button_Card(Label currentComponentlbl, displayGradeBookPanelDelegate displayGradeBookPanelDelegate, KryptonLabel currentGradePeriod)
         {
             InitializeComponent();
             _currentComponentlbl = currentComponentlbl;
             _displayGradeBookPanelDelegate = displayGradeBookPanelDelegate;
+            _CurrentGradePeriod = currentGradePeriod;
         }
 
         public string compName { get => compoentName.Text; set => compoentName.Text = value; }
@@ -33,6 +36,7 @@ namespace sprout__gradeBook
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
+            _CurrentGradePeriod.Text = "Click 'Add Subcomponents +' to add details.";
 
             var parentForm = this.FindForm() as teacher__GradeBook;
 
@@ -48,7 +52,7 @@ namespace sprout__gradeBook
 
             parentForm.ResetSubcomponentsPanel();
             parentForm.ShowSubcomponentsAndDoneBtn();
-           
+
             parentForm._currentActiveComponentButton = this;
             parentForm.SetComponentButtonsEnabled(false);
 

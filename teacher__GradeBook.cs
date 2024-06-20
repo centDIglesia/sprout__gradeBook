@@ -19,7 +19,7 @@ namespace sprout__gradeBook
         public Component_Button_Card _currentActiveComponentButton;
         public static teacher__GradeBook _gradeBook;
         List<double> _FinalGradesInEachComponents = new List<double>();
-
+        bool allGraded;
         public string selectedGradePeriod;
         public bool isFirstStudentClicked { get; set; } = false;
 
@@ -216,7 +216,7 @@ namespace sprout__gradeBook
 
         private void AddStudentCard(string studentID, string studentName)
         {
-            studentsInGradebookCARD studentCard = new studentsInGradebookCARD(this, subcomponentsPanel, ComponentsButtonPanel, addSubcomponents)
+            studentsInGradebookCARD studentCard = new studentsInGradebookCARD(this, subcomponentsPanel, ComponentsButtonPanel, addSubcomponents, CurrentGradePeriod)
             {
                 currentStudentID = studentID,
                 currentStudentName = studentName
@@ -230,7 +230,7 @@ namespace sprout__gradeBook
         private void kryptonComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             sectionTXT.Text = RemoveSubstring(courseComboBox.Text, "_", ",");
-
+            CurrentGradePeriod.Text = "Please select a Student First";
 
             // Define the directory path based on the selected grading system path
             string selectedGradingSystemPath = courseComboBox.Text;
@@ -261,7 +261,7 @@ namespace sprout__gradeBook
                         string componentWeight = parts[1];
 
 
-                        Component_Button_Card componentCard = new Component_Button_Card(currentComponent, DisplayIfCompButtonIsclicked)
+                        Component_Button_Card componentCard = new Component_Button_Card(currentComponent, DisplayIfCompButtonIsclicked, CurrentGradePeriod)
                         {
                             compName = $"{componentName} ({componentWeight})"
                         };
@@ -310,6 +310,9 @@ namespace sprout__gradeBook
         public int componentCount = 0;
         private void addSubcomponents_Click_1(object sender, EventArgs e)
         {
+            CurrentGradePeriod.Text = "Click 'Done' after grading all subcomponents.";
+
+
             componentCount++;
             AddComponentGradeCard();
         }
@@ -435,6 +438,18 @@ namespace sprout__gradeBook
         private string grades = "";
         private void doneBtn_Click_1(object sender, EventArgs e)
         {
+
+            if (allGraded)
+            {
+                CurrentGradePeriod.Text = "Please click 'Save' button to record.";
+            }
+
+            else
+            {
+                CurrentGradePeriod.Text = "Please select another component to grade.";
+
+            }
+
             foreach (Control control in subcomponentsPanel.Controls)
             {
                 if (control is ComponentGradesCARD componentCard)
@@ -508,7 +523,7 @@ namespace sprout__gradeBook
 
         private void CheckAllComponentsGraded()
         {
-            bool allGraded = true;
+            allGraded = true;
             foreach (Control control in ComponentsButtonPanel.Controls)
             {
                 if (control is Component_Button_Card componentCard)
@@ -807,6 +822,7 @@ namespace sprout__gradeBook
 
         private void GradePeriodComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+
             studentListPanel.Controls.Clear();
             ComponentsButtonPanel.Controls.Clear();
             selectedGradePeriod = GradePeriodComboBox.SelectedItem?.ToString();

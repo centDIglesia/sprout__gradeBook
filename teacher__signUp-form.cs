@@ -26,7 +26,7 @@ namespace sprout__gradeBook
         {
             // Hide all tooltips initially
             HideTooltips();
-            
+
         }
         private void logInForm_KeyDown(object sender, KeyEventArgs e)
         {
@@ -42,8 +42,8 @@ namespace sprout__gradeBook
                 }
             }
         }
-            // Hide all tooltips
-            private void HideTooltips()
+        // Hide all tooltips
+        private void HideTooltips()
         {
             fname__tooltip.Hide();
             lname__tooltip.Hide();
@@ -221,12 +221,12 @@ namespace sprout__gradeBook
 
             if (signupSCHOOL__txtbox.Text != "School")
             {
-                if (!UserInput__Validator.ValidateLength(signupSCHOOL__txtbox.Text, 0, 30))
+                if (!UserInput__Validator.ValidateLength(signupSCHOOL__txtbox.Text, 10, 80))
                 {
                     setInputState(signupSCHOOL__txtbox, school__tooltip, Color.Red);
 
                     signupSCHOOL__txtbox.Focus();
-                    MessageBox.Show("The school name must be between 1 and 30 characters long only. Please enter a valid school name.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("The school name must be between 10 and 80 characters long only. Please enter a valid school name.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -362,7 +362,7 @@ namespace sprout__gradeBook
             teacherSIGNINform.Show();
             teacherSIGNUP__form.Hide();
 
-          
+
         }
 
         //sign in form
@@ -414,9 +414,9 @@ namespace sprout__gradeBook
 
             if (password != "Password")
             {
-                if (!UserInput__Validator.ValidateLength(password, 1, 20))
+                if (!UserInput__Validator.ValidateLength(password, 1, 30))
                 {
-                    MessageBox.Show("Password must be between 1 and 20 characters long only.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Password must be between 1 and 30 characters long only.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
@@ -698,5 +698,9 @@ namespace sprout__gradeBook
             signUp__btn.Image = Properties.Resources.Frame_10def;
         }
 
+        private void signupSCHOOL__txtbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

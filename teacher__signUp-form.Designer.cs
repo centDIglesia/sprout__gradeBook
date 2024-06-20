@@ -341,6 +341,7 @@
             this.signupSCHOOL__txtbox.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10);
             this.signupSCHOOL__txtbox.TabIndex = 6;
             this.signupSCHOOL__txtbox.Text = "School";
+            this.signupSCHOOL__txtbox.TextChanged += new System.EventHandler(this.signupSCHOOL__txtbox_TextChanged);
             this.signupSCHOOL__txtbox.Enter += new System.EventHandler(this.signupSCHOOL__txtbox_Enter);
             this.signupSCHOOL__txtbox.Leave += new System.EventHandler(this.signupSCHOOL__txtbox_Leave);
             // 
@@ -450,7 +451,7 @@
             // 
             // teacherSIGNINform
             // 
-            this.teacherSIGNINform.Location = new System.Drawing.Point(664, 16);
+            this.teacherSIGNINform.Location = new System.Drawing.Point(147, 16);
             this.teacherSIGNINform.Name = "teacherSIGNINform";
             // 
             // teacherSIGNINform.Panel
