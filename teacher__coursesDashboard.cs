@@ -96,7 +96,7 @@ namespace sprout__gradeBook
                                 courseName = string.Empty;
                                 studentDepartment = string.Empty;
                                 studentYearAndSection = string.Empty;
-                                studentCount = "0";
+
                             }
                         }
                     }
@@ -113,7 +113,7 @@ namespace sprout__gradeBook
                         {
                             SubjectName = courseName,
                             SubjectCode = courseCode,
-                            SubjectCount = studentCount,
+
                             SubjectCourseSection = courseSection
                         };
                         courseSectionPanel.Controls.Add(card);
