@@ -47,6 +47,7 @@ namespace sprout__gradeBook
                     string courseName = string.Empty;
                     string studentDepartment = string.Empty;
                     string studentYearAndSection = string.Empty;
+                    string courseSchedule = string.Empty; // Variable to hold course schedule
                     string studentCount = "0";
                     bool inCourseSection = false;
 
@@ -70,7 +71,10 @@ namespace sprout__gradeBook
                             studentYearAndSection = line.Split(':')[1].Trim();
                             inCourseSection = true; // Indicates we are processing a valid course section.
                         }
-
+                        else if (line.StartsWith("Course Schedule:"))
+                        {
+                            courseSchedule = line.Split(new[] { ':' }, 2)[1].Trim(); // Properly capture the entire schedule line
+                        }
                         else if (line.StartsWith("----------------------------------------"))
                         {
                             // Check if we are in a valid course section and create the course card.
@@ -83,6 +87,7 @@ namespace sprout__gradeBook
                                 {
                                     SubjectName = courseName,
                                     SubjectCode = courseCode,
+                                    SubjectSchedule = courseSchedule, // Add the course schedule to the card
                                     SubjectCount = studentCount,
                                     SubjectCourseSection = courseSection
                                 };
@@ -96,12 +101,11 @@ namespace sprout__gradeBook
                                 courseName = string.Empty;
                                 studentDepartment = string.Empty;
                                 studentYearAndSection = string.Empty;
+                                courseSchedule = string.Empty; // Reset course schedule
                                 studentCount = "0";
                             }
                         }
                     }
-
-
 
                     // Handle the last course if file doesn't end with a delimiter.
                     if (inCourseSection)
@@ -113,6 +117,7 @@ namespace sprout__gradeBook
                         {
                             SubjectName = courseName,
                             SubjectCode = courseCode,
+                            SubjectSchedule = courseSchedule, // Add the course schedule to the card
                             SubjectCount = studentCount,
                             SubjectCourseSection = courseSection
                         };
@@ -131,7 +136,6 @@ namespace sprout__gradeBook
                 MessageBox.Show($"File not found: {filePath}");
             }
         }
-
         private string getStudentCount(string studentFilePath)
         {
             // string filepath = $"CourseInformations/{CurrentUser}";

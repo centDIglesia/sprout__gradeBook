@@ -11,17 +11,12 @@ using ComponentFactory.Krypton.Toolkit;
 
 namespace sprout__gradeBook
 {
+
     public partial class StudentScheduleCard : UserControl
     {
-
         public StudentScheduleCard()
         {
             InitializeComponent();
-        }
-
-        private void StudentScheduleCard_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
