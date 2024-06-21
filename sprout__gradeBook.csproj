@@ -308,6 +308,12 @@
     <Compile Include="TermsCons.Designer.cs">
       <DependentUpon>TermsCons.cs</DependentUpon>
     </Compile>
+    <Compile Include="todaysScheduleCARD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="todaysScheduleCARD.Designer.cs">
+      <DependentUpon>todaysScheduleCARD.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInput_Manager.cs" />
     <Compile Include="UserInput__Validator.cs" />
     <Compile Include="Users.cs" />
@@ -432,6 +438,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TermsCons.resx">
       <DependentUpon>TermsCons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="todaysScheduleCARD.resx">
+      <DependentUpon>todaysScheduleCARD.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
