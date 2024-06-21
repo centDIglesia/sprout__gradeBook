@@ -20,8 +20,8 @@ namespace sprout__gradeBook
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
             Application.Run(new Teacher_Dashboard("Sir, Jayson"));
+
 
         }
     }

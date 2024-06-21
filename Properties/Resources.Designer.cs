@@ -875,7 +875,7 @@ namespace sprout__gradeBook.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap student__Dashboard_UI {
             get {
-                object obj = ResourceManager.GetObject("student__Dashboard-UI", resourceCulture);
+                object obj = ResourceManager.GetObject("student__Dashboard_UI", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
