@@ -32,16 +32,15 @@ namespace sprout__gradeBook
             {
                 if (int.TryParse(componentsWeightTXT.Text, out int weight))
                 {
-                    // Successful parsing, return the parsed value as a string
+
                     return weight.ToString();
                 }
                 else
                 {
-                    // Parsing failed, handle the error as needed
-                    // For example, you can display an error message
+
                     MessageBox.Show("Invalid input. Please enter a valid integer value for the weight.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    // Return an empty string or any default value
+
                     return "";
                 }
             }
@@ -62,14 +61,14 @@ namespace sprout__gradeBook
         {
             Control parent = this.Parent;
 
-            // Remove this card from the parent control
+
             parent.Controls.Remove(this);
 
-            // Dispose of this card to release resources
+
             _parentForm.UpdateTotalWeight();
             this.Dispose();
 
-            // Update the text file
+
             _parentForm.UpdateTextFile(ComponentTXT);
         }
 
@@ -89,11 +88,11 @@ namespace sprout__gradeBook
                 }
                 else
                 {
-                    // If parsing fails, handle the error here (e.g., display a message)
+
                     MessageBox.Show("Invalid input. Please enter a valid integer value for the weight.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    // Optionally, you can clear the text box or revert to the previous value
-                    componentsWeightTXT.Text = ""; // Clear the text box
+
+                    componentsWeightTXT.Text = "";
                 }
             }
         }
@@ -108,7 +107,7 @@ namespace sprout__gradeBook
             UserInput_Manager.ResetInputField(componentsTXT, "Component");
         }
 
-      
+
         private void componentsWeightTXT_Enter_1(object sender, EventArgs e)
         {
             UserInput_Manager.ResetInputField(componentsWeightTXT, "0");

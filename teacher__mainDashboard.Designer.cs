@@ -35,22 +35,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.sections__quantity = new System.Windows.Forms.Label();
             this.student__quantity = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.todayschedulePanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.remindersPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.divider_1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.todaysScheduleCARD1 = new sprout__gradeBook.todaysScheduleCARD();
-            this.todaysScheduleCARD2 = new sprout__gradeBook.todaysScheduleCARD();
-            this.todaysScheduleCARD3 = new sprout__gradeBook.todaysScheduleCARD();
-            this.todaysScheduleCARD4 = new sprout__gradeBook.todaysScheduleCARD();
-            this.todaysScheduleCARD5 = new sprout__gradeBook.todaysScheduleCARD();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -125,25 +121,20 @@
             this.student__quantity.Text = "104";
             this.student__quantity.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // flowLayoutPanel1
+            // todayschedulePanel
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Controls.Add(this.todaysScheduleCARD1);
-            this.flowLayoutPanel1.Controls.Add(this.todaysScheduleCARD2);
-            this.flowLayoutPanel1.Controls.Add(this.todaysScheduleCARD3);
-            this.flowLayoutPanel1.Controls.Add(this.todaysScheduleCARD4);
-            this.flowLayoutPanel1.Controls.Add(this.todaysScheduleCARD5);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(66, 294);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1104, 113);
-            this.flowLayoutPanel1.TabIndex = 67;
+            this.todayschedulePanel.AutoScroll = true;
+            this.todayschedulePanel.Location = new System.Drawing.Point(66, 294);
+            this.todayschedulePanel.Name = "todayschedulePanel";
+            this.todayschedulePanel.Size = new System.Drawing.Size(1104, 113);
+            this.todayschedulePanel.TabIndex = 67;
             // 
-            // flowLayoutPanel2
+            // remindersPanel
             // 
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(60, 487);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(709, 108);
-            this.flowLayoutPanel2.TabIndex = 68;
+            this.remindersPanel.Location = new System.Drawing.Point(60, 492);
+            this.remindersPanel.Name = "remindersPanel";
+            this.remindersPanel.Size = new System.Drawing.Size(709, 103);
+            this.remindersPanel.TabIndex = 68;
             // 
             // pictureBox1
             // 
@@ -186,40 +177,17 @@
             this.pictureBox2.TabIndex = 69;
             this.pictureBox2.TabStop = false;
             // 
-            // todaysScheduleCARD1
+            // pictureBox3
             // 
-            this.todaysScheduleCARD1.Location = new System.Drawing.Point(3, 3);
-            this.todaysScheduleCARD1.Name = "todaysScheduleCARD1";
-            this.todaysScheduleCARD1.Size = new System.Drawing.Size(203, 106);
-            this.todaysScheduleCARD1.TabIndex = 0;
-            // 
-            // todaysScheduleCARD2
-            // 
-            this.todaysScheduleCARD2.Location = new System.Drawing.Point(212, 3);
-            this.todaysScheduleCARD2.Name = "todaysScheduleCARD2";
-            this.todaysScheduleCARD2.Size = new System.Drawing.Size(203, 106);
-            this.todaysScheduleCARD2.TabIndex = 1;
-            // 
-            // todaysScheduleCARD3
-            // 
-            this.todaysScheduleCARD3.Location = new System.Drawing.Point(421, 3);
-            this.todaysScheduleCARD3.Name = "todaysScheduleCARD3";
-            this.todaysScheduleCARD3.Size = new System.Drawing.Size(203, 106);
-            this.todaysScheduleCARD3.TabIndex = 2;
-            // 
-            // todaysScheduleCARD4
-            // 
-            this.todaysScheduleCARD4.Location = new System.Drawing.Point(630, 3);
-            this.todaysScheduleCARD4.Name = "todaysScheduleCARD4";
-            this.todaysScheduleCARD4.Size = new System.Drawing.Size(203, 106);
-            this.todaysScheduleCARD4.TabIndex = 3;
-            // 
-            // todaysScheduleCARD5
-            // 
-            this.todaysScheduleCARD5.Location = new System.Drawing.Point(839, 3);
-            this.todaysScheduleCARD5.Name = "todaysScheduleCARD5";
-            this.todaysScheduleCARD5.Size = new System.Drawing.Size(203, 106);
-            this.todaysScheduleCARD5.TabIndex = 4;
+            this.pictureBox3.BackColor = System.Drawing.Color.White;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(664, 456);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(96, 10);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.TabIndex = 70;
+            this.pictureBox3.TabStop = false;
             // 
             // teacher__mainDashboard
             // 
@@ -227,9 +195,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(827, 639);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.flowLayoutPanel2);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.remindersPanel);
+            this.Controls.Add(this.todayschedulePanel);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.course__quantity);
             this.Controls.Add(this.label6);
@@ -242,11 +211,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "teacher__mainDashboard";
             this.Text = "teacher__dashboard";
-            this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,13 +232,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox divider_1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private todaysScheduleCARD todaysScheduleCARD1;
-        private todaysScheduleCARD todaysScheduleCARD2;
-        private todaysScheduleCARD todaysScheduleCARD3;
+        private System.Windows.Forms.FlowLayoutPanel todayschedulePanel;
+        private System.Windows.Forms.FlowLayoutPanel remindersPanel;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private todaysScheduleCARD todaysScheduleCARD4;
-        private todaysScheduleCARD todaysScheduleCARD5;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
