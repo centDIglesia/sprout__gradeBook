@@ -13,9 +13,10 @@ namespace sprout__gradeBook
         public PictureBox MarkAsGraded { get; set; }
         private Panel _subcomponentsPanel;
         private Panel _ComponentsButtonPanel;
+        private PictureBox _addSubcomponents;
+        private KryptonLabel _CurrentGradePeriod;
 
-
-        public studentsInGradebookCARD(teacher__GradeBook teacherForm, Panel subcom, Panel compsbutton)
+        public studentsInGradebookCARD(teacher__GradeBook teacherForm, Panel subcom, Panel compsbutton, PictureBox addSubcomponents, KryptonLabel CurrentGradePeriod)
         {
             InitializeComponent();
             _subcomponentsPanel = subcom;
@@ -24,11 +25,12 @@ namespace sprout__gradeBook
 
             _teacherForm = teacherForm;
 
-
+            _CurrentGradePeriod = CurrentGradePeriod;
 
 
             MarkAsGraded = markAsGraded;
             MarkAsGraded.Hide();
+            _addSubcomponents = addSubcomponents;
         }
 
 
@@ -50,6 +52,7 @@ namespace sprout__gradeBook
 
         private void studentsInGradebookCARD_Click(object sender, EventArgs e)
         {
+            _CurrentGradePeriod.Text = "Pease select a component first.";
             HandleStudentClick();
         }
 
@@ -90,12 +93,13 @@ namespace sprout__gradeBook
             _teacherForm.StudenttnameText = currentStudentName;
             _teacherForm.StudentIDText = currentStudentID;
 
-            // Update MarkAsGraded visibility based on grading status
+
             MarkAsGraded.Visible = _teacherForm.IsStudentGraded(currentStudentID);
 
             // Check if all students are graded
             _teacherForm.CheckIfAllStudentsGraded();
         }
+
 
         private void InitializeStudentGradedState()
         {
@@ -103,8 +107,11 @@ namespace sprout__gradeBook
             MarkAsGraded.Visible = isGraded;
             _subcomponentsPanel.Visible = !isGraded;
             _ComponentsButtonPanel.Visible = !isGraded;
+            _addSubcomponents.Enabled = !isGraded;
             _teacherForm.isStudentGraded = isGraded;
+
         }
+
 
 
         private void studentsInGradebookCARD_Load(object sender, EventArgs e)

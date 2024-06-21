@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Windows.Forms;
 
 public class Course
 {
@@ -107,6 +108,44 @@ public class Course
         // Return the count of .txt files
         return textFiles.Length;
     }
+
+
+    public static int GetStudentCountinCourses(string currentUser, string Department, string YearlevelAndSection)
+    {
+        try
+        {
+            string directoryPath = $"StudentCredentials/{currentUser}/DepartmentandSections";
+
+            string[] files = Directory.GetFiles(directoryPath, $"{Department} {YearlevelAndSection}");
+
+            int count = 0;
+
+            foreach (string filePath in files)
+            {
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        if (line.Contains("----------------------------------------"))
+                        {
+                            count++;
+                        }
+                    }
+                }
+            }
+            return count;
+
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message);
+        }
+
+
+        return 0;
+    }
+
 }
 
 

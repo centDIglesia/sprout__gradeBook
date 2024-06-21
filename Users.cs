@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 
 namespace sprout__gradeBook
 {
@@ -36,15 +37,19 @@ namespace sprout__gradeBook
 
         protected string GetInitials(string schoolName)
         {
-            if (string.IsNullOrEmpty(schoolName))
+            StringBuilder result = new StringBuilder();
+
+            foreach (char c in schoolName)
             {
-                return string.Empty;
+                if (char.IsUpper(c))
+                {
+                    result.Append(c);
+                }
             }
 
-            var initials = string.Concat(schoolName.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
-                                                   .Select(word => char.ToUpper(word[0])));
-            return initials;
+            return result.ToString();
         }
+
     }
 
     public class Student : Users

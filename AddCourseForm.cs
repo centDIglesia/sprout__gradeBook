@@ -72,7 +72,14 @@ namespace sprout__gradeBook
                 return;
             }
 
-            if (!UserInput__Validator.ValidateNotEmpty(studentCourse, " "))
+            if (!UserInput__Validator.ValidateNotEmpty(courseYearlvlTXT.Text, "Designated Year Level"))
+            {
+                MessageBox.Show("Dewsignated Year level cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                courseYearlvlTXT.Focus();
+                return;
+            }
+
+            if (!UserInput__Validator.ValidateNotEmpty(studentCourse, "Select Designated Department"))
             {
                 MessageBox.Show("Student's Department cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 courseCourseTXT.Focus();
@@ -86,7 +93,7 @@ namespace sprout__gradeBook
                 return;
             }
 
-            if (!UserInput__Validator.ValidateNotEmpty(whatDay, " "))
+            if (!UserInput__Validator.ValidateNotEmpty(whatDay, "Please Select the Day(s) When the Course Will Take Place"))
             {
                 MessageBox.Show("Day of the week cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 WeekDayTxt.Focus();
@@ -94,7 +101,7 @@ namespace sprout__gradeBook
             }
 
             // Validate start time is not empty
-            if (!UserInput__Validator.ValidateNotEmpty(startTime, "Start Time"))
+            if (!UserInput__Validator.ValidateNotEmpty(startTime, "00:00 PM"))
             {
                 MessageBox.Show("Start Time cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 courseStartTXT.Focus();
@@ -102,7 +109,7 @@ namespace sprout__gradeBook
             }
 
             // Validate end time is not empty
-            if (!UserInput__Validator.ValidateNotEmpty(endTime, "End Time"))
+            if (!UserInput__Validator.ValidateNotEmpty(endTime, "00:00 PM"))
             {
                 MessageBox.Show("End Time cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 courseEndTXT.Focus();
@@ -133,7 +140,7 @@ namespace sprout__gradeBook
                 return;
             }
 
-            int studentCount = 0; // Initialize student count
+            int studentCount = Course.GetStudentCountinCourses(currentUserName, studentCourse, studentSection); // Initialize student count
 
             // Create a new Course object
             Course newCourse = new Course(courseName, courseCode, studentCourse, studentSection, startTime, endTime, studentCount, studentYearLvl, whatDay);
@@ -258,11 +265,11 @@ namespace sprout__gradeBook
         }
         private void courseYearlvlTXT_Enter(object sender, EventArgs e)
         {
-            UserInput_Manager.ResetInputField(courseYearlvlTXT, "Year Level");
+            UserInput_Manager.ResetInputField(courseYearlvlTXT, "Designated Year Level");
         }
         private void courseYearlvlTXT_Leave(object sender, EventArgs e)
         {
-            UserInput_Manager.RestoreDefaultText(courseYearlvlTXT, "Year Level");
+            UserInput_Manager.RestoreDefaultText(courseYearlvlTXT, "Designated Year Level");
         }
         private void courseSectionTXT_Enter(object sender, EventArgs e)
         {
@@ -278,6 +285,21 @@ namespace sprout__gradeBook
         {
             utilityButton b = new utilityButton();
             b.Cancelform(this);
+        }
+
+        private void AddCourseForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void courseEndTXT_Enter(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void courseEndTXT_Leave(object sender, EventArgs e)
+        {
+           
         }
     }
 }

@@ -101,8 +101,10 @@ namespace sprout__gradeBook
                                 courseName = string.Empty;
                                 studentDepartment = string.Empty;
                                 studentYearAndSection = string.Empty;
+
                                 courseSchedule = string.Empty; // Reset course schedule
                                 studentCount = "0";
+
                             }
                         }
                     }
@@ -117,8 +119,10 @@ namespace sprout__gradeBook
                         {
                             SubjectName = courseName,
                             SubjectCode = courseCode,
+
                             SubjectSchedule = courseSchedule, // Add the course schedule to the card
                             SubjectCount = studentCount,
+
                             SubjectCourseSection = courseSection
                         };
                         courseSectionPanel.Controls.Add(card);

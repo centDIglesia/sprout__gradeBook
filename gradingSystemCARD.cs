@@ -108,9 +108,20 @@ namespace sprout__gradeBook
             UserInput_Manager.ResetInputField(componentsTXT, "Component");
         }
 
-        private void componentsWeightTXT_Enter(object sender, EventArgs e)
+      
+        private void componentsWeightTXT_Enter_1(object sender, EventArgs e)
         {
             UserInput_Manager.ResetInputField(componentsWeightTXT, "0");
+        }
+
+        private void componentsWeightTXT_Leave_1(object sender, EventArgs e)
+        {
+            UserInput_Manager.RestoreDefaultText(componentsWeightTXT, "0");
+        }
+
+        private void componentsTXT_Leave(object sender, EventArgs e)
+        {
+            UserInput_Manager.RestoreDefaultText(componentsTXT, "Component");
         }
     }
 }
