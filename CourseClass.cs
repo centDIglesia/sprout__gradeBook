@@ -33,7 +33,7 @@ public class Course
 
     public string GetCourseSchedule()
     {
-        return $"{StartTime}-{EndTime}";
+        return $"{StartTime} - {EndTime}";
     }
 
     public string GetYearAndSection()

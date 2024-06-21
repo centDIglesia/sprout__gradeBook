@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using sprout__gradeBook.Student_Forms;
 
 namespace sprout__gradeBook
 {
@@ -83,6 +84,8 @@ namespace sprout__gradeBook
         }
         private void Student__Dashboard_Load(object sender, EventArgs e)
         {
+            displayGPA.Hide();
+
             notificationCount.Text = notifCount.ToString();
             notificationCount.Hide();
             notificationCount_bg.Hide();
@@ -152,6 +155,173 @@ namespace sprout__gradeBook
             }
             formbackgroud.Dispose();
 
+
+        }
+        private void GradePeriodComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            displayGPA.Show();
+            string selectedPeriod = GradePeriodComboBox.SelectedItem.ToString();
+            string studentId = _studentLoginForm.currentStudentID;
+            LoadStudentGrades(selectedPeriod, studentId);
+        }
+
+        private void LoadStudentGrades(string selectedPeriod, string studentId)
+        {
+            string directoryPath = "studentFinalGrades";
+            DirectoryInfo directoryInfo = new DirectoryInfo(directoryPath);
+
+            // Get all directories (teachers' folders) within studentFinalGrades
+            var teacherDirectories = directoryInfo.GetDirectories();
+
+            student_gradesPanel.Controls.Clear();
+
+            double totalGradePoints = 0;
+            int gradeCount = 0;
+
+            foreach (var teacherDir in teacherDirectories)
+            {
+                string teacherUsername = teacherDir.Name;
+
+                // Find the student's specific file in the current teacher's directory
+                string studentFilePath = Path.Combine(teacherDir.FullName, $"{studentId}.txt");
+
+                if (File.Exists(studentFilePath))
+                {
+                    string teacherName = GetTeacherNameByUsername(teacherUsername);
+                    var gradeData = File.ReadAllText(studentFilePath);
+                    var gradeSections = gradeData.Split(new[] { "-------------------" }, StringSplitOptions.RemoveEmptyEntries);
+
+                    foreach (var section in gradeSections)
+                    {
+                        if (section.Contains(selectedPeriod))
+                        {
+                            var lines = section.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+                            string courseCode = string.Empty;
+                            string totalFinalGrade = string.Empty;
+
+                            foreach (var line in lines)
+                            {
+                                if (line.StartsWith("Course Code"))
+                                {
+                                    courseCode = line.Split('|')[1].Trim();
+                                }
+                                else if (line.StartsWith("Total Final Grade"))
+                                {
+                                    totalFinalGrade = line.Split('|')[1].Trim();
+                                }
+                            }
+
+                            if (!string.IsNullOrEmpty(courseCode) && !string.IsNullOrEmpty(totalFinalGrade))
+                            {
+                                double percentage;
+                                if (double.TryParse(totalFinalGrade.TrimEnd('%'), out percentage))
+                                {
+                                    var remark = GetRemarkFromPercentage(percentage);
+                                    totalGradePoints += percentage;
+                                    gradeCount++;
+
+                                    string courseName = GetCourseNameByCourseCode(courseCode, teacherUsername);
+                                    AddGradeRowToPanel(courseCode, totalFinalGrade, courseName, teacherName, remark);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Calculate and display the average percentage
+            if (gradeCount > 0)
+            {
+                double averagePercentage = totalGradePoints / gradeCount;
+                displayGPA.Text = $"Average: {averagePercentage:F2}%";
+            }
+            else
+            {
+                displayGPA.Text = "Average: N/A";
+            }
+        }
+
+        private string GetTeacherNameByUsername(string username)
+        {
+            string teacherCredentialsFile = Path.Combine("TeacherCredentials", $"{username}.txt");
+            if (File.Exists(teacherCredentialsFile))
+            {
+                var lines = File.ReadAllLines(teacherCredentialsFile);
+                string firstName = string.Empty;
+                string lastName = string.Empty;
+
+                foreach (var line in lines)
+                {
+                    if (line.StartsWith("First Name"))
+                    {
+                        firstName = line.Split(':')[1].Trim();
+                    }
+                    else if (line.StartsWith("Last Name"))
+                    {
+                        lastName = line.Split(':')[1].Trim();
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(firstName) && !string.IsNullOrEmpty(lastName))
+                {
+                    return $"{firstName} {lastName}";
+                }
+            }
+
+            return string.Empty;
+        }
+
+        private string GetCourseNameByCourseCode(string courseCode, string teacherUsername)
+        {
+            string courseInfoFile = Path.Combine("CourseInformations", $"{teacherUsername}.txt");
+            if (File.Exists(courseInfoFile))
+            {
+                var courseInfoData = File.ReadAllText(courseInfoFile);
+                var courseInfoSections = courseInfoData.Split(new[] { "----------------------------------------" }, StringSplitOptions.RemoveEmptyEntries);
+
+                foreach (var section in courseInfoSections)
+                {
+                    if (section.Contains($"Course Code: {courseCode}"))
+                    {
+                        var lines = section.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+                        foreach (var line in lines)
+                        {
+                            if (line.StartsWith("Course Name"))
+                            {
+                                return line.Split(':')[1].Trim();
+                            }
+                        }
+                    }
+                }
+            }
+
+            return string.Empty;
+        }
+
+        private void AddGradeRowToPanel(string courseCode, string finalGrade, string courseName, string teacherName, string remark)
+        {
+            var gradeRow = new sprout__gradeBook.Student_Forms.Student__GradeRow();
+            gradeRow.finalGradelbl.Text = finalGrade;
+            gradeRow.studentCodelbl.Text = courseCode;
+            gradeRow.courseDescriptionlbl.Text = courseName; // Ensure this label exists in the User Control
+            gradeRow.facultyNamelbl.Text = teacherName; // Ensure this label exists in the User Control
+            gradeRow.gradeRemarkslbl.Text = remark; // Add remark to the grade row
+            student_gradesPanel.Controls.Add(gradeRow);
+        }
+
+        private string GetRemarkFromPercentage(double percentage)
+        {
+            if (percentage >= 97 && percentage <= 100) return "P";
+            if (percentage >= 94 && percentage < 97) return "P";
+            if (percentage >= 91 && percentage < 94) return "P";
+            if (percentage >= 88 && percentage < 91) return "P";
+            if (percentage >= 85 && percentage < 88) return "P";
+            if (percentage >= 82 && percentage < 85) return "P";
+            if (percentage >= 79 && percentage < 82) return "P";
+            if (percentage >= 76 && percentage < 79) return "P";
+            if (percentage == 75) return "P";
+            if (percentage >= 65 && percentage < 75) return "Failure";
+            return "INC"; // For percentages below 65
         }
 
     }
