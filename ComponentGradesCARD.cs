@@ -189,11 +189,11 @@ namespace sprout__gradeBook
 
         private void compMaxGrade_Enter(object sender, EventArgs e)
         {
-            UserInput_Manager.ResetInputField(compMaxGrade, "99.9");
+            UserInput_Manager.ResetInputField(compMaxGrade, "0");
         }
         private void compMaxGrade_Leave(object sender, EventArgs e)
         {
-            UserInput_Manager.RestoreDefaultText(compMaxGrade, "99.9");
+            UserInput_Manager.RestoreDefaultText(compMaxGrade, "0");
 
         }
 
