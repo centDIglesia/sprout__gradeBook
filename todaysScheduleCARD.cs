@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace sprout__gradeBook
 {
@@ -17,7 +18,7 @@ namespace sprout__gradeBook
         public todaysScheduleCARD()
         {
             InitializeComponent();
-         
+
             markasdoneBTN.Hide();
             markasdoneBTN.Click += markasdoneBTN_Click;
             donemark.Hide();
@@ -41,9 +42,11 @@ namespace sprout__gradeBook
         {
             _isMarkedAsDone = true;
             donemark.Show();
-          
+
             markasdoneBTN.Hide();
             MarkAsDoneClicked?.Invoke(this, EventArgs.Empty);
+
+
         }
 
         private void scheduleRoom_Click(object sender, EventArgs e)
@@ -51,32 +54,32 @@ namespace sprout__gradeBook
             if (!_isMarkedAsDone)
             {
                 markasdoneBTN.Show();
-              
+
             }
 
         }
 
-      
+
 
         private void UpdateMarkAsDoneState()
         {
             if (_isMarkedAsDone)
             {
                 donemark.Show();
-            
+
                 markasdoneBTN.Hide();
             }
             else
             {
                 donemark.Hide();
-               
+
                 markasdoneBTN.Show();
             }
         }
 
         private void todaysScheduleCARD_Load(object sender, EventArgs e)
         {
-         
+
             markasdoneBTN.Hide();
             donemark.Hide();
         }

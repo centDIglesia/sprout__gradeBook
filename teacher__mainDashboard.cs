@@ -60,6 +60,7 @@ namespace sprout__gradeBook
 
         public void populateCourses()
         {
+
             string filePath = $"CourseInformations/{_currentUser}.txt";
             todayschedulePanel.Controls.Clear();
 
@@ -75,7 +76,7 @@ namespace sprout__gradeBook
                     string courseSchedule = string.Empty;
                     string courseDayofweek = string.Empty;
                     bool inCourseSection = false;
-
+                    string courseName = string.Empty;
                     // Get current day as a string for comparison
                     string currentDay = DateTime.Now.DayOfWeek.ToString();
 
@@ -84,6 +85,10 @@ namespace sprout__gradeBook
                         if (line.StartsWith("Course Code:"))
                         {
                             courseCode = line.Split(':')[1].Trim();
+                        }
+                        else if (line.StartsWith("Course Name:"))
+                        {
+                            courseName = line.Split(':')[1].Trim();
                         }
                         else if (line.StartsWith("Student Department:"))
                         {
@@ -106,6 +111,7 @@ namespace sprout__gradeBook
                         {
                             if (inCourseSection)
                             {
+
                                 if (currentDay.Equals(courseDayofweek, StringComparison.OrdinalIgnoreCase))
                                 {
                                     string courseSection = $"{studentDepartment}\n{studentYearAndSection}";
