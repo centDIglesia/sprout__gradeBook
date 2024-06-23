@@ -26,6 +26,10 @@ namespace sprout__gradeBook
 
             this.KeyPreview = true;
             this.KeyDown += new KeyEventHandler(SaveCourse_KeyDown);
+
+
+            courseYearlvlTXT.KeyPress += new KeyPressEventHandler(courseYearlvlTXT_KeyPress);
+
         }
 
         private void SaveCourse_KeyDown(object sender, KeyEventArgs e)
@@ -294,12 +298,33 @@ namespace sprout__gradeBook
 
         private void courseEndTXT_Enter(object sender, EventArgs e)
         {
-           
+
         }
 
         private void courseEndTXT_Leave(object sender, EventArgs e)
         {
-           
+
+        }
+
+        private void courseYearlvlTXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) || e.KeyChar < '1' || e.KeyChar > '4')
+            {
+                // If so, suppress the key press
+                e.Handled = true;
+            }
+        }
+
+        private void courseYearlvlTXT_TextChanged(object sender, EventArgs e)
+        {
+            if (int.TryParse(courseYearlvlTXT.Text, out int number))
+            {
+                if (number < 1 || number > 4)
+                {
+                    MessageBox.Show("Please enter a number between 1 and 4.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    courseYearlvlTXT.Text = "";
+                }
+            }
         }
     }
 }

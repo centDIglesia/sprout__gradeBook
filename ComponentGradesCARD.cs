@@ -186,6 +186,22 @@ namespace sprout__gradeBook
 
         }
 
+        private void compGrade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) || e.KeyChar < '0' || e.KeyChar > '9')
+            {
+                // If so, suppress the key press
+                e.Handled = true;
+            }
+        }
 
+        private void compMaxGrade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) || e.KeyChar < '0' || e.KeyChar > '9')
+            {
+                // If so, suppress the key press
+                e.Handled = true;
+            }
+        }
     }
 }

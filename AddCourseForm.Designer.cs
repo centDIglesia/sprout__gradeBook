@@ -215,7 +215,9 @@
             this.courseYearlvlTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
             this.courseYearlvlTXT.TabIndex = 4;
             this.courseYearlvlTXT.Text = "Designated Year Level";
+            this.courseYearlvlTXT.TextChanged += new System.EventHandler(this.courseYearlvlTXT_TextChanged);
             this.courseYearlvlTXT.Enter += new System.EventHandler(this.courseYearlvlTXT_Enter);
+            this.courseYearlvlTXT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.courseYearlvlTXT_KeyPress);
             this.courseYearlvlTXT.Leave += new System.EventHandler(this.courseYearlvlTXT_Leave);
             // 
             // WeekDayTxt

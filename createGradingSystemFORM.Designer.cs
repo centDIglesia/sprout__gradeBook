@@ -137,7 +137,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(644, 565);
+            this.ClientSize = new System.Drawing.Size(644, 558);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.Close_btn);
             this.Controls.Add(this.saveGradingsytemBTN);
@@ -151,6 +151,7 @@
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "createGradingSystemFORM";
+            this.Load += new System.EventHandler(this.createGradingSystemFORM_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Close_btn)).EndInit();

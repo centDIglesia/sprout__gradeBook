@@ -224,9 +224,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1147, 711);
-            this.Controls.Add(this.btn_dashboard);
-            this.Controls.Add(this.btn_students);
             this.Controls.Add(this.btn_courses);
+            this.Controls.Add(this.btn_students);
+            this.Controls.Add(this.btn_dashboard);
             this.Controls.Add(this.btn_gradeBook);
             this.Controls.Add(this.logoutBtn);
             this.Controls.Add(this.btn_attendance);

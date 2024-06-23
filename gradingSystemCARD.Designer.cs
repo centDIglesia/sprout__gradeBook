@@ -107,6 +107,7 @@
             this.componentsWeightTXT.TabIndex = 5;
             this.componentsWeightTXT.Text = "0";
             this.componentsWeightTXT.Enter += new System.EventHandler(this.componentsWeightTXT_Enter_1);
+            this.componentsWeightTXT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.componentsWeightTXT_KeyPress);
             this.componentsWeightTXT.Leave += new System.EventHandler(this.componentsWeightTXT_Leave_1);
             // 
             // gradingSystemCARD

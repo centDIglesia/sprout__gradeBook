@@ -178,10 +178,18 @@ namespace sprout__gradeBook
 
         private void btn_courses_Click(object sender, EventArgs e)
         {
-            ResetButtonStates();
-            loadForm(new teacher__courses_lvl1(currentUser));
-            btn_courses.Image = Properties.Resources.Frame_91;
-            isCourseButtonClicked = true;
+            if (Directory.Exists($"StudentCredentials/{currentUser}/DepartmentandSections/"))
+            {
+                ResetButtonStates();
+                loadForm(new teacher__courses_lvl1(currentUser));
+                btn_courses.Image = Properties.Resources.Frame_91;
+                isCourseButtonClicked = true;
+            }
+            else
+            {
+                MessageBox.Show("Before proceeding, please ensure at least one student has been added. Thank you for your understanding!", "Action Required", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
 
         private void btn_attendance_Click_1(object sender, EventArgs e)

@@ -35,7 +35,7 @@ namespace sprout__gradeBook
             string studentFname = studentFnameTXT.Text;
             string studentMname = studentMnameTXT.Text;
             string studentLname = studentLnameTXT.Text;
-            string studentID = studentIDTXT.Text; 
+            string studentID = studentIDTXT.Text;
             string studentEmail = studentEmailTXT.Text;
             DateTime studentBirthday = studentBirthdayPickerf.Value;
             string studentGender = studentMaleRADIOBUTTON.Checked ? "Male" : (studentFemaleRADIOBUTTON.Checked ? "Female" : "");
@@ -180,7 +180,23 @@ namespace sprout__gradeBook
 
         private void studentEmailTXT_Leave(object sender, EventArgs e)
         {
-            UserInput_Manager.RestoreDefaultText(studentEmailTXT, "Email");
+            // Define a simple email regex pattern
+            string emailPattern = @"^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$";
+
+            if (Regex.IsMatch(studentEmailTXT.Text, emailPattern))
+            {
+                // If the email is valid, restore the default text
+                UserInput_Manager.RestoreDefaultText(studentEmailTXT, "Email");
+            }
+            else
+            {
+                // If the email is invalid, show an error message and clear the text box
+                MessageBox.Show("Invalid email address. Please enter a valid email.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                studentEmailTXT.Text = "";
+                studentEmailTXT.Focus();
+            }
+
+
         }
 
         private void studentYearLevelTXT_Enter(object sender, EventArgs e)
@@ -234,6 +250,26 @@ namespace sprout__gradeBook
             UserInput_Manager.RestoreDefaultText(studentLnameTXT, "Last Name");
         }
 
+        private void studentYearLevelTXT_TextChanged(object sender, EventArgs e)
+        {
+            if (int.TryParse(studentYearLevelTXT.Text, out int number))
+            {
+                if (number < 1 || number > 4)
+                {
+                    MessageBox.Show("Please enter a number between 1 and 4.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    studentYearLevelTXT.Text = "";
+                }
+            }
+        }
+
+        private void studentYearLevelTXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) || e.KeyChar < '1' || e.KeyChar > '4')
+            {
+                // If so, suppress the key press
+                e.Handled = true;
+            }
+        }
     }
 
 }

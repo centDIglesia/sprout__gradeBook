@@ -65,12 +65,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addCourseComponentsFORM.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="addCourseComponentsFORM.Designer.cs">
-      <DependentUpon>addCourseComponentsFORM.cs</DependentUpon>
-    </Compile>
     <Compile Include="AddCourseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,12 +242,6 @@
     <Compile Include="Student__FeedbackUI.Designer.cs">
       <DependentUpon>Student__FeedbackUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="SubComponentCard.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SubComponentCard.Designer.cs">
-      <DependentUpon>SubComponentCard.cs</DependentUpon>
-    </Compile>
     <Compile Include="Teacher__Attendance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -319,9 +307,6 @@
     <Compile Include="Users.cs" />
     <Compile Include="Account__Manager.cs" />
     <Compile Include="utilityButton.cs" />
-    <EmbeddedResource Include="addCourseComponentsFORM.resx">
-      <DependentUpon>addCourseComponentsFORM.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AddCourseForm.resx">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -408,9 +393,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Student__FeedbackUI.resx">
       <DependentUpon>Student__FeedbackUI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SubComponentCard.resx">
-      <DependentUpon>SubComponentCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher__Attendance.resx">
       <DependentUpon>Teacher__Attendance.cs</DependentUpon>

@@ -111,10 +111,10 @@ namespace sprout__gradeBook
                     AddStudentCard(student.studentID, student.studentName);
                 }
             }
-            catch (Exception ex)
+            catch 
             {
-                // Handle exceptions (e.g., file not found, read errors)
-                MessageBox.Show($"Error loading student data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
+                MessageBox.Show("No student added yet. Please add a student first.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
