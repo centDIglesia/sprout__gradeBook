@@ -146,12 +146,23 @@ namespace sprout__gradeBook
 
         private void compGrade_TextChanged(object sender, EventArgs e)
         {
+            if (int.TryParse(compGrade.Text, out int grade) && grade > 999)
+            {
+                MessageBox.Show("Input cannot exceed 999.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                compGrade.Text = "";
+            }
             CalculateAndDisplayPercentage();
+
 
         }
 
         private void compMaxGrade_TextChanged(object sender, EventArgs e)
         {
+            if (int.TryParse(compMaxGrade.Text, out int maxGrade) && maxGrade > 999)
+            {
+                MessageBox.Show("Input cannot exceed 999.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                compMaxGrade.Text = "";
+            }
             CalculateAndDisplayPercentage();
         }
 
@@ -178,26 +189,26 @@ namespace sprout__gradeBook
 
         private void compMaxGrade_Enter(object sender, EventArgs e)
         {
-            UserInput_Manager.ResetInputField(compMaxGrade, "99.9");
+            UserInput_Manager.ResetInputField(compMaxGrade, "0");
         }
         private void compMaxGrade_Leave(object sender, EventArgs e)
         {
-            UserInput_Manager.RestoreDefaultText(compMaxGrade, "99.9");
+            UserInput_Manager.RestoreDefaultText(compMaxGrade, "0");
 
         }
 
         private void compGrade_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) || e.KeyChar < '0' || e.KeyChar > '9')
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                // If so, suppress the key press
+
                 e.Handled = true;
             }
         }
 
         private void compMaxGrade_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) || e.KeyChar < '0' || e.KeyChar > '9')
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 // If so, suppress the key press
                 e.Handled = true;

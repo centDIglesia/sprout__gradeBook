@@ -42,7 +42,6 @@
             this.finalGradelbl = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.GradePeriodComboBox = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.kryptonTextBox2 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.saveGradeBtn = new System.Windows.Forms.PictureBox();
             this.genderPict = new System.Windows.Forms.PictureBox();
             this.divider_1 = new System.Windows.Forms.PictureBox();
@@ -50,22 +49,21 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.CurrentGradePeriod = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.addSubcomponents = new System.Windows.Forms.PictureBox();
             this.doneBtn = new System.Windows.Forms.PictureBox();
             this.subcomponentsPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.courseComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GradePeriodComboBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saveGradeBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.genderPict)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addSubcomponents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doneBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette2
@@ -184,7 +182,6 @@
             this.kryptonTextBox1.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonTextBox1.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10);
             this.kryptonTextBox1.TabIndex = 89;
-            this.kryptonTextBox1.TextChanged += new System.EventHandler(this.kryptonTextBox1_TextChanged);
             // 
             // ComponentsButtonPanel
             // 
@@ -290,15 +287,6 @@
             this.kryptonTextBox2.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10);
             this.kryptonTextBox2.TabIndex = 98;
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox5.Location = new System.Drawing.Point(327, 591);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(470, 1);
-            this.pictureBox5.TabIndex = 95;
-            this.pictureBox5.TabStop = false;
-            // 
             // saveGradeBtn
             // 
             this.saveGradeBtn.Image = ((System.Drawing.Image)(resources.GetObject("saveGradeBtn.Image")));
@@ -371,22 +359,12 @@
             this.CurrentGradePeriod.TabIndex = 101;
             this.CurrentGradePeriod.Values.Text = "|";
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(305, 294);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(509, 332);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox4.TabIndex = 90;
-            this.pictureBox4.TabStop = false;
-            // 
             // addSubcomponents
             // 
             this.addSubcomponents.Image = ((System.Drawing.Image)(resources.GetObject("addSubcomponents.Image")));
-            this.addSubcomponents.Location = new System.Drawing.Point(326, 596);
+            this.addSubcomponents.Location = new System.Drawing.Point(540, 578);
             this.addSubcomponents.Name = "addSubcomponents";
-            this.addSubcomponents.Size = new System.Drawing.Size(140, 13);
+            this.addSubcomponents.Size = new System.Drawing.Size(170, 28);
             this.addSubcomponents.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.addSubcomponents.TabIndex = 93;
             this.addSubcomponents.TabStop = false;
@@ -395,9 +373,9 @@
             // doneBtn
             // 
             this.doneBtn.Image = ((System.Drawing.Image)(resources.GetObject("doneBtn.Image")));
-            this.doneBtn.Location = new System.Drawing.Point(762, 597);
+            this.doneBtn.Location = new System.Drawing.Point(716, 578);
             this.doneBtn.Name = "doneBtn";
-            this.doneBtn.Size = new System.Drawing.Size(31, 10);
+            this.doneBtn.Size = new System.Drawing.Size(78, 28);
             this.doneBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.doneBtn.TabIndex = 99;
             this.doneBtn.TabStop = false;
@@ -409,8 +387,19 @@
             this.subcomponentsPanel.AutoScrollMinSize = new System.Drawing.Size(1, 0);
             this.subcomponentsPanel.Location = new System.Drawing.Point(317, 363);
             this.subcomponentsPanel.Name = "subcomponentsPanel";
-            this.subcomponentsPanel.Size = new System.Drawing.Size(483, 224);
+            this.subcomponentsPanel.Size = new System.Drawing.Size(483, 205);
             this.subcomponentsPanel.TabIndex = 71;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(305, 294);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(509, 332);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox4.TabIndex = 90;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // teacher__GradeBook
             // 
@@ -427,7 +416,6 @@
             this.Controls.Add(this.GradePeriodComboBox);
             this.Controls.Add(this.kryptonTextBox2);
             this.Controls.Add(this.finalGradelbl);
-            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.currentComponent);
             this.Controls.Add(this.addSubcomponents);
             this.Controls.Add(this.saveGradeBtn);
@@ -450,16 +438,15 @@
             this.Load += new System.EventHandler(this.teacher__GradeBook_Load);
             ((System.ComponentModel.ISupportInitialize)(this.courseComboBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GradePeriodComboBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.saveGradeBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.genderPict)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addSubcomponents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.doneBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -482,15 +469,14 @@
         private System.Windows.Forms.PictureBox saveGradeBtn;
         private System.Windows.Forms.FlowLayoutPanel ComponentsButtonPanel;
         private System.Windows.Forms.Label currentComponent;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel finalGradelbl;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox GradePeriodComboBox;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel CurrentGradePeriod;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox addSubcomponents;
         private System.Windows.Forms.PictureBox doneBtn;
         private System.Windows.Forms.FlowLayoutPanel subcomponentsPanel;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }
