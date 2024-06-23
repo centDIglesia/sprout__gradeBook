@@ -189,7 +189,7 @@
             this.ComponentsButtonPanel.AutoScrollMinSize = new System.Drawing.Size(1, 0);
             this.ComponentsButtonPanel.Location = new System.Drawing.Point(312, 171);
             this.ComponentsButtonPanel.Name = "ComponentsButtonPanel";
-            this.ComponentsButtonPanel.Size = new System.Drawing.Size(496, 89);
+            this.ComponentsButtonPanel.Size = new System.Drawing.Size(514, 89);
             this.ComponentsButtonPanel.TabIndex = 72;
             // 
             // currentComponent

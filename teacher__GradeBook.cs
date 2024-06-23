@@ -22,6 +22,8 @@ namespace sprout__gradeBook
         List<double> _FinalGradesInEachComponents = new List<double>();
         bool allGraded;
         public string selectedGradePeriod;
+        public string selectedCourse;
+
         public bool isFirstStudentClicked { get; set; } = false;
 
         public bool isStudentGraded { get; set; } = false;
@@ -113,13 +115,14 @@ namespace sprout__gradeBook
             }
         }
 
+
+
         private void CourseComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
             // Disable courseComboBox immediately after a value is selected
 
-
-            string selectedCourse = courseComboBox.SelectedItem.ToString();
+            this.selectedCourse = courseComboBox.SelectedItem.ToString();
             string[] trimmedCourseParts = selectedCourse.Split('_');
 
             if (trimmedCourseParts.Length == 2)
@@ -598,7 +601,7 @@ namespace sprout__gradeBook
             try
             {
 
-                string directoryPath = $"studentFinalGrades/{currentUSer}/";
+                string directoryPath = $"studentFinalGrades/{this.selectedCourse}/{currentUSer}/";
                 Directory.CreateDirectory(directoryPath);
 
 
@@ -665,7 +668,7 @@ namespace sprout__gradeBook
 
         public bool IsTermAlreadyGraded(string studentID, string term)
         {
-            string directoryPath = $"studentFinalGrades/{currentUSer}/";
+            string directoryPath = $"studentFinalGrades/{this.selectedCourse}/{currentUSer}/";
             string filePath = Path.Combine(directoryPath, $"{studentID}.txt");
 
             if (!File.Exists(filePath))

@@ -61,9 +61,11 @@
             // 
             // feedback_Description
             // 
+            this.feedback_Description.Enabled = false;
             this.feedback_Description.Location = new System.Drawing.Point(11, 33);
             this.feedback_Description.Multiline = true;
             this.feedback_Description.Name = "feedback_Description";
+            this.feedback_Description.ReadOnly = true;
             this.feedback_Description.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.feedback_Description.Size = new System.Drawing.Size(280, 80);
             this.feedback_Description.TabIndex = 3;
