@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="kryptonPalette2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>20, 21</value>
+    <value>20, 22</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="close_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -142,7 +142,7 @@
   <data name="Student__Dashboard__UI.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABIMAAALPCAYAAADxQQDaAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAA/7JJREFUeF7svQm4JklZ55t9b/UjnqpW0aqxSx1l5rqO9zo65YIr5ai4ixubgqIC
+        DAAACwwBP0AiyAAA/7JJREFUeF7svQm4JklZ55t9b/UjnqpW0aqxSx1l5rqO9zo65YIr5ai4ixubgqIC
         yiKLyqpIs6ggiiAIKi4wXIfFbUQdlWVGdK4644rOjKOjU10FVVCggjSII0Le/OeX/3Pe81bk90Xm9+Xp
         7urf73nezsyIyMz4DtQbEf98I6IRbdteMxxlAAAAAAAAAABw9dDrPofoEnVQxv+xKgMAAAAAAAAAAFcD
         g94j3edAFFqlN//n2bNnj/WlAAAAAAAAAADgquDMmTPX3nDDDRaEVtz1rnf9P7vDsdOnT++tigEAAAAA

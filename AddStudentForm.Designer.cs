@@ -479,7 +479,7 @@
             this.studentBirthdayPickerf.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentBirthdayPickerf.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.studentBirthdayPickerf.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.studentBirthdayPickerf.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.studentBirthdayPickerf.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.studentBirthdayPickerf.CustomFormat = "yyyy-MM-dd";
             this.studentBirthdayPickerf.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentBirthdayPickerf.Format = System.Windows.Forms.DateTimePickerFormat.Custom;

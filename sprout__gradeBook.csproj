@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Taskbar__Icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="ComponentFactory.Krypton.Design">
       <HintPath>..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Design.dll</HintPath>
@@ -77,17 +80,17 @@
     <Compile Include="AddCourseForm.Designer.cs">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="addStudentDashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="addStudentDashboard.Designer.cs">
-      <DependentUpon>addStudentDashboard.cs</DependentUpon>
-    </Compile>
     <Compile Include="AddStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddStudentForm.Designer.cs">
       <DependentUpon>AddStudentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AttendanceReport__Card.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AttendanceReport__Card.Designer.cs">
+      <DependentUpon>AttendanceReport__Card.cs</DependentUpon>
     </Compile>
     <Compile Include="Attendance__Row.cs">
       <SubType>UserControl</SubType>
@@ -242,6 +245,12 @@
     <Compile Include="students__NoticationUi.Designer.cs">
       <DependentUpon>students__NoticationUi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Student__AttendanceReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student__AttendanceReport.Designer.cs">
+      <DependentUpon>Student__AttendanceReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Student__FeedbackUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -319,11 +328,11 @@
     <EmbeddedResource Include="AddCourseForm.resx">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="addStudentDashboard.resx">
-      <DependentUpon>addStudentDashboard.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AddStudentForm.resx">
       <DependentUpon>AddStudentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AttendanceReport__Card.resx">
+      <DependentUpon>AttendanceReport__Card.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Attendance__Row.resx">
       <DependentUpon>Attendance__Row.cs</DependentUpon>
@@ -399,6 +408,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="students__NoticationUi.resx">
       <DependentUpon>students__NoticationUi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student__AttendanceReport.resx">
+      <DependentUpon>Student__AttendanceReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student__FeedbackUI.resx">
       <DependentUpon>Student__FeedbackUI.cs</DependentUpon>
@@ -498,12 +510,6 @@
     <None Include="Resources\sub.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\task-normal.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\task-checked.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\subsubhover.png" />
   </ItemGroup>
   <ItemGroup>
@@ -534,6 +540,8 @@
     <None Include="Resources\Sort-Button.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Student__AttendanceReport.png" />
+    <Content Include="Taskbar__Icon.ico" />
     <None Include="Resources\student__Dashboard_UI.png" />
     <None Include="Resources\Student_GradesHeader.png" />
     <None Include="Resources\Student__GradesRow.png" />

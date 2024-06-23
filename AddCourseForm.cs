@@ -13,6 +13,7 @@ namespace sprout__gradeBook
     {
         private string currentUserName;
         private teacher__courses_lvl1 parentForm;
+        private int previousSelectedIndex;
 
         public AddCourseForm(string currentUser, teacher__courses_lvl1 parent)
         {
@@ -26,6 +27,13 @@ namespace sprout__gradeBook
 
             this.KeyPreview = true;
             this.KeyDown += new KeyEventHandler(SaveCourse_KeyDown);
+
+            // Set the initial selected item
+            WeekDayTxt.SelectedIndex = 0;
+            courseCourseTXT.SelectedIndex = 0;
+
+            // Store the initial selected index
+            previousSelectedIndex = 0;
         }
 
         private void SaveCourse_KeyDown(object sender, KeyEventArgs e)
@@ -287,19 +295,43 @@ namespace sprout__gradeBook
             b.Cancelform(this);
         }
 
-        private void AddCourseForm_Load(object sender, EventArgs e)
-        {
 
+        private void WeekDayTxt_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // If "Select the Day When the Course Will Take Place" is selected, revert to the previous selection
+            if (WeekDayTxt.SelectedIndex == 0)
+            {
+                WeekDayTxt.SelectedIndex = previousSelectedIndex;
+            }
+            else
+            {
+                previousSelectedIndex = WeekDayTxt.SelectedIndex;
+            }
         }
 
-        private void courseEndTXT_Enter(object sender, EventArgs e)
+        private void courseCourseTXT_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            // If "Select the Day When the Course Will Take Place" is selected, revert to the previous selection
+            if (courseCourseTXT.SelectedIndex == 0)
+            {
+                courseCourseTXT.SelectedIndex = previousSelectedIndex;
+            }
+            else
+            {
+                previousSelectedIndex = courseCourseTXT.SelectedIndex;
+            }
         }
 
-        private void courseEndTXT_Leave(object sender, EventArgs e)
+        private void courseStartTXT_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
+            // Convert the key pressed to uppercase
+            e.KeyChar = char.ToUpper(e.KeyChar);
+        }
+
+        private void courseEndTXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Convert the key pressed to uppercase
+            e.KeyChar = char.ToUpper(e.KeyChar);
         }
     }
 }

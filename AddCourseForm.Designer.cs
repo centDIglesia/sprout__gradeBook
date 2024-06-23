@@ -148,8 +148,10 @@
             // 
             // courseCourseTXT
             // 
+            this.courseCourseTXT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.courseCourseTXT.DropDownWidth = 481;
             this.courseCourseTXT.Items.AddRange(new object[] {
+            "Select Designated Department",
             "Bachelor of Science in Accountancy , BSA",
             "Bachelor of Science in Computer Engineering , BSCpE",
             "Bachelor in Secondary Education Major in English , BSEd-English",
@@ -195,7 +197,7 @@
             this.courseCourseTXT.StateTracking.Item.Border.Width = 0;
             this.courseCourseTXT.StateTracking.Item.Content.ShortText.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.courseCourseTXT.TabIndex = 3;
-            this.courseCourseTXT.Text = "Select Designated Department";
+            this.courseCourseTXT.SelectedIndexChanged += new System.EventHandler(this.courseCourseTXT_SelectedIndexChanged);
             // 
             // courseYearlvlTXT
             // 
@@ -220,8 +222,10 @@
             // 
             // WeekDayTxt
             // 
+            this.WeekDayTxt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.WeekDayTxt.DropDownWidth = 481;
             this.WeekDayTxt.Items.AddRange(new object[] {
+            "Select the Day When the Course Will Take Place",
             "Monday",
             "Tuesday",
             "Wednesday",
@@ -267,7 +271,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.WeekDayTxt.StateTracking.Item.Content.ShortText.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WeekDayTxt.TabIndex = 87;
-            this.WeekDayTxt.Text = "Please Select the Day(s) When the Course Will Take Place";
+            this.WeekDayTxt.SelectedIndexChanged += new System.EventHandler(this.WeekDayTxt_SelectedIndexChanged);
             // 
             // kryptonTextBox1
             // 
@@ -352,6 +356,7 @@
             this.courseStartTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
             this.courseStartTXT.TabIndex = 91;
             this.courseStartTXT.Text = "  :   ";
+            this.courseStartTXT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.courseStartTXT_KeyPress);
             // 
             // courseEndTXT
             // 
@@ -372,8 +377,7 @@
             this.courseEndTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
             this.courseEndTXT.TabIndex = 92;
             this.courseEndTXT.Text = "  :   ";
-            this.courseEndTXT.Enter += new System.EventHandler(this.courseEndTXT_Enter);
-            this.courseEndTXT.Leave += new System.EventHandler(this.courseEndTXT_Leave);
+            this.courseEndTXT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.courseEndTXT_KeyPress);
             // 
             // pictureBox1
             // 
@@ -527,7 +531,6 @@
             this.StateCommon.Border.Width = 5;
             this.StateCommon.Header.Back.Color1 = System.Drawing.Color.White;
             this.Text = "AddCourseForm";
-            this.Load += new System.EventHandler(this.AddCourseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.courseCourseTXT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WeekDayTxt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cancel_btn)).EndInit();

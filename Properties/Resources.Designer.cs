@@ -63,16 +63,6 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Absent_Checked {
-            get {
-                object obj = ResourceManager.GetObject("Absent_Checked", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Absent_Unchecked {
             get {
                 object obj = ResourceManager.GetObject("Absent_Unchecked", resourceCulture);
@@ -873,6 +863,16 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Student__AttendanceReport {
+            get {
+                object obj = ResourceManager.GetObject("Student__AttendanceReport", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap student__Dashboard_UI {
             get {
                 object obj = ResourceManager.GetObject("student__Dashboard_UI", resourceCulture);
@@ -976,26 +976,6 @@ namespace sprout__gradeBook.Properties {
         internal static System.Drawing.Bitmap susushoverleave {
             get {
                 object obj = ResourceManager.GetObject("susushoverleave", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap task_checked {
-            get {
-                object obj = ResourceManager.GetObject("task-checked", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap task_normal {
-            get {
-                object obj = ResourceManager.GetObject("task-normal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
