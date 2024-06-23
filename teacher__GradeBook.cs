@@ -7,6 +7,7 @@ using ComponentFactory.Krypton.Toolkit;
 using System.Collections;
 using System.Text;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace sprout__gradeBook
 {
@@ -216,7 +217,7 @@ namespace sprout__gradeBook
 
         private void AddStudentCard(string studentID, string studentName)
         {
-            studentsInGradebookCARD studentCard = new studentsInGradebookCARD(this, subcomponentsPanel, ComponentsButtonPanel, addSubcomponents, CurrentGradePeriod)
+            studentsInGradebookCARD studentCard = new studentsInGradebookCARD(this, subcomponentsPanel, ComponentsButtonPanel, addSubcomponents, CurrentGradePeriod, pictureBox3)
             {
                 currentStudentID = studentID,
                 currentStudentName = studentName
@@ -349,11 +350,6 @@ namespace sprout__gradeBook
         }
 
 
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void CalculateAndDisplayFinalGrade()
         {
             double totalPercentage = 0.0;
@@ -411,16 +407,6 @@ namespace sprout__gradeBook
 
         }
 
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void kryptonComboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-
-        }
         public void SetComponentButtonsEnabled(bool enabled)
         {
             foreach (Control control in ComponentsButtonPanel.Controls)
@@ -607,6 +593,7 @@ namespace sprout__gradeBook
             doneBtn.Visible = false;
             currentComponent.Visible = false;
             pictureBox3.Visible = false;
+
         }
         private void ShowGradingElements()
         {
@@ -662,81 +649,6 @@ namespace sprout__gradeBook
             }
         }
 
-
-
-        /*  private void SaveGradesToFile()
-          {
-              try
-              {
-                  string directoryPath = $"studentFinalGrades/{currentUSer}/";
-                  Directory.CreateDirectory(directoryPath);
-
-                  string selectedCourse = courseComboBox.SelectedItem.ToString();
-                  string courseCode = selectedCourse.Split('_')[0].Trim();
-                  string term = GradePeriodComboBox.Text;
-                  string studentID = StudentIDTXT.Text;
-                  string studentName = StudenttnameTXT.Text;
-
-                  // Construct file path based on student ID and term
-                  string filePath = Path.Combine(directoryPath, $"{studentID}_{term}.txt");
-
-                  // Create the file content
-                  StringBuilder sb = new StringBuilder();
-                  sb.AppendLine($"Term | {term}");
-                  sb.AppendLine($"Course Code | {courseCode}");
-                  sb.AppendLine($"Grade | {grades}");
-                  double totalFinalGrade = _FinalGradesInEachComponents.Sum();
-                  sb.AppendLine($"Total Final Grade | {totalFinalGrade.ToString("0.00")}%");
-                  sb.AppendLine($"-------------------");
-
-                  // Check if the file already exists
-                  if (File.Exists(filePath))
-                  {
-                      // Overwrite the existing file or prompt user with a message
-                      var result = MessageBox.Show(
-                          $"A grade record for {studentName} in the term '{term}' and course '{courseCode}' already exists. Do you want to overwrite it?",
-                          "Grade Record Exists",
-                          MessageBoxButtons.YesNo,
-                          MessageBoxIcon.Warning);
-
-                      if (result == DialogResult.Yes)
-                      {
-                          File.WriteAllText(filePath, sb.ToString());
-                          MessageBox.Show(
-                              $"Grades for {studentName} have been successfully updated for the course '{courseCode}'.",
-                              "Grades Recorded Successfully",
-                              MessageBoxButtons.OK,
-                              MessageBoxIcon.Information);
-                      }
-                      else
-                      {
-                          MessageBox.Show(
-                              "Grades were not saved because a record already exists and you chose not to overwrite it.",
-                              "Grades Not Saved",
-                              MessageBoxButtons.OK,
-                              MessageBoxIcon.Information);
-                      }
-                  }
-                  else
-                  {
-                      // Write grades to file
-                      File.WriteAllText(filePath, sb.ToString());
-                      MessageBox.Show(
-                          $"Grades for {studentName} have been successfully recorded for the course '{courseCode}'.",
-                          "Grades Recorded Successfully",
-                          MessageBoxButtons.OK,
-                          MessageBoxIcon.Information);
-                  }
-
-                  grades = "";
-                  _FinalGradesInEachComponents.Clear();
-              }
-              catch (Exception ex)
-              {
-                  MessageBox.Show($"Error saving grades: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-              }
-          }
-  */
         public void ResetComponentsForNewStudent()
         {
             // Clear subcomponentsPanel
@@ -762,10 +674,6 @@ namespace sprout__gradeBook
             isStudentGraded = false; // Reset the flag
         }
 
-        private void sectionTXT_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         public bool IsTermAlreadyGraded(string studentID, string term)
         {
@@ -832,12 +740,6 @@ namespace sprout__gradeBook
 
 
         }
-
-        private void kryptonTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void UpdateComponentPanelVisibility()
         {

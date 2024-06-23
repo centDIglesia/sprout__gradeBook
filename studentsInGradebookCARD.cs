@@ -15,12 +15,13 @@ namespace sprout__gradeBook
         private Panel _ComponentsButtonPanel;
         private PictureBox _addSubcomponents;
         private KryptonLabel _CurrentGradePeriod;
+        private PictureBox _pict3;
 
-        public studentsInGradebookCARD(teacher__GradeBook teacherForm, Panel subcom, Panel compsbutton, PictureBox addSubcomponents, KryptonLabel CurrentGradePeriod)
+        public studentsInGradebookCARD(teacher__GradeBook teacherForm, Panel subcom, Panel compsbutton, PictureBox addSubcomponents, KryptonLabel CurrentGradePeriod, PictureBox pict3)
         {
             InitializeComponent();
             _subcomponentsPanel = subcom;
-
+            _pict3 = pict3;
             _ComponentsButtonPanel = compsbutton;
 
             _teacherForm = teacherForm;
@@ -58,41 +59,46 @@ namespace sprout__gradeBook
 
         private void HandleStudentClick()
         {
+            bool isGraded = _teacherForm.IsTermAlreadyGraded(currentStudentID, _teacherForm.selectedGradePeriod);
+
             if (!_teacherForm.isFirstStudentClicked)
             {
                 _teacherForm.isFirstStudentClicked = true;
             }
             else
             {
-                if (_teacherForm.isStudentGraded)
+                if (_teacherForm.isStudentGraded && !isGraded)
                 {
                     _teacherForm.ResetComponentsForNewStudent();
-                    _teacherForm.isStudentGraded = false;
                 }
-                else if (!MarkAsGraded.Visible)
+                else if (!MarkAsGraded.Visible && !isGraded)
                 {
-                    var result = MessageBox.Show("You have not saved the grades for the current student. Do you want to proceed and discard unsaved changes?", "Unsaved Changes", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                    if (result == DialogResult.No)
-                    {
-                        return;
-                    }
-                    else
-                    {
-                        _teacherForm.ResetComponentsForNewStudent();
-                    }
+
+                    return;
+
                 }
             }
 
-            if (_teacherForm.IsTermAlreadyGraded(currentStudentID, _teacherForm.selectedGradePeriod))
+            // Update the isStudentGraded flag in the teacher form
+            _teacherForm.isStudentGraded = isGraded;
+
+            if (isGraded)
             {
                 MessageBox.Show($"The student '{currentStudentName}' has already been graded for the term '{_teacherForm.selectedGradePeriod}'.", "Already Graded", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MarkAsGraded.Show();
                 return;
             }
+            else
+            {
+                // Show the components button and other components
+                _subcomponentsPanel.Visible = true;
+                _ComponentsButtonPanel.Visible = true;
+                _addSubcomponents.Enabled = true;
+                _pict3.Visible = true;
+            }
 
             _teacherForm.StudenttnameText = currentStudentName;
             _teacherForm.StudentIDText = currentStudentID;
-
 
             MarkAsGraded.Visible = _teacherForm.IsStudentGraded(currentStudentID);
 
@@ -109,6 +115,9 @@ namespace sprout__gradeBook
             _ComponentsButtonPanel.Visible = !isGraded;
             _addSubcomponents.Enabled = !isGraded;
             _teacherForm.isStudentGraded = isGraded;
+
+
+            this.Enabled = !isGraded;
 
         }
 
