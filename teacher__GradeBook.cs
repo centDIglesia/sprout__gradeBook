@@ -75,7 +75,7 @@ namespace sprout__gradeBook
             pictureBox4.Hide();
             addSubcomponents.Hide();
             saveGradeBtn.Visible = false;
-            pictureBox5.Hide();
+
             doneBtn.Hide();
 
             courseComboBox.Hide();
@@ -162,7 +162,6 @@ namespace sprout__gradeBook
             addSubcomponents.Show();
 
             doneBtn.Show();
-            pictureBox5.Show();
 
         }
 
@@ -332,7 +331,7 @@ namespace sprout__gradeBook
                 {
                     ComponentNumber = $"{compName} #{componentCount}",
                     ComponentGrade = 0,
-                    ComponentMaximumGrade = 99.9,
+                    ComponentMaximumGrade = 0,
 
                 };
                 subcomponentsPanel.Controls.Add(componentCard);
@@ -594,6 +593,7 @@ namespace sprout__gradeBook
             currentComponent.Visible = false;
             pictureBox3.Visible = false;
 
+
         }
         private void ShowGradingElements()
         {
@@ -603,6 +603,7 @@ namespace sprout__gradeBook
             subcomponentsPanel.Visible = true;
             addSubcomponents.Visible = true;
             doneBtn.Visible = true;
+            pictureBox3.Visible = true;
         }
 
         private void SaveGradesToFile()
@@ -770,5 +771,9 @@ namespace sprout__gradeBook
             componentCount = 0;
         }
 
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
