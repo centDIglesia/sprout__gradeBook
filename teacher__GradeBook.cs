@@ -455,6 +455,13 @@ namespace sprout__gradeBook
                     double componentGrade = componentCard.ComponentGrade;
                     double componentMaximumGrade = componentCard.ComponentMaximumGrade;
 
+                    if (componentMaximumGrade == 0)
+                    {
+                        MessageBox.Show($"Component Maximum Grade cannot be zero.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        componentCard.Focus();
+                        return;
+                    }
+
                     if (componentGrade > componentMaximumGrade)
                     {
                         MessageBox.Show($"Component Grade {componentGrade} cannot be higher than Component Maximum Grade {componentMaximumGrade}.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -220,10 +220,8 @@
             this.GradePeriodComboBox.DropDownHeight = 100;
             this.GradePeriodComboBox.DropDownWidth = 150;
             this.GradePeriodComboBox.Items.AddRange(new object[] {
-            "1st sem : Midterm Grade",
-            "1st sem : Final Grade",
-            "2nd sem : Midterm Grade",
-            "2nd sem : Final Grade"});
+            "Midterm Grade",
+            "Final Grade"});
             this.GradePeriodComboBox.Location = new System.Drawing.Point(611, 12);
             this.GradePeriodComboBox.Name = "GradePeriodComboBox";
             this.GradePeriodComboBox.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
