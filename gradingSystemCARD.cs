@@ -88,22 +88,7 @@ namespace sprout__gradeBook
 
         private void componentsWeightTXT_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(componentsWeightTXT.Text))
-            {
-                if (int.TryParse(componentsWeightTXT.Text, out int weight))
-                {
 
-                    _parentForm.UpdateTotalWeight();
-                }
-                else
-                {
-
-                    MessageBox.Show("Invalid input. Please enter a valid integer value for the weight.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-
-                    componentsWeightTXT.Text = "";
-                }
-            }
         }
 
         private void componentsTXT_TextChanged(object sender, EventArgs e)
@@ -139,6 +124,26 @@ namespace sprout__gradeBook
             {
                 // If not, suppress the key press
                 e.Handled = true;
+            }
+        }
+
+        private void componentsWeightTXT_TextChanged_1(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(componentsWeightTXT.Text))
+            {
+                if (int.TryParse(componentsWeightTXT.Text, out int weight))
+                {
+
+                    _parentForm.UpdateTotalWeight();
+                }
+                else
+                {
+
+                    MessageBox.Show("Invalid input. Please enter a valid integer value for the weight.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+                    componentsWeightTXT.Text = "";
+                }
             }
         }
     }
