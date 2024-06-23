@@ -47,19 +47,14 @@ namespace sprout__gradeBook
             string title = feedbackTitle_txt.Text;
             string description = feedbackDescription_txt.Text;
 
-            if (string.IsNullOrWhiteSpace(title))
+            if (title == "title" && description == "description")
             {
-                MessageBox.Show("Please enter a title for your feedback.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter a valid title and description for the Feedback.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(description))
-            {
-                MessageBox.Show("Please enter a description for your feedback.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
 
-            _parentCard.saveFeedback(title,description);
+            _parentCard.saveFeedback(title, description);
             MessageBox.Show("Feedback sent!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
@@ -67,7 +62,7 @@ namespace sprout__gradeBook
         private void cancel_btn_Click(object sender, EventArgs e)
         {
             utilityButton cancel = new utilityButton();
-            cancel.Cancelform(this); 
+            cancel.Cancelform(this);
         }
 
         private void feedbackTitle_txt_Enter(object sender, EventArgs e)

@@ -20,7 +20,7 @@ namespace sprout__gradeBook
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Teacher_Dashboard("VINCENT07@gmail.com"));
+            Application.Run(new introductionPage());
 
         }
     }

@@ -450,6 +450,12 @@ namespace sprout__gradeBook
 
             }
 
+            if (subcomponentsPanel.Controls.Count == 0)
+            {
+                MessageBox.Show("No grades have been entered yet. Please ensure to add subcomponents for each student and input their respective grades before attempting to save. \n\nThis helps to maintain accurate and comprehensive grading records.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             foreach (Control control in subcomponentsPanel.Controls)
             {
                 if (control is ComponentGradesCARD componentCard)
@@ -460,27 +466,12 @@ namespace sprout__gradeBook
                     if (componentGrade > componentMaximumGrade)
                     {
                         MessageBox.Show($"Component Grade {componentGrade} cannot be higher than Component Maximum Grade {componentMaximumGrade}.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        componentCard.Focus();  // Set focus to the invalid card
-                        return;
-                    }
-
-                    if (componentMaximumGrade > 999)
-                    {
-                        MessageBox.Show($"Component Maximum Grade cannot be greater than 999. Current value is {componentMaximumGrade}.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        componentCard.Focus();  // Set focus to the invalid card
-                        return;
-                    }
-
-                    if (componentGrade > 999 || componentGrade > componentMaximumGrade)
-                    {
-                        MessageBox.Show($"Component Grade cannot be greater than 999 ,nor greater than Maximum Grade.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        componentCard.Focus();  // Set focus to the invalid card
+                        componentCard.Focus();
                         return;
                     }
 
                 }
             }
-
 
 
             if (_currentActiveComponentButton != null)
@@ -491,13 +482,9 @@ namespace sprout__gradeBook
 
                 CheckAllComponentsGraded();
                 SetComponentButtonsEnabled(true);
-
-                // Check if all students are graded
                 CheckIfAllStudentsGraded();
-
                 HideSubcomponentsAndDoneBtn();
                 ResetSubcomponentsPanel();
-
                 UpdateComponentPanelVisibility();
             }
 
