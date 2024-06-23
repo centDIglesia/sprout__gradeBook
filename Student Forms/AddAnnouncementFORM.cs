@@ -28,17 +28,12 @@ namespace sprout__gradeBook
             string title = TitleTXTBOX.Text;
             string description = descriprtionTXTBOX.Text;
 
-            if (string.IsNullOrWhiteSpace(title))
+            if (title == "Title" && description == "Description")
             {
-                MessageBox.Show("Please enter a title for the announcement.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter a valid title and description for the announcement.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(description))
-            {
-                MessageBox.Show("Please enter a description for the announcement.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
 
             _parentCard.saveAnnouncement(title, description);
             MessageBox.Show("Announcement saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -22,7 +22,6 @@ namespace sprout__gradeBook
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new introductionPage());
 
-
         }
     }
 }

@@ -131,11 +131,11 @@
             // attendance_Datelbl
             // 
             this.attendance_Datelbl.AutoSize = true;
-            this.attendance_Datelbl.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.attendance_Datelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.attendance_Datelbl.Location = new System.Drawing.Point(238, 12);
+            this.attendance_Datelbl.Font = new System.Drawing.Font("Poppins Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.attendance_Datelbl.ForeColor = System.Drawing.Color.DarkGray;
+            this.attendance_Datelbl.Location = new System.Drawing.Point(237, 15);
             this.attendance_Datelbl.Name = "attendance_Datelbl";
-            this.attendance_Datelbl.Size = new System.Drawing.Size(105, 28);
+            this.attendance_Datelbl.Size = new System.Drawing.Size(109, 26);
             this.attendance_Datelbl.TabIndex = 94;
             this.attendance_Datelbl.Text = "Date Today";
             // 
@@ -189,7 +189,8 @@
             this.saveNewStudentBTN.Image = ((System.Drawing.Image)(resources.GetObject("saveNewStudentBTN.Image")));
             this.saveNewStudentBTN.Location = new System.Drawing.Point(608, 585);
             this.saveNewStudentBTN.Name = "saveNewStudentBTN";
-            this.saveNewStudentBTN.Size = new System.Drawing.Size(175, 36);
+            this.saveNewStudentBTN.Padding = new System.Windows.Forms.Padding(2);
+            this.saveNewStudentBTN.Size = new System.Drawing.Size(179, 40);
             this.saveNewStudentBTN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.saveNewStudentBTN.TabIndex = 99;
             this.saveNewStudentBTN.TabStop = false;

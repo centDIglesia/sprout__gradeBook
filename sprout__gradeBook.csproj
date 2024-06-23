@@ -68,12 +68,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addCourseComponentsFORM.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="addCourseComponentsFORM.Designer.cs">
-      <DependentUpon>addCourseComponentsFORM.cs</DependentUpon>
-    </Compile>
     <Compile Include="AddCourseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,9 +91,6 @@
     </Compile>
     <Compile Include="Attendance__Row.Designer.cs">
       <DependentUpon>Attendance__Row.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AlphaPictureBox.cs">
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Component-Button-Card.cs">
       <SubType>UserControl</SubType>
@@ -133,12 +124,6 @@
       <DependentUpon>createGradingSystemFORM.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomColor.cs" />
-    <Compile Include="EditCourseForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditCourseForm.Designer.cs">
-      <DependentUpon>EditCourseForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Feedback__Card.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -257,12 +242,6 @@
     <Compile Include="Student__FeedbackUI.Designer.cs">
       <DependentUpon>Student__FeedbackUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="SubComponentCard.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SubComponentCard.Designer.cs">
-      <DependentUpon>SubComponentCard.cs</DependentUpon>
-    </Compile>
     <Compile Include="Teacher__Attendance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -317,14 +296,17 @@
     <Compile Include="TermsCons.Designer.cs">
       <DependentUpon>TermsCons.cs</DependentUpon>
     </Compile>
+    <Compile Include="todaysScheduleCARD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="todaysScheduleCARD.Designer.cs">
+      <DependentUpon>todaysScheduleCARD.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInput_Manager.cs" />
     <Compile Include="UserInput__Validator.cs" />
     <Compile Include="Users.cs" />
     <Compile Include="Account__Manager.cs" />
     <Compile Include="utilityButton.cs" />
-    <EmbeddedResource Include="addCourseComponentsFORM.resx">
-      <DependentUpon>addCourseComponentsFORM.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AddCourseForm.resx">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -351,9 +333,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="createGradingSystemFORM.resx">
       <DependentUpon>createGradingSystemFORM.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditCourseForm.resx">
-      <DependentUpon>EditCourseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Feedback__Card.resx">
       <DependentUpon>Feedback__Card.cs</DependentUpon>
@@ -415,9 +394,6 @@
     <EmbeddedResource Include="Student__FeedbackUI.resx">
       <DependentUpon>Student__FeedbackUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SubComponentCard.resx">
-      <DependentUpon>SubComponentCard.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Teacher__Attendance.resx">
       <DependentUpon>Teacher__Attendance.cs</DependentUpon>
     </EmbeddedResource>
@@ -444,6 +420,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TermsCons.resx">
       <DependentUpon>TermsCons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="todaysScheduleCARD.resx">
+      <DependentUpon>todaysScheduleCARD.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

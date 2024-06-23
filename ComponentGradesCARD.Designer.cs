@@ -58,7 +58,7 @@
             // 
             this.compGrade.Location = new System.Drawing.Point(125, 8);
             this.compGrade.Name = "compGrade";
-            this.compGrade.Size = new System.Drawing.Size(96, 22);
+            this.compGrade.Size = new System.Drawing.Size(96, 21);
             this.compGrade.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.compGrade.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -70,6 +70,7 @@
             this.compGrade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.compGrade.TextChanged += new System.EventHandler(this.compGrade_TextChanged);
             this.compGrade.Enter += new System.EventHandler(this.compGrade_Enter);
+            this.compGrade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.compGrade_KeyPress);
             this.compGrade.Leave += new System.EventHandler(this.compGrade_Leave);
             // 
             // compMaxGrade
@@ -88,6 +89,7 @@
             this.compMaxGrade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.compMaxGrade.TextChanged += new System.EventHandler(this.compMaxGrade_TextChanged);
             this.compMaxGrade.Enter += new System.EventHandler(this.compMaxGrade_Enter);
+            this.compMaxGrade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.compMaxGrade_KeyPress);
             this.compMaxGrade.Leave += new System.EventHandler(this.compMaxGrade_Leave);
             // 
             // compPercentage

@@ -76,12 +76,30 @@ namespace sprout__gradeBook
                     DialogResult result = MessageBox.Show("No student files found. Do you want to add a student?", "Add Student", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (result == DialogResult.Yes)
                     {
-                        AddStudentForm addStudentForm = new AddStudentForm(this, teacherSchool);
-                        addStudentForm.Show();
+                        Form formbackground = new Form();
+
+                        using (AddStudentForm terms = new AddStudentForm(this, teacherSchool))
+                        {
+                            formbackground.StartPosition = FormStartPosition.CenterScreen;
+                            formbackground.FormBorderStyle = FormBorderStyle.None;
+                            formbackground.Opacity = .70d;
+                            formbackground.BackColor = StateCommon.Back.Color1 = CustomColor.mainColor;
+                            formbackground.Size = new Size(1147, 711);
+
+                            formbackground.Location = this.Location;
+
+                            formbackground.ShowInTaskbar = false;
+                            formbackground.Show();
+
+                            terms.Owner = formbackground;
+                            terms.ShowDialog();
+                        }
+                        formbackground.Dispose();
+
+
                     }
                     return;
                 }
-
                 // Process each student file
                 foreach (string filePath in filePaths)
                 {
@@ -121,7 +139,7 @@ namespace sprout__gradeBook
                             // If card does not exist, create and add a new one
                             if (!cardExists)
                             {
-                                CourseAndSectionCARD card = new CourseAndSectionCARD(currentUSer,this)
+                                CourseAndSectionCARD card = new CourseAndSectionCARD(currentUSer, this)
                                 {
                                     Course = lastPart,
                                     SectionName = section,
@@ -170,7 +188,7 @@ namespace sprout__gradeBook
             formbackground.Dispose();
 
 
-            
+
         }
 
         // Event handler for BacktoStudentDashboard label click

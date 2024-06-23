@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,8 @@ namespace sprout__gradeBook
         {
             _parentForm = parent;
             InitializeComponent();
+
+            componentsWeightTXT.KeyPress += new KeyPressEventHandler(componentsWeightTXT_KeyPress);
         }
 
         public string ComponentTXT
@@ -32,16 +35,15 @@ namespace sprout__gradeBook
             {
                 if (int.TryParse(componentsWeightTXT.Text, out int weight))
                 {
-                    // Successful parsing, return the parsed value as a string
+
                     return weight.ToString();
                 }
                 else
                 {
-                    // Parsing failed, handle the error as needed
-                    // For example, you can display an error message
+
                     MessageBox.Show("Invalid input. Please enter a valid integer value for the weight.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    // Return an empty string or any default value
+
                     return "";
                 }
             }
@@ -60,17 +62,23 @@ namespace sprout__gradeBook
 
         private void detethisCardbtn_Click(object sender, EventArgs e)
         {
+
+
             Control parent = this.Parent;
 
-            // Remove this card from the parent control
+            // Store the component name before removing the card
+            string componentName = ComponentTXT;
+
             parent.Controls.Remove(this);
 
-            // Dispose of this card to release resources
             _parentForm.UpdateTotalWeight();
             this.Dispose();
 
-            // Update the text file
-            _parentForm.UpdateTextFile(ComponentTXT);
+            string filePath = $"CourseInformations/{_parentForm.CurrentUser}/gradingSystem.txt";
+            if (File.Exists(filePath))
+            {
+                _parentForm.UpdateTextFile(componentName);
+            }
         }
 
         private void componentsWeightTXT_Leave(object sender, EventArgs e)
@@ -89,11 +97,11 @@ namespace sprout__gradeBook
                 }
                 else
                 {
-                    // If parsing fails, handle the error here (e.g., display a message)
+
                     MessageBox.Show("Invalid input. Please enter a valid integer value for the weight.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    // Optionally, you can clear the text box or revert to the previous value
-                    componentsWeightTXT.Text = ""; // Clear the text box
+
+                    componentsWeightTXT.Text = "";
                 }
             }
         }
@@ -108,7 +116,7 @@ namespace sprout__gradeBook
             UserInput_Manager.ResetInputField(componentsTXT, "Component");
         }
 
-      
+
         private void componentsWeightTXT_Enter_1(object sender, EventArgs e)
         {
             UserInput_Manager.ResetInputField(componentsWeightTXT, "0");
@@ -122,6 +130,16 @@ namespace sprout__gradeBook
         private void componentsTXT_Leave(object sender, EventArgs e)
         {
             UserInput_Manager.RestoreDefaultText(componentsTXT, "Component");
+        }
+
+        private void componentsWeightTXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the pressed key is not a digit
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                // If not, suppress the key press
+                e.Handled = true;
+            }
         }
     }
 }

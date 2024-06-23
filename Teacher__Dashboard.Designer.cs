@@ -65,8 +65,8 @@
             this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Border.Color1 = System.Drawing.Color.White;
             this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Border.Color2 = System.Drawing.Color.White;
-            this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonPalette2.InputControlStyles.InputControlCommon.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
@@ -210,7 +210,7 @@
             // 
             this.global__nav__bg.BackColor = System.Drawing.Color.White;
             this.global__nav__bg.Image = ((System.Drawing.Image)(resources.GetObject("global__nav__bg.Image")));
-            this.global__nav__bg.Location = new System.Drawing.Point(13, 13);
+            this.global__nav__bg.Location = new System.Drawing.Point(13, 11);
             this.global__nav__bg.Name = "global__nav__bg";
             this.global__nav__bg.Padding = new System.Windows.Forms.Padding(2);
             this.global__nav__bg.Size = new System.Drawing.Size(316, 688);
@@ -224,9 +224,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1147, 711);
-            this.Controls.Add(this.btn_dashboard);
-            this.Controls.Add(this.btn_students);
             this.Controls.Add(this.btn_courses);
+            this.Controls.Add(this.btn_students);
+            this.Controls.Add(this.btn_dashboard);
             this.Controls.Add(this.btn_gradeBook);
             this.Controls.Add(this.logoutBtn);
             this.Controls.Add(this.btn_attendance);

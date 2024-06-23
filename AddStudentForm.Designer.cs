@@ -250,7 +250,9 @@
             this.studentYearLevelTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
             this.studentYearLevelTXT.TabIndex = 10;
             this.studentYearLevelTXT.Text = "Year Level";
+            this.studentYearLevelTXT.TextChanged += new System.EventHandler(this.studentYearLevelTXT_TextChanged);
             this.studentYearLevelTXT.Enter += new System.EventHandler(this.studentYearLevelTXT_Enter);
+            this.studentYearLevelTXT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.studentYearLevelTXT_KeyPress);
             this.studentYearLevelTXT.Leave += new System.EventHandler(this.studentYearLevelTXT_Leave);
             // 
             // studentDepartmentTXT

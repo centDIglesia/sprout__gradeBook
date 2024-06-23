@@ -9,9 +9,9 @@ namespace sprout__gradeBook
     public partial class createGradingSystemFORM : KryptonForm
     {
         int totalWeight = 0;
-        private readonly string CurrentUser;
-        private readonly string CurrentsubjCode;
-        private readonly string CurrentsubjDeptYearAndSection;
+        public readonly string CurrentUser;
+        public readonly string CurrentsubjCode;
+        public readonly string CurrentsubjDeptYearAndSection;
         public createGradingSystemFORM(string currentUser, string subjCode, string subjDeptYearAndSection)
         {
             CurrentUser = currentUser;
@@ -177,6 +177,11 @@ namespace sprout__gradeBook
         {
             utilityButton Close = new utilityButton();
             Close.Cancelform(this);
+        }
+
+        private void createGradingSystemFORM_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

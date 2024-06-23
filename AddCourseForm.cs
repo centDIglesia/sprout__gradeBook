@@ -28,12 +28,18 @@ namespace sprout__gradeBook
             this.KeyPreview = true;
             this.KeyDown += new KeyEventHandler(SaveCourse_KeyDown);
 
+
             // Set the initial selected item
             WeekDayTxt.SelectedIndex = 0;
             courseCourseTXT.SelectedIndex = 0;
 
             // Store the initial selected index
             previousSelectedIndex = 0;
+
+
+            
+
+
         }
 
         private void SaveCourse_KeyDown(object sender, KeyEventArgs e)
@@ -330,8 +336,33 @@ namespace sprout__gradeBook
 
         private void courseEndTXT_KeyPress(object sender, KeyPressEventArgs e)
         {
+
             // Convert the key pressed to uppercase
             e.KeyChar = char.ToUpper(e.KeyChar);
+
+
+        }
+
+        private void courseYearlvlTXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) || e.KeyChar < '1' || e.KeyChar > '4')
+            {
+                // If so, suppress the key press
+                e.Handled = true;
+            }
+        }
+
+        private void courseYearlvlTXT_TextChanged(object sender, EventArgs e)
+        {
+            if (int.TryParse(courseYearlvlTXT.Text, out int number))
+            {
+                if (number < 1 || number > 4)
+                {
+                    MessageBox.Show("Please enter a number between 1 and 4.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    courseYearlvlTXT.Text = "";
+                }
+            }
+
         }
     }
 }

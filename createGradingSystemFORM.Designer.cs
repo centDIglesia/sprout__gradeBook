@@ -102,10 +102,10 @@
             // Close_btn
             // 
             this.Close_btn.Image = ((System.Drawing.Image)(resources.GetObject("Close_btn.Image")));
-            this.Close_btn.Location = new System.Drawing.Point(14, 498);
+            this.Close_btn.Location = new System.Drawing.Point(358, 498);
             this.Close_btn.Name = "Close_btn";
-            this.Close_btn.Size = new System.Drawing.Size(100, 45);
-            this.Close_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.Close_btn.Size = new System.Drawing.Size(87, 36);
+            this.Close_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.Close_btn.TabIndex = 63;
             this.Close_btn.TabStop = false;
             this.Close_btn.Click += new System.EventHandler(this.Close_btn_Click);
@@ -113,10 +113,10 @@
             // saveGradingsytemBTN
             // 
             this.saveGradingsytemBTN.Image = ((System.Drawing.Image)(resources.GetObject("saveGradingsytemBTN.Image")));
-            this.saveGradingsytemBTN.Location = new System.Drawing.Point(441, 498);
+            this.saveGradingsytemBTN.Location = new System.Drawing.Point(451, 498);
             this.saveGradingsytemBTN.Name = "saveGradingsytemBTN";
-            this.saveGradingsytemBTN.Size = new System.Drawing.Size(185, 45);
-            this.saveGradingsytemBTN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.saveGradingsytemBTN.Size = new System.Drawing.Size(175, 36);
+            this.saveGradingsytemBTN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.saveGradingsytemBTN.TabIndex = 62;
             this.saveGradingsytemBTN.TabStop = false;
             this.saveGradingsytemBTN.Click += new System.EventHandler(this.saveGradingsytemBTN_Click);
@@ -137,7 +137,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(644, 565);
+            this.ClientSize = new System.Drawing.Size(644, 558);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.Close_btn);
             this.Controls.Add(this.saveGradingsytemBTN);
@@ -151,6 +151,7 @@
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "createGradingSystemFORM";
+            this.Load += new System.EventHandler(this.createGradingSystemFORM_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Close_btn)).EndInit();

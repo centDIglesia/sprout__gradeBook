@@ -36,12 +36,21 @@ namespace sprout__gradeBook
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
-            _CurrentGradePeriod.Text = "Click 'Add Subcomponents +' to add details.";
+
+
 
             var parentForm = this.FindForm() as teacher__GradeBook;
 
             if (parentForm == null)
                 return;
+
+            if (parentForm.StudenttnameText == "Student Name")
+            {
+                MessageBox.Show("Please select a student first.", "Student Not Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            _CurrentGradePeriod.Text = "Click 'Add Subcomponents +' to add details.";
 
             if (parentForm._currentActiveComponentButton != null &&
                 parentForm._currentActiveComponentButton != this)
