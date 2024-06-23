@@ -351,7 +351,7 @@ namespace sprout__gradeBook
             subcomponentsPanel.Controls.Clear();
         }
 
-
+        //finalGradelbl
         private void CalculateAndDisplayFinalGrade()
         {
             double totalPercentage = 0.0;
@@ -376,8 +376,12 @@ namespace sprout__gradeBook
                     {
                         if (control is ComponentGradesCARD componentCard)
                         {
-                            totalPercentage += componentCard.ComponentPercentageGrade;
-                            componentCardCount++;
+                            if (componentCard.ComponentMaximumGrade != 0)
+                            {
+                                totalPercentage += componentCard.ComponentPercentageGrade;
+                                componentCardCount++;
+                            }
+
                         }
                     }
 
@@ -601,7 +605,7 @@ namespace sprout__gradeBook
             try
             {
 
-                string directoryPath = $"studentFinalGrades/{this.selectedCourse}/{currentUSer}/";
+                string directoryPath = $"studentFinalGrades/{currentUSer}/{this.selectedCourse}/";
                 Directory.CreateDirectory(directoryPath);
 
 
@@ -668,12 +672,12 @@ namespace sprout__gradeBook
 
         public bool IsTermAlreadyGraded(string studentID, string term)
         {
-            string directoryPath = $"studentFinalGrades/{this.selectedCourse}/{currentUSer}/";
+            string directoryPath = $"studentFinalGrades/{currentUSer}/{this.selectedCourse}/";
             string filePath = Path.Combine(directoryPath, $"{studentID}.txt");
 
             if (!File.Exists(filePath))
             {
-                return false; // File doesn't exist, so term can't be graded
+                return false;
             }
 
             string[] lines = File.ReadAllLines(filePath);
@@ -717,7 +721,6 @@ namespace sprout__gradeBook
             }
 
         }
-
 
         private void GradePeriodComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
         {

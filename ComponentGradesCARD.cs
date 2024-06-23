@@ -74,7 +74,7 @@ namespace sprout__gradeBook
 
                 return (grade / maxGrade) * 100;
             }
-            set => compPercentage.Text = value.ToString("0.00") + "%";
+            set => compPercentage.Text = value.ToString("0.00");
         }
 
 

@@ -195,6 +195,7 @@ namespace sprout__gradeBook
         private void btn_attendance_Click_1(object sender, EventArgs e)
         {
             ResetButtonStates();
+
             loadForm(new Teacher__Attendance(currentUser));
             btn_attendance.Image = Properties.Resources.Frame_93;
             isAttendanceButtonClicked = true;
