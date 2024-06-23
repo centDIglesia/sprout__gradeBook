@@ -481,6 +481,7 @@
             // 
             // signIn__btn
             // 
+            this.signIn__btn.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.signIn__btn.Image = ((System.Drawing.Image)(resources.GetObject("signIn__btn.Image")));
             this.signIn__btn.Location = new System.Drawing.Point(45, 308);
             this.signIn__btn.Name = "signIn__btn";

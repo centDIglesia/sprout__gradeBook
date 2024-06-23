@@ -130,6 +130,9 @@
   <data name="Frame_95" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Frame 95.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Student-CourseCard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Student-CourseCard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Frame_90" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Frame 90.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -175,14 +178,11 @@
   <data name="llogut" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\llogut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Frame_91" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Frame 91.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Attendance__Sheet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Attendance__Sheet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Late_Unchecked" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Late_Unchecked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="task-checked" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\task-checked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="nekstBTNN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nekstBTNN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,20 +211,20 @@
   <data name="Frame_81" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Frame 81.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Male_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Male_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Frame_91" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Frame 91.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Forgot_Your_Password_HOVER" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Forgot Your Password_HOVER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Female_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Female_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Excused_Unchecked" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Excused_Unchecked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Frame_86" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Frame 86.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="closed__eye1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\closed__eye1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Frame_85" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Frame 85.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,11 +235,8 @@
   <data name="teacher__role" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\teacher__role.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Attendance__Sheet" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Attendance__Sheet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="student__role" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\student__role.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Frame 10hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Frame 10hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Group 85sd" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Group 85sd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -286,14 +283,8 @@
   <data name="Frame 10def" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Frame 10def.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Usernamed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Usernamed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="next-arrow-green" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\next-arrow-green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="task-normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\task-normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Frame_89" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Frame 89.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -304,29 +295,32 @@
   <data name="Late_Checked" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Late_Checked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Male_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Male_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="nekstBTN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nekstBTN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Absent_Checked" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Absent_Checked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="student__Dashboard_UI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\student__Dashboard_UI.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="studenthover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\studenthover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="susushoverleave" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Rectangle 48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Student__AttendanceReport" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Student__AttendanceReport.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Student_GradesHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Student_GradesHeader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="recycle-bin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\recycle-bin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Passwordd" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Passwordd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Add row +_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add row +_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Frame_93" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Frame 93.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="susushoverleave" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rectangle 48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="attendancehover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\attendancehover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -352,11 +346,14 @@
   <data name="Frame_94" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Frame 94.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Frame 10hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Frame 10hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Female_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Female_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="open__eye1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\open__eye1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="subsubhover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\subsubhover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="subhover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\subhover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -376,8 +373,8 @@
   <data name="Group_77" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Group 77.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="subsubhover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\subsubhover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Frame_93" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Frame 93.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="closed__eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\closed__eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -394,22 +391,19 @@
   <data name="Frame_92" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Frame 92.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Student-CourseCard" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Student-CourseCard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Usernamed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Usernamed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Student_GradesHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Student_GradesHeader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Passwordd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Passwordd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Student__GradesRow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Student__GradesRow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="closed__eye1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\closed__eye1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="student__role" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\student__role.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Feedback_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Feedback_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="student__Dashboard_UI" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\student__Dashboard_UI.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

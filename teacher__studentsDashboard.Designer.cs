@@ -32,14 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(teacher__studentsDashboard));
             this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.divider_1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BacktoStudentDashboard = new System.Windows.Forms.PictureBox();
             this.addStudentsBTN = new System.Windows.Forms.PictureBox();
             this.courseSectionPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.BacktoStudentDashboard = new System.Windows.Forms.Label();
             this.ClickedCourse = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BacktoStudentDashboard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addStudentsBTN)).BeginInit();
             this.courseSectionPanel.SuspendLayout();
             this.SuspendLayout();
@@ -67,19 +66,22 @@
             this.divider_1.TabIndex = 59;
             this.divider_1.TabStop = false;
             // 
-            // pictureBox1
+            // BacktoStudentDashboard
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(55, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(121, 27);
-            this.pictureBox1.TabIndex = 58;
-            this.pictureBox1.TabStop = false;
+            this.BacktoStudentDashboard.BackColor = System.Drawing.Color.White;
+            this.BacktoStudentDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BacktoStudentDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BacktoStudentDashboard.Image = ((System.Drawing.Image)(resources.GetObject("BacktoStudentDashboard.Image")));
+            this.BacktoStudentDashboard.Location = new System.Drawing.Point(55, 8);
+            this.BacktoStudentDashboard.Name = "BacktoStudentDashboard";
+            this.BacktoStudentDashboard.Size = new System.Drawing.Size(121, 27);
+            this.BacktoStudentDashboard.TabIndex = 58;
+            this.BacktoStudentDashboard.TabStop = false;
+            this.BacktoStudentDashboard.Click += new System.EventHandler(this.BacktoStudentDashboard_Click);
             // 
             // addStudentsBTN
             // 
+            this.addStudentsBTN.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addStudentsBTN.Image = ((System.Drawing.Image)(resources.GetObject("addStudentsBTN.Image")));
             this.addStudentsBTN.Location = new System.Drawing.Point(637, 564);
             this.addStudentsBTN.Name = "addStudentsBTN";
@@ -112,25 +114,12 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(739, 0);
             this.flowLayoutPanel1.TabIndex = 93;
             // 
-            // BacktoStudentDashboard
-            // 
-            this.BacktoStudentDashboard.AutoSize = true;
-            this.BacktoStudentDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BacktoStudentDashboard.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BacktoStudentDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.BacktoStudentDashboard.Location = new System.Drawing.Point(186, 17);
-            this.BacktoStudentDashboard.Name = "BacktoStudentDashboard";
-            this.BacktoStudentDashboard.Size = new System.Drawing.Size(52, 22);
-            this.BacktoStudentDashboard.TabIndex = 93;
-            this.BacktoStudentDashboard.Text = "Back  /";
-            this.BacktoStudentDashboard.Click += new System.EventHandler(this.BacktoStudentDashboard_Click);
-            // 
             // ClickedCourse
             // 
             this.ClickedCourse.AutoSize = true;
             this.ClickedCourse.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClickedCourse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
-            this.ClickedCourse.Location = new System.Drawing.Point(233, 17);
+            this.ClickedCourse.Location = new System.Drawing.Point(182, 13);
             this.ClickedCourse.Name = "ClickedCourse";
             this.ClickedCourse.Size = new System.Drawing.Size(100, 22);
             this.ClickedCourse.TabIndex = 94;
@@ -143,17 +132,16 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(827, 639);
             this.Controls.Add(this.ClickedCourse);
-            this.Controls.Add(this.BacktoStudentDashboard);
             this.Controls.Add(this.courseSectionPanel);
             this.Controls.Add(this.addStudentsBTN);
             this.Controls.Add(this.divider_1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.BacktoStudentDashboard);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "teacher__studentsDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.teacher__studentsDashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BacktoStudentDashboard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addStudentsBTN)).EndInit();
             this.courseSectionPanel.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -164,12 +152,11 @@
         #endregion
 
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox divider_1;
         private System.Windows.Forms.PictureBox addStudentsBTN;
         private System.Windows.Forms.FlowLayoutPanel courseSectionPanel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label BacktoStudentDashboard;
         private System.Windows.Forms.Label ClickedCourse;
+        private System.Windows.Forms.PictureBox BacktoStudentDashboard;
     }
 }

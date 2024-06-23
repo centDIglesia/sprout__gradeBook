@@ -58,7 +58,7 @@ namespace sprout__gradeBook
 
         private void close_btn_Click(object sender, EventArgs e)
         {
-           utilityButton b = new utilityButton();
+            utilityButton b = new utilityButton();
             b.Exitform();
         }
         private void notifCount_Click(object sender, EventArgs e)
@@ -78,9 +78,9 @@ namespace sprout__gradeBook
 
                 students__NoticationFORM.Owner = formbackgroud;
                 students__NoticationFORM.ShowDialog();
-            } 
+            }
             formbackgroud.Dispose();
-           
+
         }
         private void Student__Dashboard_Load(object sender, EventArgs e)
         {
@@ -300,29 +300,23 @@ namespace sprout__gradeBook
 
         private void AddGradeRowToPanel(string courseCode, string finalGrade, string courseName, string teacherName, string remark)
         {
-            var gradeRow = new sprout__gradeBook.Student_Forms.Student__GradeRow();
-            gradeRow.finalGradelbl.Text = finalGrade;
-            gradeRow.studentCodelbl.Text = courseCode;
-            gradeRow.courseDescriptionlbl.Text = courseName; // Ensure this label exists in the User Control
-            gradeRow.facultyNamelbl.Text = teacherName; // Ensure this label exists in the User Control
-            gradeRow.gradeRemarkslbl.Text = remark; // Add remark to the grade row
+            var gradeRow = new sprout__gradeBook.Student_Forms.Student__GradeRow
+            {
+                finalGradelbl = { Text = finalGrade },
+                studentCodelbl = { Text = courseCode },
+                courseDescriptionlbl = { Text = courseName },
+                facultyNamelbl = { Text = teacherName },
+                gradeRemarkslbl = { Text = remark }
+            };
+
             student_gradesPanel.Controls.Add(gradeRow);
         }
 
         private string GetRemarkFromPercentage(double percentage)
         {
-            if (percentage >= 97 && percentage <= 100) return "P";
-            if (percentage >= 94 && percentage < 97) return "P";
-            if (percentage >= 91 && percentage < 94) return "P";
-            if (percentage >= 88 && percentage < 91) return "P";
-            if (percentage >= 85 && percentage < 88) return "P";
-            if (percentage >= 82 && percentage < 85) return "P";
-            if (percentage >= 79 && percentage < 82) return "P";
-            if (percentage >= 76 && percentage < 79) return "P";
-            if (percentage == 75) return "P";
-            if (percentage >= 65 && percentage < 75) return "Failure";
+            if (percentage >= 75) return "P";
+            if (percentage >= 65) return "Failure";
             return "INC"; // For percentages below 65
         }
-
     }
 }

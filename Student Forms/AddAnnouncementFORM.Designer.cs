@@ -43,7 +43,7 @@
             // 
             // descriprtionTXTBOX
             // 
-            this.descriprtionTXTBOX.Location = new System.Drawing.Point(12, 119);
+            this.descriprtionTXTBOX.Location = new System.Drawing.Point(12, 114);
             this.descriprtionTXTBOX.MaximumSize = new System.Drawing.Size(405, 189);
             this.descriprtionTXTBOX.MinimumSize = new System.Drawing.Size(405, 189);
             this.descriprtionTXTBOX.Multiline = true;
@@ -64,7 +64,7 @@
             // 
             // TitleTXTBOX
             // 
-            this.TitleTXTBOX.Location = new System.Drawing.Point(12, 71);
+            this.TitleTXTBOX.Location = new System.Drawing.Point(12, 66);
             this.TitleTXTBOX.MaximumSize = new System.Drawing.Size(405, 38);
             this.TitleTXTBOX.MinimumSize = new System.Drawing.Size(405, 38);
             this.TitleTXTBOX.Multiline = true;
@@ -123,7 +123,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(2, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(2, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Padding = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Size = new System.Drawing.Size(424, 45);

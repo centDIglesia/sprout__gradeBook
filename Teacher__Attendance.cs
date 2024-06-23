@@ -192,10 +192,23 @@ namespace sprout__gradeBook
 
             string date = attendance_Datelbl.Text;
             string course = courseComboBox.SelectedItem?.ToString() ?? "Unknown Course";
+            string userName = currentUSer; // Assuming currentUSer is the username
 
-            string fileName = $"AttendanceReport_{date.Replace(" ", "_")}_{course.Replace(" ", "_")}.txt";
+            // Create folder structure if it doesn't exist
+            string reportsFolder = Path.Combine("Attendance Reports", userName);
+            Directory.CreateDirectory(reportsFolder);
 
-            using (StreamWriter writer = new StreamWriter(fileName))
+            string fileName = $"{date}_{course.Replace(" ", "-")}.txt";
+            string filePath = Path.Combine(reportsFolder, fileName);
+
+            // Check if the file already exists
+            if (File.Exists(filePath))
+            {
+                MessageBox.Show("A report for this date and course already exists.", "Duplicate Report", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            using (StreamWriter writer = new StreamWriter(filePath))
             {
                 writer.WriteLine($"Date: {date}");
                 writer.WriteLine($"Course: {course}");
@@ -212,5 +225,7 @@ namespace sprout__gradeBook
 
             MessageBox.Show("Attendance report generated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+
     }
 }
