@@ -98,7 +98,6 @@
             this.CourseFull.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CourseFull.TabIndex = 4;
             this.CourseFull.Text = "corse";
-            this.CourseFull.TextChanged += new System.EventHandler(this.CourseFull_TextChanged);
             // 
             // CourseAndSectionCARD
             // 

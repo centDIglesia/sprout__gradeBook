@@ -12,7 +12,7 @@ namespace sprout__gradeBook
         // Properties
         public string currentUSer { get; set; }
         public FlowLayoutPanel CourseSectionPanel { get { return courseSectionPanel; } }
-
+        public string currentSearchbarInput;
         // Private fields
         private readonly string teacherSchool;
 
@@ -29,6 +29,13 @@ namespace sprout__gradeBook
         {
             LoadStudentCourses(); 
             ClickedCourse.Hide();
+            searchBar_input.Hide();
+            searchBar_pb.Hide();
+        }
+        public void ShowSearchBar()
+        {
+            searchBar_input.Show();
+            searchBar_pb.Show();
         }
 
         // Method to load teacher's school from credentials file
@@ -205,6 +212,25 @@ namespace sprout__gradeBook
             ClickedCourse.Text = $"/ {courseName} {yearSection}";
             ClickedCourse.Show();
 
+        }
+
+        private void searchBar_input_TextChanged(object sender, EventArgs e)
+        {
+            this.currentSearchbarInput = searchBar_input.Text;
+        }
+
+        private void searchBar_input_Enter(object sender, EventArgs e)
+        {
+            UserInput_Manager.ResetInputField(searchBar_input, "Search for a student");
+            searchBar_pb.Image = Properties.Resources.SearchBar_Active;
+        }
+
+        private void searchBar_input_Leave(object sender, EventArgs e)
+        {
+            UserInput_Manager.RestoreDefaultText(searchBar_input, "Search for a student");
+
+            searchBar_input.StateCommon.Content.Color1 = Color.DarkGray;
+            searchBar_pb.Image = Properties.Resources.SearchBar_Common;
         }
     }
 }

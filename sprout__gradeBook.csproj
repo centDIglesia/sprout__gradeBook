@@ -201,12 +201,6 @@
     <Compile Include="Student Forms\StudentScheduleCard.Designer.cs">
       <DependentUpon>StudentScheduleCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="studentSectionLIST.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="studentSectionLIST.Designer.cs">
-      <DependentUpon>studentSectionLIST.cs</DependentUpon>
-    </Compile>
     <Compile Include="Student Forms\Student__Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -374,9 +368,6 @@
     <EmbeddedResource Include="Student Forms\StudentScheduleCard.resx">
       <DependentUpon>StudentScheduleCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="studentSectionLIST.resx">
-      <DependentUpon>studentSectionLIST.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Student Forms\Student__Dashboard.resx">
       <DependentUpon>Student__Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -475,9 +466,6 @@
     <None Include="Resources\Roles-Card-student-hover.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\add-course-btn.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\recycle-bin.png" />
   </ItemGroup>
   <ItemGroup>
@@ -520,6 +508,8 @@
     <None Include="Resources\Sort-Button.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\SearchBar_Active.png" />
+    <None Include="Resources\SearchBar_Common.png" />
     <None Include="Resources\Student__DashboardUI.png" />
     <None Include="Resources\Student__AttendanceReport.png" />
     <None Include="Resources\Absent_Checked.png" />
@@ -540,7 +530,6 @@
     <None Include="Resources\Notification_Bell.png" />
     <None Include="Resources\open__eye.png" />
     <None Include="Resources\closed__eye.png" />
-    <None Include="Resources\Add row +.png" />
     <None Include="Resources\Feedback_Icon.png" />
     <None Include="Resources\Excused_Unchecked.png" />
     <None Include="Resources\Absent_Unchecked.png" />

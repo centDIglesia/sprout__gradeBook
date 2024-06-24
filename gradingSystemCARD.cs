@@ -79,6 +79,7 @@ namespace sprout__gradeBook
             {
                 _parentForm.UpdateTextFile(componentName);
             }
+
         }
 
         private void componentsWeightTXT_Leave(object sender, EventArgs e)

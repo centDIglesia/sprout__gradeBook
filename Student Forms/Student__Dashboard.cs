@@ -267,7 +267,7 @@ namespace sprout__gradeBook
 
                             if (midtermGrade >= 0 && finalTermGrade >= 0)
                             {
-                                double averageGrade = (midtermGrade + finalTermGrade) / 2;
+                                double averageGrade = Math.Round((midtermGrade + finalTermGrade) / 2, 2);
                                 validGrades.Add(averageGrade);
                                 string remark = GetRemarkFromPercentage(averageGrade);
                                 AddGradeRowToPanel(courseCode, averageGrade.ToString("F2"), courseName, teacherName, remark);
@@ -294,7 +294,7 @@ namespace sprout__gradeBook
 
             if (allGradesComplete && validGrades.Count > 0)
             {
-                double gpa = validGrades.Average();
+                double gpa = Math.Round(validGrades.Average(), 2);
                 displayGPA.Text = $"GPA: {gpa:F2}";
             }
             else
@@ -318,7 +318,7 @@ namespace sprout__gradeBook
                 string finalGradeStr = finalGradeLine.Split('|')[1].Trim().Replace("%", "");
                 if (double.TryParse(finalGradeStr, out double finalGrade))
                 {
-                    return finalGrade;
+                    return Math.Round(finalGrade, 2);
                 }
             }
 
@@ -344,5 +344,6 @@ namespace sprout__gradeBook
             if (percentage >= 65) return "Failure";
             return "INC"; // For percentages below 65
         }
+
     }
 }
