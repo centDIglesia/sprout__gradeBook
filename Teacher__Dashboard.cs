@@ -15,6 +15,19 @@ namespace sprout__gradeBook
     public partial class Teacher_Dashboard : KryptonForm
     {
         private readonly string currentUser; // Store current user's username
+        private static readonly string[] qoutations = new[]
+       {
+            ".",
+            "Don't stop until you are proud.",
+            "As long as you do what needs to be done, the result will always come your way.",
+            "Work in silent, let your success be the noise.",
+            "Donut worry, be happy.",
+            "Bad days, build better days.",
+            "When nothing goes right, go left.",
+            "Dear stress, let's break up.",
+            "Hey warrior! keep going. .",
+            "Live in the moment."
+        };
 
         // Constructor to initialize the dashboard
         public Teacher_Dashboard(string currentUserName)
@@ -319,7 +332,16 @@ namespace sprout__gradeBook
 
         private void notification__icon_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("We are Team JALIVE, and welcome to Sprout.", "Welcome Message", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            ShowRandomAffirmation();
         }
+
+        private void ShowRandomAffirmation()
+        {
+            Random rand = new Random();
+            int index = rand.Next(qoutations.Length);
+            string randomQoutes = qoutations[index];
+            MessageBox.Show(randomQoutes, "Daily Quotes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
     }
 }
