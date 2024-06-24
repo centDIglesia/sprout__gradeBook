@@ -74,6 +74,7 @@
             this.ClientSize = new System.Drawing.Size(1147, 711);
             this.Controls.Add(this.logoImage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "introductionPage";
             this.Palette = this.kryptonPalette2;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;

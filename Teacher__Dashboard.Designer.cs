@@ -87,7 +87,7 @@
             this.teachers__firstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.teachers__firstName.Location = new System.Drawing.Point(944, 37);
             this.teachers__firstName.Name = "teachers__firstName";
-            this.teachers__firstName.Size = new System.Drawing.Size(106, 30);
+            this.teachers__firstName.Size = new System.Drawing.Size(105, 30);
             this.teachers__firstName.TabIndex = 63;
             this.teachers__firstName.Text = "user name";
             // 
@@ -237,6 +237,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.global__nav__bg);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Teacher_Dashboard";
             this.Palette = this.kryptonPalette2;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;

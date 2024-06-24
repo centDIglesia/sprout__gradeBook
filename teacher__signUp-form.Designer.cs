@@ -666,6 +666,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.teacherSIGNUP__form);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "logInForm";
             this.Palette = this.kryptonPalette2;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
