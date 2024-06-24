@@ -83,11 +83,11 @@
             // 
             this.teachers__firstName.AutoSize = true;
             this.teachers__firstName.BackColor = System.Drawing.Color.White;
-            this.teachers__firstName.Font = new System.Drawing.Font("Poppins SemiBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.teachers__firstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.teachers__firstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.teachers__firstName.Location = new System.Drawing.Point(944, 37);
             this.teachers__firstName.Name = "teachers__firstName";
-            this.teachers__firstName.Size = new System.Drawing.Size(106, 30);
+            this.teachers__firstName.Size = new System.Drawing.Size(97, 20);
             this.teachers__firstName.TabIndex = 63;
             this.teachers__firstName.Text = "user name";
             // 
@@ -196,6 +196,7 @@
             this.notification__icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.notification__icon.TabIndex = 61;
             this.notification__icon.TabStop = false;
+            this.notification__icon.Click += new System.EventHandler(this.notification__icon_Click);
             // 
             // pictureBox2
             // 
