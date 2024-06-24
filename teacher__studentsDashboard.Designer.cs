@@ -137,6 +137,7 @@
             this.Controls.Add(this.divider_1);
             this.Controls.Add(this.BacktoStudentDashboard);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "teacher__studentsDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.teacher__studentsDashboard_Load);

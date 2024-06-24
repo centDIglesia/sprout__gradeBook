@@ -63,6 +63,16 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Absent_Checked {
+            get {
+                object obj = ResourceManager.GetObject("Absent_Checked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Absent_Unchecked {
             get {
                 object obj = ResourceManager.GetObject("Absent_Unchecked", resourceCulture);
@@ -873,9 +883,9 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap student__Dashboard_UI {
+        internal static System.Drawing.Bitmap Student__DashboardUI {
             get {
-                object obj = ResourceManager.GetObject("student__Dashboard_UI", resourceCulture);
+                object obj = ResourceManager.GetObject("Student__DashboardUI", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

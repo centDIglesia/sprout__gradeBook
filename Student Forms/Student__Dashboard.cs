@@ -15,11 +15,9 @@ namespace sprout__gradeBook
 {
     public partial class Student__Dashboard : KryptonForm
     {
-
         private readonly string currentstudentDepartment;
         private readonly studentLoginForm _studentLoginForm;
         private int notifCount = 0;
-
 
         public Student__Dashboard(studentLoginForm studentLoginForm)
         {
@@ -29,18 +27,15 @@ namespace sprout__gradeBook
             GetNotificationCount(); // Call method to initialize notifCount
         }
 
-
         public void SetUsernameLabel(string username)
         {
             student_Name.Text = $"Hi, {username}";
         }
 
-
         public void SetStudentIDLabel(string studentID)
         {
             student_ID.Text = studentID;
         }
-
 
         // Method to set the student's icon based on their gender
         public void SetStudentIcon(string gender)
@@ -54,13 +49,14 @@ namespace sprout__gradeBook
                 student_Icon.Image = Properties.Resources.Female_Icon;
             }
         }
-        // Event handler for the close button click event
 
+        // Event handler for the close button click event
         private void close_btn_Click(object sender, EventArgs e)
         {
             utilityButton b = new utilityButton();
             b.Exitform();
         }
+
         private void notifCount_Click(object sender, EventArgs e)
         {
             Form formbackgroud = new Form();
@@ -80,8 +76,8 @@ namespace sprout__gradeBook
                 students__NoticationFORM.ShowDialog();
             }
             formbackgroud.Dispose();
-
         }
+
         private void Student__Dashboard_Load(object sender, EventArgs e)
         {
             displayGPA.Hide();
@@ -94,6 +90,8 @@ namespace sprout__gradeBook
                 notificationCount.Show();
                 notificationCount_bg.Show();
             }
+
+            CalculateAndDisplayFinalGrades(); // Call the new method to calculate and display grades
         }
 
         private void GetNotificationCount()
@@ -131,7 +129,6 @@ namespace sprout__gradeBook
                         }
                     }
                 }
-
             }
         }
 
@@ -154,91 +151,6 @@ namespace sprout__gradeBook
                 feedbackUI.ShowDialog();
             }
             formbackgroud.Dispose();
-
-
-        }
-        private void GradePeriodComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            displayGPA.Show();
-            string selectedPeriod = GradePeriodComboBox.SelectedItem.ToString();
-            string studentId = _studentLoginForm.currentStudentID;
-            LoadStudentGrades(selectedPeriod, studentId);
-        }
-
-        private void LoadStudentGrades(string selectedPeriod, string studentId)
-        {
-            string directoryPath = "studentFinalGrades";
-            DirectoryInfo directoryInfo = new DirectoryInfo(directoryPath);
-
-            // Get all directories (teachers' folders) within studentFinalGrades
-            var teacherDirectories = directoryInfo.GetDirectories();
-
-            student_gradesPanel.Controls.Clear();
-
-            double totalGradePoints = 0;
-            int gradeCount = 0;
-
-            foreach (var teacherDir in teacherDirectories)
-            {
-                string teacherUsername = teacherDir.Name;
-
-                // Find the student's specific file in the current teacher's directory
-                string studentFilePath = Path.Combine(teacherDir.FullName, $"{studentId}.txt");
-
-                if (File.Exists(studentFilePath))
-                {
-                    string teacherName = GetTeacherNameByUsername(teacherUsername);
-                    var gradeData = File.ReadAllText(studentFilePath);
-                    var gradeSections = gradeData.Split(new[] { "-------------------" }, StringSplitOptions.RemoveEmptyEntries);
-
-                    foreach (var section in gradeSections)
-                    {
-                        if (section.Contains(selectedPeriod))
-                        {
-                            var lines = section.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
-                            string courseCode = string.Empty;
-                            string totalFinalGrade = string.Empty;
-
-                            foreach (var line in lines)
-                            {
-                                if (line.StartsWith("Course Code"))
-                                {
-                                    courseCode = line.Split('|')[1].Trim();
-                                }
-                                else if (line.StartsWith("Total Final Grade"))
-                                {
-                                    totalFinalGrade = line.Split('|')[1].Trim();
-                                }
-                            }
-
-                            if (!string.IsNullOrEmpty(courseCode) && !string.IsNullOrEmpty(totalFinalGrade))
-                            {
-                                double percentage;
-                                if (double.TryParse(totalFinalGrade.TrimEnd('%'), out percentage))
-                                {
-                                    var remark = GetRemarkFromPercentage(percentage);
-                                    totalGradePoints += percentage;
-                                    gradeCount++;
-
-                                    string courseName = GetCourseNameByCourseCode(courseCode, teacherUsername);
-                                    AddGradeRowToPanel(courseCode, totalFinalGrade, courseName, teacherName, remark);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            // Calculate and display the average percentage
-            if (gradeCount > 0)
-            {
-                double averagePercentage = totalGradePoints / gradeCount;
-                displayGPA.Text = $"Average: {averagePercentage:F2}%";
-            }
-            else
-            {
-                displayGPA.Text = "Average: N/A";
-            }
         }
 
         private string GetTeacherNameByUsername(string username)
@@ -310,6 +222,120 @@ namespace sprout__gradeBook
             };
 
             student_gradesPanel.Controls.Add(gradeRow);
+        }
+
+        private void CalculateAndDisplayFinalGrades()
+        {
+            string studentID = _studentLoginForm.currentStudentID;
+            string studentGradesPath = $"studentFinalGrades";
+            List<double> validGrades = new List<double>();
+            bool allGradesComplete = true;
+
+            if (Directory.Exists(studentGradesPath))
+            {
+                var teacherDirectories = Directory.GetDirectories(studentGradesPath);
+
+                foreach (var teacherDir in teacherDirectories)
+                {
+                    var courseDirectories = Directory.GetDirectories(teacherDir);
+
+                    foreach (var courseDir in courseDirectories)
+                    {
+                        string finalGradeFile = Path.Combine(courseDir, $"{studentID}.txt");
+
+                        if (File.Exists(finalGradeFile))
+                        {
+                            var lines = File.ReadAllLines(finalGradeFile);
+                            double midtermGrade = -1;
+                            double finalTermGrade = -1;
+
+                            for (int i = 0; i < lines.Length; i++)
+                            {
+                                if (lines[i].Contains("Midterm Grade"))
+                                {
+                                    midtermGrade = ExtractFinalGrade(lines, ref i);
+                                }
+                                else if (lines[i].Contains("Final Grade"))
+                                {
+                                    finalTermGrade = ExtractFinalGrade(lines, ref i);
+                                }
+                            }
+
+                            string courseCode = GetCourseCode(lines);
+                            string teacherName = GetTeacherNameByUsername(Path.GetFileName(teacherDir));
+                            string courseName = GetCourseNameByCourseCode(courseCode, Path.GetFileName(teacherDir));
+
+                            if (midtermGrade >= 0 && finalTermGrade >= 0)
+                            {
+                                double averageGrade = (midtermGrade + finalTermGrade) / 2;
+                                validGrades.Add(averageGrade);
+                                string remark = GetRemarkFromPercentage(averageGrade);
+                                AddGradeRowToPanel(courseCode, averageGrade.ToString("F2"), courseName, teacherName, remark);
+                            }
+                            else
+                            {
+                                // If one of the term grades is missing, add the row without the final grade and remark
+                                AddGradeRowToPanel(courseCode, "", courseName, teacherName, "");
+                                allGradesComplete = false; // Mark that not all grades are complete
+                            }
+                        }
+                        else
+                        {
+                            // If no final grade file exists, it means grades are incomplete
+                            string courseCode = Path.GetFileName(courseDir);
+                            string teacherName = GetTeacherNameByUsername(Path.GetFileName(teacherDir));
+                            string courseName = GetCourseNameByCourseCode(courseCode, Path.GetFileName(teacherDir));
+                            AddGradeRowToPanel(courseCode, "", courseName, teacherName, "");
+                            allGradesComplete = false; // Mark that not all grades are complete
+                        }
+                    }
+                }
+            }
+
+            if (allGradesComplete && validGrades.Count > 0)
+            {
+                double gpa = validGrades.Average();
+                displayGPA.Text = $"GPA: {gpa:F2}";
+            }
+            else
+            {
+                displayGPA.Text = "Grades Not Complete";
+            }
+
+            displayGPA.Show();
+        }
+
+        private double ExtractFinalGrade(string[] lines, ref int index)
+        {
+            while (index < lines.Length && !lines[index].Contains("Total Final Grade"))
+            {
+                index++;
+            }
+
+            if (index < lines.Length)
+            {
+                string finalGradeLine = lines[index];
+                string finalGradeStr = finalGradeLine.Split('|')[1].Trim().Replace("%", "");
+                if (double.TryParse(finalGradeStr, out double finalGrade))
+                {
+                    return finalGrade;
+                }
+            }
+
+            return -1;
+        }
+
+        private string GetCourseCode(string[] lines)
+        {
+            foreach (var line in lines)
+            {
+                if (line.StartsWith("Course Code"))
+                {
+                    return line.Split('|')[1].Trim();
+                }
+            }
+
+            return string.Empty;
         }
 
         private string GetRemarkFromPercentage(double percentage)

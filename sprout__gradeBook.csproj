@@ -33,7 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Taskbar__Icon.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ComponentFactory.Krypton.Design">
@@ -169,10 +170,10 @@
     <Compile Include="Round__PictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Student Forms\AddAnnouncementFORM.cs">
+    <Compile Include="AddAnnouncementFORM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Student Forms\AddAnnouncementFORM.Designer.cs">
+    <Compile Include="AddAnnouncementFORM.Designer.cs">
       <DependentUpon>AddAnnouncementFORM.cs</DependentUpon>
     </Compile>
     <Compile Include="Student Forms\StudentDefultPasswordGuide.cs">
@@ -224,10 +225,10 @@
     <Compile Include="studentsInGradebookCARD.Designer.cs">
       <DependentUpon>studentsInGradebookCARD.cs</DependentUpon>
     </Compile>
-    <Compile Include="students__NoticationUi.cs">
+    <Compile Include="Student Forms\students__NoticationUi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="students__NoticationUi.Designer.cs">
+    <Compile Include="Student Forms\students__NoticationUi.Designer.cs">
       <DependentUpon>students__NoticationUi.cs</DependentUpon>
     </Compile>
     <Compile Include="Student__AttendanceReport.cs">
@@ -236,10 +237,10 @@
     <Compile Include="Student__AttendanceReport.Designer.cs">
       <DependentUpon>Student__AttendanceReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Student__FeedbackUI.cs">
+    <Compile Include="Student Forms\Student__FeedbackUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Student__FeedbackUI.Designer.cs">
+    <Compile Include="Student Forms\Student__FeedbackUI.Designer.cs">
       <DependentUpon>Student__FeedbackUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Teacher__Attendance.cs">
@@ -358,7 +359,7 @@
     <EmbeddedResource Include="Role__form.resx">
       <DependentUpon>Role__form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Student Forms\AddAnnouncementFORM.resx">
+    <EmbeddedResource Include="AddAnnouncementFORM.resx">
       <DependentUpon>AddAnnouncementFORM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student Forms\StudentDefultPasswordGuide.resx">
@@ -385,13 +386,13 @@
     <EmbeddedResource Include="studentsInGradebookCARD.resx">
       <DependentUpon>studentsInGradebookCARD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="students__NoticationUi.resx">
+    <EmbeddedResource Include="Student Forms\students__NoticationUi.resx">
       <DependentUpon>students__NoticationUi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student__AttendanceReport.resx">
       <DependentUpon>Student__AttendanceReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Student__FeedbackUI.resx">
+    <EmbeddedResource Include="Student Forms\Student__FeedbackUI.resx">
       <DependentUpon>Student__FeedbackUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher__Attendance.resx">
@@ -519,9 +520,9 @@
     <None Include="Resources\Sort-Button.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Student__DashboardUI.png" />
     <None Include="Resources\Student__AttendanceReport.png" />
-    <Content Include="Taskbar__Icon.ico" />
-    <None Include="Resources\student__Dashboard_UI.png" />
+    <None Include="Resources\Absent_Checked.png" />
     <None Include="Resources\Student_GradesHeader.png" />
     <None Include="Resources\Student__GradesRow.png" />
     <None Include="Resources\open__eye2.png" />
@@ -544,7 +545,6 @@
     <None Include="Resources\Excused_Unchecked.png" />
     <None Include="Resources\Absent_Unchecked.png" />
     <None Include="Resources\Excused_Checked.png" />
-    <None Include="Resources\Absent_Checked.png" />
     <None Include="Resources\closed__eye1.png" />
     <None Include="Resources\Attendance__Sheet.png" />
     <Content Include="Resources\Female_Icon.png" />
