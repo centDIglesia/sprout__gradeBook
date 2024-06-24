@@ -428,18 +428,16 @@ namespace sprout__gradeBook
 
 
         private string grades = "";
+
         private void doneBtn_Click_1(object sender, EventArgs e)
         {
-
             if (allGraded)
             {
                 CurrentGradePeriod.Text = "Please click 'Save' button to record.";
             }
-
             else
             {
                 CurrentGradePeriod.Text = "Please select another component to grade.";
-
             }
 
             if (subcomponentsPanel.Controls.Count == 0)
@@ -453,11 +451,14 @@ namespace sprout__gradeBook
                 if (control is ComponentGradesCARD componentCard)
                 {
                     double componentGrade = componentCard.ComponentGrade;
-                    double componentMaximumGrade = componentCard.ComponentMaximumGrade;
+                    double componentMaximumGrade;
 
-                    if (componentMaximumGrade == 0)
+                    // Ensure the componentMaximumGrade is a valid number and not empty
+                    if (string.IsNullOrWhiteSpace(componentCard.ComponentMaximumGradeText) ||
+                        !double.TryParse(componentCard.ComponentMaximumGradeText, out componentMaximumGrade) ||
+                        componentMaximumGrade == 0)
                     {
-                        MessageBox.Show($"Component Maximum Grade cannot be zero.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show($"Component Maximum Grade cannot be empty, zero, or invalid.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         componentCard.Focus();
                         return;
                     }
@@ -468,10 +469,8 @@ namespace sprout__gradeBook
                         componentCard.Focus();
                         return;
                     }
-
                 }
             }
-
 
             if (_currentActiveComponentButton != null)
             {
