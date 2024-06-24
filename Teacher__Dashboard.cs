@@ -316,5 +316,10 @@ namespace sprout__gradeBook
         {
 
         }
+
+        private void notification__icon_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("We are Team JALIVE, and welcome to Sprout.", "Welcome Message", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+        }
     }
 }
