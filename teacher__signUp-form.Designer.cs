@@ -481,6 +481,7 @@
             // 
             // signIn__btn
             // 
+            this.signIn__btn.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.signIn__btn.Image = ((System.Drawing.Image)(resources.GetObject("signIn__btn.Image")));
             this.signIn__btn.Location = new System.Drawing.Point(45, 308);
             this.signIn__btn.Name = "signIn__btn";
@@ -665,6 +666,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.teacherSIGNUP__form);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "logInForm";
             this.Palette = this.kryptonPalette2;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;

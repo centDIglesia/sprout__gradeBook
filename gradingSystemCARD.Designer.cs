@@ -48,8 +48,8 @@
             this.componentsTXT.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
             this.componentsTXT.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.componentsTXT.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.componentsTXT.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.componentsTXT.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.componentsTXT.StateCommon.Border.Rounding = 0;
             this.componentsTXT.StateCommon.Border.Width = 0;
@@ -96,8 +96,8 @@
             this.componentsWeightTXT.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
             this.componentsWeightTXT.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.componentsWeightTXT.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.componentsWeightTXT.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.componentsWeightTXT.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.componentsWeightTXT.StateCommon.Border.Rounding = 0;
             this.componentsWeightTXT.StateCommon.Border.Width = 0;
@@ -106,6 +106,7 @@
             this.componentsWeightTXT.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
             this.componentsWeightTXT.TabIndex = 5;
             this.componentsWeightTXT.Text = "0";
+            this.componentsWeightTXT.TextChanged += new System.EventHandler(this.componentsWeightTXT_TextChanged_1);
             this.componentsWeightTXT.Enter += new System.EventHandler(this.componentsWeightTXT_Enter_1);
             this.componentsWeightTXT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.componentsWeightTXT_KeyPress);
             this.componentsWeightTXT.Leave += new System.EventHandler(this.componentsWeightTXT_Leave_1);

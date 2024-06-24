@@ -36,6 +36,7 @@
             this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.cancel_btn = new System.Windows.Forms.PictureBox();
             this.sendFeedback_btn = new System.Windows.Forms.PictureBox();
+            this.kryptonTextBox2 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.cancel_btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sendFeedback_btn)).BeginInit();
             this.SuspendLayout();
@@ -46,19 +47,19 @@
             this.feedback_studentname_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.feedback_studentname_lbl.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.feedback_studentname_lbl.ForeColor = System.Drawing.Color.White;
-            this.feedback_studentname_lbl.Location = new System.Drawing.Point(-4, -1);
+            this.feedback_studentname_lbl.Location = new System.Drawing.Point(20, 12);
             this.feedback_studentname_lbl.Name = "feedback_studentname_lbl";
-            this.feedback_studentname_lbl.Padding = new System.Windows.Forms.Padding(15, 6, 400, 5);
-            this.feedback_studentname_lbl.Size = new System.Drawing.Size(590, 33);
+            this.feedback_studentname_lbl.Padding = new System.Windows.Forms.Padding(5);
+            this.feedback_studentname_lbl.Size = new System.Drawing.Size(185, 32);
             this.feedback_studentname_lbl.TabIndex = 7;
             this.feedback_studentname_lbl.Text = "Give _blank some feedback";
             // 
             // feedbackTitle_txt
             // 
-            this.feedbackTitle_txt.Location = new System.Drawing.Point(12, 49);
+            this.feedbackTitle_txt.Location = new System.Drawing.Point(10, 63);
             this.feedbackTitle_txt.Multiline = true;
             this.feedbackTitle_txt.Name = "feedbackTitle_txt";
-            this.feedbackTitle_txt.Size = new System.Drawing.Size(405, 38);
+            this.feedbackTitle_txt.Size = new System.Drawing.Size(410, 38);
             this.feedbackTitle_txt.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.feedbackTitle_txt.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.feedbackTitle_txt.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
@@ -75,10 +76,10 @@
             // 
             // feedbackDescription_txt
             // 
-            this.feedbackDescription_txt.Location = new System.Drawing.Point(12, 97);
+            this.feedbackDescription_txt.Location = new System.Drawing.Point(10, 111);
             this.feedbackDescription_txt.Multiline = true;
             this.feedbackDescription_txt.Name = "feedbackDescription_txt";
-            this.feedbackDescription_txt.Size = new System.Drawing.Size(405, 189);
+            this.feedbackDescription_txt.Size = new System.Drawing.Size(410, 189);
             this.feedbackDescription_txt.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.feedbackDescription_txt.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.feedbackDescription_txt.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -109,7 +110,7 @@
             // cancel_btn
             // 
             this.cancel_btn.Image = ((System.Drawing.Image)(resources.GetObject("cancel_btn.Image")));
-            this.cancel_btn.Location = new System.Drawing.Point(222, 305);
+            this.cancel_btn.Location = new System.Drawing.Point(227, 319);
             this.cancel_btn.Name = "cancel_btn";
             this.cancel_btn.Size = new System.Drawing.Size(90, 30);
             this.cancel_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -120,7 +121,7 @@
             // sendFeedback_btn
             // 
             this.sendFeedback_btn.Image = ((System.Drawing.Image)(resources.GetObject("sendFeedback_btn.Image")));
-            this.sendFeedback_btn.Location = new System.Drawing.Point(318, 305);
+            this.sendFeedback_btn.Location = new System.Drawing.Point(323, 319);
             this.sendFeedback_btn.Name = "sendFeedback_btn";
             this.sendFeedback_btn.Size = new System.Drawing.Size(97, 30);
             this.sendFeedback_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -128,17 +129,38 @@
             this.sendFeedback_btn.TabStop = false;
             this.sendFeedback_btn.Click += new System.EventHandler(this.sendFeedback_btn_Click);
             // 
+            // kryptonTextBox2
+            // 
+            this.kryptonTextBox2.Enabled = false;
+            this.kryptonTextBox2.Location = new System.Drawing.Point(7, 5);
+            this.kryptonTextBox2.Multiline = true;
+            this.kryptonTextBox2.Name = "kryptonTextBox2";
+            this.kryptonTextBox2.ReadOnly = true;
+            this.kryptonTextBox2.Size = new System.Drawing.Size(415, 45);
+            this.kryptonTextBox2.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.kryptonTextBox2.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.kryptonTextBox2.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
+            this.kryptonTextBox2.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonTextBox2.StateCommon.Border.Rounding = 4;
+            this.kryptonTextBox2.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(155)))));
+            this.kryptonTextBox2.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonTextBox2.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10);
+            this.kryptonTextBox2.TabIndex = 101;
+            // 
             // Teacher__Feedback
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(429, 352);
+            this.ClientSize = new System.Drawing.Size(429, 369);
             this.Controls.Add(this.sendFeedback_btn);
             this.Controls.Add(this.cancel_btn);
             this.Controls.Add(this.feedback_studentname_lbl);
             this.Controls.Add(this.feedbackTitle_txt);
             this.Controls.Add(this.feedbackDescription_txt);
+            this.Controls.Add(this.kryptonTextBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Teacher__Feedback";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -157,5 +179,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette2;
         private System.Windows.Forms.PictureBox cancel_btn;
         private System.Windows.Forms.PictureBox sendFeedback_btn;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox2;
     }
 }

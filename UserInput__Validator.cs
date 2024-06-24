@@ -52,7 +52,7 @@ namespace sprout__gradeBook
 
         public static bool ValidateAlphabetic(string input)
         {
-            return input.All(char.IsLetter);
+            return input.All(c => char.IsLetter(c) || char.IsWhiteSpace(c));
         }
 
         public static bool ValidateTimeFormat(string time)

@@ -34,9 +34,11 @@
             this.studentcard__studentName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.clickedBG = new System.Windows.Forms.PictureBox();
             this.feedback_btn = new System.Windows.Forms.PictureBox();
+            this.attendanceReport = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.studentGender)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clickedBG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.feedback_btn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attendanceReport)).BeginInit();
             this.SuspendLayout();
             // 
             // studentGender
@@ -61,7 +63,7 @@
             this.studentcard__studentID.ForeColor = System.Drawing.Color.DarkGray;
             this.studentcard__studentID.Location = new System.Drawing.Point(106, 29);
             this.studentcard__studentID.Name = "studentcard__studentID";
-            this.studentcard__studentID.Size = new System.Drawing.Size(77, 23);
+            this.studentcard__studentID.Size = new System.Drawing.Size(76, 23);
             this.studentcard__studentID.TabIndex = 1;
             this.studentcard__studentID.Text = "Student ID";
             this.studentcard__studentID.Click += new System.EventHandler(this.studentcard__studentName_Click);
@@ -106,13 +108,26 @@
             // 
             this.feedback_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
             this.feedback_btn.Image = ((System.Drawing.Image)(resources.GetObject("feedback_btn.Image")));
-            this.feedback_btn.Location = new System.Drawing.Point(66, 39);
+            this.feedback_btn.Location = new System.Drawing.Point(66, 60);
             this.feedback_btn.Name = "feedback_btn";
             this.feedback_btn.Size = new System.Drawing.Size(154, 45);
             this.feedback_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.feedback_btn.TabIndex = 5;
             this.feedback_btn.TabStop = false;
             this.feedback_btn.Click += new System.EventHandler(this.feedback_btn_Click);
+            // 
+            // attendanceReport
+            // 
+            this.attendanceReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
+            this.attendanceReport.Image = global::sprout__gradeBook.Properties.Resources.Student__AttendanceReport;
+            this.attendanceReport.Location = new System.Drawing.Point(58, 18);
+            this.attendanceReport.Name = "attendanceReport";
+            this.attendanceReport.Padding = new System.Windows.Forms.Padding(5);
+            this.attendanceReport.Size = new System.Drawing.Size(170, 43);
+            this.attendanceReport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.attendanceReport.TabIndex = 6;
+            this.attendanceReport.TabStop = false;
+            this.attendanceReport.Click += new System.EventHandler(this.attendanceReport_Click);
             // 
             // studentsCARD
             // 
@@ -121,6 +136,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.attendanceReport);
             this.Controls.Add(this.feedback_btn);
             this.Controls.Add(this.clickedBG);
             this.Controls.Add(this.studentcard__studentName);
@@ -136,6 +152,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.studentGender)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clickedBG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.feedback_btn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attendanceReport)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,5 +165,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox studentcard__studentName;
         private System.Windows.Forms.PictureBox clickedBG;
         private System.Windows.Forms.PictureBox feedback_btn;
+        private System.Windows.Forms.PictureBox attendanceReport;
     }
 }

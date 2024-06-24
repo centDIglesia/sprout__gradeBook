@@ -51,6 +51,7 @@ namespace sprout__gradeBook
             // Hide initial elements
             clickedBG.Hide();
             feedback_btn.Hide();
+            attendanceReport.Hide();
         }
 
         // Click event handler for student name
@@ -59,6 +60,7 @@ namespace sprout__gradeBook
             // Show background and feedback button on name click
             clickedBG.Show();
             feedback_btn.Show();
+            attendanceReport.Show();
         }
 
         // Mouse hover event handler for student gender
@@ -81,6 +83,7 @@ namespace sprout__gradeBook
             // Hide background and feedback button
             clickedBG.Hide();
             feedback_btn.Hide();
+            attendanceReport.Hide();
         }
 
         // Click event handler for feedback button
@@ -167,5 +170,100 @@ namespace sprout__gradeBook
             // Throw exception if first name not found
             throw new InvalidOperationException("The first name could not be found in the credential file.");
         }
+
+        private void attendanceReport_Click(object sender, EventArgs e)
+        {
+
+            // Get the student ID
+            string studentId = StudentID;
+
+            // Read attendance files and generate report
+            var attendanceReport = ReadAttendanceFiles(studentId);
+
+            // Open feedback form
+            using (Form formbackground = new Form())
+            {
+                using (Student__AttendanceReport student__AttendanceReport = new Student__AttendanceReport(this))
+                {
+                    // Configure background form properties
+                    formbackground.StartPosition = FormStartPosition.CenterScreen;
+                    formbackground.FormBorderStyle = FormBorderStyle.None;
+                    formbackground.Opacity = .90d;
+                    formbackground.BackColor = CustomColor.mainColor;
+                    formbackground.Size = new Size(1147, 711);
+                    formbackground.Location = this.Location;
+                    formbackground.ShowInTaskbar = false;
+                    formbackground.Show();
+
+                    // Pass student name and attendance report to the form
+                    student__AttendanceReport.StudentName = this.StudentName;
+                    student__AttendanceReport.DisplayAttendanceReport(attendanceReport);
+
+                    // Set owner and show feedback form
+                    student__AttendanceReport.Owner = formbackground;
+                    student__AttendanceReport.ShowDialog();
+                }
+            }
+        }
+
+        private Dictionary<string, (int presentCount, int totalClasses)> ReadAttendanceFiles(string studentId)
+        {
+            string directoryPath = $"Attendance Reports/{_currentUser}";
+            Dictionary<string, (int presentCount, int totalClasses)> attendanceReport = new Dictionary<string, (int presentCount, int totalClasses)>();
+
+            if (Directory.Exists(directoryPath))
+            {
+                var attendanceFiles = Directory.GetFiles(directoryPath, "*.txt");
+
+                foreach (var filePath in attendanceFiles)
+                {
+                    ProcessAttendanceFile(filePath, studentId, attendanceReport);
+                }
+            }
+
+            return attendanceReport;
+        }
+
+        private void ProcessAttendanceFile(string filePath, string studentId, Dictionary<string, (int presentCount, int totalClasses)> attendanceReport)
+        {
+            var lines = File.ReadAllLines(filePath);
+            string currentCourse = string.Empty;
+            bool studentPresent = false;
+
+            foreach (var line in lines)
+            {
+                if (line.StartsWith("Course:"))
+                {
+                    // Extract the part after the colon
+                    string courseLine = line.Split(':')[1].Trim();
+                    // Extract the part before the first underscore
+                    currentCourse = courseLine.Split('_')[0].Trim();
+
+                    if (!attendanceReport.ContainsKey(currentCourse))
+                    {
+                        attendanceReport[currentCourse] = (0, 0);
+                    }
+                }
+                else if (line.StartsWith("Student ID:") && line.Contains(studentId))
+                {
+                    studentPresent = true;
+                }
+                else if (line.StartsWith("Status:") && studentPresent)
+                {
+                    var status = line.Split(':')[1].Trim();
+                    var (presentCount, totalClasses) = attendanceReport[currentCourse];
+                    if (status == "Present")
+                    {
+                        presentCount++;
+                    }
+                    totalClasses++;
+                    attendanceReport[currentCourse] = (presentCount, totalClasses);
+                    studentPresent = false; // Reset for the next student entry
+                }
+            }
+        }
+
+
     }
 }
+
