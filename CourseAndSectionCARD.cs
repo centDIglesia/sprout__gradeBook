@@ -53,7 +53,9 @@ namespace sprout__gradeBook
         {
             string currentSection = SectionName;
             string currentCourse = CourseF;
+            string searchInput = "";
 
+            _parentForm.ShowSearchBar();
 
             // Call the method to show the BacktoStudentDashboard label with course details
             _parentForm.ShowCourseDetails(currentCourse, currentSection);
@@ -69,11 +71,13 @@ namespace sprout__gradeBook
 
             foreach (string file in files)
             {
-                FilterAndPopulateStudents(currentCourse, currentSection, file);
+                FilterAndPopulateStudents(currentCourse, currentSection, file, searchInput);
             }
+
+
         }
 
-        private void FilterAndPopulateStudents(string currentCourse, string currentSection, string filePath)
+        public void FilterAndPopulateStudents(string currentCourse, string currentSection, string filePath, string searchInput)
         {
             _parentForm.CourseSectionPanel.Controls.Clear();
 
@@ -140,11 +144,6 @@ namespace sprout__gradeBook
 
                 _parentForm.CourseSectionPanel.Controls.Add(studentCard);
             }
-        }
-
-        private void CourseFull_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
