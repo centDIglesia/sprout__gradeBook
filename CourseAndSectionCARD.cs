@@ -53,14 +53,13 @@ namespace sprout__gradeBook
         {
             string currentSection = SectionName;
             string currentCourse = CourseF;
-            string searchInput = "";
+            string searchInput = _parentForm.currentSearchbarInput;
 
             _parentForm.ShowSearchBar();
-
-            // Call the method to show the BacktoStudentDashboard label with course details
             _parentForm.ShowCourseDetails(currentCourse, currentSection);
+            _parentForm.FilterAndLoadStudents(searchInput, currentCourse, currentSection);
 
-            string directoryPath = $"StudentCredentials/{_parentForm.currentUSer}";
+            /* string directoryPath = $"StudentCredentials/{_parentForm.currentUSer}";
             if (!Directory.Exists(directoryPath))
             {
                 MessageBox.Show("Directory not found.");
@@ -73,57 +72,43 @@ namespace sprout__gradeBook
             {
                 FilterAndPopulateStudents(currentCourse, currentSection, file, searchInput);
             }
+            */
 
 
         }
 
         public void FilterAndPopulateStudents(string currentCourse, string currentSection, string filePath, string searchInput)
         {
-            _parentForm.CourseSectionPanel.Controls.Clear();
 
-            string[] files = Directory.GetFiles(Path.GetDirectoryName(filePath), "*.txt");
+            string[] lines = File.ReadAllLines(filePath);
+            string studentName = "";
+            string studentID = "";
+            string studentGender = "";
+            string department = "";
 
-            // Filter files by course and year level
-            var matchingFiles = files.Where(file =>
+            foreach (string line in lines)
             {
-                string[] lines = File.ReadAllLines(file);
-                foreach (string line in lines)
+                if (line.StartsWith("Student Name:"))
                 {
-                    if (line.StartsWith("Department:") && line.Contains(currentCourse))
-                    {
-                        string yearAndSection = lines.FirstOrDefault(l => l.StartsWith("Year and Section:"));
-                        if (yearAndSection != null && yearAndSection.Contains(currentSection))
-                        {
-                            return true;
-                        }
-                    }
+                    studentName = line.Substring("Student Name:".Length).Trim();
                 }
-                return false;
-            });
+                else if (line.StartsWith("Student ID:"))
+                {
+                    studentID = line.Substring("Student ID:".Length).Trim();
+                }
+                else if (line.StartsWith("Gender:"))
+                {
+                    studentGender = line.Substring("Gender:".Length).Trim();
+                }
+                else if (line.StartsWith("Department:"))
+                {
+                    department = line.Substring("Department:".Length).Trim();
+                }
+            }
 
-            // Iterate through matching files
-            foreach (string file in matchingFiles)
+            // Check if the student belongs to the current course and section
+            if (department.EndsWith(currentCourse) && lines.Any(l => l.StartsWith("Year and Section:") && l.Contains(currentSection)))
             {
-                string[] lines = File.ReadAllLines(file);
-                string studentName = "";
-                string studentID = "";
-                string studentGender = "";
-                foreach (string line in lines)
-                {
-                    if (line.StartsWith("Student Name:"))
-                    {
-                        studentName = line.Substring("Student Name:".Length).Trim();
-                    }
-                    else if (line.StartsWith("Student ID:"))
-                    {
-                        studentID = line.Substring("Student ID:".Length).Trim();
-                    }
-                    else if (line.StartsWith("Gender:"))
-                    {
-                        studentGender = line.Substring("Gender:".Length).Trim();
-                    }
-                }
-
                 // Set the image based on gender
                 Image genderImage = null;
                 if (studentGender.ToLower() == "male")
@@ -145,5 +130,8 @@ namespace sprout__gradeBook
                 _parentForm.CourseSectionPanel.Controls.Add(studentCard);
             }
         }
+
+
     }
 }
+

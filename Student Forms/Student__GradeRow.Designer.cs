@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.studentCodelbl = new System.Windows.Forms.Label();
+            this.courseCodelbl = new System.Windows.Forms.Label();
             this.courseDescriptionlbl = new System.Windows.Forms.Label();
             this.facultyNamelbl = new System.Windows.Forms.Label();
             this.finalGradelbl = new System.Windows.Forms.Label();
@@ -37,18 +37,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // studentCodelbl
+            // courseCodelbl
             // 
-            this.studentCodelbl.BackColor = System.Drawing.Color.White;
-            this.studentCodelbl.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold);
-            this.studentCodelbl.ForeColor = System.Drawing.Color.DimGray;
-            this.studentCodelbl.Location = new System.Drawing.Point(13, 14);
-            this.studentCodelbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.studentCodelbl.Name = "studentCodelbl";
-            this.studentCodelbl.Size = new System.Drawing.Size(120, 53);
-            this.studentCodelbl.TabIndex = 1;
-            this.studentCodelbl.Text = "label1";
-            this.studentCodelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.courseCodelbl.BackColor = System.Drawing.Color.White;
+            this.courseCodelbl.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold);
+            this.courseCodelbl.ForeColor = System.Drawing.Color.DimGray;
+            this.courseCodelbl.Location = new System.Drawing.Point(13, 14);
+            this.courseCodelbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.courseCodelbl.Name = "courseCodelbl";
+            this.courseCodelbl.Size = new System.Drawing.Size(120, 53);
+            this.courseCodelbl.TabIndex = 1;
+            this.courseCodelbl.Text = "label1";
+            this.courseCodelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // courseDescriptionlbl
             // 
@@ -124,7 +124,7 @@
             this.Controls.Add(this.finalGradelbl);
             this.Controls.Add(this.facultyNamelbl);
             this.Controls.Add(this.courseDescriptionlbl);
-            this.Controls.Add(this.studentCodelbl);
+            this.Controls.Add(this.courseCodelbl);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Student__GradeRow";
             this.Size = new System.Drawing.Size(718, 83);
@@ -135,7 +135,7 @@
         }
 
         #endregion
-        public System.Windows.Forms.Label studentCodelbl;
+        public System.Windows.Forms.Label courseCodelbl;
         public System.Windows.Forms.Label courseDescriptionlbl;
         public System.Windows.Forms.Label facultyNamelbl;
         public System.Windows.Forms.Label finalGradelbl;
