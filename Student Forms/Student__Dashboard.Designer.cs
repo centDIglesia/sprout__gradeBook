@@ -73,6 +73,7 @@
             // 
             // student_Name
             // 
+            this.student_Name.AutoEllipsis = true;
             this.student_Name.AutoSize = true;
             this.student_Name.BackColor = System.Drawing.Color.White;
             this.student_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

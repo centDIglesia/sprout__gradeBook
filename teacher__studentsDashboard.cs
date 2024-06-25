@@ -9,11 +9,11 @@ namespace sprout__gradeBook
 {
     public partial class teacher__studentsDashboard : KryptonForm
     {
-        // Properties
         public string currentUSer { get; set; }
         public FlowLayoutPanel CourseSectionPanel { get { return courseSectionPanel; } }
         public string currentSearchbarInput;
-        // Private fields
+        private string currentCourse;
+        private string currentSection;
         private readonly string teacherSchool;
 
         // Constructor
@@ -204,19 +204,24 @@ namespace sprout__gradeBook
             // Clear ClickedCourse label text and hide it
             ClickedCourse.Text = "";
             ClickedCourse.Hide();
+            searchBar_input.Hide();
+            searchBar_pb.Hide();
 
             LoadStudentCourses();
         }
         public void ShowCourseDetails(string courseName, string yearSection)
         {
+            currentCourse = courseName; // Store the current course
+            currentSection = yearSection; // Store the current section
+
             ClickedCourse.Text = $"/ {courseName} {yearSection}";
             ClickedCourse.Show();
-
         }
 
         private void searchBar_input_TextChanged(object sender, EventArgs e)
         {
-            this.currentSearchbarInput = searchBar_input.Text;
+            currentSearchbarInput = searchBar_input.Text; // Update the current search input
+            FilterAndLoadStudents(currentSearchbarInput, currentCourse, currentSection); // Call method to filter and load students
         }
 
         private void searchBar_input_Enter(object sender, EventArgs e)
@@ -232,5 +237,80 @@ namespace sprout__gradeBook
             searchBar_input.StateCommon.Content.Color1 = Color.DarkGray;
             searchBar_pb.Image = Properties.Resources.SearchBar_Common;
         }
+        public void FilterAndLoadStudents(string searchInput, string currentCourse, string currentSection)
+        {
+            CourseSectionPanel.Controls.Clear(); // Clear existing student cards
+
+            string directoryPath = $"StudentCredentials/{currentUSer}";
+            if (!Directory.Exists(directoryPath))
+            {
+                MessageBox.Show("Directory not found.");
+                return;
+            }
+
+            string[] files = Directory.GetFiles(directoryPath, "*.txt");
+
+            foreach (string file in files)
+            {
+                LoadFilteredStudentsFromFile(file, searchInput, currentCourse, currentSection);
+            }
+        }
+
+        private void LoadFilteredStudentsFromFile(string filePath, string searchInput, string currentCourse, string currentSection)
+        {
+            string[] lines = File.ReadAllLines(filePath);
+            string studentName = "";
+            string studentID = "";
+            string studentGender = "";
+            string department = "";
+
+            foreach (string line in lines)
+            {
+                if (line.StartsWith("Student Name:"))
+                {
+                    studentName = line.Substring("Student Name:".Length).Trim();
+                }
+                else if (line.StartsWith("Student ID:"))
+                {
+                    studentID = line.Substring("Student ID:".Length).Trim();
+                }
+                else if (line.StartsWith("Gender:"))
+                {
+                    studentGender = line.Substring("Gender:".Length).Trim();
+                }
+                else if (line.StartsWith("Department:"))
+                {
+                    department = line.Substring("Department:".Length).Trim();
+                }
+            }
+
+            // Check if searchInput is null or empty and if the student belongs to the current course and section
+            if ((string.IsNullOrEmpty(searchInput) || studentName.ToLower().Contains(searchInput.ToLower()) || searchInput.Trim().Equals("Search for a student", StringComparison.OrdinalIgnoreCase))
+                && department.EndsWith(currentCourse) && lines.Any(l => l.StartsWith("Year and Section:") && l.Contains(currentSection)))
+            {
+                // Set the image based on gender
+                Image genderImage = null;
+                if (studentGender.ToLower() == "male")
+                {
+                    genderImage = Properties.Resources.Male_Icon;
+                }
+                else if (studentGender.ToLower() == "female")
+                {
+                    genderImage = Properties.Resources.Female_Icon;
+                }
+
+                studentsCARD studentCard = new studentsCARD(this)
+                {
+                    StudentName = studentName,
+                    StudentID = studentID,
+                    StudentGender = genderImage
+                };
+
+                CourseSectionPanel.Controls.Add(studentCard);
+            }
+        }
+
+
+
     }
 }
