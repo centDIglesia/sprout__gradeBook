@@ -963,9 +963,49 @@ namespace sprout__gradeBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Student_LogIn_Hero {
+            get {
+                object obj = ResourceManager.GetObject("Student_LogIn_Hero", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap studenthover {
             get {
                 object obj = ResourceManager.GetObject("studenthover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StudentRole_Clicked {
+            get {
+                object obj = ResourceManager.GetObject("StudentRole_Clicked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StudentRole_Common {
+            get {
+                object obj = ResourceManager.GetObject("StudentRole_Common", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StudentRole_Hover {
+            get {
+                object obj = ResourceManager.GetObject("StudentRole_Hover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1026,6 +1066,46 @@ namespace sprout__gradeBook.Properties {
         internal static System.Drawing.Bitmap teacher__role_clicked {
             get {
                 object obj = ResourceManager.GetObject("teacher__role_clicked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Teacher_LogIn_Hero {
+            get {
+                object obj = ResourceManager.GetObject("Teacher_LogIn_Hero", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TeacherRole_Clicked {
+            get {
+                object obj = ResourceManager.GetObject("TeacherRole_Clicked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TeacherRole_Common {
+            get {
+                object obj = ResourceManager.GetObject("TeacherRole_Common", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TeacherRole_Hover {
+            get {
+                object obj = ResourceManager.GetObject("TeacherRole_Hover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

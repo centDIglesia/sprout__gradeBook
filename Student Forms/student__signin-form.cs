@@ -7,7 +7,7 @@ using ComponentFactory.Krypton.Toolkit;
 
 namespace sprout__gradeBook
 {
-    public partial class studentLoginForm : KryptonForm
+    public partial class studentLoginForm : CustomForm
     {
         private bool isPasswordVisible = false;
         public string currentStudentID;
@@ -272,28 +272,6 @@ namespace sprout__gradeBook
             return "Department and Year/Section not found.";
         }
 
-        private void pictureBox12_Click(object sender, EventArgs e)
-        {
-            Form formbackground = new Form();
-
-            using (TermsCons terms = new TermsCons())
-            {
-                formbackground.StartPosition = FormStartPosition.CenterScreen;
-                formbackground.FormBorderStyle = FormBorderStyle.None;
-                formbackground.Opacity = .70d;
-                formbackground.BackColor = StateCommon.Back.Color1 = CustomColor.mainColor;
-                formbackground.Size = this.Size;
-
-                formbackground.Location = this.Location;
-
-                formbackground.ShowInTaskbar = false;
-                formbackground.Show();
-
-                terms.Owner = formbackground;
-                terms.ShowDialog();
-            }
-            formbackground.Dispose();
-        }
 
         // Helper method to show account not found error
         private void ShowAccountNotFoundError()
@@ -415,10 +393,27 @@ namespace sprout__gradeBook
             signIn__btn.Image = Properties.Resources.Frame_101_ddefault;
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void TermsAndConditions_Click(object sender, EventArgs e)
         {
+            Form formbackground = new Form();
 
+            using (TermsCons terms = new TermsCons())
+            {
+                formbackground.StartPosition = FormStartPosition.CenterScreen;
+                formbackground.FormBorderStyle = FormBorderStyle.None;
+                formbackground.Opacity = .70d;
+                formbackground.BackColor = CustomColor.mainColor;
+                formbackground.Size = this.Size;
+
+                formbackground.Location = this.Location;
+
+                formbackground.ShowInTaskbar = false;
+                formbackground.Show();
+
+                terms.Owner = formbackground;
+                terms.ShowDialog();
+            }
+            formbackground.Dispose();
         }
-
     }
 }

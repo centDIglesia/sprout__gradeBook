@@ -11,7 +11,7 @@ using ComponentFactory.Krypton.Toolkit;
 
 namespace sprout__gradeBook
 {
-    public partial class TermsCons: KryptonForm
+    public partial class TermsCons: CustomForm
     {
         public TermsCons()
         {

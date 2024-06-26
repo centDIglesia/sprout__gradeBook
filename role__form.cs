@@ -4,7 +4,7 @@ using ComponentFactory.Krypton.Toolkit;
 
 namespace sprout__gradeBook
 {
-    public partial class Role__form : KryptonForm
+    public partial class Role__form : CustomForm
     {
         private bool teacherClicked = false;
         private bool studentClicked = false;
@@ -57,13 +57,13 @@ namespace sprout__gradeBook
             role__btn.Show();
             if (!teacherClicked)
             {
-                teacher__role.Image = Properties.Resources.Roles_Card_hover;
+                teacher__role.Image = Properties.Resources.TeacherRole_Clicked;
                 teacherClicked = true;
                 selectedRole = "teacher";
 
                 if (studentClicked)
                 {
-                    student__role.Image = Properties.Resources.student__role;
+                    student__role.Image = Properties.Resources.StudentRole_Common;
                     studentClicked = false;
                 }
             }
@@ -74,13 +74,13 @@ namespace sprout__gradeBook
             role__btn.Show();
             if (!studentClicked)
             {
-                student__role.Image = Properties.Resources.Roles_Card_student_hover;
+                student__role.Image = Properties.Resources.StudentRole_Clicked;
                 studentClicked = true;
                 selectedRole = "student";
 
                 if (teacherClicked)
                 {
-                    teacher__role.Image = Properties.Resources.teacher__role;
+                    teacher__role.Image = Properties.Resources.TeacherRole_Common;
                     teacherClicked = false;
                 }
             }
@@ -89,29 +89,30 @@ namespace sprout__gradeBook
         private void teacher__role_MouseHover(object sender, EventArgs e)
         {
             if (!teacherClicked)
-                teacher__role.Image = Properties.Resources.teacher__role_clicked;
+                teacher__role.Image = Properties.Resources.TeacherRole_Hover;
         }
 
         private void student__role_MouseHover(object sender, EventArgs e)
         {
             if (!studentClicked)
-                student__role.Image = Properties.Resources.student__role_clicked;
+                student__role.Image = Properties.Resources.StudentRole_Hover;
         }
 
         private void teacher__role_MouseLeave(object sender, EventArgs e)
         {
             if (teacherClicked)
-                teacher__role.Image = Properties.Resources.Roles_Card_hover;
+                teacher__role.Image = Properties.Resources.TeacherRole_Clicked;
+                
             else
-                teacher__role.Image = Properties.Resources.teacher__role;
+                teacher__role.Image = Properties.Resources.TeacherRole_Common;
         }
 
         private void student__role_MouseLeave(object sender, EventArgs e)
         {
             if (studentClicked)
-                student__role.Image = Properties.Resources.Roles_Card_student_hover;
+                student__role.Image = Properties.Resources.StudentRole_Clicked;
             else
-                student__role.Image = Properties.Resources.student__role;
+                student__role.Image = Properties.Resources.StudentRole_Common;
         }
 
         private void role__btn_MouseHover(object sender, EventArgs e)

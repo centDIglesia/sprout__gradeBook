@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Attendance__Row));
             this.attendance_studentID = new System.Windows.Forms.Label();
             this.attendance_studentName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,7 +48,7 @@
             // attendance_studentID
             // 
             this.attendance_studentID.BackColor = System.Drawing.Color.White;
-            this.attendance_studentID.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.attendance_studentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.attendance_studentID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
             this.attendance_studentID.Location = new System.Drawing.Point(2, 5);
             this.attendance_studentID.Name = "attendance_studentID";
@@ -59,7 +60,7 @@
             // attendance_studentName
             // 
             this.attendance_studentName.BackColor = System.Drawing.Color.White;
-            this.attendance_studentName.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.attendance_studentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.attendance_studentName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
             this.attendance_studentName.Location = new System.Drawing.Point(184, 4);
             this.attendance_studentName.Name = "attendance_studentName";
@@ -71,44 +72,44 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Poppins Medium", 8F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
-            this.label1.Location = new System.Drawing.Point(446, 30);
+            this.label1.Location = new System.Drawing.Point(449, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 19);
+            this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "Present";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Poppins Medium", 8F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
-            this.label2.Location = new System.Drawing.Point(510, 30);
+            this.label2.Location = new System.Drawing.Point(513, 30);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 19);
+            this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "Absent";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Poppins Medium", 8F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
-            this.label3.Location = new System.Drawing.Point(577, 30);
+            this.label3.Location = new System.Drawing.Point(580, 30);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 19);
+            this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Late";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Poppins Medium", 8F, System.Drawing.FontStyle.Bold);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(90)))), ((int)(((byte)(35)))));
             this.label4.Location = new System.Drawing.Point(626, 30);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 19);
+            this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 11;
             this.label4.Text = "Excused";
             // 
@@ -120,16 +121,13 @@
             this.presentButton.StateCheckedNormal.Back.Color1 = System.Drawing.Color.White;
             this.presentButton.StateCheckedNormal.Back.Color2 = System.Drawing.Color.White;
             this.presentButton.StateCheckedNormal.Back.Image = global::sprout__gradeBook.Properties.Resources.Present_Checked;
-            this.presentButton.StateCheckedNormal.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.presentButton.StateCheckedPressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.presentButton.StateCheckedPressed.Border.Image = global::sprout__gradeBook.Properties.Resources.Present_Checked;
-            this.presentButton.StateCheckedPressed.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.presentButton.StateCheckedTracking.Back.Color1 = System.Drawing.Color.White;
             this.presentButton.StateCheckedTracking.Back.Color2 = System.Drawing.Color.White;
             this.presentButton.StateCheckedTracking.Back.Image = global::sprout__gradeBook.Properties.Resources.Present_Checked;
-            this.presentButton.StateCheckedTracking.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.presentButton.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.presentButton.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.presentButton.StateCommon.Back.Image = global::sprout__gradeBook.Properties.Resources.Present_Unchecked;
@@ -140,19 +138,14 @@
             this.presentButton.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.presentButton.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.presentButton.StateDisabled.Back.Color1 = System.Drawing.Color.White;
             this.presentButton.StateDisabled.Back.Color2 = System.Drawing.Color.White;
-            this.presentButton.StateDisabled.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.presentButton.StateNormal.Back.Color1 = System.Drawing.Color.White;
             this.presentButton.StateNormal.Back.Color2 = System.Drawing.Color.White;
-            this.presentButton.StateNormal.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.presentButton.StatePressed.Back.Color1 = System.Drawing.Color.White;
             this.presentButton.StatePressed.Back.Color2 = System.Drawing.Color.White;
-            this.presentButton.StatePressed.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.presentButton.StateTracking.Back.Color1 = System.Drawing.Color.White;
             this.presentButton.StateTracking.Back.Color2 = System.Drawing.Color.White;
-            this.presentButton.StateTracking.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.presentButton.TabIndex = 13;
             this.presentButton.Values.Text = "";
             // 
@@ -163,17 +156,12 @@
             this.absentButton.Size = new System.Drawing.Size(36, 25);
             this.absentButton.StateCheckedNormal.Back.Color1 = System.Drawing.Color.White;
             this.absentButton.StateCheckedNormal.Back.Color2 = System.Drawing.Color.White;
-            this.absentButton.StateCheckedNormal.Back.Image = global::sprout__gradeBook.Properties.Resources.Absent_Checked;
-            this.absentButton.StateCheckedNormal.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.absentButton.StateCheckedPressed.Back.Image = ((System.Drawing.Image)(resources.GetObject("absentButton.StateCheckedPressed.Back.Image")));
             this.absentButton.StateCheckedPressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.absentButton.StateCheckedPressed.Border.Image = global::sprout__gradeBook.Properties.Resources.Absent_Checked;
-            this.absentButton.StateCheckedPressed.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.absentButton.StateCheckedTracking.Back.Color1 = System.Drawing.Color.White;
             this.absentButton.StateCheckedTracking.Back.Color2 = System.Drawing.Color.White;
-            this.absentButton.StateCheckedTracking.Back.Image = global::sprout__gradeBook.Properties.Resources.Absent_Checked;
-            this.absentButton.StateCheckedTracking.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.absentButton.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.absentButton.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.absentButton.StateCommon.Back.Image = global::sprout__gradeBook.Properties.Resources.Absent_Unchecked;
@@ -184,19 +172,14 @@
             this.absentButton.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.absentButton.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.absentButton.StateDisabled.Back.Color1 = System.Drawing.Color.White;
             this.absentButton.StateDisabled.Back.Color2 = System.Drawing.Color.White;
-            this.absentButton.StateDisabled.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.absentButton.StateNormal.Back.Color1 = System.Drawing.Color.White;
             this.absentButton.StateNormal.Back.Color2 = System.Drawing.Color.White;
-            this.absentButton.StateNormal.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.absentButton.StatePressed.Back.Color1 = System.Drawing.Color.White;
             this.absentButton.StatePressed.Back.Color2 = System.Drawing.Color.White;
-            this.absentButton.StatePressed.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.absentButton.StateTracking.Back.Color1 = System.Drawing.Color.White;
             this.absentButton.StateTracking.Back.Color2 = System.Drawing.Color.White;
-            this.absentButton.StateTracking.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.absentButton.TabIndex = 14;
             this.absentButton.Values.Text = "";
             // 
@@ -208,16 +191,13 @@
             this.lateButton.StateCheckedNormal.Back.Color1 = System.Drawing.Color.White;
             this.lateButton.StateCheckedNormal.Back.Color2 = System.Drawing.Color.White;
             this.lateButton.StateCheckedNormal.Back.Image = global::sprout__gradeBook.Properties.Resources.Late_Checked;
-            this.lateButton.StateCheckedNormal.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.lateButton.StateCheckedPressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.lateButton.StateCheckedPressed.Border.Image = global::sprout__gradeBook.Properties.Resources.Late_Checked;
-            this.lateButton.StateCheckedPressed.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.lateButton.StateCheckedTracking.Back.Color1 = System.Drawing.Color.White;
             this.lateButton.StateCheckedTracking.Back.Color2 = System.Drawing.Color.White;
             this.lateButton.StateCheckedTracking.Back.Image = global::sprout__gradeBook.Properties.Resources.Late_Checked;
-            this.lateButton.StateCheckedTracking.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.lateButton.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.lateButton.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.lateButton.StateCommon.Back.Image = global::sprout__gradeBook.Properties.Resources.Late_Unchecked;
@@ -228,19 +208,14 @@
             this.lateButton.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.lateButton.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.lateButton.StateDisabled.Back.Color1 = System.Drawing.Color.White;
             this.lateButton.StateDisabled.Back.Color2 = System.Drawing.Color.White;
-            this.lateButton.StateDisabled.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.lateButton.StateNormal.Back.Color1 = System.Drawing.Color.White;
             this.lateButton.StateNormal.Back.Color2 = System.Drawing.Color.White;
-            this.lateButton.StateNormal.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.lateButton.StatePressed.Back.Color1 = System.Drawing.Color.White;
             this.lateButton.StatePressed.Back.Color2 = System.Drawing.Color.White;
-            this.lateButton.StatePressed.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.lateButton.StateTracking.Back.Color1 = System.Drawing.Color.White;
             this.lateButton.StateTracking.Back.Color2 = System.Drawing.Color.White;
-            this.lateButton.StateTracking.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.lateButton.TabIndex = 15;
             this.lateButton.Values.Text = "";
             // 
@@ -252,16 +227,13 @@
             this.excusedButton.StateCheckedNormal.Back.Color1 = System.Drawing.Color.White;
             this.excusedButton.StateCheckedNormal.Back.Color2 = System.Drawing.Color.White;
             this.excusedButton.StateCheckedNormal.Back.Image = global::sprout__gradeBook.Properties.Resources.Excused_Checked;
-            this.excusedButton.StateCheckedNormal.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.excusedButton.StateCheckedPressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.excusedButton.StateCheckedPressed.Border.Image = global::sprout__gradeBook.Properties.Resources.Excused_Checked;
-            this.excusedButton.StateCheckedPressed.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.excusedButton.StateCheckedTracking.Back.Color1 = System.Drawing.Color.White;
             this.excusedButton.StateCheckedTracking.Back.Color2 = System.Drawing.Color.White;
             this.excusedButton.StateCheckedTracking.Back.Image = global::sprout__gradeBook.Properties.Resources.Excused_Checked;
-            this.excusedButton.StateCheckedTracking.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.excusedButton.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.excusedButton.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.excusedButton.StateCommon.Back.Image = global::sprout__gradeBook.Properties.Resources.Excused_Unchecked;
@@ -272,19 +244,14 @@
             this.excusedButton.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.excusedButton.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.excusedButton.StateDisabled.Back.Color1 = System.Drawing.Color.White;
             this.excusedButton.StateDisabled.Back.Color2 = System.Drawing.Color.White;
-            this.excusedButton.StateDisabled.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.excusedButton.StateNormal.Back.Color1 = System.Drawing.Color.White;
             this.excusedButton.StateNormal.Back.Color2 = System.Drawing.Color.White;
-            this.excusedButton.StateNormal.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.excusedButton.StatePressed.Back.Color1 = System.Drawing.Color.White;
             this.excusedButton.StatePressed.Back.Color2 = System.Drawing.Color.White;
-            this.excusedButton.StatePressed.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.excusedButton.StateTracking.Back.Color1 = System.Drawing.Color.White;
             this.excusedButton.StateTracking.Back.Color2 = System.Drawing.Color.White;
-            this.excusedButton.StateTracking.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.excusedButton.TabIndex = 16;
             this.excusedButton.Values.Text = "";
             // 
