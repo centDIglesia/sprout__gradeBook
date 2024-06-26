@@ -59,7 +59,11 @@ namespace sprout__gradeBook
             }
             set => compMaxGrade.Text = value.ToString();
         }
-
+        // New property to fetch the raw text input for validation
+        public string ComponentMaximumGradeText
+        {
+            get => compMaxGrade.Text;
+        }
         public double ComponentPercentageGrade
         {
             get

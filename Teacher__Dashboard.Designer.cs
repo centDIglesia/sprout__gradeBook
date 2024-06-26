@@ -39,7 +39,6 @@
             this.btn_gradeBook = new System.Windows.Forms.PictureBox();
             this.logoutBtn = new System.Windows.Forms.PictureBox();
             this.btn_attendance = new System.Windows.Forms.PictureBox();
-            this.close_btn = new System.Windows.Forms.PictureBox();
             this.notification__icon = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.global__nav__bg = new System.Windows.Forms.PictureBox();
@@ -50,7 +49,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_gradeBook)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoutBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_attendance)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.close_btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.notification__icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.global__nav__bg)).BeginInit();
@@ -61,14 +59,19 @@
             this.kryptonPalette2.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.kryptonPalette2.FormStyles.FormMain.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.kryptonPalette2.FormStyles.FormMain.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.kryptonPalette2.FormStyles.FormMain.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Border.Color1 = System.Drawing.Color.White;
             this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Border.Color2 = System.Drawing.Color.White;
             this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette2.InputControlStyles.InputControlCommon.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonPalette2.InputControlStyles.InputControlCommon.StateCommon.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.kryptonPalette2.InputControlStyles.InputControlCommon.StateCommon.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             // 
             // viewPanel
             // 
@@ -77,6 +80,7 @@
             this.viewPanel.Size = new System.Drawing.Size(822, 639);
             this.viewPanel.StateCommon.Color1 = System.Drawing.Color.White;
             this.viewPanel.StateCommon.Color2 = System.Drawing.Color.White;
+            this.viewPanel.StateCommon.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.viewPanel.TabIndex = 52;
             // 
             // teachers__firstName
@@ -87,7 +91,7 @@
             this.teachers__firstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(103)))), ((int)(((byte)(56)))));
             this.teachers__firstName.Location = new System.Drawing.Point(944, 37);
             this.teachers__firstName.Name = "teachers__firstName";
-            this.teachers__firstName.Size = new System.Drawing.Size(105, 30);
+            this.teachers__firstName.Size = new System.Drawing.Size(97, 20);
             this.teachers__firstName.TabIndex = 63;
             this.teachers__firstName.Text = "user name";
             // 
@@ -175,18 +179,6 @@
             this.btn_attendance.MouseLeave += new System.EventHandler(this.btn_attendance_MouseLeave);
             this.btn_attendance.MouseHover += new System.EventHandler(this.btn_attendance_MouseHover);
             // 
-            // close_btn
-            // 
-            this.close_btn.BackColor = System.Drawing.Color.Transparent;
-            this.close_btn.Image = ((System.Drawing.Image)(resources.GetObject("close_btn.Image")));
-            this.close_btn.Location = new System.Drawing.Point(1111, 14);
-            this.close_btn.Name = "close_btn";
-            this.close_btn.Size = new System.Drawing.Size(24, 24);
-            this.close_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.close_btn.TabIndex = 64;
-            this.close_btn.TabStop = false;
-            this.close_btn.Click += new System.EventHandler(this.close_btn_Click_1);
-            // 
             // notification__icon
             // 
             this.notification__icon.Image = ((System.Drawing.Image)(resources.GetObject("notification__icon.Image")));
@@ -231,7 +223,6 @@
             this.Controls.Add(this.btn_gradeBook);
             this.Controls.Add(this.logoutBtn);
             this.Controls.Add(this.btn_attendance);
-            this.Controls.Add(this.close_btn);
             this.Controls.Add(this.notification__icon);
             this.Controls.Add(this.teachers__firstName);
             this.Controls.Add(this.viewPanel);
@@ -252,7 +243,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_gradeBook)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoutBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_attendance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.close_btn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.notification__icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.global__nav__bg)).EndInit();
@@ -269,7 +259,6 @@
 
         private ComponentFactory.Krypton.Toolkit.KryptonPanel viewPanel;
         private System.Windows.Forms.Label teachers__firstName;
-        private System.Windows.Forms.PictureBox close_btn;
 
         private System.Windows.Forms.PictureBox btn_attendance;
 

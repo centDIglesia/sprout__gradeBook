@@ -73,6 +73,7 @@
             // 
             // student_Name
             // 
+            this.student_Name.AutoEllipsis = true;
             this.student_Name.AutoSize = true;
             this.student_Name.BackColor = System.Drawing.Color.White;
             this.student_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -141,7 +142,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.DarkGray;
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.Location = new System.Drawing.Point(536, 95);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(1, 30);

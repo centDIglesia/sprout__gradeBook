@@ -207,12 +207,6 @@
     <Compile Include="Student Forms\StudentScheduleCard.Designer.cs">
       <DependentUpon>StudentScheduleCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="studentSectionLIST.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="studentSectionLIST.Designer.cs">
-      <DependentUpon>studentSectionLIST.cs</DependentUpon>
-    </Compile>
     <Compile Include="Student Forms\Student__Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -383,9 +377,6 @@
     <EmbeddedResource Include="Student Forms\StudentScheduleCard.resx">
       <DependentUpon>StudentScheduleCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="studentSectionLIST.resx">
-      <DependentUpon>studentSectionLIST.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Student Forms\Student__Dashboard.resx">
       <DependentUpon>Student__Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -472,6 +463,19 @@
     <None Include="Resources\Roles-Card-student-hover.png" />
   </ItemGroup>
   <ItemGroup>
+
+    <None Include="Resources\recycle-bin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next-arrow-green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\subhover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sub.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\subsubhover.png" />
   </ItemGroup>
   <ItemGroup>
@@ -490,6 +494,7 @@
     <None Include="Resources\Student-CourseCard.png" />
   </ItemGroup>
   <ItemGroup>
+
     <None Include="Resources\Teacher_LogIn_Hero1.png" />
     <None Include="Resources\Student_LogIn_Hero2.png" />
     <None Include="Resources\TeacherRole_Clicked.png" />
@@ -498,6 +503,13 @@
     <None Include="Resources\StudentRole_Hover.png" />
     <None Include="Resources\TeacherRole_Common.png" />
     <None Include="Resources\StudentRole_Common.png" />
+
+    <None Include="Resources\Sort-Button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SearchBar_Active.png" />
+    <None Include="Resources\SearchBar_Common.png" />
+
     <None Include="Resources\Student__DashboardUI.png" />
     <None Include="Resources\Student__AttendanceReport.png" />
     <Resource Include="Resources\Absent_Checked.png" />

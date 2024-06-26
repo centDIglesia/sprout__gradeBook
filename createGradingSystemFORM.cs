@@ -79,8 +79,15 @@ namespace sprout__gradeBook
                     // Extract component weight
                     string componentWeight = card.ComponentWeightTXT.ToString();
 
-                    // Update total weight
-                    totalWeight += int.Parse(componentWeight);
+                    // Try to parse the component weight
+                    int weight;
+                    if (int.TryParse(componentWeight, out weight))
+                    {
+                        // Update total weight
+                        totalWeight += weight;
+                    }
+
+
                 }
             }
 
@@ -103,35 +110,7 @@ namespace sprout__gradeBook
 
         private void saveGradingsytemBTN_Click(object sender, EventArgs e)
         {
-            string baseDirectoryPath = $"CourseGradingSystem/{CurrentUser}/{CurrentsubjCode}_{CurrentsubjDeptYearAndSection}";
-            string filePath = Path.Combine(baseDirectoryPath, "gradingSystem.txt");
-
-            // Create the base directory if it doesn't exist
-            Directory.CreateDirectory(baseDirectoryPath);
-
-            // Loop through each control in the flowLayoutPanel1
-            foreach (Control control in flowLayoutPanel1.Controls)
-            {
-                if (control is gradingSystemCARD card)
-                {
-                    string componentName = card.ComponentTXT.Trim();
-                    string componentWeight = card.ComponentWeightTXT;
-
-
-                    if (string.IsNullOrEmpty(componentName) || componentName == "Component")
-                    {
-                        continue;
-                    }
-
-                    // Write to file
-                    using (StreamWriter file = new StreamWriter(filePath, true))
-                    {
-                        file.WriteLine($"{componentName},{componentWeight}%");
-                        file.WriteLine(new string('-', 40));
-                    }
-                }
-            }
-
+            
             // Calculate total weight after writing to file
             UpdateTotalWeight();
 
@@ -139,6 +118,38 @@ namespace sprout__gradeBook
             {
                 MessageBox.Show($"Total weight must be equal to 100%. Current total weight is {totalWeight}%.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }
+            else
+            {
+                string baseDirectoryPath = $"CourseGradingSystem/{CurrentUser}/{CurrentsubjCode}_{CurrentsubjDeptYearAndSection}";
+                string filePath = Path.Combine(baseDirectoryPath, "gradingSystem.txt");
+
+                // Create the base directory if it doesn't exist
+                Directory.CreateDirectory(baseDirectoryPath);
+
+                // Loop through each control in the flowLayoutPanel1
+                foreach (Control control in flowLayoutPanel1.Controls)
+                {
+                    if (control is gradingSystemCARD card)
+                    {
+                        string componentName = card.ComponentTXT.Trim();
+                        string componentWeight = card.ComponentWeightTXT;
+
+
+                        if (string.IsNullOrEmpty(componentName) || componentName == "Component")
+                        {
+                            continue;
+                        }
+
+                        // Write to file
+                        using (StreamWriter file = new StreamWriter(filePath, true))
+                        {
+                            file.WriteLine($"{componentName},{componentWeight}%");
+                            file.WriteLine(new string('-', 40));
+                        }
+                    }
+                }
+
             }
 
             MessageBox.Show("Grading system saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

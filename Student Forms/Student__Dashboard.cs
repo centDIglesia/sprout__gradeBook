@@ -15,85 +15,95 @@ namespace sprout__gradeBook
 {
     public partial class Student__Dashboard : KryptonForm
     {
+        // Holds the current student's department
         private readonly string currentstudentDepartment;
+
+        // Reference to the login form
         private readonly studentLoginForm _studentLoginForm;
+
+        // Notification count for the student
         private int notifCount = 0;
+
+        // Constants for grade thresholds
+        private const double PassPercentage = 75;
+        private const double FailPercentage = 65;
 
         public Student__Dashboard(studentLoginForm studentLoginForm)
         {
             InitializeComponent();
             _studentLoginForm = studentLoginForm;
             currentstudentDepartment = studentLoginForm.GetCurrentStudentDepartmentYearSection();
-            GetNotificationCount(); // Call method to initialize notifCount
-        }
-
-        public void SetUsernameLabel(string username)
-        {
-            student_Name.Text = $"Hi, {username}";
-        }
-
-        public void SetStudentIDLabel(string studentID)
-        {
-            student_ID.Text = studentID;
-        }
-
-        // Method to set the student's icon based on their gender
-        public void SetStudentIcon(string gender)
-        {
-            if (string.Equals(gender, "Male", StringComparison.OrdinalIgnoreCase))
-            {
-                student_Icon.Image = Properties.Resources.Male_Icon;
-            }
-            else
-            {
-                student_Icon.Image = Properties.Resources.Female_Icon;
-            }
-        }
-
-        // Event handler for the close button click event
-        private void close_btn_Click(object sender, EventArgs e)
-        {
-            utilityButton b = new utilityButton();
-            b.Exitform();
-        }
-
-        private void notifCount_Click(object sender, EventArgs e)
-        {
-            Form formbackgroud = new Form();
-
-            using (students__NoticationUi students__NoticationFORM = new students__NoticationUi(_studentLoginForm, _studentLoginForm.currentStudentID, currentstudentDepartment))
-            {
-                formbackgroud.StartPosition = FormStartPosition.Manual;
-                formbackgroud.FormBorderStyle = FormBorderStyle.None;
-                formbackgroud.Opacity = .70d;
-                formbackgroud.BackColor = StateCommon.Back.Color1 = CustomColor.mainColor;
-                formbackgroud.Size = this.Size;
-                formbackgroud.Location = this.Location;
-                formbackgroud.ShowInTaskbar = false;
-                formbackgroud.Show();
-
-                students__NoticationFORM.Owner = formbackgroud;
-                students__NoticationFORM.ShowDialog();
-            }
-            formbackgroud.Dispose();
+            GetNotificationCount(); // Initialize notifCount
         }
 
         private void Student__Dashboard_Load(object sender, EventArgs e)
         {
             displayGPA.Hide();
 
+            // Update and hide notification count if zero
             notificationCount.Text = notifCount.ToString();
             notificationCount.Hide();
             notificationCount_bg.Hide();
+
+            // Show notification count if greater than zero
             if (notifCount > 0)
             {
                 notificationCount.Show();
                 notificationCount_bg.Show();
             }
 
-            CalculateAndDisplayFinalGrades(); // Call the new method to calculate and display grades
+            CalculateAndDisplayFinalGrades(); // Calculate and display grades
         }
 
+        // Set the username label with the provided username
+        public void SetUsernameLabel(string username) => student_Name.Text = $"Hi, {username}";
+
+        // Set the student ID label with the provided student ID
+        public void SetStudentIDLabel(string studentID) => student_ID.Text = studentID;
+
+        // Set the student's icon based on their gender
+        public void SetStudentIcon(string gender)
+        {
+            student_Icon.Image = string.Equals(gender, "Male", StringComparison.OrdinalIgnoreCase)
+                ? Properties.Resources.Male_Icon
+                : Properties.Resources.Female_Icon;
+        }
+
+        // Event handler for the close button click event
+        private void close_btn_Click(object sender, EventArgs e) => new utilityButton().Exitform();
+
+        // Show a form as a dialog with a background
+        private void ShowFormInDialog(Form form)
+        {
+            using (Form formbackground = new Form())
+            {
+                formbackground.StartPosition = FormStartPosition.Manual;
+                formbackground.FormBorderStyle = FormBorderStyle.None;
+                formbackground.Opacity = .70d;
+                formbackground.BackColor = StateCommon.Back.Color1 = CustomColor.mainColor;
+                formbackground.Size = this.Size;
+                formbackground.Location = this.Location;
+                formbackground.ShowInTaskbar = false;
+                formbackground.Show();
+
+                form.Owner = formbackground;
+                form.ShowDialog();
+            }
+        }
+
+        // Event handler for notification count click event
+        private void notifCount_Click(object sender, EventArgs e)
+        {
+            ShowFormInDialog(new students__NoticationUi(_studentLoginForm, _studentLoginForm.currentStudentID, currentstudentDepartment));
+        }
+
+        // Event handler for feedback button click event
+        private void feedback_btn_Click(object sender, EventArgs e)
+        {
+            ShowFormInDialog(new Student__FeedbackUI(_studentLoginForm, _studentLoginForm.currentStudentID));
+        }
+
+        // Get notification count for the current student
         private void GetNotificationCount()
         {
             List<string> teachers = _studentLoginForm.GetTeachersForStudent();
@@ -132,27 +142,7 @@ namespace sprout__gradeBook
             }
         }
 
-        private void feedback_btn_Click(object sender, EventArgs e)
-        {
-            Form formbackgroud = new Form();
-
-            using (Student__FeedbackUI feedbackUI = new Student__FeedbackUI(_studentLoginForm, _studentLoginForm.currentStudentID))
-            {
-                formbackgroud.StartPosition = FormStartPosition.Manual;
-                formbackgroud.FormBorderStyle = FormBorderStyle.None;
-                formbackgroud.Opacity = .70d;
-                formbackgroud.BackColor = CustomColor.mainColor;
-                formbackgroud.Size = this.Size;
-                formbackgroud.Location = this.Location;
-                formbackgroud.ShowInTaskbar = false;
-                formbackgroud.Show();
-
-                feedbackUI.Owner = formbackgroud;
-                feedbackUI.ShowDialog();
-            }
-            formbackgroud.Dispose();
-        }
-
+        // Get the teacher's name by their username
         private string GetTeacherNameByUsername(string username)
         {
             string teacherCredentialsFile = Path.Combine("TeacherCredentials", $"{username}.txt");
@@ -183,6 +173,7 @@ namespace sprout__gradeBook
             return string.Empty;
         }
 
+        // Get the course name by its course code and the teacher's username
         private string GetCourseNameByCourseCode(string courseCode, string teacherUsername)
         {
             string courseInfoFile = Path.Combine("CourseInformations", $"{teacherUsername}.txt");
@@ -210,12 +201,13 @@ namespace sprout__gradeBook
             return string.Empty;
         }
 
+        // Add a grade row to the panel
         private void AddGradeRowToPanel(string courseCode, string finalGrade, string courseName, string teacherName, string remark)
         {
-            var gradeRow = new sprout__gradeBook.Student_Forms.Student__GradeRow
+            var gradeRow = new Student__GradeRow
             {
                 finalGradelbl = { Text = finalGrade },
-                studentCodelbl = { Text = courseCode },
+                courseCodelbl = { Text = courseCode },
                 courseDescriptionlbl = { Text = courseName },
                 facultyNamelbl = { Text = teacherName },
                 gradeRemarkslbl = { Text = remark }
@@ -224,6 +216,7 @@ namespace sprout__gradeBook
             student_gradesPanel.Controls.Add(gradeRow);
         }
 
+        // Calculate and display the final grades
         private void CalculateAndDisplayFinalGrades()
         {
             string studentID = _studentLoginForm.currentStudentID;
@@ -267,34 +260,35 @@ namespace sprout__gradeBook
 
                             if (midtermGrade >= 0 && finalTermGrade >= 0)
                             {
-                                double averageGrade = (midtermGrade + finalTermGrade) / 2;
+                                double averageGrade = Math.Round((midtermGrade + finalTermGrade) / 2, 2);
                                 validGrades.Add(averageGrade);
                                 string remark = GetRemarkFromPercentage(averageGrade);
                                 AddGradeRowToPanel(courseCode, averageGrade.ToString("F2"), courseName, teacherName, remark);
                             }
                             else
                             {
-                                // If one of the term grades is missing, add the row without the final grade and remark
+                                // Add row without final grade and remark if grades are incomplete
                                 AddGradeRowToPanel(courseCode, "", courseName, teacherName, "");
-                                allGradesComplete = false; // Mark that not all grades are complete
+                                allGradesComplete = false;
                             }
                         }
                         else
                         {
-                            // If no final grade file exists, it means grades are incomplete
+                            // Add row without final grade and remark if no grade file exists
                             string courseCode = Path.GetFileName(courseDir);
                             string teacherName = GetTeacherNameByUsername(Path.GetFileName(teacherDir));
                             string courseName = GetCourseNameByCourseCode(courseCode, Path.GetFileName(teacherDir));
                             AddGradeRowToPanel(courseCode, "", courseName, teacherName, "");
-                            allGradesComplete = false; // Mark that not all grades are complete
+                            allGradesComplete = false;
                         }
                     }
                 }
             }
 
+            // Calculate and display GPA if all grades are complete
             if (allGradesComplete && validGrades.Count > 0)
             {
-                double gpa = validGrades.Average();
+                double gpa = Math.Round(validGrades.Average(), 2);
                 displayGPA.Text = $"GPA: {gpa:F2}";
             }
             else
@@ -305,6 +299,7 @@ namespace sprout__gradeBook
             displayGPA.Show();
         }
 
+        // Extract the final grade from the lines array
         private double ExtractFinalGrade(string[] lines, ref int index)
         {
             while (index < lines.Length && !lines[index].Contains("Total Final Grade"))
@@ -318,13 +313,14 @@ namespace sprout__gradeBook
                 string finalGradeStr = finalGradeLine.Split('|')[1].Trim().Replace("%", "");
                 if (double.TryParse(finalGradeStr, out double finalGrade))
                 {
-                    return finalGrade;
+                    return Math.Round(finalGrade, 2);
                 }
             }
 
             return -1;
         }
 
+        // Get the course code from the lines array
         private string GetCourseCode(string[] lines)
         {
             foreach (var line in lines)
@@ -338,11 +334,13 @@ namespace sprout__gradeBook
             return string.Empty;
         }
 
+        // Get the remark based on the percentage
         private string GetRemarkFromPercentage(double percentage)
         {
-            if (percentage >= 75) return "P";
-            if (percentage >= 65) return "Failure";
-            return "INC"; // For percentages below 65
+            if (percentage >= PassPercentage) return "P";
+            if (percentage >= FailPercentage) return "Failure";
+            return "INC"; // For percentages below FailPercentage
         }
     }
 }
+
