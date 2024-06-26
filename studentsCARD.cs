@@ -52,6 +52,8 @@ namespace sprout__gradeBook
             clickedBG.Hide();
             feedback_btn.Hide();
             attendanceReport.Hide();
+
+            removeStudent_btn.Hide();
         }
 
         // Click event handler for student name
@@ -61,6 +63,7 @@ namespace sprout__gradeBook
             clickedBG.Show();
             feedback_btn.Show();
             attendanceReport.Show();
+            removeStudent_btn.Show();
         }
 
         // Mouse hover event handler for student gender
@@ -84,6 +87,7 @@ namespace sprout__gradeBook
             clickedBG.Hide();
             feedback_btn.Hide();
             attendanceReport.Hide();
+            removeStudent_btn.Hide();
         }
 
         // Click event handler for feedback button
@@ -262,6 +266,94 @@ namespace sprout__gradeBook
                 }
             }
         }
+
+        private void removeStudent_btn_Click(object sender, EventArgs e)
+        {
+
+            // Define the path to the student's file
+            string studentFilePath = $"StudentCredentials/{_currentUser}/{StudentID}.txt";
+
+            // Check if the student's file exists
+            if (File.Exists(studentFilePath))
+            {
+                // Delete the student's file
+                File.Delete(studentFilePath);
+            }
+
+            // Define the path to the DepartmentandSections directory
+            string departmentDirectoryPath = $"StudentCredentials/{_currentUser}/DepartmentandSections";
+
+            // Check if the DepartmentandSections directory exists
+            if (Directory.Exists(departmentDirectoryPath))
+            {
+                // Get all .txt files in the directory
+                string[] departmentFiles = Directory.GetFiles(departmentDirectoryPath, "*.txt");
+
+                // Initialize a variable to store the file path where the student ID is found
+                string fileWithStudentID = null;
+
+                // Iterate over the files
+                foreach (string departmentFilePath in departmentFiles)
+                {
+                    // Read all lines from the file
+                    string[] lines = File.ReadAllLines(departmentFilePath);
+
+                    // Check if the student's ID is in the file
+                    if (lines.Any(line => line.Contains($"Student ID: {StudentID}")))
+                    {
+                        // Store the file path without extension in the variable
+                        fileWithStudentID = Path.GetFileNameWithoutExtension(departmentFilePath);
+                        break;
+                    }
+                }
+
+                // If the student ID was found in a file
+                if (fileWithStudentID != null)
+                {
+                    // Get the full path of the file again
+                    string fullPath = Path.Combine(departmentDirectoryPath, fileWithStudentID + ".txt");
+
+                    // Read all lines from the file
+                    string[] lines = File.ReadAllLines(fullPath);
+
+                    // Create a new list to hold the updated lines
+                    List<string> updatedLines = new List<string>();
+
+                    // Iterate over the lines
+                    for (int i = 0; i < lines.Length; i++)
+                    {
+                        // If the current line contains the student's ID, skip lines until "--------"
+                        if (lines[i].Contains($"Student ID: {StudentID}"))
+                        {
+                            while (i < lines.Length && !lines[i].Contains("----------------------------------------"))
+                            {
+                                i++;
+                            }
+                            // Skip the line with "--------"
+                            if (i < lines.Length && lines[i].Contains("----------------------------------------"))
+                            {
+                                i++;
+                            }
+                        }
+                        else
+                        {
+                            // Otherwise, add the line to the updated lines
+                            updatedLines.Add(lines[i]);
+                        }
+                    }
+
+                    // Write the updated lines back to the file
+                    File.WriteAllLines(fullPath, updatedLines);
+                }
+
+                _parent.FilterAndLoadStudents(_parent.currentSearchbarInput, _parent.currentCourse, _parent.currentSection);
+
+                MessageBox.Show("Student information has been successfully deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+
+
 
 
     }

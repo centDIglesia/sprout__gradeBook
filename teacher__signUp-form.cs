@@ -13,7 +13,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace sprout__gradeBook
 {
-    public partial class logInForm : KryptonForm
+    public partial class logInForm : CustomForm
     {
         public logInForm()
         {
@@ -513,7 +513,7 @@ namespace sprout__gradeBook
                 formbackground.StartPosition = FormStartPosition.CenterScreen;
                 formbackground.FormBorderStyle = FormBorderStyle.None;
                 formbackground.Opacity = .70d;
-                formbackground.BackColor = StateCommon.Back.Color1 = CustomColor.mainColor;
+                formbackground.BackColor = CustomColor.mainColor;
                 formbackground.Size = this.Size;
 
                 formbackground.Location = this.Location;
@@ -712,7 +712,7 @@ namespace sprout__gradeBook
                 formbackground.StartPosition = FormStartPosition.CenterScreen;
                 formbackground.FormBorderStyle = FormBorderStyle.None;
                 formbackground.Opacity = .70d;
-                formbackground.BackColor = StateCommon.Back.Color1 = CustomColor.mainColor;
+                formbackground.BackColor = CustomColor.mainColor;
                 formbackground.Size = this.Size;
 
                 formbackground.Location = this.Location;

@@ -76,9 +76,7 @@
             // 
             // studentSIGNINform
             // 
-
-            this.studentSIGNINform.Location = new System.Drawing.Point(662, 32);
-
+            this.studentSIGNINform.Location = new System.Drawing.Point(662, 20);
             this.studentSIGNINform.Name = "studentSIGNINform";
             // 
             // studentSIGNINform.Panel
@@ -115,14 +113,11 @@
             this.TermsAndConditions.TabIndex = 28;
             this.TermsAndConditions.TabStop = false;
             this.TermsAndConditions.Click += new System.EventHandler(this.TermsAndConditions_Click);
-
             // 
             // signIn__btn
             // 
             this.signIn__btn.Image = ((System.Drawing.Image)(resources.GetObject("signIn__btn.Image")));
-
             this.signIn__btn.Location = new System.Drawing.Point(43, 311);
-
             this.signIn__btn.Name = "signIn__btn";
             this.signIn__btn.Padding = new System.Windows.Forms.Padding(2);
             this.signIn__btn.Size = new System.Drawing.Size(359, 58);
@@ -138,9 +133,7 @@
             // 
             this.signIn__PassTooltip.Cursor = System.Windows.Forms.Cursors.Hand;
             this.signIn__PassTooltip.Image = ((System.Drawing.Image)(resources.GetObject("signIn__PassTooltip.Image")));
-
             this.signIn__PassTooltip.Location = new System.Drawing.Point(53, 225);
-
             this.signIn__PassTooltip.Name = "signIn__PassTooltip";
             this.signIn__PassTooltip.Padding = new System.Windows.Forms.Padding(2);
             this.signIn__PassTooltip.Size = new System.Drawing.Size(62, 14);
@@ -152,7 +145,6 @@
             // 
             this.signIn__StIdTooltip.Cursor = System.Windows.Forms.Cursors.Hand;
             this.signIn__StIdTooltip.Image = ((System.Drawing.Image)(resources.GetObject("signIn__StIdTooltip.Image")));
-
             this.signIn__StIdTooltip.Location = new System.Drawing.Point(53, 156);
             this.signIn__StIdTooltip.Name = "signIn__StIdTooltip";
             this.signIn__StIdTooltip.Padding = new System.Windows.Forms.Padding(2);
@@ -164,9 +156,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-
             this.pictureBox1.Location = new System.Drawing.Point(54, 54);
-
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(311, 31);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -177,9 +167,7 @@
             // 
             this.showGuide.Cursor = System.Windows.Forms.Cursors.Hand;
             this.showGuide.Image = ((System.Drawing.Image)(resources.GetObject("showGuide.Image")));
-
             this.showGuide.Location = new System.Drawing.Point(130, 91);
-
             this.showGuide.Name = "showGuide";
             this.showGuide.Size = new System.Drawing.Size(198, 14);
             this.showGuide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -191,9 +179,7 @@
             // 
             this.signIn__showPassicon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.signIn__showPassicon.Image = global::sprout__gradeBook.Properties.Resources.open__eye;
-
             this.signIn__showPassicon.Location = new System.Drawing.Point(365, 243);
-
             this.signIn__showPassicon.Name = "signIn__showPassicon";
             this.signIn__showPassicon.Padding = new System.Windows.Forms.Padding(1);
             this.signIn__showPassicon.Size = new System.Drawing.Size(24, 20);
@@ -204,9 +190,7 @@
             // 
             // signinPASS__txtbox
             // 
-
             this.signinPASS__txtbox.Location = new System.Drawing.Point(45, 232);
-
             this.signinPASS__txtbox.MaximumSize = new System.Drawing.Size(357, 43);
             this.signinPASS__txtbox.MinimumSize = new System.Drawing.Size(357, 43);
             this.signinPASS__txtbox.Name = "signinPASS__txtbox";
@@ -227,9 +211,7 @@
             // 
             // signinSTID__txtbox
             // 
-
             this.signinSTID__txtbox.Location = new System.Drawing.Point(45, 164);
-
             this.signinSTID__txtbox.MaximumSize = new System.Drawing.Size(357, 43);
             this.signinSTID__txtbox.MinimumSize = new System.Drawing.Size(357, 43);
             this.signinSTID__txtbox.Name = "signinSTID__txtbox";
@@ -252,7 +234,7 @@
             // 
             this.close_btn.BackColor = System.Drawing.Color.Transparent;
             this.close_btn.Image = ((System.Drawing.Image)(resources.GetObject("close_btn.Image")));
-            this.close_btn.Location = new System.Drawing.Point(1111, 29);
+            this.close_btn.Location = new System.Drawing.Point(1111, 12);
             this.close_btn.Name = "close_btn";
             this.close_btn.Size = new System.Drawing.Size(24, 24);
             this.close_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;

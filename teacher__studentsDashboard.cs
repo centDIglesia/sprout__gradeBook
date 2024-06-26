@@ -12,8 +12,8 @@ namespace sprout__gradeBook
         public string currentUSer { get; set; }
         public FlowLayoutPanel CourseSectionPanel { get { return courseSectionPanel; } }
         public string currentSearchbarInput;
-        private string currentCourse;
-        private string currentSection;
+        public string currentCourse;
+        public string currentSection;
         private readonly string teacherSchool;
 
         // Constructor
@@ -27,7 +27,7 @@ namespace sprout__gradeBook
         // Load event handler for form load
         private void teacher__studentsDashboard_Load(object sender, EventArgs e)
         {
-            LoadStudentCourses(); 
+            LoadStudentCourses();
             ClickedCourse.Hide();
             searchBar_input.Hide();
             searchBar_pb.Hide();
@@ -160,12 +160,14 @@ namespace sprout__gradeBook
             }
             else
             {
-                // If student folder does not exist, prompt to add a student
+
                 DialogResult result = MessageBox.Show("No student yet. Do you want to add a student?", "Add Student", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    AddStudentForm addStudentForm = new AddStudentForm(this, teacherSchool);
-                    addStudentForm.Show();
+                    object sender = new object();
+                    EventArgs e = new EventArgs();
+                    addStudentsBTN_Click(sender, e);
+
                 }
                 return;
             }
@@ -244,7 +246,7 @@ namespace sprout__gradeBook
             string directoryPath = $"StudentCredentials/{currentUSer}";
             if (!Directory.Exists(directoryPath))
             {
-                MessageBox.Show("Directory not found.");
+
                 return;
             }
 
@@ -255,6 +257,8 @@ namespace sprout__gradeBook
                 LoadFilteredStudentsFromFile(file, searchInput, currentCourse, currentSection);
             }
         }
+
+
 
         private void LoadFilteredStudentsFromFile(string filePath, string searchInput, string currentCourse, string currentSection)
         {

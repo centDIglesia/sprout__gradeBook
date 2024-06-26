@@ -110,8 +110,32 @@ namespace sprout__gradeBook
 
         private void saveGradingsytemBTN_Click(object sender, EventArgs e)
         {
-            
-            // Calculate total weight after writing to file
+
+            // Check each gradingSystemCARD first
+            foreach (Control control in flowLayoutPanel1.Controls)
+            {
+                if (control is gradingSystemCARD card)
+                {
+                    string componentName = card.ComponentTXT.Trim();
+                    string componentWeight = card.ComponentWeightTXT;
+
+                    if (string.IsNullOrWhiteSpace(componentName) || componentName == "Component")
+                    {
+                        MessageBox.Show("Invalid input. Please enter a valid component name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        card.ComponentTextBox.Focus();
+                        return; // Do not save and exit the method
+                    }
+
+                    if (string.IsNullOrEmpty(componentWeight) || componentWeight == "0")
+                    {
+                        MessageBox.Show("Invalid input. Please enter a valid component weight.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        card.ComponentWeightTextBox.Focus(); // Set focus to the textbox with error
+                        return; // Do not save and exit the method
+                    }
+                }
+            }
+
+            // Then check totalWeight
             UpdateTotalWeight();
 
             if (totalWeight != 100)
@@ -119,37 +143,27 @@ namespace sprout__gradeBook
                 MessageBox.Show($"Total weight must be equal to 100%. Current total weight is {totalWeight}%.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            else
+
+            // If all checks pass, proceed to save
+            string baseDirectoryPath = $"CourseGradingSystem/{CurrentUser}/{CurrentsubjCode}_{CurrentsubjDeptYearAndSection}";
+            string filePath = Path.Combine(baseDirectoryPath, "gradingSystem.txt");
+
+            // Create the base directory if it doesn't exist
+            Directory.CreateDirectory(baseDirectoryPath);
+
+            foreach (Control control in flowLayoutPanel1.Controls)
             {
-                string baseDirectoryPath = $"CourseGradingSystem/{CurrentUser}/{CurrentsubjCode}_{CurrentsubjDeptYearAndSection}";
-                string filePath = Path.Combine(baseDirectoryPath, "gradingSystem.txt");
-
-                // Create the base directory if it doesn't exist
-                Directory.CreateDirectory(baseDirectoryPath);
-
-                // Loop through each control in the flowLayoutPanel1
-                foreach (Control control in flowLayoutPanel1.Controls)
+                if (control is gradingSystemCARD card)
                 {
-                    if (control is gradingSystemCARD card)
+                    string componentName = card.ComponentTXT.Trim();
+                    string componentWeight = card.ComponentWeightTXT;
+
+                    using (StreamWriter file = new StreamWriter(filePath, true))
                     {
-                        string componentName = card.ComponentTXT.Trim();
-                        string componentWeight = card.ComponentWeightTXT;
-
-
-                        if (string.IsNullOrEmpty(componentName) || componentName == "Component")
-                        {
-                            continue;
-                        }
-
-                        // Write to file
-                        using (StreamWriter file = new StreamWriter(filePath, true))
-                        {
-                            file.WriteLine($"{componentName},{componentWeight}%");
-                            file.WriteLine(new string('-', 40));
-                        }
+                        file.WriteLine($"{componentName},{componentWeight}%");
+                        file.WriteLine(new string('-', 40));
                     }
                 }
-
             }
 
             MessageBox.Show("Grading system saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

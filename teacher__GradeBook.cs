@@ -92,19 +92,19 @@ namespace sprout__gradeBook
         {
             string directoryPath = $"CourseInformations/{currentUser}/";
 
-            if (!Directory.Exists(directoryPath))
-            {
-                MessageBox.Show(
-      "Please ensure you have added the course details and set up the grading system before proceeding.\n\n To add a course, navigate to the 'Courses' section and click on 'Add New Course'.\n\n Then, click on the course and add a 'Grading System' by selecting the 'Grading System' button and setting up the required components.",
-      "Incomplete Setup",
-      MessageBoxButtons.OK,
-      MessageBoxIcon.Warning
+            /* if (!Directory.Exists(directoryPath))
+             {
+                 MessageBox.Show(
+       "Please ensure you have added the course details and set up the grading system before proceeding.\n\n To add a course, navigate to the 'Courses' section and click on 'Add New Course'.\n\n Then, click on the course and add a 'Grading System' by selecting the 'Grading System' button and setting up the required components.",
+       "Incomplete Setup",
+       MessageBoxButtons.OK,
+       MessageBoxIcon.Warning
 
 
-  );
-                return;
+   );
+                 return;
 
-            }
+             }*/
 
             string[] txtFiles = Directory.GetFiles(directoryPath, "*.txt");
 

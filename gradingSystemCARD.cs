@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComponentFactory.Krypton.Toolkit;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +15,15 @@ namespace sprout__gradeBook
     public partial class gradingSystemCARD : UserControl
     {
         private readonly createGradingSystemFORM _parentForm;
+        public KryptonTextBox ComponentTextBox
+        {
+            get { return componentsTXT; }
+        }
 
+        public KryptonTextBox ComponentWeightTextBox
+        {
+            get { return componentsWeightTXT; }
+        }
         public gradingSystemCARD(createGradingSystemFORM parent)
         {
             _parentForm = parent;

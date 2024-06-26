@@ -105,13 +105,13 @@ namespace sprout__gradeBook
 
         private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Allowing only numeric input and one decimal point
+
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
             {
                 e.Handled = true;
             }
 
-            // Allow only one decimal point
+
             if (e.KeyChar == '.' && (sender as TextBox).Text.Contains('.'))
             {
                 e.Handled = true;

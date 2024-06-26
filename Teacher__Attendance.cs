@@ -39,7 +39,7 @@ namespace sprout__gradeBook
             if (!Directory.Exists(directoryPath))
             {
                 MessageBox.Show(
-                    "Please ensure you have added the course details and set up the grading system before proceeding. To add a course, navigate to the 'Courses' section and click on 'Add New Course'. Then, click on the course and add a 'Grading System' by selecting the 'Grading System' button and setting up the required components.",
+                    "Please ensure you have added the course details and set up the grading system before proceeding. \n\nTo add a course, navigate to the 'Courses' section and click on 'Add New Course'. \n\nThen, click on the course and add a 'Grading System' by selecting the 'Grading System' button and setting up the required components.",
                     "Incomplete Setup",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning
@@ -111,9 +111,9 @@ namespace sprout__gradeBook
                     AddStudentCard(student.studentID, student.studentName);
                 }
             }
-            catch 
+            catch
             {
-               
+
                 MessageBox.Show("No student added yet. Please add a student first.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

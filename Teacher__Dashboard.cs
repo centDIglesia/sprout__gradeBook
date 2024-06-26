@@ -12,7 +12,7 @@ using System.IO;
 
 namespace sprout__gradeBook
 {
-    public partial class Teacher_Dashboard : KryptonForm
+    public partial class Teacher_Dashboard : CustomForm
     {
         private readonly string currentUser; // Store current user's username
         private static readonly string[] qoutations = new[]
@@ -207,11 +207,23 @@ namespace sprout__gradeBook
 
         private void btn_attendance_Click_1(object sender, EventArgs e)
         {
-            ResetButtonStates();
 
-            loadForm(new Teacher__Attendance(currentUser));
-            btn_attendance.Image = Properties.Resources.Frame_93;
-            isAttendanceButtonClicked = true;
+            if (Directory.Exists($"CourseInformations/{currentUser}/"))
+            {
+                ResetButtonStates();
+
+                loadForm(new Teacher__Attendance(currentUser));
+                btn_attendance.Image = Properties.Resources.Frame_93;
+                isAttendanceButtonClicked = true;
+            }
+            else
+            {
+                MessageBox.Show(
+      "Please ensure you have added the course details and set up the grading system before proceeding.\n\n To add a course, navigate to the 'Courses' section and click on 'Add New Course'.\n\n Then, click on the course and add a 'Grading System' by selecting the 'Grading System' button and setting up the required components.",
+      "Incomplete Setup",
+      MessageBoxButtons.OK,
+      MessageBoxIcon.Warning);
+            }
         }
 
         private void btn_students_Click(object sender, EventArgs e)
@@ -232,10 +244,23 @@ namespace sprout__gradeBook
 
         private void btn_gradeBook_Click(object sender, EventArgs e)
         {
-            ResetButtonStates();
-            loadForm(new teacher__GradeBook(currentUser));
-            btn_gradeBook.Image = Properties.Resources.Frame_95;
-            isGradebookButtonClicked = true;
+
+            if (Directory.Exists($"CourseInformations/{currentUser}/"))
+            {
+                ResetButtonStates();
+                loadForm(new teacher__GradeBook(currentUser));
+                btn_gradeBook.Image = Properties.Resources.Frame_95;
+                isGradebookButtonClicked = true;
+            }
+            else
+            {
+                MessageBox.Show(
+      "Please ensure you have added the course details and set up the grading system before proceeding.\n\n To add a course, navigate to the 'Courses' section and click on 'Add New Course'.\n\n Then, click on the course and add a 'Grading System' by selecting the 'Grading System' button and setting up the required components.",
+      "Incomplete Setup",
+      MessageBoxButtons.OK,
+      MessageBoxIcon.Warning);
+            }
+
         }
 
         private void btn_courses_MouseHover_1(object sender, EventArgs e)

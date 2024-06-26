@@ -1,4 +1,4 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -89,7 +89,7 @@ namespace sprout__gradeBook
                         DwmSetWindowAttribute(this.Handle, 2, ref v, 4);
                         MARGINS margins = new MARGINS()
                         {
-                            bottomHeight = 2,
+                            bottomHeight = 1,
                             leftWidth = 0,
                             rightWidth = 0,
                             topHeight = 0
