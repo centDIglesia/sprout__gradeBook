@@ -158,8 +158,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\Resource1.Designer.cs">
@@ -353,7 +353,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Resource1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -463,7 +463,6 @@
     <None Include="Resources\Roles-Card-student-hover.png" />
   </ItemGroup>
   <ItemGroup>
-
     <None Include="Resources\recycle-bin.png" />
   </ItemGroup>
   <ItemGroup>
@@ -494,7 +493,6 @@
     <None Include="Resources\Student-CourseCard.png" />
   </ItemGroup>
   <ItemGroup>
-
     <None Include="Resources\Teacher_LogIn_Hero1.png" />
     <None Include="Resources\Student_LogIn_Hero2.png" />
     <None Include="Resources\TeacherRole_Clicked.png" />
@@ -503,13 +501,11 @@
     <None Include="Resources\StudentRole_Hover.png" />
     <None Include="Resources\TeacherRole_Common.png" />
     <None Include="Resources\StudentRole_Common.png" />
-
     <None Include="Resources\Sort-Button.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\SearchBar_Active.png" />
     <None Include="Resources\SearchBar_Common.png" />
-
     <None Include="Resources\Student__DashboardUI.png" />
     <None Include="Resources\Student__AttendanceReport.png" />
     <Resource Include="Resources\Absent_Checked.png" />
