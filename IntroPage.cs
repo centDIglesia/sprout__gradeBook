@@ -11,7 +11,7 @@ using ComponentFactory.Krypton.Toolkit;
 
 namespace sprout__gradeBook
 {
-    public partial class introductionPage : KryptonForm
+    public partial class introductionPage : CustomForm
     {
 
 

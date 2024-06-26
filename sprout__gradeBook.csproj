@@ -125,6 +125,12 @@
       <DependentUpon>createGradingSystemFORM.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomColor.cs" />
+    <Compile Include="CustomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomForm.Designer.cs">
+      <DependentUpon>CustomForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Feedback__Card.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -307,7 +313,7 @@
     <Compile Include="UserInput__Validator.cs" />
     <Compile Include="Users.cs" />
     <Compile Include="Account__Manager.cs" />
-    <Compile Include="utilityButton.cs" />
+    <Compile Include="UtilityClass.cs" />
     <EmbeddedResource Include="AddCourseForm.resx">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -334,6 +340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="createGradingSystemFORM.resx">
       <DependentUpon>createGradingSystemFORM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomForm.resx">
+      <DependentUpon>CustomForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Feedback__Card.resx">
       <DependentUpon>Feedback__Card.cs</DependentUpon>
@@ -457,37 +466,10 @@
     <None Include="Resources\Forgot Your Password_.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logo white.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\back-arrow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\notification-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\next-arrow-icn.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Roles-Card-hover.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Roles-Card-student-hover.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\add-course-btn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\recycle-bin.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\next-arrow-green.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\subhover.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\sub.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\subsubhover.png" />
@@ -502,66 +484,43 @@
     <None Include="Resources\logo-green-wsprout.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\maleee.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Group 66d.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Group 66dd.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\close-line.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Student-CourseCard.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Sort-Button.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="Resources\Teacher_LogIn_Hero1.png" />
+    <None Include="Resources\Student_LogIn_Hero2.png" />
+    <None Include="Resources\TeacherRole_Clicked.png" />
+    <None Include="Resources\StudentRole_Clicked.png" />
+    <None Include="Resources\TeacherRole_Hover.png" />
+    <None Include="Resources\StudentRole_Hover.png" />
+    <None Include="Resources\TeacherRole_Common.png" />
+    <None Include="Resources\StudentRole_Common.png" />
     <None Include="Resources\Student__DashboardUI.png" />
     <None Include="Resources\Student__AttendanceReport.png" />
-    <None Include="Resources\Absent_Checked.png" />
+    <Resource Include="Resources\Absent_Checked.png" />
     <None Include="Resources\Student_GradesHeader.png" />
     <None Include="Resources\Student__GradesRow.png" />
     <None Include="Resources\open__eye2.png" />
     <None Include="Resources\Present_Checked.png" />
     <None Include="Resources\Present_Unchecked.png" />
-    <None Include="Resources\Usernamed.png" />
-    <None Include="Resources\Schoold.png" />
-    <None Include="Resources\Passwordd.png" />
     <None Include="Resources\nekstBTNNMM.png" />
     <None Include="Resources\nekstBTN.png" />
     <None Include="Resources\nekstBTNN.png" />
-    <None Include="Resources\Rectangle 196s.png" />
     <None Include="Resources\Vector.png" />
-    <None Include="Resources\studenthover.png" />
-    <None Include="Resources\Notification_Bell.png" />
     <None Include="Resources\open__eye.png" />
     <None Include="Resources\closed__eye.png" />
-    <None Include="Resources\Add row +.png" />
     <None Include="Resources\Feedback_Icon.png" />
     <None Include="Resources\Excused_Unchecked.png" />
     <None Include="Resources\Absent_Unchecked.png" />
     <None Include="Resources\Excused_Checked.png" />
-    <None Include="Resources\closed__eye1.png" />
     <None Include="Resources\Attendance__Sheet.png" />
     <Content Include="Resources\Female_Icon.png" />
     <None Include="Resources\Late_Unchecked.png" />
     <None Include="Resources\Late_Checked.png" />
-    <None Include="Resources\dashhovers.png" />
-    <None Include="Resources\dashboardhover.png" />
-    <None Include="Resources\attendancehover.png" />
-    <None Include="Resources\couresehover.png" />
-    <None Include="Resources\Confirm Passwordd.png" />
     <Content Include="Resources\Female_Icon.png" />
-    <None Include="Resources\gradebookhover.png" />
-    <None Include="Resources\Group 75.png" />
-    <None Include="Resources\Frame 71.png" />
-    <None Include="Resources\Group 72.png" />
-    <None Include="Resources\Group 76.png" />
-    <None Include="Resources\Group 77.png" />
     <None Include="Resources\Frame 95.png" />
     <None Include="Resources\Frame 94.png" />
     <None Include="Resources\Frame 93.png" />
@@ -577,20 +536,16 @@
     <None Include="Resources\Frame 81.png" />
     <None Include="Resources\Frame 83.png" />
     <None Include="Resources\Frame 80.png" />
-    <None Include="Resources\lg.png" />
-    <None Include="Resources\lghover.png" />
-    <None Include="Resources\lgdrak.png" />
-    <None Include="Resources\Group 85sd.png" />
     <None Include="Resources\Frame 101-hover.png" />
     <None Include="Resources\Frame 101-ddefault.png" />
     <None Include="Resources\Frame 10hover.png" />
     <None Include="Resources\Frame 10def.png" />
-    <None Include="Resources\First Named.png" />
-    <None Include="Resources\Last Named.png" />
     <None Include="Resources\llogut.png" />
     <None Include="Resources\logutt.png" />
     <Content Include="Resources\Male_Icon.png" />
-    <None Include="Resources\open__eye1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Role__Cards\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

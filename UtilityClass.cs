@@ -9,6 +9,7 @@ namespace sprout__gradeBook
 {
     internal class utilityButton
     {
+
         public void Exitform()
         {
             DialogResult result = MessageBox.Show(
