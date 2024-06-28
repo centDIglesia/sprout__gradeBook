@@ -73,5 +73,14 @@ namespace sprout__gradeBook
                 return "Unknown";
             }
         }
+
+        // Method to set the status based on the given status string
+        public void SetCurrentStatus(string status)
+        {
+            presentButton.Checked = status == "Present";
+            absentButton.Checked = status == "Absent";
+            lateButton.Checked = status == "Late";
+            excusedButton.Checked = status == "Excused";
+        }
     }
 }

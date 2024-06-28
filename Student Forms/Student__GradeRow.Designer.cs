@@ -92,7 +92,7 @@
             // gradeRemarkslbl
             // 
             this.gradeRemarkslbl.BackColor = System.Drawing.Color.White;
-            this.gradeRemarkslbl.Font = new System.Drawing.Font("Poppins Medium", 7F, System.Drawing.FontStyle.Bold);
+            this.gradeRemarkslbl.Font = new System.Drawing.Font("Poppins Medium", 11F, System.Drawing.FontStyle.Bold);
             this.gradeRemarkslbl.ForeColor = System.Drawing.Color.Gray;
             this.gradeRemarkslbl.Location = new System.Drawing.Point(634, 14);
             this.gradeRemarkslbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);

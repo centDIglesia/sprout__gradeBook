@@ -156,12 +156,14 @@
             this.absentButton.Size = new System.Drawing.Size(36, 25);
             this.absentButton.StateCheckedNormal.Back.Color1 = System.Drawing.Color.White;
             this.absentButton.StateCheckedNormal.Back.Color2 = System.Drawing.Color.White;
+            this.absentButton.StateCheckedNormal.Back.Image = global::sprout__gradeBook.Properties.Resources.Absent_Checked;
             this.absentButton.StateCheckedPressed.Back.Image = ((System.Drawing.Image)(resources.GetObject("absentButton.StateCheckedPressed.Back.Image")));
             this.absentButton.StateCheckedPressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.absentButton.StateCheckedTracking.Back.Color1 = System.Drawing.Color.White;
             this.absentButton.StateCheckedTracking.Back.Color2 = System.Drawing.Color.White;
+            this.absentButton.StateCheckedTracking.Back.Image = global::sprout__gradeBook.Properties.Resources.Absent_Checked;
             this.absentButton.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.absentButton.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.absentButton.StateCommon.Back.Image = global::sprout__gradeBook.Properties.Resources.Absent_Unchecked;
@@ -178,8 +180,10 @@
             this.absentButton.StateNormal.Back.Color2 = System.Drawing.Color.White;
             this.absentButton.StatePressed.Back.Color1 = System.Drawing.Color.White;
             this.absentButton.StatePressed.Back.Color2 = System.Drawing.Color.White;
+            this.absentButton.StatePressed.Back.Image = global::sprout__gradeBook.Properties.Resources.Absent_Checked;
             this.absentButton.StateTracking.Back.Color1 = System.Drawing.Color.White;
             this.absentButton.StateTracking.Back.Color2 = System.Drawing.Color.White;
+            this.absentButton.StateTracking.Back.Image = global::sprout__gradeBook.Properties.Resources.Absent_Checked;
             this.absentButton.TabIndex = 14;
             this.absentButton.Values.Text = "";
             // 
