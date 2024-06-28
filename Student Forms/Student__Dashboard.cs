@@ -15,16 +15,9 @@ namespace sprout__gradeBook
 {
     public partial class Student__Dashboard : KryptonForm
     {
-        // Holds the current student's department
-        private readonly string currentstudentDepartment;
-
-        // Reference to the login form
+        private readonly string currentStudentDepartment;
         private readonly studentLoginForm _studentLoginForm;
-
-        // Notification count for the student
         private int notifCount = 0;
-
-        // Constants for grade thresholds
         private const double PassPercentage = 75;
         private const double FailPercentage = 65;
 
@@ -32,7 +25,7 @@ namespace sprout__gradeBook
         {
             InitializeComponent();
             _studentLoginForm = studentLoginForm;
-            currentstudentDepartment = studentLoginForm.GetCurrentStudentDepartmentYearSection();
+            currentStudentDepartment = studentLoginForm.GetCurrentStudentDepartmentYearSection();
             GetNotificationCount(); // Initialize notifCount
         }
 
@@ -40,28 +33,24 @@ namespace sprout__gradeBook
         {
             displayGPA.Hide();
 
-            // Update and hide notification count if zero
             notificationCount.Text = notifCount.ToString();
             notificationCount.Hide();
             notificationCount_bg.Hide();
 
-            // Show notification count if greater than zero
             if (notifCount > 0)
             {
                 notificationCount.Show();
                 notificationCount_bg.Show();
             }
 
-            CalculateAndDisplayFinalGrades(); // Calculate and display grades
+            DisplayStudentCourses();
+            CalculateAndDisplayFinalGrades();
         }
 
-        // Set the username label with the provided username
         public void SetUsernameLabel(string username) => student_Name.Text = $"Hi, {username}";
 
-        // Set the student ID label with the provided student ID
         public void SetStudentIDLabel(string studentID) => student_ID.Text = studentID;
 
-        // Set the student's icon based on their gender
         public void SetStudentIcon(string gender)
         {
             student_Icon.Image = string.Equals(gender, "Male", StringComparison.OrdinalIgnoreCase)
@@ -69,10 +58,8 @@ namespace sprout__gradeBook
                 : Properties.Resources.Female_Icon;
         }
 
-        // Event handler for the close button click event
         private void close_btn_Click(object sender, EventArgs e) => new utilityButton().Exitform();
 
-        // Show a form as a dialog with a background
         private void ShowFormInDialog(Form form)
         {
             using (Form formbackground = new Form())
@@ -91,19 +78,16 @@ namespace sprout__gradeBook
             }
         }
 
-        // Event handler for notification count click event
         private void notifCount_Click(object sender, EventArgs e)
         {
-            ShowFormInDialog(new students__NoticationUi(_studentLoginForm, _studentLoginForm.currentStudentID, currentstudentDepartment));
+            ShowFormInDialog(new students__NoticationUi(_studentLoginForm, _studentLoginForm.currentStudentID, currentStudentDepartment));
         }
 
-        // Event handler for feedback button click event
         private void feedback_btn_Click(object sender, EventArgs e)
         {
             ShowFormInDialog(new Student__FeedbackUI(_studentLoginForm, _studentLoginForm.currentStudentID));
         }
 
-        // Get notification count for the current student
         private void GetNotificationCount()
         {
             List<string> teachers = _studentLoginForm.GetTeachersForStudent();
@@ -133,7 +117,7 @@ namespace sprout__gradeBook
                         }
 
                         if (announcementDict.TryGetValue("Receiver", out var receiver) &&
-                            receiver.Equals(currentstudentDepartment, StringComparison.OrdinalIgnoreCase))
+                            receiver.Equals(currentStudentDepartment, StringComparison.OrdinalIgnoreCase))
                         {
                             notifCount++;
                         }
@@ -141,82 +125,73 @@ namespace sprout__gradeBook
                 }
             }
         }
+        
 
-        // Get the teacher's name by their username
-        private string GetTeacherNameByUsername(string username)
+        private void AddCourseToPanel(string courseCode, string courseName, string createdBy)
         {
-            string teacherCredentialsFile = Path.Combine("TeacherCredentials", $"{username}.txt");
-            if (File.Exists(teacherCredentialsFile))
+            var gradeRow = new Student__GradeRow
             {
-                var lines = File.ReadAllLines(teacherCredentialsFile);
-                string firstName = string.Empty;
-                string lastName = string.Empty;
+                courseCodelbl = { Text = courseCode },
+                courseDescriptionlbl = { Text = courseName },
+                facultyNamelbl = { Text = createdBy }
+            };
+            // Set default values as empty strings
+            gradeRow.finalGradelbl.Text = "";
+            gradeRow.gradeRemarkslbl.Text = "";
 
-                foreach (var line in lines)
-                {
-                    if (line.StartsWith("First Name"))
-                    {
-                        firstName = line.Split(':')[1].Trim();
-                    }
-                    else if (line.StartsWith("Last Name"))
-                    {
-                        lastName = line.Split(':')[1].Trim();
-                    }
-                }
-
-                if (!string.IsNullOrEmpty(firstName) && !string.IsNullOrEmpty(lastName))
-                {
-                    return $"{firstName} {lastName}";
-                }
-            }
-
-            return string.Empty;
+            student_gradesPanel.Controls.Add(gradeRow);
         }
-
-        // Get the course name by its course code and the teacher's username
-        private string GetCourseNameByCourseCode(string courseCode, string teacherUsername)
+        private void DisplayStudentCourses()
         {
-            string courseInfoFile = Path.Combine("CourseInformations", $"{teacherUsername}.txt");
-            if (File.Exists(courseInfoFile))
-            {
-                var courseInfoData = File.ReadAllText(courseInfoFile);
-                var courseInfoSections = courseInfoData.Split(new[] { "----------------------------------------" }, StringSplitOptions.RemoveEmptyEntries);
+            string studentID = _studentLoginForm.currentStudentID;
+            string baseDirectory = "CourseInformations";
 
-                foreach (var section in courseInfoSections)
+            if (Directory.Exists(baseDirectory))
+            {
+                var teacherDirectories = Directory.GetDirectories(baseDirectory);
+
+                foreach (var teacherDir in teacherDirectories)
                 {
-                    if (section.Contains($"Course Code: {courseCode}"))
+                    var courseFiles = Directory.GetFiles(teacherDir, "*.txt");
+
+                    foreach (var courseFile in courseFiles)
                     {
-                        var lines = section.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+                        var lines = File.ReadAllLines(courseFile);
+                        bool studentFound = false;
+                        string courseCode = string.Empty;
+                        string courseName = string.Empty;
+                        string createdBy = string.Empty;
+
                         foreach (var line in lines)
                         {
-                            if (line.StartsWith("Course Name"))
+                            if (line.StartsWith("Course Code:"))
                             {
-                                return line.Split(':')[1].Trim();
+                                courseCode = line.Substring("Course Code:".Length).Trim();
                             }
+                            else if (line.StartsWith("Course Name:"))
+                            {
+                                courseName = line.Substring("Course Name:".Length).Trim();
+                            }
+                            else if (line.StartsWith("Created By:"))
+                            {
+                                createdBy = line.Substring("Created By:".Length).Trim();
+                            }
+                            else if (line.StartsWith("Student ID:") && line.Substring("Student ID:".Length).Trim() == studentID)
+                            {
+                                studentFound = true;
+                                break;
+                            }
+                        }
+
+                        if (studentFound)
+                        {
+                            AddCourseToPanel(courseCode, courseName, createdBy);
                         }
                     }
                 }
             }
-
-            return string.Empty;
         }
 
-        // Add a grade row to the panel
-        private void AddGradeRowToPanel(string courseCode, string finalGrade, string courseName, string teacherName, string remark)
-        {
-            var gradeRow = new Student__GradeRow
-            {
-                finalGradelbl = { Text = finalGrade },
-                courseCodelbl = { Text = courseCode },
-                courseDescriptionlbl = { Text = courseName },
-                facultyNamelbl = { Text = teacherName },
-                gradeRemarkslbl = { Text = remark }
-            };
-
-            student_gradesPanel.Controls.Add(gradeRow);
-        }
-
-        // Calculate and display the final grades
         private void CalculateAndDisplayFinalGrades()
         {
             string studentID = _studentLoginForm.currentStudentID;
@@ -255,51 +230,59 @@ namespace sprout__gradeBook
                             }
 
                             string courseCode = GetCourseCode(lines);
-                            string teacherName = GetTeacherNameByUsername(Path.GetFileName(teacherDir));
-                            string courseName = GetCourseNameByCourseCode(courseCode, Path.GetFileName(teacherDir));
 
                             if (midtermGrade >= 0 && finalTermGrade >= 0)
                             {
                                 double averageGrade = Math.Round((midtermGrade + finalTermGrade) / 2, 2);
                                 validGrades.Add(averageGrade);
                                 string remark = GetRemarkFromPercentage(averageGrade);
-                                AddGradeRowToPanel(courseCode, averageGrade.ToString("F2"), courseName, teacherName, remark);
+                                UpdateGradeRow(courseCode, averageGrade.ToString("F2"), remark);
                             }
                             else
                             {
-                                // Add row without final grade and remark if grades are incomplete
-                                AddGradeRowToPanel(courseCode, "", courseName, teacherName, "");
-                                allGradesComplete = false;
+                                UpdateGradeRow(courseCode, "", "");
+                                allGradesComplete = false; // Mark as incomplete if any grade is missing
                             }
                         }
                         else
                         {
-                            // Add row without final grade and remark if no grade file exists
                             string courseCode = Path.GetFileName(courseDir);
-                            string teacherName = GetTeacherNameByUsername(Path.GetFileName(teacherDir));
-                            string courseName = GetCourseNameByCourseCode(courseCode, Path.GetFileName(teacherDir));
-                            AddGradeRowToPanel(courseCode, "", courseName, teacherName, "");
-                            allGradesComplete = false;
+                            UpdateGradeRow(courseCode, "", "");
+                            allGradesComplete = false; // Mark as incomplete if any grade is missing
                         }
                     }
                 }
             }
+            else
+            {
+                // Handle case where studentFinalGrades folder does not exist or is empty
+                // Clear all grade rows
+                foreach (Control control in student_gradesPanel.Controls)
+                {
+                    if (control is Student__GradeRow gradeRow)
+                    {
+                        gradeRow.finalGradelbl.Text = ""; // Set to empty string
+                        gradeRow.gradeRemarkslbl.Text = ""; // Set to empty string
+                    }
+                }
 
-            // Calculate and display GPA if all grades are complete
-            if (allGradesComplete && validGrades.Count > 0)
+                allGradesComplete = false; // Mark as incomplete
+            }
+
+            if (allGradesComplete && validGrades.Count > 1)
             {
                 double gpa = Math.Round(validGrades.Average(), 2);
                 displayGPA.Text = $"GPA: {gpa:F2}";
+                displayGPA.Show(); // Show GPA only when all grades are complete
             }
             else
             {
                 displayGPA.Text = "Grades Not Complete";
+                displayGPA.Show(); // Hide GPA when grades are not complete
             }
-
-            displayGPA.Show();
         }
 
-        // Extract the final grade from the lines array
+
         private double ExtractFinalGrade(string[] lines, ref int index)
         {
             while (index < lines.Length && !lines[index].Contains("Total Final Grade"))
@@ -320,7 +303,6 @@ namespace sprout__gradeBook
             return -1;
         }
 
-        // Get the course code from the lines array
         private string GetCourseCode(string[] lines)
         {
             foreach (var line in lines)
@@ -333,14 +315,25 @@ namespace sprout__gradeBook
 
             return string.Empty;
         }
-
-        // Get the remark based on the percentage
+     
         private string GetRemarkFromPercentage(double percentage)
         {
             if (percentage >= PassPercentage) return "P";
             if (percentage >= FailPercentage) return "Failure";
             return "INC"; // For percentages below FailPercentage
         }
+
+        private void UpdateGradeRow(string courseCode, string finalGrade, string remark)
+        {
+            foreach (Control control in student_gradesPanel.Controls)
+            {
+                if (control is Student__GradeRow gradeRow && gradeRow.courseCodelbl.Text == courseCode)
+                {
+                    gradeRow.finalGradelbl.Text = string.IsNullOrWhiteSpace(finalGrade) ? " " : finalGrade;
+                    gradeRow.gradeRemarkslbl.Text = string.IsNullOrWhiteSpace(remark) ? " " : remark;
+                    break;
+                }
+            }
+        }
     }
 }
-

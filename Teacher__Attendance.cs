@@ -15,6 +15,7 @@ namespace sprout__gradeBook
     public partial class Teacher__Attendance : KryptonForm
     {
         public string currentUSer { get; set; }
+        private Dictionary<string, string> initialStatus = new Dictionary<string, string>();
 
         public Teacher__Attendance(string currentuser)
         {
@@ -23,6 +24,7 @@ namespace sprout__gradeBook
             this.KeyPreview = true;
             this.KeyDown += new KeyEventHandler(Save_Attendance_KeyDown);
         }
+
         private void Save_Attendance_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -30,8 +32,8 @@ namespace sprout__gradeBook
                 generateReportButton_Click(sender, e);
                 e.Handled = true;
             }
-
         }
+
         private void LoadTxtFilesIntoComboBox(string currentUser)
         {
             string directoryPath = $"CourseInformations/{currentUser}/";
@@ -65,10 +67,11 @@ namespace sprout__gradeBook
             attendance_Datelbl.Text = DateTime.Now.ToString("MMMM dd, yyyy");
         }
 
-        private void LoadStudentCards(string filePath)
+        private void LoadStudentCards(string filePath, string attendanceFilePath)
         {
             // Clear existing student cards
             attendance_Panel.Controls.Clear();
+            initialStatus.Clear(); // Clear previous initial statuses
 
             try
             {
@@ -77,6 +80,29 @@ namespace sprout__gradeBook
 
                 string studentID = null;
                 string studentName = null;
+
+                Dictionary<string, string> attendanceStatus = new Dictionary<string, string>();
+
+                if (File.Exists(attendanceFilePath))
+                {
+                    string[] attendanceLines = File.ReadAllLines(attendanceFilePath);
+                    for (int i = 0; i < attendanceLines.Length; i++)
+                    {
+                        if (attendanceLines[i].StartsWith("Student ID:"))
+                        {
+                            studentID = attendanceLines[i].Substring("Student ID:".Length).Trim();
+                        }
+                        else if (attendanceLines[i].StartsWith("Status:"))
+                        {
+                            string status = attendanceLines[i].Substring("Status:".Length).Trim();
+                            if (!string.IsNullOrEmpty(studentID))
+                            {
+                                attendanceStatus[studentID] = status;
+                                studentID = null;
+                            }
+                        }
+                    }
+                }
 
                 List<(string studentID, string studentName, string lastName)> students = new List<(string, string, string)>();
 
@@ -108,12 +134,13 @@ namespace sprout__gradeBook
 
                 foreach (var student in sortedStudents)
                 {
-                    AddStudentCard(student.studentID, student.studentName);
+                    string status = attendanceStatus.ContainsKey(student.studentID) ? attendanceStatus[student.studentID] : "Unknown";
+                    AddStudentCard(student.studentID, student.studentName, status);
+                    initialStatus[student.studentID] = status; // Track initial status
                 }
             }
             catch
             {
-
                 MessageBox.Show("No student added yet. Please add a student first.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -140,19 +167,41 @@ namespace sprout__gradeBook
             return string.Empty;
         }
 
-        private void AddStudentCard(string studentID, string studentName)
+        private void AddStudentCard(string studentID, string studentName, string status)
         {
             Attendance__Row studentCard = new Attendance__Row(this)
             {
                 currentStudentID = studentID,
-                currentStudentName = studentName
+                currentStudentName = studentName,
             };
+            studentCard.SetCurrentStatus(status); // Set the current status
 
             attendance_Panel.Controls.Add(studentCard);
         }
 
+        private bool HasStatusChanged()
+        {
+            foreach (Attendance__Row row in attendance_Panel.Controls.OfType<Attendance__Row>())
+            {
+                if (initialStatus.TryGetValue(row.currentStudentID, out string initial) && initial != row.CurrentStatus)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         private void CourseComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (HasStatusChanged())
+            {
+                DialogResult result = MessageBox.Show("You have unsaved changes. Do you want to discard them and switch the course?", "Unsaved Changes", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.No)
+                {
+                    return;
+                }
+            }
+
             string selectedCourse = courseComboBox.SelectedItem.ToString();
             string[] trimmedCourseParts = selectedCourse.Split('_');
 
@@ -160,7 +209,16 @@ namespace sprout__gradeBook
             {
                 string trimmedCourseName = trimmedCourseParts[1].Trim();
                 string studentFilePath = $"StudentCredentials/{currentUSer}/DepartmentandSections/{trimmedCourseName}.txt";
-                LoadStudentCards(studentFilePath);
+
+                string date = attendance_Datelbl.Text;
+                string course = courseComboBox.SelectedItem?.ToString() ?? "Unknown Course";
+                string userName = currentUSer;
+
+                string reportsFolder = Path.Combine("Attendance Reports", userName);
+                string fileName = $"{date}_{course.Replace(" ", "-")}.txt";
+                string attendanceFilePath = Path.Combine(reportsFolder, fileName);
+
+                LoadStudentCards(studentFilePath, attendanceFilePath);
             }
             else
             {
@@ -201,12 +259,18 @@ namespace sprout__gradeBook
             string fileName = $"{date}_{course.Replace(" ", "-")}.txt";
             string filePath = Path.Combine(reportsFolder, fileName);
 
-            // Check if the file already exists
             if (File.Exists(filePath))
             {
-                MessageBox.Show("A report for this date and course already exists.", "Duplicate Report", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                if (HasStatusChanged())
+                {
+                    DialogResult result = MessageBox.Show("A report with the same name already exists. Do you want to overwrite it?", "File Exists", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.No)
+                    {
+                        return;
+                    }
+                }
             }
+
 
             using (StreamWriter writer = new StreamWriter(filePath))
             {
@@ -225,7 +289,5 @@ namespace sprout__gradeBook
 
             MessageBox.Show("Attendance report generated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
-
     }
 }
