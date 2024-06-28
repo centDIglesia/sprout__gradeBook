@@ -14,6 +14,7 @@ namespace sprout__gradeBook
         private string currentUserName;
         private teacher__courses_lvl1 parentForm;
         private int previousSelectedIndex;
+        private string creatorName;
 
         public AddCourseForm(string currentUser, teacher__courses_lvl1 parent)
         {
@@ -35,10 +36,8 @@ namespace sprout__gradeBook
 
             // Store the initial selected index
             previousSelectedIndex = 0;
-
-
-            
-
+            // Retrieve creator's name from file
+            RetrieveCreatorName();
 
         }
 
@@ -192,6 +191,10 @@ namespace sprout__gradeBook
 
                     using (StreamWriter writer = new StreamWriter(filePath, true)) // true for append mode
                     {
+                        writer.WriteLine($"Course Code: {courseCode}");
+                        writer.WriteLine($"Course Name: {courseName}");
+                        writer.WriteLine($"Created By: {creatorName}");
+                        writer.WriteLine();
                         foreach (var student in matchingStudents)
                         {
                             // Append student details
@@ -208,6 +211,10 @@ namespace sprout__gradeBook
 
                     using (StreamWriter writer = new StreamWriter(filePath))
                     {
+                        writer.WriteLine($"Course Code: {courseCode}");
+                        writer.WriteLine($"Course Name: {courseName}");
+                        writer.WriteLine($"Created By: {creatorName}");
+                        writer.WriteLine();
                         foreach (var student in matchingStudents)
                         {
                             // Write student details to the new file
@@ -363,6 +370,42 @@ namespace sprout__gradeBook
                 }
             }
 
+        }
+        private void RetrieveCreatorName()
+        {
+            string credentialFile = Path.Combine("TeacherCredentials", $"{currentUserName}.txt");
+
+            if (File.Exists(credentialFile))
+            {
+                string[] lines = File.ReadAllLines(credentialFile);
+
+                foreach (string line in lines)
+                {
+                    if (line.StartsWith("First Name:"))
+                    {
+                        string firstName = line.Substring("First Name:".Length).Trim();
+                        string lastName = string.Empty;
+
+                        for (int i = 0; i < lines.Length; i++)
+                        {
+                            if (lines[i].StartsWith("Last Name:"))
+                            {
+                                lastName = lines[i].Substring("Last Name:".Length).Trim();
+                                break;
+                            }
+                        }
+
+                        creatorName = $"{firstName} {lastName}";
+                        break;
+                    }
+                }
+            }
+
+            if (string.IsNullOrEmpty(creatorName))
+            {
+                // Handle case where creator's name could not be retrieved
+                creatorName = currentUserName; // Fallback to username
+            }
         }
     }
 }
