@@ -337,17 +337,7 @@ namespace sprout__gradeBook
 
 
         //hovering eefcts in forget password
-        private void forgetPass__btn_MouseHover(object sender, EventArgs e)
-        {
-            forgetPass__btn.Image = Properties.Resources.Forgot_Your_Password_HOVER;
-        }
 
-        private void forgetPass__btn_MouseLeave(object sender, EventArgs e)
-        {
-            forgetPass__btn.Image = Properties.Resources.Forgot_Your_Password_;
-
-
-        }
 
 
         //buttons for switching from sign in to sin up and vice versa
