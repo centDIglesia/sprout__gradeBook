@@ -442,25 +442,13 @@
     <None Include="Resources\student__role-clicked.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\teacher__role-clicked.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\student__role.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\teacher__role.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Forgot Your Password_HOVER.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Forgot Your Password_.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Roles-Card-hover.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Roles-Card-student-hover.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\recycle-bin.png" />
@@ -493,15 +481,12 @@
     <None Include="Resources\Student-CourseCard.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Teacher_LogIn_Hero1.png" />
-    <None Include="Resources\Student_LogIn_Hero2.png" />
     <None Include="Resources\TeacherRole_Clicked.png" />
     <None Include="Resources\StudentRole_Clicked.png" />
     <None Include="Resources\TeacherRole_Hover.png" />
     <None Include="Resources\StudentRole_Hover.png" />
     <None Include="Resources\TeacherRole_Common.png" />
     <None Include="Resources\StudentRole_Common.png" />
-    <None Include="Resources\Sort-Button.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\SearchBar_Active.png" />
@@ -552,8 +537,6 @@
     <None Include="Resources\logutt.png" />
     <Content Include="Resources\Male_Icon.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\Role__Cards\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
