@@ -592,7 +592,8 @@ namespace sprout__gradeBook
             doneBtn.Visible = false;
             currentComponent.Visible = false;
             pictureBox3.Visible = false;
-
+            finalGradelbl.Text = "";
+            CurrentGradePeriod.Text = "Click other course";
 
         }
         private void ShowGradingElements()

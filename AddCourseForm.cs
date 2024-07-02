@@ -226,7 +226,7 @@ namespace sprout__gradeBook
                 }
 
                 // Success message
-                MessageBox.Show("Course and student details saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Course and student details saved successfully!\n\n click the course card to add Grading System.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
