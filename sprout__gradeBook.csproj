@@ -535,6 +535,8 @@
     <None Include="Resources\Frame 10def.png" />
     <None Include="Resources\llogut.png" />
     <None Include="Resources\logutt.png" />
+    <None Include="Resources\LogOut__Common.png" />
+    <None Include="Resources\LogOut__Hover.png" />
     <Content Include="Resources\Male_Icon.png" />
   </ItemGroup>
   <ItemGroup />
