@@ -335,5 +335,25 @@ namespace sprout__gradeBook
                 }
             }
         }
+
+        private void StudentLogOut_Click(object sender, EventArgs e)
+        {           
+            utilityButton ut = new utilityButton();
+            ut.ConfirmLogout(this);
+
+            Role__form role__Form = new Role__form();
+            role__Form.Show();
+        }
+
+        private void StudentLogOut_MouseLeave(object sender, EventArgs e)
+        {
+           StudentLogOut.Image = Properties.Resources.LogOut__Common;
+        }
+
+        private void StudentLogOut_MouseHover(object sender, EventArgs e)
+        {
+            StudentLogOut.Image = Properties.Resources.LogOut__Hover;
+        }
+
     }
 }
