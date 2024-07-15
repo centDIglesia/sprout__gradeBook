@@ -221,6 +221,17 @@ namespace sprout__gradeBook
 
             if (signupSCHOOL__txtbox.Text != "School")
             {
+                // Capitalize the first letter of each word longer than 3 characters
+                string[] words = signupSCHOOL__txtbox.Text.Split(' ');
+                for (int i = 0; i < words.Length; i++)
+                {
+                    if (words[i].Length > 3)
+                    {
+                        words[i] = char.ToUpper(words[i][0]) + words[i].Substring(1);
+                    }
+                }
+                signupSCHOOL__txtbox.Text = string.Join(" ", words);
+
                 if (!UserInput__Validator.ValidateLength(signupSCHOOL__txtbox.Text, 10, 80))
                 {
                     setInputState(signupSCHOOL__txtbox, school__tooltip, Color.Red);
@@ -231,7 +242,6 @@ namespace sprout__gradeBook
                 else
                 {
                     setInputState(signupSCHOOL__txtbox, school__tooltip, CustomColor.mainColor);
-
                 }
             }
 
@@ -335,6 +345,8 @@ namespace sprout__gradeBook
         }
 
 
+
+        //hovering eefcts in forget password
 
 
 

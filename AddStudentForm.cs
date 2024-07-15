@@ -102,6 +102,12 @@ namespace sprout__gradeBook
                 return;
             }
 
+            if (!UserInput__Validator.ValidateNotEmpty(studentDepartment, "Select Department"))
+            {
+                MessageBox.Show("Student's Department cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                studentDepartmentTXT.Focus();
+                return;
+            }
 
             // Create a new student object
             Student newStudent = new Student(studentID, studentFname, studentMname, studentLname, studentEmail, studentUsername, studentBirthday, studentGender, studentYearLevel, studentSection, studentDepartment, teacherSchool);
@@ -256,7 +262,7 @@ namespace sprout__gradeBook
             {
                 if (number < 1 || number > 4)
                 {
-                    MessageBox.Show("Please enter a number between 1 and 4.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Please enter a number from 1 to 4.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     studentYearLevelTXT.Text = "";
                 }
             }
@@ -266,10 +272,15 @@ namespace sprout__gradeBook
         {
             if (!char.IsDigit(e.KeyChar) || e.KeyChar < '1' || e.KeyChar > '4')
             {
-                // If so, suppress the key press
-                e.Handled = true;
+                // Check if the pressed key is Backspace or Delete
+                if (e.KeyChar != (char)8 && e.KeyChar != (char)127)
+                {
+                    // If not, suppress the key press
+                    e.Handled = true;
+                }
             }
         }
+
     }
 
 }

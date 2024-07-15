@@ -262,6 +262,11 @@ namespace sprout__gradeBook
 
         private void LoadFilteredStudentsFromFile(string filePath, string searchInput, string currentCourse, string currentSection)
         {
+            // Ensure parameters are not null
+            searchInput = searchInput ?? string.Empty;
+            currentCourse = currentCourse ?? string.Empty;
+            currentSection = currentSection ?? string.Empty;
+
             string[] lines = File.ReadAllLines(filePath);
             string studentName = "";
             string studentID = "";
