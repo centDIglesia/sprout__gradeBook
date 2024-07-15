@@ -38,12 +38,13 @@
             this.todayschedulePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.remindersPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.AddRemindersButton = new System.Windows.Forms.PictureBox();
             this.divider_1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.reminderTextBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddRemindersButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -147,16 +148,17 @@
             this.pictureBox1.TabIndex = 57;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox8
+            // AddRemindersButton
             // 
-            this.pictureBox8.BackColor = System.Drawing.Color.White;
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(31, 47);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(762, 574);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox8.TabIndex = 51;
-            this.pictureBox8.TabStop = false;
+            this.AddRemindersButton.BackColor = System.Drawing.Color.White;
+            this.AddRemindersButton.Image = ((System.Drawing.Image)(resources.GetObject("AddRemindersButton.Image")));
+            this.AddRemindersButton.Location = new System.Drawing.Point(31, 47);
+            this.AddRemindersButton.Name = "AddRemindersButton";
+            this.AddRemindersButton.Size = new System.Drawing.Size(762, 574);
+            this.AddRemindersButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.AddRemindersButton.TabIndex = 51;
+            this.AddRemindersButton.TabStop = false;
+            this.AddRemindersButton.Click += new System.EventHandler(this.AddRemindersButton_Click);
             // 
             // divider_1
             // 
@@ -182,12 +184,21 @@
             this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(664, 456);
+            this.pictureBox3.Location = new System.Drawing.Point(163, 465);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(96, 10);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox3.TabIndex = 70;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.AddRemindersButton_Click);
+            // 
+            // reminderTextBox
+            // 
+            this.reminderTextBox.Location = new System.Drawing.Point(265, 463);
+            this.reminderTextBox.Name = "reminderTextBox";
+            this.reminderTextBox.Size = new System.Drawing.Size(152, 23);
+            this.reminderTextBox.TabIndex = 72;
+            this.reminderTextBox.Text = "kryptonTextBox1";
             // 
             // teacher__mainDashboard
             // 
@@ -195,6 +206,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(827, 639);
+            this.Controls.Add(this.reminderTextBox);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.remindersPanel);
@@ -206,13 +218,14 @@
             this.Controls.Add(this.sections__quantity);
             this.Controls.Add(this.student__quantity);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pictureBox8);
+            this.Controls.Add(this.AddRemindersButton);
             this.Controls.Add(this.divider_1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "teacher__mainDashboard";
             this.Text = "teacher__dashboard";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddRemindersButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.divider_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -230,11 +243,12 @@
         private System.Windows.Forms.Label sections__quantity;
         private System.Windows.Forms.Label student__quantity;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox AddRemindersButton;
         private System.Windows.Forms.PictureBox divider_1;
         private System.Windows.Forms.FlowLayoutPanel todayschedulePanel;
         private System.Windows.Forms.FlowLayoutPanel remindersPanel;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox reminderTextBox;
     }
 }

@@ -14,6 +14,10 @@ namespace sprout__gradeBook
     public partial class introductionPage : CustomForm
     {
 
+        public introductionPage()
+        {
+            InitializeComponent();
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             this.BackColor = CustomColor.mainColor;

@@ -63,7 +63,7 @@ namespace sprout__gradeBook
             string startTime = courseStartTXT.Text.Trim();
             string endTime = courseEndTXT.Text.Trim();
 
-            // Validate inputs
+            // Validate Inputs
             if (!UserInput__Validator.ValidateNotEmpty(courseName, "Course Name"))
             {
                 MessageBox.Show("Course Name cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -71,6 +71,7 @@ namespace sprout__gradeBook
                 return;
             }
 
+            // Validate Course Code
             if (!UserInput__Validator.ValidateNotEmpty(courseCode, "Course Code"))
             {
                 MessageBox.Show("Course Code cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -162,6 +162,7 @@
             this.Controls.Add(this.feedbackDescription_txt);
             this.Controls.Add(this.kryptonTextBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Teacher__Feedback";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Teacher__Feedback";
