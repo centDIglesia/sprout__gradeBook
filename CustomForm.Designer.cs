@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomForm));
             this.SuspendLayout();
             // 
             // CustomForm
@@ -37,6 +38,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CustomForm";
             this.Text = "CustomForm";
             this.ResumeLayout(false);

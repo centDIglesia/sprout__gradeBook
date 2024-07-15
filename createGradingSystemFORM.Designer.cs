@@ -95,7 +95,7 @@
             this.totallWeightLLBL.ForeColor = System.Drawing.Color.Gray;
             this.totallWeightLLBL.Location = new System.Drawing.Point(27, 460);
             this.totallWeightLLBL.Name = "totallWeightLLBL";
-            this.totallWeightLLBL.Size = new System.Drawing.Size(97, 23);
+            this.totallWeightLLBL.Size = new System.Drawing.Size(95, 23);
             this.totallWeightLLBL.TabIndex = 9;
             this.totallWeightLLBL.Text = "Total weight: ";
             // 
@@ -146,6 +146,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.pictureBox4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "createGradingSystemFORM";
             this.Palette = this.kryptonPalette2;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;

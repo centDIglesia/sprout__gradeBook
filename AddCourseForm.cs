@@ -106,7 +106,7 @@ namespace sprout__gradeBook
                 return;
             }
 
-            if (!UserInput__Validator.ValidateNotEmpty(whatDay, "Please Select the Day(s) When the Course Will Take Place"))
+            if (!UserInput__Validator.ValidateNotEmpty(whatDay, "Select the Day When the Course Will Take Place"))
             {
                 MessageBox.Show("Day of the week cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 WeekDayTxt.Focus();
@@ -301,7 +301,6 @@ namespace sprout__gradeBook
         {
             UserInput_Manager.RestoreDefaultText(courseSectionTXT, "Designated Section");
         }
-
         private void Cancel_btn_Click(object sender, EventArgs e)
         {
             utilityButton b = new utilityButton();

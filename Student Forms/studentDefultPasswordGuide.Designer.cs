@@ -70,6 +70,7 @@
             this.ClientSize = new System.Drawing.Size(506, 318);
             this.Controls.Add(this.closeBTN);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StudentDefultPasswordGuide";
             this.Palette = this.kryptonPalette2;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;

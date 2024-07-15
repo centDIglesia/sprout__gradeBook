@@ -213,11 +213,8 @@
             this.Controls.Add(this.student__role);
             this.Controls.Add(this.teacher__role);
             this.Controls.Add(this.pictureBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Role__form";
-            //this.Palette = this.kryptonPalette2;
-            //this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "role__form";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();

@@ -64,7 +64,6 @@
             this.logoImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.logoImage.TabIndex = 0;
             this.logoImage.TabStop = false;
-            this.logoImage.Click += new System.EventHandler(this.logoImage_Click);
             // 
             // introductionPage
             // 
