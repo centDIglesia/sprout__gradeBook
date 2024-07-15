@@ -45,6 +45,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.notification__icon = new System.Windows.Forms.PictureBox();
             this.Student__Dashboard__UI = new System.Windows.Forms.PictureBox();
+            this.logoutBtn = new System.Windows.Forms.PictureBox();
             this.notificationCount_bg = new sprout__gradeBook.RoundPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -54,6 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.notification__icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Student__Dashboard__UI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoutBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.notificationCount_bg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -225,6 +227,20 @@
             this.Student__Dashboard__UI.TabIndex = 95;
             this.Student__Dashboard__UI.TabStop = false;
             // 
+            // logoutBtn
+            // 
+            this.logoutBtn.BackColor = System.Drawing.Color.Transparent;
+            this.logoutBtn.Image = global::sprout__gradeBook.Properties.Resources.llogut;
+            this.logoutBtn.Location = new System.Drawing.Point(27, 684);
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.Size = new System.Drawing.Size(54, 18);
+            this.logoutBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.logoutBtn.TabIndex = 107;
+            this.logoutBtn.TabStop = false;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
+            this.logoutBtn.MouseLeave += new System.EventHandler(this.logoutBtn_MouseLeave);
+            this.logoutBtn.MouseHover += new System.EventHandler(this.logoutBtn_MouseHover);
+            // 
             // notificationCount_bg
             // 
             this.notificationCount_bg.BackColor = System.Drawing.Color.Red;
@@ -240,6 +256,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1147, 711);
+            this.Controls.Add(this.logoutBtn);
             this.Controls.Add(this.displayGPA);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.student_gradesPanel);
@@ -273,6 +290,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.notification__icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Student__Dashboard__UI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoutBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.notificationCount_bg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -297,5 +315,6 @@
         private System.Windows.Forms.FlowLayoutPanel student_gradesPanel;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label displayGPA;
+        private System.Windows.Forms.PictureBox logoutBtn;
     }
 }

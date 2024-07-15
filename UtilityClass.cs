@@ -47,7 +47,7 @@ namespace sprout__gradeBook
             }
         }
 
-        public void ConfirmLogout(Form form)
+        public bool ConfirmLogout()
         {
             string message = "Are you sure you want to log out?";
             string title = "Logout Confirmation";
@@ -58,13 +58,18 @@ namespace sprout__gradeBook
                 title,
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question,
+
                 MessageBoxDefaultButton.Button2
             );
 
             // Check if the user clicked Yes
             if (result == DialogResult.Yes)
             {
-                form.Close();  // Close the form upon confirmation
+               return true;
+            }
+            else
+            {
+                return false ;
             }
         }
 

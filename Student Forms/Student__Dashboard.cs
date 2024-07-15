@@ -335,5 +335,26 @@ namespace sprout__gradeBook
                 }
             }
         }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            utilityButton ut = new utilityButton();
+            if (ut.ConfirmLogout() == true)
+            {
+                this.Close();
+                studentLoginForm studentLogin = new studentLoginForm();
+                studentLogin.Show();
+            }
+
+        }
+        private void logoutBtn_MouseLeave(object sender, EventArgs e)
+        {
+            logoutBtn.Image = Properties.Resources.llogut;
+        }
+
+        private void logoutBtn_MouseHover(object sender, EventArgs e)
+        {
+            logoutBtn.Image = Properties.Resources.logutt;
+        }
     }
 }
