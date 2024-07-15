@@ -336,7 +336,7 @@ namespace sprout__gradeBook
             }
         }
 
-        private void logoutBtn_Click(object sender, EventArgs e)
+        private void StudentLogOut_Click(object sender, EventArgs e)
         {
             utilityButton ut = new utilityButton();
             if (ut.ConfirmLogout() == true)
@@ -347,14 +347,14 @@ namespace sprout__gradeBook
             }
 
         }
-        private void logoutBtn_MouseLeave(object sender, EventArgs e)
+        private void StudentLogOut_MouseLeave(object sender, EventArgs e)
         {
-            logoutBtn.Image = Properties.Resources.llogut;
+            StudentLogOut.Image = Properties.Resources.LogOut__Common;
         }
 
-        private void logoutBtn_MouseHover(object sender, EventArgs e)
+        private void StudentLogOut_MouseHover(object sender, EventArgs e)
         {
-            logoutBtn.Image = Properties.Resources.logutt;
+            StudentLogOut.Image = Properties.Resources.LogOut__Hover;
         }
     }
 }

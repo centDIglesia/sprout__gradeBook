@@ -47,8 +47,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.notification__icon = new System.Windows.Forms.PictureBox();
             this.Student__Dashboard__UI = new System.Windows.Forms.PictureBox();
-            this.logoutBtn = new System.Windows.Forms.PictureBox();
-            this.notificationCount_bg = new sprout__gradeBook.RoundPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.StudentLogOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -153,9 +151,9 @@
             this.StudentLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.StudentLogOut.TabIndex = 107;
             this.StudentLogOut.TabStop = false;
-          //  this.StudentLogOut.Click += new System.EventHandler(this.StudentLogOut_Click);
-          //  this.StudentLogOut.MouseLeave += new System.EventHandler(this.StudentLogOut_MouseLeave);
-          //  this.StudentLogOut.MouseHover += new System.EventHandler(this.StudentLogOut_MouseHover);
+            this.StudentLogOut.Click += new System.EventHandler(this.StudentLogOut_Click);
+            this.StudentLogOut.MouseLeave += new System.EventHandler(this.StudentLogOut_MouseLeave);
+            this.StudentLogOut.MouseHover += new System.EventHandler(this.StudentLogOut_MouseHover);
             // 
             // pictureBox2
             // 
@@ -257,7 +255,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1147, 711);
-            this.Controls.Add(this.logoutBtn);
             this.Controls.Add(this.StudentLogOut);
             this.Controls.Add(this.displayGPA);
             this.Controls.Add(this.pictureBox2);
@@ -317,7 +314,6 @@
         private System.Windows.Forms.FlowLayoutPanel student_gradesPanel;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label displayGPA;
-        private System.Windows.Forms.PictureBox logoutBtn;
         private System.Windows.Forms.PictureBox StudentLogOut;
     }
 }

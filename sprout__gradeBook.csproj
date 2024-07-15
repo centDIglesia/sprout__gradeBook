@@ -439,12 +439,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\student__role-clicked.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\student__role.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Forgot Your Password_HOVER.png" />
   </ItemGroup>
   <ItemGroup>
