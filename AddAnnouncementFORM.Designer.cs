@@ -143,6 +143,7 @@
             this.Controls.Add(this.TitleTXTBOX);
             this.Controls.Add(this.descriprtionTXTBOX);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddAnnouncementFORM";
             this.Palette = this.kryptonPalette2;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
