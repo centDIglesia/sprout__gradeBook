@@ -195,19 +195,7 @@ namespace sprout__gradeBook
 
         private void AddRemindersButton_Click(object sender, EventArgs e)
         {
-            // Validation for empty text box
-            if (string.IsNullOrWhiteSpace(reminderTextBox.Text))
-            {
-                MessageBox.Show("Please enter a reminder.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Add reminder to the FlowLayoutPanel
-            var reminderLabel = new Label() { Text = reminderTextBox.Text, AutoSize = true };
-            remindersPanel.Controls.Add(reminderLabel);
-
-            // Clear the text box
-            reminderTextBox.Clear();
+         
         }
     }
 }
