@@ -82,13 +82,13 @@ namespace sprout__gradeBook
             // Validate Year Level input
             if (!int.TryParse(courseYearlvlTXT.Text, out int studentYearLvl))
             {
-                MessageBox.Show("Invalid Year Level. Please enter a valid number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid Year Level. Please enter a number from 1 to 4.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!UserInput__Validator.ValidateNotEmpty(courseYearlvlTXT.Text, "Designated Year Level"))
             {
-                MessageBox.Show("Dewsignated Year level cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Designated Year level cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 courseYearlvlTXT.Focus();
                 return;
             }

@@ -83,7 +83,7 @@ namespace sprout__gradeBook
 
                 else if (!UserInput__Validator.ValidateLength(firstName, 1, 20))
                 {
-                    MessageBox.Show("The input length must be between 1 and 20 characters.", "Invalid Length", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("The input length must be from 1 to 20 characters length.", "Invalid Length", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     setInputState(signupFNAME__txtbox, fname__tooltip, Color.Red);
                     signupFNAME__txtbox.Focus();
                     signupFNAME__txtbox.Clear();
@@ -118,7 +118,7 @@ namespace sprout__gradeBook
 
                 else if (!UserInput__Validator.ValidateLength(lastName, 1, 20))
                 {
-                    MessageBox.Show("The input length must be between 1 and 20 characters.", "Invalid Length", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("The input length must be from 1 and 20 characters length.", "Invalid Length", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     setInputState(signupLNAME__txtbox, lname__tooltip, Color.Red);
                     signupLNAME__txtbox.Focus();
                     signupLNAME__txtbox.Clear();
@@ -154,7 +154,7 @@ namespace sprout__gradeBook
 
                 else if (!UserInput__Validator.ValidateLength(signupEMAIL__txtbox.Text, 12, 35))
                 {
-                    MessageBox.Show("The input length must be between 11 and 35 characters.", "Invalid Length", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("The input length must be from 11 to 35 characters length.", "Invalid Length", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     setInputState(signupEMAIL__txtbox, email__tooltip, Color.Red);
                     signupEMAIL__txtbox.Focus();
                 }
@@ -237,7 +237,7 @@ namespace sprout__gradeBook
                     setInputState(signupSCHOOL__txtbox, school__tooltip, Color.Red);
 
                     signupSCHOOL__txtbox.Focus();
-                    MessageBox.Show("The school name must be between 10 and 80 characters long only. Please enter a valid school name.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("The school name must be from 10 to 80 characters long only. Please enter a valid school name.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -266,7 +266,7 @@ namespace sprout__gradeBook
             {
                 if (!UserInput__Validator.ValidateLength(password, 8, 20))
                 {
-                    MessageBox.Show("Password must be between 8 and 20 characters long.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Password must be from 8 to 20 characters long.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     setInputState(signupPASS__txtbox, pass__tooltip, CustomColor.errorColor);
                     signupPASS__txtbox.Focus();
                     return;
@@ -384,7 +384,7 @@ namespace sprout__gradeBook
             {
                 if (!UserInput__Validator.ValidateLength(username, 1, 20))
                 {
-                    MessageBox.Show("Username must be between 1 and 20 characters long only.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Username must be from 1 to 20 characters long only.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
@@ -416,7 +416,7 @@ namespace sprout__gradeBook
             {
                 if (!UserInput__Validator.ValidateLength(password, 1, 30))
                 {
-                    MessageBox.Show("Password must be between 1 and 30 characters long only.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Password must be from 1 to 30 characters long only.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 

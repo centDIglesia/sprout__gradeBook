@@ -262,7 +262,7 @@ namespace sprout__gradeBook
             {
                 if (number < 1 || number > 4)
                 {
-                    MessageBox.Show("Please enter a number from 1 to 4.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Invalid Year Level. Please enter a number from 1 to 4.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     studentYearLevelTXT.Text = "";
                 }
             }
